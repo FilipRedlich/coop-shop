@@ -30838,7 +30838,7 @@ var MainNav = function MainNav() {
             children: "Login"
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
             className: "btn text-white bg-dark",
-            children: "3"
+            children: "Register"
           })]
         })
       })]
@@ -30933,79 +30933,7 @@ function _slicedToArray(arr, i) {
 module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
 },{"./arrayWithHoles.js":"../../../node_modules/@babel/runtime/helpers/arrayWithHoles.js","./iterableToArrayLimit.js":"../../../node_modules/@babel/runtime/helpers/iterableToArrayLimit.js","./unsupportedIterableToArray.js":"../../../node_modules/@babel/runtime/helpers/unsupportedIterableToArray.js","./nonIterableRest.js":"../../../node_modules/@babel/runtime/helpers/nonIterableRest.js"}],"src/js/Components/Categories.js":[function(require,module,exports) {
 "use strict";
-
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-exports["default"] = void 0;
-
-var _ProductsNav = _interopRequireDefault(require("./ProductsNav"));
-
-var _jsxRuntime = require("react/jsx-runtime");
-
-var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Categories.js",
-    _this = void 0;
-
-var Categories = function Categories() {
-  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("section", {
-    className: "top-25 text-white d-none w-75 bg-transparent-custom blur-bg p-3 mx-auto  min-h-rem",
-    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h1", {
-      className: "text-center",
-      children: "1 element"
-    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      className: "d-flex",
-      children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-        className: "text-left d-flex flex-column w-25 gap-1",
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-          className: "w-50",
-          children: "Podzespo\u0142y komputerowe"
-        })]
-      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-        className: "bg-dark w-100 d-flex",
-        children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("ul", {
-          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
-            children: "dsds"
-          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
-            children: "dsds"
-          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
-            children: "dsds"
-          })]
-        }), /*#__PURE__*/(0, _jsxRuntime.jsx)("ul", {
-          children: /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
-            children: "dsdsd"
-          })
-        })]
-      })]
-    })]
-  });
-};
-
-var _default = Categories;
-exports["default"] = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"../../../node_modules/@babel/runtime/helpers/interopRequireDefault.js","./ProductsNav":"src/js/Components/ProductsNav.js","react/jsx-runtime":"../../../node_modules/react/jsx-runtime.js"}],"src/js/Components/ProductsNav.js":[function(require,module,exports) {
+},{}],"src/js/Components/ProductsNav.js":[function(require,module,exports) {
 "use strict";
 
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
@@ -31027,14 +30955,13 @@ var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/
     _this = void 0;
 
 var ProductNav = function ProductNav() {
-  var _useState = (0, _react.useState)(false),
+  var _useState = (0, _react.useState)("false"),
       _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
       isActive = _useState2[0],
       setActive = _useState2[1];
 
-  var toggleElement = function toggleElement() {
+  var ToggleClass = function ToggleClass() {
     setActive(!isActive);
-    console.log("worked");
   };
 
   return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
@@ -31042,7 +30969,7 @@ var ProductNav = function ProductNav() {
       className: "product-nav bg-transparent-custom position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
         className: "btn btn-lg bg-transparent  text-white",
-        onClick: toggleElement,
+        onClick: ToggleClass,
         children: "Categories"
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
         className: "btn btn-lg bg-transparent  text-white",
@@ -31057,7 +30984,59 @@ var ProductNav = function ProductNav() {
         className: "btn btn-lg bg-transparent  text-white",
         children: "Newsletter"
       })]
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)(_Categories["default"], {})]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("section", {
+      id: "categories",
+      className: isActive ? "hide-element position-fixed  p-3 mx-auto" : "position-fixed rounded top-25 text-white w-75 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem",
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h1", {
+        className: "text-center",
+        children: "Categories"
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "d-flex flex-wrap flex-row w-100",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "text-left d-flex flex-column w-25 gap-1",
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          })]
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "bg-dark w-75 d-flex",
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("ul", {
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsds"
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsds"
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsds"
+            })]
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("ul", {
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsdsd"
+            })
+          })]
+        })]
+      })]
+    })]
   });
 };
 
@@ -31169,7 +31148,7 @@ var parent = module.bundle.parent;
 if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
   var hostname = "" || location.hostname;
   var protocol = location.protocol === 'https:' ? 'wss' : 'ws';
-  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46049" + '/');
+  var ws = new WebSocket(protocol + '://' + hostname + ':' + "46409" + '/');
 
   ws.onmessage = function (event) {
     checkedAssets = {};
