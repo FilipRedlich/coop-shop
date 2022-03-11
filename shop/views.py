@@ -3,18 +3,21 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
-from .models import Choice, Question
+from .models import Users,Basket,Products
 
 
 class IndexView(generic.ListView):
     template_name = 'shop/dist/index.html'
+
+    '''
     context_object_name = 'latest_question_list'
 
     def get_queryset(self):
         """Return the last five published questions."""
         return Question.objects.order_by('-pub_date')[:5]
+    '''
 
-
+'''
 class DetailView(generic.DetailView):
     model = Question
     template_name = 'shop/detail.html'
@@ -42,3 +45,4 @@ def vote(request, question_id):
         # with POST data. This prevents data from being posted twice if a
         # user hits the Back button.
         return HttpResponseRedirect(reverse('shop:results', args=(question.id,)))
+'''
