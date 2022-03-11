@@ -14,14 +14,14 @@ class BasketAdmin(admin.ModelAdmin):
     fields = ['userID','productID']
     list_display=('userID','productID')
 
-class CategoriosAdmin(admin.ModelAdmin):
+class CategoriesAdmin(admin.ModelAdmin):
     fields = ['name']
-    list_display=('namme',)
+    list_display=('name',)
 
 admin.site.register(Products,ProductsAdmin)
 admin.site.register(Users,UsersAdmin)
 admin.site.register(Basket,BasketAdmin)
-admin.site.register(Categories,CategoriosAdmin)
+admin.site.register(Categories,CategoriesAdmin)
 
 '''
 class ChoiceInline(admin.TabularInline):
