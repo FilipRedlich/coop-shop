@@ -1078,20 +1078,19 @@ var _jsxRuntime = require("react/jsx-runtime");
 
 var MainNav = function MainNav() {
   return /*#__PURE__*/(0, _jsxRuntime.jsx)("nav", {
-    className: "w-100 bg-danger d-flex flex-wrap justify-content-between gap-3 p-2",
+    className: "w-100 bg-black d-flex flex-wrap justify-content-between gap-3 p-2",
     children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
-      className: "row w-100 gap-3",
+      className: "row m-auto w-100 gap-3",
       children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-        className: "col",
-        children: /*#__PURE__*/(0, _jsxRuntime.jsx)("img", {
-          src: "#",
-          alt: "logo",
-          className: "img-fluid"
+        className: "col m-auto",
+        children: /*#__PURE__*/(0, _jsxRuntime.jsx)("h1", {
+          className: "text-white text-center",
+          children: "Pestka"
         })
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-        className: "col min-rem",
+        className: "col min-rem m-auto",
         children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("form", {
-          className: "form d-flex ",
+          className: "form d-flex",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("input", {
             className: "form-control",
             type: "search",
@@ -1104,7 +1103,7 @@ var MainNav = function MainNav() {
           })]
         })
       }), /*#__PURE__*/(0, _jsxRuntime.jsx)("div", {
-        className: "col",
+        className: "col m-auto",
         children: /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
           className: "d-flex gap-3 justify-content-end",
           children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
@@ -1115,7 +1114,7 @@ var MainNav = function MainNav() {
             children: "Login"
           }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
             className: "btn text-white bg-dark",
-            children: "3"
+            children: "Register"
           })]
         })
       })]
@@ -1125,41 +1124,194 @@ var MainNav = function MainNav() {
 
 var _default = MainNav;
 exports["default"] = _default;
-},{"@babel/runtime/helpers/interopRequireDefault":"j2yX","react":"SAdv","react/jsx-runtime":"CZ1M"}],"f7M5":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"j2yX","react":"SAdv","react/jsx-runtime":"CZ1M"}],"CDhX":[function(require,module,exports) {
+function _arrayWithHoles(arr) {
+  if (Array.isArray(arr)) return arr;
+}
+
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"kjQs":[function(require,module,exports) {
+function _iterableToArrayLimit(arr, i) {
+  var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+
+  if (_i == null) return;
+  var _arr = [];
+  var _n = true;
+  var _d = false;
+
+  var _s, _e;
+
+  try {
+    for (_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true) {
+      _arr.push(_s.value);
+
+      if (i && _arr.length === i) break;
+    }
+  } catch (err) {
+    _d = true;
+    _e = err;
+  } finally {
+    try {
+      if (!_n && _i["return"] != null) _i["return"]();
+    } finally {
+      if (_d) throw _e;
+    }
+  }
+
+  return _arr;
+}
+
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"Bt3O":[function(require,module,exports) {
+function _arrayLikeToArray(arr, len) {
+  if (len == null || len > arr.length) len = arr.length;
+
+  for (var i = 0, arr2 = new Array(len); i < len; i++) {
+    arr2[i] = arr[i];
+  }
+
+  return arr2;
+}
+
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"wy3R":[function(require,module,exports) {
+var arrayLikeToArray = require("./arrayLikeToArray.js");
+
+function _unsupportedIterableToArray(o, minLen) {
+  if (!o) return;
+  if (typeof o === "string") return arrayLikeToArray(o, minLen);
+  var n = Object.prototype.toString.call(o).slice(8, -1);
+  if (n === "Object" && o.constructor) n = o.constructor.name;
+  if (n === "Map" || n === "Set") return Array.from(o);
+  if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayLikeToArray.js":"Bt3O"}],"YyOw":[function(require,module,exports) {
+function _nonIterableRest() {
+  throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{}],"Bt1D":[function(require,module,exports) {
+var arrayWithHoles = require("./arrayWithHoles.js");
+
+var iterableToArrayLimit = require("./iterableToArrayLimit.js");
+
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
+
+var nonIterableRest = require("./nonIterableRest.js");
+
+function _slicedToArray(arr, i) {
+  return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+},{"./arrayWithHoles.js":"CDhX","./iterableToArrayLimit.js":"kjQs","./unsupportedIterableToArray.js":"wy3R","./nonIterableRest.js":"YyOw"}],"f7M5":[function(require,module,exports) {
 "use strict";
+
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
 exports["default"] = void 0;
 
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+
+var _react = require("react");
+
 var _jsxRuntime = require("react/jsx-runtime");
 
 var ProductNav = function ProductNav() {
-  return /*#__PURE__*/(0, _jsxRuntime.jsxs)("nav", {
-    className: "bg-danger w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
-    children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-      className: "btn btn-lg bg-transparent  text-white",
-      children: "Categories"
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-      className: "btn btn-lg bg-transparent  text-white",
-      children: "On sale"
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-      className: "btn btn-lg bg-transparent  text-white",
-      children: "Outlet"
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-      className: "btn btn-lg bg-transparent  text-white",
-      children: "Services"
-    }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
-      className: "btn btn-lg bg-transparent  text-white",
-      children: "Newsletter"
+  var _useState = (0, _react.useState)("false"),
+      _useState2 = (0, _slicedToArray2["default"])(_useState, 2),
+      isActive = _useState2[0],
+      setActive = _useState2[1];
+
+  var ToggleClass = function ToggleClass() {
+    setActive(!isActive);
+  };
+
+  return /*#__PURE__*/(0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("nav", {
+      className: "product-nav bg-transparent-custom position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        className: "btn btn-lg bg-transparent  text-white",
+        onClick: ToggleClass,
+        children: "Categories"
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        className: "btn btn-lg bg-transparent  text-white",
+        children: "On sale"
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        className: "btn btn-lg bg-transparent  text-white",
+        children: "Outlet"
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        className: "btn btn-lg bg-transparent  text-white",
+        children: "Services"
+      }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+        className: "btn btn-lg bg-transparent  text-white",
+        children: "Newsletter"
+      })]
+    }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("section", {
+      id: "categories",
+      className: isActive ? "hide-element position-fixed  p-3 mx-auto" : "position-fixed rounded top-25 text-white w-75 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem",
+      children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("h1", {
+        className: "text-center",
+        children: "Categories"
+      }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+        className: "d-flex flex-wrap flex-row w-100",
+        children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "text-left d-flex flex-column w-25 gap-1",
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("button", {
+            className: "btn text-white w-50 bg-dark ",
+            children: "Podzespo\u0142y komputerowe"
+          })]
+        }), /*#__PURE__*/(0, _jsxRuntime.jsxs)("div", {
+          className: "bg-dark w-75 d-flex",
+          children: [/*#__PURE__*/(0, _jsxRuntime.jsxs)("ul", {
+            children: [/*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsds"
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsds"
+            }), /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsds"
+            })]
+          }), /*#__PURE__*/(0, _jsxRuntime.jsx)("ul", {
+            children: /*#__PURE__*/(0, _jsxRuntime.jsx)("li", {
+              children: "dsdsd"
+            })
+          })]
+        })]
+      })]
     })]
   });
 };
 
 var _default = ProductNav;
 exports["default"] = _default;
-},{"react/jsx-runtime":"CZ1M"}],"CgX8":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"j2yX","@babel/runtime/helpers/slicedToArray":"Bt1D","react":"SAdv","react/jsx-runtime":"CZ1M"}],"CgX8":[function(require,module,exports) {
 "use strict";
 
 Object.defineProperty(exports, "__esModule", {
@@ -1230,4 +1382,4 @@ var App = function App() {
 
 (0, _reactDom.render)( /*#__PURE__*/(0, _jsxRuntime.jsx)(App, {}), document.querySelector("#root"));
 },{"@babel/runtime/helpers/interopRequireDefault":"j2yX","react":"SAdv","react-dom":"CSY6","./Components/MainNav":"befC","./Components/ProductsNav":"f7M5","./Components/MainContent":"CBoi","react/jsx-runtime":"CZ1M"}]},{},["Nb6v"], null)
-//# sourceMappingURL=App.13311ed0.js.map
+//# sourceMappingURL=App.3dda1190.js.map
