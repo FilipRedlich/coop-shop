@@ -8,7 +8,7 @@ class ProductsAdmin(admin.ModelAdmin):
 
 class UsersAdmin(admin.ModelAdmin):
     fields = ['login','password']
-    list_display = ('login')
+    list_display = ('login',)
 
 admin.site.register(Products,ProductsAdmin)
 admin.site.register(Users,UsersAdmin)
