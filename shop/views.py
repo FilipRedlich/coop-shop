@@ -3,7 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 
-from .models import Users,Basket,Products
+from .models import Users,Basket,Categories,Products
 
 
 class IndexView(generic.ListView):
