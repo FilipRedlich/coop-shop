@@ -8,7 +8,7 @@
   "main": "index.js",
   "scripts": {
     "dev": "parcel shop/templates/shop/index.html --open",
-    "build": "parcel build shop/templates/shop/index.html --out-dir=shop/templates/shop/dist --public-url .",
+    "build": "parcel build shop/templates/shop/index.html --out-dir=shop/templates/shop/dist --no-minify --public-url .",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {
