@@ -1,11 +1,26 @@
-@import '../../../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
 
-.remove-all-padding{
-    padding: 0 !important;
+.remove-all-padding {
+  padding: 0 !important;
 }
-.min-rem{
-    min-width: 20rem;
+.min-rem {
+  min-width: 20rem;
 }
-.nav-products{
-   border-radius: 0 0 1vh 1vh;
+.nav-products {
+  border-radius: 0 0 1vh 1vh;
+}
+.bg-black {
+  background: $black;
+}
+.bg-transparent-custom {
+  background: #0000007c;
+}
+.blur-bg {
+  backdrop-filter: blur(5px);
+}
+.product-nav {
+  backdrop-filter: blur(5px);
+}
+.min-h-rem {
+  min-height: 20rem;
 }
