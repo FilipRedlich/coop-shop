@@ -28,8 +28,7 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "95.108.2.143",
-    '192.168.1.22',
+    "https://py-coop.herokuapp.com",
     "127.0.0.1",
 ]
 
