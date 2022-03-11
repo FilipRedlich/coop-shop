@@ -10,6 +10,12 @@ class UsersAdmin(admin.ModelAdmin):
     fields = ['login','password']
     list_display = ('login',)
 
+class BasketAdmin(admin.ModelAdmin):
+    list_display=('userID','ProductID')
+
+class CategoriosAdmin(admin.ModelAdmin):
+    list_display=('namme',)
+
 admin.site.register(Products,ProductsAdmin)
 admin.site.register(Users,UsersAdmin)
 admin.site.register(Basket)
