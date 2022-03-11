@@ -8,8 +8,8 @@ class ProductsAdd(admin.ModelAdmin):
 class UsersAdd(admin.ModelAdmin):
     fields = ['login','password']
 
-admin.site.register(Products, ProductsAdd)
-admin.site.register(Users,UsersAdd)
+admin.site.register(Products)
+admin.site.register(Users)
 admin.site.register(Basket)
 admin.site.register(Categories)
 
