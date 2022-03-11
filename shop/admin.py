@@ -2,10 +2,16 @@ from django.contrib import admin
 
 from .models import Users,Basket,Categories,Products
 
-class ProductAdd(admin.ModelAdmin):
+class ProductsAdd(admin.ModelAdmin):
     fields = ['name','picture','cat','quantity','price','rating']
 
-admin.site.register(Products, ProductAdd)
+class UsersAdd(admin.ModelAdmin):
+    fields = ['login','password']
+
+admin.site.register(Products, ProductsAdd)
+admin.site.register(Users,UsersAdd)
+admin.site.register(Basket)
+admin.site.register(Categories)
 
 '''
 class ChoiceInline(admin.TabularInline):
