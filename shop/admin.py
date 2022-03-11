@@ -2,14 +2,16 @@ from django.contrib import admin
 
 from .models import Users,Basket,Categories,Products
 
-class ProductsAdd(admin.ModelAdmin):
+class ProductsAdmin(admin.ModelAdmin):
     fields = ['name','picture','cat','quantity','price','rating']
+    list_display = ('name','cat')
 
-class UsersAdd(admin.ModelAdmin):
+class UsersAdmin(admin.ModelAdmin):
     fields = ['login','password']
+    list_display = ('login')
 
-admin.site.register(Products)
-admin.site.register(Users)
+admin.site.register(Products,ProductsAdmin)
+admin.site.register(Users,UsersAdmin)
 admin.site.register(Basket)
 admin.site.register(Categories)
 
