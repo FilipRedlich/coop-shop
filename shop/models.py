@@ -13,7 +13,7 @@ class Categories(models.Model):
 
 class Products(models.Model):
     name=models.CharField(max_length=255)
-    picture=models.CharField(max_length=255)
+    picture=models.CharField(max_length=255,blank=1)
     cat=models.ForeignKey(Categories, on_delete=models.CASCADE)
     quantity=models.IntegerField()
     price=models.FloatField()
