@@ -20,8 +20,8 @@ class CategoriosAdmin(admin.ModelAdmin):
 
 admin.site.register(Products,ProductsAdmin)
 admin.site.register(Users,UsersAdmin)
-admin.site.register(Basket)
-admin.site.register(Categories)
+admin.site.register(Basket,BasketAdmin)
+admin.site.register(Categories,CategoriosAdmin)
 
 '''
 class ChoiceInline(admin.TabularInline):
