@@ -11150,4 +11150,15 @@ textarea.form-control-lg {
   min-height: 20rem;
 }
 
-/*# sourceMappingURL=main.85ea68d3.css.map */
+.hide-element {
+  transform: translateY(-100rem) translateX(-50%);
+  left: 50%;
+  width: 75%;
+  transition: 0.5s;
+}
+
+.transition-5 {
+  transition: 0.5s;
+}
+
+/*# sourceMappingURL=main.0d75a3cf.css.map */

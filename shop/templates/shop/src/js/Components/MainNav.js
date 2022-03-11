@@ -26,7 +26,7 @@ const MainNav = () => {
           <div className="d-flex gap-3 justify-content-end">
             <button className="btn text-white bg-dark">Shopping cart</button>
             <button className="btn text-white bg-dark">Login</button>
-            <button className="btn text-white bg-dark">3</button>
+            <button className="btn text-white bg-dark">Register</button>
           </div>
         </div>
       </div>

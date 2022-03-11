@@ -24,3 +24,12 @@
 .min-h-rem {
   min-height: 20rem;
 }
+.hide-element{
+   transform: translateY(-100rem) translateX(-50%);
+   left: 50%;
+   width: 75%;
+   transition: .5s;
+}
+.transition-5{
+    transition: .5s;
+}
