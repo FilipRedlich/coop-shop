@@ -11130,4 +11130,35 @@ textarea.form-control-lg {
   border-radius: 0 0 1vh 1vh;
 }
 
-/*# sourceMappingURL=main.7ddbcda9.css.map */
+.bg-black {
+  background: #000;
+}
+
+.bg-transparent-custom {
+  background: #0000007c;
+}
+
+.blur-bg {
+  backdrop-filter: blur(5px);
+}
+
+.product-nav {
+  backdrop-filter: blur(5px);
+}
+
+.min-h-rem {
+  min-height: 20rem;
+}
+
+.hide-element {
+  transform: translateY(-100rem) translateX(-50%);
+  left: 50%;
+  width: 75%;
+  transition: 0.5s;
+}
+
+.transition-5 {
+  transition: 0.5s;
+}
+
+/*# sourceMappingURL=main.0d75a3cf.css.map */
