@@ -22012,22 +22012,21 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
 var MainNav = function MainNav() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
-        className: "w-100 bg-danger d-flex flex-wrap justify-content-between gap-3 p-2",
+        className: "w-100 bg-black d-flex flex-wrap justify-content-between gap-3 p-2",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-            className: "row w-100 gap-3",
+            className: "row m-auto w-100 gap-3",
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                    className: "col",
-                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                        src: "#",
-                        alt: "logo",
-                        className: "img-fluid"
+                    className: "col m-auto",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                        className: "text-white text-center",
+                        children: "Pestka"
                     })
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                    className: "col min-rem",
+                    className: "col min-rem m-auto",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
-                        className: "form d-flex ",
+                        className: "form d-flex",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                 className: "form-control",
@@ -22044,7 +22043,7 @@ var MainNav = function MainNav() {
                     })
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                    className: "col",
+                    className: "col m-auto",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                         className: "d-flex gap-3 justify-content-end",
                         children: [
@@ -22058,7 +22057,7 @@ var MainNav = function MainNav() {
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 className: "btn text-white bg-dark",
-                                children: "3"
+                                children: "Register"
                             })
                         ]
                     })
@@ -23013,35 +23012,122 @@ $parcel$ReactRefreshHelpers$40ae.prelude(module);
 
 try {
 "use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
 var ProductNav = function ProductNav() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
-        className: "bg-danger w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
+    var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
+    var ToggleClass = function ToggleClass() {
+        setActive(!isActive);
+    };
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "btn btn-lg bg-transparent  text-white",
-                children: "Categories"
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
+                className: "product-nav bg-transparent-custom position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: "btn btn-lg bg-transparent  text-white",
+                        onClick: ToggleClass,
+                        children: "Categories"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: "btn btn-lg bg-transparent  text-white",
+                        children: "On sale"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: "btn btn-lg bg-transparent  text-white",
+                        children: "Outlet"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: "btn btn-lg bg-transparent  text-white",
+                        children: "Services"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: "btn btn-lg bg-transparent  text-white",
+                        children: "Newsletter"
+                    })
+                ]
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "btn btn-lg bg-transparent  text-white",
-                children: "On sale"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "btn btn-lg bg-transparent  text-white",
-                children: "Outlet"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "btn btn-lg bg-transparent  text-white",
-                children: "Services"
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                className: "btn btn-lg bg-transparent  text-white",
-                children: "Newsletter"
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+                id: "categories",
+                className: isActive ? "hide-element position-fixed  p-3 mx-auto" : "position-fixed rounded top-25 text-white w-75 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                        className: "text-center",
+                        children: "Categories"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "d-flex flex-wrap flex-row w-100",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "text-left d-flex flex-column w-25 gap-1",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white w-50 bg-dark ",
+                                        children: "Podzespo\u0142y komputerowe"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "bg-dark w-75 d-flex",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
+                                        children: [
+                                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                                children: "dsds"
+                                            }),
+                                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                                children: "dsds"
+                                            }),
+                                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                                children: "dsds"
+                                            })
+                                        ]
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
+                                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                            children: "dsdsd"
+                                        })
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
             })
         ]
     }));
@@ -23057,7 +23143,76 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1FSJk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6AJmz":[function(require,module,exports) {
+var arrayWithHoles = require("./arrayWithHoles.js");
+var iterableToArrayLimit = require("./iterableToArrayLimit.js");
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
+var nonIterableRest = require("./nonIterableRest.js");
+function _slicedToArray(arr, i) {
+    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{"./arrayWithHoles.js":"5CPOx","./iterableToArrayLimit.js":"2B9nq","./unsupportedIterableToArray.js":"cFxnT","./nonIterableRest.js":"9O5RF"}],"5CPOx":[function(require,module,exports) {
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"2B9nq":[function(require,module,exports) {
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"cFxnT":[function(require,module,exports) {
+var arrayLikeToArray = require("./arrayLikeToArray.js");
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{"./arrayLikeToArray.js":"2QyYi"}],"2QyYi":[function(require,module,exports) {
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"9O5RF":[function(require,module,exports) {
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23099,18 +23254,44 @@ $parcel$ReactRefreshHelpers$22fc.prelude(module);
 
 try {
 "use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
+var _react = require("react");
+var _usehooksTs = require("usehooks-ts");
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Carousel.js", _this = void 0;
+var images = [
+    {
+        id: 1,
+        src: _undraw_dev_productivity_re_fylf["default"]
+    },
+    {
+        id: 2,
+        src: _undraw_software_engineer_re_fyew["default"]
+    },
+    {
+    } //DO NOT REMOVE (this element is needed for resetting carousel index)
+];
 var Carousel = function Carousel() {
+    var _useState = (0, _react.useState)(0), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), count = _useState2[0], setCount = _useState2[1];
+    (0, _react.useEffect)(function() {
+        if (count == images.length - 1) setCount(0);
+    });
+    (0, _usehooksTs.useInterval)(function() {
+        setCount(count + 1);
+    }, 3000);
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "bg-primary w-75 m-auto",
+        className: "bg-black w-75 p-5 min-vh-100 m-auto gallery",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-            src: "",
-            alt: "gallery"
+            src: images[count].src,
+            alt: "gallery",
+            className: "gallery-img d-block img-fluid"
         })
     }));
 };
@@ -23125,6 +23306,1352 @@ $RefreshReg$(_c, "Carousel");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","usehooks-ts":"dmUe4"}],"bBbLR":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"4KNRF":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_software_engineer_re_fyew.70662922.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"dmUe4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useBoolean = require("./useBoolean");
+parcelHelpers.exportAll(_useBoolean, exports);
+var _useClickAnyWhere = require("./useClickAnyWhere");
+parcelHelpers.exportAll(_useClickAnyWhere, exports);
+var _useCopyToClipboard = require("./useCopyToClipboard");
+parcelHelpers.exportAll(_useCopyToClipboard, exports);
+var _useCountdown = require("./useCountdown");
+parcelHelpers.exportAll(_useCountdown, exports);
+var _useCounter = require("./useCounter");
+parcelHelpers.exportAll(_useCounter, exports);
+var _useDarkMode = require("./useDarkMode");
+parcelHelpers.exportAll(_useDarkMode, exports);
+var _useDebounce = require("./useDebounce");
+parcelHelpers.exportAll(_useDebounce, exports);
+var _useEffectOnce = require("./useEffectOnce");
+parcelHelpers.exportAll(_useEffectOnce, exports);
+var _useElementSize = require("./useElementSize");
+parcelHelpers.exportAll(_useElementSize, exports);
+var _useEventListener = require("./useEventListener");
+parcelHelpers.exportAll(_useEventListener, exports);
+var _useFetch = require("./useFetch");
+parcelHelpers.exportAll(_useFetch, exports);
+var _useHover = require("./useHover");
+parcelHelpers.exportAll(_useHover, exports);
+var _useImageOnLoad = require("./useImageOnLoad");
+parcelHelpers.exportAll(_useImageOnLoad, exports);
+var _useIntersectionObserver = require("./useIntersectionObserver");
+parcelHelpers.exportAll(_useIntersectionObserver, exports);
+var _useInterval = require("./useInterval");
+parcelHelpers.exportAll(_useInterval, exports);
+var _useIsClient = require("./useIsClient");
+parcelHelpers.exportAll(_useIsClient, exports);
+var _useIsFirstRender = require("./useIsFirstRender");
+parcelHelpers.exportAll(_useIsFirstRender, exports);
+var _useIsMounted = require("./useIsMounted");
+parcelHelpers.exportAll(_useIsMounted, exports);
+var _useIsomorphicLayoutEffect = require("./useIsomorphicLayoutEffect");
+parcelHelpers.exportAll(_useIsomorphicLayoutEffect, exports);
+var _useLocalStorage = require("./useLocalStorage");
+parcelHelpers.exportAll(_useLocalStorage, exports);
+var _useLockedBody = require("./useLockedBody");
+parcelHelpers.exportAll(_useLockedBody, exports);
+var _useMap = require("./useMap");
+parcelHelpers.exportAll(_useMap, exports);
+var _useMediaQuery = require("./useMediaQuery");
+parcelHelpers.exportAll(_useMediaQuery, exports);
+var _useOnClickOutside = require("./useOnClickOutside");
+parcelHelpers.exportAll(_useOnClickOutside, exports);
+var _useReadLocalStorage = require("./useReadLocalStorage");
+parcelHelpers.exportAll(_useReadLocalStorage, exports);
+var _useScreen = require("./useScreen");
+parcelHelpers.exportAll(_useScreen, exports);
+var _useScript = require("./useScript");
+parcelHelpers.exportAll(_useScript, exports);
+var _useSsr = require("./useSsr");
+parcelHelpers.exportAll(_useSsr, exports);
+var _useStep = require("./useStep");
+parcelHelpers.exportAll(_useStep, exports);
+var _useTernaryDarkMode = require("./useTernaryDarkMode");
+parcelHelpers.exportAll(_useTernaryDarkMode, exports);
+var _useTimeout = require("./useTimeout");
+parcelHelpers.exportAll(_useTimeout, exports);
+var _useUpdateEffect = require("./useUpdateEffect");
+parcelHelpers.exportAll(_useUpdateEffect, exports);
+var _useWindowSize = require("./useWindowSize");
+parcelHelpers.exportAll(_useWindowSize, exports);
+
+},{"./useBoolean":"1fghQ","./useClickAnyWhere":"7ipqk","./useCopyToClipboard":"asthj","./useCountdown":"lkp4X","./useCounter":"fMCGT","./useDarkMode":"aoPx3","./useDebounce":"2vw5R","./useEffectOnce":"lFy8E","./useElementSize":"9ds6M","./useEventListener":"fjUy4","./useFetch":"aSuhw","./useHover":"aVB0X","./useImageOnLoad":"jSS6D","./useIntersectionObserver":"wuwxM","./useInterval":"8PKcn","./useIsClient":"hFMdz","./useIsFirstRender":"gb8iY","./useIsMounted":"eyySy","./useIsomorphicLayoutEffect":"hBCmk","./useLocalStorage":"gqg4r","./useLockedBody":"aqc1z","./useMap":"oA2FF","./useMediaQuery":"kHqjO","./useOnClickOutside":"83tBa","./useReadLocalStorage":"k0ycN","./useScreen":"j7Rop","./useScript":"ajvvy","./useSsr":"bl0p9","./useStep":"9TrV9","./useTernaryDarkMode":"cxY9e","./useTimeout":"eK2n7","./useUpdateEffect":"jNsXz","./useWindowSize":"6zzRu","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1fghQ":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useBoolean", ()=>_useBooleanDefault.default
+);
+var _useBoolean = require("./useBoolean");
+var _useBooleanDefault = parcelHelpers.interopDefault(_useBoolean);
+parcelHelpers.exportAll(_useBoolean, exports);
+
+},{"./useBoolean":"75OO8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"75OO8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useBoolean(defaultValue) {
+    const [value, setValue] = _react.useState(!!defaultValue);
+    const setTrue = ()=>setValue(true)
+    ;
+    const setFalse = ()=>setValue(false)
+    ;
+    const toggle = ()=>setValue((x)=>!x
+        )
+    ;
+    return {
+        value,
+        setValue,
+        setTrue,
+        setFalse,
+        toggle
+    };
+}
+exports.default = useBoolean;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gkKU3":[function(require,module,exports) {
+exports.interopDefault = function(a) {
+    return a && a.__esModule ? a : {
+        default: a
+    };
+};
+exports.defineInteropFlag = function(a) {
+    Object.defineProperty(a, '__esModule', {
+        value: true
+    });
+};
+exports.exportAll = function(source, dest) {
+    Object.keys(source).forEach(function(key) {
+        if (key === 'default' || key === '__esModule' || dest.hasOwnProperty(key)) return;
+        Object.defineProperty(dest, key, {
+            enumerable: true,
+            get: function() {
+                return source[key];
+            }
+        });
+    });
+    return dest;
+};
+exports.export = function(dest, destName, get) {
+    Object.defineProperty(dest, destName, {
+        enumerable: true,
+        get: get
+    });
+};
+
+},{}],"7ipqk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useClickAnyWhere", ()=>_useClickAnyWhereDefault.default
+);
+var _useClickAnyWhere = require("./useClickAnyWhere");
+var _useClickAnyWhereDefault = parcelHelpers.interopDefault(_useClickAnyWhere);
+parcelHelpers.exportAll(_useClickAnyWhere, exports);
+
+},{"./useClickAnyWhere":"faDbb","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"faDbb":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useEventListener = require("../useEventListener");
+function useClickAnyWhere(handler) {
+    _useEventListener.useEventListener('click', (event)=>{
+        handler(event);
+    });
+}
+exports.default = useClickAnyWhere;
+
+},{"../useEventListener":"fjUy4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fjUy4":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useEventListener", ()=>_useEventListenerDefault.default
+);
+var _useEventListener = require("./useEventListener");
+var _useEventListenerDefault = parcelHelpers.interopDefault(_useEventListener);
+parcelHelpers.exportAll(_useEventListener, exports);
+
+},{"./useEventListener":"1HJqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1HJqq":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useEventListener(eventName, handler, element) {
+    const savedHandler = _react.useRef(handler);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        savedHandler.current = handler;
+    }, [
+        handler
+    ]);
+    _react.useEffect(()=>{
+        const targetElement = element?.current || window;
+        if (!(targetElement && targetElement.addEventListener)) return;
+        const eventListener = (event)=>savedHandler.current(event)
+        ;
+        targetElement.addEventListener(eventName, eventListener);
+        return ()=>{
+            targetElement.removeEventListener(eventName, eventListener);
+        };
+    }, [
+        eventName,
+        element
+    ]);
+}
+exports.default = useEventListener;
+
+},{"react":"21dqq","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hBCmk":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsomorphicLayoutEffect", ()=>_useIsomorphicLayoutEffectDefault.default
+);
+var _useIsomorphicLayoutEffect = require("./useIsomorphicLayoutEffect");
+var _useIsomorphicLayoutEffectDefault = parcelHelpers.interopDefault(_useIsomorphicLayoutEffect);
+parcelHelpers.exportAll(_useIsomorphicLayoutEffect, exports);
+
+},{"./useIsomorphicLayoutEffect":"fWEdC","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fWEdC":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+const useIsomorphicLayoutEffect = typeof window !== 'undefined' ? _react.useLayoutEffect : _react.useEffect;
+exports.default = useIsomorphicLayoutEffect;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"asthj":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCopyToClipboard", ()=>_useCopyToClipboardDefault.default
+);
+var _useCopyToClipboard = require("./useCopyToClipboard");
+var _useCopyToClipboardDefault = parcelHelpers.interopDefault(_useCopyToClipboard);
+parcelHelpers.exportAll(_useCopyToClipboard, exports);
+
+},{"./useCopyToClipboard":"2BS9r","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2BS9r":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useCopyToClipboard() {
+    const [copiedText, setCopiedText] = _react.useState(null);
+    const copy = async (text)=>{
+        if (!navigator?.clipboard) {
+            console.warn('Clipboard not supported');
+            return false;
+        }
+        try {
+            await navigator.clipboard.writeText(text);
+            setCopiedText(text);
+            return true;
+        } catch (error) {
+            console.warn('Copy failed', error);
+            setCopiedText(null);
+            return false;
+        }
+    };
+    return [
+        copiedText,
+        copy
+    ];
+}
+exports.default = useCopyToClipboard;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lkp4X":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCountdown", ()=>_useCountdownDefault.default
+);
+var _useCountdown = require("./useCountdown");
+var _useCountdownDefault = parcelHelpers.interopDefault(_useCountdown);
+parcelHelpers.exportAll(_useCountdown, exports);
+
+},{"./useCountdown":"fIMZs","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fIMZs":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useBoolean = require("../useBoolean");
+var _useCounter = require("../useCounter");
+var _useInterval = require("../useInterval");
+function useCountdown({ seconds , interval , isIncrement ,  }) {
+    const { count , increment , decrement , reset: resetCounter ,  } = _useCounter.useCounter(seconds);
+    const { value: running , setTrue: start , setFalse: stop  } = _useBoolean.useBoolean(false);
+    const reset = ()=>{
+        stop();
+        resetCounter();
+    };
+    _useInterval.useInterval(isIncrement ? increment : decrement, running ? interval : null);
+    return [
+        count,
+        {
+            start,
+            stop,
+            reset
+        }
+    ];
+}
+exports.default = useCountdown;
+
+},{"../useBoolean":"1fghQ","../useCounter":"fMCGT","../useInterval":"8PKcn","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fMCGT":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useCounter", ()=>_useCounterDefault.default
+);
+var _useCounter = require("./useCounter");
+var _useCounterDefault = parcelHelpers.interopDefault(_useCounter);
+parcelHelpers.exportAll(_useCounter, exports);
+
+},{"./useCounter":"kSFgg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kSFgg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useCounter(initialValue) {
+    const [count, setCount] = _react.useState(initialValue || 0);
+    const increment = ()=>setCount((x)=>x + 1
+        )
+    ;
+    const decrement = ()=>setCount((x)=>x - 1
+        )
+    ;
+    const reset = ()=>setCount(initialValue || 0)
+    ;
+    return {
+        count,
+        increment,
+        decrement,
+        reset,
+        setCount
+    };
+}
+exports.default = useCounter;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"8PKcn":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useInterval", ()=>_useIntervalDefault.default
+);
+var _useInterval = require("./useInterval");
+var _useIntervalDefault = parcelHelpers.interopDefault(_useInterval);
+parcelHelpers.exportAll(_useInterval, exports);
+
+},{"./useInterval":"GPWw2","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"GPWw2":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useInterval(callback, delay) {
+    const savedCallback = _react.useRef(callback);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        savedCallback.current = callback;
+    }, [
+        callback
+    ]);
+    _react.useEffect(()=>{
+        if (!delay && delay !== 0) return;
+        const id = setInterval(()=>savedCallback.current()
+        , delay);
+        return ()=>clearInterval(id)
+        ;
+    }, [
+        delay
+    ]);
+}
+exports.default = useInterval;
+
+},{"react":"21dqq","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aoPx3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useDarkMode", ()=>_useDarkModeDefault.default
+);
+var _useDarkMode = require("./useDarkMode");
+var _useDarkModeDefault = parcelHelpers.interopDefault(_useDarkMode);
+parcelHelpers.exportAll(_useDarkMode, exports);
+
+},{"./useDarkMode":"aqL5L","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aqL5L":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useLocalStorage = require("../useLocalStorage");
+var _useMediaQuery = require("../useMediaQuery");
+var _useUpdateEffect = require("../useUpdateEffect");
+const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)';
+function useDarkMode(defaultValue) {
+    const isDarkOS = _useMediaQuery.useMediaQuery(COLOR_SCHEME_QUERY);
+    const [isDarkMode, setDarkMode] = _useLocalStorage.useLocalStorage('usehooks-ts-dark-mode', (defaultValue ?? isDarkOS) ?? false);
+    _useUpdateEffect.useUpdateEffect(()=>{
+        setDarkMode(isDarkOS);
+    }, [
+        isDarkOS
+    ]);
+    return {
+        isDarkMode,
+        toggle: ()=>setDarkMode((prev)=>!prev
+            )
+        ,
+        enable: ()=>setDarkMode(true)
+        ,
+        disable: ()=>setDarkMode(false)
+    };
+}
+exports.default = useDarkMode;
+
+},{"../useLocalStorage":"gqg4r","../useMediaQuery":"kHqjO","../useUpdateEffect":"jNsXz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gqg4r":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useLocalStorage", ()=>_useLocalStorageDefault.default
+);
+var _useLocalStorage = require("./useLocalStorage");
+var _useLocalStorageDefault = parcelHelpers.interopDefault(_useLocalStorage);
+parcelHelpers.exportAll(_useLocalStorage, exports);
+
+},{"./useLocalStorage":"2Bbwp","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2Bbwp":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventListener = require("../useEventListener");
+function useLocalStorage(key, initialValue) {
+    const readValue = _react.useCallback(()=>{
+        if (typeof window === 'undefined') return initialValue;
+        try {
+            const item = window.localStorage.getItem(key);
+            return item ? parseJSON(item) : initialValue;
+        } catch (error) {
+            console.warn(`Error reading localStorage key “${key}”:`, error);
+            return initialValue;
+        }
+    }, [
+        initialValue,
+        key
+    ]);
+    const [storedValue, setStoredValue] = _react.useState(readValue);
+    const setValue = _react.useCallback((value)=>{
+        if (typeof window == 'undefined') console.warn(`Tried setting localStorage key “${key}” even though environment is not a client`);
+        try {
+            const newValue = value instanceof Function ? value(storedValue) : value;
+            window.localStorage.setItem(key, JSON.stringify(newValue));
+            setStoredValue(newValue);
+            window.dispatchEvent(new Event('local-storage'));
+        } catch (error) {
+            console.warn(`Error setting localStorage key “${key}”:`, error);
+        }
+    }, [
+        key,
+        storedValue
+    ]);
+    _react.useEffect(()=>{
+        setStoredValue(readValue());
+    }, []);
+    const handleStorageChange = _react.useCallback(()=>{
+        setStoredValue(readValue());
+    }, [
+        readValue
+    ]);
+    _useEventListener.useEventListener('storage', handleStorageChange);
+    _useEventListener.useEventListener('local-storage', handleStorageChange);
+    return [
+        storedValue,
+        setValue
+    ];
+}
+exports.default = useLocalStorage;
+function parseJSON(value) {
+    try {
+        return value === 'undefined' ? undefined : JSON.parse(value ?? '');
+    } catch  {
+        console.log('parsing error on', {
+            value
+        });
+        return undefined;
+    }
+}
+
+},{"react":"21dqq","../useEventListener":"fjUy4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"kHqjO":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMediaQuery", ()=>_useMediaQueryDefault.default
+);
+var _useMediaQuery = require("./useMediaQuery");
+var _useMediaQueryDefault = parcelHelpers.interopDefault(_useMediaQuery);
+parcelHelpers.exportAll(_useMediaQuery, exports);
+
+},{"./useMediaQuery":"26a3m","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"26a3m":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useMediaQuery(query1) {
+    const getMatches = (query)=>{
+        if (typeof window !== 'undefined') return window.matchMedia(query).matches;
+        return false;
+    };
+    const [matches, setMatches] = _react.useState(getMatches(query1));
+    function handleChange() {
+        setMatches(getMatches(query1));
+    }
+    _react.useEffect(()=>{
+        const matchMedia = window.matchMedia(query1);
+        handleChange();
+        matchMedia.addEventListener('change', handleChange);
+        return ()=>{
+            matchMedia.removeEventListener('change', handleChange);
+        };
+    }, [
+        query1
+    ]);
+    return matches;
+}
+exports.default = useMediaQuery;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jNsXz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useUpdateEffect", ()=>_useUpdateEffectDefault.default
+);
+var _useUpdateEffect = require("./useUpdateEffect");
+var _useUpdateEffectDefault = parcelHelpers.interopDefault(_useUpdateEffect);
+parcelHelpers.exportAll(_useUpdateEffect, exports);
+
+},{"./useUpdateEffect":"Gp0lB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"Gp0lB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsFirstRender = require("../useIsFirstRender");
+function useUpdateEffect(effect, deps) {
+    const isFirst = _useIsFirstRender.useIsFirstRender();
+    _react.useEffect(()=>{
+        if (!isFirst) return effect();
+    }, deps);
+}
+exports.default = useUpdateEffect;
+
+},{"react":"21dqq","../useIsFirstRender":"gb8iY","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"gb8iY":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsFirstRender", ()=>_useIsFirstRenderDefault.default
+);
+var _useIsFirstRender = require("./useIsFirstRender");
+var _useIsFirstRenderDefault = parcelHelpers.interopDefault(_useIsFirstRender);
+parcelHelpers.exportAll(_useIsFirstRender, exports);
+
+},{"./useIsFirstRender":"g3oAw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"g3oAw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useIsFirstRender() {
+    const isFirst = _react.useRef(true);
+    if (isFirst.current) {
+        isFirst.current = false;
+        return true;
+    }
+    return isFirst.current;
+}
+exports.default = useIsFirstRender;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2vw5R":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useDebounce", ()=>_useDebounceDefault.default
+);
+var _useDebounce = require("./useDebounce");
+var _useDebounceDefault = parcelHelpers.interopDefault(_useDebounce);
+parcelHelpers.exportAll(_useDebounce, exports);
+
+},{"./useDebounce":"lNmEG","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lNmEG":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useDebounce(value, delay) {
+    const [debouncedValue, setDebouncedValue] = _react.useState(value);
+    _react.useEffect(()=>{
+        const timer = setTimeout(()=>setDebouncedValue(value)
+        , delay || 500);
+        return ()=>{
+            clearTimeout(timer);
+        };
+    }, [
+        value,
+        delay
+    ]);
+    return debouncedValue;
+}
+exports.default = useDebounce;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lFy8E":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useEffectOnce", ()=>_useEffectOnceDefault.default
+);
+var _useEffectOnce = require("./useEffectOnce");
+var _useEffectOnceDefault = parcelHelpers.interopDefault(_useEffectOnce);
+parcelHelpers.exportAll(_useEffectOnce, exports);
+
+},{"./useEffectOnce":"3jP3w","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3jP3w":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useEffectOnce(effect) {
+    _react.useEffect(effect, []);
+}
+exports.default = useEffectOnce;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9ds6M":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useElementSize", ()=>_useElementSizeDefault.default
+);
+var _useElementSize = require("./useElementSize");
+var _useElementSizeDefault = parcelHelpers.interopDefault(_useElementSize);
+parcelHelpers.exportAll(_useElementSize, exports);
+
+},{"./useElementSize":"2iww6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2iww6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventListener = require("../useEventListener");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useElementSize() {
+    const [ref, setRef] = _react.useState(null);
+    const [size, setSize] = _react.useState({
+        width: 0,
+        height: 0
+    });
+    const handleSize = _react.useCallback(()=>{
+        setSize({
+            width: ref?.offsetWidth || 0,
+            height: ref?.offsetHeight || 0
+        });
+    }, [
+        ref?.offsetHeight,
+        ref?.offsetWidth
+    ]);
+    _useEventListener.useEventListener('resize', handleSize);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        handleSize();
+    }, [
+        ref?.offsetHeight,
+        ref?.offsetWidth
+    ]);
+    return [
+        setRef,
+        size
+    ];
+}
+exports.default = useElementSize;
+
+},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aSuhw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useFetch", ()=>_useFetchDefault.default
+);
+var _useFetch = require("./useFetch");
+var _useFetchDefault = parcelHelpers.interopDefault(_useFetch);
+parcelHelpers.exportAll(_useFetch, exports);
+
+},{"./useFetch":"26gvK","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"26gvK":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useFetch(url, options) {
+    const cache = _react.useRef({
+    });
+    const cancelRequest = _react.useRef(false);
+    const initialState = {
+        error: undefined,
+        data: undefined
+    };
+    const fetchReducer = (state, action)=>{
+        switch(action.type){
+            case 'loading':
+                return {
+                    ...initialState
+                };
+            case 'fetched':
+                return {
+                    ...initialState,
+                    data: action.payload
+                };
+            case 'error':
+                return {
+                    ...initialState,
+                    error: action.payload
+                };
+            default:
+                return state;
+        }
+    };
+    const [state1, dispatch] = _react.useReducer(fetchReducer, initialState);
+    _react.useEffect(()=>{
+        if (!url) return;
+        const fetchData = async ()=>{
+            dispatch({
+                type: 'loading'
+            });
+            if (cache.current[url]) {
+                dispatch({
+                    type: 'fetched',
+                    payload: cache.current[url]
+                });
+                return;
+            }
+            try {
+                const response = await fetch(url, options);
+                if (!response.ok) throw new Error(response.statusText);
+                const data = await response.json();
+                cache.current[url] = data;
+                if (cancelRequest.current) return;
+                dispatch({
+                    type: 'fetched',
+                    payload: data
+                });
+            } catch (error) {
+                if (cancelRequest.current) return;
+                dispatch({
+                    type: 'error',
+                    payload: error
+                });
+            }
+        };
+        fetchData();
+        return ()=>{
+            cancelRequest.current = true;
+        };
+    }, [
+        url
+    ]);
+    return state1;
+}
+exports.default = useFetch;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aVB0X":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useHover", ()=>_useHoverDefault.default
+);
+var _useHover = require("./useHover");
+var _useHoverDefault = parcelHelpers.interopDefault(_useHover);
+parcelHelpers.exportAll(_useHover, exports);
+
+},{"./useHover":"eNC2T","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eNC2T":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventListener = require("../useEventListener");
+function useHover(elementRef) {
+    const [value, setValue] = _react.useState(false);
+    const handleMouseEnter = ()=>setValue(true)
+    ;
+    const handleMouseLeave = ()=>setValue(false)
+    ;
+    _useEventListener.useEventListener('mouseenter', handleMouseEnter, elementRef);
+    _useEventListener.useEventListener('mouseleave', handleMouseLeave, elementRef);
+    return value;
+}
+exports.default = useHover;
+
+},{"react":"21dqq","../useEventListener":"fjUy4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"jSS6D":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useImageOnLoad", ()=>_useImageOnLoadDefault.default
+);
+var _useImageOnLoad = require("./useImageOnLoad");
+var _useImageOnLoadDefault = parcelHelpers.interopDefault(_useImageOnLoad);
+parcelHelpers.exportAll(_useImageOnLoad, exports);
+
+},{"./useImageOnLoad":"fttn3","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"fttn3":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useImageOnLoad() {
+    const [isLoaded, setIsLoaded] = _react.useState(false);
+    const handleImageOnLoad = ()=>{
+        setIsLoaded(true);
+    };
+    const css = {
+        thumbnail: {
+            visibility: isLoaded ? 'hidden' : 'visible',
+            filter: 'blur(8px)',
+            transition: 'visibility 0ms ease-out 500ms'
+        },
+        fullSize: {
+            opacity: isLoaded ? 1 : 0,
+            transition: 'opacity 500ms ease-in 0ms'
+        }
+    };
+    return {
+        handleImageOnLoad,
+        css
+    };
+}
+exports.default = useImageOnLoad;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"wuwxM":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIntersectionObserver", ()=>_useIntersectionObserverDefault.default
+);
+var _useIntersectionObserver = require("./useIntersectionObserver");
+var _useIntersectionObserverDefault = parcelHelpers.interopDefault(_useIntersectionObserver);
+parcelHelpers.exportAll(_useIntersectionObserver, exports);
+
+},{"./useIntersectionObserver":"9IP75","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9IP75":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useIntersectionObserver(elementRef, { threshold =0 , root =null , rootMargin ='0%' , freezeOnceVisible =false ,  }) {
+    const [entry1, setEntry] = _react.useState();
+    const frozen = entry1?.isIntersecting && freezeOnceVisible;
+    const updateEntry = ([entry])=>{
+        setEntry(entry);
+    };
+    _react.useEffect(()=>{
+        const node = elementRef?.current;
+        const hasIOSupport = !!window.IntersectionObserver;
+        if (!hasIOSupport || frozen || !node) return;
+        const observerParams = {
+            threshold,
+            root,
+            rootMargin
+        };
+        const observer = new IntersectionObserver(updateEntry, observerParams);
+        observer.observe(node);
+        return ()=>observer.disconnect()
+        ;
+    }, [
+        elementRef,
+        JSON.stringify(threshold),
+        root,
+        rootMargin,
+        frozen
+    ]);
+    return entry1;
+}
+exports.default = useIntersectionObserver;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"hFMdz":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsClient", ()=>_useIsClientDefault.default
+);
+var _useIsClient = require("./useIsClient");
+var _useIsClientDefault = parcelHelpers.interopDefault(_useIsClient);
+parcelHelpers.exportAll(_useIsClient, exports);
+
+},{"./useIsClient":"3emvU","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"3emvU":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useIsClient() {
+    const [isClient, setClient] = _react.useState(false);
+    _react.useEffect(()=>{
+        setClient(true);
+    }, []);
+    return isClient;
+}
+exports.default = useIsClient;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eyySy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useIsMounted", ()=>_useIsMountedDefault.default
+);
+var _useIsMounted = require("./useIsMounted");
+var _useIsMountedDefault = parcelHelpers.interopDefault(_useIsMounted);
+parcelHelpers.exportAll(_useIsMounted, exports);
+
+},{"./useIsMounted":"2uJb6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2uJb6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useIsMounted() {
+    const isMounted = _react.useRef(false);
+    _react.useEffect(()=>{
+        isMounted.current = true;
+        return ()=>{
+            isMounted.current = false;
+        };
+    }, []);
+    return _react.useCallback(()=>isMounted.current
+    , []);
+}
+exports.default = useIsMounted;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aqc1z":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useLockedBody", ()=>_useLockedBodyDefault.default
+);
+var _useLockedBody = require("./useLockedBody");
+var _useLockedBodyDefault = parcelHelpers.interopDefault(_useLockedBody);
+parcelHelpers.exportAll(_useLockedBody, exports);
+
+},{"./useLockedBody":"aCXSw","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"aCXSw":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useLockedBody(initialLocked = false) {
+    const [locked, setLocked] = _react.useState(initialLocked);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        if (!locked) return;
+        const originalOverflow = document.body.style.overflow;
+        const originalPaddingRight = document.body.style.paddingRight;
+        document.body.style.overflow = 'hidden';
+        const root = document.getElementById('___gatsby');
+        const scrollBarWidth = root ? root.offsetWidth - root.scrollWidth : 0;
+        if (scrollBarWidth) document.body.style.paddingRight = `${scrollBarWidth}px`;
+        return ()=>{
+            document.body.style.overflow = originalOverflow;
+            if (scrollBarWidth) document.body.style.paddingRight = originalPaddingRight;
+        };
+    }, [
+        locked
+    ]);
+    _react.useEffect(()=>{
+        if (locked !== initialLocked) setLocked(initialLocked);
+    }, [
+        initialLocked
+    ]);
+    return [
+        locked,
+        setLocked
+    ];
+}
+exports.default = useLockedBody;
+
+},{"react":"21dqq","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"oA2FF":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useMap", ()=>_useMapDefault.default
+);
+var _useMap = require("./useMap");
+var _useMapDefault = parcelHelpers.interopDefault(_useMap);
+parcelHelpers.exportAll(_useMap, exports);
+
+},{"./useMap":"2ZsJ5","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2ZsJ5":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useMap(initialState = new Map()) {
+    const [map, setMap] = _react.useState(new Map(initialState));
+    const actions = {
+        set: _react.useCallback((key, value)=>{
+            setMap((prev)=>{
+                const copy = new Map(prev);
+                copy.set(key, value);
+                return copy;
+            });
+        }, []),
+        setAll: _react.useCallback((entries)=>{
+            setMap(()=>new Map(entries)
+            );
+        }, []),
+        remove: _react.useCallback((key)=>{
+            setMap((prev)=>{
+                const copy = new Map(prev);
+                copy.delete(key);
+                return copy;
+            });
+        }, []),
+        reset: _react.useCallback(()=>{
+            setMap(()=>new Map()
+            );
+        }, [])
+    };
+    return [
+        map,
+        actions
+    ];
+}
+exports.default = useMap;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"83tBa":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useOnClickOutside", ()=>_useOnClickOutsideDefault.default
+);
+var _useOnClickOutside = require("./useOnClickOutside");
+var _useOnClickOutsideDefault = parcelHelpers.interopDefault(_useOnClickOutside);
+parcelHelpers.exportAll(_useOnClickOutside, exports);
+
+},{"./useOnClickOutside":"eLhz8","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eLhz8":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _useEventListener = require("../useEventListener");
+function useOnClickOutside(ref, handler, mouseEvent = 'mousedown') {
+    _useEventListener.useEventListener(mouseEvent, (event)=>{
+        const el = ref?.current;
+        if (!el || el.contains(event.target)) return;
+        handler(event);
+    });
+}
+exports.default = useOnClickOutside;
+
+},{"../useEventListener":"fjUy4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"k0ycN":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useReadLocalStorage", ()=>_useReadLocalStorageDefault.default
+);
+var _useReadLocalStorage = require("./useReadLocalStorage");
+var _useReadLocalStorageDefault = parcelHelpers.interopDefault(_useReadLocalStorage);
+parcelHelpers.exportAll(_useReadLocalStorage, exports);
+
+},{"./useReadLocalStorage":"4VBoB","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"4VBoB":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventListener = require("../useEventListener");
+function useReadLocalStorage(key) {
+    const readValue = _react.useCallback(()=>{
+        if (typeof window === 'undefined') return null;
+        try {
+            const item = window.localStorage.getItem(key);
+            return item ? JSON.parse(item) : null;
+        } catch (error) {
+            console.warn(`Error reading localStorage key “${key}”:`, error);
+            return null;
+        }
+    }, [
+        key
+    ]);
+    const [storedValue, setStoredValue] = _react.useState(readValue);
+    _react.useEffect(()=>{
+        setStoredValue(readValue());
+    }, []);
+    const handleStorageChange = _react.useCallback(()=>{
+        setStoredValue(readValue());
+    }, [
+        readValue
+    ]);
+    _useEventListener.useEventListener('storage', handleStorageChange);
+    _useEventListener.useEventListener('local-storage', handleStorageChange);
+    return storedValue;
+}
+exports.default = useReadLocalStorage;
+
+},{"react":"21dqq","../useEventListener":"fjUy4","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"j7Rop":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useScreen", ()=>_useScreenDefault.default
+);
+var _useScreen = require("./useScreen");
+var _useScreenDefault = parcelHelpers.interopDefault(_useScreen);
+parcelHelpers.exportAll(_useScreen, exports);
+
+},{"./useScreen":"6YQVm","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6YQVm":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventListener = require("../useEventListener");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useScreen() {
+    const getScreen = ()=>{
+        if (typeof window !== 'undefined' && window.screen) return window.screen;
+        return undefined;
+    };
+    const [screen, setScreen] = _react.useState(getScreen());
+    function handleSize() {
+        setScreen(getScreen());
+    }
+    _useEventListener.useEventListener('resize', handleSize);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        handleSize();
+    }, []);
+    return screen;
+}
+exports.default = useScreen;
+
+},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"ajvvy":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useScript", ()=>_useScriptDefault.default
+);
+var _useScript = require("./useScript");
+var _useScriptDefault = parcelHelpers.interopDefault(_useScript);
+parcelHelpers.exportAll(_useScript, exports);
+
+},{"./useScript":"djE9J","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"djE9J":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useScript(src) {
+    const [status, setStatus] = _react.useState(src ? 'loading' : 'idle');
+    _react.useEffect(()=>{
+        if (!src) {
+            setStatus('idle');
+            return;
+        }
+        let script = document.querySelector(`script[src="${src}"]`);
+        if (!script) {
+            script = document.createElement('script');
+            script.src = src;
+            script.async = true;
+            script.setAttribute('data-status', 'loading');
+            document.body.appendChild(script);
+            const setAttributeFromEvent = (event)=>{
+                script?.setAttribute('data-status', event.type === 'load' ? 'ready' : 'error');
+            };
+            script.addEventListener('load', setAttributeFromEvent);
+            script.addEventListener('error', setAttributeFromEvent);
+        } else setStatus(script.getAttribute('data-status'));
+        const setStateFromEvent = (event)=>{
+            setStatus(event.type === 'load' ? 'ready' : 'error');
+        };
+        script.addEventListener('load', setStateFromEvent);
+        script.addEventListener('error', setStateFromEvent);
+        return ()=>{
+            if (script) {
+                script.removeEventListener('load', setStateFromEvent);
+                script.removeEventListener('error', setStateFromEvent);
+            }
+        };
+    }, [
+        src
+    ]);
+    return status;
+}
+exports.default = useScript;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"bl0p9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useSsr", ()=>_useSsrDefault.default
+);
+var _useSsr = require("./useSsr");
+var _useSsrDefault = parcelHelpers.interopDefault(_useSsr);
+parcelHelpers.exportAll(_useSsr, exports);
+
+},{"./useSsr":"9XRLH","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9XRLH":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+function useSsr() {
+    const isDOM = typeof window !== 'undefined' && window.document && window.document.documentElement;
+    return {
+        isBrowser: isDOM,
+        isServer: !isDOM
+    };
+}
+exports.default = useSsr;
+
+},{"@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9TrV9":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useStep", ()=>_useStepDefault.default
+);
+var _useStep = require("./useStep");
+var _useStepDefault = parcelHelpers.interopDefault(_useStep);
+parcelHelpers.exportAll(_useStep, exports);
+
+},{"./useStep":"2zb9y","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"2zb9y":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+function useStep(maxStep) {
+    const [currentStep, setCurrentStep] = _react.useState(1);
+    const canGoToNextStep = _react.useMemo(()=>currentStep + 1 <= maxStep
+    , [
+        currentStep,
+        maxStep
+    ]);
+    const canGoToPrevStep = _react.useMemo(()=>currentStep - 1 >= 1
+    , [
+        currentStep
+    ]);
+    const setStep = _react.useCallback((step)=>{
+        const newStep = step instanceof Function ? step(currentStep) : step;
+        if (newStep >= 1 && newStep <= maxStep) {
+            setCurrentStep(newStep);
+            return;
+        }
+        throw new Error('Step not valid');
+    }, [
+        maxStep,
+        currentStep
+    ]);
+    const goToNextStep = _react.useCallback(()=>{
+        if (canGoToNextStep) setCurrentStep((step)=>step + 1
+        );
+    }, [
+        canGoToNextStep
+    ]);
+    const goToPrevStep = _react.useCallback(()=>{
+        if (canGoToPrevStep) setCurrentStep((step)=>step - 1
+        );
+    }, [
+        canGoToPrevStep
+    ]);
+    const reset = _react.useCallback(()=>{
+        setCurrentStep(1);
+    }, []);
+    return [
+        currentStep,
+        {
+            goToNextStep,
+            goToPrevStep,
+            canGoToNextStep,
+            canGoToPrevStep,
+            setStep,
+            reset
+        }, 
+    ];
+}
+exports.default = useStep;
+
+},{"react":"21dqq","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"cxY9e":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useTernaryDarkMode", ()=>_useTernaryDarkModeDefault.default
+);
+var _useTernaryDarkMode = require("./useTernaryDarkMode");
+var _useTernaryDarkModeDefault = parcelHelpers.interopDefault(_useTernaryDarkMode);
+parcelHelpers.exportAll(_useTernaryDarkMode, exports);
+
+},{"./useTernaryDarkMode":"9k0Mg","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"9k0Mg":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useLocalStorage = require("../useLocalStorage");
+var _useMediaQuery = require("../useMediaQuery");
+var _useUpdateEffect = require("../useUpdateEffect");
+const COLOR_SCHEME_QUERY = '(prefers-color-scheme: dark)';
+function useTernaryDarkMode() {
+    const isDarkOS = _useMediaQuery.useMediaQuery(COLOR_SCHEME_QUERY);
+    const [ternaryDarkMode, setTernaryDarkMode] = _useLocalStorage.useLocalStorage('usehooks-ts-ternary-dark-mode', 'system');
+    const [isDarkMode, setDarkMode] = _react.useState(isDarkOS);
+    _useUpdateEffect.useUpdateEffect(()=>{
+        if (ternaryDarkMode === 'system') setDarkMode(isDarkOS);
+    }, [
+        isDarkOS
+    ]);
+    _react.useEffect(()=>{
+        switch(ternaryDarkMode){
+            case 'light':
+                setDarkMode(false);
+                break;
+            case 'system':
+                setDarkMode(isDarkOS);
+                break;
+            case 'dark':
+                setDarkMode(true);
+                break;
+        }
+    }, [
+        ternaryDarkMode,
+        isDarkOS
+    ]);
+    function toggleTernaryDarkMode() {
+        const toggleDict = {
+            light: 'system',
+            system: 'dark',
+            dark: 'light'
+        };
+        setTernaryDarkMode((prevMode)=>toggleDict[prevMode]
+        );
+    }
+    return {
+        isDarkMode,
+        ternaryDarkMode,
+        setTernaryDarkMode,
+        toggleTernaryDarkMode
+    };
+}
+exports.default = useTernaryDarkMode;
+
+},{"react":"21dqq","../useLocalStorage":"gqg4r","../useMediaQuery":"kHqjO","../useUpdateEffect":"jNsXz","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"eK2n7":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useTimeout", ()=>_useTimeoutDefault.default
+);
+var _useTimeout = require("./useTimeout");
+var _useTimeoutDefault = parcelHelpers.interopDefault(_useTimeout);
+parcelHelpers.exportAll(_useTimeout, exports);
+
+},{"./useTimeout":"iuWi6","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"iuWi6":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useTimeout(callback, delay) {
+    const savedCallback = _react.useRef(callback);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        savedCallback.current = callback;
+    }, [
+        callback
+    ]);
+    _react.useEffect(()=>{
+        if (!delay && delay !== 0) return;
+        const id = setTimeout(()=>savedCallback.current()
+        , delay);
+        return ()=>clearTimeout(id)
+        ;
+    }, [
+        delay
+    ]);
+}
+exports.default = useTimeout;
+
+},{"react":"21dqq","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"6zzRu":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+parcelHelpers.export(exports, "useWindowSize", ()=>_useWindowSizeDefault.default
+);
+var _useWindowSize = require("./useWindowSize");
+var _useWindowSizeDefault = parcelHelpers.interopDefault(_useWindowSize);
+parcelHelpers.exportAll(_useWindowSize, exports);
+
+},{"./useWindowSize":"73GDr","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"73GDr":[function(require,module,exports) {
+var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
+parcelHelpers.defineInteropFlag(exports);
+var _react = require("react");
+var _useEventListener = require("../useEventListener");
+var _useIsomorphicLayoutEffect = require("../useIsomorphicLayoutEffect");
+function useWindowSize() {
+    const [windowSize, setWindowSize] = _react.useState({
+        width: 0,
+        height: 0
+    });
+    const handleSize = ()=>{
+        setWindowSize({
+            width: window.innerWidth,
+            height: window.innerHeight
+        });
+    };
+    _useEventListener.useEventListener('resize', handleSize);
+    _useIsomorphicLayoutEffect.useIsomorphicLayoutEffect(()=>{
+        handleSize();
+    }, []);
+    return windowSize;
+}
+exports.default = useWindowSize;
+
+},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
 
 //# sourceMappingURL=index.53beede5.js.map

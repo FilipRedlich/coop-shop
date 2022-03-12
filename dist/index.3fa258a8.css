@@ -10407,4 +10407,32 @@ textarea.form-control-lg {
 .nav-products {
   border-radius: 0 0 1vh 1vh;
 }
+.bg-black {
+  background: #000;
+}
+.bg-transparent-custom {
+  background: #0000007c;
+}
+.blur-bg {
+  backdrop-filter: blur(5px);
+}
+.product-nav {
+  backdrop-filter: blur(5px);
+}
+.min-h-rem {
+  min-height: 20rem;
+}
+.hide-element {
+  transform: translateY(-100rem) translateX(-50%);
+  left: 50%;
+  width: 75%;
+  transition: 0.5s;
+}
+.gallery .gallery-img {
+  max-width: 30rem;
+  margin: 10rem auto 0 auto;
+}
+.transition-5 {
+  transition: 0.5s;
+}
 /*# sourceMappingURL=index.3fa258a8.css.map */
