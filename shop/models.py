@@ -1,5 +1,5 @@
-from operator import mod
-from pyexpat import model
+#from operator import mod
+#from pyexpat import model
 from django.db import models
 
 # Create your models here.
@@ -22,15 +22,3 @@ class Products(models.Model):
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
-
-'''
-class Question(models.Model):
-    question_text = models.CharField(max_length=200)
-    pub_date = models.DateTimeField('date published')
-
-
-class Choice(models.Model):
-    question = models.ForeignKey(Question, on_delete=models.CASCADE)
-    choice_text = models.CharField(max_length=200)
-    votes = models.IntegerField(default=0)
-'''
