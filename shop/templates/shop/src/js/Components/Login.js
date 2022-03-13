@@ -1,5 +1,5 @@
 import { render } from "react-dom";
-import { useEffect, useState } from "react/cjs/react.development";
+import { useEffect, useState } from "react";
 
 
 //"Blueprint" for loginSwitch Button
