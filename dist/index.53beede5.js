@@ -1005,6 +1005,10 @@ $parcel$ReactRefreshHelpers$2e54.prelude(module);
 try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _reactDom = require("react-dom");
 var _MainNav = _interopRequireDefault(require("./Components/MainNav"));
@@ -1012,23 +1016,33 @@ var _ProductsNav = _interopRequireDefault(require("./Components/ProductsNav"));
 var _MainContent = _interopRequireDefault(require("./Components/MainContent"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/App.js", _this = void 0;
-var App = function App() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+var NavApp = function NavApp() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainNav["default"], {
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)(_ProductsNav["default"], {
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
             })
         ]
     }));
 };
-_c = App;
-(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(App, {
+_c = NavApp;
+var MainApp = function MainApp() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
+        })
+    }));
+};
+_c1 = MainApp;
+(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(NavApp, {
+}), document.querySelector("#navRoot"));
+(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(MainApp, {
 }), document.querySelector("#root"));
-var _c;
-$RefreshReg$(_c, "App");
+var _default = MainApp;
+exports["default"] = _default;
+var _c, _c1;
+$RefreshReg$(_c, "NavApp");
+$RefreshReg$(_c1, "MainApp");
 
   $parcel$ReactRefreshHelpers$2e54.postlude(module);
 } finally {
@@ -22008,11 +22022,15 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _react = _interopRequireDefault(require("react"));
+var _reactDom = require("react-dom");
+var _react2 = require("react/cjs/react.development");
+var _Login = _interopRequireDefault(require("./Login"));
+var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
 var MainNav = function MainNav() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
-        className: "w-100 bg-black position-relative z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2",
+        className: "w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
             className: "row m-auto w-100 gap-3",
             children: [
@@ -22020,6 +22038,12 @@ var MainNav = function MainNav() {
                     className: "col m-auto",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
                         className: "text-white text-center",
+                        role: "button",
+                        onClick: function onClick() {
+                            console.log('MainNav');
+                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_App["default"], {
+                            }), document.querySelector('#root'));
+                        },
                         children: "Pestka"
                     })
                 }),
@@ -22029,7 +22053,7 @@ var MainNav = function MainNav() {
                         className: "form d-flex",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                className: "form-control",
+                                className: "form-control shadow-lg",
                                 type: "search",
                                 placeholder: "Search",
                                 "aria-label": "Search"
@@ -22053,6 +22077,11 @@ var MainNav = function MainNav() {
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 className: "btn text-white bg-dark",
+                                onClick: function onClick() {
+                                    console.log("MainNav");
+                                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Login["default"], {
+                                    }), document.querySelector("#root"));
+                                },
                                 children: "Login"
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
@@ -22077,7 +22106,7 @@ $RefreshReg$(_c, "MainNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6AEwr":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","react/cjs/react.development":"6YvXz","./Login":"fZGj2","../App":"9ZkeS"}],"6AEwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -23004,7 +23033,190 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"jxWkG":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"fZGj2":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$b4d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$b4d6.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _reactDom = require("react-dom");
+var _react = require("react");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Login.js", _this = void 0;
+//"Blueprint" for loginSwitch Button
+var RegisterSwitch = function RegisterSwitch() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+        type: "submit",
+        className: "btn btn-lg text-white w-100 bg-black",
+        onClick: function onClick(e) {
+            e.preventDefault(); //some custom action for backend
+        },
+        children: "Register"
+    }));
+}; //"Blueprint" for loginSwitch Button
+_c = RegisterSwitch;
+var LoginSwitch = function LoginSwitch() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+        type: "submit",
+        className: "btn btn-lg text-white w-100 bg-black",
+        onClick: function onClick(e) {
+            e.preventDefault(); //some custom action for backend
+        },
+        children: "Login"
+    }));
+};
+_c1 = LoginSwitch;
+var Login = function Login() {
+    var _useState = (0, _react.useState)(false), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isLogin = _useState2[0], setOpposite = _useState2[1]; //changes element based on useState boolean above (isLogin and setOpposite)
+    (0, _react.useEffect)(function() {
+        console.log(isLogin);
+        isLogin && (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RegisterSwitch, {
+        }), document.querySelector("#buttonSwitch"));
+        !isLogin && (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(LoginSwitch, {
+        }), document.querySelector("#buttonSwitch"));
+    });
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "w-100 bg-dark position-relative min-vh-100 d-flex flex-column",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                className: "d-flex flex-column gap-4 text-white login-modal shadow-lg p-5",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "d-flex flex-wrapflex-row",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                className: "btn w-50 rounded-left-side bg-black text-white border-0 p-2",
+                                onClick: function onClick(e) {
+                                    setOpposite(false); //useState hook
+                                    e.preventDefault();
+                                },
+                                children: "Login"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                className: "btn w-50 rounded-right-side bg-black text-white border-0 p-2",
+                                onClick: function onClick(e) {
+                                    setOpposite(true); //useState hook
+                                    e.preventDefault();
+                                },
+                                children: "Register"
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        className: "bg-black account-credentials rounded border-0 text-white",
+                        type: "email",
+                        name: "email",
+                        placeholder: "Email"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        className: "bg-black account-credentials rounded border-0 text-white",
+                        type: "password",
+                        name: "password",
+                        placeholder: "Password"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
+                        children: "Reset password"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                        id: "buttonSwitch",
+                        className: "w-100"
+                    })
+                ]
+            })
+        })
+    }));
+};
+_c2 = Login;
+var _default = Login;
+exports["default"] = _default;
+var _c, _c1, _c2;
+$RefreshReg$(_c, "RegisterSwitch");
+$RefreshReg$(_c1, "LoginSwitch");
+$RefreshReg$(_c2, "Login");
+
+  $parcel$ReactRefreshHelpers$b4d6.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"6AJmz":[function(require,module,exports) {
+var arrayWithHoles = require("./arrayWithHoles.js");
+var iterableToArrayLimit = require("./iterableToArrayLimit.js");
+var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
+var nonIterableRest = require("./nonIterableRest.js");
+function _slicedToArray(arr, i) {
+    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
+}
+module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{"./arrayWithHoles.js":"5CPOx","./iterableToArrayLimit.js":"2B9nq","./unsupportedIterableToArray.js":"cFxnT","./nonIterableRest.js":"9O5RF"}],"5CPOx":[function(require,module,exports) {
+function _arrayWithHoles(arr) {
+    if (Array.isArray(arr)) return arr;
+}
+module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"2B9nq":[function(require,module,exports) {
+function _iterableToArrayLimit(arr, i) {
+    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
+    if (_i == null) return;
+    var _arr = [];
+    var _n = true;
+    var _d = false;
+    var _s, _e;
+    try {
+        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
+            _arr.push(_s.value);
+            if (i && _arr.length === i) break;
+        }
+    } catch (err) {
+        _d = true;
+        _e = err;
+    } finally{
+        try {
+            if (!_n && _i["return"] != null) _i["return"]();
+        } finally{
+            if (_d) throw _e;
+        }
+    }
+    return _arr;
+}
+module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"cFxnT":[function(require,module,exports) {
+var arrayLikeToArray = require("./arrayLikeToArray.js");
+function _unsupportedIterableToArray(o, minLen) {
+    if (!o) return;
+    if (typeof o === "string") return arrayLikeToArray(o, minLen);
+    var n = Object.prototype.toString.call(o).slice(8, -1);
+    if (n === "Object" && o.constructor) n = o.constructor.name;
+    if (n === "Map" || n === "Set") return Array.from(o);
+    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
+}
+module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{"./arrayLikeToArray.js":"2QyYi"}],"2QyYi":[function(require,module,exports) {
+function _arrayLikeToArray(arr, len) {
+    if (len == null || len > arr.length) len = arr.length;
+    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
+    return arr2;
+}
+module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"9O5RF":[function(require,module,exports) {
+function _nonIterableRest() {
+    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
+}
+module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"jxWkG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23143,76 +23355,7 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"6AJmz":[function(require,module,exports) {
-var arrayWithHoles = require("./arrayWithHoles.js");
-var iterableToArrayLimit = require("./iterableToArrayLimit.js");
-var unsupportedIterableToArray = require("./unsupportedIterableToArray.js");
-var nonIterableRest = require("./nonIterableRest.js");
-function _slicedToArray(arr, i) {
-    return arrayWithHoles(arr) || iterableToArrayLimit(arr, i) || unsupportedIterableToArray(arr, i) || nonIterableRest();
-}
-module.exports = _slicedToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{"./arrayWithHoles.js":"5CPOx","./iterableToArrayLimit.js":"2B9nq","./unsupportedIterableToArray.js":"cFxnT","./nonIterableRest.js":"9O5RF"}],"5CPOx":[function(require,module,exports) {
-function _arrayWithHoles(arr) {
-    if (Array.isArray(arr)) return arr;
-}
-module.exports = _arrayWithHoles, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"2B9nq":[function(require,module,exports) {
-function _iterableToArrayLimit(arr, i) {
-    var _i = arr == null ? null : typeof Symbol !== "undefined" && arr[Symbol.iterator] || arr["@@iterator"];
-    if (_i == null) return;
-    var _arr = [];
-    var _n = true;
-    var _d = false;
-    var _s, _e;
-    try {
-        for(_i = _i.call(arr); !(_n = (_s = _i.next()).done); _n = true){
-            _arr.push(_s.value);
-            if (i && _arr.length === i) break;
-        }
-    } catch (err) {
-        _d = true;
-        _e = err;
-    } finally{
-        try {
-            if (!_n && _i["return"] != null) _i["return"]();
-        } finally{
-            if (_d) throw _e;
-        }
-    }
-    return _arr;
-}
-module.exports = _iterableToArrayLimit, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"cFxnT":[function(require,module,exports) {
-var arrayLikeToArray = require("./arrayLikeToArray.js");
-function _unsupportedIterableToArray(o, minLen) {
-    if (!o) return;
-    if (typeof o === "string") return arrayLikeToArray(o, minLen);
-    var n = Object.prototype.toString.call(o).slice(8, -1);
-    if (n === "Object" && o.constructor) n = o.constructor.name;
-    if (n === "Map" || n === "Set") return Array.from(o);
-    if (n === "Arguments" || /^(?:Ui|I)nt(?:8|16|32)(?:Clamped)?Array$/.test(n)) return arrayLikeToArray(o, minLen);
-}
-module.exports = _unsupportedIterableToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{"./arrayLikeToArray.js":"2QyYi"}],"2QyYi":[function(require,module,exports) {
-function _arrayLikeToArray(arr, len) {
-    if (len == null || len > arr.length) len = arr.length;
-    for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
-    return arr2;
-}
-module.exports = _arrayLikeToArray, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"9O5RF":[function(require,module,exports) {
-function _nonIterableRest() {
-    throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
-}
-module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
-
-},{}],"1FSJk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23291,7 +23434,7 @@ var Carousel = function Carousel() {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
             src: images[count].src,
             alt: "gallery",
-            className: "gallery-img d-block img-fluid"
+            className: "gallery-img d-block"
         })
     }));
 };
