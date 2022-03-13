@@ -25,7 +25,7 @@ const Carousel = () => {
       <img
         src={images[count].src}
         alt="gallery"
-        className="gallery-img d-block img-fluid"
+        className="gallery-img d-block"
       />
     </div>
   );

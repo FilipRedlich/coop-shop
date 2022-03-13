@@ -10398,6 +10398,18 @@ textarea.form-control-lg {
     display: none !important;
   }
 }
+.transform-z-3 {
+  transform: translateZ(3px) !important;
+}
+.z-index-3 {
+  z-index: 3 !important;
+}
+.z-index-1 {
+  z-index: 1;
+}
+.transform-z-1 {
+  transform: translateZ(1px);
+}
 .remove-all-padding {
   padding: 0 !important;
 }
