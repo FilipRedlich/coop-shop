@@ -1,29 +1,6 @@
 @import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
-
-.remove-all-padding {
-  padding: 0 !important;
-}
-.min-rem {
-  min-width: 20rem;
-}
-.nav-products {
-  border-radius: 0 0 1vh 1vh;
-}
-.bg-black {
-  background: $black;
-}
-.bg-transparent-custom {
-  background: #0000007c;
-}
-.blur-bg {
-  backdrop-filter: blur(5px);
-}
-.product-nav {
-  backdrop-filter: blur(5px);
-}
-.min-h-rem {
-  min-height: 20rem;
-}
+@import '../../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import './custom.scss';
 .hide-element{
    transform: translateY(-100rem) translateX(-50%);
    left: 50%;
@@ -32,10 +9,9 @@
 }
 .gallery{
     .gallery-img{
+        width: 100%;
     max-width: 30rem;
     margin: 10rem auto 0 auto;
     }
 }
-.transition-5{
-    transition: .5s;
-}
+

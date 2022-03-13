@@ -1,22 +1,28 @@
 import React from "react";
-import { render } from "react-dom"
+import { render } from "react-dom";
 
 //imported components
 import MainNav from "./Components/MainNav";
-import ProductsNav from './Components/ProductsNav';
+import ProductsNav from "./Components/ProductsNav";
 import MainContent from "./Components/MainContent";
 
-
-const App = () => {
+const NavApp = () => {
   return (
-    <div>
+    <>
       <MainNav />
       <ProductsNav />
-      <MainContent/>
-      
-
-    </div>
+    </>
   );
 };
 
-render(<App />, document.querySelector("#root"));
+const MainApp = () => {
+  return (
+    <>
+      <MainContent />
+    </>
+  );
+};
+render(<NavApp />, document.querySelector("#navRoot"));
+render(<MainApp />, document.querySelector("#root"));
+
+export default MainApp;

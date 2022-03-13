@@ -1,0 +1,67 @@
+.transform-z-3 {
+  transform: translateZ(3px) !important;
+}
+.transform-z-4 {
+  transform: translateZ(4px);
+  z-index: 4;
+}
+.transform-z-0 {
+  transform: translateZ(0);
+}
+.z-index-3 {
+  z-index: 3 !important;
+}
+.z-index-1 {
+  z-index: 1;
+}
+.transform-z-1 {
+  transform: translateZ(1px);
+}
+.remove-all-padding {
+  padding: 0 !important;
+}
+.min-rem {
+  min-width: 20rem;
+}
+.nav-products {
+  border-radius: 0 0 1vh 1vh;
+}
+.bg-black {
+  background: $black;
+}
+.bg-transparent-custom {
+  background: hsla(0, 0%, 0%, 0.486);
+}
+.blur-bg {
+  backdrop-filter: blur(5px);
+}
+.product-nav {
+  backdrop-filter: blur(5px); overflow: auto;
+}
+.min-h-rem {
+  min-height: 20rem;
+}
+.transition-5 {
+  transition: 0.5s;
+}
+
+.login-modal {
+  width: clamp(20rem, 40rem, 80%);
+  //min-width: clamp(30%, 40rem, 60%);
+  max-width: 50rem;
+  margin: 5rem auto 0 auto;
+  input {
+    padding: 1rem;
+    &:-webkit-autofill {
+      -webkit-box-shadow: 0 0 0 50px rgb(0, 0, 0) inset; /* Change the color to your own background color */
+      -webkit-text-fill-color: rgb(255, 255, 255);
+    }
+  }
+}
+
+.rounded-left-side {
+  border-radius: 10vh 0 0 10vh;
+}
+.rounded-right-side {
+  border-radius: 0 10vh 10vh 0;
+}

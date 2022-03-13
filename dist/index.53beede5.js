@@ -22012,7 +22012,7 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
 var MainNav = function MainNav() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
-        className: "w-100 bg-black d-flex flex-wrap justify-content-between gap-3 p-2",
+        className: "w-100 bg-black position-relative z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
             className: "row m-auto w-100 gap-3",
             children: [
@@ -23029,7 +23029,7 @@ var ProductNav = function ProductNav() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
-                className: "product-nav bg-transparent-custom position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
+                className: "product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
@@ -23056,7 +23056,7 @@ var ProductNav = function ProductNav() {
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
                 id: "categories",
-                className: isActive ? "hide-element position-fixed  p-3 mx-auto" : "position-fixed rounded top-25 text-white w-75 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem",
+                className: isActive ? "hide-element position-fixed z-index-1 p-3 mx-auto" : "position-fixed rounded top-25 text-white w-75 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
                         className: "text-center",
@@ -23306,7 +23306,7 @@ $RefreshReg$(_c, "Carousel");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","usehooks-ts":"dmUe4"}],"bBbLR":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","usehooks-ts":"dmUe4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bBbLR":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
