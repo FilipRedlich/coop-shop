@@ -48,11 +48,11 @@ const ProductNav = () => {
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
           <div className="text-left categories  col-3 no-gutters gap-1">
-            {% for cat in cat_list %}
+            for cat in cat_list {
             <button className="btn categories-button mx-auto text-white  bg-dark ">
-              {{ cat.name }}
+              cat.name
             </button>
-            {% endfor %}
+            }
           </div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">
