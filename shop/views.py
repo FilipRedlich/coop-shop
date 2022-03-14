@@ -15,7 +15,7 @@ class IndexView(generic.ListView):
         return Products.objects.order_by('name')
 
 class CatView(TemplateView):
-    template_name = 'shop/build/index.html'
+    template_name = 'shop/build/indextest.html'
     #context_object_name = 'cat_list'
 
     #insert to db
@@ -28,6 +28,9 @@ class CatView(TemplateView):
         context['users'] = Users.objects.all()
         context['basket'] = Basket.objects.all()
         return context
+
+    def insert_data(name):
+        Categories.objects.create(name=name)
     
     #def get_queryset(self):
     #    return Categories.objects.order_by('name')
