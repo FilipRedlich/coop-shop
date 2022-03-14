@@ -23,8 +23,10 @@ class CatView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        context['cats'] = Categories.objects.all()
-        context['prods'] = Products.objects.all()
+        context['categories'] = Categories.objects.all()
+        context['products'] = Products.objects.all()
+        context['users'] = Users.objects.all()
+        context['basket'] = Basket.objects.all()
         return context
     
     #def get_queryset(self):
