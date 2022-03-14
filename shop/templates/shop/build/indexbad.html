@@ -13,6 +13,12 @@
   <body class="bg-dark">
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
-    <p>{{ products.name }}</p>
+    
+
+      {% for product in latest_question_list %}
+          <a href=# title="get gud">{{ product.name }}</a>
+      {% endfor %}
+
+
   </body>
 </html>
