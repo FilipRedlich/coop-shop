@@ -7,9 +7,11 @@ from .models import Users,Basket,Categories,Products
 
 
 class IndexView(generic.ListView):
-    model = Products
+    #model = Products
     template_name = 'shop/build/indexbad.html'
-
+    context_object_name = 'latest_question_list'
+    def get_queryset(self):
+        return Products.objects.order_by('name')
 
     '''
     context_object_name = 'latest_question_list'
