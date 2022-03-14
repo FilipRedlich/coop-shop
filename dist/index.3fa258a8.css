@@ -13826,6 +13826,21 @@ textarea.form-control-lg {
   backdrop-filter: blur(5px);
   overflow: auto;
 }
+.product-nav::-webkit-scrollbar-track {
+  background: rgba(0, 0, 0, 0.486);
+}
+.product-nav::-webkit-scrollbar-thumb {
+  background: #424242;
+  transition: 0.5s;
+}
+.product-nav::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+  transition: 0.5s;
+}
+.min-vh-200 {
+  min-height: 250rem !important;
+  margin: -30rem 0 0 0;
+}
 .min-h-rem {
   min-height: 20rem;
 }
@@ -13850,6 +13865,60 @@ textarea.form-control-lg {
 }
 .rounded-right-side {
   border-radius: 0 10vh 10vh 0;
+}
+.categories-products {
+  min-height: 20rem;
+  overflow-y: scroll !important;
+}
+.categories-button {
+  min-height: 3rem;
+  font-size: 1rem;
+}
+.categories {
+  overflow-y: scroll;
+  max-height: 25rem;
+  max-width: 10rem;
+}
+.categories::-webkit-scrollbar-track {
+  background: #212529;
+}
+.categories::-webkit-scrollbar-thumb {
+  background: #424242;
+  transition: 0.5s;
+}
+.categories::-webkit-scrollbar-thumb:hover {
+  background: #fff;
+  transition: 0.5s;
+}
+.categories-wrapper {
+  max-height: 10rem !important;
+  margin: 60vh 0 0 0 !important;
+}
+@media screen and (max-width: 768px) {
+  .categories {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap !important;
+    min-width: 100% !important;
+    max-height: 5rem !important;
+    overflow-y: hidden !important;
+    overflow-x: scroll !important;
+  }
+
+  .product-nav {
+    flex-direction: column !important;
+    overflow-x: scroll !important;
+    overflow-y: hidden !important;
+    max-height: 5rem;
+  }
+}
+::-webkit-scrollbar {
+  background: #212529;
+  width: 0.45rem;
+}
+::-webkit-scrollbar-thumb {
+  background: #dc3545;
+  border-radius: 15vh;
 }
 .hide-element {
   transform: translateY(-100rem) translateX(-50%);

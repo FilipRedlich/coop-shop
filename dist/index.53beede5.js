@@ -23266,80 +23266,98 @@ var ProductNav = function ProductNav() {
                     })
                 ]
             }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
                 id: "categories",
-                className: isActive ? "hide-element position-fixed z-index-1 p-3 mx-auto" : "position-fixed rounded top-25 text-white w-75 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem",
-                children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                        className: "text-center",
-                        children: "Categories"
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "d-flex flex-wrap flex-row w-100",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                className: "text-left d-flex flex-column w-25 gap-1",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                        className: "btn text-white w-50 bg-dark ",
-                                        children: "Podzespo\u0142y komputerowe"
-                                    })
-                                ]
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                className: "bg-dark w-75 d-flex",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
-                                        children: [
-                                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                                children: "dsds"
-                                            }),
-                                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                                children: "dsds"
-                                            }),
-                                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                                children: "dsds"
-                                            })
-                                        ]
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
-                                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                            children: "dsdsd"
+                className: isActive ? "hide-element w-100 position-fixed z-index-1 mx-auto" : "position-fixed rounded text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "row categories-wrapper gap-3 p-2 w-100 mt-5",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "text-left categories  col-3 no-gutters gap-1",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto   text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "bg-dark col-md categories-products mx-auto d-flex",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                            children: "dsds"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                            children: "dsds"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                            children: "dsds"
                                         })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
+                                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
+                                        children: "dsdsd"
                                     })
-                                ]
-                            })
-                        ]
-                    })
-                ]
+                                })
+                            ]
+                        })
+                    ]
+                })
             })
         ]
     }));

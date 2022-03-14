@@ -1,5 +1,4 @@
 import { useState } from "react";
-
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
   const ToggleClass = () => {
@@ -33,39 +32,57 @@ const ProductNav = () => {
         id="categories"
         className={
           isActive
-            ? "hide-element position-fixed z-index-1 p-3 mx-auto"
-            : "position-fixed rounded top-25 text-white w-75 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg p-3 mx-auto transition-5 min-h-rem"
+            ? "hide-element w-100 position-fixed z-index-1 mx-auto"
+            : "position-fixed rounded text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem"
         }
       >
-        <h1 className="text-center">Categories</h1>
-        <div className="d-flex flex-wrap flex-row w-100">
-          <div className="text-left d-flex flex-column w-25 gap-1">
-            <button className="btn text-white w-50 bg-dark ">
+        <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
+          <div className="text-left categories  col-3 no-gutters gap-1">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto   text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn text-white w-50 bg-dark ">
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
+              Podzespoły komputerowe
+            </button>
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
+              Podzespoły komputerowe
+            </button>
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
+              Podzespoły komputerowe
+            </button>
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
+              Podzespoły komputerowe
+            </button>
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
+              Podzespoły komputerowe
+            </button>
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
+              Podzespoły komputerowe
+            </button>
+            <button className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
           </div>
-          <div className="bg-dark w-75 d-flex">
+
+          <div className="bg-dark col-md categories-products mx-auto d-flex">
             <ul>
               <li>dsds</li>
               <li>dsds</li>
@@ -74,6 +91,7 @@ const ProductNav = () => {
             <ul>
               <li>dsdsd</li>
             </ul>
+            
           </div>
         </div>
       </section>
