@@ -22017,17 +22017,44 @@ $parcel$ReactRefreshHelpers$870d.prelude(module);
 try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
-var _react2 = require("react/cjs/react.development");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
 var MainNav = function MainNav() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
         className: "w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2",
@@ -22040,9 +22067,9 @@ var MainNav = function MainNav() {
                         className: "text-white text-center",
                         role: "button",
                         onClick: function onClick() {
-                            console.log('MainNav');
+                            console.log("MainNav");
                             (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_App["default"], {
-                            }), document.querySelector('#root'));
+                            }), document.querySelector("#root"));
                         },
                         children: "Pestka"
                     })
@@ -22083,10 +22110,6 @@ var MainNav = function MainNav() {
                                     }), document.querySelector("#root"));
                                 },
                                 children: "Login"
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: "btn text-white bg-dark",
-                                children: "Register"
                             })
                         ]
                     })
@@ -22106,7 +22129,7 @@ $RefreshReg$(_c, "MainNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","react/cjs/react.development":"6YvXz","./Login":"fZGj2","../App":"9ZkeS"}],"6AEwr":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","@babel/runtime/helpers/typeof":"jgQjt"}],"6AEwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -23216,6 +23239,16 @@ function _nonIterableRest() {
 }
 module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
+},{}],"jgQjt":[function(require,module,exports) {
+function _typeof(obj1) {
+    return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+        return typeof obj;
+    } : function(obj) {
+        return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(obj1);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
 },{}],"jxWkG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -23228,11 +23261,22 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = void 0;
+exports.watchForMove = exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
+var watchForMove = function watchForMove(el) {
+    var watchedElement = document.querySelector('.gallery');
+    var observer = new IntersectionObserver(function(e) {
+        console.log(e);
+    }, {
+        rootMargin: '0px 0px 0px 0px',
+        threshold: 1
+    });
+    observer.observe(watchedElement);
+};
+exports.watchForMove = watchForMove;
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
     var ToggleClass = function ToggleClass() {
@@ -23423,6 +23467,7 @@ exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
+var _ProductsNav = require("./ProductsNav");
 var _react = require("react");
 var _usehooksTs = require("usehooks-ts");
 var _jsxRuntime = require("react/jsx-runtime");
@@ -23449,6 +23494,7 @@ var Carousel = function Carousel() {
     }, 3000);
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
         className: "bg-black w-75 p-5 min-vh-100 m-auto gallery",
+        onClick: _ProductsNav.watchForMove,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
             src: images[count].src,
             alt: "gallery",
@@ -23467,7 +23513,7 @@ $RefreshReg$(_c, "Carousel");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","usehooks-ts":"dmUe4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bBbLR":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","usehooks-ts":"dmUe4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ProductsNav":"jxWkG"}],"bBbLR":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {

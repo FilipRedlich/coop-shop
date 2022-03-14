@@ -1,5 +1,6 @@
 import image1 from "../../images/undraw_dev_productivity_re_fylf.svg";
 import image2 from "../../images/undraw_software_engineer_re_fyew.svg";
+import { watchForMove } from "./ProductsNav";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
 const images = [
@@ -21,11 +22,15 @@ const Carousel = () => {
   }, 3000);
 
   return (
-    <div className="bg-black w-75 p-5 min-vh-100 m-auto gallery">
+    <div className="bg-black w-75 p-5 min-vh-100 m-auto gallery"
+      onClick={watchForMove}
+    >
       <img
         src={images[count].src}
         alt="gallery"
         className="gallery-img d-block"
+      
+        
       />
     </div>
   );
