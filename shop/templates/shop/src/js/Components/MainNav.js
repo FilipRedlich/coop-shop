@@ -23,7 +23,7 @@ const MainNav = () => {
               console.log('MainNav')
             render(<MainApp />, document.querySelector('#root'))
           }}
-          >{{ products.name }}</h1>
+          >SKLEP</h1>
           
         </div>
 
