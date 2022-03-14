@@ -23,7 +23,7 @@ const MainNav = () => {
               console.log('MainNav')
             render(<MainApp />, document.querySelector('#root'))
           }}
-          >Pestka</h1>
+          >{{ products.name }}</h1>
           
         </div>
 
