@@ -8,7 +8,7 @@ from .models import Users,Basket,Categories,Products
 
 class IndexView(generic.ListView):
     model = Products
-    template_name = 'shop/build/index.html'
+    template_name = 'shop/build/indexbad.html'
 
 
     '''
