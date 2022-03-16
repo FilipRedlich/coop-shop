@@ -22017,17 +22017,44 @@ $parcel$ReactRefreshHelpers$870d.prelude(module);
 try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
-var _react2 = require("react/cjs/react.development");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
 var MainNav = function MainNav() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
         className: "w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2",
@@ -22106,7 +22133,7 @@ $RefreshReg$(_c, "MainNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","react/cjs/react.development":"6YvXz"}],"6AEwr":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","@babel/runtime/helpers/typeof":"jgQjt"}],"6AEwr":[function(require,module,exports) {
 'use strict';
 module.exports = require('./cjs/react-jsx-runtime.development.js');
 
@@ -23215,6 +23242,16 @@ function _nonIterableRest() {
     throw new TypeError("Invalid attempt to destructure non-iterable instance.\nIn order to be iterable, non-array objects must have a [Symbol.iterator]() method.");
 }
 module.exports = _nonIterableRest, module.exports.__esModule = true, module.exports["default"] = module.exports;
+
+},{}],"jgQjt":[function(require,module,exports) {
+function _typeof(obj1) {
+    return module.exports = _typeof = "function" == typeof Symbol && "symbol" == typeof Symbol.iterator ? function(obj) {
+        return typeof obj;
+    } : function(obj) {
+        return obj && "function" == typeof Symbol && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj;
+    }, module.exports.__esModule = true, module.exports["default"] = module.exports, _typeof(obj1);
+}
+module.exports = _typeof, module.exports.__esModule = true, module.exports["default"] = module.exports;
 
 },{}],"jxWkG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
