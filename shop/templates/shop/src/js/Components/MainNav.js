@@ -1,7 +1,7 @@
 
 import react from "react";
 import { render } from "react-dom";
-import { useState } from "react/cjs/react.development";
+import { useState } from "react";
 
 
 //imported components
