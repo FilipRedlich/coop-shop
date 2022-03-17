@@ -3,3 +3,5 @@ node_modules
 .git
 staticfiles
 .parcel-cache
+shop/__pycache__
+shop/migrations
