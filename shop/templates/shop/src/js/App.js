@@ -6,11 +6,14 @@ import MainNav from "./Components/MainNav";
 import ProductsNav from "./Components/ProductsNav";
 import MainContent from "./Components/MainContent";
 
+
 const NavApp = () => {
   return (
     <>
+     
       <MainNav />
-      <ProductsNav />
+        <ProductsNav />
+       
     </>
   );
 };
