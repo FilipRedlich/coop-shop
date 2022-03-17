@@ -15,7 +15,7 @@ class IndexView(generic.ListView):
         return Products.objects.order_by('name')
 
 class CatView(TemplateView):
-    template_name = 'shop/build/index.html'
+    template_name = 'shop/build/indextest.html'
     #context_object_name = 'cat_list'
 
     #insert to db
@@ -28,9 +28,6 @@ class CatView(TemplateView):
         context['users'] = Users.objects.all()
         context['basket'] = Basket.objects.all()
         return context
-
-    def insert_into_cat(name):
-        Categories.objects.create(name=name)
     
     #def get_queryset(self):
     #    return Categories.objects.order_by('name')
@@ -43,6 +40,20 @@ class CatView(TemplateView):
         return Question.objects.order_by('-pub_date')[:5]
     '''
 
+def insert_into_cat(name):
+    Categories.objects.create(name=name)
+
+def get_related_deltas(self,epk):
+    mystring = ""
+    if not self.get_error_code_delta(epk):
+        return mystring
+    else:
+        for i in self.get_listof_outage():
+            item = i.error_code.all()
+            for x in item:
+                if epk == x.id:
+                    mystring= mystring +" "+str(i.delta())
+    return mystring  
 '''
 class DetailView(generic.DetailView):
     model = Question
