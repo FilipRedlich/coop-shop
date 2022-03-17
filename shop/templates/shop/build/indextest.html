@@ -13,15 +13,15 @@
   <body class="bg-dark">
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
-    <script>var a='{{cat_list}}';console.log(a);console.log(typeof(a));
-    var mylist = '{{cat_list}}'.split(',');
+    <script>var a='{{categories}}';console.log(a);console.log(typeof(a));
+    var mylist = '{{categories}}'.split(',');
     for(i = 0; i < mylist.length; i++){
         console.log(mylist[i])
         console.log(typeof(mylist))
     };
     </script>
       {{prods}}
-      {% for cat in cats %}
+      {% for cat in categories %}
           <p>{{ cat.name }}</p>
       {% endfor %}
 
