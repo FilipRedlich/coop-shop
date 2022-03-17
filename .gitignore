@@ -8,3 +8,5 @@ shop/migrations
 mysite/__pycache__
 shop/templatetags/__pycache__
 django
+__pycache__
+.pyc
