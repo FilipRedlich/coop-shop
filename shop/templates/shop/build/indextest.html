@@ -1,4 +1,5 @@
 {% load static %}
+{% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
   <head>
@@ -25,6 +26,6 @@
           <p>{{ cat.name }}</p>
       {% endfor %}
 
-
+      {% insert_into_cat_tag "indexinserttest"  %}
   </body>
 </html>
