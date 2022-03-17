@@ -29,9 +29,8 @@ class CatView(TemplateView):
         context['basket'] = Basket.objects.all()
         return context
 
-    def insert_data(name):
-        if(name!=""):
-            Categories.objects.create(name=name)
+    def insert_into_cat(name):
+        Categories.objects.create(name=name)
     
     #def get_queryset(self):
     #    return Categories.objects.order_by('name')
