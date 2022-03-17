@@ -1,6 +1,9 @@
 from django import template
 
+from shop.views import insert_into_cat
+
 register = template.Library()
 
-def insert_into_cat(name):
-    return insert_into_cat(name)
+@register.simple_tag
+def insert_into_cat_tag(name):
+    insert_into_cat(name)
