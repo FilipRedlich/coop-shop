@@ -14,18 +14,14 @@
   <body class="bg-dark">
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
-    <script>var a='{{categories}}';console.log(a);console.log(typeof(a));
-    var mylist = '{{categories}}'.split(',');
-    for(i = 0; i < mylist.length; i++){
-        console.log(mylist[i])
-        console.log(typeof(mylist))
-    };
+    <script>
+    "{% insert_into_cat 'jstst'  %}"
     </script>
       {{prods}}
       {% for cat in categories %}
           <p>{{ cat.name }}</p>
       {% endfor %}
 
-      {% insert_into_cat "huh"  %}
+      {% insert_into_cat "htmltest"  %}
   </body>
 </html>
