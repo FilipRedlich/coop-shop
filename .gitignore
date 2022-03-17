@@ -10,3 +10,4 @@ shop/templatetags/__pycache__
 django
 __pycache__
 .pyc
+*.pyc
