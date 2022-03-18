@@ -7,14 +7,7 @@ from django.views.generic.base import TemplateView
 from .models import Users,Basket,Categories,Products
 
 
-class IndexView(generic.ListView):
-    #model = Products
-    template_name = 'shop/build/index.html'
-    context_object_name = 'latest_question_list'
-    def get_queryset(self):
-        return Products.objects.order_by('name')
-
-class CatView(TemplateView):
+class IndexView(TemplateView):
     template_name = 'shop/build/index.html'
     #context_object_name = 'cat_list'
 
@@ -26,7 +19,27 @@ class CatView(TemplateView):
         context['basket'] = Basket.objects.all()
         return context
 
+class TestView(TemplateView):
+    template_name = 'shop/build/indextest.html'
+    #context_object_name = 'cat_list'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        context['categories'] = Categories.objects.all()
+        context['products'] = Products.objects.all()
+        context['users'] = Users.objects.all()
+        context['basket'] = Basket.objects.all()
+        
+        return context
+
+'''
+class IndexView(generic.ListView):
+    #model = Products
+    template_name = 'shop/build/index.html'
+    context_object_name = 'latest_question_list'
+    def get_queryset(self):
+        return Products.objects.order_by('name')
+'''
 '''
 def insert_into_cat(name):
     Categories.objects.create(name=name)
