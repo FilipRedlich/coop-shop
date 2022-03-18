@@ -7,6 +7,7 @@ register = template.Library()
 
 #insert into cat db
 def insert_into_cat(name):
+    #turned off for testing
     return 0
     Categories.objects.create(name=name)
 
