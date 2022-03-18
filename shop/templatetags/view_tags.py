@@ -11,3 +11,5 @@ def insert_into_cat(name):
 
 def registerUser(login,password):
     Users.objects.create(login=login,password=sha256(password))
+
+    #Categories.objects.get
