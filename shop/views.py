@@ -25,11 +25,14 @@ class TestView(TemplateView):
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
+        #for models with 1 field all() return first str field
         context['categories'] = Categories.objects.all()
-        context['products'] = Products.objects.all()
-        context['users'] = Users.objects.all()
-        context['basket'] = Basket.objects.all()
-        
+        #models with many fields use values_list() to get values of all fields
+        context['products'] = Products.objects.values_list()
+        context['users'] = Users.objects.values_list
+        context['basket'] = Basket.objects.values_list
+        #call function from models and pass it to template via gall
+        context['gall'] = Products.return_all()
         return context
 
 '''

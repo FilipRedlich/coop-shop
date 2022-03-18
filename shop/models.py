@@ -24,6 +24,8 @@ class Products(models.Model):
     rating=models.FloatField(default=3.0)
     def __str__(self):
         return self.name
+    def return_all():
+        return Products.objects.values_list()
 
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)

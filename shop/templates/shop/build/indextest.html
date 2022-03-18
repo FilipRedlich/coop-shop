@@ -17,9 +17,11 @@
     <script>
     "{% insert_into_cat 'jstst'  %}"
     </script>
-      {{prods}}
+      {{products}}
+      <br>
+      {{gall}}
       {% for cat in categories %}
-          <p>{{ cat.name }}</p>
+          <p>{{ cat.1 }}</p>
       {% endfor %}
 
       {% insert_into_cat "htmltest"  %}
