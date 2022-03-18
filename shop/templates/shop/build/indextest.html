@@ -29,8 +29,16 @@
       {% for prod in products %}
           <p>{{ prod.5 }}</p>
       {% endfor %}
-      <!--loop categories and return first string field-->
-      <h4>loop categories and return first string field</h4>
+      <!--made this obsolete after making db universal
+      <!-loop categories and return first string field when .all()->
+      <h4>loop categories and return first string field when .all()</h4>
+      {% for cat in categories %}
+          <p>{{ cat }}</p>
+      {% endfor %}
+      -->
+
+      <!--loop categories and return all rows-->
+      <h4>loop categories and return all rows</h4>
       {% for cat in categories %}
           <p>{{ cat }}</p>
       {% endfor %}
