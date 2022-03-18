@@ -14,8 +14,10 @@ class IndexView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         #for models with 1 field all() return first str field
-        context['categories'] = Categories.objects.all()
+        #context['categories'] = Categories.objects.all()
+
         #models with many fields use values_list() to get values of all fields
+        context['categories'] = Categories.objects.values_list()
         context['products'] = Products.objects.values_list()
         context['users'] = Users.objects.values_list
         context['basket'] = Basket.objects.values_list
@@ -30,8 +32,10 @@ class TestView(TemplateView):
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
         #for models with 1 field all() return first str field
-        context['categories'] = Categories.objects.all()
+        #context['categories'] = Categories.objects.all()
+        
         #models with many fields use values_list() to get values of all fields
+        context['categories'] = Categories.objects.values_list()
         context['products'] = Products.objects.values_list()
         context['users'] = Users.objects.values_list
         context['basket'] = Basket.objects.values_list
