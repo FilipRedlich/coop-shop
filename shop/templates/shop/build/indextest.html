@@ -17,18 +17,21 @@
     <script>
     "{% insert_into_cat 'jstst'  %}"
     </script>
+
       <!-- select from products row[0] field[1] -->
       <h4>select from products row[0] field[1]</h4>
       {{products.0.1}}
-      <br>
+
       <!--select * from procducts-->
       <h4>select * from procducts</h4>
       {{gall}}
+      
       <!--loop products and return 5th field-->
       <h4>loop products and return 5th field</h4>
       {% for prod in products %}
           <p>{{ prod.5 }}</p>
       {% endfor %}
+
       <!--made this obsolete after making db universal
       <!-loop categories and return first string field when .all()->
       <h4>loop categories and return first string field when .all()</h4>
