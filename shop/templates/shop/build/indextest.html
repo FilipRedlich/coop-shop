@@ -17,11 +17,17 @@
     <script>
     "{% insert_into_cat 'jstst'  %}"
     </script>
-      {{products}}
+    <!-- select from products row[0] field[1] -->
+      {{products.0.1}}
       <br>
+      <!--select * from procducts-->
       {{gall}}
+      <!--loop -->
+      {% for prod in products %}
+          <p>{{ prod.5 }}</p>
+      {% endfor %}
       {% for cat in categories %}
-          <p>{{ cat.1 }}</p>
+          <p>{{ cat }}</p>
       {% endfor %}
 
       {% insert_into_cat "htmltest"  %}
