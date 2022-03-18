@@ -18,19 +18,19 @@
     "{% insert_into_cat 'jstst'  %}"
     </script>
       <!-- select from products row[0] field[1] -->
-      <h5>select from products row[0] field[1]</h5>
+      <h4>select from products row[0] field[1]</h4>
       {{products.0.1}}
       <br>
       <!--select * from procducts-->
-      <h5>select * from procducts</h5>
+      <h4>select * from procducts</h4>
       {{gall}}
       <!--loop products and return 5th field-->
-      <h5>loop products and return 5th field</h5>
+      <h4>loop products and return 5th field</h4>
       {% for prod in products %}
           <p>{{ prod.5 }}</p>
       {% endfor %}
       <!--loop categories and return first string field-->
-      <h5>loop categories and return first string field</h5>
+      <h4>loop categories and return first string field</h4>
       {% for cat in categories %}
           <p>{{ cat }}</p>
       {% endfor %}
