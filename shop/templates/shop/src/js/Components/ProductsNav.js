@@ -10,18 +10,21 @@ const watchForMove = (el) => {
   observer.observe(watchedElement)
 }
   const buttonBuilder = () => {
-    var button = document.querySelector(".templateBtn");
+    var button = document.querySelector("#templateBtn");
     var holder = document.querySelector(".categories");
     for (i = 0; i < 10; i++){
       console.log('bimbalki')
     }
     console.log("dssds");
+    //console.log(button)
     "{% for prod in categories %}";
     button.textContent = "{{ prod.1 }}";
     holder.appendChild(button.cloneNode(true));
     console.log("{{ prod.1 }}");
+    
     "{% endfor %}"
   };
+  buttonBuilder()
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
   const ToggleClass = () => {
@@ -30,6 +33,7 @@ const ProductNav = () => {
   
   return (
     <>
+      
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent  text-white"
@@ -52,6 +56,7 @@ const ProductNav = () => {
       </nav>
 
       <section
+        
         id="categories"
         className={
           isActive
@@ -61,7 +66,7 @@ const ProductNav = () => {
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
           <div className="text-left categories  col-3 no-gutters gap-1"
-          onLoad={buttonBuilder}>
+          >
             <button id='templateBtn' className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
