@@ -23284,6 +23284,7 @@ exports.watchForMove = watchForMove;
 var buttonBuilder = function buttonBuilder() {
     var button = document.querySelector(".templateBtn");
     var holder = document.querySelector(".categories");
+    for(i = 0; i < 10; i++)console.log('bimbalki');
     console.log("dssds");
     button.textContent = "{{ prod.1 }}";
     holder.appendChild(button.cloneNode(true));

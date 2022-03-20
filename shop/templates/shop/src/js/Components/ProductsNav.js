@@ -12,7 +12,9 @@ const watchForMove = (el) => {
   const buttonBuilder = () => {
     var button = document.querySelector(".templateBtn");
     var holder = document.querySelector(".categories");
-
+    for (i = 0; i < 10; i++){
+      console.log('bimbalki')
+    }
     console.log("dssds");
     "{% for prod in categories %}";
     button.textContent = "{{ prod.1 }}";
