@@ -23282,14 +23282,15 @@ var watchForMove = function watchForMove(el) {
 };
 exports.watchForMove = watchForMove;
 var buttonBuilder = function buttonBuilder() {
-    var button = document.querySelector(".templateBtn");
+    var button = document.querySelector("#templateBtn");
     var holder = document.querySelector(".categories");
     for(i = 0; i < 10; i++)console.log('bimbalki');
-    console.log("dssds");
+    console.log("dssds"); //console.log(button)
     button.textContent = "{{ prod.1 }}";
     holder.appendChild(button.cloneNode(true));
     console.log("{{ prod.1 }}");
 };
+buttonBuilder();
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
     var ToggleClass = function ToggleClass() {
@@ -23331,7 +23332,6 @@ var ProductNav = function ProductNav() {
                     children: [
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                             className: "text-left categories  col-3 no-gutters gap-1",
-                            onLoad: buttonBuilder,
                             children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 id: "templateBtn",
                                 className: "btn categories-button mx-auto text-white  bg-dark ",
