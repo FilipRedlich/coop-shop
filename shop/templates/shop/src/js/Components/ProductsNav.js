@@ -8,7 +8,18 @@ const watchForMove = (el) => {
       threshold: 1.0
     })
   observer.observe(watchedElement)
-  }
+}
+  const buttonBuilder = () => {
+    var button = document.querySelector(".templateBtn");
+    var holder = document.querySelector(".categories");
+
+    console.log("dssds");
+    ("{% for prod in categories %}");
+    button.textContent = "{{ prod.1 }}";
+    holder.appendChild(button.cloneNode(true));
+    console.log("{{ prod.1 }}");
+    ("{% endfor %}");
+  };
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
   const ToggleClass = () => {
@@ -47,49 +58,12 @@ const ProductNav = () => {
         }
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
-          <div className="text-left categories  col-3 no-gutters gap-1">
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
+          <div className="text-left categories  col-3 no-gutters gap-1"
+          onLoad={buttonBuilder}>
+            <button id='templateBtn' className="btn categories-button mx-auto text-white  bg-dark ">
               Podzespoły komputerowe
             </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto   text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
+            
           </div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">
