@@ -14,11 +14,11 @@ const watchForMove = (el) => {
     var holder = document.querySelector(".categories");
 
     console.log("dssds");
-    ("{% for prod in categories %}");
+    "{% for prod in categories %}";
     button.textContent = "{{ prod.1 }}";
     holder.appendChild(button.cloneNode(true));
     console.log("{{ prod.1 }}");
-    ("{% endfor %}");
+    "{% endfor %}"
   };
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
