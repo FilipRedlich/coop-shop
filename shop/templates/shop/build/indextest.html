@@ -15,7 +15,9 @@
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
     <script>
-    "{% insert_into_cat 'jstst'  %}"
+      "{% for prod in categories %}"
+          console.log("{{ prod.1 }}");
+      "{% endfor %}"
     </script>
 
       <!-- select from products row[0] field[1] -->
