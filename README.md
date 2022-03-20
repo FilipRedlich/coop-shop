@@ -1,3 +1,3 @@
-link: https://py-coop.herokuapp.com
-testing: https://py-coop.herokuapp.com/test/
-admin: https://py-coop.herokuapp.com/admin    pass: root 321
+link: https://py-coop.herokuapp.com <br>
+testing: https://py-coop.herokuapp.com/test/ <br>
+admin: https://py-coop.herokuapp.com/admin    pass: root 321 <br>
