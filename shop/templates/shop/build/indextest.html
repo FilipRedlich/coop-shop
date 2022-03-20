@@ -14,10 +14,29 @@
   <body class="bg-dark">
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
+    mj
+    <button class="template">Button</button>
     <script>
-      "{% for prod in categories %}"
-          console.log("{{ prod.1 }}");
+
+      const buttonBuilder = () =>{
+        var button = document.querySelector('.template');
+        var cloned = button.cloneNode(true);
+        var holder = document.querySelector('#root')
+        
+
+       
+          console.log('dssds')
+        "{% for prod in categories %}"
+         button.textContent = "{{ prod.1 }}";
+         holder.appendChild(button.cloneNode(true))
+        console.log("{{ prod.1 }}");
       "{% endfor %}"
+          
+          
+        
+  
+      }
+      buttonBuilder()
     </script>
 
       <!-- select from products row[0] field[1] -->
@@ -59,8 +78,6 @@
         (23, 'huh') 
       -->
 
-      <!-- turned off to not make infinite inserts into db 
-      {% insert_into_cat "<script>console.log('hacked')</script>"  %}
-      {% registerUser "test" "test" %} -->
+
   </body>
 </html>
