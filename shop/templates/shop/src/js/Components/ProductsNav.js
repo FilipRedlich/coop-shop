@@ -1,4 +1,5 @@
 import { useState } from "react";
+import Smth from "./Test";
 const watchForMove = (el) => {
     const watchedElement = document.querySelector('.gallery');
     const observer = new IntersectionObserver((e) => {
@@ -7,37 +8,34 @@ const watchForMove = (el) => {
       rootMargin: '0px 0px 0px 0px',
       threshold: 1.0
     })
-  observer.observe(watchedElement)
+  //observer.observe(watchedElement)
 }
-  const buttonBuilder = () => {
-    var button = document.querySelector("#templateBtn");
-    var holder = document.querySelector(".categories");
-    for (let i = 0; i < 10; i++){
-      console.log('bimbalki')
-    }
-    console.log("dssds");
-    //console.log(button)
-    "{% for prod in categories %}";
-    button.textContent = "{{ prod.1 }}";
-    holder.appendChild(button.cloneNode(true));
-    console.log("{{ prod.1 }}");
-    
-    "{% endfor %}"
-  };
-  buttonBuilder()
+
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
   const ToggleClass = () => {
     setActive(!isActive);
   };
+   function buttonBuilder() {
+     var button = document.createElement("button");
+     var clone = button.cloneNode(true);
+     var holder = document.querySelector(".categories");
+     clone.textContent = "Cloned text for button";
+     //console.log(button)
+     console.log(clone);
+  
+       holder.appendChild(clone);
+    
+   }
+  
   
   return (
     <>
-      
+    
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent  text-white"
-          onClick={ToggleClass}
+          onClick={() => { ToggleClass();buttonBuilder();}}
         >
           Categories
         </button>
@@ -56,7 +54,6 @@ const ProductNav = () => {
       </nav>
 
       <section
-        
         id="categories"
         className={
           isActive
@@ -65,12 +62,11 @@ const ProductNav = () => {
         }
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
-          <div className="text-left categories  col-3 no-gutters gap-1"
+          <div
+            id="categories"
+            className="text-left categories  col-3 no-gutters gap-1"
           >
-            <button id='templateBtn' className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-            
+  
           </div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">
