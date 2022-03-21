@@ -23268,6 +23268,7 @@ Object.defineProperty(exports, "__esModule", {
 exports.watchForMove = exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
+var _Test = _interopRequireDefault(require("./Test"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
 var watchForMove = function watchForMove(el) {
@@ -23277,25 +23278,22 @@ var watchForMove = function watchForMove(el) {
     }, {
         rootMargin: '0px 0px 0px 0px',
         threshold: 1
-    });
-    observer.observe(watchedElement);
+    }); //observer.observe(watchedElement)
 };
 exports.watchForMove = watchForMove;
-var buttonBuilder = function buttonBuilder() {
-    var button = document.querySelector("#templateBtn");
-    var holder = document.querySelector(".categories");
-    for(i = 0; i < 10; i++)console.log('bimbalki');
-    console.log("dssds"); //console.log(button)
-    button.textContent = "{{ prod.1 }}";
-    holder.appendChild(button.cloneNode(true));
-    console.log("{{ prod.1 }}");
-};
-buttonBuilder();
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
     var ToggleClass = function ToggleClass() {
         setActive(!isActive);
     };
+    function buttonBuilder() {
+        var button = document.createElement("button");
+        var clone = button.cloneNode(true);
+        var holder = document.querySelector(".categories");
+        clone.textContent = "Cloned text for button"; //console.log(button)
+        console.log(clone);
+        holder.appendChild(clone);
+    }
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
@@ -23303,7 +23301,10 @@ var ProductNav = function ProductNav() {
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
-                        onClick: ToggleClass,
+                        onClick: function onClick() {
+                            ToggleClass();
+                            buttonBuilder();
+                        },
                         children: "Categories"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
@@ -23331,12 +23332,8 @@ var ProductNav = function ProductNav() {
                     className: "row categories-wrapper gap-3 p-2 w-100 mt-5",
                     children: [
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "text-left categories  col-3 no-gutters gap-1",
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                id: "templateBtn",
-                                className: "btn categories-button mx-auto text-white  bg-dark ",
-                                children: "Podzespo\u0142y komputerowe"
-                            })
+                            id: "categories",
+                            className: "text-left categories  col-3 no-gutters gap-1"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                             className: "bg-dark col-md categories-products mx-auto d-flex",
@@ -23378,7 +23375,10 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1FSJk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Test":"f2YDa"}],"f2YDa":[function(require,module,exports) {
+"use strict";
+
+},{}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
