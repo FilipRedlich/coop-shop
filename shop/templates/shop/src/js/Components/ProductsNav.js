@@ -18,14 +18,14 @@ const ProductNav = () => {
   };
   function buttonBuilder() {
      //Creates buttons, adds classes and text to them
-     var button = document.createElement("button");
+     var button = document.createElement("button").cloneNode(true);
      var clone = button.cloneNode(true);
      var holder = document.querySelector(".categories");
      let isExisting = document.querySelector('.cat-btn');
     
     //Adding details to button
     clone.classList.add('cat-btn');
-    
+    clone.textContent = 'dsdsdsd';
      //console.log(button)
      console.log(clone);
        
@@ -35,7 +35,8 @@ const ProductNav = () => {
      }
     if (!holder.contains(isExisting)) {
       for (let i = 0; i < 10; i++){
-        holder.appendChild(clone);
+        holder.appendChild(clone.cloneNode(true));
+        
       }
        return
      }
