@@ -23287,12 +23287,21 @@ var ProductNav = function ProductNav() {
         setActive(!isActive);
     };
     function buttonBuilder() {
+        //Creates buttons, adds classes and text to them
         var button = document.createElement("button");
         var clone = button.cloneNode(true);
         var holder = document.querySelector(".categories");
-        clone.textContent = "Cloned text for button"; //console.log(button)
+        var isExisting = document.querySelector('.cat-btn'); //Adding details to button
+        clone.classList.add('cat-btn'); //console.log(button)
         console.log(clone);
-        holder.appendChild(clone);
+        if (holder.contains(isExisting)) {
+            console.log('it exists so I wont add more buttons');
+            return;
+        }
+        if (!holder.contains(isExisting)) {
+            for(var i = 0; i < 10; i++)holder.appendChild(clone);
+            return;
+        }
     }
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
