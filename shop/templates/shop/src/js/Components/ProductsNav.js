@@ -24,8 +24,8 @@ const ProductNav = () => {
      let isExisting = document.querySelector('.cat-btn');
     
     //Adding details to button
-    clone.classList.add('cat-btn');
-    clone.textContent = 'dsdsdsd';
+    clone.classList.add('cat-btn', 'btn', 'categories-button','mb-2', 'mx-auto', 'text-white',  'bg-dark');
+    clone.textContent = 'Podzespoly komputerowe';
      //console.log(button)
      console.log(clone);
        
@@ -68,19 +68,20 @@ const ProductNav = () => {
       </nav>
 
       <section
-        id="categories"
+      
         className={
           isActive
             ? "hide-element w-100 position-fixed z-index-1 mx-auto"
-            : "position-fixed rounded text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem"
+            : "position-fixed rounded categories-top text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem"
         }
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
           <div
             id="categories"
-            className="text-left categories  col-3 no-gutters gap-1"
+            className="text-left categories col-3 no-gutters gap-1"
+          //Inside this element buttons are rendered
           >
-  
+             
           </div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">
