@@ -72,7 +72,7 @@ const ProductNav = () => {
         className={
           isActive
             ? "hide-element w-100 position-fixed z-index-1 mx-auto"
-            : "position-fixed rounded text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem"
+            : "position-fixed rounded categories-top text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem"
         }
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">

@@ -75,7 +75,9 @@
     }
   }
 }
-
+.categories-top{
+  top: 50%;
+}
 .rounded-left-side {
   border-radius: 10vh 0 0 10vh;
 }
@@ -131,5 +133,6 @@
 
 @media screen and (max-height: 700px) {
   .categories {
+    
   }
 }
