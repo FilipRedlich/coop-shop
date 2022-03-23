@@ -23297,7 +23297,7 @@ var ProductNav = function ProductNav() {
         var clone = button.cloneNode(true);
         var holder = document.querySelector(".categories");
         var isExisting = document.querySelector('.cat-btn'); //Adding details to button
-        clone.classList.add('cat-btn', 'btn', 'categories-button', 'mx-auto', 'text-white', 'bg-dark');
+        clone.classList.add('cat-btn', 'btn', 'categories-button', 'mb-2', 'mx-auto', 'text-white', 'bg-dark');
         clone.textContent = 'Podzespoly komputerowe'; //console.log(button)
         console.log(clone);
         if (holder.contains(isExisting)) {
@@ -23345,16 +23345,9 @@ var ProductNav = function ProductNav() {
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     className: "row categories-wrapper gap-3 p-2 w-100 mt-5",
                     children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                             id: "categories",
-                            className: "text-left categories col-3 no-gutters gap-1",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                    className: "btn categories-button mx-auto text-white  bg-dark ",
-                                    children: "Podzespo\u0142y komputerowe"
-                                }),
-                                "//Place where buttons spawn"
-                            ]
+                            className: "text-left categories col-3 no-gutters gap-1" //Inside this element buttons are rendered
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                             className: "bg-dark col-md categories-products mx-auto d-flex",
@@ -24849,29 +24842,57 @@ $parcel$ReactRefreshHelpers$89cd.prelude(module);
 
 try {
 "use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
 var OnSale = function OnSale() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
-            className: "on-sale",
+            className: "sale",
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
                     className: "text-center text-white",
                     children: "On sale!"
                 }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                    className: "d-flex flex-row flex-wrap text-white",
-                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                        className: "border rounded",
-                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                            children: "Item name"
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "d-flex flex-row flex-wrap w-100 text-center text-white",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "d-flex flex-column w-25 m-auto justify-content-center border rounded",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                                    className: "",
+                                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                        src: _undraw_dev_productivity_re_fylf["default"],
+                                        className: "img-fluid sale-img"
+                                    })
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                    children: "Item name"
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "d-flex flex-column w-25 m-auto justify-content-center border rounded",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                                    className: "",
+                                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                        src: _undraw_dev_productivity_re_fylf["default"],
+                                        className: "img-fluid sale-img"
+                                    })
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                    children: "Item name"
+                                })
+                            ]
                         })
-                    })
+                    ]
                 })
             ]
         })
@@ -24888,6 +24909,6 @@ $RefreshReg$(_c, "OnSale");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
 
 //# sourceMappingURL=index.53beede5.js.map
