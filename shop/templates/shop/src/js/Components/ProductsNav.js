@@ -22,7 +22,7 @@ const ProductNav = () => {
      var clone = button.cloneNode(true);
      var holder = document.querySelector(".categories");
      let isExisting = document.querySelector('.cat-btn');
-    
+     
     //Adding details to button
     clone.classList.add('cat-btn');
     clone.textContent = 'dsdsdsd';
