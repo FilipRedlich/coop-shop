@@ -5,7 +5,7 @@ import { render } from "react-dom";
 import MainNav from "./Components/MainNav";
 import ProductsNav from "./Components/ProductsNav";
 import MainContent from "./Components/MainContent";
-
+import OnSale from './Components/OnSale';
 
 const NavApp = () => {
   return (
@@ -22,6 +22,7 @@ const MainApp = () => {
   return (
     <>
       <MainContent />
+      <OnSale />
     </>
   );
 };
