@@ -13860,6 +13860,9 @@ textarea.form-control-lg {
   /* Change the color to your own background color */
   -webkit-text-fill-color: white;
 }
+.categories-top {
+  top: 50%;
+}
 .rounded-left-side {
   border-radius: 10vh 0 0 10vh;
 }
@@ -13898,6 +13901,7 @@ textarea.form-control-lg {
   .categories {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap !important;
     min-width: 100% !important;
     max-height: 5rem !important;
