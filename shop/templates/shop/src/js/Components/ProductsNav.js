@@ -34,9 +34,9 @@ const ProductNav = () => {
        return
      }
     if (!holder.contains(isExisting)) {
-      for (let i = 0; i < 10; i++){
+      for (let i = 0; i < arrayOfCategories.length; i++){
         holder.appendChild(clone.cloneNode(true));
-        clone.textContent = `{{products.${i}.1}}`;
+        clone.textContent = arrayOfCategories[i];
       }
        return
      }
