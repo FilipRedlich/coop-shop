@@ -13901,6 +13901,7 @@ textarea.form-control-lg {
   .categories {
     display: flex;
     flex-direction: column;
+    justify-content: center;
     flex-wrap: wrap !important;
     min-width: 100% !important;
     max-height: 5rem !important;
