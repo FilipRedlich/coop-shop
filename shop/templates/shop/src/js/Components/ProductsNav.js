@@ -25,7 +25,7 @@ const ProductNav = () => {
      
     //Adding details to button
     clone.classList.add('cat-btn', 'btn', 'categories-button','mb-2', 'mx-auto', 'text-white',  'bg-dark');
-    clone.textContent = 'Podzespoly komputerowe';
+    
      //console.log(button)
      console.log(clone);
        
@@ -36,7 +36,7 @@ const ProductNav = () => {
     if (!holder.contains(isExisting)) {
       for (let i = 0; i < 10; i++){
         holder.appendChild(clone.cloneNode(true));
-        
+        clone.textContent = `{{products.${i}.1}}`;
       }
        return
      }
