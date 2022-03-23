@@ -24,7 +24,7 @@ const ProductNav = () => {
      let isExisting = document.querySelector('.cat-btn');
     
     //Adding details to button
-    clone.classList.add('cat-btn', 'btn', 'categories-button', 'mx-auto', 'text-white',  'bg-dark');
+    clone.classList.add('cat-btn', 'btn', 'categories-button','mb-2', 'mx-auto', 'text-white',  'bg-dark');
     clone.textContent = 'Podzespoly komputerowe';
      //console.log(button)
      console.log(clone);
@@ -79,11 +79,9 @@ const ProductNav = () => {
           <div
             id="categories"
             className="text-left categories col-3 no-gutters gap-1"
+          //Inside this element buttons are rendered
           >
-            <button className="btn categories-button mx-auto text-white  bg-dark ">
-              Podzespoły komputerowe
-            </button>
-             //Place where buttons spawn
+             
           </div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">
