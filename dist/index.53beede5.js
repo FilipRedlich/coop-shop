@@ -23297,8 +23297,8 @@ var ProductNav = function ProductNav() {
         var clone = button.cloneNode(true);
         var holder = document.querySelector(".categories");
         var isExisting = document.querySelector('.cat-btn'); //Adding details to button
-        clone.classList.add('cat-btn');
-        clone.textContent = 'dsdsdsd'; //console.log(button)
+        clone.classList.add('cat-btn', 'btn', 'categories-button', 'mx-auto', 'text-white', 'bg-dark');
+        clone.textContent = 'Podzespoly komputerowe'; //console.log(button)
         console.log(clone);
         if (holder.contains(isExisting)) {
             console.log('it exists so I wont add more buttons');
@@ -23341,14 +23341,20 @@ var ProductNav = function ProductNav() {
                 ]
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-                id: "categories",
                 className: isActive ? "hide-element w-100 position-fixed z-index-1 mx-auto" : "position-fixed rounded categories-top text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem",
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     className: "row categories-wrapper gap-3 p-2 w-100 mt-5",
                     children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                             id: "categories",
-                            className: "text-left categories  col-3 no-gutters gap-1"
+                            className: "text-left categories col-3 no-gutters gap-1",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                    className: "btn categories-button mx-auto text-white  bg-dark ",
+                                    children: "Podzespo\u0142y komputerowe"
+                                }),
+                                "//Place where buttons spawn"
+                            ]
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                             className: "bg-dark col-md categories-products mx-auto d-flex",
@@ -24851,12 +24857,23 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
 var OnSale = function OnSale() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
             className: "on-sale",
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                className: "text-center ",
-                children: "On sale!"
-            })
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                    className: "text-center text-white",
+                    children: "On sale!"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "d-flex flex-row flex-wrap text-white",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                        className: "border rounded",
+                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                            children: "Item name"
+                        })
+                    })
+                })
+            ]
         })
     }));
 };
