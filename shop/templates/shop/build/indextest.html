@@ -37,6 +37,19 @@
   
       }
       buttonBuilder()
+       var pushedElement;
+      var arrayOfCategories = [];
+      '{% for cat in categories %}'
+       pushedElement = ('{{cat.1}}')
+      //console.log('{{ cat.1 }}')
+      console.log(pushedElement)
+      
+      arrayOfCategories.push(pushedElement)
+      
+     ' {% endfor %}'
+     console.log(arrayOfCategories)
+         var cat_index = 0;
+
     </script>
 
       <!-- select from products row[0] field[1] -->

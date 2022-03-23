@@ -9,10 +9,25 @@
     <meta name="description" content="E-commerce website" />
     <title>E-commerce</title>
     <link rel="stylesheet" href="{% static 'shop/index.68be3597.css' %}" />
-    <script src="{% static 'shop/index.9b2e40ac.js' %}" type="module" defer></script>
+    <script src="{% static 'shop/index.a1a96c3f.js' %}" type="module" defer></script>
   </head>
   <body class="bg-dark">
+      <script>
+       var pushedElement;
+      var arrayOfCategories = [];
+      '{% for cat in categories %}'
+       pushedElement = ('{{cat.1}}')
+      //console.log('{{ cat.1 }}')
+      console.log(pushedElement)
+      
+      arrayOfCategories.push(pushedElement)
+      
+     ' {% endfor %}'
+     console.log(arrayOfCategories)
+    </script>
+    
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
+
   </body>
 </html>
