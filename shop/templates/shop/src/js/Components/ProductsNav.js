@@ -1,15 +1,18 @@
 import { useState } from "react";
 import Smth from "./Test";
 const watchForMove = (el) => {
-    const watchedElement = document.querySelector('.gallery');
-    const observer = new IntersectionObserver((e) => {
-      console.log(e)
-    },{
-      rootMargin: '0px 0px 0px 0px',
-      threshold: 1.0
-    })
+  const watchedElement = document.querySelector(".gallery");
+  const observer = new IntersectionObserver(
+    (e) => {
+      console.log(e);
+    },
+    {
+      rootMargin: "0px 0px 0px 0px",
+      threshold: 1.0,
+    }
+  );
   //observer.observe(watchedElement)
-}
+};
 
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
@@ -17,39 +20,48 @@ const ProductNav = () => {
     setActive(!isActive);
   };
   function buttonBuilder() {
-     //Creates buttons, adds classes and text to them
-     var button = document.createElement("button").cloneNode(true);
-     var clone = button.cloneNode(true);
-     var holder = document.querySelector(".categories");
-     let isExisting = document.querySelector('.cat-btn');
-     
+    //Creates buttons, adds classes and text to them
+    var button = document.createElement("button").cloneNode(true);
+    var clone = button.cloneNode(true);
+    var holder = document.querySelector(".categories");
+    let isExisting = document.querySelector(".cat-btn");
+
     //Adding details to button
-    clone.classList.add('cat-btn', 'btn', 'categories-button','mb-2', 'mx-auto', 'text-white',  'bg-dark');
-    
-     //console.log(button)
-     console.log(clone);
-       
-     if (holder.contains(isExisting)) {
-       console.log('it exists so I wont add more buttons')
-       return
-     }
+    clone.classList.add(
+      "cat-btn",
+      "btn",
+      "categories-button",
+      "mb-2",
+      "mx-auto",
+      "text-white",
+      "bg-dark"
+    );
+
+    //console.log(button)
+    console.log(clone);
+
+    if (holder.contains(isExisting)) {
+      console.log("it exists so I wont add more buttons");
+      return;
+    }
     if (!holder.contains(isExisting)) {
-      for (let i = 0; i < arrayOfCategories.length; i++){
-        holder.appendChild(clone.cloneNode(true));
+      for (let i = 0; i < arrayOfCategories.length; i++) {
         clone.textContent = arrayOfCategories[i];
+        holder.appendChild(clone.cloneNode(true));
       }
-       return
-     }
-   }
-  
-  
+      return;
+    }
+  }
+
   return (
     <>
-    
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent  text-white"
-          onClick={() => { ToggleClass();buttonBuilder();}}
+          onClick={() => {
+            ToggleClass();
+            buttonBuilder();
+          }}
         >
           Categories
         </button>
@@ -68,7 +80,6 @@ const ProductNav = () => {
       </nav>
 
       <section
-      
         className={
           isActive
             ? "hide-element w-100 position-fixed z-index-1 mx-auto"
@@ -79,10 +90,8 @@ const ProductNav = () => {
           <div
             id="categories"
             className="text-left categories col-3 no-gutters gap-1"
-          //Inside this element buttons are rendered
-          >
-             
-          </div>
+            //Inside this element buttons are rendered
+          ></div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">
             <ul>
@@ -98,9 +107,6 @@ const ProductNav = () => {
       </section>
     </>
   );
-  
 };
-export {
-  watchForMove
-};
+export { watchForMove };
 export default ProductNav;
