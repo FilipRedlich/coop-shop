@@ -13860,9 +13860,6 @@ textarea.form-control-lg {
   /* Change the color to your own background color */
   -webkit-text-fill-color: white;
 }
-.categories-top {
-  top: 50%;
-}
 .rounded-left-side {
   border-radius: 10vh 0 0 10vh;
 }
@@ -13914,6 +13911,16 @@ textarea.form-control-lg {
     overflow-x: scroll !important;
     overflow-y: hidden !important;
     max-height: 5rem;
+  }
+}
+@media screen and (max-height: 700px) {
+  .categories-top {
+    top: 50%;
+  }
+}
+@media screen and (max-height: 550px) {
+  .categories-top {
+    top: 75%;
   }
 }
 ::-webkit-scrollbar {

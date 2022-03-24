@@ -22115,10 +22115,6 @@ var MainNav = function MainNav() {
                                     }), document.querySelector("#root"));
                                 },
                                 children: "Login"
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: "btn text-white bg-dark",
-                                children: "Register"
                             })
                         ]
                     })
@@ -23277,11 +23273,11 @@ var _Test = _interopRequireDefault(require("./Test"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
 var watchForMove = function watchForMove(el) {
-    var watchedElement = document.querySelector('.gallery');
+    var watchedElement = document.querySelector(".gallery");
     var observer = new IntersectionObserver(function(e) {
         console.log(e);
     }, {
-        rootMargin: '0px 0px 0px 0px',
+        rootMargin: "0px 0px 0px 0px",
         threshold: 1
     }); //observer.observe(watchedElement)
 };
@@ -23296,17 +23292,17 @@ var ProductNav = function ProductNav() {
         var button = document.createElement("button").cloneNode(true);
         var clone = button.cloneNode(true);
         var holder = document.querySelector(".categories");
-        var isExisting = document.querySelector('.cat-btn'); //Adding details to button
-        clone.classList.add('cat-btn', 'btn', 'categories-button', 'mb-2', 'mx-auto', 'text-white', 'bg-dark'); //console.log(button)
+        var isExisting = document.querySelector(".cat-btn"); //Adding details to button
+        clone.classList.add("cat-btn", "btn", "categories-button", "mb-2", "mx-auto", "text-white", "bg-dark"); //console.log(button)
         console.log(clone);
         if (holder.contains(isExisting)) {
-            console.log('it exists so I wont add more buttons');
+            console.log("it exists so I wont add more buttons");
             return;
         }
         if (!holder.contains(isExisting)) {
-            for(var i = 0; i < 10; i++){
+            for(var i = 0; i < arrayOfCategories.length; i++){
+                clone.textContent = arrayOfCategories[i];
                 holder.appendChild(clone.cloneNode(true));
-                clone.textContent = "{{products.".concat(i, ".1}}");
             }
             return;
         }
