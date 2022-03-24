@@ -50,7 +50,6 @@ const MainNav = () => {
               render(<Login />, document.querySelector("#root"));
             }}
             >Login</button>
-            <button className="btn text-white bg-dark">Register</button>
           </div>
         </div>
       </div>
