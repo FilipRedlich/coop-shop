@@ -13942,4 +13942,12 @@ textarea.form-control-lg {
   max-width: 30rem;
   margin: 10rem auto 0 auto;
 }
+.sale .sale-item {
+  max-width: 20rem;
+  min-height: 25rem;
+  background: rgba(0, 0, 0, 0.486);
+}
+.sale .sale-img {
+  max-height: 10rem;
+}
 /*# sourceMappingURL=index.3fa258a8.css.map */

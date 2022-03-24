@@ -2,6 +2,7 @@
 @import '../../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
 @import './custom.scss';
 @import './global.scss';
+@import './variables.scss';
 .hide-element{
    transform: translateY(-100rem) translateX(-50%);
    left: 50%;
@@ -16,3 +17,13 @@
     }
 }
 
+.sale{
+   .sale-item{
+       max-width: 20rem;
+       min-height: 25rem;
+       background: $bg-transparent-c;
+   }
+   .sale-img{
+       max-height: 10rem;
+   }
+}

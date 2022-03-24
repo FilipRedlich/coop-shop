@@ -24857,40 +24857,33 @@ var OnSale = function OnSale() {
                     className: "text-center text-white",
                     children: "On sale!"
                 }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "d-flex flex-row flex-wrap w-100 text-center text-white",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "d-flex flex-column w-25 m-auto justify-content-center border rounded",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                                    className: "",
-                                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                        src: _undraw_dev_productivity_re_fylf["default"],
-                                        className: "img-fluid sale-img"
-                                    })
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                                    children: "Item name"
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "sale-item d-flex flex-column px-3 m-auto justify-content-between border rounded",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                                className: "",
+                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                    src: _undraw_dev_productivity_re_fylf["default"],
+                                    className: "img-fluid sale-img"
                                 })
-                            ]
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "d-flex flex-column w-25 m-auto justify-content-center border rounded",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                                    className: "",
-                                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                        src: _undraw_dev_productivity_re_fylf["default"],
-                                        className: "img-fluid sale-img"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "pb-3",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                                        className: " text-danger pb-2",
+                                        children: "Price tag"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                        className: "lead text-center",
+                                        children: "Item name"
                                     })
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                                    children: "Item name"
-                                })
-                            ]
-                        })
-                    ]
+                                ]
+                            })
+                        ]
+                    })
                 })
             ]
         })
