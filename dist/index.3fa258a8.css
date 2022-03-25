@@ -13926,7 +13926,7 @@ textarea.form-control-lg {
 }
 @media screen and (max-height: 550px) {
   .categories-top {
-    top: 75%;
+    top: 80%;
   }
 }
 ::-webkit-scrollbar {

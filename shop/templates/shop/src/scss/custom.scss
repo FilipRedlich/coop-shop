@@ -1,3 +1,4 @@
+@import './variables';
 .transform-z-3 {
   transform: translateZ(3px) !important;
 }
@@ -30,7 +31,7 @@
   background: $black;
 }
 .bg-transparent-custom {
-  background: hsla(0, 0%, 0%, 0.486);
+  background: $bg-transparent-c;
 }
 .blur-bg {
   backdrop-filter: blur(5px);
@@ -146,6 +147,6 @@
 }
 @media screen and (max-height: 550px){
   .categories-top{
-    top: 75%;
+    top: 80%;
   }
 }
