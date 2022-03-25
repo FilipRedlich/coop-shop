@@ -61,7 +61,12 @@
 .transition-5 {
   transition: 0.5s;
 }
-
+.flexb-30{
+  flex-basis: 30%;
+}
+.flexb-70{
+  flex-basis: 70%;
+}
 .login-modal {
   width: clamp(20rem, 40rem, 80%);
   //min-width: clamp(30%, 40rem, 60%);

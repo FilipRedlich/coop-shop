@@ -24850,42 +24850,36 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
 var OnSale = function OnSale() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
             className: "sale",
-            children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                    className: "text-center text-white",
-                    children: "On sale!"
-                }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                    className: "d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white",
-                    children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "sale-item d-flex flex-column px-3 m-auto justify-content-between border rounded",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                                className: "",
-                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                    src: _undraw_dev_productivity_re_fylf["default"],
-                                    className: "img-fluid sale-img"
-                                })
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                className: "pb-3",
-                                children: [
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                                        className: " text-danger pb-2",
-                                        children: "Price tag"
-                                    }),
-                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                                        className: "lead text-center",
-                                        children: "Item name"
-                                    })
-                                ]
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "sale-item d-flex bg-black flex-column px-3 m-auto justify-content-between border rounded",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "flexb-30",
+                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: _undraw_dev_productivity_re_fylf["default"],
+                                className: "img-fluid sale-img"
                             })
-                        ]
-                    })
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "pb-3 flexb-70 my-auto",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                                    className: "text-danger pb-1",
+                                    children: "Price tag"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                    className: "lead text-center ",
+                                    children: "Item name"
+                                })
+                            ]
+                        })
+                    ]
                 })
-            ]
+            })
         })
     }));
 };
