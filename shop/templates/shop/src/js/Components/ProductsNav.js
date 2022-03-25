@@ -1,4 +1,6 @@
 import { useState } from "react";
+import { render } from "react-dom";
+import OnSale from "./OnSale";
 import Smth from "./Test";
 const watchForMove = (el) => {
   const watchedElement = document.querySelector(".gallery");
@@ -19,7 +21,8 @@ const ProductNav = () => {
   const ToggleClass = () => {
     setActive(!isActive);
   };
-  function buttonBuilder() {
+
+  const buttonBuilder = () => {
     //Creates buttons, adds classes and text to them
     var button = document.createElement("button").cloneNode(true);
     var clone = button.cloneNode(true);
@@ -52,7 +55,9 @@ const ProductNav = () => {
       return;
     }
   }
-
+  const renderSale = () =>{
+    render(<OnSale />, document.querySelector('#root'))
+  }
   return (
     <>
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
@@ -65,7 +70,10 @@ const ProductNav = () => {
         >
           Categories
         </button>
-        <button className="btn btn-lg bg-transparent  text-white">
+        <button className="btn btn-lg bg-transparent  text-white"
+        onClick={()=>{
+          renderSale();
+        }}>
           On sale
         </button>
         <button className="btn btn-lg bg-transparent  text-white">
@@ -90,7 +98,7 @@ const ProductNav = () => {
           <div
             id="categories"
             className="text-left categories col-3 no-gutters gap-1"
-            //Inside this element buttons are rendered
+          //Inside this element buttons are rendered
           ></div>
 
           <div className="bg-dark col-md categories-products mx-auto d-flex">

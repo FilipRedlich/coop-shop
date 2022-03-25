@@ -22,7 +22,6 @@ const MainApp = () => {
   return (
     <>
       <MainContent />
-      <OnSale />
     </>
   );
 };
