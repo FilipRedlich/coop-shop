@@ -20,21 +20,19 @@
 //# sourceMappingURL=index.a1a96c3f.js.map
 
     </script>
-    <script>
-          const buttonBuilder = () =>{
-        var button = document.querySelector('.template');
-        var cloned = button.cloneNode(true);
-        var holder = document.querySelector('#root')
-        
+ <script>
+  var pushedElement;
+ var arrayOfCategories = [];
+ '{% for cat in categories %}'
+  pushedElement = ('{{cat.1}}')
+ //console.log('{{ cat.1 }}')
+ console.log(pushedElement)
 
-       
-          console.log('dssds')
-        "{% for prod in categories %}"
-         button.textContent = "{{ prod.1 }}";
-         holder.appendChild(button.cloneNode(true))
-        console.log("{{ prod.1 }}");
-      "{% endfor %}"
-    </script>
+ arrayOfCategories.push(pushedElement)
+
+' {% endfor %}'
+console.log(arrayOfCategories)
+</script>
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
 
