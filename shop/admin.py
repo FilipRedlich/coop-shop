@@ -3,7 +3,7 @@ from django.contrib import admin
 from .models import Users,Basket,Categories,Products
 
 class ProductsAdmin(admin.ModelAdmin):
-    fields = ['name','picture','cat','quantity','price','rating']
+    fields = ['name','picture','cat','quantity','price','mult','rating']
     list_display = ('name','cat')
 
 class UsersAdmin(admin.ModelAdmin):
