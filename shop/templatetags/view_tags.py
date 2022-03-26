@@ -1,6 +1,6 @@
 from hashlib import sha256
 from django import template
-from shop.models import Categories, Users
+from shop.models import Categories, Products, Users
 
 register = template.Library()
 
@@ -11,6 +11,12 @@ ON=0
 def insert_into_cat(name):
     if(ON==1):
         Categories.objects.create(name=name)
+
+@register.simple_tag
+#check for discount and returns items from cat with discount
+def hasDiscount(cat):
+    if(ON==1):
+        Products.objects.filter(cat=cat).exclude(multiplier=0)
 
 @register.simple_tag
 #adds new user to db
