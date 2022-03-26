@@ -22,7 +22,7 @@ class IndexView(TemplateView):
         context['users'] = Users.objects.values_list
         context['basket'] = Basket.objects.values_list
         #call function from models and pass it to template via gall
-        context['gall'] = Products.return_all()
+        #context['gall'] = Products.return_all()
         return context
 
 class TestView(TemplateView):
