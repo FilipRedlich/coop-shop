@@ -21,11 +21,12 @@ class Products(models.Model):
     cat=models.ForeignKey(Categories, on_delete=models.CASCADE)
     quantity=models.IntegerField()
     price=models.FloatField()
+    multiplier=models.FloatField(blank=1)
     rating=models.FloatField(default=3.0)
     def __str__(self):
         return self.name
-    def return_all():
-        return Products.objects.values_list()
+    #def return_all():
+    #    return Products.objects.values_list()
 
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
