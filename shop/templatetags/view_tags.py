@@ -14,6 +14,12 @@ def insert_into_cat(name):
 
 @register.simple_tag
 #check for discount and returns items from cat with discount
+def outputCat(cat):
+    if(ON==1):
+        Products.objects.filter(cat=cat)
+
+@register.simple_tag
+#check for discount and returns items from cat with discount
 def hasDiscount(cat):
     if(ON==1):
         Products.objects.filter(cat=cat).exclude(multiplier=0)
