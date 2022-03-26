@@ -3,19 +3,19 @@ from django.contrib import admin
 from .models import Users,Basket,Categories,Products
 
 class ProductsAdmin(admin.ModelAdmin):
-    fields = ['name','picture','cat','quantity','price','mult','rating']
+    #fields = ['name','picture','cat','quantity','price','mult','rating']
     list_display = ('name','cat')
 
 class UsersAdmin(admin.ModelAdmin):
-    fields = ['login','password']
+    #fields = ['login','password']
     list_display = ('login',)
 
 class BasketAdmin(admin.ModelAdmin):
-    fields = ['userID','productID']
+    #fields = ['userID','productID']
     list_display=('userID','productID')
 
 class CategoriesAdmin(admin.ModelAdmin):
-    fields = ['name']
+    #fields = ['name']
     list_display=('name',)
 
 admin.site.register(Products,ProductsAdmin)
