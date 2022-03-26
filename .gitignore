@@ -9,5 +9,3 @@ django
 __pycache__
 .pyc
 *.pyc
-django
-shop/templatetags/__pycache__/view_tags.cpython-310.pyc
