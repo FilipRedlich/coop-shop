@@ -4,7 +4,6 @@ node_modules
 staticfiles
 .parcel-cache
 shop/__pycache__
-shop/migrations
 mysite/__pycache__
 django
 __pycache__
