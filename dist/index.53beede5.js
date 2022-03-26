@@ -1014,6 +1014,7 @@ var _reactDom = require("react-dom");
 var _MainNav = _interopRequireDefault(require("./Components/MainNav"));
 var _ProductsNav = _interopRequireDefault(require("./Components/ProductsNav"));
 var _MainContent = _interopRequireDefault(require("./Components/MainContent"));
+var _Footer = _interopRequireDefault(require("./Components/Footer"));
 var _OnSale = _interopRequireDefault(require("./Components/OnSale"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/App.js", _this = void 0;
@@ -1035,22 +1036,32 @@ var MainApp = function MainApp() {
     }));
 };
 _c1 = MainApp;
+var FooterApp = function FooterApp() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Footer["default"], {
+        })
+    }));
+};
+_c2 = FooterApp;
 (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(NavApp, {
 }), document.querySelector("#navRoot"));
 (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(MainApp, {
 }), document.querySelector("#root"));
+(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(FooterApp, {
+}), document.querySelector('#footerRoot'));
 var _default = MainApp;
 exports["default"] = _default;
-var _c, _c1;
+var _c, _c1, _c2;
 $RefreshReg$(_c, "NavApp");
 $RefreshReg$(_c1, "MainApp");
+$RefreshReg$(_c2, "FooterApp");
 
   $parcel$ReactRefreshHelpers$2e54.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Components/OnSale":"9GTDe"}],"7XM86":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Components/OnSale":"9GTDe","./Components/Footer":"lP4ni"}],"7XM86":[function(require,module,exports) {
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -24899,6 +24910,53 @@ function useWindowSize() {
 }
 exports.default = useWindowSize;
 
-},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
+},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lP4ni":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$9799 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$9799.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Footer.js", _this = void 0;
+var MainFooter = function MainFooter() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("footer", {
+        className: "d-flex flex-row flex-wrap bg-transparent-custom w-100 text-white",
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+            className: "",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                    children: "LINKS"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                    children: "Github"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                    children: "Github"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                    children: "Github"
+                })
+            ]
+        })
+    }));
+};
+_c = MainFooter;
+var _default = MainFooter;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "MainFooter");
+
+  $parcel$ReactRefreshHelpers$9799.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
 
 //# sourceMappingURL=index.53beede5.js.map
