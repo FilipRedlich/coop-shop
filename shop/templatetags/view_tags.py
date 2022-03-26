@@ -16,13 +16,13 @@ def insert_into_cat(name):
 #check for discount and returns items from cat with discount
 def outputCat(cat):
     if(ON==1):
-        Products.objects.filter(cat=cat)
+        return Products.objects.filter(cat=cat)
 
 @register.simple_tag
 #check for discount and returns items from cat with discount
 def hasDiscount(cat):
     if(ON==1):
-        Products.objects.filter(cat=cat).exclude(multiplier=0)
+        return Products.objects.filter(cat=cat).exclude(multiplier=0)
 
 @register.simple_tag
 #adds new user to db
