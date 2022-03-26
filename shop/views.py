@@ -39,8 +39,6 @@ class TestView(TemplateView):
         context['products'] = Products.objects.values_list()
         context['users'] = Users.objects.values_list
         context['basket'] = Basket.objects.values_list
-        #call function from models and pass it to template via gall
-        context['gall'] = Products.return_all()
         return context
 
 '''
