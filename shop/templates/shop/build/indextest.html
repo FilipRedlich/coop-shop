@@ -10,6 +10,12 @@
     <title>E-commerce</title>
     <!--<link rel="stylesheet" href="{% static 'shop/index.5127636a.css' %}" />
     <script src="{% static 'shop/index.cd67c74c.js' %}" type="module" defer></script>-->
+    <style>
+      body{
+        background: #222;
+        color: white;
+      }
+    </style>
   </head>
   <body class="bg-dark">
     <div id="navRoot">Nav not rendered</div>
@@ -51,7 +57,22 @@
          var cat_index = 0;
 
     </script>
+    <script>
+      var productName;
+      var price;
+      var arrayOfProducts = [];
+      var arrayOfPrices = [];
+      "{% for prod in products %}"
+       productName = ('{{prod.1}}');
+       price = ('{{prod.5}}');
 
+       arrayOfProducts.push(productName);
+       arrayOfPrices.push(price);
+       
+       
+      "{% endfor %}"
+      console.log(arrayOfPrices, arrayOfProducts)
+    </script>
       <!-- select from products row[0] field[1] -->
       <h4>select from products row[0] field[1]</h4>
       {{products.0.1}}
@@ -66,7 +87,8 @@
       <!--loop products and return 5th field-->
       <h4>loop products and return 5th field</h4>
       {% for prod in products %}
-          <p>{{ prod.5 }}</p>
+          <p>{{ prod.1 }}</p> <!--returns names of products-->
+          <p>{{ prod.5 }}</p> <!--returns prices-->
       {% endfor %}
       <!-- returns 12.99 -->
 
