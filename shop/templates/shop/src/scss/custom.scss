@@ -175,3 +175,14 @@
     top: 80%;
   }
 }
+
+.footer-anchor{
+  opacity: 0.5;
+  transition: .3s;
+  color: $white;
+  animation: ease-in;
+  &:hover{
+   opacity: 1.0;
+   transition: .3s;
+  }
+}

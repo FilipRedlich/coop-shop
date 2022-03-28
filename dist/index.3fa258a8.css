@@ -13955,6 +13955,16 @@ textarea.form-control-lg {
     top: 80%;
   }
 }
+.footer-anchor {
+  opacity: 0.5;
+  transition: 0.3s;
+  color: #fff;
+  animation: ease-in;
+}
+.footer-anchor:hover {
+  opacity: 1;
+  transition: 0.3s;
+}
 ::-webkit-scrollbar {
   background: #212529;
   width: 0.45rem;

@@ -24946,21 +24946,21 @@ var MainFooter = function MainFooter() {
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-                                    className: "text-muted remove-all-decoration",
+                                    className: "footer-anchor remove-all-decoration",
                                     href: "https://github.com/FilipRedlich/coop-shop",
                                     children: "Source code"
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-                                    className: "text-muted remove-all-decoration",
+                                    className: "footer-anchor remove-all-decoration",
                                     href: "https://github.com/BrtSkr",
                                     children: "BrtSkr"
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-                                    className: "text-muted remove-all-decoration",
+                                    className: "footer-anchor remove-all-decoration",
                                     href: "https://github.com/FilipRedlich",
                                     children: "FilipRedlich"
                                 })
@@ -24976,14 +24976,14 @@ var MainFooter = function MainFooter() {
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-                                    className: "text-muted remove-all-decoration",
+                                    className: "footer-anchor remove-all-decoration",
                                     href: "mailto:arcadam111@gmail.com",
                                     children: "BrtSkr"
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
-                                    className: "text-muted remove-all-decoration",
+                                    className: "footer-anchor remove-all-decoration",
                                     href: "mailto:placeholder",
                                     children: "FilipRedlich"
                                 })
