@@ -52,6 +52,9 @@
     }
   }
 }
+.remove-all-decoration{
+  text-decoration: none;
+}
 .min-vh-200 {
   min-height: 250rem !important;
   margin: -30rem 0 0 0;
@@ -64,6 +67,9 @@
 }
 .flexb-30{
   flex-basis: 30%;
+}
+.flexb-60{
+  flex-basis: 60%;
 }
 .flexb-70{
   flex-basis: 70%;
@@ -139,7 +145,24 @@
     max-height: 5rem;
   }
 }
-
+.footer-logo{
+  min-height: 8rem;
+  &::before{
+    position: absolute;
+    content: '';
+    background: $bg-black;
+    width: 50%;
+    min-width: 15rem;
+    min-height: 8rem;
+    margin: 0 auto 0 auto;
+    border-radius: 10px;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    z-index: -2;
+  }
+}
 @media screen and (max-height: 700px) {
   .categories {
   }

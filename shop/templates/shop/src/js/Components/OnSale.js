@@ -2,9 +2,9 @@ import img1 from '../../images/undraw_dev_productivity_re_fylf.svg';
 const OnSale = () => {
     return (
       <>
-        <section className="sale p-2 pt-5">
+        <section className="sale p-2 py-5">
           <div className="d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white">
-            <div className="sale-item d-flex bg-black flex-column px-3 m-auto justify-content-between border rounded">
+            <div className="sale-item d-flex bg-transparent-custom flex-column px-3 m-auto justify-content-between border rounded">
               <div className="flexb-30">
                 <img src={img1} className="img-fluid sale-img" />
               </div>
