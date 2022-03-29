@@ -10,10 +10,8 @@ import MainFooter from "./Components/Footer";
 const NavApp = () => {
   return (
     <>
-     
       <MainNav />
       <ProductsNav />
-       
     </>
   );
 };
@@ -29,11 +27,11 @@ const MainApp = () => {
 const FooterApp = () => {
   return (
     <>
-    <MainFooter />
+      <MainFooter />
     </>
-  )
-}
+  );
+};
 render(<NavApp />, document.querySelector("#navRoot"));
 render(<MainApp />, document.querySelector("#root"));
-render(<FooterApp />, document.querySelector('#footerRoot'))
+render(<FooterApp />, document.querySelector("#footerRoot"));
 export default MainApp;

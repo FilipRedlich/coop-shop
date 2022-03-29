@@ -175,8 +175,20 @@
 
 .newsletter{
   .newsletter-img{
-    max-width: 20rem;
+    max-width: 40rem;
   }
+  .newsletter-text{
+  min-width: 8rem;
+  }
+  .newsletter-input{
+    min-width: 12rem;
+  }
+  .newsletter-submit{
+    min-width: 4rem;
+  }
+}
+img{
+  width: 100%;
 }
 @media screen and (max-height: 700px) {
   .categories {
