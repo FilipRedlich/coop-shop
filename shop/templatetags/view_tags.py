@@ -14,9 +14,9 @@ def insert_into_cat(name):
 
 @register.simple_tag
 #check for discount and returns items from cat with discount
-def outputCat(cat):
+def outputCat(cat,field):
     if(ON==1):
-        return Products.objects.filter(subcat=cat)
+        return Products.objects.values_list(field).filter(subcat=cat)
 
 @register.simple_tag
 #check for discount and returns items from cat with discount
