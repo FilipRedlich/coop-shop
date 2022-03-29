@@ -40,6 +40,7 @@ class TestView(TemplateView):
         context['products'] = Products.objects.values_list()
         context['users'] = Users.objects.values_list
         context['basket'] = Basket.objects.values_list
+        context['subcategories'] = subCategories.objects.values_list()
         return context
 
 '''
