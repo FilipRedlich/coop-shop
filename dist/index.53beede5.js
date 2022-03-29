@@ -1047,7 +1047,7 @@ _c2 = FooterApp;
 (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(MainApp, {
 }), document.querySelector("#root"));
 (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(FooterApp, {
-}), document.querySelector('#footerRoot'));
+}), document.querySelector("#footerRoot"));
 var _default = MainApp;
 exports["default"] = _default;
 var _c, _c1, _c2;
@@ -23629,30 +23629,31 @@ var Newsletter = function Newsletter() {
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
                     src: _undraw_envelope_re_f5j["default"],
-                    className: "newsletter-img flexb-20"
+                    className: "newsletter-img flexb-20 m-auto"
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "d-flex flex-column justify-content-center m-auto text-white flexb-30",
+                    className: "d-flex flex-column justify-content-center gap-1 m-auto text-white flexb-30",
                     children: [
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                            className: "newsletter-text",
                             children: "Want to get information about discounts and promotions first?"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
-                            className: "",
+                            className: "newsletter-text",
                             children: "Sign in for our Newsletter!"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "d-flex flex-row w-100",
+                            className: "d-flex flex-row mt-2",
                             children: [
                                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                    className: "form-control shadow-lg flexb-70 border-l5",
+                                    className: "form-control shadow-lg flexb-70 border-l5 newsletter-input",
                                     type: "email",
                                     placeholder: "Email address",
                                     "aria-label": "Search"
                                 }),
                                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                     type: "submit",
-                                    className: "flexb-30 border-none  border-r5"
+                                    className: "flexb-30 border-none newsletter-submit bg-black text-white border-r5"
                                 })
                             ]
                         })
@@ -25155,7 +25156,7 @@ var MainFooter = function MainFooter() {
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
                                     className: "footer-anchor remove-all-decoration",
-                                    href: "mailto:placeholder",
+                                    href: "mailto:filipredlich.pr@gmail.com",
                                     children: "FilipRedlich"
                                 })
                             }),
