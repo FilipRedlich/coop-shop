@@ -8,16 +8,18 @@ class Users(models.Model):
     login=models.CharField(max_length=30)
     password=models.CharField(max_length=255)
     def __str__(self):
-        return self.login
+        return str(self.pk)+". "+self.login
 
 class Categories(models.Model):
     name=models.CharField(max_length=50)
+    def __str__(self):
+        return str(self.pk)+". "+self.name
 
 class subCategories(models.Model):
     name=models.CharField(max_length=50,default="empty")
     catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
     def __str__(self):
-        return self.name
+        return str(self.pk)+". "+self.name
 
 class Products(models.Model):
     name=models.CharField(max_length=255)
@@ -28,10 +30,10 @@ class Products(models.Model):
     mult=models.FloatField(default=1.0)
     rating=models.FloatField(default=3.0)
     def __str__(self):
-        return self.name
+        return str(self.pk)+". "+self.name
 
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
     def __str__(self):
-        return self.userID
+        return str(self.pk)+". "+self.userID
