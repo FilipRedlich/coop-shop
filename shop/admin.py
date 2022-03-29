@@ -4,7 +4,7 @@ from .models import Users,Basket,Categories,Products,subCategories
 
 class ProductsAdmin(admin.ModelAdmin):
     #fields = ['name','picture','cat','quantity','price','mult','rating']
-    list_display = ('name','cat')
+    list_display = ('name','subcat')
 
 class UsersAdmin(admin.ModelAdmin):
     #fields = ['login','password']
@@ -20,7 +20,7 @@ class CategoriesAdmin(admin.ModelAdmin):
 
 class subCategoriesAdmin(admin.ModelAdmin):
     #fields = ['name']
-    list_display=('catID','prodID')
+    list_display=('name','catID')
 
 admin.site.register(Products,ProductsAdmin)
 admin.site.register(Users,UsersAdmin)

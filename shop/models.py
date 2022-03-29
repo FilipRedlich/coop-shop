@@ -15,10 +15,16 @@ class Categories(models.Model):
     def __str__(self):
         return self.name
 
+class subCategories(models.Model):
+    name=models.CharField(max_length=50,default="empty")
+    catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
+    def __str__(self):
+        return self.name
+
 class Products(models.Model):
     name=models.CharField(max_length=255)
     picture=models.CharField(max_length=255,blank=1)
-    cat=models.ForeignKey(Categories, on_delete=models.CASCADE)
+    subcat=models.ForeignKey(subCategories, on_delete=models.CASCADE,default=1)
     quantity=models.IntegerField()
     price=models.FloatField()
     mult=models.FloatField(default=1.0,blank=1)
@@ -31,7 +37,3 @@ class Basket(models.Model):
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
     def __str__(self):
         return self.userID
-
-class subCategories(models.Model):
-    catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
-    prodID=models.ForeignKey(Products, on_delete=models.CASCADE)
