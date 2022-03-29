@@ -12,8 +12,6 @@ class Users(models.Model):
 
 class Categories(models.Model):
     name=models.CharField(max_length=50)
-    def __str__(self):
-        return self.name
 
 class subCategories(models.Model):
     name=models.CharField(max_length=50,default="empty")

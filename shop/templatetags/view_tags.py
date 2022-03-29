@@ -36,7 +36,7 @@ def outputCat(cat):
 #check for discount and returns items from cat with discount
 def hasDiscount(cat):
     if(ON==1):
-        temp = Products.objects.filter(subcat=cat).exclude(mult=1.0)
+        temp = Products.objects.values_list("name","price","mult").filter(subcat=cat).exclude(mult=1.0)
         out=""
         for t in temp:
             out+=str(t)

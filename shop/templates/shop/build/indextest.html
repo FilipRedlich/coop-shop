@@ -115,10 +115,12 @@
       -->
       <br>
       <p>{{ Subcategories.0 }}</p>
-      {% outputCat 1 "price" %}
+      e{% outputCat 2 %}  <br>
+      b{% hasDiscount 1 %}
+
 
       <script>
-        var yy = '{% outputCat 1 "price" %}'.replaceAll(',)', '').split('(');
+        var yy = '{% outputSubcat 1 "price" %}'.replaceAll(',)', '').split('(');
         yy.shift()
         console.log(yy)
       </script>
