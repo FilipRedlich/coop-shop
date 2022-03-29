@@ -23278,6 +23278,9 @@ var _react = require("react");
 var _reactDom = require("react-dom");
 var _OnSale = _interopRequireDefault(require("./OnSale"));
 var _Test = _interopRequireDefault(require("./Test"));
+var _Services = _interopRequireDefault(require("./Services"));
+var _Outlet = _interopRequireDefault(require("./Outlet"));
+var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
 var watchForMove = function watchForMove(el) {
@@ -23315,8 +23318,20 @@ var ProductNav = function ProductNav() {
             return;
         }
     };
-    var renderSale = function renderSale() {
+    var RenderSale = function RenderSale() {
         (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {
+        }), document.querySelector('#root'));
+    };
+    var RenderServices = function RenderServices() {
+        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Services["default"], {
+        }), document.querySelector('#root'));
+    };
+    var RenderOutlet = function RenderOutlet() {
+        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Outlet["default"], {
+        }), document.querySelector('#root'));
+    };
+    var RenderNewsletter = function RenderNewsletter() {
+        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Newsletter["default"], {
         }), document.querySelector('#root'));
     };
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
@@ -23335,20 +23350,29 @@ var ProductNav = function ProductNav() {
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
-                            renderSale();
+                            RenderSale();
                         },
                         children: "On sale"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
+                        onClick: function onClick() {
+                            RenderOutlet();
+                        },
                         children: "Outlet"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
+                        onClick: function onClick() {
+                            RenderServices();
+                        },
                         children: "Services"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
+                        onClick: function onClick() {
+                            RenderNewsletter();
+                        },
                         children: "Newsletter"
                     })
                 ]
@@ -23402,10 +23426,7 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","./OnSale":"9GTDe"}],"f2YDa":[function(require,module,exports) {
-"use strict";
-
-},{}],"9GTDe":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9","./OnSale":"9GTDe","./Test":"f2YDa","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23505,7 +23526,157 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"1FSJk":[function(require,module,exports) {
+},{}],"f2YDa":[function(require,module,exports) {
+"use strict";
+
+},{}],"hj64T":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$ac01 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$ac01.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Services.js", _this = void 0;
+var Services = function Services() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "services d-flex flex-column w-100 p-5",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "d-flex flex-row bg-transparent-custom p-4 justify-content-center border w-75 text-white m-auto gap-3",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
+                        className: "flexb-70",
+                        children: "Some text"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        className: "btn flexb-30 text-white bg-dark",
+                        children: "Add to cart"
+                    })
+                ]
+            })
+        })
+    }));
+};
+_c = Services;
+var _default = Services;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "Services");
+
+  $parcel$ReactRefreshHelpers$ac01.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"33x1B":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$98af = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$98af.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Outlet.js", _this = void 0;
+var Outlet = function Outlet() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: ""
+        })
+    }));
+};
+_c = Outlet;
+var _default = Outlet;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "Outlet");
+
+  $parcel$ReactRefreshHelpers$98af.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"22oGT":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$af1c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$af1c.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _undraw_envelope_re_f5j = _interopRequireDefault(require("../../images/undraw_envelope_re_f5j4.svg"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Newsletter.js", _this = void 0;
+var Newsletter = function Newsletter() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+            className: "d-flex flex-row flex-wrap w-100 gap-3 newsletter",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                    src: _undraw_envelope_re_f5j["default"],
+                    className: "newsletter-img flexb-20"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "d-flex flex-column justify-content-center m-auto text-white flexb-30",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                            children: "Want to get information about discounts and promotions first?"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                            className: "",
+                            children: "Sign in for our Newsletter!"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "d-flex flex-row w-100",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                    className: "form-control shadow-lg flexb-70 border-l5",
+                                    type: "email",
+                                    placeholder: "Email address",
+                                    "aria-label": "Search"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                    type: "submit",
+                                    className: "flexb-30 border-none  border-r5"
+                                })
+                            ]
+                        })
+                    ]
+                })
+            ]
+        })
+    }));
+};
+_c = Newsletter;
+var _default = Newsletter;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "Newsletter");
+
+  $parcel$ReactRefreshHelpers$af1c.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_envelope_re_f5j4.svg":"3Krtf","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3Krtf":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

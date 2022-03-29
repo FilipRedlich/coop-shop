@@ -1,7 +1,14 @@
 import { useState } from "react";
 import { render } from "react-dom";
+
+//components
 import OnSale from "./OnSale";
 import Smth from "./Test";
+import Services from "./Services";
+import Outlet from "./Outlet";
+import Newsletter from "./Newsletter";
+
+
 const watchForMove = (el) => {
   const watchedElement = document.querySelector(".gallery");
   const observer = new IntersectionObserver(
@@ -55,8 +62,17 @@ const ProductNav = () => {
       return;
     }
   }
-  const renderSale = () =>{
+  const RenderSale = () =>{
     render(<OnSale />, document.querySelector('#root'))
+  }
+  const RenderServices = () =>{
+    render(<Services />, document.querySelector('#root'))
+  }
+  const RenderOutlet = () =>{
+    render(<Outlet />, document.querySelector('#root'))
+  }
+  const RenderNewsletter = () =>{
+    render(<Newsletter />, document.querySelector('#root'))
   }
   return (
     <>
@@ -72,17 +88,26 @@ const ProductNav = () => {
         </button>
         <button className="btn btn-lg bg-transparent  text-white"
         onClick={()=>{
-          renderSale();
+          RenderSale();
         }}>
           On sale
         </button>
-        <button className="btn btn-lg bg-transparent  text-white">
+        <button className="btn btn-lg bg-transparent  text-white"
+        onClick={()=>{
+          RenderOutlet();
+        }}>
           Outlet
         </button>
-        <button className="btn btn-lg bg-transparent  text-white">
+        <button className="btn btn-lg bg-transparent  text-white"
+        onClick={()=>{
+        RenderServices();
+        }}>
           Services
         </button>
-        <button className="btn btn-lg bg-transparent  text-white">
+        <button className="btn btn-lg bg-transparent  text-white"
+        onClick={()=>{
+          RenderNewsletter();
+        }}>
           Newsletter
         </button>
       </nav>
