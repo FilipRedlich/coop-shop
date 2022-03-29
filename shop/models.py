@@ -31,3 +31,7 @@ class Basket(models.Model):
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
     def __str__(self):
         return self.userID
+
+class subCategories(models.Model):
+    catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
+    prodID=models.ForeignKey(Products, on_delete=models.CASCADE)
