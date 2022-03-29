@@ -21,6 +21,7 @@ class Products(models.Model):
     cat=models.ForeignKey(Categories, on_delete=models.CASCADE)
     quantity=models.IntegerField()
     price=models.FloatField()
+    mult=models.FloatField(default=1.0,blank=1)
     rating=models.FloatField(default=3.0)
     def __str__(self):
         return self.name
@@ -31,3 +32,6 @@ class Basket(models.Model):
     def __str__(self):
         return self.userID
 
+class subCategories(models.Model):
+    catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
+    prodID=models.ForeignKey(Products, on_delete=models.CASCADE)
