@@ -36,7 +36,11 @@ def outputCat(cat):
 #check for discount and returns items from cat with discount
 def hasDiscount(cat):
     if(ON==1):
-        return Products.objects.filter(subcat=cat).exclude(mult=0)
+        temp = Products.objects.filter(subcat=cat).exclude(mult=1.0)
+        out=""
+        for t in temp:
+            out+=str(t)
+        return out
 
 @register.simple_tag
 #adds new user to db
