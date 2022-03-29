@@ -116,5 +116,11 @@
       <br>
       <p>{{ Subcategories.0 }}</p>
       {% outputCat 1 "price" %}
+
+      <script>
+        var yy = '{% outputCat 1 "price" %}'.replaceAll(',)', '').split('(');
+        yy.shift()
+        console.log(yy)
+      </script>
   </body>
 </html>
