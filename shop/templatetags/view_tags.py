@@ -16,10 +16,10 @@ def insert_into_cat(name):
 #check for discount and returns items from cat with discount
 def outputCat(cat,field):
     if(ON==1):
-        temp = Products.objects.filter(subcat=cat).only(field)
+        temp = Products.objects.values_list(field).filter(subcat=cat)
         out=""
         for t in temp:
-            out+=str(t)+","
+            out+=str(t)
         return out
 
 @register.simple_tag
