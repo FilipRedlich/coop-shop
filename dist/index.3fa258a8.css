@@ -13837,6 +13837,15 @@ textarea.form-control-lg {
   background: #fff;
   transition: 0.5s;
 }
+.border-none {
+  border: none;
+}
+.border-l5 {
+  border-radius: 0.5vh 0 0 0.5vh;
+}
+.border-r5 {
+  border-radius: 0 0.5vh 0.5vh 0;
+}
 .remove-all-decoration {
   text-decoration: none;
 }
@@ -13944,6 +13953,9 @@ textarea.form-control-lg {
   bottom: 0;
   left: 0;
   z-index: -2;
+}
+.newsletter .newsletter-img {
+  max-width: 20rem;
 }
 @media screen and (max-height: 700px) {
   .categories-top {
