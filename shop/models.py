@@ -27,7 +27,7 @@ class Products(models.Model):
     subcat=models.ForeignKey(subCategories, on_delete=models.CASCADE,default=1)
     quantity=models.IntegerField()
     price=models.FloatField()
-    mult=models.FloatField(default=1.0,blank=1)
+    mult=models.FloatField(default=1.0)
     rating=models.FloatField(default=3.0)
     def __str__(self):
         return self.name
