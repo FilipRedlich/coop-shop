@@ -13877,6 +13877,7 @@ textarea.form-control-lg {
   padding: 1rem;
 }
 .login-modal input:-webkit-autofill {
+  box-shadow: 0 0 0 50px black inset;
   -webkit-box-shadow: 0 0 0 50px black inset;
   /* Change the color to your own background color */
   -webkit-text-fill-color: white;
