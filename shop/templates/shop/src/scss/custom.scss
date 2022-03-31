@@ -91,13 +91,11 @@
   input {
     padding: 1rem;
     &:-webkit-autofill {
+      box-shadow: 0 0 0 50px rgb(0, 0, 0) inset;
       -webkit-box-shadow: 0 0 0 50px rgb(0, 0, 0) inset; /* Change the color to your own background color */
       -webkit-text-fill-color: rgb(255, 255, 255);
     }
   }
-}
-.categories-top{
-
 }
 .rounded-left-side {
   border-radius: 10vh 0 0 10vh;
@@ -191,8 +189,6 @@ img{
   width: 100%;
 }
 @media screen and (max-height: 700px) {
-  .categories {
-  }
   .categories-top{
     top: 50%;
   }
