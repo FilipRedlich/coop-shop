@@ -118,13 +118,14 @@
       -->
       <br>
       <p>{{ Subcategories.0 }}</p>
-      e{% outputCat 2 %} <!--Displays all subCategories in categories-->  <br>
-      b{% hasDiscount 1 %} <!--Display all items with discount in specified subCategory-->
-      
+      Display subcats in cats: {% outputCat 2 %} <!--Displays all subCategories in categories-->  <br>
+      Display products in subcats: {% hasDiscount 1 %} <!--Display all items with discount in specified subCategory--> <br>
+      Display name field of products in subcat: {% outputSubcat 1 "name" %} <br>
+      Display price field of products in subcat: {% outputSubcat 1 "price" %}
 
       <script>
         console.log('{{subcategories.0.1}}')
-        var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'.replaceAll(',)', '').split('(');
+        var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'.replaceAll("&#x27;,)", '').split("(&#x27;");
         FIRST_SUBCAT_NAME.shift()
         console.log(FIRST_SUBCAT_NAME)
 
