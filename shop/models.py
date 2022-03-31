@@ -25,7 +25,7 @@ class Products(models.Model):
     name=models.CharField(max_length=255)
     picture=models.CharField(max_length=255,blank=1)
     subcat=models.ForeignKey(subCategories, on_delete=models.CASCADE,default=1)
-    quantity=models.IntegerField()
+    quantity=models.IntegerField(default=1)
     price=models.FloatField()
     mult=models.FloatField(default=1.0)
     rating=models.FloatField(default=3.0)
@@ -37,3 +37,9 @@ class Basket(models.Model):
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.pk)+". "+self.userID
+
+class Services(models.Model):
+    name=models.CharField(max_length=255,default="test")
+    price=models.FloatField(default=9.99)
+    def __str__(self):
+        return self.name

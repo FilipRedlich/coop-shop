@@ -4,7 +4,7 @@ from django.urls import reverse
 from django.views import generic
 from django.views.generic.base import TemplateView
 
-from .models import Users,Basket,Categories,Products,subCategories
+from .models import Users,Basket,Categories,Products,subCategories,Services
 
 
 class IndexView(TemplateView):
@@ -22,6 +22,7 @@ class IndexView(TemplateView):
         context['users'] = Users.objects.values_list()
         context['basket'] = Basket.objects.values_list()
         context['subcategories'] = subCategories.objects.values_list()
+        context['services'] = Services.objects.values_list()
         #call function from models and pass it to template via gall
         #context['gall'] = Products.return_all()
         return context
@@ -41,6 +42,7 @@ class TestView(TemplateView):
         context['users'] = Users.objects.values_list
         context['basket'] = Basket.objects.values_list
         context['subcategories'] = subCategories.objects.values_list()
+        context['services'] = Services.objects.values_list()
         return context
 
 '''
