@@ -148,15 +148,21 @@
         
 
         const anchorCreator = () => {
-        var button = document.querySelector('.testBtn');
-        var cloned = button.cloneNode(true);
-        var holder = document.querySelector('.anchorRoot')
-
-        holder.appendChild(cloned.cloneNode(true))
-        } 
-        for(let i = 0; i<5; i++){
-          anchorCreator()
+        let button = document.querySelector('.testBtn');
+        let cloned = button.cloneNode(true);
+        let holder = document.querySelector('.anchorRoot');
+        var arrayy = '{% outputCat 2 %}'.replaceAll("&#x27;,)", '').split("(&#x27;"); //stores all subcategories from specified index to variable
+        arrayy.shift(); //removes weird ass empty element on index 0
+        
+        for(let i = 0; i<arrayy.length; i++){
+          cloned.textContent = arrayy[i];
+          holder.appendChild(cloned.cloneNode(true))
         }
+        
+        
+        
+        } 
+       anchorCreator()
         
       </script>
   </body>
