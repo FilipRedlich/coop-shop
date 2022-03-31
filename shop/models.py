@@ -12,12 +12,14 @@ class Users(models.Model):
 
 class Categories(models.Model):
     name=models.CharField(max_length=50)
+    picture=models.CharField(max_length=255,blank=1)
     def __str__(self):
         return str(self.pk)+". "+self.name
 
 class subCategories(models.Model):
     name=models.CharField(max_length=50,default="empty")
     catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
+    picture=models.CharField(max_length=255,blank=1)
     def __str__(self):
         return str(self.pk)+". "+self.name
 
