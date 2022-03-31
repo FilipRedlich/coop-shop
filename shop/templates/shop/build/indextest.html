@@ -58,20 +58,23 @@
 
     </script>
     <script>
-      var productName;
-      var price;
-      var arrayOfProducts = [];
-      var arrayOfPrices = [];
-      "{% for prod in products %}"
-       productName = ('{{prod.1}}');
-       price = ('{{prod.5}}');
+      //DEPRECATED
 
-       arrayOfProducts.push(productName);
-       arrayOfPrices.push(price);
+      // var productName;
+      // var price;
+      // var arrayOfProducts = [];
+      // var arrayOfPrices = [];
+      // "{% for prod in products %}"
+      //  productName = ('{{prod.1}}');
+      //  price = ('{{prod.5}}');
+
+      //  arrayOfProducts.push(productName);
+      //  arrayOfPrices.push(price);
        
        
-      "{% endfor %}"
-      console.log(arrayOfPrices, arrayOfProducts)
+      // "{% endfor %}"
+      // console.log(arrayOfPrices, arrayOfProducts)
+      // console.log('here')
     </script>
       <!-- select from products row[0] field[1] -->
       <h4>select from products row[0] field[1]</h4>
@@ -117,12 +120,43 @@
       <p>{{ Subcategories.0 }}</p>
       e{% outputCat 2 %} <!--Displays all subCategories in categories-->  <br>
       b{% hasDiscount 1 %} <!--Display all items with discount in specified subCategory-->
-
+      
 
       <script>
-        var yy = '{% outputSubcat 1 "price" %}'.replaceAll(',)', '').split('(');
-        yy.shift()
-        console.log(yy)
+        console.log('{{subcategories.0.1}}')
+        var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'.replaceAll(',)', '').split('(');
+        FIRST_SUBCAT_NAME.shift()
+        console.log(FIRST_SUBCAT_NAME)
+
+
+        //Save all prices from first sub category to FIRST_SUBCAT_PRICE
+        var FIRST_SUBCAT_PRICE = '{% outputSubcat 1 "price" %}'.replaceAll(',)', '').split('(');
+        FIRST_SUBCAT_PRICE.shift()
+        console.log(FIRST_SUBCAT_PRICE)
+
+        var SECOND_SUBCAT_PRICE = '{% outputSubcat 2 "price" %}'.replaceAll(',)', '').split('(');
+        SECOND_SUBCAT_PRICE.shift()
+        console.log(SECOND_SUBCAT_PRICE )
+      </script>
+      <div class="anchorRoot">
+        <button class="testBtn">
+          ds
+        </button>
+      </div>
+      <script>
+        
+
+        const anchorCreator = () => {
+        var button = document.querySelector('.testBtn');
+        var cloned = button.cloneNode(true);
+        var holder = document.querySelector('.anchorRoot')
+
+        holder.appendChild(cloned.cloneNode(true))
+        } 
+        for(let i = 0; i<5; i++){
+          anchorCreator()
+        }
+        
       </script>
   </body>
 </html>
