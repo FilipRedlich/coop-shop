@@ -162,6 +162,7 @@
   <div class="anchorRoot">
     <button class="testBtn">ds</button>
   </div>
+  
   <script defer>
     const anchorCreator = (myArray) => {
       console.log(myArray)
@@ -177,23 +178,24 @@
     };
     anchorCreator(ARRAY_3_SUBCATEGORY); //to do: add to nav
   </script>
-  <p class="some-p">dsds</p>
-  <p class="some-p">sdsd</p>
+  <a class="some-p">dsds</a>
+  <a class="some-p">sdsd</a>
   <script defer>
     const addEv = () => {
       const xy = document.querySelectorAll(".testBtn");
-      console.log(xy);
       const para = document.querySelectorAll('.some-p')
+      console.log(xy);
+      
       z = 1; 
       i = 0;
       catIndex = 2;
       console.log('cat' + 2)
       xy.forEach((el) => {
-
+        
         el.addEventListener("click", () => {
-
+         
           para.forEach(el => {
-
+            el.setAttribute('href', '#');
             var x = window['cat' + catIndex];
             
             para[i].textContent = x[z];
