@@ -23318,6 +23318,11 @@ var ProductNav = function ProductNav() {
             return;
         }
     };
+    var addFunc = function addFunc() {
+        var xx = document.querySelectorAll('.testtt');
+        console.log(xx);
+    };
+    addFunc();
     var RenderSale = function RenderSale() {
         (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {
         }), document.querySelector('#root'));
@@ -23386,28 +23391,9 @@ var ProductNav = function ProductNav() {
                             id: "categories",
                             className: "text-left categories col-3 no-gutters gap-1" //Inside this element buttons are rendered
                         }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "bg-dark col-md categories-products mx-auto d-flex",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("ul", {
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                            children: "dsds"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                            children: "dsds"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                            children: "dsds"
-                                        })
-                                    ]
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("ul", {
-                                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("li", {
-                                        children: "dsdsd"
-                                    })
-                                })
-                            ]
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            id: "rootSubcategories",
+                            className: "bg-dark col-md categories-products mx-auto d-flex"
                         })
                     ]
                 })
