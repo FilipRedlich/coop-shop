@@ -35,7 +35,7 @@ const ProductNav = () => {
     var clone = button.cloneNode(true);
     var holder = document.querySelector(".categories");
     let isExisting = document.querySelector(".cat-btn");
-
+    
     //Adding details to button
     clone.classList.add(
       "cat-btn",
@@ -58,10 +58,16 @@ const ProductNav = () => {
       for (let i = 0; i < arrayOfCategories.length; i++) {
         clone.textContent = arrayOfCategories[i];
         holder.appendChild(clone.cloneNode(true));
+        
       }
       return;
     }
   }
+  const addFunc = () =>{
+    let xx = document.querySelectorAll('.testtt')
+    console.log(xx)
+  }
+  addFunc()
   const RenderSale = () =>{
     render(<OnSale />, document.querySelector('#root'))
   }
@@ -126,15 +132,8 @@ const ProductNav = () => {
           //Inside this element buttons are rendered
           ></div>
 
-          <div className="bg-dark col-md categories-products mx-auto d-flex">
-            <ul>
-              <li>dsds</li>
-              <li>dsds</li>
-              <li>dsds</li>
-            </ul>
-            <ul>
-              <li>dsdsd</li>
-            </ul>
+          <div id="rootSubcategories" className="bg-dark col-md categories-products mx-auto d-flex">
+            
           </div>
         </div>
       </section>

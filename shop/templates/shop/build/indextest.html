@@ -1,54 +1,56 @@
 {% load static %} {% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="E-commerce website" />
-    <title>E-commerce</title>
-    <!--<link rel="stylesheet" href="{% static 'shop/index.5127636a.css' %}" />
+
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-commerce website" />
+  <title>E-commerce</title>
+  <!--<link rel="stylesheet" href="{% static 'shop/index.5127636a.css' %}" />
     <script src="{% static 'shop/index.cd67c74c.js' %}" type="module" defer></script>-->
-    <style>
-      body {
-        background: #222;
-        color: white;
-      }
-    </style>
-  </head>
-  <body class="bg-dark">
-    <div id="navRoot">Nav not rendered</div>
-    <div id="root">Main not rendered</div>
-    mj
-    <button class="template">Button</button>
-    <script>
-      const buttonBuilder = () => {
-        var button = document.querySelector(".template");
-        var cloned = button.cloneNode(true);
-        var holder = document.querySelector("#root");
+  <style>
+    body {
+      background: #222;
+      color: white;
+    }
+  </style>
+</head>
 
-        console.log("dssds");
-        ("{% for prod in categories %}");
-        button.textContent = "{{ prod.1 }}";
-        holder.appendChild(button.cloneNode(true));
-        console.log("{{ prod.1 }}");
-        ("{% endfor %}");
-      };
-      buttonBuilder();
-      var pushedElement;
-      var arrayOfCategories = [];
-      ("{% for cat in categories %}");
-      pushedElement = "{{cat.1}}";
-      //console.log('{{ cat.1 }}')
-      console.log(pushedElement);
+<body class="bg-dark">
+  <div id="navRoot">Nav not rendered</div>
+  <div id="root">Main not rendered</div>
+  mj
+  <button class="template">Button</button>
+  <script>
+    const buttonBuilder = () => {
+      var button = document.querySelector(".template");
+      var cloned = button.cloneNode(true);
+      var holder = document.querySelector("#root");
 
-      arrayOfCategories.push(pushedElement);
+      console.log("dssds");
+      ("{% for prod in categories %}");
+      button.textContent = "{{ prod.1 }}";
+      holder.appendChild(button.cloneNode(true));
+      console.log("{{ prod.1 }}");
+      ("{% endfor %}");
+    };
+    buttonBuilder();
+    var pushedElement;
+    var arrayOfCategories = [];
+    ("{% for cat in categories %}");
+    pushedElement = "{{cat.1}}";
+    //console.log('{{ cat.1 }}')
+    console.log(pushedElement);
 
-      (" {% endfor %}");
-      console.log(arrayOfCategories);
-      var cat_index = 0;
-    </script>
-    <script>
+    arrayOfCategories.push(pushedElement);
+
+    (" {% endfor %}");
+    console.log(arrayOfCategories);
+    var cat_index = 0;
+  </script>
+  <script>
       //DEPRECATED
 
       // var productName;
@@ -65,29 +67,29 @@
       // "{% endfor %}"
       // console.log(arrayOfPrices, arrayOfProducts)
       // console.log('here')
-    </script>
-    <!-- select from products row[0] field[1] -->
-    <h4>select from products row[0] field[1]</h4>
-    {{products.0.1}}
-    <!-- returns Fasolowa -->
+  </script>
+  <!-- select from products row[0] field[1] -->
+  <h4>select from products row[0] field[1]</h4>
+  {{products.0.1}}
+  <!-- returns Fasolowa -->
 
-    <!--select * from procducts-->
-    <h4>select * from procducts</h4>
-    <!--Select first index and second item in array-->
-    {{products.0.1}}
-    <!-- return <QuerySet [(1, 'Fasolowa', '', 1, 3, 12.99, 3.0)]> -->
+  <!--select * from procducts-->
+  <h4>select * from procducts</h4>
+  <!--Select first index and second item in array-->
+  {{products.0.1}}
+  <!-- return <QuerySet [(1, 'Fasolowa', '', 1, 3, 12.99, 3.0)]> -->
 
-    <!--loop products and return 5th field-->
-    <h4>loop products and return 5th field</h4>
-    {% for prod in products %}
-    <p>{{ prod.1 }}</p>
-    <!--returns names of products-->
-    <p>{{ prod.5 }}</p>
-    <!--returns prices-->
-    {% endfor %}
-    <!-- returns 12.99 -->
+  <!--loop products and return 5th field-->
+  <h4>loop products and return 5th field</h4>
+  {% for prod in products %}
+  <p>{{ prod.1 }}</p>
+  <!--returns names of products-->
+  <p>{{ prod.5 }}</p>
+  <!--returns prices-->
+  {% endfor %}
+  <!-- returns 12.99 -->
 
-    <!--made this obsolete after making db universal
+  <!--made this obsolete after making db universal
       <!-loop categories and return first string field when .all()->
       <h4>loop categories and return first string field when .all()</h4>
       {% for cat in categories %}
@@ -95,12 +97,12 @@
       {% endfor %}
       -->
 
-    <!--loop categories and return all fields-->
-    <h4>loop categories and return all fields</h4>
-    {% for cat in categories %}
-    <p>{{ cat }}</p>
-    {% endfor %}
-    <!-- returns
+  <!--loop categories and return all fields-->
+  <h4>loop categories and return all fields</h4>
+  {% for cat in categories %}
+  <p>{{ cat }}</p>
+  {% endfor %}
+  <!-- returns
         (1, 'Soup')
         (2, 'krk')
         (3, 'ttt')
@@ -108,70 +110,87 @@
         (15, 'indexinserttest')
         (23, 'huh') 
       -->
-    <br />
-    <p>{{ Subcategories.0 }}</p>
-    Display subcats in cats: {% outputCat 2 %}
-    <!--Displays all subCategories in categories-->
-    <br />
-    Display products in subcats: {% hasDiscount 1 %}
-    <!--Display all items with discount in specified subCategory-->
-    <br />
-    Display name field of products in subcat: {% outputSubcat 1 "name" %} <br />
-    Display price field of products in subcat: {% outputSubcat 1 "price" %}
+  <br />
+  <p>{{ Subcategories.0 }}</p>
+  Display subcats in cats: {% outputCat 2 %}
+  <!--Displays all subCategories in categories-->
+  <br />
+  Display products in subcats: {% hasDiscount 1 %}
+  <!--Display all items with discount in specified subCategory-->
+  <br />
+  Display name field of products in subcat: {% outputSubcat 1 "name" %} <br />
+  Display price field of products in subcat: {% outputSubcat 1 "price" %}
 
-    <script>
-      console.log("{{subcategories.0.1}}");
-      var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      FIRST_SUBCAT_NAME.shift();
-      console.log(FIRST_SUBCAT_NAME);
+  <script>
+    var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+    var ARRAY_2_SUBCATEGORY = "{% outputCat 3 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;"); //stores all subcategories from specified index to variable
+    ARRAY_1_SUBCATEGORY.shift();
+    ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+    console.log("{{subcategories.0.1}}");
+    var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+    FIRST_SUBCAT_NAME.shift();
+    console.log(FIRST_SUBCAT_NAME);
 
-      //Save all prices from first sub category to FIRST_SUBCAT_PRICE
-      var FIRST_SUBCAT_PRICE = '{% outputSubcat 1 "price" %}'
-        .replaceAll(",)", "")
-        .split("(");
-      FIRST_SUBCAT_PRICE.shift();
-      console.log(FIRST_SUBCAT_PRICE);
 
-      var SECOND_SUBCAT_PRICE = '{% outputSubcat 2 "price" %}'
-        .replaceAll(",)", "")
-        .split("(");
-      SECOND_SUBCAT_PRICE.shift();
-      console.log(SECOND_SUBCAT_PRICE);
-    </script>
-    <div class="anchorRoot">
-      <button class="testBtn">ds</button>
-    </div>
-    <script>
-      const anchorCreator = () => {
-        let button = document.querySelector(".testBtn");
-        let cloned = button.cloneNode(true);
-        let holder = document.querySelector(".anchorRoot");
-        var arrayOfSubcategories = "{% outputCat 2 %}"
-          .replaceAll("&#x27;,)", "")
-          .split("(&#x27;"); //stores all subcategories from specified index to variable
-        arrayOfSubcategories.shift(); //removes weird ass empty element on index 0
+  for(var i = 2; i < 10; i++){ 
+    window['cat' + i] = "{% outputCat 2%}" .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+    
+        //window['subCat' + i] = `ARRAY_${i}_SUBCATEGORY`;   // create variables containing subcategories
+  }
+ console.log(cat2)
+ console.log('here')
+    //Save all prices from first sub category to FIRST_SUBCAT_PRICE
+    var SUBCAT_1_PRICE = '{% outputSubcat 1 "price" %}'
+      .replaceAll(",)", "")
+      .split("(");
+    SUBCAT_1_PRICE.shift();
+    console.log(SUBCAT_1_PRICE);
 
-        for (let i = 0; i < arrayOfSubcategories.length; i++) {
-          cloned.textContent = arrayOfSubcategories[i];
+    var SUBCAT_2_PRICE = '{% outputSubcat 2 "price" %}'
+      .replaceAll(",)", "")
+      .split("(");
+    SUBCAT_2_PRICE.shift();
+    console.log(SUBCAT_2_PRICE);
+  </script>
+  <div class="anchorRoot">
+    <button class="testBtn">ds</button>
+  </div>
+  <script defer>
+    const anchorCreator = (myArray) => {
+      console.log(myArray)
+      let button = document.querySelector(".testBtn");
+      let cloned = button.cloneNode(true);
+      let holder = document.querySelector(".anchorRoot");
 
-          holder.appendChild(cloned.cloneNode(true));
-        }
-      };
-      anchorCreator();
-    </script>
-    <script defer>
-      const addEv = () => {
-        const xy = document.querySelectorAll(".testBtn");
-        console.log(xy);
-        xy.forEach((el) => {
-          el.addEventListener("click", () => {
-            console.log("works?");
-          });
+
+      for (let i = 0; i < ARRAY_2_SUBCATEGORY.length; i++) {
+        cloned.textContent = ARRAY_2_SUBCATEGORY[i];
+        holder.appendChild(cloned.cloneNode(true));
+      }
+    };
+    anchorCreator(ARRAY_2_SUBCATEGORY); //to do: add to nav
+  </script>
+
+  <script defer>
+    const addEv = () => {
+      const xy = document.querySelectorAll(".testBtn");
+      console.log(xy);
+      xy.forEach((el) => {
+        el.addEventListener("click", () => {
+          console.log("works?");
         });
-      };
-      addEv();
-    </script>
-  </body>
+      });
+    };
+    addEv();
+    console.log(ARRAY_1_SUBCATEGORY)
+  </script>
+</body>
+
 </html>

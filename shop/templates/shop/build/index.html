@@ -1,31 +1,61 @@
 {% load static %} {% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="E-commerce website" />
-    <title>E-commerce</title>
-    <link rel="stylesheet" href="./static/shop/index.81aa0aa0.css" />
-    <script src="./static/shop/index.e4d0fc10.js" type="module"></script>
-  </head>
-  <body class="bg-dark">
-    <script>
-      var pushedElement;
-      var arrayOfCategories = [];
-      ("{% for cat in categories %}");
-      pushedElement = "{{cat.1}}";
-      //console.log('{{ cat.1 }}')
-      console.log(pushedElement);
 
-      arrayOfCategories.push(pushedElement);
+<head>
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="E-commerce website" />
+  <title>E-commerce</title>
+  <link rel="stylesheet" href="./static/shop/index.81aa0aa0.css" />
+  <script src="./static/shop/index.e4d0fc10.js" type="module"></script>
+</head>
 
-      (" {% endfor %}");
-      console.log(arrayOfCategories);
-    </script>
-    <div id="navRoot">Nav not rendered</div>
-    <div id="root">Main not rendered</div>
-    <div id="footerRoot">footer not rendered</div>
-  </body>
+<body class="bg-dark">
+  <script>
+    var pushedElement;
+    var arrayOfCategories = [];
+    ("{% for cat in categories %}");
+    pushedElement = "{{cat.1}}";
+    //console.log('{{ cat.1 }}')
+    console.log(pushedElement);
+
+    arrayOfCategories.push(pushedElement);
+
+    (" {% endfor %}");
+    console.log(arrayOfCategories);
+  </script>
+
+  <script>
+    var ARRAY_1_SUBCATEGORY = "{% outputCat 1 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+    var ARRAY_2_SUBCATEGORY = "{% outputCat 2 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;"); //stores all subcategories from specified index to variable
+    ARRAY_1_SUBCATEGORY.shift();
+    ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+
+    const anchorCreator = (ARRAY) => {
+      let button = document.createElement('button')
+      button.classList.add('btn', 'testtt');
+      let cloned = button.cloneNode(true);
+      let holder = document.querySelector(".anchorRoot");
+     
+
+      for (let i = 0; i < ARRAY.length; i++) {
+        cloned.textContent = ARRAY[i];
+        
+
+        holder.appendChild(cloned.cloneNode(true));
+      }
+    };
+    anchorCreator(); //to do: add to nav
+  </script>
+  <div id="navRoot">Nav not rendered</div>
+  <div id="root">Main not rendered</div>
+  <div id="footerRoot">footer not rendered</div>
+</body>
+
 </html>
