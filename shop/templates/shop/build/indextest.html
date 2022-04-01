@@ -137,15 +137,15 @@
     FIRST_SUBCAT_NAME.shift();
     console.log(FIRST_SUBCAT_NAME);
 
+    //DYNAMIC CREATING VARIABLES
+    for (var i = 2; i < 10; i++) {
+      window['cat' + i] = "{% outputCat 2%}".replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
 
-  for(var i = 2; i < 10; i++){ 
-    window['cat' + i] = "{% outputCat 2%}" .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-    
-        //window['subCat' + i] = `ARRAY_${i}_SUBCATEGORY`;   // create variables containing subcategories
-  }
- console.log(cat2)
- console.log('here')
+      //window['subCat' + i] = `ARRAY_${i}_SUBCATEGORY`;   // create variables containing subcategories
+    }
+    console.log(cat2)
+    console.log('here')
     //Save all prices from first sub category to FIRST_SUBCAT_PRICE
     var SUBCAT_1_PRICE = '{% outputSubcat 1 "price" %}'
       .replaceAll(",)", "")
@@ -175,21 +175,46 @@
         holder.appendChild(cloned.cloneNode(true));
       }
     };
-    anchorCreator(ARRAY_2_SUBCATEGORY); //to do: add to nav
+    anchorCreator(ARRAY_3_SUBCATEGORY); //to do: add to nav
   </script>
-
+  <p class="some-p">dsds</p>
+  <p class="some-p">sdsd</p>
   <script defer>
     const addEv = () => {
       const xy = document.querySelectorAll(".testBtn");
       console.log(xy);
+      const para = document.querySelectorAll('.some-p')
+      z = 1; 
+      i = 0;
+      catIndex = 2;
+      console.log('cat' + 2)
       xy.forEach((el) => {
+
         el.addEventListener("click", () => {
-          console.log("works?");
+
+          para.forEach(el => {
+
+            var x = window['cat' + catIndex];
+            console.log(i)
+            para[i].textContent = x[z];
+            z++;
+            i++;
+            catIndex++
+            console.log(z, 'string kurwa')
+          })
+
+
+
+
+
+
+
         });
       });
     };
     addEv();
     console.log(ARRAY_1_SUBCATEGORY)
+    console.log(cat2, cat3)
   </script>
 </body>
 
