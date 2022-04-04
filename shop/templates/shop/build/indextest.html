@@ -135,8 +135,8 @@
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
     FIRST_SUBCAT_NAME.shift();
-    console.log(FIRST_SUBCAT_NAME);
-
+    console.log(FIRST_SUBCAT_NAME, 'first_subcat_name');
+    
     //DYNAMIC CREATING VARIABLES
     for (var i = 2; i < 10; i++) {
       window['cat' + i] = "{% outputCat 2%}".replaceAll("&#x27;,)", "")
@@ -144,7 +144,7 @@
 
       //window['subCat' + i] = `ARRAY_${i}_SUBCATEGORY`;   // create variables containing subcategories
     }
-    console.log(cat2)
+    console.log(cat2, 'cat2')
     console.log('here')
     //Save all prices from first sub category to FIRST_SUBCAT_PRICE
     var SUBCAT_1_PRICE = '{% outputSubcat 1 "price" %}'
@@ -158,6 +158,11 @@
       .split("(");
     SUBCAT_2_PRICE.shift();
     console.log(SUBCAT_2_PRICE);
+
+
+    
+    
+    
   </script>
   <div class="anchorRoot">
     <button class="testBtn">ds</button>
@@ -195,7 +200,7 @@
         el.addEventListener("click", () => {
          
           para.forEach(el => {
-            el.setAttribute('href', '#');
+            //el.setAttribute('href', 'empty');
             var x = window['cat' + catIndex];
             
             para[i].textContent = x[z];
@@ -212,8 +217,29 @@
       });
     };
     addEv();
-    console.log(ARRAY_1_SUBCATEGORY)
+    console.log(ARRAY_1_SUBCATEGORY, "{ outputCat 2 }")
     console.log(cat2, cat3)
+    
+  </script>
+
+  <script defer>
+    addEventListener('load', ()=>{
+      setTimeout(testt(), 3000)
+    })
+    function testt (){
+      const getBtn = document.querySelectorAll('.some-p');
+      const setEvent = () =>{
+        console.log(ARRAY_1_SUBCATEGORY, 'Array test func')
+        
+      }
+ 
+        for(let i = 0; i<getBtn.length; i++){
+         getBtn[i].addEventListener('click', setEvent);
+
+      }
+     
+    }
+  
   </script>
 </body>
 
