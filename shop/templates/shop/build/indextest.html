@@ -122,14 +122,37 @@
   Display price field of products in subcat: {% outputSubcat 1 "price" %}
 
   <script>
-    var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+
+
+    
+      var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
+      var ARRAY_2_SUBCATEGORY = "{% outputCat 3 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;"); //stores all subcategories from specified index to variable
+      var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
+      var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
+      var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}"
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
-    var ARRAY_2_SUBCATEGORY = "{% outputCat 3 %}"
+      var ARRAY_6_SUBCATEGORY = "{% outputCat 7 %}"
       .replaceAll("&#x27;,)", "")
-      .split("(&#x27;"); //stores all subcategories from specified index to variable
-    ARRAY_1_SUBCATEGORY.shift();
-    ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+      .split("(&#x27;");
+      var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      ARRAY_1_SUBCATEGORY.shift();
+      ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+      ARRAY_3_SUBCATEGORY.shift();
+      ARRAY_4_SUBCATEGORY.shift();
+      ARRAY_5_SUBCATEGORY.shift();
+      ARRAY_6_SUBCATEGORY.shift();
+      ARRAY_7_SUBCATEGORY.shift();
     console.log("{{subcategories.0.1}}");
     var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'
       .replaceAll("&#x27;,)", "")
@@ -201,9 +224,9 @@
          
           para.forEach(el => {
             //el.setAttribute('href', 'empty');
-            var x = window['cat' + catIndex];
+            //var x = window['cat' + catIndex];
             
-            para[i].textContent = x[z];
+            para[i].textContent = x[2];
 
             z++;
             i++;
@@ -218,7 +241,7 @@
     };
     addEv();
     console.log(ARRAY_1_SUBCATEGORY, "{ outputCat 2 }")
-    console.log(cat2, cat3)
+    console.log(cat2, cat3, 'cat2 and cat3')
     
   </script>
 
@@ -229,13 +252,8 @@
     function testt (){
       const getBtn = document.querySelectorAll('.some-p');
       const setEvent = () =>{
-        console.log(ARRAY_1_SUBCATEGORY, 'Array test func')
+        //console.log(ARRAY_1_SUBCATEGORY, 'Array test func')
         
-      }
- 
-        for(let i = 0; i<getBtn.length; i++){
-         getBtn[i].addEventListener('click', setEvent);
-
       }
      
     }
