@@ -23348,6 +23348,7 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
                             ToggleClass();
+                            (0, _Test["default"])();
                             buttonBuilder();
                         },
                         children: "Categories"
@@ -23413,9 +23414,51 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshSig$ = prevRefreshSig;
 }
 },{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Test":"f2YDa","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT"}],"f2YDa":[function(require,module,exports) {
-"use strict";
+var $parcel$ReactRefreshHelpers$f245 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f245.prelude(module);
 
-},{}],"9GTDe":[function(require,module,exports) {
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = exports.TEST_ARRAY = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _reactDom = require("react-dom");
+var _jsxRuntime = require("react/jsx-runtime");
+var TEST_ARRAY = [
+    "Test Element num.1",
+    "Test element num.2",
+    "Test element num.3",
+    "Test element num.4"
+];
+exports.TEST_ARRAY = TEST_ARRAY;
+var renderTry = function renderTry(ARRAY) {
+    var addContent = function addContent() {
+        var button = document.createElement("button").cloneNode(true);
+        var clone = button.cloneNode(true);
+        clone.textContent = 'dddd';
+        var renderPlacement = document.querySelector('#rootSubcategories');
+        for(var i = 0; i < 10; i++)renderPlacement.appendChild(clone.cloneNode(true));
+        console.log('fefe');
+    };
+    addContent();
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    }));
+};
+renderTry();
+var _default = renderTry;
+exports["default"] = _default;
+
+  $parcel$ReactRefreshHelpers$f245.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23716,12 +23759,14 @@ var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../im
 var _ProductsNav = require("./ProductsNav");
 var _react = require("react");
 var _usehooksTs = require("usehooks-ts");
+var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "/home/brtskr/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Carousel.js", _this = void 0;
 var images = [
     {
         id: 1,
-        src: _undraw_dev_productivity_re_fylf["default"]
+        src: _undraw_dev_productivity_re_fylf["default"],
+        testVal: _Test.TEST_ARRAY[0]
     },
     {
         id: 2,
@@ -23739,7 +23784,7 @@ var Carousel = function Carousel() {
         setCount(count + 1);
     }, 3000);
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "bg-black w-75 p-5 min-vh-100 m-auto gallery",
+        className: "bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center",
         onClick: _ProductsNav.watchForMove,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
             src: images[count].src,
@@ -23759,7 +23804,7 @@ $RefreshReg$(_c, "Carousel");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","usehooks-ts":"dmUe4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ProductsNav":"jxWkG"}],"4KNRF":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","react":"21dqq","usehooks-ts":"dmUe4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ProductsNav":"jxWkG","./Test":"f2YDa"}],"4KNRF":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_software_engineer_re_fyew.70662922.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"dmUe4":[function(require,module,exports) {

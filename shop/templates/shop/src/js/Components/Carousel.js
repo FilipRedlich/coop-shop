@@ -3,8 +3,9 @@ import image2 from "../../images/undraw_software_engineer_re_fyew.svg";
 import { watchForMove } from "./ProductsNav";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
+import { TEST_ARRAY } from "./Test";
 const images = [
-    { id: 1, src: image1 },
+    { id: 1, src: image1, testVal: TEST_ARRAY[0] },
     { id: 2, src: image2 },
     {} //DO NOT REMOVE (this element is needed for resetting carousel index)
 ];
@@ -22,15 +23,14 @@ const Carousel = () => {
   }, 3000);
 
   return (
-    <div className="bg-black w-75 p-5 min-vh-100 m-auto gallery"
+    <div
+      className="bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center"
       onClick={watchForMove}
     >
       <img
         src={images[count].src}
         alt="gallery"
         className="gallery-img d-block"
-      
-        
       />
     </div>
   );
