@@ -146,6 +146,18 @@
       var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
+      var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
       ARRAY_1_SUBCATEGORY.shift();
       ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
       ARRAY_3_SUBCATEGORY.shift();
@@ -153,7 +165,19 @@
       ARRAY_5_SUBCATEGORY.shift();
       ARRAY_6_SUBCATEGORY.shift();
       ARRAY_7_SUBCATEGORY.shift();
+      ARRAY_8_SUBCATEGORY.shift();
+      ARRAY_9_SUBCATEGORY.shift();
+      ARRAY_10_SUBCATEGORY.shift();
+      ARRAY_11_SUBCATEGORY.shift();
     console.log("{{subcategories.0.1}}");
+    console.log(ARRAY_3_SUBCATEGORY[1], 'here1')
+
+
+
+
+
+
+
     var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
