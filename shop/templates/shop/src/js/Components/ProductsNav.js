@@ -8,7 +8,7 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-
+import { TEST_ARRAY } from "./Test";
 const watchForMove = (el) => {
   const watchedElement = document.querySelector(".gallery");
   const observer = new IntersectionObserver(
@@ -87,8 +87,9 @@ const ProductNav = () => {
           className="btn btn-lg bg-transparent  text-white"
           onClick={() => {
             ToggleClass();
-            renderTry();
+            renderTry(TEST_ARRAY);
             buttonBuilder();
+            
           }}
         >
           Categories

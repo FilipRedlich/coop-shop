@@ -7,17 +7,23 @@ const TEST_ARRAY = [
   "Test element num.4",
 ];
 
-const renderTry = (ARRAY) => {
+const renderTry = (ARRAY = []) => {
     const addContent = () => {
-       var button = document.createElement("button").cloneNode(true);
-       var clone = button.cloneNode(true);
-        clone.textContent= 'dddd'
-        const renderPlacement = document.querySelector('#rootSubcategories');
-        for (let i = 0; i < 10; i++){
-          renderPlacement.appendChild(clone.cloneNode(true));  
-        }
-        
-        console.log('fefe')
+      var button = document.createElement("button").cloneNode(true);
+      var clone = button.cloneNode(true);
+      var renderPlacement = document.querySelector('#rootSubcategories');
+      for(let i = 0; i<TEST_ARRAY.length; i++){
+        clone.textContent= ARRAY[i];
+        console.log(clone.textContent)
+      }  
+      
+        console.log('pds')
+       // for (let i = 0; i < 10; i++){
+       //   renderPlacement.appendChild(clone.cloneNode(true));  
+       // }
+        //renderPlacement.appendChild(clone.cloneNode(true))
+        console.log('fefee')
+        //console.log(clone.textContent)
     };
     addContent()
     return (
