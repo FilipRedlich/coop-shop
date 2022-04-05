@@ -7,7 +7,7 @@ import Smth from "./Test";
 import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
-
+import renderTry from "./Test";
 
 const watchForMove = (el) => {
   const watchedElement = document.querySelector(".gallery");
@@ -87,6 +87,7 @@ const ProductNav = () => {
           className="btn btn-lg bg-transparent  text-white"
           onClick={() => {
             ToggleClass();
+            renderTry();
             buttonBuilder();
           }}
         >
