@@ -21,7 +21,7 @@ class subCategories(models.Model):
     catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
     picture=models.CharField(max_length=255,blank=1)
     def __str__(self):
-        return str(self.pk)+". "+self.name
+        return str(self.pk)+". "+self.name+" ("+str(self.catID)+")"
 
 class Products(models.Model):
     name=models.CharField(max_length=255)
