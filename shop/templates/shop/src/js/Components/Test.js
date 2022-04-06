@@ -12,18 +12,16 @@ const renderTry = (ARRAY = []) => {
       var button = document.createElement("button").cloneNode(true);
       var clone = button.cloneNode(true);
       var renderPlacement = document.querySelector('#rootSubcategories');
-      for(let i = 0; i<TEST_ARRAY.length; i++){
-        clone.textContent= ARRAY[i];
+      
+      
+      console.log('pds')
+      for(let i = 0; i<ARRAY.length; i++){
+        clone.textContent = ARRAY[i];
+         renderPlacement.appendChild(clone.cloneNode(true)); 
         console.log(clone.textContent)
       }  
-      
-        console.log('pds')
-       // for (let i = 0; i < 10; i++){
-       //   renderPlacement.appendChild(clone.cloneNode(true));  
-       // }
-        //renderPlacement.appendChild(clone.cloneNode(true))
         console.log('fefee')
-        //console.log(clone.textContent)
+
     };
     addContent()
     return (
