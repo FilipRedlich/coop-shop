@@ -28,14 +28,47 @@
   </script>
 
   <script>
-    var ARRAY_1_SUBCATEGORY = "{% outputCat 1 %}"
+      var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");  //stores all subcategories from specified index to variable
+      //Third outputCat doesn't exist
+        var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
+      var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
+      var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}"
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
-    var ARRAY_2_SUBCATEGORY = "{% outputCat 2 %}"
+      var ARRAY_6_SUBCATEGORY = "{% outputCat 7 %}"
       .replaceAll("&#x27;,)", "")
-      .split("(&#x27;"); //stores all subcategories from specified index to variable
-    ARRAY_1_SUBCATEGORY.shift();
-    ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+      .split("(&#x27;");
+      var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
+      .replaceAll("&#x27;,)", "")
+      .split("(&#x27;");
+      ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+      ARRAY_3_SUBCATEGORY.shift();
+      ARRAY_4_SUBCATEGORY.shift();
+      ARRAY_5_SUBCATEGORY.shift();
+      ARRAY_6_SUBCATEGORY.shift();
+      ARRAY_7_SUBCATEGORY.shift();
+      ARRAY_8_SUBCATEGORY.shift();
+      ARRAY_9_SUBCATEGORY.shift();
+      ARRAY_10_SUBCATEGORY.shift();
+      ARRAY_11_SUBCATEGORY.shift();
 
     const anchorCreator = (ARRAY) => {
       let button = document.createElement('button')

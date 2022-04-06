@@ -127,11 +127,9 @@
     
       var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
         .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_2_SUBCATEGORY = "{% outputCat 3 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;"); //stores all subcategories from specified index to variable
-      var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
+        .split("(&#x27;");  //stores all subcategories from specified index to variable
+      //Third outputCat doesn't exist
+        var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
         .replaceAll("&#x27;,)", "")
         .split("(&#x27;");
       var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
@@ -158,8 +156,7 @@
       var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
-      ARRAY_1_SUBCATEGORY.shift();
-      ARRAY_2_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+      ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
       ARRAY_3_SUBCATEGORY.shift();
       ARRAY_4_SUBCATEGORY.shift();
       ARRAY_5_SUBCATEGORY.shift();
@@ -170,8 +167,8 @@
       ARRAY_10_SUBCATEGORY.shift();
       ARRAY_11_SUBCATEGORY.shift();
     console.log("{{subcategories.0.1}}");
-    console.log(ARRAY_3_SUBCATEGORY[1], 'ARRAY 3')
-
+    console.log(ARRAY_3_SUBCATEGORY[1], 'ARRAY 3.1')
+    console.log(ARRAY_3_SUBCATEGORY, 'ARRAY 3')
 
 
 
