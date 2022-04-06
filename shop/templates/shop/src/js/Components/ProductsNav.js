@@ -3,12 +3,33 @@ import { render } from "react-dom";
 
 //components
 import OnSale from "./OnSale";
-import Smth from "./Test";
 import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
 import { TEST_ARRAY } from "./Test";
+
+const addEvent = (elements = [], ARRAY = []) =>{
+  //const allSubCat = document.querySelectorAll('.testing');
+  let prodIndex = 0;
+  let cIndex = 1;
+ 
+  for(let i = 0; i<elements.length; i++){
+    console.log(elements[i])
+  
+  }
+  elements.forEach(el =>{
+    el.addEventListener('click', ()=>{
+      el[0] = console.log('fefe')
+    })
+  })
+
+  return(
+    <>
+    </>
+  )
+}
+
 const watchForMove = (el) => {
   const watchedElement = document.querySelector(".gallery");
   const observer = new IntersectionObserver(
@@ -88,6 +109,7 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             renderTry(TEST_ARRAY);
+            addEvent(document.querySelectorAll('.testing'))
             buttonBuilder();
             
           }}
