@@ -1005,18 +1005,48 @@ $parcel$ReactRefreshHelpers$2e54.prelude(module);
 try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
-var _react = _interopRequireDefault(require("react"));
+var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
 var _MainNav = _interopRequireDefault(require("./Components/MainNav"));
 var _ProductsNav = _interopRequireDefault(require("./Components/ProductsNav"));
 var _MainContent = _interopRequireDefault(require("./Components/MainContent"));
 var _Footer = _interopRequireDefault(require("./Components/Footer"));
+var _Test = _interopRequireWildcard(require("./Components/Test"));
+var _RenderScripts = require("./Components/RenderScripts");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\App.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/App.js", _this = void 0;
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
 var NavApp = function NavApp() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
@@ -1029,9 +1059,13 @@ var NavApp = function NavApp() {
 };
 _c = NavApp;
 var MainApp = function MainApp() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
-        })
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RenderScripts.RenderOnLoad, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
+            })
+        ]
     }));
 };
 _c1 = MainApp;
@@ -1060,7 +1094,7 @@ $RefreshReg$(_c2, "FooterApp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7XM86":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/typeof":"jgQjt","./Components/Test":"f2YDa","./Components/RenderScripts":"bNOSb"}],"7XM86":[function(require,module,exports) {
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -22038,7 +22072,7 @@ var _reactDom = require("react-dom");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -22167,7 +22201,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _reactDom = require("react-dom");
 var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Login.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Login.js", _this = void 0;
 //"Blueprint" for loginSwitch Button
 var RegisterSwitch = function RegisterSwitch() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
@@ -23282,8 +23316,9 @@ var _Services = _interopRequireDefault(require("./Services"));
 var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _Test = _interopRequireWildcard(require("./Test"));
+var _RenderScripts = require("./RenderScripts");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -23319,14 +23354,25 @@ var addEvent = function addEvent() {
         console.log(elements[i]);
         elements[i].addEventListener("click", function() {
             switch(elements[i].textContent){
-                case "".concat(ARRAY[0]):
+                case "".concat(_Test.TEST_ARRAY[0]):
                     alert("it works hah");
                     break;
-                case "".concat(ARRAY[1]):
-                    alert('second el');
+                case "".concat(_Test.TEST_ARRAY[1]):
+                    alert('testt');
                     break;
-                default:
-                    alert('SOMETHING FUCKED UP ONCE AGAIN');
+                case "".concat(_Test.TEST_ARRAY[2]):
+                    alert();
+                    break;
+                case "".concat(_Test.TEST_ARRAY[3]):
+                    alert('4th el');
+                    break;
+            }
+            switch(elements[i].textContent){
+                case "".concat(_Test.TEST_ARRAY2[0]):
+                    alert('hehe');
+                    break;
+                case "".concat(_Test.TEST_ARRAY2[1]):
+                    alert('er');
             } //if (elements[i].textContent.includes('num')) {
         //  alert('hehe')
         //}
@@ -23355,18 +23401,35 @@ var ProductNav = function ProductNav() {
             return;
         }
         if (!holder.contains(isExisting)) {
-            for(var i = 0; i < arrayOfCategories.length; i++){
-                clone.textContent = arrayOfCategories[i];
+            //for (let i = 0; i < arrayOfCategories.length; i++) {
+            //  clone.textContent = arrayOfCategories[i];
+            //  holder.appendChild(clone.cloneNode(true));
+            //  
+            //}
+            for(var i = 0; i < _Test.TEST_CAT.length; i++){
+                clone.textContent = _Test.TEST_CAT[i];
                 holder.appendChild(clone.cloneNode(true));
             }
             return;
         }
     };
-    var addFunc = function addFunc() {
-        var xx = document.querySelectorAll('.testtt');
-        console.log(xx);
+    var RenderFromCat = function RenderFromCat() {
+        var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+        var categories = document.querySelectorAll('.categories-button');
+        var _loop2 = function _loop2(i) {
+            categories[i].addEventListener('click', function() {
+                switch(ARRAY[i]){
+                    case "".concat(ARRAY[0]):
+                        (0, _Test["default"])(_Test.TEST_ARRAY);
+                        break;
+                    case "".concat(ARRAY[1]):
+                        (0, _Test["default"])(_Test.TEST_ARRAY2);
+                        break;
+                }
+            });
+        };
+        for(var i = 0; i < ARRAY.length; i++)_loop2(i);
     };
-    addFunc();
     var renderRoot = function renderRoot(renderElement) {
         (0, _reactDom.render)(renderElement, document.querySelector('#root'));
     };
@@ -23378,10 +23441,10 @@ var ProductNav = function ProductNav() {
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
-                            ToggleClass();
-                            (0, _Test["default"])(_Test.TEST_ARRAY);
-                            addEvent(document.querySelectorAll('.testing'), _Test.TEST_ARRAY);
+                            ToggleClass(); //renderTry(TEST_ARRAY2);
+                            addEvent(document.querySelectorAll('.testing'), _Test.TEST_CAT);
                             buttonBuilder();
+                            RenderFromCat(_Test.TEST_ARRAY);
                         },
                         children: "Categories"
                     }),
@@ -23449,7 +23512,7 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./RenderScripts":"bNOSb"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23464,7 +23527,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\OnSale.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
 var OnSale = function OnSale() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23562,7 +23625,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Services.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Services.js", _this = void 0;
 var Services = function Services() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23607,7 +23670,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Outlet.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Outlet.js", _this = void 0;
 var Outlet = function Outlet() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23641,7 +23704,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_envelope_re_f5j = _interopRequireDefault(require("../../images/undraw_envelope_re_f5j4.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Newsletter.js", _this = void 0;
 var Newsletter = function Newsletter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
@@ -23709,10 +23772,16 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = exports.TEST_ARRAY = void 0;
+exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _reactDom = require("react-dom");
 var _jsxRuntime = require("react/jsx-runtime");
+var TEST_CAT = [
+    'cat1',
+    'cat2',
+    'cat3'
+];
+exports.TEST_CAT = TEST_CAT;
 var TEST_ARRAY = [
     "Test Element num.1",
     "Test element num.2",
@@ -23720,6 +23789,13 @@ var TEST_ARRAY = [
     "Test element num.4"
 ];
 exports.TEST_ARRAY = TEST_ARRAY;
+var TEST_ARRAY2 = [
+    'test1',
+    'test2',
+    'test3',
+    'test4'
+];
+exports.TEST_ARRAY2 = TEST_ARRAY2;
 var renderTry = function renderTry() {
     var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var addContent = function addContent() {
@@ -23750,7 +23826,81 @@ exports["default"] = _default;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1FSJk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNOSb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8894.prelude(module);
+
+try {
+"use strict";
+var _typeof = require("@babel/runtime/helpers/typeof");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = exports.RenderOnLoad = void 0;
+var _react = _interopRequireWildcard(require("react"));
+var _Test = _interopRequireWildcard(require("./Test"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/RenderScripts.js", _this = void 0;
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {
+    };
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+var RenderSubCat = function RenderSubCat() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "subcats",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                children: "TESTING"
+            })
+        })
+    }));
+};
+_c = RenderSubCat;
+var RenderOnLoad = function RenderOnLoad() {
+    (0, _Test["default"])(_Test.TEST_ARRAY);
+    console.log('hehe');
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    }));
+};
+_c1 = RenderOnLoad;
+exports.RenderOnLoad = RenderOnLoad;
+var _default = RenderSubCat;
+exports["default"] = _default;
+var _c, _c1;
+$RefreshReg$(_c, "RenderSubCat");
+$RefreshReg$(_c1, "RenderOnLoad");
+
+  $parcel$ReactRefreshHelpers$8894.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/typeof":"jgQjt","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react":"21dqq"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23765,7 +23915,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _Carousel = _interopRequireDefault(require("./Carousel"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainContent.js", _this = void 0;
 var MainContent = function MainContent() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("article", {
         className: "container-fluid py-5 bg-dark min-vh-100 text-white",
@@ -23805,7 +23955,7 @@ var _react = require("react");
 var _usehooksTs = require("usehooks-ts");
 var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Carousel.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Carousel.js", _this = void 0;
 var images = [
     {
         id: 1,
@@ -25169,7 +25319,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
         className: "d-flex flex-row flex-wrap justify-content-center gap-3 py-5 bg-transparent-custom w-100 text-white",

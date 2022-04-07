@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { render } from "react-dom";
 
 //components
@@ -7,28 +7,44 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-import { TEST_ARRAY } from "./Test";
+import {TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
+import { RenderOnLoad } from "./RenderScripts";
+
+
+
 
 const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
   //const allSubCat = document.querySelectorAll('.testing');
   
   for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i])
+    console.log(elements[i]);
+
     elements[i].addEventListener("click", () => {
 
 
       switch (elements[i].textContent) {
-        case `${ARRAY[0]}`:
+        case `${TEST_ARRAY[0]}`:
           alert("it works hah");
           break;
-        case `${ARRAY[1]}`:
-          alert('second el'); 
+        case `${TEST_ARRAY[1]}`:
+            alert('testt');
           break;
-        default: 
-          alert('SOMETHING FUCKED UP ONCE AGAIN')
-          
+        case `${TEST_ARRAY[2]}`:
+         alert() 
+        break;
+        case `${TEST_ARRAY[3]}`:
+          alert('4th el')
+          break;
+
      }
-     
+      switch(elements[i].textContent){
+            case `${TEST_ARRAY2[0]}`:
+              alert('hehe')
+              break;
+            case `${TEST_ARRAY2[1]}`:
+              alert('er')
+
+          }
       //if (elements[i].textContent.includes('num')) {
       //  alert('hehe')
       //}
@@ -44,7 +60,9 @@ const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
 
 
 const ProductNav = () => {
+
   const [isActive, setActive] = useState("false");
+  
   const ToggleClass = () => {
     setActive(!isActive);
   };
@@ -75,35 +93,52 @@ const ProductNav = () => {
       return;
     }
     if (!holder.contains(isExisting)) {
-      for (let i = 0; i < arrayOfCategories.length; i++) {
-        clone.textContent = arrayOfCategories[i];
+      //for (let i = 0; i < arrayOfCategories.length; i++) {
+      //  clone.textContent = arrayOfCategories[i];
+      //  holder.appendChild(clone.cloneNode(true));
+      //  
+      //}
+      for(let i = 0; i< TEST_CAT.length; i++){
+        clone.textContent = TEST_CAT[i]
         holder.appendChild(clone.cloneNode(true));
-        
       }
       return;
     }
   }
-  const addFunc = () =>{
-    let xx = document.querySelectorAll('.testtt')
-    console.log(xx)
+  const RenderFromCat = (ARRAY = []) =>{
+    const categories = document.querySelectorAll('.categories-button');
+    
+    for(let i = 0; i<ARRAY.length; i++){
+      categories[i].addEventListener('click', ()=>{
+        switch(ARRAY[i]){
+          case `${ARRAY[0]}` :
+            renderTry(TEST_ARRAY);
+            break;
+          case `${ARRAY[1]}`:
+            renderTry(TEST_ARRAY2);
+            break;
+        }
+      })
+    }
+    
   }
-  addFunc()
-
   const renderRoot = (renderElement) => {
     render(renderElement, document.querySelector('#root'))
   }
   
   return (
     <>
+      
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent  text-white"
+          
           onClick={() => {
             ToggleClass();
-            renderTry(TEST_ARRAY);
-            addEvent(document.querySelectorAll('.testing'), TEST_ARRAY)
+           //renderTry(TEST_ARRAY2);
+            addEvent(document.querySelectorAll('.testing'), TEST_CAT)
             buttonBuilder();
-            
+            RenderFromCat(TEST_ARRAY)
           }}
         >
           Categories
