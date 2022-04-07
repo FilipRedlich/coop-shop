@@ -9,20 +9,32 @@ import Newsletter from "./Newsletter";
 import renderTry from "./Test";
 import { TEST_ARRAY } from "./Test";
 
-const addEvent = (elements = [], ARRAY = []) =>{
+const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
   //const allSubCat = document.querySelectorAll('.testing');
-  let prodIndex = 0;
-  let cIndex = 1;
- 
-  for(let i = 0; i<elements.length; i++){
-    console.log(elements[i])
   
+  for (let i = 0; i < elements.length; i++) {
+    console.log(elements[i])
+    elements[i].addEventListener("click", () => {
+
+
+      switch (elements[i].textContent) {
+        case `${ARRAY[0]}`:
+          alert("it works hah");
+          break;
+        case `${ARRAY[1]}`:
+          alert('second el'); 
+          break;
+        default: 
+          alert('SOMETHING FUCKED UP ONCE AGAIN')
+          
+     }
+     
+      //if (elements[i].textContent.includes('num')) {
+      //  alert('hehe')
+      //}
+    });
   }
-  elements.forEach(el =>{
-    el.addEventListener('click', ()=>{
-      el[0] = console.log('fefe')
-    })
-  })
+
 
   return(
     <>
@@ -30,19 +42,6 @@ const addEvent = (elements = [], ARRAY = []) =>{
   )
 }
 
-const watchForMove = (el) => {
-  const watchedElement = document.querySelector(".gallery");
-  const observer = new IntersectionObserver(
-    (e) => {
-      console.log(e);
-    },
-    {
-      rootMargin: "0px 0px 0px 0px",
-      threshold: 1.0,
-    }
-  );
-  //observer.observe(watchedElement)
-};
 
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
@@ -89,18 +88,11 @@ const ProductNav = () => {
     console.log(xx)
   }
   addFunc()
-  const RenderSale = () =>{
-    render(<OnSale />, document.querySelector('#root'))
+
+  const renderRoot = (renderElement) => {
+    render(renderElement, document.querySelector('#root'))
   }
-  const RenderServices = () =>{
-    render(<Services />, document.querySelector('#root'))
-  }
-  const RenderOutlet = () =>{
-    render(<Outlet />, document.querySelector('#root'))
-  }
-  const RenderNewsletter = () =>{
-    render(<Newsletter />, document.querySelector('#root'))
-  }
+  
   return (
     <>
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
@@ -109,7 +101,7 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             renderTry(TEST_ARRAY);
-            addEvent(document.querySelectorAll('.testing'))
+            addEvent(document.querySelectorAll('.testing'), TEST_ARRAY)
             buttonBuilder();
             
           }}
@@ -118,25 +110,29 @@ const ProductNav = () => {
         </button>
         <button className="btn btn-lg bg-transparent  text-white"
         onClick={()=>{
-          RenderSale();
+          renderRoot(<OnSale />)
+          //RenderSale();
         }}>
           On sale
         </button>
         <button className="btn btn-lg bg-transparent  text-white"
         onClick={()=>{
-          RenderOutlet();
+          renderRoot(<Outlet />)
+          //RenderOutlet();
         }}>
           Outlet
         </button>
         <button className="btn btn-lg bg-transparent  text-white"
         onClick={()=>{
-        RenderServices();
+        renderRoot(<Services />)
+          //RenderServices();
         }}>
           Services
         </button>
         <button className="btn btn-lg bg-transparent  text-white"
         onClick={()=>{
-          RenderNewsletter();
+          renderRoot(<Newsletter />)
+          //RenderNewsletter();
         }}>
           Newsletter
         </button>
@@ -164,5 +160,4 @@ const ProductNav = () => {
     </>
   );
 };
-export { watchForMove };
 export default ProductNav;
