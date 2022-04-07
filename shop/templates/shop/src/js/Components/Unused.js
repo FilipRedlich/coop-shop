@@ -11,3 +11,9 @@ const watchForMove = (el) => {
   );
   //observer.observe(watchedElement)
 };
+
+const addFunc = () =>{
+  let xx = document.querySelectorAll('.testtt')
+  console.log(xx)
+}
+addFunc()
