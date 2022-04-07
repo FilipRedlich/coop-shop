@@ -1016,7 +1016,7 @@ var _ProductsNav = _interopRequireDefault(require("./Components/ProductsNav"));
 var _MainContent = _interopRequireDefault(require("./Components/MainContent"));
 var _Footer = _interopRequireDefault(require("./Components/Footer"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/App.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\App.js", _this = void 0;
 var NavApp = function NavApp() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
@@ -22038,7 +22038,7 @@ var _reactDom = require("react-dom");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -22167,7 +22167,7 @@ var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/sli
 var _reactDom = require("react-dom");
 var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Login.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Login.js", _this = void 0;
 //"Blueprint" for loginSwitch Button
 var RegisterSwitch = function RegisterSwitch() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
@@ -23273,7 +23273,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.watchForMove = exports["default"] = void 0;
+exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _reactDom = require("react-dom");
@@ -23283,7 +23283,7 @@ var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -23314,28 +23314,29 @@ function _interopRequireWildcard(obj, nodeInterop) {
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var ARRAY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    //const allSubCat = document.querySelectorAll('.testing');
-    var prodIndex = 0;
-    var cIndex = 1;
-    for(var i = 0; i < elements.length; i++)console.log(elements[i]);
-    elements.forEach(function(el) {
-        el.addEventListener('click', function() {
-            el[0] = console.log('fefe');
+    var ADDITIONAL_ARRAY = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
+    var _loop = function _loop(i) {
+        console.log(elements[i]);
+        elements[i].addEventListener("click", function() {
+            switch(elements[i].textContent){
+                case "".concat(ARRAY[0]):
+                    alert("it works hah");
+                    break;
+                case "".concat(ARRAY[1]):
+                    alert('second el');
+                    break;
+                default:
+                    alert('SOMETHING FUCKED UP ONCE AGAIN');
+            } //if (elements[i].textContent.includes('num')) {
+        //  alert('hehe')
+        //}
         });
-    });
+    };
+    //const allSubCat = document.querySelectorAll('.testing');
+    for(var i = 0; i < elements.length; i++)_loop(i);
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
     }));
 };
-var watchForMove = function watchForMove(el) {
-    var watchedElement = document.querySelector(".gallery");
-    var observer = new IntersectionObserver(function(e) {
-        console.log(e);
-    }, {
-        rootMargin: "0px 0px 0px 0px",
-        threshold: 1
-    }); //observer.observe(watchedElement)
-};
-exports.watchForMove = watchForMove;
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
     var ToggleClass = function ToggleClass() {
@@ -23366,21 +23367,8 @@ var ProductNav = function ProductNav() {
         console.log(xx);
     };
     addFunc();
-    var RenderSale = function RenderSale() {
-        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {
-        }), document.querySelector('#root'));
-    };
-    var RenderServices = function RenderServices() {
-        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Services["default"], {
-        }), document.querySelector('#root'));
-    };
-    var RenderOutlet = function RenderOutlet() {
-        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Outlet["default"], {
-        }), document.querySelector('#root'));
-    };
-    var RenderNewsletter = function RenderNewsletter() {
-        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Newsletter["default"], {
-        }), document.querySelector('#root'));
+    var renderRoot = function renderRoot(renderElement) {
+        (0, _reactDom.render)(renderElement, document.querySelector('#root'));
     };
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
@@ -23392,7 +23380,7 @@ var ProductNav = function ProductNav() {
                         onClick: function onClick() {
                             ToggleClass();
                             (0, _Test["default"])(_Test.TEST_ARRAY);
-                            addEvent(document.querySelectorAll('.testing'));
+                            addEvent(document.querySelectorAll('.testing'), _Test.TEST_ARRAY);
                             buttonBuilder();
                         },
                         children: "Categories"
@@ -23400,28 +23388,32 @@ var ProductNav = function ProductNav() {
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
-                            RenderSale();
+                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {
+                            })); //RenderSale();
                         },
                         children: "On sale"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
-                            RenderOutlet();
+                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Outlet["default"], {
+                            })); //RenderOutlet();
                         },
                         children: "Outlet"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
-                            RenderServices();
+                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Services["default"], {
+                            })); //RenderServices();
                         },
                         children: "Services"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
-                            RenderNewsletter();
+                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Newsletter["default"], {
+                            })); //RenderNewsletter();
                         },
                         children: "Newsletter"
                     })
@@ -23457,7 +23449,7 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Test":"f2YDa","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/typeof":"jgQjt"}],"9GTDe":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23472,7 +23464,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\OnSale.js", _this = void 0;
 var OnSale = function OnSale() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23557,93 +23549,7 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"f2YDa":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f245 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f245.prelude(module);
-
-try {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = exports.TEST_ARRAY = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _reactDom = require("react-dom");
-var _Outlet = _interopRequireDefault(require("./Outlet"));
-var _jsxRuntime = require("react/jsx-runtime");
-var TEST_ARRAY = [
-    "Test Element num.1",
-    "Test element num.2",
-    "Test element num.3",
-    "Test element num.4"
-];
-exports.TEST_ARRAY = TEST_ARRAY;
-var renderTry = function renderTry() {
-    var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var addContent = function addContent() {
-        var button = document.createElement("button").cloneNode(true);
-        var clone = button.cloneNode(true);
-        var renderPlacement = document.querySelector('#rootSubcategories');
-        var doesExist = document.querySelectorAll('.testing'); //while (renderPlacement.firstChild) {
-        //  renderPlacement.firstChild.remove();
-        //}
-        for(var i = 0; i < ARRAY.length; i++){
-            clone.textContent = ARRAY[i];
-            clone.classList.add('testing');
-            renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
-        }
-        console.log('pds');
-        console.log('fefee');
-    };
-    addContent();
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    }));
-};
-renderTry();
-var _default = renderTry;
-exports["default"] = _default;
-
-  $parcel$ReactRefreshHelpers$f245.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Outlet":"33x1B"}],"33x1B":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$98af = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$98af.prelude(module);
-
-try {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = void 0;
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Outlet.js", _this = void 0;
-var Outlet = function Outlet() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: ""
-        })
-    }));
-};
-_c = Outlet;
-var _default = Outlet;
-exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "Outlet");
-
-  $parcel$ReactRefreshHelpers$98af.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hj64T":[function(require,module,exports) {
+},{}],"hj64T":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ac01 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23656,7 +23562,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Services.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Services.js", _this = void 0;
 var Services = function Services() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23688,6 +23594,38 @@ $RefreshReg$(_c, "Services");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"33x1B":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$98af = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$98af.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Outlet.js", _this = void 0;
+var Outlet = function Outlet() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: ""
+        })
+    }));
+};
+_c = Outlet;
+var _default = Outlet;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "Outlet");
+
+  $parcel$ReactRefreshHelpers$98af.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
 },{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"22oGT":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$af1c = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
@@ -23703,7 +23641,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_envelope_re_f5j = _interopRequireDefault(require("../../images/undraw_envelope_re_f5j4.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Newsletter.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
 var Newsletter = function Newsletter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
@@ -23759,7 +23697,60 @@ $RefreshReg$(_c, "Newsletter");
 },{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_envelope_re_f5j4.svg":"3Krtf","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3Krtf":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"1FSJk":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"f2YDa":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f245 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f245.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = exports.TEST_ARRAY = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _reactDom = require("react-dom");
+var _jsxRuntime = require("react/jsx-runtime");
+var TEST_ARRAY = [
+    "Test Element num.1",
+    "Test element num.2",
+    "Test element num.3",
+    "Test element num.4"
+];
+exports.TEST_ARRAY = TEST_ARRAY;
+var renderTry = function renderTry() {
+    var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var addContent = function addContent() {
+        var button = document.createElement("button").cloneNode(true);
+        var clone = button.cloneNode(true);
+        var renderPlacement = document.querySelector('#rootSubcategories');
+        var doesExist = document.querySelectorAll('.testing'); //while (renderPlacement.firstChild) {
+        //  renderPlacement.firstChild.remove();
+        //}
+        for(var i = 0; i < ARRAY.length; i++){
+            clone.textContent = ARRAY[i];
+            clone.classList.add('testing');
+            renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
+        }
+        console.log('pds');
+        console.log('fefee');
+    };
+    addContent();
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    }));
+};
+renderTry();
+var _default = renderTry;
+exports["default"] = _default;
+
+  $parcel$ReactRefreshHelpers$f245.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23774,7 +23765,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _Carousel = _interopRequireDefault(require("./Carousel"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainContent.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
 var MainContent = function MainContent() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("article", {
         className: "container-fluid py-5 bg-dark min-vh-100 text-white",
@@ -23814,7 +23805,7 @@ var _react = require("react");
 var _usehooksTs = require("usehooks-ts");
 var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Carousel.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Carousel.js", _this = void 0;
 var images = [
     {
         id: 1,
@@ -25178,7 +25169,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Footer.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
         className: "d-flex flex-row flex-wrap justify-content-center gap-3 py-5 bg-transparent-custom w-100 text-white",

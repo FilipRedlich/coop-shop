@@ -1,7 +1,7 @@
 import React from "react";
 import { render } from "react-dom";
 
-import Outlet from "./Outlet";
+
 const TEST_ARRAY = [
   "Test Element num.1",
   "Test element num.2",
