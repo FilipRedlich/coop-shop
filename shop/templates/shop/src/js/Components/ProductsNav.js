@@ -125,9 +125,11 @@ const ProductNav = () => {
           case `${ARRAY[0]}`:
             //renderTry(ARRAY_3_SUBCATEGORY);
             renderTry(TEST_ARRAY);
+            addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
             renderTry(TEST_ARRAY2);
+            addEvent(document.querySelectorAll(".testing"));
             break;
         }
       })
