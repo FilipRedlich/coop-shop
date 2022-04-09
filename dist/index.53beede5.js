@@ -23345,14 +23345,19 @@ function _interopRequireWildcard(obj, nodeInterop) {
     if (cache) cache.set(obj, newObj);
     return newObj;
 }
+var removeSubCat = function removeSubCat() {
+    var holder = document.querySelector("#rootSubcategories");
+    var doesExist = document.querySelectorAll(".testing");
+    if (holder.contains(doesExist[0])) for(i = 0; i < doesExist.length; i++)doesExist[i].remove();
+};
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var ARRAY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
     var ADDITIONAL_ARRAY = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-    var _loop = function _loop(i) {
-        console.log(elements[i]);
-        elements[i].addEventListener("click", function() {
-            switch(elements[i].textContent){
+    var _loop = function _loop(_i) {
+        console.log(elements[_i]);
+        elements[_i].addEventListener("click", function() {
+            switch(elements[_i].textContent){
                 case "".concat(_Test.TEST_ARRAY[0]):
                     alert("it works hah");
                     break;
@@ -23366,7 +23371,7 @@ var addEvent = function addEvent() {
                     alert('4th el');
                     break;
             }
-            switch(elements[i].textContent){
+            switch(elements[_i].textContent){
                 case "".concat(_Test.TEST_ARRAY2[0]):
                     alert('hehe');
                     break;
@@ -23378,7 +23383,7 @@ var addEvent = function addEvent() {
         });
     };
     //const allSubCat = document.querySelectorAll('.testing');
-    for(var i = 0; i < elements.length; i++)_loop(i);
+    for(var _i = 0; _i < elements.length; _i++)_loop(_i);
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
     }));
 };
@@ -23405,8 +23410,8 @@ var ProductNav = function ProductNav() {
             //  holder.appendChild(clone.cloneNode(true));
             //  
             //}
-            for(var i = 0; i < _Test.TEST_CAT.length; i++){
-                clone.textContent = _Test.TEST_CAT[i];
+            for(var _i2 = 0; _i2 < _Test.TEST_CAT.length; _i2++){
+                clone.textContent = _Test.TEST_CAT[_i2];
                 holder.appendChild(clone.cloneNode(true));
             }
             return;
@@ -23415,10 +23420,13 @@ var ProductNav = function ProductNav() {
     var RenderFromCat = function RenderFromCat() {
         var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
         var categories = document.querySelectorAll('.categories-button');
-        var _loop2 = function _loop2(i) {
-            categories[i].addEventListener('click', function() {
-                switch(ARRAY[i]){
+        var _loop2 = function _loop2(_i3) {
+            categories[_i3].addEventListener('click', function() {
+                removeSubCat(); //removes all previous rendered subcategories
+                //adds function to specified subcategory
+                switch(ARRAY[_i3]){
                     case "".concat(ARRAY[0]):
+                        //renderTry(ARRAY_3_SUBCATEGORY);
                         (0, _Test["default"])(_Test.TEST_ARRAY);
                         break;
                     case "".concat(ARRAY[1]):
@@ -23427,7 +23435,7 @@ var ProductNav = function ProductNav() {
                 }
             });
         };
-        for(var i = 0; i < ARRAY.length; i++)_loop2(i);
+        for(var _i3 = 0; _i3 < ARRAY.length; _i3++)_loop2(_i3);
     };
     var renderRoot = function renderRoot(renderElement) {
         (0, _reactDom.render)(renderElement, document.querySelector('#root'));
@@ -23443,7 +23451,7 @@ var ProductNav = function ProductNav() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             addEvent(document.querySelectorAll('.testing'), _Test.TEST_CAT);
                             buttonBuilder();
-                            RenderFromCat(_Test.TEST_ARRAY);
+                            RenderFromCat(_Test.TEST_ARRAY, removeSubCat);
                         },
                         children: "Categories"
                     }),
@@ -23799,8 +23807,9 @@ var renderTry = function renderTry() {
     var addContent = function addContent() {
         var button = document.createElement("button").cloneNode(true);
         var clone = button.cloneNode(true);
-        var renderPlacement = document.querySelector('#rootSubcategories');
-        while(renderPlacement.firstChild)renderPlacement.firstChild.remove();
+        var renderPlacement = document.querySelector('#rootSubcategories'); //while (renderPlacement.firstChild) {
+        //  renderPlacement.firstChild.remove();
+        //}
         for(var i = 0; i < ARRAY.length; i++){
             clone.textContent = ARRAY[i];
             clone.classList.add('testing');
