@@ -23,11 +23,11 @@ const renderTry = (ARRAY = []) => {
     var button = document.createElement("button").cloneNode(true);
     var clone = button.cloneNode(true);
     var renderPlacement = document.querySelector('#rootSubcategories');
-    const doesExist = document.querySelectorAll('.testing')
     
-    //while (renderPlacement.firstChild) {
-    //  renderPlacement.firstChild.remove();
-    //}
+    
+    while (renderPlacement.firstChild) {
+      renderPlacement.firstChild.remove();
+    }
       
       
       for (let i = 0; i < ARRAY.length; i++) {
@@ -45,11 +45,7 @@ const renderTry = (ARRAY = []) => {
   
   addContent();
   
-  return (
-    <>
-
-    </>
-  )
+  
 
 };
 renderTry()
