@@ -10,7 +10,17 @@ import renderTry from "./Test";
 import {TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
 
 
+  const removeSubCat = () => {
+    const holder = document.querySelector("#rootSubcategories");
+    var doesExist = document.querySelectorAll(".testing");
 
+    if (holder.contains(doesExist[0])) {
+      for (i = 0; i < doesExist.length; i++){
+        doesExist[i].remove()
+      }
+    }
+   
+  };
 
 const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
   //const allSubCat = document.querySelectorAll('.testing');
@@ -108,10 +118,13 @@ const ProductNav = () => {
     const categories = document.querySelectorAll('.categories-button');
     
     for(let i = 0; i<ARRAY.length; i++){
-      categories[i].addEventListener('click', ()=>{
-        switch(ARRAY[i]){
-          case `${ARRAY[0]}` :
-            renderTry(ARRAY_3_SUBCATEGORY);
+      categories[i].addEventListener('click', () => {
+        removeSubCat(); //removes all previous rendered subcategories
+        //adds function to specified subcategory
+        switch (ARRAY[i]) {
+          case `${ARRAY[0]}`:
+            //renderTry(ARRAY_3_SUBCATEGORY);
+            renderTry(TEST_ARRAY);
             break;
           case `${ARRAY[1]}`:
             renderTry(TEST_ARRAY2);
@@ -124,7 +137,7 @@ const ProductNav = () => {
   const renderRoot = (renderElement) => {
     render(renderElement, document.querySelector('#root'))
   }
-  
+
   return (
     <>
       
@@ -137,7 +150,7 @@ const ProductNav = () => {
            //renderTry(TEST_ARRAY2);
             addEvent(document.querySelectorAll('.testing'), TEST_CAT)
             buttonBuilder();
-            RenderFromCat(TEST_ARRAY)
+            RenderFromCat(TEST_ARRAY, removeSubCat)
           }}
         >
           Categories
