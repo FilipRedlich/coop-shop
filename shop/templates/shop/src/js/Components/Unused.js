@@ -17,3 +17,20 @@ const addFunc = () =>{
   console.log(xx)
 }
 addFunc()
+
+
+const RenderSubCat = () => {
+  return (
+    <>
+      <section className="subcats">
+        <h1>TESTING</h1>
+      </section>
+    </>
+  );
+};
+const RenderOnLoad = () => {
+  renderTry(TEST_ARRAY);
+  console.log("hehe");
+
+  return <></>;
+};

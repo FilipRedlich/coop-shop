@@ -8,7 +8,6 @@ import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
 import {TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
-import { RenderOnLoad } from "./RenderScripts";
 
 
 
@@ -112,7 +111,7 @@ const ProductNav = () => {
       categories[i].addEventListener('click', ()=>{
         switch(ARRAY[i]){
           case `${ARRAY[0]}` :
-            renderTry(TEST_ARRAY);
+            renderTry(ARRAY_3_SUBCATEGORY);
             break;
           case `${ARRAY[1]}`:
             renderTry(TEST_ARRAY2);
