@@ -25,9 +25,9 @@ const renderTry = (ARRAY = []) => {
     var renderPlacement = document.querySelector('#rootSubcategories');
     
     
-    while (renderPlacement.firstChild) {
-      renderPlacement.firstChild.remove();
-    }
+    //while (renderPlacement.firstChild) {
+    //  renderPlacement.firstChild.remove();
+    //}
       
       
       for (let i = 0; i < ARRAY.length; i++) {
