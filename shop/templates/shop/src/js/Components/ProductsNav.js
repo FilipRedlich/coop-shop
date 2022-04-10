@@ -15,7 +15,7 @@ import {TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
     var doesExist = document.querySelectorAll(".testing");
 
     if (holder.contains(doesExist[0])) {
-      for (i = 0; i < doesExist.length; i++){
+      for (let i = 0; i < doesExist.length; i++){
         doesExist[i].remove()
       }
     }

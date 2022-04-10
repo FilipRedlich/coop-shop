@@ -10,10 +10,7 @@ const RegisterSwitch = () => {
       type="submit"
       className="btn btn-lg text-white w-100 bg-black"
       value="Register"
-      onClick={(e) => {
-        e.preventDefault();
-        //some custom action for backend
-      }}
+     
     />
   );
 };
@@ -25,10 +22,7 @@ const LoginSwitch = () => {
       type="submit"
       className="btn btn-lg text-white w-100 bg-black"
       value='Login'
-      onClick={(e) => {
-        e.preventDefault();
-        //some custom action for backend
-      }}
+      
     
       
     />
@@ -106,7 +100,7 @@ const Login = () => {
           />
          
           {/* container forswitched button */}
-          <div id="buttonSwitch" className="w-100"></div>
+          <div id='buttonSwitch'></div>
         </form>
       </section>
     </>
