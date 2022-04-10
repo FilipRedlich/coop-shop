@@ -1,3 +1,4 @@
+import logging
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
@@ -7,15 +8,13 @@ from hashlib import sha256
 
 from .models import Users,Basket,Categories,Products,subCategories,Services
 
+logging.basicConfig(level=logging.INFO)
 
 class IndexView(TemplateView):
     template_name = 'shop/build/index.html'
-    #context_object_name = 'cat_list'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        #for models with 1 field all() return first str field
-        #context['categories'] = Categories.objects.all()
 
         #models with many fields use values_list() to get values of all fields
         context['categories'] = Categories.objects.values_list()
@@ -30,13 +29,10 @@ class IndexView(TemplateView):
 
 class TestView(TemplateView):
     template_name = 'shop/build/indextest.html'
-    #context_object_name = 'cat_list'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        #for models with 1 field all() return first str field
-        #context['categories'] = Categories.objects.all()
-        
+
         #models with many fields use values_list() to get values of all fields
         context['categories'] = Categories.objects.values_list()
         context['products'] = Products.objects.values_list()
@@ -48,13 +44,9 @@ class TestView(TemplateView):
 
 class TestView2(TemplateView):
     template_name = 'shop/build/indextest2.html'
-    #context_object_name = 'cat_list'
 
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
-        #for models with 1 field all() return first str field
-        #context['categories'] = Categories.objects.all()
-        
         #models with many fields use values_list() to get values of all fields
         context['categories'] = Categories.objects.values_list()
         context['products'] = Products.objects.values_list()
@@ -67,22 +59,26 @@ class TestView2(TemplateView):
 salt = "&sayu#"
 
 def register(request):
-    login = request.POST["login"]
-    password = request.POST["pass"]
+    login = request.POST["email"]
+    password = request.POST["password"]
     password += salt
     passT = sha256(password.encode('utf-8'))
     Users.objects.create(login=login,password=passT.hexdigest())
     return HttpResponseRedirect(reverse('shop:index'))
 
 def login(request):
-    login = request.POST["login"]
-    password = request.POST["pass"]
+    login = request.POST["email"]
+    password = request.POST["password"]
+    password = "adm"
     password += salt
     passT = sha256(password.encode('utf-8'))
-    if Users.objects.filter(login=login).filter(password=passT):
-        return HttpResponseRedirect(reverse('shop:index'))
-    else:
-        return HttpResponseRedirect(reverse('shop:test'))
+    passT = "<QuerySet ['"+str(passT.hexdigest())+"']>"
+    getPass = Users.objects.values_list("password", flat=True).filter(login="adm")
+    #logging.info(getPass)
+    #logging.info(passT)
+    if(str(getPass)==str(passT)):
+        logging.info("good")
+    return HttpResponseRedirect(reverse('shop:index'))
 
 '''
 class IndexView(generic.ListView):
