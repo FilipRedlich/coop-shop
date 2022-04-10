@@ -75,7 +75,7 @@ def login(request):
     getPass = Users.objects.values_list("password", flat=True).filter(login=login)
     #logging.info(getPass)
     #logging.info(passT)
-    logging.info(request.session['email'])
+    #logging.info(request.session['email'])
     if(str(getPass)==str(passT)):
         logging.info("Login: "+login)
         request.session['email'] = login
