@@ -84,6 +84,7 @@ const Login = () => {
           id="login-form"
           className="d-flex flex-column gap-4 text-white login-modal shadow-lg p-5"
           action="/login/"
+          method="POST"
         >
           <input value={CSRF_TOKEN} className="d-none" />
           <input
