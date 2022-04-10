@@ -14,7 +14,7 @@
 
 <body class="bg-dark">
   <script>
-    var CRSF_TOKEN = "{{ csrf_token }}";
+    const CRSF_TOKEN = "{{ csrf_token }}";
     var pushedElement;
     var arrayOfCategories = [];
     ("{% for cat in categories %}");
