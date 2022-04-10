@@ -8,6 +8,7 @@ import MainContent from "./Components/MainContent";
 import MainFooter from "./Components/Footer";
 import renderTry, { TEST_ARRAY } from "./Components/Test";
 import { RenderOnLoad } from "./Components/RenderScripts";
+import Tttt from "./Components/TestComponent";
 
 const NavApp = () => {
   return (
@@ -23,6 +24,7 @@ const MainApp = () => {
     <>
       <RenderOnLoad />
       <MainContent />
+      <Tttt />
     </>
   );
 };
