@@ -6,6 +6,8 @@ from django.views import generic
 from django.views.generic.base import TemplateView
 from hashlib import sha256
 
+from flask import request
+
 from .models import Users,Basket,Categories,Products,subCategories,Services
 
 logging.basicConfig(level=logging.INFO)
