@@ -69,15 +69,17 @@ def register(request):
 def login(request):
     login = request.POST["email"]
     password = request.POST["password"]
-    password = "adm"
     password += salt
     passT = sha256(password.encode('utf-8'))
     passT = "<QuerySet ['"+str(passT.hexdigest())+"']>"
-    getPass = Users.objects.values_list("password", flat=True).filter(login="adm")
+    getPass = Users.objects.values_list("password", flat=True).filter(login=login)
     #logging.info(getPass)
     #logging.info(passT)
     if(str(getPass)==str(passT)):
-        logging.info("good")
+        logging.info("Login: "+login)
+        request.session['email'] = login
+    else:
+        logging.info("Bad login: "+login)
     return HttpResponseRedirect(reverse('shop:index'))
 
 '''
