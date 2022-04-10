@@ -86,10 +86,9 @@ const Login = () => {
           action="/login/"
           method="POST"
         >
-          <input value={CSRF_TOKEN} className="d-none" />
+          <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
           <input
             className="bg-black account-credentials rounded border-0 text-white"
-            type="email"
             name="email"
             placeholder="Email"
           />
@@ -99,9 +98,9 @@ const Login = () => {
             name="password"
             placeholder="Password"
           />
-         
+
           {/* container forswitched button */}
-          <div id='buttonSwitch'></div>
+          <div id="buttonSwitch"></div>
         </form>
       </section>
     </>
