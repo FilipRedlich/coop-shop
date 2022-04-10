@@ -22277,14 +22277,15 @@ var Login = function Login() {
                     id: "login-form",
                     className: "d-flex flex-column gap-4 text-white login-modal shadow-lg p-5",
                     action: "/login/",
+                    method: "POST",
                     children: [
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                            value: CSRF_TOKEN,
-                            className: "d-none"
+                            type: "hidden",
+                            name: "csrfmiddlewaretoken",
+                            value: CSRF_TOKEN
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                             className: "bg-black account-credentials rounded border-0 text-white",
-                            type: "email",
                             name: "email",
                             placeholder: "Email"
                         }),
