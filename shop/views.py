@@ -3,6 +3,7 @@ from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
 from django.views.generic.base import TemplateView
+from hashlib import sha256
 
 from .models import Users,Basket,Categories,Products,subCategories,Services
 
@@ -63,12 +64,25 @@ class TestView2(TemplateView):
         context['services'] = Services.objects.values_list()
         return context
 
+salt = "&sayu#"
 
 def register(request):
     login = request.POST["login"]
     password = request.POST["pass"]
-    Users.objects.create(login=login,password=password)
+    password += salt
+    passT = sha256(password.encode('utf-8'))
+    Users.objects.create(login=login,password=passT.hexdigest())
     return HttpResponseRedirect(reverse('shop:index'))
+
+def login(request):
+    login = request.POST["login"]
+    password = request.POST["pass"]
+    password += salt
+    passT = sha256(password.encode('utf-8'))
+    if Users.objects.filter(login=login).filter(password=passT):
+        return HttpResponseRedirect(reverse('shop:index'))
+    else:
+        return HttpResponseRedirect(reverse('shop:test'))
 
 '''
 class IndexView(generic.ListView):

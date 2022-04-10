@@ -41,10 +41,3 @@ def hasDiscount(cat):
         for t in temp:
             out+=str(t)
         return out
-
-@register.simple_tag
-#adds new user to db
-def registerUser(login,password):
-    if(ON==1):
-        passT = sha256(password.encode('utf-8'))
-        Users.objects.create(login=login,password=passT.hexdigest())
