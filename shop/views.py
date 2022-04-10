@@ -63,6 +63,7 @@ class TestView2(TemplateView):
         context['services'] = Services.objects.values_list()
         return context
 
+
 def register(request):
     login = request.POST["login"]
     password = request.POST["pass"]

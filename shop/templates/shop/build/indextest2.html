@@ -9,9 +9,9 @@
 </head>
 <body>
   <form action="{% url 'shop:register' %}" method="post">
-    
+    {% csrf_token %}
       <input type="text" name="login"><br>
-      <input type="password" name="pass"><br>
+      <input type="text" name="pass"><br>
       <input type="submit" value="Register">
   </form>
 </body>
