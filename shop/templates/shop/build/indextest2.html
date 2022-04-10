@@ -6,10 +6,13 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Document</title>
+ 
 </head>
 <body>
+  <button id="chg">Change behavior</button>
   <h2>Register</h2>
-  <form action="{% url 'shop:register' %}" method="post">
+  <!--Action can be changed to /register/-->
+  <form id="register-form" action="{% url 'shop:register' %}" method="post">
     {% csrf_token %}
       <input type="text" name="email"><br>
       <input type="text" name="password"><br>
@@ -23,5 +26,6 @@
       <input type="submit" value="Login">
   </form>
   {{request.session.email}}
+
 </body>
 </html>

@@ -13868,6 +13868,12 @@ textarea.form-control-lg {
 .flexb-70 {
   flex-basis: 70%;
 }
+.login-switch {
+  transform: translateY(4rem);
+  min-width: 280px;
+  width: 50%;
+  max-width: 30%;
+}
 .login-modal {
   width: clamp(20rem, 40rem, 80%);
   max-width: 50rem;

@@ -1,5 +1,6 @@
 import React, {useEffect} from "react"
-import renderTry, {TEST_ARRAY} from "./Test"
+import renderTry, { TEST_ARRAY } from "./Test"
+import { removeSubCat } from "./ProductsNav"
 const RenderSubCat = () =>{
     return(
         <>
@@ -10,7 +11,7 @@ const RenderSubCat = () =>{
     )
 }
 const RenderOnLoad = () =>{
-   
+        removeSubCat()
         renderTry(TEST_ARRAY)
         console.log('hehe')
       
