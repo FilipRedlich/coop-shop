@@ -15,6 +15,7 @@
   </head>
   <body class="bg-dark">
     <script>"use strict";
+var CSRF_TOKEN = "{{ csrf_token }}";
 var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}".replaceAll("&#x27;,)", "").split("(&#x27;"); //stores all subcategories from specified index to variable
 //Third outputCat doesn't exist
 var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}".replaceAll("&#x27;,)", "").split("(&#x27;");

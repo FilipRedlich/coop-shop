@@ -209,4 +209,5 @@ const ProductNav = () => {
     </>
   );
 };
+export {removeSubCat}
 export default ProductNav;
