@@ -1,9 +1,8 @@
 const Tttt = () => {
-    let token = "{% csrf_token %}"
     return (
         <>
-            <form action="{% url 'shop:register' %}" method="post">
-                {token}
+            <form action="/register/" method="post">
+                <input type="hidden" name="csrfmiddlewaretoken" value={CRSF_TOKEN}></input>
                 <input type="text" name="login"></input>
                 <input type="password" name="pass"></input>
                 <input type="submit" value="Register"></input>
