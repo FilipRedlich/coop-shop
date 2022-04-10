@@ -63,6 +63,12 @@ class TestView2(TemplateView):
         context['services'] = Services.objects.values_list()
         return context
 
+def register(request):
+    login = request.POST["login"]
+    password = request.POST["pass"]
+    Users.objects.create(login=login,password=password)
+    return HttpResponseRedirect(reverse('shop:index'))
+
 '''
 class IndexView(generic.ListView):
     #model = Products
