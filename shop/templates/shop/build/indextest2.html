@@ -14,5 +14,9 @@
       <input type="text" name="pass"><br>
       <input type="submit" value="Register">
   </form>
+  <script>
+    var token = "{{ csrf_token }}";
+    console.log(token);
+  </script>
 </body>
 </html>
