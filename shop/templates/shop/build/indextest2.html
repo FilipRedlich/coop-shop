@@ -26,6 +26,7 @@
       <input type="submit" value="Login">
   </form>
   {{request.session.email}}
+  <h1>{{ request.session.loginError }}</h1>
 <script defer>
     const session_email = "{{request.session.email}}";
     var x = document.querySelector('.x');

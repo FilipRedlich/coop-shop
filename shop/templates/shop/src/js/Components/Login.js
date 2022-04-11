@@ -91,6 +91,7 @@ const Login = () => {
             className="bg-black account-credentials rounded border-0 text-white"
             name="email"
             placeholder="Email"
+            maxLength='30'
           />
           <input
             className="bg-black account-credentials rounded border-0 text-white"
