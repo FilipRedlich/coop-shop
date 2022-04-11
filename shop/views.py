@@ -69,7 +69,7 @@ def register(request):
     checkLogin = Users.objects.values_list("login",flat=True).filter(login=login)
     #logging.info(checkLogin)
     if str(checkLogin) == "<QuerySet []>":
-        del request.session['loginError']
+        request.session['loginError'] = ""
         Users.objects.create(login=login,password=passT.hexdigest())
     else:
         request.session['loginError'] = "This login already exist"
@@ -87,7 +87,7 @@ def login(request):
     #logging.info(request.session['email'])
     if(str(getPass)==str(passT)):
         logging.info("Login: "+login)
-        del request.session['loginError']
+        request.session['loginError'] = ""
         request.session['email'] = login
     else:
         logging.info("Bad login: "+login)
