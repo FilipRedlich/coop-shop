@@ -1,4 +1,3 @@
-from hashlib import sha256
 from django import template
 from shop.models import Categories, Products, Users, subCategories
 
