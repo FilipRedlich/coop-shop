@@ -1,5 +1,3 @@
-from asyncio.windows_events import NULL
-from cmath import log
 import logging
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
