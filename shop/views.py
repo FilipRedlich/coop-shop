@@ -88,7 +88,9 @@ def login(request):
     #logging.info(request.session['email'])
     if(str(getPass)==str(passT)):
         logging.info("Login: "+login)
-        request.session['loginError'] = ""
+        if 'loginError' in request.session:
+            del request.session['loginError']
+        #request.session['loginError'] = ""
         request.session['email'] = login
         userpk = Users.objects.values_list("pk", flat=True).filter(login=login)
         #<QuerySet [14]>
@@ -102,9 +104,12 @@ def login(request):
     return HttpResponseRedirect(reverse('shop:index'))
 
 def logout(request):
-    request.session['email'] = ""
-    request.session['loginError'] = ""
-    request.session['userpk'] = ""
+    if 'email' in request.session:
+        del request.session['email']
+    if 'loginError' in request.session:
+        del request.session['loginError']
+    if 'userpk' in request.session:
+        del request.session['userpk']
     return HttpResponseRedirect(reverse('shop:index'))
 
 def addProductToBasket(request,pk):
