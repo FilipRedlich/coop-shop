@@ -1,4 +1,4 @@
-import { useEffect, useState } from "react";
+import { useState } from "react";
 import { render } from "react-dom";
 
 //components
@@ -23,7 +23,6 @@ import {TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
   };
 
 const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
-  //const allSubCat = document.querySelectorAll('.testing');
   
   for (let i = 0; i < elements.length; i++) {
     console.log(elements[i]);
@@ -54,9 +53,6 @@ const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
               alert('er')
 
           }
-      //if (elements[i].textContent.includes('num')) {
-      //  alert('hehe')
-      //}
     });
   }
 

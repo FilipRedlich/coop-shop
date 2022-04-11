@@ -13826,6 +13826,24 @@ textarea.form-control-lg {
   backdrop-filter: blur(5px);
   overflow: auto;
 }
+.product-nav button {
+  transition: 0.2s;
+  position: relative;
+}
+.product-nav button::before {
+  content: "";
+  position: absolute;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  margin: 2.5rem auto 0 auto;
+  width: 100px;
+  height: 3px;
+}
+.product-nav button:hover {
+  box-shadow: 0rem 0.4rem 10px -5px #dc3545;
+}
 .product-nav::-webkit-scrollbar-track {
   background: rgba(0, 0, 0, 0.486);
 }
@@ -13874,13 +13892,31 @@ textarea.form-control-lg {
   width: 50%;
   max-width: 30%;
 }
+.login-section {
+  min-height: 35rem;
+}
+.login-section .action {
+  transition: 0.2s ease;
+}
+.login-section .action:hover {
+  box-shadow: 0 0 5px 2px white;
+  transition: 0.2s ease;
+  z-index: 2;
+}
 .login-modal {
   width: clamp(20rem, 40rem, 80%);
   max-width: 50rem;
   margin: 5rem auto 0 auto;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.459), 5px 5px 15px 5px rgba(0, 0, 0, 0.459);
+  border-radius: 1vh;
 }
 .login-modal input {
   padding: 1rem;
+  transition: 0.2s ease;
+}
+.login-modal input:hover {
+  box-shadow: 0 0 5px 2px white;
+  transition: 0.2s ease;
 }
 .login-modal input:-webkit-autofill {
   box-shadow: 0 0 0 50px black inset;
