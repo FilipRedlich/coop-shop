@@ -1,11 +1,28 @@
-@import '../../../../../node_modules/bootstrap/scss/bootstrap.scss';
+@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
+@import '../../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css';
+@import './custom.scss';
+@import './global.scss';
+@import './variables.scss';
+.hide-element{
+   transform: translateY(-100rem) translateX(-50%);
+   left: 50%;
+   width: 75%;
+   transition: .5s;
+}
+.gallery{
+    .gallery-img{
+        width: 100%;
+    max-width: 30rem;
+    margin: 10rem auto 0 auto;
+    }
+}
 
-.remove-all-padding{
-    padding: 0 !important;
-}
-.min-rem{
-    min-width: 20rem;
-}
-.nav-products{
-   border-radius: 0 0 1vh 1vh;
+.sale{
+   .sale-item{
+       max-width: 20rem;
+       min-height: 20rem;
+   }
+   .sale-img{
+       max-height: 10rem;
+   }
 }

@@ -1,44 +1,111 @@
+from cmath import log
+import logging
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
 from django.urls import reverse
 from django.views import generic
+from django.views.generic.base import TemplateView
+from hashlib import sha256
 
-from .models import Choice, Question
+from flask import request
 
+from .models import Users,Basket,Categories,Products,subCategories,Services
 
-class IndexView(generic.ListView):
-    template_name = 'shop/index.html'
-    context_object_name = 'latest_question_list'
+logging.basicConfig(level=logging.INFO)
 
-    def get_queryset(self):
-        """Return the last five published questions."""
-        return Question.objects.order_by('-pub_date')[:5]
+class IndexView(TemplateView):
+    template_name = 'shop/build/index.html'
 
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
-class DetailView(generic.DetailView):
-    model = Question
-    template_name = 'shop/detail.html'
+        #models with many fields use values_list() to get values of all fields
+        context['categories'] = Categories.objects.values_list()
+        context['products'] = Products.objects.values_list()
+        context['users'] = Users.objects.values_list()
+        context['basket'] = Basket.objects.values_list()
+        context['subcategories'] = subCategories.objects.values_list()
+        context['services'] = Services.objects.values_list()
+        #call function from models and pass it to template via gall
+        #context['gall'] = Products.return_all()
+        return context
 
+class TestView(TemplateView):
+    template_name = 'shop/build/indextest.html'
 
-class ResultsView(generic.DetailView):
-    model = Question
-    template_name = 'shop/results.html'
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
 
+        #models with many fields use values_list() to get values of all fields
+        context['categories'] = Categories.objects.values_list()
+        context['products'] = Products.objects.values_list()
+        context['users'] = Users.objects.values_list
+        context['basket'] = Basket.objects.values_list
+        context['subcategories'] = subCategories.objects.values_list()
+        context['services'] = Services.objects.values_list()
+        return context
 
-def vote(request, question_id):
-    question = get_object_or_404(Question, pk=question_id)
-    try:
-        selected_choice = question.choice_set.get(pk=request.POST['choice'])
-    except (KeyError, Choice.DoesNotExist):
-        # Redisplay the question voting form.
-        return render(request, 'shop/detail.html', {
-            'question': question,
-            'error_message': "You didn't select a choice.",
-        })
+class TestView2(TemplateView):
+    template_name = 'shop/build/indextest2.html'
+
+    def get_context_data(self, **kwargs):
+        context = super().get_context_data(**kwargs)
+        #models with many fields use values_list() to get values of all fields
+        context['categories'] = Categories.objects.values_list()
+        context['products'] = Products.objects.values_list()
+        context['users'] = Users.objects.values_list
+        context['basket'] = Basket.objects.values_list
+        context['subcategories'] = subCategories.objects.values_list()
+        context['services'] = Services.objects.values_list()
+        return context
+
+salt = "&sayu#"
+
+def register(request):
+    login = request.POST["email"]
+    password = request.POST["password"]
+    password += salt
+    passT = sha256(password.encode('utf-8'))
+    checkLogin = Users.objects.values_list("login",flat=True).filter(login=login)
+    #logging.info(checkLogin)
+    if str(checkLogin) == "<QuerySet []>":
+        del request.session['loginError']
+        Users.objects.create(login=login,password=passT.hexdigest())
     else:
-        selected_choice.votes += 1
-        selected_choice.save()
-        # Always return an HttpResponseRedirect after successfully dealing
-        # with POST data. This prevents data from being posted twice if a
-        # user hits the Back button.
-        return HttpResponseRedirect(reverse('shop:results', args=(question.id,)))
+        request.session['loginError'] = "This login already exist"
+    return HttpResponseRedirect(reverse('shop:index'))
+
+def login(request):
+    login = request.POST["email"]
+    password = request.POST["password"]
+    password += salt
+    passT = sha256(password.encode('utf-8'))
+    passT = "<QuerySet ['"+str(passT.hexdigest())+"']>"
+    getPass = Users.objects.values_list("password", flat=True).filter(login=login)
+    #logging.info(getPass)
+    #logging.info(passT)
+    #logging.info(request.session['email'])
+    if(str(getPass)==str(passT)):
+        logging.info("Login: "+login)
+        del request.session['loginError']
+        request.session['email'] = login
+    else:
+        logging.info("Bad login: "+login)
+        request.session['loginError'] = "Bad login or password"
+    return HttpResponseRedirect(reverse('shop:index'))
+
+'''
+class IndexView(generic.ListView):
+    #model = Products
+    template_name = 'shop/build/index.html'
+    context_object_name = 'latest_question_list'
+    def get_queryset(self):
+        return Products.objects.order_by('name')
+'''
+'''
+def insert_into_cat(name):
+    Categories.objects.create(name=name)
+
+def register(login,password):
+    Users.objects.create(login=login,password=sha256(password))
+'''

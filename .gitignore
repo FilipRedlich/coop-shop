@@ -1,6 +1,11 @@
 node_modules
-dist
 .cache
 .git
 staticfiles
 .parcel-cache
+shop/__pycache__
+mysite/__pycache__
+django
+__pycache__
+.pyc
+*.pyc

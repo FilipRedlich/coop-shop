@@ -1,0 +1,40 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  
+</head>
+<body>
+  <button class="x">Change behavior</button>
+  <h2>Register</h2>
+  <!--Action can be changed to /register/-->
+  <form class="y" id="register-form" action="/register/" method="post">
+    {% csrf_token %}
+      <input type="text" name="email"><br>
+      <input type="text" name="password"><br>
+      <input type="submit" value="Register">
+  </form>
+  <h2>login</h2>
+  <form action="{% url 'shop:login' %}" method="post">
+    {% csrf_token %}
+      <input type="text" name="email"><br>
+      <input type="text" name="password"><br>
+      <input type="submit" value="Login">
+  </form>
+  {{request.session.email}}
+  <h1>{{ request.session.loginError }}</h1>
+<script defer>
+    const session_email = "{{request.session.email}}";
+    var x = document.querySelector('.x');
+    var y = document.querySelector('.y')
+    console.log(session_email);
+    x.addEventListener('click', ()=>{
+      y.setAttribute('action', '/register/')
+    })
+  </script>
+</body>
+</html>

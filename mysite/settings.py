@@ -22,13 +22,13 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'
 # See https://docs.djangoproject.com/en/4.0/howto/deployment/checklist/
 
 # SECURITY WARNING: keep the secret key used in production secret!
-#SECRET_KEY = 'django-insecure-5u(s!tsu#fhbo5#w+-%iyqrwncblhd2_$0u8ksojf-&0@nd2^5'
+SECRET_KEY = 'django-insecure-5u(s!tsu#fhbo5#w+-%iyqrwncblhd2_$0u8ksojf-&0@nd2^5'
 
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
 ALLOWED_HOSTS = [
-    "https://py-coop.herokuapp.com",
+    "https://pycoop.herokuapp.com",
     "127.0.0.1",
 ]
 
@@ -90,7 +90,7 @@ DATABASES = {
 }
 
 # Trusted hosts
-CSRF_TRUSTED_ORIGINS = ['https://py-coop.herokuapp.com']
+CSRF_TRUSTED_ORIGINS = ['https://pycoop.herokuapp.com']
 
 # Password validation
 # https://docs.djangoproject.com/en/4.0/ref/settings/#auth-password-validators
@@ -116,7 +116,7 @@ AUTH_PASSWORD_VALIDATORS = [
 
 LANGUAGE_CODE = 'en-us'
 
-TIME_ZONE = 'UTC'
+TIME_ZONE = 'Poland'
 
 USE_I18N = True
 
