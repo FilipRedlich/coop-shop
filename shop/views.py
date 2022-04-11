@@ -70,6 +70,8 @@ def register(request):
     #logging.info(checkLogin)
     if str(checkLogin) == "<QuerySet []>":
         Users.objects.create(login=login,password=passT.hexdigest())
+    else:
+        request.session['loginError'] = "This login already exist"
     return HttpResponseRedirect(reverse('shop:index'))
 
 def login(request):
@@ -87,6 +89,7 @@ def login(request):
         request.session['email'] = login
     else:
         logging.info("Bad login: "+login)
+        request.session['loginError'] = "Bad login or password"
     return HttpResponseRedirect(reverse('shop:index'))
 
 '''
