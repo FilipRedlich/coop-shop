@@ -1,3 +1,4 @@
+from cmath import log
 import logging
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
@@ -65,7 +66,10 @@ def register(request):
     password = request.POST["password"]
     password += salt
     passT = sha256(password.encode('utf-8'))
-    Users.objects.create(login=login,password=passT.hexdigest())
+    checkLogin = Users.objects.values_list("login",flat=True).filter(login=login)
+    #logging.info(checkLogin)
+    if str(checkLogin) == "<QuerySet []>":
+        Users.objects.create(login=login,password=passT.hexdigest())
     return HttpResponseRedirect(reverse('shop:index'))
 
 def login(request):
