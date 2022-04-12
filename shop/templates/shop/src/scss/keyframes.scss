@@ -1,0 +1,20 @@
+@keyframes categories-slide1 {
+    0%{
+    transform: translateY(-75rem) translateX(-50%);
+    width: 0%;
+    }
+    100%{
+    transform: translateY(0) translateX(-50%);
+    width: 100%;
+    }
+}
+
+@keyframes categories-slide {
+    0%{
+    transform: translateY(-75rem) translateX(-50%);
+    }
+
+    100%{
+    transform: translateY(0) translateX(-50%);
+    }
+}
