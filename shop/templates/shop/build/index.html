@@ -8,8 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="E-commerce website" />
   <title>E-commerce</title>
-  <link rel="stylesheet" href="./static/shop/index.23ff341e.css" />
-  <script src="./static/shop/index.eca50836.js" type="module"></script>
+  <link rel="stylesheet" href="./static/shop/index.728b3b84.css" />
+  <script src="./static/shop/index.3747a27d.js" type="module" defer></script>
 </head>
 
 <body class="bg-dark">
@@ -26,12 +26,9 @@
 
     (" {% endfor %}");
     console.log(arrayOfCategories);
-  </script>
-
-  <script>
-      var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");  //stores all subcategories from specified index to variable
+      //var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+      //  .replaceAll("&#x27;,)", "")
+      //  .split("(&#x27;");  //stores all subcategories from specified index to variable
       //Third outputCat doesn't exist
         var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
         .replaceAll("&#x27;,)", "")

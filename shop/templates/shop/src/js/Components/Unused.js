@@ -12,12 +12,10 @@ const watchForMove = (el) => {
   //observer.observe(watchedElement)
 };
 
-const addFunc = () =>{
-  let xx = document.querySelectorAll('.testtt')
-  console.log(xx)
-}
-addFunc()
-
+const addFunc = () => {
+  let xx = document.querySelectorAll(".testtt");
+  console.log(xx);
+};
 
 const RenderSubCat = () => {
   return (

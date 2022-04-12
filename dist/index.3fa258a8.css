@@ -13876,6 +13876,10 @@ textarea.form-control-lg {
 .translate-z-0 {
   transform: translateZ(0);
 }
+.minmax-test {
+  min-width: 10rem;
+  max-width: 10rem;
+}
 .animate {
   animation: categories-slide 0.3s ease-in-out;
   animation-fill-mode: forwards;

@@ -4,8 +4,12 @@
     <meta charset="UTF-8" />
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <meta name="description" content="E-commerce website">
-    <link rel="shortcut icon" href="./src/images/shop_logo.svg" type="image/x-icon">
+    <meta name="description" content="E-commerce website" />
+    <link
+      rel="shortcut icon"
+      href="./src/images/shop_logo.svg"
+      type="image/x-icon"
+    />
     <title>E-commerce</title>
     <!-- <link rel="stylesheet" href="{% static 'shop/main.7ddbcda9.css' %}">
     <script src="{% static 'shop/App.13311ed0.js' %}" type="module" defer=""></script>
@@ -14,39 +18,42 @@
     <script src="src/js/App.js" type="module" defer></script>
   </head>
   <body class="bg-dark">
+    <div id="navRoot">Nav not rendered</div>
+    <div id="root">Main not rendered</div>
+    <div id="footerRoot">footer not rendered</div>
     <script>
       const CSRF_TOKEN = "{{ csrf_token }}";
-      var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");  //stores all subcategories from specified index to variable
+      //var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+      //  .replaceAll("&#x27;,)", "")
+      //  .split("(&#x27;"); //stores all subcategories from specified index to variable
       //Third outputCat doesn't exist
-        var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
+      var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
         .replaceAll("&#x27;,)", "")
         .split("(&#x27;");
       var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
         .replaceAll("&#x27;,)", "")
         .split("(&#x27;");
       var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       var ARRAY_6_SUBCATEGORY = "{% outputCat 7 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
       ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
       ARRAY_3_SUBCATEGORY.shift();
       ARRAY_4_SUBCATEGORY.shift();
@@ -58,10 +65,5 @@
       ARRAY_10_SUBCATEGORY.shift();
       ARRAY_11_SUBCATEGORY.shift();
     </script>
-    <div id="navRoot">Nav not rendered</div>
-    <div id="root">Main not rendered</div>
-    <div id="footerRoot">footer not rendered</div>
-
-
   </body>
 </html>

@@ -1,5 +1,4 @@
 import React from "react";
-import { render } from React
 const firstProducts = () => {
     console.log(FIRST_SUBCAT_PRICE);
 }

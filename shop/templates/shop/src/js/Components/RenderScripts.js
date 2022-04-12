@@ -1,4 +1,4 @@
-import React, {useEffect} from "react"
+import React from "react"
 import renderTry, { TEST_ARRAY } from "./Test"
 import { removeSubCat } from "./ProductsNav"
 const RenderSubCat = () =>{

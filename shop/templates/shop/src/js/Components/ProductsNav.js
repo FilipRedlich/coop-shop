@@ -1,3 +1,4 @@
+import React from "react";
 import { useState } from "react";
 import { render } from "react-dom";
 
@@ -7,78 +8,63 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-import {TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
+import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
 
+const removeSubCat = () => {
+  const holder = document.querySelector("#rootSubcategories");
+  var doesExist = document.querySelectorAll(".testing");
 
-  const removeSubCat = () => {
-    const holder = document.querySelector("#rootSubcategories");
-    var doesExist = document.querySelectorAll(".testing");
-
-    if (holder.contains(doesExist[0])) {
-      for (let i = 0; i < doesExist.length; i++){
-        doesExist[i].remove()
-      }
+  if (holder.contains(doesExist[0])) {
+    for (let i = 0; i < doesExist.length; i++) {
+      doesExist[i].remove();
     }
-   
-  };
+  }
+};
 
-const addEvent = (elements = [],  ARRAY = [], ADDITIONAL_ARRAY = []) => {
-  
+const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
   for (let i = 0; i < elements.length; i++) {
     console.log(elements[i]);
 
     elements[i].addEventListener("click", () => {
-
-
       switch (elements[i].textContent) {
         case `${TEST_ARRAY[0]}`:
           alert("it works hah");
           break;
         case `${TEST_ARRAY[1]}`:
-            alert('testt');
+          alert("testt");
           break;
         case `${TEST_ARRAY[2]}`:
-         alert() 
-        break;
-        case `${TEST_ARRAY[3]}`:
-          alert('4th el')
+          alert();
           break;
-
-     }
-      switch(elements[i].textContent){
-            case `${TEST_ARRAY2[0]}`:
-              alert('hehe')
-              break;
-            case `${TEST_ARRAY2[1]}`:
-              alert('er')
-
-          }
+        case `${TEST_ARRAY[3]}`:
+          alert("4th el");
+          break;
+      }
+      switch (elements[i].textContent) {
+        case `${TEST_ARRAY2[0]}`:
+          alert("hehe");
+          break;
+        case `${TEST_ARRAY2[1]}`:
+          alert("er");
+      }
     });
   }
-
-
-  return(
-    <>
-    </>
-  )
-}
-
+};
 
 const ProductNav = () => {
-
   const [isActive, setActive] = useState("false");
-  
+
   const ToggleClass = () => {
     setActive(!isActive);
   };
 
-  const buttonBuilder = () => {
+  const buttonBuilder = (CAT_ARRAY) => {
     //Creates buttons, adds classes and text to them
     var button = document.createElement("button").cloneNode(true);
     var clone = button.cloneNode(true);
     var holder = document.querySelector(".categories");
     let isExisting = document.querySelector(".cat-btn");
-    
+
     //Adding details to button
     clone.classList.add(
       "cat-btn",
@@ -101,40 +87,39 @@ const ProductNav = () => {
       //for (let i = 0; i < arrayOfCategories.length; i++) {
       //  clone.textContent = arrayOfCategories[i];
       //  holder.appendChild(clone.cloneNode(true));
-      //  
+      //
       //}
-      for(let i = 0; i< TEST_CAT.length; i++){
-        clone.textContent = TEST_CAT[i]
+      for (let i = 0; i < CAT_ARRAY.length; i++) {
+        clone.textContent = CAT_ARRAY[i];
         holder.appendChild(clone.cloneNode(true));
       }
       return;
     }
-  }
-  const RenderFromCat = (ARRAY = []) =>{
-    const categories = document.querySelectorAll('.categories-button');
-    
-    for(let i = 0; i<ARRAY.length; i++){
-      categories[i].addEventListener('click', () => {
+  };
+  const RenderFromCat = (ARRAY = []) => {
+    const categories = document.querySelectorAll(".categories-button");
+
+    for (let i = 0; i < ARRAY.length; i++) {
+      categories[i].addEventListener("click", () => {
         removeSubCat(); //removes all previous rendered subcategories
         //adds function to specified subcategory
         switch (ARRAY[i]) {
           case `${ARRAY[0]}`:
             //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(TEST_ARRAY);
+            renderTry(ARRAY_3_SUBCATEGORY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
-            renderTry(TEST_ARRAY2);
+            renderTry(ARRAY_4_SUBCATEGORY);
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
-      })
+      });
     }
-    
-  }
+  };
   const renderRoot = (renderElement) => {
-    render(renderElement, document.querySelector('#root'))
-  }
+    render(renderElement, document.querySelector("#root"));
+  };
 
   return (
     <>
@@ -145,7 +130,7 @@ const ProductNav = () => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
             addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-            buttonBuilder();
+            buttonBuilder(TEST_CAT);
             RenderFromCat(TEST_ARRAY, removeSubCat);
           }}
         >
@@ -155,7 +140,6 @@ const ProductNav = () => {
           className="btn btn-lg bg-transparent  text-white"
           onClick={() => {
             renderRoot(<OnSale />);
-            //RenderSale();
           }}
         >
           On sale
@@ -164,7 +148,6 @@ const ProductNav = () => {
           className="btn btn-lg bg-transparent  text-white"
           onClick={() => {
             renderRoot(<Outlet />);
-            //RenderOutlet();
           }}
         >
           Outlet
@@ -173,7 +156,6 @@ const ProductNav = () => {
           className="btn btn-lg bg-transparent  text-white"
           onClick={() => {
             renderRoot(<Services />);
-            //RenderServices();
           }}
         >
           Services
@@ -182,7 +164,6 @@ const ProductNav = () => {
           className="btn btn-lg bg-transparent  text-white"
           onClick={() => {
             renderRoot(<Newsletter />);
-            //RenderNewsletter();
           }}
         >
           Newsletter
@@ -212,5 +193,5 @@ const ProductNav = () => {
     </>
   );
 };
-export {removeSubCat}
+export { removeSubCat };
 export default ProductNav;
