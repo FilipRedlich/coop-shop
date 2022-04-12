@@ -57,16 +57,7 @@
       var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
       .replaceAll("&#x27;,)", "")
       .split("(&#x27;");
-      ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
-      ARRAY_3_SUBCATEGORY.shift();
-      ARRAY_4_SUBCATEGORY.shift();
-      ARRAY_5_SUBCATEGORY.shift();
-      ARRAY_6_SUBCATEGORY.shift();
-      ARRAY_7_SUBCATEGORY.shift();
-      ARRAY_8_SUBCATEGORY.shift();
-      ARRAY_9_SUBCATEGORY.shift();
-      ARRAY_10_SUBCATEGORY.shift();
-      ARRAY_11_SUBCATEGORY.shift();
+    
 
     const anchorCreator = (ARRAY) => {
       let button = document.createElement('button')
@@ -83,6 +74,18 @@
       }
     };
     anchorCreator(); //to do: add to nav
+  </script>
+  <script defer>
+     //ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+      ARRAY_3_SUBCATEGORY.shift();
+      ARRAY_4_SUBCATEGORY.shift();
+      ARRAY_5_SUBCATEGORY.shift();
+      ARRAY_6_SUBCATEGORY.shift();
+      ARRAY_7_SUBCATEGORY.shift();
+      ARRAY_8_SUBCATEGORY.shift();
+      ARRAY_9_SUBCATEGORY.shift();
+      ARRAY_10_SUBCATEGORY.shift();
+      ARRAY_11_SUBCATEGORY.shift();
   </script>
   <div id="navRoot">Nav not rendered</div>
   <div id="root">Main not rendered</div>
