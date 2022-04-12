@@ -166,6 +166,16 @@
       ARRAY_9_SUBCATEGORY.shift();
       ARRAY_10_SUBCATEGORY.shift();
       ARRAY_11_SUBCATEGORY.shift();
+
+      const filterEmpty = (array = []) =>{
+       
+         array.filter(el =>{
+           return el !== '';
+         })
+        array.shift()
+        console.log(array, 'mruwa')
+      }
+      filterEmpty(ARRAY_1_SUBCATEGORY, 'kuuuurwa')
     console.log("{{subcategories.0.1}}");
     console.log(ARRAY_3_SUBCATEGORY[1], 'ARRAY 3.1')
     console.log(ARRAY_3_SUBCATEGORY, 'ARRAY 3')

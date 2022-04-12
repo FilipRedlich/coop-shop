@@ -11,6 +11,16 @@ const RenderSubCat = () =>{
         </>
     )
 }
+
+const RenderProducts = () => {
+    return (
+        <>
+            <section className="products-section bg-black w-100 d-flex flex-wrap flex-row">
+            
+            </section>
+        </>
+    )
+}
 const RenderOnLoad = () =>{
         removeSubCat()
         renderTry(TEST_ARRAY)
@@ -22,6 +32,7 @@ const RenderOnLoad = () =>{
         )
 }
 export {
-    RenderOnLoad
+    RenderOnLoad,
+    RenderProducts
 }
 export default RenderSubCat;

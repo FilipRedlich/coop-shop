@@ -6,10 +6,8 @@ import MainNav from "./Components/MainNav";
 import ProductsNav from "./Components/ProductsNav";
 import MainContent from "./Components/MainContent";
 import MainFooter from "./Components/Footer";
-import renderTry, { TEST_ARRAY } from "./Components/Test";
 import { RenderOnLoad } from "./Components/RenderScripts";
-import Tttt from "./Components/TestComponent";
-
+import { AfterLoad } from "./Components/Test";
 const NavApp = () => {
   return (
     <>
@@ -20,20 +18,19 @@ const NavApp = () => {
 };
 
 const MainApp = () => {
+  AfterLoad(<MainContent />, document.querySelector("#root"), 300);
   return (
     <>
       <RenderOnLoad />
-      <MainContent />
+
+      {/* <MainContent /> */}
     </>
   );
 };
 
 const FooterApp = () => {
-  return (
-    <>
-      <MainFooter />
-    </>
-  );
+  AfterLoad(<MainFooter />, document.querySelector("#footerRoot"), 600);
+  return <></>;
 };
 render(<NavApp />, document.querySelector("#navRoot"));
 render(<MainApp />, document.querySelector("#root"));
