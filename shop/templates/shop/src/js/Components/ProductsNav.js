@@ -16,7 +16,6 @@ const removeSubCat = () => {
 
   if (holder.contains(doesExist[0])) {
     for (let i = 0; i < doesExist.length; i++) {
-     
       doesExist[i].remove();
     }
   }
@@ -24,27 +23,27 @@ const removeSubCat = () => {
 
 const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
   for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i])
+    console.log(elements[i]);
     elements[i].addEventListener("click", () => {
       switch (elements[i].textContent) {
-        case `${TEST_ARRAY[0]}`:
+        case `${ARRAY_3_SUBCATEGORY[0]}`:
           alert("it works hah");
           break;
-        case `${TEST_ARRAY[1]}`:
+        case `${ARRAY_3_SUBCATEGORY[1]}`:
           alert("testt");
           break;
-        case `${TEST_ARRAY[2]}`:
+        case `${ARRAY_3_SUBCATEGORY[2]}`:
           alert();
           break;
-        case `${TEST_ARRAY[3]}`:
+        case `${ARRAY_3_SUBCATEGORY[3]}`:
           alert("4th el");
           break;
       }
       switch (elements[i].textContent) {
-        case `${TEST_ARRAY2[0]}`:
+        case `${ARRAY_4_SUBCATEGORY[0]}`:
           alert("hehe");
           break;
-        case `${TEST_ARRAY2[1]}`:
+        case `${ARRAY_4_SUBCATEGORY[1]}`:
           alert("er");
       }
     });
@@ -84,35 +83,34 @@ const ProductNav = () => {
       return;
     }
     if (!holder.contains(isExisting)) {
-      //for (let i = 0; i < arrayOfCategories.length; i++) {
-      //  clone.textContent = arrayOfCategories[i];
-      //  holder.appendChild(clone.cloneNode(true));
-      //
-      //}
-      for (let i = 0; i < CAT_ARRAY.length; i++) {
-        clone.textContent = CAT_ARRAY[i];
+      for (let i = 0; i < arrayOfCategories.length; i++) {
+        clone.textContent = arrayOfCategories[i];
         holder.appendChild(clone.cloneNode(true));
       }
+      //for (let i = 0; i < CAT_ARRAY.length; i++) {
+      //  clone.textContent = CAT_ARRAY[i];
+      //  holder.appendChild(clone.cloneNode(true));
+      //}
       return;
     }
   };
+
+  //Adds functionality to category buttons
   const RenderFromCat = (ARRAY = []) => {
     const categories = document.querySelectorAll(".categories-button");
 
     for (let i = 0; i < ARRAY.length; i++) {
-      
       categories[i].addEventListener("click", () => {
-        
         removeSubCat(); //removes all previous rendered subcategories
-        //adds function to specified subcategory
+        //adds function to specified category
         switch (ARRAY[i]) {
           case `${ARRAY[0]}`:
             //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(TEST_ARRAY);
+            renderTry(ARRAY_3_SUBCATEGORY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
-            renderTry(TEST_ARRAY2);
+            renderTry(ARRAY_4_SUBCATEGORY);
             addEvent(document.querySelectorAll(".testing"));
             break;
         }

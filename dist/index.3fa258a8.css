@@ -14047,14 +14047,14 @@ textarea.form-control-lg {
 img {
   width: 100%;
 }
-@media screen and (max-height: 700px) {
+@media screen and (max-height: 800px) {
   .categories-top {
-    top: 50%;
+    top: 40%;
   }
 }
-@media screen and (max-height: 550px) {
+@media screen and (max-height: 620px) {
   .categories-top {
-    top: 80%;
+    top: 60%;
   }
 }
 .footer-anchor {

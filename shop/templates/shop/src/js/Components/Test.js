@@ -1,4 +1,3 @@
-import React from "react";
 import { render } from "react-dom";
 
 const TEST_CAT = ["cat1", "cat2", "cat3"];
@@ -9,6 +8,15 @@ const TEST_ARRAY = [
   "Test element num.4",
 ];
 const TEST_ARRAY2 = ["test1", "test2", "test3", "test4"];
+
+const AfterLoad = (element, renderPlace = null, time = 1000) => {
+  
+  setTimeout(() => {
+    console.log(element, renderPlace)
+    render(element, renderPlace)
+  }, time)
+  return
+}
 const renderTry = (ARRAY = []) => {
   const addContent = () => {
     var button = document.createElement("button").cloneNode(true);
@@ -35,4 +43,5 @@ const renderTry = (ARRAY = []) => {
 };
 renderTry();
 export { TEST_CAT, TEST_ARRAY, TEST_ARRAY2 };
+export { AfterLoad };
 export default renderTry;
