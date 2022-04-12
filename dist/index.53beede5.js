@@ -47842,7 +47842,7 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            addEvent(document.querySelectorAll('.testing'), _Test.TEST_CAT);
+                            addEvent(document.querySelectorAll(".testing"), _Test.TEST_CAT);
                             buttonBuilder();
                             RenderFromCat(_Test.TEST_ARRAY, removeSubCat);
                         },
@@ -47883,7 +47883,7 @@ var ProductNav = function ProductNav() {
                 ]
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-                className: isActive ? "hide-element w-100 position-fixed z-index-1 mx-auto" : "position-fixed rounded categories-top text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem",
+                className: "position-fixed categories-section translate-z-0 w-100  ".concat(isActive ? "hide-element" : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "),
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     className: "row categories-wrapper gap-3 p-2 w-100 mt-5",
                     children: [

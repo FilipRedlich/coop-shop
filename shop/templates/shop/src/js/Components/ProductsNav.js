@@ -138,68 +138,75 @@ const ProductNav = () => {
 
   return (
     <>
-      
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent  text-white"
-          
           onClick={() => {
             ToggleClass();
-           //renderTry(TEST_ARRAY2);
-            addEvent(document.querySelectorAll('.testing'), TEST_CAT)
+            //renderTry(TEST_ARRAY2);
+            addEvent(document.querySelectorAll(".testing"), TEST_CAT);
             buttonBuilder();
-            RenderFromCat(TEST_ARRAY, removeSubCat)
+            RenderFromCat(TEST_ARRAY, removeSubCat);
           }}
         >
           Categories
         </button>
-        <button className="btn btn-lg bg-transparent  text-white"
-        onClick={()=>{
-          renderRoot(<OnSale />)
-          //RenderSale();
-        }}>
+        <button
+          className="btn btn-lg bg-transparent  text-white"
+          onClick={() => {
+            renderRoot(<OnSale />);
+            //RenderSale();
+          }}
+        >
           On sale
         </button>
-        <button className="btn btn-lg bg-transparent  text-white"
-        onClick={()=>{
-          renderRoot(<Outlet />)
-          //RenderOutlet();
-        }}>
+        <button
+          className="btn btn-lg bg-transparent  text-white"
+          onClick={() => {
+            renderRoot(<Outlet />);
+            //RenderOutlet();
+          }}
+        >
           Outlet
         </button>
-        <button className="btn btn-lg bg-transparent  text-white"
-        onClick={()=>{
-        renderRoot(<Services />)
-          //RenderServices();
-        }}>
+        <button
+          className="btn btn-lg bg-transparent  text-white"
+          onClick={() => {
+            renderRoot(<Services />);
+            //RenderServices();
+          }}
+        >
           Services
         </button>
-        <button className="btn btn-lg bg-transparent  text-white"
-        onClick={()=>{
-          renderRoot(<Newsletter />)
-          //RenderNewsletter();
-        }}>
+        <button
+          className="btn btn-lg bg-transparent  text-white"
+          onClick={() => {
+            renderRoot(<Newsletter />);
+            //RenderNewsletter();
+          }}
+        >
           Newsletter
         </button>
       </nav>
 
       <section
-        className={
+        className={`position-fixed categories-section translate-z-0 w-100  ${
           isActive
-            ? "hide-element w-100 position-fixed z-index-1 mx-auto"
-            : "position-fixed rounded categories-top text-white w-100 min-vh-200 z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg px-1 mx-auto transition-5 min-h-rem"
-        }
+            ? "hide-element"
+            : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "
+        }`}
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
           <div
             id="categories"
             className="text-left categories col-3 no-gutters gap-1"
-          //Inside this element buttons are rendered
+            //Inside this element buttons are rendered
           ></div>
 
-          <div id="rootSubcategories" className="bg-dark col-md categories-products mx-auto d-flex">
-            
-          </div>
+          <div
+            id="rootSubcategories"
+            className="bg-dark col-md categories-products mx-auto d-flex"
+          ></div>
         </div>
       </section>
     </>
