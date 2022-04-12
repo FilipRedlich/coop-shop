@@ -1,5 +1,5 @@
 @import "./variables.scss";
-@import './keyframes.scss';
+@import "./keyframes.scss";
 .transform-z-3 {
   transform: translateZ(3px) !important;
 }
@@ -74,17 +74,21 @@
     }
   }
 }
-.translate-z-0{
+.translate-z-0 {
   transform: translateZ(0);
 }
-.animate{
-   animation: categories-slide .3s ease-in-out;
-   animation-fill-mode: forwards;
-   //transition: .5s;
- }
-.categories-section{
-   min-height: 100rem !important;
-   margin: -30rem 0 0 0;
+.minmax-test {
+  min-width: 10rem;
+  max-width: 10rem;
+}
+.animate {
+  animation: categories-slide 0.3s ease-in-out;
+  animation-fill-mode: forwards;
+  //transition: .5s;
+}
+.categories-section {
+  min-height: 100rem !important;
+  margin: -30rem 0 0 0;
 }
 .border-none {
   border: none;

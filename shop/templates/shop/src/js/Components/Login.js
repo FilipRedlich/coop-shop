@@ -1,6 +1,4 @@
-import { render } from "react-dom";
 import { useEffect, useState } from "react";
-import { check } from "prettier";
 
 const Login = () => {
   const [isLogin, setOpposite] = useState(false);
