@@ -1060,9 +1060,13 @@ var NavApp = function NavApp() {
 };
 _c = NavApp;
 var MainApp = function MainApp() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
-        })
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RenderScripts.RenderOnLoad, {
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
+            })
+        ]
     }));
 };
 _c1 = MainApp;
@@ -25387,7 +25391,10 @@ _c = RenderSubCat;
 var RenderOnLoad = function RenderOnLoad() {
     (0, _ProductsNav.removeSubCat)();
     (0, _Test["default"])(_Test.TEST_ARRAY);
+    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
     console.log('hehe');
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    }));
 };
 _c1 = RenderOnLoad;
 exports.RenderOnLoad = RenderOnLoad;
