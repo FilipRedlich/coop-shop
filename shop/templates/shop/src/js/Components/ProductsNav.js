@@ -16,6 +16,7 @@ const removeSubCat = () => {
 
   if (holder.contains(doesExist[0])) {
     for (let i = 0; i < doesExist.length; i++) {
+     
       doesExist[i].remove();
     }
   }
@@ -23,8 +24,7 @@ const removeSubCat = () => {
 
 const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
   for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i]);
-
+    console.log(elements[i])
     elements[i].addEventListener("click", () => {
       switch (elements[i].textContent) {
         case `${TEST_ARRAY[0]}`:
@@ -100,17 +100,19 @@ const ProductNav = () => {
     const categories = document.querySelectorAll(".categories-button");
 
     for (let i = 0; i < ARRAY.length; i++) {
+      
       categories[i].addEventListener("click", () => {
+        
         removeSubCat(); //removes all previous rendered subcategories
         //adds function to specified subcategory
         switch (ARRAY[i]) {
           case `${ARRAY[0]}`:
             //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(ARRAY_3_SUBCATEGORY.shift());
+            renderTry(TEST_ARRAY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
-            renderTry(ARRAY_4_SUBCATEGORY.shift());
+            renderTry(TEST_ARRAY2);
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
@@ -129,7 +131,7 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            addEvent(document.querySelectorAll(".testing"), TEST_CAT);
+            //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
             buttonBuilder(TEST_CAT);
             RenderFromCat(TEST_ARRAY, removeSubCat);
           }}
@@ -193,5 +195,5 @@ const ProductNav = () => {
     </>
   );
 };
-export { removeSubCat };
+export { removeSubCat, addEvent };
 export default ProductNav;

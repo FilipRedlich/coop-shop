@@ -1020,7 +1020,7 @@ var _Test = _interopRequireWildcard(require("./Components/Test"));
 var _RenderScripts = require("./Components/RenderScripts");
 var _TestComponent = _interopRequireDefault(require("./Components/TestComponent"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\App.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/App.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -1060,15 +1060,9 @@ var NavApp = function NavApp() {
 };
 _c = NavApp;
 var MainApp = function MainApp() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
-        children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RenderScripts.RenderOnLoad, {
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_TestComponent["default"], {
-            })
-        ]
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
+        })
     }));
 };
 _c1 = MainApp;
@@ -1097,7 +1091,7 @@ $RefreshReg$(_c2, "FooterApp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","./Components/Test":"f2YDa","./Components/RenderScripts":"bNOSb","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Components/TestComponent":"2SKQh"}],"7XM86":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","./Components/Test":"f2YDa","./Components/RenderScripts":"bNOSb","./Components/TestComponent":"2SKQh","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7XM86":[function(require,module,exports) {
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -22085,7 +22079,7 @@ var _reactDom = require("react-dom");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -22203,7 +22197,7 @@ exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Login.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Login.js", _this = void 0;
 var Login = function Login() {
     var _useState = (0, _react.useState)(false), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isLogin = _useState2[0], setOpposite = _useState2[1];
     var form = document.querySelector("#login-form"); //changes element based on useState boolean above (isLogin and setOpposite)
@@ -23306,7 +23300,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.removeSubCat = exports["default"] = void 0;
+exports.removeSubCat = exports["default"] = exports.addEvent = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
@@ -23316,7 +23310,7 @@ var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -23381,15 +23375,14 @@ var addEvent = function addEvent() {
         });
     };
     for(var i = 0; i < elements.length; i++)_loop(i);
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    }));
 };
+exports.addEvent = addEvent;
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
     var ToggleClass = function ToggleClass() {
         setActive(!isActive);
     };
-    var buttonBuilder = function buttonBuilder() {
+    var buttonBuilder = function buttonBuilder(CAT_ARRAY) {
         //Creates buttons, adds classes and text to them
         var button = document.createElement("button").cloneNode(true);
         var clone = button.cloneNode(true);
@@ -23407,8 +23400,8 @@ var ProductNav = function ProductNav() {
             //  holder.appendChild(clone.cloneNode(true));
             //
             //}
-            for(var i = 0; i < _Test.TEST_CAT.length; i++){
-                clone.textContent = _Test.TEST_CAT[i];
+            for(var i = 0; i < CAT_ARRAY.length; i++){
+                clone.textContent = CAT_ARRAY[i];
                 holder.appendChild(clone.cloneNode(true));
             }
             return;
@@ -23424,11 +23417,11 @@ var ProductNav = function ProductNav() {
                 switch(ARRAY[i]){
                     case "".concat(ARRAY[0]):
                         //renderTry(ARRAY_3_SUBCATEGORY);
-                        (0, _Test["default"])(ARRAY_3_SUBCATEGORY);
+                        (0, _Test["default"])(_Test.TEST_ARRAY);
                         addEvent(document.querySelectorAll(".testing"));
                         break;
                     case "".concat(ARRAY[1]):
-                        (0, _Test["default"])(ARRAY_4_SUBCATEGORY);
+                        (0, _Test["default"])(_Test.TEST_ARRAY2);
                         addEvent(document.querySelectorAll(".testing"));
                         break;
                 }
@@ -23448,8 +23441,8 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent  text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            addEvent(document.querySelectorAll(".testing"), _Test.TEST_CAT);
-                            buttonBuilder();
+                            //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
+                            buttonBuilder(_Test.TEST_CAT);
                             RenderFromCat(_Test.TEST_ARRAY, removeSubCat);
                         },
                         children: "Categories"
@@ -23518,7 +23511,107 @@ $RefreshReg$(_c, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./OnSale":"9GTDe"}],"hj64T":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$89cd.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
+var OnSale = function OnSale() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "sale p-2 py-5",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                className: "d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "sale-item d-flex bg-transparent-custom flex-column px-3 m-auto justify-content-between border rounded",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                            className: "flexb-30",
+                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: _undraw_dev_productivity_re_fylf["default"],
+                                className: "img-fluid sale-img"
+                            })
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "pb-3 flexb-70 my-auto",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                                    className: "text-danger pb-1",
+                                    children: "Price tag"
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                    className: "lead text-center ",
+                                    children: "Item name"
+                                })
+                            ]
+                        })
+                    ]
+                })
+            })
+        })
+    }));
+};
+_c = OnSale;
+var _default = OnSale;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "OnSale");
+
+  $parcel$ReactRefreshHelpers$89cd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bBbLR":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"hj64T":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ac01 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23531,7 +23624,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Services.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Services.js", _this = void 0;
 var Services = function Services() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23576,7 +23669,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Outlet.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Outlet.js", _this = void 0;
 var Outlet = function Outlet() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23610,7 +23703,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_envelope_re_f5j = _interopRequireDefault(require("../../images/undraw_envelope_re_f5j4.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Newsletter.js", _this = void 0;
 var Newsletter = function Newsletter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
@@ -23666,42 +23759,7 @@ $RefreshReg$(_c, "Newsletter");
 },{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_envelope_re_f5j4.svg":"3Krtf","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3Krtf":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"f2YDa":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"f2YDa":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$f245 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23764,72 +23822,7 @@ exports["default"] = _default;
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$89cd.prelude(module);
-
-try {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = void 0;
-var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\OnSale.js", _this = void 0;
-var OnSale = function OnSale() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "sale p-2 py-5",
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white",
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "sale-item d-flex bg-transparent-custom flex-column px-3 m-auto justify-content-between border rounded",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "flexb-30",
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                src: _undraw_dev_productivity_re_fylf["default"],
-                                className: "img-fluid sale-img"
-                            })
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "pb-3 flexb-70 my-auto",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                                    className: "text-danger pb-1",
-                                    children: "Price tag"
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                                    className: "lead text-center ",
-                                    children: "Item name"
-                                })
-                            ]
-                        })
-                    ]
-                })
-            })
-        })
-    }));
-};
-_c = OnSale;
-var _default = OnSale;
-exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "OnSale");
-
-  $parcel$ReactRefreshHelpers$89cd.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bBbLR":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"1FSJk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23844,7 +23837,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _Carousel = _interopRequireDefault(require("./Carousel"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainContent.js", _this = void 0;
 var MainContent = function MainContent() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("article", {
         className: "container-fluid py-5 bg-dark min-vh-100 text-white",
@@ -23884,7 +23877,7 @@ var _react = require("react");
 var _usehooksTs = require("usehooks-ts");
 var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Carousel.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Carousel.js", _this = void 0;
 var images = [
     {
         id: 1,
@@ -25248,7 +25241,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
         className: "d-flex flex-row flex-wrap justify-content-center gap-3 py-5 bg-transparent-custom w-100 text-white",
@@ -25352,7 +25345,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _ProductsNav = require("./ProductsNav");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\RenderScripts.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/RenderScripts.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -25395,8 +25388,6 @@ var RenderOnLoad = function RenderOnLoad() {
     (0, _ProductsNav.removeSubCat)();
     (0, _Test["default"])(_Test.TEST_ARRAY);
     console.log('hehe');
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    }));
 };
 _c1 = RenderOnLoad;
 exports.RenderOnLoad = RenderOnLoad;
@@ -25411,7 +25402,7 @@ $RefreshReg$(_c1, "RenderOnLoad");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-runtime":"6AEwr","./ProductsNav":"jxWkG","@babel/runtime/helpers/interopRequireDefault":"7XM86"}],"2SKQh":[function(require,module,exports) {
+},{"@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/interopRequireDefault":"7XM86"}],"2SKQh":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$4e31 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25424,7 +25415,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\TestComponent.js", _this = void 0;
+var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/TestComponent.js", _this = void 0;
 var Tttt = function Tttt() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
