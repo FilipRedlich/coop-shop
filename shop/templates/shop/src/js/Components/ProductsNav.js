@@ -106,11 +106,11 @@ const ProductNav = () => {
         switch (ARRAY[i]) {
           case `${ARRAY[0]}`:
             //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(ARRAY_3_SUBCATEGORY);
+            renderTry(ARRAY_3_SUBCATEGORY.shift());
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
-            renderTry(ARRAY_4_SUBCATEGORY);
+            renderTry(ARRAY_4_SUBCATEGORY.shift());
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
