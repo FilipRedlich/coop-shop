@@ -22,9 +22,7 @@ const NavApp = () => {
 const MainApp = () => {
   return (
     <>
-      <RenderOnLoad />
       <MainContent />
-      <Tttt />
     </>
   );
 };

@@ -13,12 +13,8 @@ const RenderSubCat = () =>{
 const RenderOnLoad = () =>{
         removeSubCat()
         renderTry(TEST_ARRAY)
+        
         console.log('hehe')
-      
-    return(
-        <>
-        </>
-    )
 }
 export {
     RenderOnLoad
