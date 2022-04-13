@@ -110,5 +110,6 @@ def logout(request):
         del request.session['userpk']
     return HttpResponseRedirect(reverse('shop:index'))
 
-def addProductToBasket(request,pk):
-    return 0
+def addProductToBasket(request):
+    productID = request.POST['id']
+    Basket.objects.create(userID=request.session['userpk'],productID=productID)
