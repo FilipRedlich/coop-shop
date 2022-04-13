@@ -65,21 +65,6 @@
       ARRAY_10_SUBCATEGORY.shift();
       ARRAY_11_SUBCATEGORY.shift();
 
-    const anchorCreator = (ARRAY) => {
-      let button = document.createElement('button')
-      button.classList.add('btn', 'testtt');
-      let cloned = button.cloneNode(true);
-      let holder = document.querySelector(".anchorRoot");
-     
-
-      for (let i = 0; i < ARRAY.length; i++) {
-        cloned.textContent = ARRAY[i];
-        
-
-        holder.appendChild(cloned.cloneNode(true));
-      }
-    };
-    anchorCreator(); //to do: add to nav
   </script>
 
   <div id="navRoot">Nav not rendered</div>
