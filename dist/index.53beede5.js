@@ -23365,6 +23365,24 @@ var addEvent = function addEvent() {
                 case "".concat(ARRAY_3_SUBCATEGORY[3]):
                     alert("4th el");
                     break;
+                case "".concat(ARRAY_3_SUBCATEGORY[4]):
+                    alert("4th el");
+                    break;
+                case "".concat(ARRAY_3_SUBCATEGORY[5]):
+                    alert("4th el");
+                    break;
+                case "".concat(ARRAY_3_SUBCATEGORY[6]):
+                    alert("4th el");
+                    break;
+                case "".concat(ARRAY_3_SUBCATEGORY[7]):
+                    alert("4th el");
+                    break;
+                case "".concat(ARRAY_3_SUBCATEGORY[8]):
+                    alert("4th el");
+                    break;
+                case "".concat(ARRAY_3_SUBCATEGORY[9]):
+                    alert("4th el");
+                    break;
             }
             switch(elements[i].textContent){
                 case "".concat(ARRAY_4_SUBCATEGORY[0]):
@@ -23372,6 +23390,13 @@ var addEvent = function addEvent() {
                     break;
                 case "".concat(ARRAY_4_SUBCATEGORY[1]):
                     alert("er");
+                    break;
+                case "".concat(ARRAY_4_SUBCATEGORY[2]):
+                    alert("er");
+                    break;
+                case "".concat(ARRAY_4_SUBCATEGORY[3]):
+                    alert("er");
+                    break;
             }
         });
     };
@@ -25394,7 +25419,7 @@ _c1 = RenderProducts;
 exports.RenderProducts = RenderProducts;
 var RenderOnLoad = function RenderOnLoad() {
     (0, _ProductsNav.removeSubCat)();
-    (0, _Test["default"])(_Test.TEST_ARRAY);
+    (0, _Test["default"])(ARRAY_3_SUBCATEGORY);
     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
     console.log('hehe');
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
