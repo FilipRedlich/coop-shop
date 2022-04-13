@@ -6,12 +6,6 @@ register = template.Library()
 ON=1
 
 @register.simple_tag
-#insert into cat db
-def insert_into_cat(name):
-    if(ON==1):
-        Categories.objects.create(name=name)
-
-@register.simple_tag
 #check for discount and returns items from cat with discount
 def outputSubcat(cat,field):
     if(ON==1):
