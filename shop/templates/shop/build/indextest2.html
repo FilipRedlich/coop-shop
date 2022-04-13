@@ -53,9 +53,19 @@
     var img = document.createElement("img");
     img.src = picture[0];
     img.height=200;
+    //get all subcats from selected cat arg[1]=cat arg[2]=nr of field
+    arrayT = '{% getSubcatsFromCat 4 1 %}'.split(';')
+    console.log(arrayT)
+    //get all products from selected subcat arg[1]=cat arg[2]=nr of field
+    arraT = '{% getProductsFromSubcat 5 1 %}'.split(';')
+    console.log(arraT)
     document.getElementById('imgTest').appendChild(img);
   </script>
   {% outputBasket 1 %}
+  <h4>get all subcats from selected cat arg[1]=cat arg[2]=nr of field</h4>
+  {% getSubcatsFromCat 4 1 %}
+  <h4>get all products from selected subcat arg[1]=cat arg[2]=nr of field</h4>
+  {% getProductsFromSubcat 5 1 %}
   <br>
   <br>
 </body>

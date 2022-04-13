@@ -32,43 +32,25 @@
     (" {% endfor %}");
     console.log(arrayOfCategories);
 
-        var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_6_SUBCATEGORY = "{% outputCat 7 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-    
-      ARRAY_3_SUBCATEGORY.shift();
-      ARRAY_4_SUBCATEGORY.shift();
-      ARRAY_5_SUBCATEGORY.shift();
-      ARRAY_6_SUBCATEGORY.shift();
-      ARRAY_7_SUBCATEGORY.shift();
-      ARRAY_8_SUBCATEGORY.shift();
-      ARRAY_9_SUBCATEGORY.shift();
-      ARRAY_10_SUBCATEGORY.shift();
-      ARRAY_11_SUBCATEGORY.shift();
+        var ARRAY_3_SUBCATEGORY = "{% getSubcats 4 1 %}"
+        .split(";");
+      var ARRAY_4_SUBCATEGORY = "{% getSubcats 5 1 %}"
+        .split(";");
+      var ARRAY_5_SUBCATEGORY = "{% getSubcats 6 1 %}"
+      .split(";");
+      var ARRAY_6_SUBCATEGORY = "{% getSubcats 7 1 %}"
+      .split(";");
+      var ARRAY_7_SUBCATEGORY = "{% getSubcats 8 1 %}"
+      .split(";");
+      var ARRAY_8_SUBCATEGORY = "{% getSubcats 9 1 %}"
+      .split(";");
+      var ARRAY_9_SUBCATEGORY = "{% getSubcats 10 1 %}"
+      .split(";");
+      var ARRAY_10_SUBCATEGORY = "{% getSubcats 11 1 %}"
+      .split(";");
+      var ARRAY_11_SUBCATEGORY = "{% getSubcats 12 1 %}"
+      .split(";");
+      console.log(ARRAY_3_SUBCATEGORY,"kyz")
 
   </script>
 
