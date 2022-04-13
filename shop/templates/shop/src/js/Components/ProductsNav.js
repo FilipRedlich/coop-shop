@@ -38,6 +38,24 @@ const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
         case `${ARRAY_3_SUBCATEGORY[3]}`:
           alert("4th el");
           break;
+        case `${ARRAY_3_SUBCATEGORY[4]}`:
+          alert("4th el");
+          break;
+        case `${ARRAY_3_SUBCATEGORY[5]}`:
+          alert("4th el");
+          break;
+        case `${ARRAY_3_SUBCATEGORY[6]}`:
+          alert("4th el");
+          break;
+        case `${ARRAY_3_SUBCATEGORY[7]}`:
+          alert("4th el");
+          break;
+        case `${ARRAY_3_SUBCATEGORY[8]}`:
+          alert("4th el");
+          break;
+        case `${ARRAY_3_SUBCATEGORY[9]}`:
+          alert("4th el");
+          break;
       }
       switch (elements[i].textContent) {
         case `${ARRAY_4_SUBCATEGORY[0]}`:
@@ -45,6 +63,13 @@ const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
           break;
         case `${ARRAY_4_SUBCATEGORY[1]}`:
           alert("er");
+          break;
+        case `${ARRAY_4_SUBCATEGORY[2]}`:
+          alert("er");
+          break;
+        case `${ARRAY_4_SUBCATEGORY[3]}`:
+          alert("er");
+          break;
       }
     });
   }
