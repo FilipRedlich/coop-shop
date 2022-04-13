@@ -38,7 +38,7 @@ class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
     def __str__(self):
-        return str(self.pk)+". "+self.userID
+        return str(self.pk)+". "+str(self.userID)
 
 class Services(models.Model):
     name=models.CharField(max_length=255,default="test")

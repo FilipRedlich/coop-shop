@@ -1,5 +1,5 @@
 from django import template
-from shop.models import Categories, Products, Users, subCategories
+from shop.models import Basket, Categories, Products, Users, subCategories
 
 register = template.Library()
 
@@ -34,3 +34,12 @@ def hasDiscount(cat):
         for t in temp:
             out+=str(t)
         return out
+
+@register.simple_tag
+def outputBasket(userID):
+    if(ON==1):
+        getUserProds = Basket.objects.values_list().filter(userID=userID)
+        tab = ""
+        for tt in getUserProds:
+            tab += str(tt[2])+" "
+        return tab
