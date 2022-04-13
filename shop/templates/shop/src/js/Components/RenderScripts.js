@@ -1,6 +1,7 @@
-import React, {useEffect} from "react"
+import React from "react"
 import renderTry, { TEST_ARRAY } from "./Test"
-import { removeSubCat } from "./ProductsNav"
+import { removeSubCat } from "./ProductsNav";
+import { addEvent } from "./ProductsNav";
 const RenderSubCat = () =>{
     return(
         <>
@@ -10,17 +11,28 @@ const RenderSubCat = () =>{
         </>
     )
 }
-const RenderOnLoad = () =>{
-        removeSubCat()
-        renderTry(TEST_ARRAY)
-        console.log('hehe')
-      
-    return(
+
+const RenderProducts = () => {
+    return (
         <>
+            <section className="products-section bg-black w-100 d-flex flex-wrap flex-row">
+            
+            </section>
         </>
     )
 }
+const RenderOnLoad = () =>{
+        removeSubCat()
+        renderTry(ARRAY_3_SUBCATEGORY)
+        addEvent(document.querySelectorAll(".testing"))
+        console.log('hehe')
+        return(
+            <>
+            </>
+        )
+}
 export {
-    RenderOnLoad
+    RenderOnLoad,
+    RenderProducts
 }
 export default RenderSubCat;

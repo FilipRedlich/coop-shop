@@ -1,4 +1,3 @@
-from cmath import log
 import logging
 from django.http import HttpResponseRedirect
 from django.shortcuts import get_object_or_404, render
@@ -69,7 +68,7 @@ def register(request):
     checkLogin = Users.objects.values_list("login",flat=True).filter(login=login)
     #logging.info(checkLogin)
     if str(checkLogin) == "<QuerySet []>":
-        del request.session['loginError']
+        request.session['loginError'] = ""
         Users.objects.create(login=login,password=passT.hexdigest())
     else:
         request.session['loginError'] = "This login already exist"
@@ -87,25 +86,29 @@ def login(request):
     #logging.info(request.session['email'])
     if(str(getPass)==str(passT)):
         logging.info("Login: "+login)
-        del request.session['loginError']
+        if 'loginError' in request.session:
+            del request.session['loginError']
+        #request.session['loginError'] = ""
         request.session['email'] = login
+        userpk = Users.objects.values_list("pk", flat=True).filter(login=login)
+        #<QuerySet [14]>
+        userpk = str(userpk).replace("<QuerySet [","")
+        userpk = userpk.replace("]>","")
+        #logging.info(userpk)
+        request.session['userpk'] = userpk
     else:
         logging.info("Bad login: "+login)
         request.session['loginError'] = "Bad login or password"
     return HttpResponseRedirect(reverse('shop:index'))
 
-'''
-class IndexView(generic.ListView):
-    #model = Products
-    template_name = 'shop/build/index.html'
-    context_object_name = 'latest_question_list'
-    def get_queryset(self):
-        return Products.objects.order_by('name')
-'''
-'''
-def insert_into_cat(name):
-    Categories.objects.create(name=name)
+def logout(request):
+    if 'email' in request.session:
+        del request.session['email']
+    if 'loginError' in request.session:
+        del request.session['loginError']
+    if 'userpk' in request.session:
+        del request.session['userpk']
+    return HttpResponseRedirect(reverse('shop:index'))
 
-def register(login,password):
-    Users.objects.create(login=login,password=sha256(password))
-'''
+def addProductToBasket(request,pk):
+    return 0

@@ -9,6 +9,10 @@
   
 </head>
 <body>
+  <form action="/logout/" method="post">
+    {% csrf_token %}
+    <input type="submit" value="LogOut"/>
+  </form>
   <button class="x">Change behavior</button>
   <h2>Register</h2>
   <!--Action can be changed to /register/-->
@@ -27,6 +31,7 @@
   </form>
   {{request.session.email}}
   <h1>{{ request.session.loginError }}</h1>
+  {{ request.session.userpk }}
 <script defer>
     const session_email = "{{request.session.email}}";
     var x = document.querySelector('.x');

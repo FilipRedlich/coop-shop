@@ -14,9 +14,13 @@
     <script src="/index.53beede5.js" defer=""></script>
   </head>
   <body class="bg-dark">
+    <div id="navRoot">Nav not rendered</div>
+    <div id="root">Main not rendered</div>
+    <div id="footerRoot">footer not rendered</div>
     <script>"use strict";
-var CSRF_TOKEN = "{{ csrf_token }}";
-var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}".replaceAll("&#x27;,)", "").split("(&#x27;"); //stores all subcategories from specified index to variable
+var CSRF_TOKEN = "{{ csrf_token }}"; //var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
+//  .replaceAll("&#x27;,)", "")
+//  .split("(&#x27;"); //stores all subcategories from specified index to variable
 //Third outputCat doesn't exist
 var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
@@ -26,8 +30,7 @@ var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}".replaceAll("&#x27;,)", "").split("
 var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
-var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
-ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}".replaceAll("&#x27;,)", "").split("(&#x27;"); //ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
 ARRAY_3_SUBCATEGORY.shift();
 ARRAY_4_SUBCATEGORY.shift();
 ARRAY_5_SUBCATEGORY.shift();
@@ -39,10 +42,5 @@ ARRAY_10_SUBCATEGORY.shift();
 ARRAY_11_SUBCATEGORY.shift();
 
 </script>
-    <div id="navRoot">Nav not rendered</div>
-    <div id="root">Main not rendered</div>
-    <div id="footerRoot">footer not rendered</div>
-
-
   </body>
 </html>
