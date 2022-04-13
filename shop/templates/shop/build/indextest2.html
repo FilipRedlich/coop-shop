@@ -1,4 +1,5 @@
 {% load static %}
+{% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -32,6 +33,7 @@
   {{request.session.email}}
   <h1>{{ request.session.loginError }}</h1>
   {{ request.session.userpk }}
+  <div id="imgTest"></div>
 <script defer>
     const session_email = "{{request.session.email}}";
     var x = document.querySelector('.x');
@@ -40,6 +42,20 @@
     x.addEventListener('click', ()=>{
       y.setAttribute('action', '/register/')
     })
+
+    //get image from db and create img element to display
+    picture = '{% outputSubcat 5 "picture" %}'
+        .replaceAll("&#x27;,)", "")
+        .split("(&#x27;");
+    picture.shift()
+    console.log(picture);
+    console.log(picture[0]);
+    var img = document.createElement("img");
+    img.src = picture[0];
+    img.height='200px';
+    document.getElementById('imgTest').appendChild(img);
   </script>
+  <br>
+  <br>
 </body>
 </html>
