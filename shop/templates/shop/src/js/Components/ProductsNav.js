@@ -79,7 +79,13 @@ const ProductNav = () => {
   const [isActive, setActive] = useState("false");
 
   const ToggleClass = () => {
+    const body = document.body;
     setActive(!isActive);
+    if(isActive){
+      body.style.overflow = 'hidden';
+    }else{
+      body.style.overflow = 'auto';
+    }
   };
 
   const buttonBuilder = (CAT_ARRAY) => {
@@ -108,8 +114,8 @@ const ProductNav = () => {
       return;
     }
     if (!holder.contains(isExisting)) {
-      for (let i = 0; i < arrayOfCategories.length; i++) {
-        clone.textContent = arrayOfCategories[i];
+      for (let i = 0; i < TEST_CAT.length; i++) {
+        clone.textContent = TEST_CAT[i];
         holder.appendChild(clone.cloneNode(true));
       }
       //for (let i = 0; i < CAT_ARRAY.length; i++) {
@@ -131,11 +137,11 @@ const ProductNav = () => {
         switch (ARRAY[i]) {
           case `${ARRAY[0]}`:
             //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(ARRAY_3_SUBCATEGORY);
+            renderTry(TEST_ARRAY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
-            renderTry(ARRAY_4_SUBCATEGORY);
+            renderTry(TEST_ARRAY2);
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
@@ -202,7 +208,7 @@ const ProductNav = () => {
             : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "
         }`}
       >
-        <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
+        <div className="row categories-wrapper gap-3 p-2 w-100 mt-5 min-h-30">
           <div
             id="categories"
             className="text-left categories col-3 no-gutters gap-1"
@@ -211,7 +217,7 @@ const ProductNav = () => {
 
           <div
             id="rootSubcategories"
-            className="bg-dark col-md categories-products mx-auto d-flex"
+            className="bg-dark col-md categories-products mx-auto d-flex flex-row flex-wrap gap-2 p-2 "
           ></div>
         </div>
       </section>

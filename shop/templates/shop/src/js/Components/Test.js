@@ -6,11 +6,25 @@ const TEST_ARRAY = [
   "Test element num.2",
   "Test element num.3",
   "Test element num.4",
+  'dsdsdsd',
+  'fdhgdhdsh',
+  'fdfdfdfdfd', 
+  'ffdsfsfsf', 
+  'fdfdfdfdf', 
+  'hgahvb',
+  'fdhgdhdsh',
+  'fdfdfdfdfd', 
+  'ffdsfsfsf', 
+  'fdfdfdfdf', 
+  'fdhgdhdsh',
+  'fdfdfdfdfd', 
+  'ffdsfsfsf', 
+  'fdfdfdfdf', 
 ];
 const TEST_ARRAY2 = ["test1", "test2", "test3", "test4"];
 
 const AfterLoad = (element, renderPlace = null, time = 1000) => {
-  
+
   setTimeout(() => {
     console.log(element, renderPlace)
     render(element, renderPlace)
