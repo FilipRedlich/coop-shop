@@ -79,7 +79,7 @@
 }
 .minmax-test {
   min-width: 10rem;
-  max-width: 10rem;
+  min-height: 10rem;
 }
 .animate {
   animation: categories-slide 0.3s ease-in-out;
@@ -169,8 +169,11 @@
   border-radius: 0 10vh 10vh 0;
 }
 .categories-products {
-  min-height: 20rem;
+  max-height: 27.5rem;
   overflow-y: scroll !important;
+}
+.min-h-30{
+  min-height: 30rem;
 }
 .categories-button {
   min-height: 3rem;
