@@ -4,7 +4,7 @@ from shop.models import Basket, Categories, Products, Users, subCategories
 register = template.Library()
 
 #change to 0 after refractor
-ON=1
+ON=0
 
 @register.simple_tag
 #output all products specified field from selected subcat
