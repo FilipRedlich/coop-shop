@@ -4,18 +4,21 @@ from django.db import models
 
 # Create your models here.
 
+#table Users {pk,login,password}
 class Users(models.Model):
     login=models.CharField(max_length=30)
     password=models.CharField(max_length=255)
     def __str__(self):
         return str(self.pk)+". "+self.login
 
+#table Categoeries {pk,name,picture}
 class Categories(models.Model):
     name=models.CharField(max_length=50)
     picture=models.CharField(max_length=255,blank=1)
     def __str__(self):
         return str(self.pk)+". "+self.name
 
+#table subCategories {pk,name,catID,picture}
 class subCategories(models.Model):
     name=models.CharField(max_length=50,default="empty")
     catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
@@ -23,6 +26,7 @@ class subCategories(models.Model):
     def __str__(self):
         return str(self.pk)+". "+self.name+" ("+str(self.catID)+")"
 
+#table Products {pk,name,picture,subcat,quantity,price,mult,rating}
 class Products(models.Model):
     name=models.CharField(max_length=255)
     picture=models.CharField(max_length=255,blank=1)
@@ -34,12 +38,14 @@ class Products(models.Model):
     def __str__(self):
         return str(self.pk)+". "+self.name
 
+#table Basket {pk,userID,productID}
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.pk)+". "+str(self.userID)
 
+#table Services {pk,name,price}
 class Services(models.Model):
     name=models.CharField(max_length=255,default="test")
     price=models.FloatField(default=9.99)
