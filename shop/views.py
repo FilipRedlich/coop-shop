@@ -12,9 +12,12 @@ from .models import Users,Basket,Categories,Products,subCategories,Services
 
 logging.basicConfig(level=logging.INFO)
 
+#index class - main view
 class IndexView(TemplateView):
+    #html template that is used for index
     template_name = 'shop/build/index.html'
 
+    #variables that are accesible from template view
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
 
@@ -25,10 +28,9 @@ class IndexView(TemplateView):
         context['basket'] = Basket.objects.values_list()
         context['subcategories'] = subCategories.objects.values_list()
         context['services'] = Services.objects.values_list()
-        #call function from models and pass it to template via gall
-        #context['gall'] = Products.return_all()
         return context
 
+#test views
 class TestView(TemplateView):
     template_name = 'shop/build/indextest.html'
 
@@ -58,59 +60,78 @@ class TestView2(TemplateView):
         context['services'] = Services.objects.values_list()
         return context
 
+#unique salt for hashing passwords
 salt = "&sayu#"
 
+#function that uses variagbles from html form request to add new user to db
 def register(request):
+    #get variables from html request
     login = request.POST["email"]
     password = request.POST["password"]
+    #adding salt to password
     password += salt
+    #hashing password
     passT = sha256(password.encode('utf-8'))
+    #looking up to db to check if this login already exist
     checkLogin = Users.objects.values_list("login",flat=True).filter(login=login)
-    #logging.info(checkLogin)
+    #if login doesnt exist then create new user
     if str(checkLogin) == "<QuerySet []>":
-        request.session['loginError'] = ""
         Users.objects.create(login=login,password=passT.hexdigest())
+    #if login exist retun error
     else:
         request.session['loginError'] = "This login already exist"
+    #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
 
+#function for comparing variables from html request and db and then login users
 def login(request):
+    #get variables from html request
     login = request.POST["email"]
     password = request.POST["password"]
+    #adding salt to password
     password += salt
+    #hashing password
     passT = sha256(password.encode('utf-8'))
     passT = "<QuerySet ['"+str(passT.hexdigest())+"']>"
+    #getting hashed password for given login from db
     getPass = Users.objects.values_list("password", flat=True).filter(login=login)
-    #logging.info(getPass)
-    #logging.info(passT)
-    #logging.info(request.session['email'])
+    #checking if given password is the same as the password from db
     if(str(getPass)==str(passT)):
         logging.info("Login: "+login)
+        #deleting loginError variable from session after successful login
         if 'loginError' in request.session:
             del request.session['loginError']
-        #request.session['loginError'] = ""
+        #adding login and pk variable from db to session
         request.session['email'] = login
         userpk = Users.objects.values_list("pk", flat=True).filter(login=login)
-        #<QuerySet [14]>
         userpk = str(userpk).replace("<QuerySet [","")
         userpk = userpk.replace("]>","")
-        #logging.info(userpk)
         request.session['userpk'] = userpk
     else:
+        #returning loginError after unsuccessful login
         logging.info("Bad login: "+login)
         request.session['loginError'] = "Bad login or password"
+    #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
 
+#function for logout from the account
 def logout(request):
+    #deleting login variables from session
     if 'email' in request.session:
         del request.session['email']
     if 'loginError' in request.session:
         del request.session['loginError']
     if 'userpk' in request.session:
         del request.session['userpk']
+    #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
 
+#function for adding products to active user basket
 def addProductToBasket(request):
+    #getting user id to identify user
     productID = request.POST['id']
-    #Basket.objects.create(userID=request.session['userpk'],productID=productID)
+    productID = request.session['userpk']
+    #query to add product to given user's basket
+    Basket.objects.create(userID=request.session['userpk'],productID=productID)
+    #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
