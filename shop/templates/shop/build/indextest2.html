@@ -34,7 +34,7 @@
   <h1>{{ request.session.loginError }}</h1>
   {{ request.session.userpk }}
   <div id="imgTest"></div>
-<script defer>
+<script >
     const session_email = "{{request.session.email}}";
     var x = document.querySelector('.x');
     var y = document.querySelector('.y')
@@ -44,10 +44,10 @@
     })
 
     //get image from db and create img element to display
-    picture = '{% outputSubcat 5 "picture" %}'
+    var  picture = '{% outputSubcat 5 "picture" %}'
         .replaceAll("&#x27;,)", "")
         .split("(&#x27;");
-    picture.shift()
+   
     console.log(picture);
     console.log(picture[0]);
     var img = document.createElement("img");
@@ -61,7 +61,6 @@
     console.log(arraT)
     document.getElementById('imgTest').appendChild(img);
   </script>
-  {% outputBasket 1 %}
   <h4>get all subcats from selected cat arg[1]=cat arg[2]=nr of field</h4>
   {% getSubcatsFromCat 4 1 %}
   <h4>get all products from selected subcat arg[1]=cat arg[2]=nr of field</h4>

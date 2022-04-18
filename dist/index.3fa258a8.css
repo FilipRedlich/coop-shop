@@ -13803,6 +13803,14 @@ textarea.form-control-lg {
     transform: translateY(0) translateX(-50%);
   }
 }
+@keyframes scale-down {
+  0% {
+    transform: scaleX(0.8);
+  }
+  100% {
+    transform: scaleX(1);
+  }
+}
 .transform-z-3 {
   transform: translateZ(3px) !important;
 }
@@ -13919,14 +13927,57 @@ textarea.form-control-lg {
 .flexb-70 {
   flex-basis: 70%;
 }
-.login-switch {
+.login-section {
+  background: url("undraw_two_factor_authentication_namy.d2a5a1cb.svg") no-repeat;
+  background-position: 50%;
+  background-size: 105%;
+  min-height: 40rem;
+  position: relative;
+}
+.login-section::before {
+  position: absolute;
+  content: "";
+  top: 0;
+  right: 0;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  backdrop-filter: blur(3px);
+  z-index: 0;
+}
+.login-section .login-switch {
+  position: relative;
   transform: translateY(4rem);
   min-width: 280px;
   width: 50%;
   max-width: 30%;
 }
-.login-section {
-  min-height: 35rem;
+.login-section .login-modal {
+  backdrop-filter: blur(3px);
+  background: rgba(0, 0, 0, 0.486);
+  min-width: 80%;
+  max-width: 50rem;
+  min-height: 30rem;
+  margin: 5rem auto 0 auto;
+  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.459), 5px 5px 15px 5px rgba(0, 0, 0, 0.459);
+  border-radius: 1vh;
+}
+.login-section .login-modal input {
+  padding: 1rem;
+  font-size: 1.3rem;
+  min-width: 40%;
+  max-width: 30rem;
+  margin: 0 auto 0 auto;
+}
+.login-section .login-modal input:hover {
+  box-shadow: 0 0 5px 2px white;
+}
+.login-section .login-modal input:-webkit-autofill {
+  box-shadow: 0 0 0 50px black inset;
+  -webkit-box-shadow: 0 0 0 50px black inset;
+  /* Change the color to your own background color */
+  -webkit-text-fill-color: white;
 }
 .login-section .action {
   transition: 0.2s ease;
@@ -13936,28 +13987,6 @@ textarea.form-control-lg {
   box-shadow: 0 0 5px 2px white;
   transition: 0.2s ease;
   z-index: 2;
-}
-.login-modal {
-  width: clamp(20rem, 40rem, 80%);
-  max-width: 50rem;
-  margin: 5rem auto 0 auto;
-  box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.459), 5px 5px 15px 5px rgba(0, 0, 0, 0.459);
-  border-radius: 1vh;
-}
-.login-modal input {
-  padding: 1rem;
-  transition: 0.2s ease;
-  font-size: 1.3rem;
-}
-.login-modal input:hover {
-  box-shadow: 0 0 5px 2px white;
-  transition: 0.2s ease;
-}
-.login-modal input:-webkit-autofill {
-  box-shadow: 0 0 0 50px black inset;
-  -webkit-box-shadow: 0 0 0 50px black inset;
-  /* Change the color to your own background color */
-  -webkit-text-fill-color: white;
 }
 .rounded-left-side {
   border-radius: 10vh 0 0 10vh;

@@ -1,6 +1,6 @@
 const MainFooter = () => {
     return (
-      <footer className="d-flex flex-row flex-wrap justify-content-center gap-3 py-5 bg-transparent-custom w-100 text-white">
+      <footer className="d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-transparent-custom footer w-100 text-white">
         <div className="flexb-60 position-relative">
           <h1 className="display-3 footer-logo text-center mt-5 w-50 mx-auto">
             Pestka
