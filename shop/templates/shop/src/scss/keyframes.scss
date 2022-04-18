@@ -18,3 +18,13 @@
     transform: translateY(0) translateX(-50%);
     }
 }
+@keyframes scale-down {
+     0%{
+        transform: scaleX(0.8);
+    }
+    100%{
+        transform: scaleX(1);
+    }
+   
+   
+}

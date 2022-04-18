@@ -1019,7 +1019,7 @@ var _Footer = _interopRequireDefault(require("./Components/Footer"));
 var _RenderScripts = require("./Components/RenderScripts");
 var _Test = require("./Components/Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/App.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\App.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -1092,7 +1092,7 @@ $RefreshReg$(_c2, "FooterApp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","./Components/Test":"f2YDa","./Components/RenderScripts":"bNOSb","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7XM86":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","./Components/RenderScripts":"bNOSb","./Components/Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7XM86":[function(require,module,exports) {
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -22080,7 +22080,7 @@ var _reactDom = require("react-dom");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainNav.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -22198,7 +22198,7 @@ exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Login.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Login.js", _this = void 0;
 var Login = function Login() {
     var _useState = (0, _react.useState)(false), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isLogin = _useState2[0], setOpposite = _useState2[1];
     var form = document.querySelector("#login-form"); //changes element based on useState boolean above (isLogin and setOpposite)
@@ -22245,7 +22245,7 @@ var Login = function Login() {
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                     id: "login-form",
-                    className: "d-flex flex-column gap-4 text-white login-modal  p-5",
+                    className: "d-flex flex-column justify-content-center gap-4 text-white login-modal  p-5",
                     action: "/login/",
                     method: "POST",
                     children: [
@@ -22255,25 +22255,22 @@ var Login = function Login() {
                             value: CSRF_TOKEN
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                            className: "bg-black account-credentials rounded border-0 text-white",
+                            className: "bg-black d-block mx-auto account-credentials rounded border-0 text-white",
                             name: "email",
                             placeholder: "Email",
                             maxLength: "30"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                            className: "bg-black account-credentials rounded border-0 text-white",
+                            className: "bg-black d-block mx-auto account-credentials rounded border-0 text-white",
                             type: "password",
                             name: "password",
                             placeholder: "Password"
                         }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            id: "buttonSwitch",
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                id: "switch",
-                                type: "submit",
-                                className: "btn btn-lg text-white w-100 mt-3 bg-black",
-                                value: "Login"
-                            })
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                            id: "switch",
+                            type: "submit",
+                            className: "btn btn-lg d-block switch mx-auto text-white w-100 mt-3 bg-black",
+                            value: "Login"
                         })
                     ]
                 })
@@ -23311,7 +23308,7 @@ var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/ProductsNav.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -23553,7 +23550,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/OnSale.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\OnSale.js", _this = void 0;
 var OnSale = function OnSale() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23651,7 +23648,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Services.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Services.js", _this = void 0;
 var Services = function Services() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23696,7 +23693,7 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Outlet.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Outlet.js", _this = void 0;
 var Outlet = function Outlet() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
@@ -23730,7 +23727,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_envelope_re_f5j = _interopRequireDefault(require("../../images/undraw_envelope_re_f5j4.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Newsletter.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
 var Newsletter = function Newsletter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
@@ -23878,7 +23875,7 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _Carousel = _interopRequireDefault(require("./Carousel"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/MainContent.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
 var MainContent = function MainContent() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("article", {
         className: "container-fluid py-5 bg-dark min-vh-100 text-white",
@@ -23918,7 +23915,7 @@ var _react = require("react");
 var _usehooksTs = require("usehooks-ts");
 var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Carousel.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Carousel.js", _this = void 0;
 var images = [
     {
         id: 1,
@@ -25282,10 +25279,10 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/Footer.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
     return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
-        className: "d-flex flex-row flex-wrap justify-content-center gap-3 py-5 bg-transparent-custom w-100 text-white",
+        className: "d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-transparent-custom footer w-100 text-white",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: "flexb-60 position-relative",
@@ -25386,7 +25383,7 @@ var _react = _interopRequireDefault(require("react"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _ProductsNav = require("./ProductsNav");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "/home/brtskr2/Documents/GitHub/coop-shop/shop/templates/shop/src/js/Components/RenderScripts.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\RenderScripts.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -25456,6 +25453,6 @@ $RefreshReg$(_c2, "RenderOnLoad");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/interopRequireDefault":"7XM86"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
 
 //# sourceMappingURL=index.53beede5.js.map

@@ -47,33 +47,33 @@ const Login = () => {
         </div>
         <form
           id="login-form"
-          className="d-flex flex-column gap-4 text-white login-modal  p-5"
+          className="d-flex flex-column justify-content-center gap-4 text-white login-modal  p-5"
           action="/login/"
           method="POST"
         >
           <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
           <input
-            className="bg-black account-credentials rounded border-0 text-white"
+            className="bg-black d-block mx-auto account-credentials rounded border-0 text-white"
             name="email"
             placeholder="Email"
             maxLength="30"
           />
           <input
-            className="bg-black account-credentials rounded border-0 text-white"
+            className="bg-black d-block mx-auto account-credentials rounded border-0 text-white"
             type="password"
             name="password"
             placeholder="Password"
           />
 
           {/* container forswitched button */}
-          <div id="buttonSwitch">
+          
             <input
               id="switch"
               type="submit"
-              className="btn btn-lg text-white w-100 mt-3 bg-black"
+              className="btn btn-lg d-block switch mx-auto text-white w-100 mt-3 bg-black"
               value="Login"
             />
-          </div>
+        
         </form>
       </section>
     </>
