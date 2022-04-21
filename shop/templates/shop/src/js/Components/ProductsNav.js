@@ -135,13 +135,15 @@ const ProductNav = () => {
         removeSubCat(); //removes all previous rendered subcategories
         //adds function to specified category
         switch (ARRAY[i]) {
+          //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
           case `${ARRAY[0]}`:
-            //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(TEST_ARRAY);
+            renderTry(ARRAY_3_SUBCATEGORY);
+            //renderTry(TEST_ARRAY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
-            renderTry(TEST_ARRAY2);
+            //renderTry(TEST_ARRAY2);
+            renderTry(ARRAY_4_SUBCATEGORY)
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
