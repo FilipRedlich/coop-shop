@@ -22079,6 +22079,7 @@ var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
 var _Login = _interopRequireDefault(require("./Login"));
 var _App = _interopRequireDefault(require("../App"));
+var _Cart = _interopRequireDefault(require("./Cart"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
@@ -22153,6 +22154,10 @@ var MainNav = function MainNav() {
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                                 className: "btn text-white bg-dark",
+                                onClick: function onClick() {
+                                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Cart["default"], {
+                                    }), document.querySelector('#root'));
+                                },
                                 children: "Shopping cart"
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
@@ -22182,7 +22187,7 @@ $RefreshReg$(_c, "MainNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fZGj2":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Cart":"3dEWN"}],"fZGj2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b4d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23285,7 +23290,232 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"jxWkG":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"3dEWN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6d0e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6d0e.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _Images = _interopRequireDefault(require("./Images"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Cart.js", _this = void 0;
+var Cart = function Cart() {
+    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+            id: "cart",
+            className: "cart text-white d-flex flex-row flex-wrap gap-2 p-2",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    "class": "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                    className: "d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                            src: _Images["default"][0].src,
+                                            className: "cart-img"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                                            className: "my-auto",
+                                            children: "Item Name"
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                    className: "d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
+                                            className: "my-auto item-price",
+                                            children: "1222$"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                            className: " btn text-white bg-danger remove-item my-auto",
+                                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                                                "class": "bi bi-trash"
+                                            })
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                    className: "d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                            src: _Images["default"][0].src,
+                                            className: "cart-img"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                                            className: "my-auto",
+                                            children: "Item Name"
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                    className: "d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
+                                            className: "my-auto item-price",
+                                            children: "1222$"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                            className: " btn text-white bg-danger remove-item my-auto",
+                                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                                                "class": "bi bi-trash"
+                                            })
+                                        })
+                                    ]
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            className: "cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                    className: "d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                            src: _Images["default"][0].src,
+                                            className: "cart-img"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                                            className: "my-auto",
+                                            children: "Item Name"
+                                        })
+                                    ]
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                    className: "d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
+                                    children: [
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
+                                            className: "my-auto item-price",
+                                            children: "1222$"
+                                        }),
+                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                            className: " btn text-white bg-danger remove-item my-auto",
+                                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                                                "class": "bi bi-trash"
+                                            })
+                                        })
+                                    ]
+                                })
+                            ]
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "checkout m-auto bg-transparent-custom rounded",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                        className: "checkout-form d-flex flex-column justify-content-around p-3 ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                "class": "flexb-70",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
+                                        className: "text-muted",
+                                        children: "Subtotal:"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                                        children: "12222$"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                        className: "text-muted",
+                                        children: "+ Delivery"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                className: "checkout-submit flexb-30 btn btn-lg bg-danger text-white ",
+                                type: "submit",
+                                value: "Checkout"
+                            })
+                        ]
+                    })
+                })
+            ]
+        })
+    }));
+};
+_c = Cart;
+var _default = Cart;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "Cart");
+
+  $parcel$ReactRefreshHelpers$6d0e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/interopRequireDefault":"7XM86","./Images":"hzj6c"}],"hzj6c":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var images = [
+    {
+        id: 1,
+        src: _undraw_dev_productivity_re_fylf["default"]
+    }
+];
+var _default = images;
+exports["default"] = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"bBbLR":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {
+};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"jxWkG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23597,45 +23827,7 @@ $RefreshReg$(_c, "OnSale");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bBbLR":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"hj64T":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hj64T":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ac01 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25274,10 +25466,12 @@ $parcel$ReactRefreshHelpers$9799.prelude(module);
 
 try {
 "use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
+var _shop_logo = _interopRequireDefault(require("../../images/shop_logo.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
@@ -25285,14 +25479,23 @@ var MainFooter = function MainFooter() {
         className: "d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-transparent-custom footer w-100 text-white",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "flexb-60 position-relative",
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                    className: "display-3 footer-logo text-center mt-5 w-50 mx-auto",
-                    children: "Pestka"
+                className: " flexb-60 position-relative p-3",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "d-flex flex-row justify-content-center w-50 m-auto rounded gap-3 footer-emblem",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                            src: _shop_logo["default"],
+                            className: "footer-logo"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                            className: "my-auto footer-logo-text",
+                            children: "PESTKA"
+                        })
+                    ]
                 })
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                className: "d-flex flex-row gap-5 flexb-30",
+                className: "d-flex flex-row my-auto gap-5 flexb-30",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                         className: "",
@@ -25365,7 +25568,10 @@ $RefreshReg$(_c, "MainFooter");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNOSb":[function(require,module,exports) {
+},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/shop_logo.svg":"ajTl4"}],"ajTl4":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "shop_logo.6e99bcd4.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"bNOSb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;

@@ -1,12 +1,14 @@
+import logo from '../../images/shop_logo.svg';
 const MainFooter = () => {
     return (
       <footer className="d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-transparent-custom footer w-100 text-white">
-        <div className="flexb-60 position-relative">
-          <h1 className="display-3 footer-logo text-center mt-5 w-50 mx-auto">
-            Pestka
-          </h1>
+        <div className=" flexb-60 position-relative p-3">
+        <div className='d-flex flex-row justify-content-center w-50 m-auto rounded gap-3 footer-emblem'>
+          <img src={logo} className='footer-logo'/>
+          <h2 className='my-auto footer-logo-text'>PESTKA</h2>
         </div>
-        <div className="d-flex flex-row gap-5 flexb-30">
+        </div>
+        <div className="d-flex flex-row my-auto gap-5 flexb-30">
           <div className="">
             <h3 className="text-uppercase">links</h3>
             <h6>

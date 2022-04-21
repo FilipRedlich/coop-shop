@@ -7,7 +7,7 @@ import { useState } from "react";
 //imported components
 import Login from './Login';
 import MainApp from "../App";
-
+import Cart from './Cart';
 
 const MainNav = () => {
 
@@ -43,7 +43,11 @@ const MainNav = () => {
 
         <div className="col m-auto">
           <div className="d-flex gap-3 justify-content-end">
-            <button className="btn text-white bg-dark">Shopping cart</button>
+            <button className="btn text-white bg-dark"
+            onClick={()=>{
+              render(<Cart />, document.querySelector('#root'))
+            }}
+            >Shopping cart</button>
             <button className="btn text-white bg-dark"
               onClick={() => {
               console.log("MainNav");
