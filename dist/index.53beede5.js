@@ -23669,13 +23669,14 @@ var ProductNav = function ProductNav() {
                 removeSubCat(); //removes all previous rendered subcategories
                 //adds function to specified category
                 switch(ARRAY[i]){
+                    //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
                     case "".concat(ARRAY[0]):
-                        //renderTry(ARRAY_3_SUBCATEGORY);
-                        (0, _Test["default"])(_Test.TEST_ARRAY);
+                        (0, _Test["default"])(ARRAY_3_SUBCATEGORY); //renderTry(TEST_ARRAY);
                         addEvent(document.querySelectorAll(".testing"));
                         break;
                     case "".concat(ARRAY[1]):
-                        (0, _Test["default"])(_Test.TEST_ARRAY2);
+                        //renderTry(TEST_ARRAY2);
+                        (0, _Test["default"])(ARRAY_4_SUBCATEGORY);
                         addEvent(document.querySelectorAll(".testing"));
                         break;
                 }
