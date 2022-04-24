@@ -130,8 +130,7 @@ def logout(request):
 def addProductToBasket(request):
     #getting user id to identify user
     productID = request.POST['id']
-    productID = request.session['userpk']
     #query to add product to given user's basket
-    Basket.objects.create(userID=request.session['userpk'],productID=productID)
+    Basket.objects.create(userID_id=request.session['userpk'],productID_id=productID)
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
