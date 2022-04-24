@@ -67,5 +67,10 @@
   {% getProductsFromSubcat 5 1 %}
   <br>
   <br>
+  <form action="/addProductToBasket/" method="post">
+    {% csrf_token %}
+      <input type="hidden" name="id" value="5"><br>
+      <input type="submit" value="To Basket">
+  </form>
 </body>
 </html>
