@@ -64,7 +64,18 @@
   <h4>get all subcats from selected cat arg[1]=cat arg[2]=nr of field</h4>
   {% getSubcatsFromCat 4 1 %}
   <h4>get all products from selected subcat arg[1]=cat arg[2]=nr of field</h4>
-  {% getProductsFromSubcat 5 1 %}
+  <script>
+    const prodFromSubcat = '{% getProductsFromSubcat 5 1 %}'.split(';');
+    const imgs = '{% getProductsFromSubcat 5 2 %}'.split(';'); //returns images from products
+    const imgss = '{% getSubcatsFromCat 2 3 %}'.split(';'); //returns images from subcat
+    addEventListener('load', ()=>{
+      document.querySelector('.rddd').src = imgss[1];
+    })
+    console.log(prodFromSubcat, imgss)
+  </script>
+  <input type="text" />
+  <img src="" class="rddd"/>
+  {% getProductsFromSubcat 5 2 %}
   <br>
   <br>
 </body>

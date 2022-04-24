@@ -23693,7 +23693,7 @@ var ProductNav = function ProductNav() {
                 className: "product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
@@ -23703,7 +23703,7 @@ var ProductNav = function ProductNav() {
                         children: "Categories"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {
                             }));
@@ -23711,7 +23711,7 @@ var ProductNav = function ProductNav() {
                         children: "On sale"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Outlet["default"], {
                             }));
@@ -23719,7 +23719,7 @@ var ProductNav = function ProductNav() {
                         children: "Outlet"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Services["default"], {
                             }));
@@ -23727,7 +23727,7 @@ var ProductNav = function ProductNav() {
                         children: "Services"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Newsletter["default"], {
                             }));
@@ -24131,7 +24131,7 @@ var Carousel = function Carousel() {
         setCount(count + 1);
     }, 3000);
     return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center",
+        className: "bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center animate__animated animate__bounceIn",
         onClick: _ProductsNav.watchForMove,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
             src: images[count].src,
@@ -25550,6 +25550,18 @@ var MainFooter = function MainFooter() {
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "social-bubble",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                                className: "text-uppercase",
+                                children: "Socials"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                                "class": "bi bi-facebook"
                             })
                         ]
                     })

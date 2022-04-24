@@ -1,3 +1,6 @@
+body{
+  overflow-x: hidden;
+}
 ::-webkit-scrollbar {
   background: $dark;
   width: 0.45rem;

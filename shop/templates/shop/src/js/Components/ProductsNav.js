@@ -104,6 +104,7 @@ const ProductNav = () => {
       "mx-auto",
       "text-white",
       "bg-dark"
+      
     );
 
     //console.log(button)
@@ -158,7 +159,7 @@ const ProductNav = () => {
     <>
       <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
@@ -170,7 +171,7 @@ const ProductNav = () => {
           Categories
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<OnSale />);
           }}
@@ -178,7 +179,7 @@ const ProductNav = () => {
           On sale
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<Outlet />);
           }}
@@ -186,7 +187,7 @@ const ProductNav = () => {
           Outlet
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<Services />);
           }}
@@ -194,7 +195,7 @@ const ProductNav = () => {
           Services
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<Newsletter />);
           }}

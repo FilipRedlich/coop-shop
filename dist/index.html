@@ -5,23 +5,25 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="E-commerce website">
-    <link rel="shortcut icon" href="/shop_logo.6e99bcd4.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/shop_logo.3374cbb9.svg" type="image/x-icon">
     <title>E-commerce</title>
     <!-- <link rel="stylesheet" href="{% static 'shop/main.7ddbcda9.css' %}">
     <script src="{% static 'shop/App.13311ed0.js' %}" type="module" defer=""></script>
   <script src="{% static 'shop/main.7ddbcda9.js' %}"></script> -->
-    <link rel="stylesheet" href="/index.3fa258a8.css">
-    <script src="/index.53beede5.js" defer=""></script>
-  </head>
+    <link rel="stylesheet" href="/main.d9ee62f6.css">
+    <script src="/App.942ed8aa.js" type="module" defer=""></script>
+  <script src="/main.d9ee62f6.js"></script></head>
   <body class="bg-dark min-vh-100 position-relative">
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
     <div id="footerRoot">footer not rendered</div>
     <script>"use strict";
+
 var CSRF_TOKEN = "{{ csrf_token }}"; //var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
 //  .replaceAll("&#x27;,)", "")
 //  .split("(&#x27;"); //stores all subcategories from specified index to variable
 //Third outputCat doesn't exist
+
 var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
@@ -31,6 +33,7 @@ var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}".replaceAll("&#x27;,)", "").split("
 var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}".replaceAll("&#x27;,)", "").split("(&#x27;");
 var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}".replaceAll("&#x27;,)", "").split("(&#x27;"); //ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
+
 ARRAY_3_SUBCATEGORY.shift();
 ARRAY_4_SUBCATEGORY.shift();
 ARRAY_5_SUBCATEGORY.shift();
@@ -39,8 +42,6 @@ ARRAY_7_SUBCATEGORY.shift();
 ARRAY_8_SUBCATEGORY.shift();
 ARRAY_9_SUBCATEGORY.shift();
 ARRAY_10_SUBCATEGORY.shift();
-ARRAY_11_SUBCATEGORY.shift();
-
-</script>
+ARRAY_11_SUBCATEGORY.shift();</script>
   </body>
 </html>
