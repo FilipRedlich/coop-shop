@@ -23,7 +23,7 @@ const Login = () => {
   });
   return (
     <>
-      <section className="w-100 bg-dark position-relative login-section d-flex flex-column">
+      <section className="w-100 bg-dark position-relative login-section d-flex flex-column animate__animated animate__bounceIn">
         <div className="d-flex login-switch  justify-content-center mx-auto ">
           <button
             className="btn action w-50 rounded-left-side bg-black text-white border-0 p-2"
@@ -66,14 +66,13 @@ const Login = () => {
           />
 
           {/* container forswitched button */}
-          
-            <input
-              id="switch"
-              type="submit"
-              className="btn btn-lg d-block switch mx-auto text-white w-100 mt-3 bg-black"
-              value="Login"
-            />
-        
+
+          <input
+            id="switch"
+            type="submit"
+            className="btn btn-lg d-block switch mx-auto text-white w-100 mt-3 bg-black"
+            value="Login"
+          />
         </form>
       </section>
     </>

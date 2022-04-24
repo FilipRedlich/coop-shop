@@ -24,7 +24,7 @@ const Carousel = () => {
 
   return (
     <div
-      className="bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center"
+      className="bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center animate__animated animate__bounceIn"
       onClick={watchForMove}
     >
       <img
