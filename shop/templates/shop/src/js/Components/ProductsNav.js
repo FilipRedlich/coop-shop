@@ -26,48 +26,45 @@ const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
     console.log(elements[i]);
     elements[i].addEventListener("click", () => {
       switch (elements[i].textContent) {
-        case `${ARRAY_3_SUBCATEGORY[0]}`:
+        case `${SUBCATS_NAME[1][0]}`:
           alert("it works hah");
           break;
-        case `${ARRAY_3_SUBCATEGORY[1]}`:
+        case `${SUBCATS_NAME[1][1]}`:
           alert("testt");
           break;
-        case `${ARRAY_3_SUBCATEGORY[2]}`:
+        case `${SUBCATS_NAME[1][2]}`:
           alert();
           break;
-        case `${ARRAY_3_SUBCATEGORY[3]}`:
+        case `${SUBCATS_NAME[1][3]}`:
           alert("4th el");
           break;
-        case `${ARRAY_3_SUBCATEGORY[4]}`:
+        case `${SUBCATS_NAME[1][4]}`:
           alert("4th el");
           break;
-        case `${ARRAY_3_SUBCATEGORY[5]}`:
+        case `${SUBCATS_NAME[1][5]}`:
           alert("4th el");
           break;
-        case `${ARRAY_3_SUBCATEGORY[6]}`:
+        case `${SUBCATS_NAME[1][6]}`:
           alert("4th el");
           break;
-        case `${ARRAY_3_SUBCATEGORY[7]}`:
+        case `${SUBCATS_NAME[1][7]}`:
           alert("4th el");
           break;
-        case `${ARRAY_3_SUBCATEGORY[8]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[9]}`:
+        case `${SUBCATS_NAME[1][8]}`:
           alert("4th el");
           break;
       }
       switch (elements[i].textContent) {
-        case `${ARRAY_4_SUBCATEGORY[0]}`:
+        case `${SUBCATS_NAME[2][0]}`:
           alert("hehe");
           break;
-        case `${ARRAY_4_SUBCATEGORY[1]}`:
+        case `${SUBCATS_NAME[2][1]}`:
           alert("er");
           break;
-        case `${ARRAY_4_SUBCATEGORY[2]}`:
+        case `${SUBCATS_NAME[2][2]}`:
           alert("er");
           break;
-        case `${ARRAY_4_SUBCATEGORY[3]}`:
+        case `${SUBCATS_NAME[2][3]}`:
           alert("er");
           break;
       }
@@ -137,14 +134,16 @@ const ProductNav = () => {
         //adds function to specified category
         switch (ARRAY[i]) {
           //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
+          //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
+          //x now defines it's type - name, picture etc.
           case `${ARRAY[0]}`:
-            renderTry(ARRAY_3_SUBCATEGORY);
+            renderTry(SUBCATS_NAME[1]);
             //renderTry(TEST_ARRAY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
             //renderTry(TEST_ARRAY2);
-            renderTry(ARRAY_4_SUBCATEGORY)
+            renderTry(SUBCATS_NAME[2]);
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
