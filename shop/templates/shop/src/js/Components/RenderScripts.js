@@ -23,7 +23,7 @@ const RenderProducts = () => {
 }
 const RenderOnLoad = () =>{
         removeSubCat()
-        renderTry(ARRAY_3_SUBCATEGORY)
+        renderTry(SUBCATS_NAME[1])
         addEvent(document.querySelectorAll(".testing"))
         console.log('hehe')
         return(

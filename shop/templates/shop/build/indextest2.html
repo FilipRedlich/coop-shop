@@ -1,82 +1,126 @@
-{% load static %}
-{% load view_tags %}
+{% load static %} {% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-  <meta charset="UTF-8">
-  <meta http-equiv="X-UA-Compatible" content="IE=edge">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Document</title>
-  
-</head>
-<body>
-  <form action="/logout/" method="post">
-    {% csrf_token %}
-    <input type="submit" value="LogOut"/>
-  </form>
-  <button class="x">Change behavior</button>
-  <h2>Register</h2>
-  <!--Action can be changed to /register/-->
-  <form class="y" id="register-form" action="/register/" method="post">
-    {% csrf_token %}
-      <input type="text" name="email"><br>
-      <input type="text" name="password"><br>
-      <input type="submit" value="Register">
-  </form>
-  <h2>login</h2>
-  <form action="{% url 'shop:login' %}" method="post">
-    {% csrf_token %}
-      <input type="text" name="email"><br>
-      <input type="text" name="password"><br>
-      <input type="submit" value="Login">
-  </form>
-  {{request.session.email}}
-  <h1>{{ request.session.loginError }}</h1>
-  {{ request.session.userpk }}
-  <div id="imgTest"></div>
-<script >
-    const session_email = "{{request.session.email}}";
-    var x = document.querySelector('.x');
-    var y = document.querySelector('.y')
-    console.log(session_email);
-    x.addEventListener('click', ()=>{
-      y.setAttribute('action', '/register/')
-    })
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      body {
+        background: #222;
+        color: white;
+        font-family: sans-serif;
+      }
+    </style>
+  </head>
+  <body>
+    <form action="/logout/" method="post">
+      {% csrf_token %}
+      <input type="submit" value="LogOut" />
+    </form>
+    <button class="x">Change behavior</button>
+    <h2>Register</h2>
+    <!--Action can be changed to /register/-->
+    <form class="y" id="register-form" action="/register/" method="post">
+      {% csrf_token %}
+      <input type="text" name="email" /><br />
+      <input type="text" name="password" /><br />
+      <input type="submit" value="Register" />
+    </form>
+    <h2>login</h2>
+    <form action="{% url 'shop:login' %}" method="post">
+      {% csrf_token %}
+      <input type="text" name="email" /><br />
+      <input type="text" name="password" /><br />
+      <input type="submit" value="Login" />
+    </form>
+    {{request.session.email}}
+    <h1>{{ request.session.loginError }}</h1>
+    {{ request.session.userpk }}
+    <div id="imgTest"></div>
+    <script>
+      const session_email = "{{request.session.email}}";
+      var x = document.querySelector(".x");
+      var y = document.querySelector(".y");
+      console.log(session_email);
+      x.addEventListener("click", () => {
+        y.setAttribute("action", "/register/");
+      });
 
-    //get image from db and create img element to display
-    var  picture = '{% outputSubcat 5 "picture" %}'
+      //get image from db and create img element to display
+      var picture = '{% outputSubcat 5 "picture" %}'
         .replaceAll("&#x27;,)", "")
         .split("(&#x27;");
-   
-    console.log(picture);
-    console.log(picture[0]);
-    var img = document.createElement("img");
-    img.src = picture[0];
-    img.height=200;
-    //get all subcats from selected cat arg[1]=cat arg[2]=nr of field
-    arrayT = '{% getSubcatsFromCat 4 1 %}'.split(';')
-    console.log(arrayT)
-    //get all products from selected subcat arg[1]=cat arg[2]=nr of field
-    arraT = '{% getProductsFromSubcat 5 1 %}'.split(';')
-    console.log(arraT)
-    document.getElementById('imgTest').appendChild(img);
-  </script>
-  <h4>get all subcats from selected cat arg[1]=cat arg[2]=nr of field</h4>
-  {% getSubcatsFromCat 4 1 %}
-  <h4>get all products from selected subcat arg[1]=cat arg[2]=nr of field</h4>
-  <script>
-    const prodFromSubcat = '{% getProductsFromSubcat 5 1 %}'.split(';');
-    const imgs = '{% getProductsFromSubcat 5 2 %}'.split(';'); //returns images from products
-    const imgss = '{% getSubcatsFromCat 2 3 %}'.split(';'); //returns images from subcat
-    addEventListener('load', ()=>{
-      document.querySelector('.rddd').src = imgss[1];
-    })
-    console.log(prodFromSubcat, imgss)
-  </script>
-  <input type="text" />
-  <img src="" class="rddd"/>
-  {% getProductsFromSubcat 5 2 %}
-  <br>
-  <br>
-</body>
+
+      console.log(picture);
+      console.log(picture[0]);
+      var img = document.createElement("img");
+      img.src = picture[0];
+      img.height = 200;
+      //get all subcats from selected cat arg[1]=cat arg[2]=nr of field
+      arrayT = "{% getSubcatsFromCat 4 1 %}".split(";");
+      console.log(arrayT);
+      //get all products from selected subcat arg[1]=cat arg[2]=nr of field
+      arraT = "{% getProductsFromSubcat 5 1 %}".split(";");
+      console.log(arraT);
+      document.getElementById("imgTest").appendChild(img);
+    </script>
+    <h4>get all subcats from selected cat arg[1]=cat arg[2]=nr of field</h4>
+    {% getSubcatsFromCat 4 1 %}
+    <h4>get all products from selected subcat arg[1]=cat arg[2]=nr of field</h4>
+    <script>
+      const prodFromSubcat = "{% getProductsFromSubcat 5 1 %}".split(";");
+      const imgs = "{% getProductsFromSubcat 5 2 %}".split(";"); //returns images from products
+      const imgss = "{% getSubcatsFromCat 2 3 %}".split(";"); //returns images from subcat
+      addEventListener("load", () => {
+        document.querySelector(".rddd").src = imgss[1];
+      });
+      console.log(prodFromSubcat, imgss);
+    </script>
+
+    <br />
+
+    <script>
+      const getButtons = document.querySelectorAll(".tst");
+      getButtons.forEach((el) => {
+        el.addEventListener("click", () => {
+          if (el.textContent == "Test button") {
+            alert("dupsko");
+          } else {
+            alert("duip");
+          }
+        });
+      });
+
+      var SUBCATS_NAME = [
+        "{% getSubcatsFromCat 3 1 %}".split(";"),
+        "{% getSubcatsFromCat 4 1 %}".split(";"),
+        "{% getSubcatsFromCat 5 1 %}".split(";"),
+        "{% getSubcatsFromCat 6 1 %}".split(";"),
+        "{% getSubcatsFromCat 7 1 %}".split(";"),
+        "{% getSubcatsFromCat 8 1 %}".split(";"),
+        "{% getSubcatsFromCat 9 1 %}".split(";"),
+        "{% getSubcatsFromCat 10 1 %}".split(";"),
+        "{% getSubcatsFromCat 11 1 %}".split(";"),
+        "{% getSubcatsFromCat 12 1 %}".split(";"),
+      ];
+      var SUBCATS_IMG = [
+        "{% getSubcatsFromCat 2 3 %}".split(";"),
+        "{% getSubcatsFromCat 3 3 %}".split(";"),
+      ];
+
+      console.log(SUBCATS_NAME[1], "subcats_name[1]");
+    </script>
+    <button class="tst">Test button</button>
+    <button class="tst">Test button</button>
+    <button class="tst">Test button</button>
+    <br />
+    <br />
+    <input type="text" />
+    <img src="" class="rddd" />
+    {% getProductsFromSubcat 5 2 %}
+    <br />
+    <br />
+  </body>
 </html>
