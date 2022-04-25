@@ -8,35 +8,19 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <meta name="description" content="E-commerce website" />
   <title>E-commerce</title>
-  <!--<link rel="stylesheet" href="{% static 'shop/index.5127636a.css' %}" />
-    <script src="{% static 'shop/index.cd67c74c.js' %}" type="module" defer></script>-->
-  <style>
-    body {
-      background: #222;
-      color: white;
-    }
-  </style>
+  <link
+      rel="icon shortcut"
+      href="./static/shop/shop_logo.3f953129.svg"
+      type="image/x-icon"
+    />
+  <link type="text/css" rel="stylesheet" href="./../../../static/shop/index.3050234e.css" />
+  <script src="./../../../static/shop/index.57ecd799.js" type="module" defer></script>
+
 </head>
 
 <body class="bg-dark">
-  <div id="navRoot">Nav not rendered</div>
-  <div id="root">Main not rendered</div>
-  mj
-  <button class="template">Button</button>
   <script>
-    const buttonBuilder = () => {
-      var button = document.querySelector(".template");
-      var cloned = button.cloneNode(true);
-      var holder = document.querySelector("#root");
-
-      console.log("dssds");
-      ("{% for prod in categories %}");
-      button.textContent = "{{ prod.1 }}";
-      holder.appendChild(button.cloneNode(true));
-      console.log("{{ prod.1 }}");
-      ("{% endfor %}");
-    };
-    buttonBuilder();
+    const CSRF_TOKEN = "{{ csrf_token }}";
     var pushedElement;
     var arrayOfCategories = [];
     ("{% for cat in categories %}");
@@ -48,248 +32,49 @@
 
     (" {% endfor %}");
     console.log(arrayOfCategories);
-    var cat_index = 0;
-  </script>
-  <script>
-      //DEPRECATED
-
-      // var productName;
-      // var price;
-      // var arrayOfProducts = [];
-      // var arrayOfPrices = [];
-      // "{% for prod in products %}"
-      //  productName = ('{{prod.1}}');
-      //  price = ('{{prod.5}}');
-
-      //  arrayOfProducts.push(productName);
-      //  arrayOfPrices.push(price);
-
-      // "{% endfor %}"
-      // console.log(arrayOfPrices, arrayOfProducts)
-      // console.log('here')
-  </script>
-  <!-- select from products row[0] field[1] -->
-  <h4>select from products row[0] field[1]</h4>
-  {{products.0.1}}
-  <!-- returns Fasolowa -->
-
-  <!--select * from procducts-->
-  <h4>select * from procducts</h4>
-  <!--Select first index and second item in array-->
-  {{products.0.1}}
-  <!-- return <QuerySet [(1, 'Fasolowa', '', 1, 3, 12.99, 3.0)]> -->
-
-  <!--loop products and return 5th field-->
-  <h4>loop products and return 5th field</h4>
-  {% for prod in products %}
-  <p>{{ prod.1 }}</p>
-  <!--returns names of products-->
-  <p>{{ prod.5 }}</p>
-  <!--returns prices-->
-  {% endfor %}
-  <!-- returns 12.99 -->
-
-  <!--made this obsolete after making db universal
-      <!-loop categories and return first string field when .all()->
-      <h4>loop categories and return first string field when .all()</h4>
-      {% for cat in categories %}
-          <p>{{ cat }}</p>
-      {% endfor %}
-      -->
-
-  <!--loop categories and return all fields-->
-  <h4>loop categories and return all fields</h4>
-  {% for cat in categories %}
-  <p>{{ cat }}</p>
-  {% endfor %}
-  <!-- returns
-        (1, 'Soup')
-        (2, 'krk')
-        (3, 'ttt')
-        (4, 'eee')
-        (15, 'indexinserttest')
-        (23, 'huh') 
-      -->
-  <br />
-  <p>{{ Subcategories.0 }}</p>
-  Display subcats in cats: {% outputCat 2 %}
-  <!--Displays all subCategories in categories-->
-  <br />
-  Display products in subcats: {% hasDiscount 1 %}
-  <!--Display all items with discount in specified subCategory-->
-  <br />
-  Display name field of products in subcat: {% outputSubcat 1 "name" %} <br />
-  Display price field of products in subcat: {% outputSubcat 1 "price" %}
-   <div id="rootSubcategories"></div>
-  <script>
-
-
+      //   var ARRAY_2_SUBCATEGORY = "{% getSubcatsFromCat 3 1 %}"
+      //   .split(";");
+      //   var ARRAY_3_SUBCATEGORY = "{% getSubcatsFromCat 4 1 %}"
+      //   .split(";");
+      // var ARRAY_4_SUBCATEGORY = "{% getSubcatsFromCat 5 1 %}"
+      //   .split(";");
+      // var ARRAY_5_SUBCATEGORY = "{% getSubcatsFromCat 6 1 %}"
+      // .split(";");
+      // var ARRAY_6_SUBCATEGORY = "{% getSubcatsFromCat 7 1 %}"
+      // .split(";");
+      // var ARRAY_7_SUBCATEGORY = "{% getSubcatsFromCat 8 1 %}"
+      // .split(";");
+      // var ARRAY_8_SUBCATEGORY = "{% getSubcatsFromCat 9 1 %}"
+      // .split(";");
+      // var ARRAY_9_SUBCATEGORY = "{% getSubcatsFromCat 10 1 %}"
+      // .split(";");
+      // var ARRAY_10_SUBCATEGORY = "{% getSubcatsFromCat 11 1 %}"
+      // .split(";");
+      // var ARRAY_11_SUBCATEGORY = "{% getSubcatsFromCat 12 1 %}"
+      // .split(";");
+      // console.log(ARRAY_3_SUBCATEGORY,"kyz")
+     var SUBCAT_1_IMG = '{% getSubcatsFromCat 2 3 %}'.split(';')
+     var SUBCAT_2_IMG = '{% getSubcatsFromCat 3 3 %}'.split(';')
     
-      var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");  //stores all subcategories from specified index to variable
-      //Third outputCat doesn't exist
-        var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_6_SUBCATEGORY = "{% outputCat 7 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-      ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
-      ARRAY_3_SUBCATEGORY.shift();
-      ARRAY_4_SUBCATEGORY.shift();
-      ARRAY_5_SUBCATEGORY.shift();
-      ARRAY_6_SUBCATEGORY.shift();
-      ARRAY_7_SUBCATEGORY.shift();
-      ARRAY_8_SUBCATEGORY.shift();
-      ARRAY_9_SUBCATEGORY.shift();
-      ARRAY_10_SUBCATEGORY.shift();
-      ARRAY_11_SUBCATEGORY.shift();
-
-      const filterEmpty = (array = []) =>{
-       
-         array.filter(el =>{
-           return el !== '';
-         })
-        array.shift()
-        console.log(array, 'mruwa')
-      }
-      filterEmpty(ARRAY_1_SUBCATEGORY, 'kuuuurwa')
-    console.log("{{subcategories.0.1}}");
-    console.log(ARRAY_3_SUBCATEGORY[1], 'ARRAY 3.1')
-    console.log(ARRAY_3_SUBCATEGORY, 'ARRAY 3')
-
-
-
-
-
-
-    var FIRST_SUBCAT_NAME = '{% outputSubcat 1 "name" %}'
-      .replaceAll("&#x27;,)", "")
-      .split("(&#x27;");
-    FIRST_SUBCAT_NAME.shift();
-    console.log(FIRST_SUBCAT_NAME, 'first_subcat_name');
-    
-    //DYNAMIC CREATING VARIABLES
-    for (var i = 2; i < 10; i++) {
-      window['cat' + i] = "{% outputCat 2%}".replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-
-      //window['subCat' + i] = `ARRAY_${i}_SUBCATEGORY`;   // create variables containing subcategories
-    }
-    console.log(cat2, 'cat2')
-    console.log('here')
-    //Save all prices from first sub category to FIRST_SUBCAT_PRICE
-    var SUBCAT_1_PRICE = '{% outputSubcat 1 "price" %}'
-      .replaceAll(",)", "")
-      .split("(");
-    SUBCAT_1_PRICE.shift();
-    console.log(SUBCAT_1_PRICE);
-
-    var SUBCAT_2_PRICE = '{% outputSubcat 2 "price" %}'
-      .replaceAll(",)", "")
-      .split("(");
-    SUBCAT_2_PRICE.shift();
-    console.log(SUBCAT_2_PRICE);
-
-
-    
-    
-    
-  </script>
-  <div class="anchorRoot">
-    <button class="testBtn">ds</button>
-  </div>
-  
-  <script defer>
-    const anchorCreator = (myArray) => {
-      console.log(myArray)
-      let button = document.querySelector(".testBtn");
-      let cloned = button.cloneNode(true);
-      let holder = document.querySelector(".anchorRoot");
-
-
-      for (let i = 0; i < ARRAY_2_SUBCATEGORY.length; i++) {
-        cloned.textContent = ARRAY_2_SUBCATEGORY[i];
-        holder.appendChild(cloned.cloneNode(true));
-      }
-    };
-    anchorCreator(ARRAY_3_SUBCATEGORY); //to do: add to nav
-  </script>
-  <a class="some-p">dsds</a>
-  <a class="some-p">sdsd</a>
-  <script defer>
-    const addEv = () => {
-      const xy = document.querySelectorAll(".testBtn");
-      const para = document.querySelectorAll('.some-p')
-      console.log(xy);
-      
-      z = 1; 
-      i = 0;
-      catIndex = 2;
-      console.log('cat' + 2)
-      xy.forEach((el) => {
-        
-        el.addEventListener("click", () => {
-         
-          para.forEach(el => {
-            //el.setAttribute('href', 'empty');
-            //var x = window['cat' + catIndex];
-            
-            para[i].textContent = x[2];
-
-            z++;
-            i++;
-            catIndex++;
-
-            console.log(i);
-            console.log(z, 'string kurwa');
-
-          })
-        });
-      });
-    };
-    addEv();
-    console.log(ARRAY_1_SUBCATEGORY, "{ outputCat 2 }")
-    console.log(cat2, cat3, 'cat2 and cat3')
-    
-  </script>
-
-  <script defer>
-    addEventListener('load', ()=>{
-      setTimeout(testt(), 3000)
-    })
-    function testt (){
-      const getBtn = document.querySelectorAll('.some-p');
-      const setEvent = () =>{
-        //console.log(ARRAY_1_SUBCATEGORY, 'Array test func')
-        
-      }
+     var SUBCATS_NAME = ["{% getSubcatsFromCat 3 1 %}".split(";"),"{% getSubcatsFromCat 4 1 %}".split(";"),
+                        "{% getSubcatsFromCat 5 1 %}".split(";"),"{% getSubcatsFromCat 6 1 %}".split(";"),
+                        "{% getSubcatsFromCat 7 1 %}".split(";"),"{% getSubcatsFromCat 8 1 %}".split(";"),
+                        "{% getSubcatsFromCat 9 1 %}".split(";"),"{% getSubcatsFromCat 10 1 %}".split(";"),
+                        "{% getSubcatsFromCat 11 1 %}".split(";"),"{% getSubcatsFromCat 12 1 %}".split(";")];
+     var SUBCATS_IMG = ['{% getSubcatsFromCat 2 3 %}'.split(';'), '{% getSubcatsFromCat 3 3 %}'.split(';')];
      
-    }
-  
+     console.log(SUBCATS_NAME[1], 'subcats_name[1]')
+     
+     
+     
+     //SUBCATS_IMG.push(SUBCAT_1_IMG, SUBCAT_2_IMG)
+     //console.log(SUBCATS_IMG, 'duuuuupa')
+     //console.log(SUBCAT_1_IMG)
   </script>
+
+  <div id="navRoot">Nav not rendered</div>
+  <div id="root">Main not rendered</div>
+  <div id="footerRoot">footer not rendered</div>
 </body>
 
 </html>
