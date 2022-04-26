@@ -29,6 +29,7 @@ const AfterLoad = (element, renderPlace = null, time = 1000) => {
     console.log(element, renderPlace)
     render(element, renderPlace)
   }, time)
+  console.log('cwelskop')
   return
 }
 const renderTry = (ARRAY = []) => {

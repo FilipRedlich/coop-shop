@@ -80,8 +80,10 @@ const ProductNav = () => {
     setActive(!isActive);
     if(isActive){
       body.style.overflow = 'hidden';
+      body.style.overflowX = "hidden";
     }else{
       body.style.overflow = 'auto';
+      body.style.overflowX = 'hidden';
     }
   };
 
