@@ -8,6 +8,7 @@ import { useState } from "react";
 import Login from './Login';
 import MainApp from "../App";
 import Cart from './Cart';
+import MainContent from "./MainContent";
 
 const MainNav = () => {
 
@@ -21,7 +22,7 @@ const MainNav = () => {
             role='button'
             onClick={() => {
               console.log('MainNav')
-            render(<MainApp />, document.querySelector('#root'))
+            render(<MainContent />, document.querySelector('#root'))
           }}
           >SKLEP</h1>
           
