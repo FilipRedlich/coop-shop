@@ -24,16 +24,16 @@ const Carousel = () => {
 
   return (
     <div
-      className="bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center animate__animated animate__bounceIn"
+      className="w-100 card gallery d-flex justify-content-center"
       onClick={watchForMove}
     >
       <img
         src={images[count].src}
         alt="gallery"
-        className="gallery-img d-block"
+        className="gallery-img d-block "
       />
     </div>
   );
 };
-
+export { images };
 export default Carousel;

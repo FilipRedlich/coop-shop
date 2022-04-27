@@ -10904,6 +10904,16 @@ progress {
   height: 1.5em;
 }
 
+.form-control::-moz-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
+.form-control:-ms-input-placeholder {
+  color: #6c757d;
+  opacity: 1;
+}
+
 .form-control::placeholder {
   color: #6c757d;
   opacity: 1;
@@ -10914,7 +10924,8 @@ progress {
   background-color: #e9ecef;
 }
 
-.form-control::file-selector-button {
+.form-control::-webkit-file-upload-button {
+  -webkit-margin-end: .75rem;
   margin: -.375rem -.75rem;
   color: #212529;
   pointer-events: none;
@@ -10924,6 +10935,22 @@ progress {
   background-color: #e9ecef;
   border-inline-end-width: 1px;
   border-radius: 0;
+  margin-inline-end: .75rem;
+  padding: .375rem .75rem;
+  transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+}
+
+.form-control::file-selector-button {
+  -webkit-margin-end: .75rem;
+  color: #212529;
+  pointer-events: none;
+  border-color: inherit;
+  background-color: #e9ecef;
+  border-style: solid;
+  border-width: 0;
+  border-inline-end-width: 1px;
+  border-radius: 0;
+  margin: -.375rem -.75rem;
   margin-inline-end: .75rem;
   padding: .375rem .75rem;
   transition: color .15s ease-in-out, background-color .15s ease-in-out, border-color .15s ease-in-out, box-shadow .15s ease-in-out;
@@ -10940,6 +10967,7 @@ progress {
 }
 
 .form-control::-webkit-file-upload-button {
+  -webkit-margin-end: .75rem;
   color: #212529;
   pointer-events: none;
   border-color: inherit;
@@ -10989,12 +11017,14 @@ progress {
 }
 
 .form-control-sm::-webkit-file-upload-button {
+  -webkit-margin-end: .5rem;
   margin: -.25rem -.5rem;
   margin-inline-end: .5rem;
   padding: .25rem .5rem;
 }
 
 .form-control-sm::file-selector-button {
+  -webkit-margin-end: .5rem;
   margin: -.25rem -.5rem;
   margin-inline-end: .5rem;
   padding: .25rem .5rem;
@@ -11008,12 +11038,14 @@ progress {
 }
 
 .form-control-lg::-webkit-file-upload-button {
+  -webkit-margin-end: 1rem;
   margin: -.5rem -1rem;
   margin-inline-end: 1rem;
   padding: .5rem 1rem;
 }
 
 .form-control-lg::file-selector-button {
+  -webkit-margin-end: 1rem;
   margin: -.5rem -1rem;
   margin-inline-end: 1rem;
   padding: .5rem 1rem;
@@ -11130,6 +11162,7 @@ textarea.form-control-lg {
   height: 1em;
   vertical-align: top;
   appearance: none;
+  -webkit-print-color-adjust: exact;
   color-adjust: exact;
   background-color: #fff;
   background-position: center;
@@ -11359,11 +11392,19 @@ textarea.form-control-lg {
   padding: 1rem .75rem;
 }
 
+.form-floating > .form-control::-moz-placeholder {
+  color: #0000;
+}
+
+.form-floating > .form-control:-ms-input-placeholder {
+  color: #0000;
+}
+
 .form-floating > .form-control::placeholder {
   color: #0000;
 }
 
-.form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
+.form-floating > .form-control:not(:-moz-placeholder-shown), .form-floating > .form-control:not(:-ms-input-placeholder), .form-floating > .form-control:focus, .form-floating > .form-control:not(:placeholder-shown) {
   padding-top: 1.625rem;
   padding-bottom: .625rem;
 }
@@ -11378,7 +11419,7 @@ textarea.form-control-lg {
   padding-bottom: .625rem;
 }
 
-.form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label, .form-floating > .form-control:-webkit-autofill ~ label {
+.form-floating > .form-control:not(:-moz-placeholder-shown) ~ label, .form-floating > .form-control:not(:-ms-input-placeholder) ~ label, .form-floating > .form-control:focus ~ label, .form-floating > .form-control:not(:placeholder-shown) ~ label, .form-floating > .form-select ~ label, .form-floating > .form-control:-webkit-autofill ~ label {
   opacity: .65;
   transform: scale(.85)translateY(-.5rem)translateX(.15rem);
 }
@@ -14341,6 +14382,8 @@ textarea.form-control-lg {
 }
 
 .toast-container {
+  width: -webkit-max-content;
+  width: -moz-max-content;
   width: max-content;
   max-width: 100%;
   pointer-events: none;
@@ -15518,6 +15561,7 @@ textarea.form-control-lg {
 }
 
 .hstack {
+  -ms-grid-row-align: stretch;
   flex-direction: row;
   align-self: stretch;
   align-items: center;
@@ -15525,6 +15569,7 @@ textarea.form-control-lg {
 }
 
 .vstack {
+  -ms-grid-row-align: stretch;
   flex-direction: column;
   flex: auto;
   align-self: stretch;
@@ -15557,6 +15602,7 @@ textarea.form-control-lg {
 }
 
 .vr {
+  -ms-grid-row-align: stretch;
   width: 1px;
   min-height: 1em;
   opacity: .25;
@@ -15650,6 +15696,7 @@ textarea.form-control-lg {
 }
 
 .d-grid {
+  display: -ms-grid !important;
   display: grid !important;
 }
 
@@ -16074,6 +16121,7 @@ textarea.form-control-lg {
 }
 
 .align-self-auto {
+  -ms-grid-row-align: auto !important;
   align-self: auto !important;
 }
 
@@ -16086,6 +16134,7 @@ textarea.form-control-lg {
 }
 
 .align-self-center {
+  -ms-grid-row-align: center !important;
   align-self: center !important;
 }
 
@@ -16094,6 +16143,7 @@ textarea.form-control-lg {
 }
 
 .align-self-stretch {
+  -ms-grid-row-align: stretch !important;
   align-self: stretch !important;
 }
 
@@ -16920,6 +16970,7 @@ textarea.form-control-lg {
   }
 
   .d-sm-grid {
+    display: -ms-grid !important;
     display: grid !important;
   }
 
@@ -17088,6 +17139,7 @@ textarea.form-control-lg {
   }
 
   .align-self-sm-auto {
+    -ms-grid-row-align: auto !important;
     align-self: auto !important;
   }
 
@@ -17100,6 +17152,7 @@ textarea.form-control-lg {
   }
 
   .align-self-sm-center {
+    -ms-grid-row-align: center !important;
     align-self: center !important;
   }
 
@@ -17108,6 +17161,7 @@ textarea.form-control-lg {
   }
 
   .align-self-sm-stretch {
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important;
   }
 
@@ -17572,6 +17626,7 @@ textarea.form-control-lg {
   }
 
   .d-md-grid {
+    display: -ms-grid !important;
     display: grid !important;
   }
 
@@ -17740,6 +17795,7 @@ textarea.form-control-lg {
   }
 
   .align-self-md-auto {
+    -ms-grid-row-align: auto !important;
     align-self: auto !important;
   }
 
@@ -17752,6 +17808,7 @@ textarea.form-control-lg {
   }
 
   .align-self-md-center {
+    -ms-grid-row-align: center !important;
     align-self: center !important;
   }
 
@@ -17760,6 +17817,7 @@ textarea.form-control-lg {
   }
 
   .align-self-md-stretch {
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important;
   }
 
@@ -18224,6 +18282,7 @@ textarea.form-control-lg {
   }
 
   .d-lg-grid {
+    display: -ms-grid !important;
     display: grid !important;
   }
 
@@ -18392,6 +18451,7 @@ textarea.form-control-lg {
   }
 
   .align-self-lg-auto {
+    -ms-grid-row-align: auto !important;
     align-self: auto !important;
   }
 
@@ -18404,6 +18464,7 @@ textarea.form-control-lg {
   }
 
   .align-self-lg-center {
+    -ms-grid-row-align: center !important;
     align-self: center !important;
   }
 
@@ -18412,6 +18473,7 @@ textarea.form-control-lg {
   }
 
   .align-self-lg-stretch {
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important;
   }
 
@@ -18876,6 +18938,7 @@ textarea.form-control-lg {
   }
 
   .d-xl-grid {
+    display: -ms-grid !important;
     display: grid !important;
   }
 
@@ -19044,6 +19107,7 @@ textarea.form-control-lg {
   }
 
   .align-self-xl-auto {
+    -ms-grid-row-align: auto !important;
     align-self: auto !important;
   }
 
@@ -19056,6 +19120,7 @@ textarea.form-control-lg {
   }
 
   .align-self-xl-center {
+    -ms-grid-row-align: center !important;
     align-self: center !important;
   }
 
@@ -19064,6 +19129,7 @@ textarea.form-control-lg {
   }
 
   .align-self-xl-stretch {
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important;
   }
 
@@ -19528,6 +19594,7 @@ textarea.form-control-lg {
   }
 
   .d-xxl-grid {
+    display: -ms-grid !important;
     display: grid !important;
   }
 
@@ -19696,6 +19763,7 @@ textarea.form-control-lg {
   }
 
   .align-self-xxl-auto {
+    -ms-grid-row-align: auto !important;
     align-self: auto !important;
   }
 
@@ -19708,6 +19776,7 @@ textarea.form-control-lg {
   }
 
   .align-self-xxl-center {
+    -ms-grid-row-align: center !important;
     align-self: center !important;
   }
 
@@ -19716,6 +19785,7 @@ textarea.form-control-lg {
   }
 
   .align-self-xxl-stretch {
+    -ms-grid-row-align: stretch !important;
     align-self: stretch !important;
   }
 
@@ -20186,6 +20256,7 @@ textarea.form-control-lg {
   }
 
   .d-print-grid {
+    display: -ms-grid !important;
     display: grid !important;
   }
 
@@ -20246,6 +20317,16 @@ textarea.form-control-lg {
   }
 }
 
+@keyframes card-shadow {
+  0% {
+    box-shadow: 2px 5px 4px #0000007c;
+  }
+
+  100% {
+    box-shadow: 10px 15px 10px 2px #0000007c;
+  }
+}
+
 .transform-z-3 {
   transform: translateZ(3px) !important;
 }
@@ -20293,10 +20374,12 @@ textarea.form-control-lg {
 
 .blur-bg {
   -webkit-backdrop-filter: blur(5px);
+  -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
 }
 
 .product-nav {
+  -webkit-backdrop-filter: blur(5px);
   -webkit-backdrop-filter: blur(5px);
   backdrop-filter: blur(5px);
   overflow: auto;
@@ -20349,6 +20432,7 @@ textarea.form-control-lg {
 
 .categories-section {
   margin: -30rem 0 0;
+  left: 50%;
   min-height: 100rem !important;
 }
 
@@ -20403,7 +20487,7 @@ textarea.form-control-lg {
   width: 100%;
   height: 100%;
   opacity: .1;
-  z-index: 0;
+  z-index: -1;
   background: url("undraw_two_factor_authentication_namy.d2a5a1cb.svg") 50% / 105% no-repeat;
   position: absolute;
   inset: 0;
@@ -20418,6 +20502,7 @@ textarea.form-control-lg {
 }
 
 .login-section .login-modal {
+  -webkit-backdrop-filter: blur(3px);
   -webkit-backdrop-filter: blur(3px);
   backdrop-filter: blur(3px);
   min-width: 80%;
@@ -20647,6 +20732,8 @@ img {
 }
 
 body {
+  scrollbar-color: #dc3545 #212529;
+  scrollbar-width: thin;
   overflow-x: hidden;
 }
 
@@ -20666,9 +20753,8 @@ body {
 }
 
 .gallery .gallery-img {
-  width: 100%;
-  max-width: 30rem;
-  margin: 10rem auto 0;
+  max-height: 30rem;
+  min-height: 420px !important;
 }
 
 .sale .sale-item {
@@ -20678,6 +20764,139 @@ body {
 
 .sale .sale-img {
   max-height: 10rem;
+}
+
+.main .main-content {
+  min-height: 40rem;
+  max-height: 50rem;
+  display: -ms-grid;
+  -ms-grid-columns: 3fr 32px 1fr;
+  -ms-grid-rows: 1fr;
+  width: 80%;
+  grid-template: ". ." 1fr
+  / 3fr 1fr;
+  grid-auto-flow: row;
+  justify-content: center;
+  gap: 0 32px;
+  margin: auto;
+  display: grid;
+}
+
+.main .main-content .card {
+  min-width: 20rem;
+  max-height: 100%;
+  text-align: center;
+  color: #fff;
+  background: #0000007c;
+  border-radius: 10px;
+  position: relative;
+}
+
+.main .main-content .card:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  border-radius: 10px;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 .5rem 1rem #00000026;
+}
+
+.main .main-content .card .card-baner {
+  letter-spacing: 2px;
+  border-radius: 10px 10px 0 0;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.main .main-content .card .card-img {
+  min-width: 20rem;
+  max-width: 80%;
+  margin: 3rem auto 0;
+}
+
+.main .main-content .card .card-prices {
+  min-width: 20rem;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  display: flex;
+}
+
+.main .main-content .card .card-prices .text-smaller {
+  text-align: right;
+  flex-basis: 40%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+.main .main-content .card .card-prices .text-bigger {
+  text-align: left;
+  color: #e35d6a;
+  flex-basis: 60%;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.main .main-content .card .product-name {
+  text-align: left;
+  padding: 0 1rem;
+  font-size: 1.5rem;
+  font-weight: 600;
+}
+
+.main .main-content .card .card-button {
+  min-height: 4rem;
+  color: #000;
+  min-width: 20rem;
+  max-width: 80%;
+  background: #dc3545;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  font-size: 2rem;
+  font-weight: 400;
+}
+
+.main .item-bar-holder {
+  width: 80%;
+  min-height: 10rem;
+  background: #0000007c;
+  border-radius: 10px;
+  margin: 5rem auto 0;
+  padding: 1rem;
+}
+
+.main .item-bar-holder .item-bar {
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.main .item-bar-holder .item-bar .item {
+  max-width: 10rem;
+  min-height: 10rem;
+  text-align: center;
+  border: 1px solid wheat;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.main .item-bar-holder .item-bar .item :nth-child(n) {
+  margin: auto;
+}
+
+.main .item-bar-holder .item-bar .item p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
 }
 
 /*# sourceMappingURL=index.3fa258a8.css.map */
