@@ -20678,6 +20678,7 @@ img {
 
 .footer-emblem .footer-logo {
   max-width: 7.5rem;
+  max-height: 7.5rem;
   opacity: .9;
 }
 
@@ -20752,9 +20753,15 @@ body {
   transform: translateY(-75rem);
 }
 
+.gallery {
+  height: 100%;
+  width: 100%;
+}
+
 .gallery .gallery-img {
   max-height: 30rem;
-  min-height: 420px !important;
+  max-width: 40rem;
+  margin: auto;
 }
 
 .sale .sale-item {
