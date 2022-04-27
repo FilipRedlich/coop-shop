@@ -23378,12 +23378,75 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _Carousel = _interopRequireDefault(require("./Carousel"));
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
 var MainContent = function MainContent() {
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("article", {
-        className: "container-fluid py-5 bg-dark min-vh-100 text-white",
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Carousel["default"], {})
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("article", {
+        className: "container-fluid main py-5 bg-dark text-white  animate__animated animate__bounceIn",
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+                className: "main-content",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Carousel["default"], {}),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "card d-flex flex-column",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                                className: "card-baner bg-danger",
+                                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                    children: "HOTSHOT"
+                                })
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: _undraw_dev_productivity_re_fylf["default"],
+                                className: "card-img",
+                                alt: "promotion"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "card-prices",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                        className: "text-smaller",
+                                        children: "466 PLN"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                        className: "text-bigger",
+                                        children: " 466 PLN"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                className: "product-name",
+                                children: "Product name"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                className: "btn card-button",
+                                children: "ADD TO CART"
+                            })
+                        ]
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+                className: "item-bar-holder",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "item-bar",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        "class": "item",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: _undraw_dev_productivity_re_fylf["default"],
+                                alt: "item"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                children: "Product nameeeee"
+                            })
+                        ]
+                    })
+                })
+            })
+        ]
     });
 };
 _c = MainContent;
@@ -23397,7 +23460,7 @@ $RefreshReg$(_c, "MainContent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Carousel":"cHE8n","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cHE8n":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Carousel":"cHE8n","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"cHE8n":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$22fc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23409,7 +23472,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = void 0;
+exports.images = exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
@@ -23431,6 +23494,7 @@ var images = [
     },
     {} //DO NOT REMOVE (this element is needed for resetting carousel index)
 ];
+exports.images = images;
 var Carousel = function Carousel() {
     var _useState = (0, _react.useState)(0), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), count = _useState2[0], setCount = _useState2[1];
     (0, _react.useEffect)(function() {
@@ -23440,12 +23504,12 @@ var Carousel = function Carousel() {
         setCount(count + 1);
     }, 3000);
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center animate__animated animate__bounceIn",
+        className: "w-100 card gallery d-flex justify-content-center",
         onClick: _ProductsNav.watchForMove,
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
             src: images[count].src,
             alt: "gallery",
-            className: "gallery-img d-block"
+            className: "gallery-img d-block "
         })
     });
 };
@@ -23641,7 +23705,7 @@ var ProductNav = function ProductNav() {
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
-                className: "product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
+                className: "product-nav bg-black z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
                         className: "btn btn-lg bg-transparent prodNav-btn text-white",
@@ -23684,7 +23748,7 @@ var ProductNav = function ProductNav() {
                 ]
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-                className: "position-fixed categories-section translate-z-0 w-100  ".concat(isActive ? "hide-element" : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "),
+                className: "position-fixed categories-section translate-z-0 w-100  ".concat(isActive ? "hide-element" : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x bg-transparent-custom blur-bg "),
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     className: "row categories-wrapper gap-3 p-2 w-100 mt-5 min-h-30",
                     children: [
@@ -25323,7 +25387,7 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
-        className: "d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-transparent-custom footer w-100 text-white",
+        className: "d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-black footer w-100 text-white",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                 className: " flexb-60 position-relative p-3",

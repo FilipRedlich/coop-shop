@@ -158,7 +158,7 @@ const ProductNav = () => {
 
   return (
     <>
-      <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
+      <nav className="product-nav bg-black z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
@@ -209,7 +209,7 @@ const ProductNav = () => {
         className={`position-fixed categories-section translate-z-0 w-100  ${
           isActive
             ? "hide-element"
-            : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "
+            : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x bg-transparent-custom blur-bg "
         }`}
       >
         <div className="row categories-wrapper gap-3 p-2 w-100 mt-5 min-h-30">
