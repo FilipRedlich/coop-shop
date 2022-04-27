@@ -13,9 +13,12 @@
   //transition: .5s;
 }
 .gallery {
+    height: 100%;
+    width: 100%;
   .gallery-img {
-    min-height: 420px !important;
     max-height: 30rem;
+    max-width: 40rem;
+    margin: auto;
   }
 }
 
