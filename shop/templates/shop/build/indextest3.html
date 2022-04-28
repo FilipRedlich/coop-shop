@@ -10,7 +10,11 @@
     {{ basketProducts }}
     <script>
         var ttt = "{{ basketProducts }}".split('***');
-        console.log(ttt[0].split(';;;'));
+        var tt=[]
+        for(i in ttt)  {
+            tt.push(ttt[i].split(';;;'));
+        }
+        console.log(tt)
     </script>
 </body>
 </html>
