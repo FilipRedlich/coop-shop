@@ -13,8 +13,6 @@
   //transition: .5s;
 }
 .gallery {
-    height: 100%;
-    width: 100%;
   .gallery-img {
     max-height: 30rem;
     max-width: 40rem;
@@ -35,11 +33,11 @@
 .main {
   .main-content {
     min-height: 40rem;
-    max-height: 50rem;
+
     display: grid;
     grid-template-columns: 3fr 1fr;
     grid-template-rows: 1fr;
-    gap: 0px 32px;
+    gap: 3rem;
     grid-auto-flow: row;
     justify-content: center;
     grid-template-areas: ". .";
@@ -75,6 +73,7 @@
       }
       .card-img {
         min-width: 20rem;
+        max-height: 20rem;
         max-width: 80%;
         margin: 3rem auto 0 auto;
       }
@@ -153,6 +152,16 @@
           text-align: center;
         }
       }
+    }
+  }
+}
+@media screen and (max-width: 1024px) {
+  .main-content {
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    .card {
+      width: 80%;
     }
   }
 }

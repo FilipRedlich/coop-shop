@@ -20638,20 +20638,99 @@ textarea.form-control-lg {
   }
 }
 
-.newsletter .newsletter-img {
-  max-width: 40rem;
+.newsletter {
+  max-width: 80%;
+  background: #0000007c;
+  border-radius: 15px;
+  margin: 1rem auto;
+  position: relative;
+  overflow: hidden;
 }
 
-.newsletter .newsletter-text {
+.newsletter:before {
+  content: "";
+  opacity: .6;
+  z-index: 2;
+  background: url("undraw_subscriber_re_om92.2d3e057e.svg") -15rem 2rem / 65rem no-repeat;
+  position: absolute;
+  inset: 0;
+}
+
+.newsletter:after {
+  content: "";
+  height: 100%;
+  max-width: 20%;
+  width: 20rem;
+  background: #dc3545;
+  margin: 0 0 0 auto;
+  position: absolute;
+  inset: 0;
+}
+
+.newsletter .newsletter-section {
+  min-height: 35rem;
+  margin: auto;
+  position: relative;
+}
+
+.newsletter .newsletter-section:before {
+  content: "";
+  width: 20rem;
+  height: 20rem;
+  z-index: 1;
+  background: #0000007c;
+  border-radius: 50%;
+  margin-top: 20rem;
+  margin-left: 41vw;
+  position: absolute;
+  inset: 0;
+}
+
+.newsletter .newsletter-section:after {
+  content: "";
+  width: 15rem;
+  height: 15rem;
+  z-index: 1;
+  background: #0000007c;
+  border-radius: 50%;
+  margin-top: -3rem;
+  margin-left: 36vw;
+  position: absolute;
+  inset: 0;
+}
+
+.newsletter .newsletter-section .newsletter-text {
   min-width: 8rem;
+  text-shadow: 0 0 5px #000;
+  z-index: 5;
 }
 
-.newsletter .newsletter-input {
+.newsletter .newsletter-section .newsletter-input-wrapper {
+  border: none;
+  position: relative;
+  box-shadow: 0 0 10px 5px #0000007c;
+}
+
+.newsletter .newsletter-section .newsletter-input-wrapper:before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  z-index: -1;
+  border: none;
+  border-radius: 5px;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 0 10px 2px #0000007c;
+}
+
+.newsletter .newsletter-section .newsletter-input-wrapper .newsletter-input {
   min-width: 12rem;
+  z-index: 5;
 }
 
-.newsletter .newsletter-submit {
+.newsletter .newsletter-section .newsletter-input-wrapper .newsletter-submit {
   min-width: 4rem;
+  z-index: 5;
 }
 
 img {
@@ -20695,7 +20774,7 @@ img {
   font: 100;
 }
 
-.du2 {
+.du2d {
   display: block;
 }
 
@@ -20753,11 +20832,6 @@ body {
   transform: translateY(-75rem);
 }
 
-.gallery {
-  height: 100%;
-  width: 100%;
-}
-
 .gallery .gallery-img {
   max-height: 30rem;
   max-width: 40rem;
@@ -20775,16 +20849,15 @@ body {
 
 .main .main-content {
   min-height: 40rem;
-  max-height: 50rem;
   display: -ms-grid;
-  -ms-grid-columns: 3fr 32px 1fr;
+  -ms-grid-columns: 3fr 3rem 1fr;
   -ms-grid-rows: 1fr;
   width: 80%;
   grid-template: ". ." 1fr
   / 3fr 1fr;
   grid-auto-flow: row;
   justify-content: center;
-  gap: 0 32px;
+  gap: 3rem;
   margin: auto;
   display: grid;
 }
@@ -20819,6 +20892,7 @@ body {
 
 .main .main-content .card .card-img {
   min-width: 20rem;
+  max-height: 20rem;
   max-width: 80%;
   margin: 3rem auto 0;
 }
@@ -20904,6 +20978,17 @@ body {
   white-space: nowrap;
   text-align: center;
   overflow: hidden;
+}
+
+@media screen and (max-width: 1024px) {
+  .main-content {
+    flex-flow: wrap !important;
+    display: flex !important;
+  }
+
+  .main-content .card {
+    width: 80%;
+  }
 }
 
 /*# sourceMappingURL=index.3fa258a8.css.map */

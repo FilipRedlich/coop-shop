@@ -22,8 +22,6 @@ const MainApp = () => {
   return (
     <>
       <RenderOnLoad />
-
-      {/* <MainContent /> */}
     </>
   );
 };

@@ -23934,42 +23934,36 @@ var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
 var Newsletter = function Newsletter() {
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
             className: "d-flex flex-row flex-wrap w-100 gap-3 newsletter animate__animated animate__bounceIn",
-            children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                    src: _undraw_envelope_re_f5j["default"],
-                    className: "newsletter-img flexb-20 m-auto"
-                }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "d-flex flex-column justify-content-center gap-1 m-auto text-white flexb-30",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                            className: "newsletter-text",
-                            children: "Want to get information about discounts and promotions first?"
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
-                            className: "newsletter-text",
-                            children: "Sign in for our Newsletter!"
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "d-flex flex-row mt-2",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                    className: "form-control shadow-lg flexb-70 border-l5 newsletter-input",
-                                    type: "email",
-                                    placeholder: "Email address",
-                                    "aria-label": "Search"
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                    type: "submit",
-                                    className: "flexb-30 border-none newsletter-submit bg-black text-white border-r5"
-                                })
-                            ]
-                        })
-                    ]
-                })
-            ]
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "d-flex flex-column justify-content-center newsletter-section gap-1 text-white flexb-30",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                        className: "newsletter-text",
+                        children: "Want to get information about discounts and promotions first?"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                        className: "newsletter-text",
+                        children: "Sign in for our Newsletter!"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "d-flex newsletter-input-wrapper flex-row mt-2",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                className: "form-control shadow-lg flexb-70 border-l5 newsletter-input",
+                                type: "email",
+                                placeholder: "Email address",
+                                "aria-label": "Search"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                type: "submit",
+                                className: "flexb-30 border-none newsletter-submit bg-black text-white border-r5"
+                            })
+                        ]
+                    })
+                ]
+            })
         })
     });
 };
