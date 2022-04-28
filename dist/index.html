@@ -18,23 +18,8 @@
     <div id="root">Main not rendered</div>
     <div id="footerRoot">footer not rendered</div>
     <script>"use strict";
-var CSRF_TOKEN = "{{ csrf_token }}"; //var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
-//  .replaceAll("&#x27;,)", "")
-//  .split("(&#x27;"); //stores all subcategories from specified index to variable
-//Third outputCat doesn't exist
-var ARRAY_2_SUBCATEGORY = "{% getSubcatsFromCat 3 1 %}".split(";");
-var ARRAY_3_SUBCATEGORY = "{% getSubcatsFromCat 4 1 %}".split(";");
-var ARRAY_4_SUBCATEGORY = "{% getSubcatsFromCat 5 1 %}".split(";");
-var ARRAY_5_SUBCATEGORY = "{% getSubcatsFromCat 6 1 %}".split(";");
-var ARRAY_6_SUBCATEGORY = "{% getSubcatsFromCat 7 1 %}".split(";");
-var ARRAY_7_SUBCATEGORY = "{% getSubcatsFromCat 8 1 %}".split(";");
-var ARRAY_8_SUBCATEGORY = "{% getSubcatsFromCat 9 1 %}".split(";");
-var ARRAY_9_SUBCATEGORY = "{% getSubcatsFromCat 10 1 %}".split(";");
-var ARRAY_10_SUBCATEGORY = "{% getSubcatsFromCat 11 1 %}".split(";");
-var ARRAY_11_SUBCATEGORY = "{% getSubcatsFromCat 12 1 %}".split(";");
-console.log(ARRAY_3_SUBCATEGORY, "kyz");
-var SUBCAT_1_IMG = '{% getSubcatsFromCat 2 3 %}'.split(';');
-var SUBCAT_2_IMG = '{% getSubcatsFromCat 3 3 %}'.split(';');
+var CSRF_TOKEN = "{{ csrf_token }}";
+var currentUser = '{{request.session.email}}';
 var SUBCATS_NAME = [
     "{% getSubcatsFromCat 3 1 %}".split(";"),
     "{% getSubcatsFromCat 4 1 %}".split(";"),

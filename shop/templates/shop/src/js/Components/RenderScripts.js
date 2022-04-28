@@ -1,5 +1,5 @@
 import React from "react"
-import renderTry, { TEST_ARRAY } from "./Test"
+import renderTry, { imgArr, TEST_ARRAY } from "./Test"
 import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 const RenderSubCat = () =>{
@@ -23,9 +23,9 @@ const RenderProducts = () => {
 }
 const RenderOnLoad = () =>{
         removeSubCat()
-        renderTry(SUBCATS_NAME[1])
+        renderTry(SUBCATS_NAME[1], imgArr)
         addEvent(document.querySelectorAll(".testing"))
-        console.log('hehe')
+        console.log('RenderOnLoad in RenderScripts')
         return(
             <>
             </>

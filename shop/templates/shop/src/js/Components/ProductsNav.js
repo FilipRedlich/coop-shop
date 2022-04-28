@@ -8,7 +8,7 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
+import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr } from "./Test";
 
 const removeSubCat = () => {
   const holder = document.querySelector("#rootSubcategories");
@@ -21,7 +21,7 @@ const removeSubCat = () => {
   }
 };
 
-const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
+const addEvent = (elements = []) => {
   for (let i = 0; i < elements.length; i++) {
     console.log(elements[i]);
     elements[i].addEventListener("click", () => {
@@ -139,13 +139,13 @@ const ProductNav = () => {
           //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
           //x now defines it's type - name, picture etc.
           case `${ARRAY[0]}`:
-            renderTry(SUBCATS_NAME[1]);
+            renderTry(SUBCATS_NAME[1], imgArr);
             //renderTry(TEST_ARRAY);
             addEvent(document.querySelectorAll(".testing"));
             break;
           case `${ARRAY[1]}`:
             //renderTry(TEST_ARRAY2);
-            renderTry(SUBCATS_NAME[2]);
+            renderTry(SUBCATS_NAME[2], imgArr);
             addEvent(document.querySelectorAll(".testing"));
             break;
         }
