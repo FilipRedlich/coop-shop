@@ -5,7 +5,7 @@ from . import views
 app_name = 'shop'
 urlpatterns = [
     path('', views.indexView, name='index'),
-    path('product/', views.productView, name='product'),
+    path('<int:pk>/', views.ProductView.as_view(), name='product'),
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),

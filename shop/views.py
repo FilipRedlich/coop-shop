@@ -47,10 +47,10 @@ def indexView(request):
     global context
     testView3(request)
     return render(request, 'shop/build/index.html',context)
-    
-def productView(request):
-    global context
-    return render(request, 'shop/build/product.html', context)
+
+class ProductView(generic.DetailView):
+    model = Products
+    template_name = 'shop/build/product.html'
 
 #test views
 def testView(request):
