@@ -12,11 +12,12 @@ from .models import Users,Basket,Categories,Products,subCategories,Services
 
 logging.basicConfig(level=logging.INFO)
 
+'''
 #index class - main view
 class IndexView(TemplateView):
     #html template that is used for index
     template_name = 'shop/build/index.html'
-
+    
     #variables that are accesible from template view
     def get_context_data(self, **kwargs):
         context = super().get_context_data(**kwargs)
@@ -29,36 +30,80 @@ class IndexView(TemplateView):
         context['subcategories'] = subCategories.objects.values_list()
         context['services'] = Services.objects.values_list()
         return context
+'''
+#index class - main view
+def IndexView(request):
+    context = {
+        #models with many fields use values_list() to get values of all fields
+        'categories' : Categories.objects.values_list(),
+        'products' : Products.objects.values_list(),
+        'users' : Users.objects.values_list(),
+        'basket' : Basket.objects.values_list(),
+        'subcategories' : subCategories.objects.values_list(),
+        'services' : Services.objects.values_list(),
+    }
+    return render(request, 'shop/build/index.html',context)
+    
 
 #test views
-class TestView(TemplateView):
-    template_name = 'shop/build/indextest.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
-
+def TestView(request):
+    context = {
         #models with many fields use values_list() to get values of all fields
-        context['categories'] = Categories.objects.values_list()
-        context['products'] = Products.objects.values_list()
-        context['users'] = Users.objects.values_list
-        context['basket'] = Basket.objects.values_list
-        context['subcategories'] = subCategories.objects.values_list()
-        context['services'] = Services.objects.values_list()
-        return context
+        'categories' : Categories.objects.values_list(),
+        'products' : Products.objects.values_list(),
+        'users' : Users.objects.values_list(),
+        'basket' : Basket.objects.values_list(),
+        'subcategories' : subCategories.objects.values_list(),
+        'services' : Services.objects.values_list(),
+    }
+    return render(request, 'shop/build/index.html',context)
 
-class TestView2(TemplateView):
-    template_name = 'shop/build/indextest2.html'
-
-    def get_context_data(self, **kwargs):
-        context = super().get_context_data(**kwargs)
+def TestView2(request):
+    context = {
         #models with many fields use values_list() to get values of all fields
-        context['categories'] = Categories.objects.values_list()
-        context['products'] = Products.objects.values_list()
-        context['users'] = Users.objects.values_list
-        context['basket'] = Basket.objects.values_list
-        context['subcategories'] = subCategories.objects.values_list()
-        context['services'] = Services.objects.values_list()
-        return context
+        'categories' : Categories.objects.values_list(),
+        'products' : Products.objects.values_list(),
+        'users' : Users.objects.values_list(),
+        'basket' : Basket.objects.values_list(),
+        'subcategories' : subCategories.objects.values_list(),
+        'services' : Services.objects.values_list(),
+    }
+    return render(request, 'shop/build/index.html',context)
+
+def TestView3(request):
+    context = {
+        #models with many fields use values_list() to get values of all fields
+        'categories' : Categories.objects.values_list(),
+        'products' : Products.objects.values_list(),
+        'users' : Users.objects.values_list(),
+        'basket' : Basket.objects.values_list(),
+        'subcategories' : subCategories.objects.values_list(),
+        'services' : Services.objects.values_list(),
+    }
+    return render(request, 'shop/build/index.html',context)
+
+def TestView3(request):
+    temp = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
+    out=""
+    i=0
+    ii=0
+    for t in temp:
+        st=Products.objects.values_list().filter(pk=t[2])
+        for row in st:
+            if ii!=0:
+                out+='***'
+            for field in row:
+                if i!=0:
+                    out+=';;;'
+                out+=str(field)
+                i=1
+            i=0
+            ii=1
+    context = {
+        "basketProducts": out
+    }
+    
+    return render(request, 'shop/build/indextest3.html',context)
 
 #unique salt for hashing passwords
 salt = "&sayu#"
