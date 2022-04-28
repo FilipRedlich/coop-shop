@@ -31,58 +31,34 @@ class IndexView(TemplateView):
         context['services'] = Services.objects.values_list()
         return context
 '''
+
+context = {
+    #models with many fields use values_list() to get values of all fields
+    'categories' : Categories.objects.values_list(),
+    'products' : Products.objects.values_list(),
+    'users' : Users.objects.values_list(),
+    'basket' : Basket.objects.values_list(),
+    'subcategories' : subCategories.objects.values_list(),
+    'services' : Services.objects.values_list(),
+}
+
 #index class - main view
 def IndexView(request):
-    context = {
-        #models with many fields use values_list() to get values of all fields
-        'categories' : Categories.objects.values_list(),
-        'products' : Products.objects.values_list(),
-        'users' : Users.objects.values_list(),
-        'basket' : Basket.objects.values_list(),
-        'subcategories' : subCategories.objects.values_list(),
-        'services' : Services.objects.values_list(),
-    }
+    global context
     return render(request, 'shop/build/index.html',context)
     
 
 #test views
 def TestView(request):
-    context = {
-        #models with many fields use values_list() to get values of all fields
-        'categories' : Categories.objects.values_list(),
-        'products' : Products.objects.values_list(),
-        'users' : Users.objects.values_list(),
-        'basket' : Basket.objects.values_list(),
-        'subcategories' : subCategories.objects.values_list(),
-        'services' : Services.objects.values_list(),
-    }
+    global context
     return render(request, 'shop/build/index.html',context)
 
 def TestView2(request):
-    context = {
-        #models with many fields use values_list() to get values of all fields
-        'categories' : Categories.objects.values_list(),
-        'products' : Products.objects.values_list(),
-        'users' : Users.objects.values_list(),
-        'basket' : Basket.objects.values_list(),
-        'subcategories' : subCategories.objects.values_list(),
-        'services' : Services.objects.values_list(),
-    }
+    global context
     return render(request, 'shop/build/index.html',context)
 
 def TestView3(request):
-    context = {
-        #models with many fields use values_list() to get values of all fields
-        'categories' : Categories.objects.values_list(),
-        'products' : Products.objects.values_list(),
-        'users' : Users.objects.values_list(),
-        'basket' : Basket.objects.values_list(),
-        'subcategories' : subCategories.objects.values_list(),
-        'services' : Services.objects.values_list(),
-    }
-    return render(request, 'shop/build/index.html',context)
-
-def TestView3(request):
+    global context
     temp = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
     out=""
     i=0
@@ -99,9 +75,7 @@ def TestView3(request):
                 i=1
             i=0
             ii=1
-    context = {
-        "basketProducts": out
-    }
+    context["basketProducts"] = out
     
     return render(request, 'shop/build/indextest3.html',context)
 
