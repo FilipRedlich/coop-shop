@@ -35,6 +35,11 @@
       <input type="text" name="password" /><br />
       <input type="submit" value="Login" />
     </form>
+    <form action="/addProductToBasket/" method="post">
+      {% csrf_token %}
+      <input type="hidden" name="id" value="5"/><br />
+      <input type="submit" value="addItem" />
+    </form>
     {{request.session.email}}
     <h1>{{ request.session.loginError }}</h1>
     {{ request.session.userpk }}
