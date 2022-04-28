@@ -43,21 +43,24 @@ context = {
 }
 
 #index class - main view
-def IndexView(request):
+def indexView(request):
     global context
+    testView3(request)
     return render(request, 'shop/build/index.html',context)
     
 
 #test views
-def TestView(request):
+def testView(request):
     global context
+    testView3(request)
     return render(request, 'shop/build/indextest.html',context)
 
-def TestView2(request):
+def testView2(request):
     global context
+    testView3(request)
     return render(request, 'shop/build/indextest2.html',context)
 
-def TestView3(request):
+def testView3(request):
     global context
     temp = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
     out=""
