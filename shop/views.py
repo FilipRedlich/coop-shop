@@ -48,6 +48,9 @@ def indexView(request):
     testView3(request)
     return render(request, 'shop/build/index.html',context)
     
+def productView(request):
+    global context
+    return render(request, 'shop/build/product.html', context)
 
 #test views
 def testView(request):
