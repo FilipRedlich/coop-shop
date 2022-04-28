@@ -51,11 +51,11 @@ def IndexView(request):
 #test views
 def TestView(request):
     global context
-    return render(request, 'shop/build/index.html',context)
+    return render(request, 'shop/build/indextest.html',context)
 
 def TestView2(request):
     global context
-    return render(request, 'shop/build/index.html',context)
+    return render(request, 'shop/build/indextest2.html',context)
 
 def TestView3(request):
     global context
