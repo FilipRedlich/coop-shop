@@ -19,14 +19,6 @@
 
 <body class="bg-dark">
   <script>
-    var ttt = "{{ basketProducts }}".split('***');
-    var tt=[]
-    for(i in ttt)  {
-        tt.push(ttt[i].split(';;;'));
-    }
-    console.log(tt)
-</script>
-  <script>
     const CSRF_TOKEN = "{{ csrf_token }}";
     var pushedElement;
     var arrayOfCategories = [];
