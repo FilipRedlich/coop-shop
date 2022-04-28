@@ -20,7 +20,7 @@ const MainContent = () => {
       </section>
       <section className="item-bar-holder">
         <div className="item-bar">
-          <div class="item">
+          <div className="item">
             <img src={image1} alt="item" />
             <p>Product nameeeee</p>
           </div>

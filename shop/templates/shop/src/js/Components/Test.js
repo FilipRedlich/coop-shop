@@ -1,5 +1,7 @@
 import { render } from "react-dom";
-
+import image1 from "../../images/undraw_dev_productivity_re_fylf.svg";
+import image2 from "../../images/undraw_dev_productivity_re_fylf.svg";
+const imgArr = [image1, image2];
 const TEST_CAT = ["cat1", "cat2", "cat3"];
 const TEST_ARRAY = [
   "Test Element num.1",
@@ -32,20 +34,25 @@ const AfterLoad = (element, renderPlace = null, time = 1000) => {
   console.log('cwelskop')
   return
 }
-const renderTry = (ARRAY = []) => {
+const renderTry = (ARRAY_NAME = [], ARRAY_IMG = []) => {
   const addContent = () => {
     var button = document.createElement("button").cloneNode(true);
     var clone = button.cloneNode(true);
+    var IMAGE_PATH = ARRAY_IMG;
+    var img = document.createElement('img')
+    
     clone.classList.add("minmax-test");
     var renderPlacement = document.querySelector("#rootSubcategories");
 
     //while (renderPlacement.firstChild) {
     //  renderPlacement.firstChild.remove();
     //}
-
-    for (let i = 0; i < ARRAY.length; i++) {
-      clone.textContent = ARRAY[i];
+    for (let i = 0; i < ARRAY_NAME.length; i++) {
+      clone.textContent = ARRAY_NAME[i];
       clone.classList.add("testing");
+      img.setAttribute('src', ARRAY_IMG[0]);
+      console.log(ARRAY_IMG[0], 'pojebie mnie')
+      clone.appendChild(img.cloneNode('true'));
       renderPlacement.appendChild(clone.cloneNode(true));
       //console.log(clone.textContent)
     }
@@ -57,6 +64,6 @@ const renderTry = (ARRAY = []) => {
   addContent();
 };
 renderTry();
-export { TEST_CAT, TEST_ARRAY, TEST_ARRAY2 };
+export { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr };
 export { AfterLoad };
 export default renderTry;
