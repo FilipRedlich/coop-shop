@@ -23433,7 +23433,7 @@ var MainContent = function MainContent() {
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                     className: "item-bar",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        "class": "item",
+                        className: "item",
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
                                 src: _undraw_dev_productivity_re_fylf["default"],
@@ -23585,8 +23585,6 @@ var removeSubCat = function removeSubCat() {
 exports.removeSubCat = removeSubCat;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var ARRAY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    var ADDITIONAL_ARRAY = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
     var _loop = function _loop(i) {
         console.log(elements[i]);
         elements[i].addEventListener("click", function() {
@@ -23686,12 +23684,12 @@ var ProductNav = function ProductNav() {
                     //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
                     //x now defines it's type - name, picture etc.
                     case "".concat(ARRAY[0]):
-                        (0, _Test["default"])(SUBCATS_NAME[1]); //renderTry(TEST_ARRAY);
+                        (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr); //renderTry(TEST_ARRAY);
                         addEvent(document.querySelectorAll(".testing"));
                         break;
                     case "".concat(ARRAY[1]):
                         //renderTry(TEST_ARRAY2);
-                        (0, _Test["default"])(SUBCATS_NAME[2]);
+                        (0, _Test["default"])(SUBCATS_NAME[2], _Test.imgArr);
                         addEvent(document.querySelectorAll(".testing"));
                         break;
                 }
@@ -23983,11 +23981,18 @@ module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw
 
 },{"./helpers/bundle-url":"lgJ39"}],"f2YDa":[function(require,module,exports) {
 "use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+exports.imgArr = exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
 var _reactDom = require("react-dom");
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var imgArr = [
+    _undraw_dev_productivity_re_fylf["default"],
+    _undraw_dev_productivity_re_fylf["default"]
+];
+exports.imgArr = imgArr;
 var TEST_CAT = [
     "cat1",
     "cat2",
@@ -24035,17 +24040,23 @@ var AfterLoad = function AfterLoad(element) {
 _c = AfterLoad;
 exports.AfterLoad = AfterLoad;
 var renderTry = function renderTry() {
-    var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var ARRAY_IMG = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
     var addContent = function addContent() {
         var button = document.createElement("button").cloneNode(true);
         var clone = button.cloneNode(true);
+        var IMAGE_PATH = ARRAY_IMG;
+        var img = document.createElement('img');
         clone.classList.add("minmax-test");
         var renderPlacement = document.querySelector("#rootSubcategories"); //while (renderPlacement.firstChild) {
         //  renderPlacement.firstChild.remove();
         //}
-        for(var i = 0; i < ARRAY.length; i++){
-            clone.textContent = ARRAY[i];
+        for(var i = 0; i < ARRAY_NAME.length; i++){
+            clone.textContent = ARRAY_NAME[i];
             clone.classList.add("testing");
+            img.setAttribute('src', ARRAY_IMG[0]);
+            console.log(ARRAY_IMG[0], 'pojebie mnie');
+            clone.appendChild(img.cloneNode('true'));
             renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
         }
         console.log("pds");
@@ -24059,7 +24070,7 @@ exports["default"] = _default;
 var _c;
 $RefreshReg$(_c, "AfterLoad");
 
-},{"react-dom":"j6uA9"}],"dmUe4":[function(require,module,exports) {
+},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"dmUe4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _useBoolean = require("./useBoolean");
@@ -25554,9 +25565,9 @@ _c1 = RenderProducts;
 exports.RenderProducts = RenderProducts;
 var RenderOnLoad = function RenderOnLoad() {
     (0, _ProductsNav.removeSubCat)();
-    (0, _Test["default"])(SUBCATS_NAME[1]);
+    (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr);
     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
-    console.log('hehe');
+    console.log('RenderOnLoad in RenderScripts');
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
 };
 _c2 = RenderOnLoad;
