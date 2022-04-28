@@ -35,6 +35,7 @@ class Products(models.Model):
     price=models.FloatField()
     mult=models.FloatField(default=1.0)
     rating=models.FloatField(default=3.0)
+    hotshot=models.BooleanField(default=False)
     def __str__(self):
         return str(self.pk)+". "+self.name
 
