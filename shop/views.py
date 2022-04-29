@@ -5,8 +5,7 @@ from django.urls import reverse
 from django.views import generic
 from django.views.generic.base import TemplateView
 from hashlib import sha256
-
-from flask import request
+from django.http import HttpResponseNotFound
 
 from .models import Users,Basket,Categories,Products,subCategories,Services
 
@@ -32,6 +31,7 @@ class IndexView(TemplateView):
         return context
 '''
 
+#global dict that gives variables to html
 context = {
     #models with many fields use values_list() to get values of all fields
     'categories' : Categories.objects.values_list(),
@@ -42,10 +42,14 @@ context = {
     'services' : Services.objects.values_list(),
 }
 
+#all views that have urls to them
 #index class - main view
 def indexView(request):
+    #adding global dict to pass through html template
     global context
-    #testView3(request)
+    #get user products that are in basket
+    getProductsFromBasket(request)
+    #render site using html template and global dict
     return render(request, 'shop/build/index.html',context)
 
 class ProductView(generic.DetailView):
@@ -55,36 +59,50 @@ class ProductView(generic.DetailView):
 #test views
 def testView(request):
     global context
-    testView3(request)
+    getProductsFromBasket(request)
     return render(request, 'shop/build/indextest.html',context)
 
 def testView2(request):
     global context
-    testView3(request)
+    getProductsFromBasket(request)
     return render(request, 'shop/build/indextest2.html',context)
 
 def testView3(request):
     global context
-    if 'userpk' in request.session:
-        temp = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
-        out=""
+    getProductsFromBasket(request)
+    return render(request, 'shop/build/indextest3.html',context)
+
+#func to get all products from user basket using user id
+def getProductsFromBasket(request):
+    global context
+    #using try to not raise error when no logged user
+    try:
+        #get all product id that are in user basket
+        query = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
+        output=""
         i=0
         ii=0
-        for t in temp:
-            st=Products.objects.values_list().filter(pk=t[2])
-            for row in st:
+        for row in query:
+            #get all info about product looping through product id list
+            query2=Products.objects.values_list().filter(pk=row[2])
+            for row2 in query2:
                 if ii!=0:
-                    out+='***'
-                for field in row:
+                    #split products using ***
+                    output+='***'
+                for field in row2:
                     if i!=0:
-                        out+=';;;'
-                    out+=str(field)
+                        #split fields in product using ;;;
+                        output+=';;;'
+                    output+=str(field)
                     i=1
                 i=0
                 ii=1
-        context["basketProducts"] = out
-    
-    return render(request, 'shop/build/indextest3.html',context)
+        #add var to global dict to make use of in html template
+        context["basketProducts"] = output
+    except:
+        #return HttpResponseNotFound('<img src="https://http.cat/404"/>')
+        0
+    return 0
 
 #unique salt for hashing passwords
 salt = "&sayu#"
