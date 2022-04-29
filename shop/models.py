@@ -8,6 +8,7 @@ from django.db import models
 class Users(models.Model):
     login=models.CharField(max_length=30)
     password=models.CharField(max_length=255)
+    newsletter=models.BooleanField(default=True)
     def __str__(self):
         return str(self.pk)+". "+self.login
 
@@ -21,8 +22,8 @@ class Categories(models.Model):
 #table subCategories {pk,name,catID,picture}
 class subCategories(models.Model):
     name=models.CharField(max_length=50,default="empty")
-    catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
     picture=models.CharField(max_length=255,blank=1)
+    catID=models.ForeignKey(Categories, on_delete=models.CASCADE)
     def __str__(self):
         return str(self.pk)+". "+self.name+" ("+str(self.catID)+")"
 
