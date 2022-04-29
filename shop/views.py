@@ -45,7 +45,7 @@ context = {
 #index class - main view
 def indexView(request):
     global context
-    testView3(request)
+    #testView3(request)
     return render(request, 'shop/build/index.html',context)
 
 class ProductView(generic.DetailView):
@@ -65,23 +65,24 @@ def testView2(request):
 
 def testView3(request):
     global context
-    temp = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
-    out=""
-    i=0
-    ii=0
-    for t in temp:
-        st=Products.objects.values_list().filter(pk=t[2])
-        for row in st:
-            if ii!=0:
-                out+='***'
-            for field in row:
-                if i!=0:
-                    out+=';;;'
-                out+=str(field)
-                i=1
-            i=0
-            ii=1
-    context["basketProducts"] = out
+    if 'userpk' in request.session:
+        temp = Basket.objects.values_list().filter(userID_id=request.session['userpk'])
+        out=""
+        i=0
+        ii=0
+        for t in temp:
+            st=Products.objects.values_list().filter(pk=t[2])
+            for row in st:
+                if ii!=0:
+                    out+='***'
+                for field in row:
+                    if i!=0:
+                        out+=';;;'
+                    out+=str(field)
+                    i=1
+                i=0
+                ii=1
+        context["basketProducts"] = out
     
     return render(request, 'shop/build/indextest3.html',context)
 
