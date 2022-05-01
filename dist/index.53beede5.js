@@ -23540,7 +23540,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.removeSubCat = exports["default"] = exports.addEvent = void 0;
+exports.removeSubCat = exports["default"] = exports.addEvent = exports.RenderProducts2 = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
@@ -23637,6 +23637,7 @@ var RenderProducts2 = function RenderProducts2(props) {
     });
 };
 _c1 = RenderProducts2;
+exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var _loop = function _loop(i) {
@@ -23720,7 +23721,7 @@ var ProductNav = function ProductNav() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
                             (0, _ComponentBuilders["default"])(arrayOfCategories);
-                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_ARRAY, removeSubCat);
+                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories, removeSubCat);
                         },
                         children: "Categories"
                     }),
@@ -23992,22 +23993,14 @@ $RefreshReg$(_c, "Newsletter");
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"f2YDa":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$f245 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$f245.prelude(module);
-
-try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.renderTry = exports.imgArr = exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+exports.renderTry = exports.imgArr = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
 var _reactDom = require("react-dom");
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Test.js", _this = void 0;
 var imgArr = [
     _undraw_dev_productivity_re_fylf["default"],
     _undraw_dev_productivity_re_fylf["default"]
@@ -24083,40 +24076,10 @@ var renderTry = function renderTry() {
     addContent();
 };
 exports.renderTry = renderTry;
-var RenderSubcat = function RenderSubcat(props) {
-    var el = props.el;
-    var img = props.img;
-    return el.map(function(val, i) {
-        var convImg = img[i];
-        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
-                type: "button",
-                className: "subcategory",
-                children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                        src: convImg
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
-                        children: val
-                    })
-                ]
-            })
-        });
-    });
-};
-_c1 = RenderSubcat;
-var _default = RenderSubcat;
-exports["default"] = _default;
-var _c, _c1;
+var _c;
 $RefreshReg$(_c, "AfterLoad");
-$RefreshReg$(_c1, "RenderSubcat");
 
-  $parcel$ReactRefreshHelpers$f245.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNOSb":[function(require,module,exports) {
+},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"bNOSb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24171,14 +24134,39 @@ var renderInSubRoot = function renderInSubRoot(el, options) {
 };
 exports.renderInSubRoot = renderInSubRoot;
 var RenderOnLoad = function RenderOnLoad() {
-    (0, _ProductsNav.removeSubCat)();
-    (0, _Test["default"])(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+    (0, _ProductsNav.removeSubCat)(); //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+        el: SUBCATS_NAME[1],
+        img: SUBCATS_IMG[0]
+    }), document.querySelector("#rootSubcategories"));
     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
     console.log("RenderOnLoad in RenderScripts");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
-}; //Adds functionality to category buttons
+};
 _c = RenderOnLoad;
 exports.RenderOnLoad = RenderOnLoad;
+var RenderSubcat = function RenderSubcat(props) {
+    var el = props.el;
+    var img = props.img;
+    return el.map(function(val, i) {
+        var convImg = img[i];
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
+                type: "button",
+                className: "subcategory",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                        src: convImg
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        children: val
+                    })
+                ]
+            })
+        });
+    });
+}; //Adds functionality to category buttons
+_c1 = RenderSubcat;
 var RenderFromCat = function RenderFromCat() {
     var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var categories = document.querySelectorAll(".categories-button");
@@ -24192,27 +24180,30 @@ var RenderFromCat = function RenderFromCat() {
                 //x now defines it's type - name, picture etc.
                 case "".concat(ARRAY[0]):
                     //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
-                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Test["default"], {
+                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[1],
                         img: SUBCATS_IMG[0]
-                    }), document.querySelector('#rootSubcategories')); //renderTry(TEST_ARRAY);
+                    }), document.querySelector("#rootSubcategories")); //renderTry(TEST_ARRAY);
                     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
                     break;
                 case "".concat(ARRAY[1]):
                     //renderTry(TEST_ARRAY2);
-                    (0, _Test["default"])(SUBCATS_NAME[2], SUBCATS_IMG[1]);
-                    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
+                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+                        el: SUBCATS_NAME[2],
+                        img: SUBCATS_IMG[0]
+                    }), document.querySelector("#rootSubcategories")); // renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
                     break;
             }
         });
     };
     for(var i1 = 0; i1 < ARRAY.length; i1++)_loop(i1);
 };
-_c1 = RenderFromCat;
+_c2 = RenderFromCat;
 exports.RenderFromCat = RenderFromCat;
-var _c, _c1;
+var _c, _c1, _c2;
 $RefreshReg$(_c, "RenderOnLoad");
-$RefreshReg$(_c1, "RenderFromCat");
+$RefreshReg$(_c1, "RenderSubcat");
+$RefreshReg$(_c2, "RenderFromCat");
 
   $parcel$ReactRefreshHelpers$8894.postlude(module);
 } finally {

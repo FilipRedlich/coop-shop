@@ -140,7 +140,7 @@ const ProductNav = () => {
             //renderTry(TEST_ARRAY2);
             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
             buttonBuilder(arrayOfCategories);
-            RenderFromCat(TEST_ARRAY, removeSubCat);
+            RenderFromCat(arrayOfCategories, removeSubCat);
           }}
         >
           Categories
@@ -202,5 +202,5 @@ const ProductNav = () => {
     </>
   );
 };
-export { removeSubCat, addEvent };
+export { removeSubCat, addEvent, RenderProducts2 };
 export default ProductNav;

@@ -3,8 +3,7 @@ import renderTry, { imgArr, TEST_ARRAY } from "./Test";
 import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
-import RenderSubcat from "./Test";
-
+import { RenderProducts2 } from "./ProductsNav";
 const renderInSubRoot = (el, options) => {
   return (
     <div id="subRoot" className={options}>
@@ -15,12 +14,31 @@ const renderInSubRoot = (el, options) => {
 
 const RenderOnLoad = () => {
   removeSubCat();
-  renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+  //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+  render(
+    <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />,
+    document.querySelector("#rootSubcategories")
+  );
   addEvent(document.querySelectorAll(".testing"));
   console.log("RenderOnLoad in RenderScripts");
   return <></>;
 };
+const RenderSubcat = (props) => {
+  const el = props.el;
+  const img = props.img;
 
+  return el.map((val, i) => {
+    const convImg = img[i];
+    return (
+      <>
+        <button type="button" className="subcategory">
+          <img src={convImg} />
+          <p>{val}</p>
+        </button>
+      </>
+    );
+  });
+};
 //Adds functionality to category buttons
 const RenderFromCat = (ARRAY = []) => {
   const categories = document.querySelectorAll(".categories-button");
@@ -35,15 +53,22 @@ const RenderFromCat = (ARRAY = []) => {
         //x now defines it's type - name, picture etc.
         case `${ARRAY[0]}`:
           //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
-          render(<RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />, document.querySelector('#rootSubcategories'))
-          
+          render(
+            <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />,
+            document.querySelector("#rootSubcategories")
+          );
+
           //renderTry(TEST_ARRAY);
           addEvent(document.querySelectorAll(".testing"));
           break;
         case `${ARRAY[1]}`:
           //renderTry(TEST_ARRAY2);
-          renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
-          addEvent(document.querySelectorAll(".testing"));
+          render(
+            <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[0]} />,
+            document.querySelector("#rootSubcategories")
+          );
+          // renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
+          //addEvent(document.querySelectorAll(".testing"));
           break;
       }
     });
@@ -51,4 +76,3 @@ const RenderFromCat = (ARRAY = []) => {
 };
 
 export { RenderOnLoad, RenderFromCat, renderInSubRoot };
-
