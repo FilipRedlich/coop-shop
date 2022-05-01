@@ -242,10 +242,62 @@
 .rounded-right-side {
   border-radius: 0 10vh 10vh 0;
 }
+.product-holder {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  min-width: 80%;
+  max-width: 50rem;
+  gap: 1rem;
+  padding: 3rem 0;
+  margin: auto;
 
-.categories-products {
-  max-height: 27.5rem;
+  .product {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 1rem;
+    border: none;
+    border-radius: 10px;
+    height: 15rem;
+    width: 15rem;
+    background: $bg-transparent-c;
+    color: white;
+    font-size: 1.2rem;
+    padding: 1rem;
+    img {
+      max-width: 10rem;
+    }
+  }
+}
+
+.rootSubcategories {
+  max-height: 25rem;
   overflow-y: scroll !important;
+  .subcategory {
+    display: flex;
+    flex-direction: column-reverse;
+    justify-content: center;
+    align-items: center;
+    background: $bg-transparent-c;
+    color: white;
+    font-size: 1.2rem;
+    text-align: center;
+    z-index: 5;
+    border: none;
+    border-radius: 10px;
+    max-width: 20rem;
+    max-height: 25rem;
+    padding: 1rem;
+
+    img {
+      max-width: 95%;
+      margin: auto;
+      z-index: 4;
+    }
+  }
 }
 
 .cart {
@@ -320,26 +372,6 @@
   margin: 60vh 0 0 0 !important;
 }
 
-@media screen and (max-width: 768px) {
-  .categories {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    flex-wrap: wrap !important;
-    min-width: 100% !important;
-    max-height: 5rem !important;
-    overflow-y: hidden !important;
-    overflow-x: scroll !important;
-  }
-
-  .product-nav {
-    flex-direction: column !important;
-    overflow-x: scroll !important;
-    overflow-y: hidden !important;
-    max-height: 5rem;
-  }
-}
-$bg-darkBlue: #10054d;
 .newsletter {
   position: relative;
   border-radius: 15px;
@@ -425,17 +457,6 @@ img {
   width: 100%;
 }
 
-@media screen and (max-height: 800px) {
-  .categories-top {
-    top: 40%;
-  }
-}
-
-@media screen and (max-height: 620px) {
-  .categories-top {
-    top: 60%;
-  }
-}
 .footer-emblem {
   background: $bg-transparent-c;
   min-height: 10rem;
@@ -452,12 +473,6 @@ img {
     -webkit-background-clip: text;
     color: transparent;
   }
-}
-.dupa {
-  font: 100;
-}
-.du2d {
-  display: block;
 }
 
 .footer-anchor {
@@ -484,12 +499,4 @@ img {
   font-weight: 300;
   letter-spacing: 1.5px;
   text-transform: uppercase;
-}
-@keyframes redGradient-left-right {
-  0% {
-    background: $gradient-white;
-  }
-  100% {
-    background: $gradient-red;
-  }
 }

@@ -75,13 +75,13 @@
     {% getSubcatsFromCat 4 1 %}
     <h4>get all products from selected subcat arg[1]=cat arg[2]=nr of field</h4>
     <script>
-      const prodFromSubcat = "{% getProductsFromSubcat 5 1 %}".split(";");
+      const prodFromSubcat = "{% getProductsFromSubcat 1 1 %}".split(";");
       const imgs = "{% getProductsFromSubcat 5 2 %}".split(";"); //returns images from products
       const imgss = "{% getSubcatsFromCat 2 3 %}".split(";"); //returns images from subcat
       addEventListener("load", () => {
         document.querySelector(".rddd").src = imgss[1];
       });
-      console.log(prodFromSubcat, imgss);
+      console.log(prodFromSubcat, imgss, 'productsFromSubcat and imgss');
     </script>
 
     <br />
@@ -114,7 +114,25 @@
         "{% getSubcatsFromCat 2 3 %}".split(";"),
         "{% getSubcatsFromCat 4 3 %}".split(";"),
       ];
-
+     var PRODUCTS_NAME = [
+       "{% getProductsFromSubcat 1 1 %}".split(";"),
+       "{% getProductsFromSubcat 2 1 %}".split(";"),
+       "{% getProductsFromSubcat 3 1 %}".split(";"),
+       "{% getProductsFromSubcat 4 1 %}".split(";"),
+       "{% getProductsFromSubcat 5 1 %}".split(";"),
+       "{% getProductsFromSubcat 6 1 %}".split(";"),
+       "{% getProductsFromSubcat 7 1 %}".split(";"),
+       "{% getProductsFromSubcat 8 1 %}".split(";"),
+       "{% getProductsFromSubcat 9 1 %}".split(";"),
+       "{% getProductsFromSubcat 10 1 %}".split(";"),
+       "{% getProductsFromSubcat 11 1 %}".split(";"),
+       "{% getProductsFromSubcat 12 1 %}".split(";"),
+       "{% getProductsFromSubcat 13 1 %}".split(";"),
+       "{% getProductsFromSubcat 14 1 %}".split(";"),
+       "{% getProductsFromSubcat 15 1 %}".split(";"),
+       "{% getProductsFromSubcat 16 1 %}".split(";"),
+     ]
+     console.log(PRODUCTS_NAME)
       console.log(SUBCATS_NAME[1], "subcats_name[1]");
       console.log(SUBCATS_IMG[1], 'subcats_img[0]')
       //console.log(SUBCATS_IMG[0], 'subcats_img[0]')
@@ -129,5 +147,24 @@
     {% getProductsFromSubcat 5 2 %}
     <br />
     <br />
+    <div class="placer">
+
+
+    </div>
+    <script>
+    const RenderProducts = (ARRAY_NAME = []) => {
+  console.log(ARRAY_NAME);
+  var button = document.createElement("button").cloneNode(true);
+  var clone = button.cloneNode(true);
+
+  var renderingSpace = document.querySelector(".placer");
+  for(let i = 0; i<ARRAY_NAME.length; i++){
+    clone.textContent = ARRAY_NAME[i]
+    renderingSpace.appendChild(clone.cloneNode(true));
+  }
+  
+};
+RenderProducts(PRODUCTS_NAME[4])
+    </script>
   </body>
 </html>

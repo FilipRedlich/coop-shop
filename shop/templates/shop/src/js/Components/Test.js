@@ -41,12 +41,10 @@ const renderTry = (ARRAY_NAME = [], ARRAY_IMG = []) => {
     var IMAGE_PATH = ARRAY_IMG;
     var img = document.createElement('img')
     
-    clone.classList.add("minmax-test");
+    clone.classList.add("subcategory");
     var renderPlacement = document.querySelector("#rootSubcategories");
 
-    //while (renderPlacement.firstChild) {
-    //  renderPlacement.firstChild.remove();
-    //}
+ 
     for (let i = 0; i < ARRAY_NAME.length; i++) {
       clone.textContent = ARRAY_NAME[i];
       clone.classList.add("testing");

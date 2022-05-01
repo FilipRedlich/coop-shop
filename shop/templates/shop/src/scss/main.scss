@@ -5,6 +5,7 @@
 @import "./global.scss";
 @import "./variables.scss";
 @import "./keyframes.scss";
+@import './mediaQueries.scss';
 .hide-element {
   //transform: translateY(-75rem) translateX(-50%);
   //transform: translateX(-10rem);
@@ -152,16 +153,6 @@
           text-align: center;
         }
       }
-    }
-  }
-}
-@media screen and (max-width: 1024px) {
-  .main-content {
-    display: flex !important;
-    flex-direction: row !important;
-    flex-wrap: wrap !important;
-    .card {
-      width: 80%;
     }
   }
 }
