@@ -41,7 +41,7 @@ const RenderProducts2 = (props) => {
   const el = props.el;
   const img = props.img;
    
-  return  Product = el.map((val, i) => {
+  return el.map((val, i) => {
     const convImg = img[i];
     
     return (
@@ -140,7 +140,7 @@ const ProductNav = () => {
             //renderTry(TEST_ARRAY2);
             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
             buttonBuilder(arrayOfCategories);
-            RenderFromCat(arrayOfCategories, removeSubCat);
+            RenderFromCat(TEST_ARRAY, removeSubCat);
           }}
         >
           Categories

@@ -61,7 +61,25 @@ const renderTry = (ARRAY_NAME = [], ARRAY_IMG = []) => {
 
   addContent();
 };
-renderTry();
+const RenderSubcat = (props) => {
+  const el = props.el;
+  const img = props.img;
+ 
+ 
+    return el.map((val, i) => {
+      const convImg = img[i];
+      return (
+        <>
+          <button type="button" className="subcategory">
+            <img src={convImg} />
+            <p>{val}</p>
+          </button>
+        </>
+      );
+    });
+  
+};
+
 export { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr };
-export { AfterLoad };
-export default renderTry;
+export { AfterLoad, renderTry};
+export default RenderSubcat;
