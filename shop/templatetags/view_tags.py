@@ -43,13 +43,24 @@ def getSubcatsFromCat(cat,field):
 
 @register.simple_tag
 #output all products specified field from selected subcat
-def getProductsFromSubcat(cat,field):
+def getProductsFromSubcat(cat,field=99):
     query = Products.objects.values_list().filter(subcat=cat)
     out=""
     i=0
+    ii=0
     for row in query:
-        if(i!=0):
-            out+=";"
-        out+=str(row[int(field)])
+        if field==99:
+            if(i!=0):
+                out+="***"
+            for row2 in row:
+                if(ii!=0):
+                    out+=";;;"
+                out+=str(row2)
+                ii=1
+            ii=0
+        else:
+            if(i!=0):
+                out+=";"
+            out+=str(row[field])
         i=1
     return out
