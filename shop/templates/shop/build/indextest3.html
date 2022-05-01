@@ -1,3 +1,4 @@
+{% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +9,8 @@
 </head>
 <body>
     {{ basketProducts }}
+    <br>
+    {% getProductsFromSubcat 5 1 %}
     <script>
         var ttt = "{{ basketProducts }}".split('***');
         var tt=[]
