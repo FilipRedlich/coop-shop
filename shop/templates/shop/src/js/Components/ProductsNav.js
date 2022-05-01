@@ -46,14 +46,14 @@ const RenderProducts2 = (props) => {
     
     return (
       <>
-        
-          
-            <button className="product">
-              <img src={convImg} />
-              <p>{val}</p>
-            </button>
-          
-  
+        <form action="/addProductToBasket/" method="post">
+          <input type="hidden" value={CSRF_TOKEN} />
+          <input type="hidden" name="id" value="5" />
+          <button type="submit" className="product">
+            <img src={convImg} />
+            <p>{val}</p>
+          </button>
+        </form>
       </>
     );
   });
@@ -139,8 +139,8 @@ const ProductNav = () => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-            buttonBuilder(TEST_CAT);
-            RenderFromCat(TEST_ARRAY, removeSubCat);
+            buttonBuilder(arrayOfCategories);
+            RenderFromCat(arrayOfCategories, removeSubCat);
           }}
         >
           Categories
