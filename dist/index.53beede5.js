@@ -23606,14 +23606,30 @@ var RenderProducts2 = function RenderProducts2(props) {
     return Product = el.map(function(val, i) {
         var convImg = img[i];
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
-                className: "product",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                action: "/addProductToBasket/",
+                method: "post",
                 children: [
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                        src: convImg
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "hidden",
+                        value: CSRF_TOKEN
                     }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
-                        children: val
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "hidden",
+                        name: "id",
+                        value: "5"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
+                        type: "submit",
+                        className: "product",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: convImg
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                children: val
+                            })
+                        ]
                     })
                 ]
             })
@@ -23703,8 +23719,8 @@ var ProductNav = function ProductNav() {
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-                            (0, _ComponentBuilders["default"])(_Test.TEST_CAT);
-                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_ARRAY, removeSubCat);
+                            (0, _ComponentBuilders["default"])(arrayOfCategories);
+                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories, removeSubCat);
                         },
                         children: "Categories"
                     }),
@@ -24143,7 +24159,7 @@ var productElement = function productElement() {
 };
 var RenderOnLoad = function RenderOnLoad() {
     (0, _ProductsNav.removeSubCat)();
-    (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr);
+    (0, _Test["default"])(SUBCATS_NAME[1], SUBCATS_IMG[0]);
     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
     console.log("RenderOnLoad in RenderScripts");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
@@ -24162,12 +24178,12 @@ var RenderFromCat = function RenderFromCat() {
                 //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
                 //x now defines it's type - name, picture etc.
                 case "".concat(ARRAY[0]):
-                    (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr); //renderTry(TEST_ARRAY);
+                    (0, _Test["default"])(SUBCATS_NAME[1], SUBCATS_IMG[0]); //renderTry(TEST_ARRAY);
                     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
                     break;
                 case "".concat(ARRAY[1]):
                     //renderTry(TEST_ARRAY2);
-                    (0, _Test["default"])(SUBCATS_NAME[2], _Test.imgArr);
+                    (0, _Test["default"])(SUBCATS_NAME[2], SUBCATS_IMG[1]);
                     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
                     break;
             }
