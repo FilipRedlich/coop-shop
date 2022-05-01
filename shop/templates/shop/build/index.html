@@ -41,24 +41,28 @@
                         "{% getSubcatsFromCat 9 1 %}".split(";"),"{% getSubcatsFromCat 10 1 %}".split(";"),
                         "{% getSubcatsFromCat 11 1 %}".split(";"),"{% getSubcatsFromCat 12 1 %}".split(";")];
      var SUBCATS_IMG = ['{% getSubcatsFromCat 2 3 %}'.split(';'), '{% getSubcatsFromCat 3 3 %}'.split(';')];
-     var PRODUCTS_NAME = [
-       "{% getProductsFromSubcat 1 1 %}".split(";"),
-       "{% getProductsFromSubcat 2 1 %}".split(";"),
-       "{% getProductsFromSubcat 3 1 %}".split(";"),
-       "{% getProductsFromSubcat 4 1 %}".split(";"),
-       "{% getProductsFromSubcat 5 1 %}".split(";"),
-       "{% getProductsFromSubcat 6 1 %}".split(";"),
-       "{% getProductsFromSubcat 7 1 %}".split(";"),
-       "{% getProductsFromSubcat 8 1 %}".split(";"),
-       "{% getProductsFromSubcat 9 1 %}".split(";"),
-       "{% getProductsFromSubcat 10 1 %}".split(";"),
-       "{% getProductsFromSubcat 11 1 %}".split(";"),
-       "{% getProductsFromSubcat 12 1 %}".split(";"),
-       "{% getProductsFromSubcat 13 1 %}".split(";"),
-       "{% getProductsFromSubcat 14 1 %}".split(";"),
-       "{% getProductsFromSubcat 15 1 %}".split(";"),
-       "{% getProductsFromSubcat 16 1 %}".split(";"),
-     ]
+     var PRODUCTS_NAME = []
+     var ppp = ['{% getProductsFromSubcat 1 %}'.split('***'),'{% getProductsFromSubcat 2 %}'.split('***'),
+     '{% getProductsFromSubcat 3 %}'.split('***'),'{% getProductsFromSubcat 4 %}'.split('***'),
+     '{% getProductsFromSubcat 5 %}'.split('***'),'{% getProductsFromSubcat 6 %}'.split('***'),
+     '{% getProductsFromSubcat 7 %}'.split('***'),'{% getProductsFromSubcat 8 %}'.split('***'),
+     '{% getProductsFromSubcat 9 %}'.split('***'),'{% getProductsFromSubcat 10 %}'.split('***'),
+     '{% getProductsFromSubcat 11 %}'.split('***'),'{% getProductsFromSubcat 12 %}'.split('***'),
+     '{% getProductsFromSubcat 13 %}'.split('***'),'{% getProductsFromSubcat 14 %}'.split('***'),
+     '{% getProductsFromSubcat 15 %}'.split('***'),'{% getProductsFromSubcat 16 %}'.split('***'),
+     '{% getProductsFromSubcat 17 %}'.split('***'),'{% getProductsFromSubcat 18 %}'.split('***'),
+     '{% getProductsFromSubcat 19 %}'.split('***'),'{% getProductsFromSubcat 20 %}'.split('***')]
+      var p1=[]
+      for(i in ppp) {
+        for(y in ppp[i])  {
+          p1.push(ppp[i][y].split(';;;'));
+          
+        }
+        PRODUCTS_NAME.push(p1)
+        var p1=[]
+      }
+      
+     console.log(PRODUCTS_NAME)
      console.log(SUBCATS_NAME[1], 'subcats_name[1]')
      
      
