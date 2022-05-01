@@ -34,3 +34,11 @@
     box-shadow: 10px 15px 10px 2px $bg-transparent-c;
     }
 }
+@keyframes redGradient-left-right {
+  0% {
+    background: $gradient-white;
+  }
+  100% {
+    background: $gradient-red;
+  }
+}

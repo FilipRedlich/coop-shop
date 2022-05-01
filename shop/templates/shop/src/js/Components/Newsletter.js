@@ -20,6 +20,7 @@ const Newsletter = () => {
             <input
               type="submit"
               className="flexb-30 border-none newsletter-submit bg-black text-white border-r5"
+              value='Submit'
             />
           </div>
         </div>

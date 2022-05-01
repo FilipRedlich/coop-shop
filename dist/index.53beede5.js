@@ -23549,6 +23549,8 @@ var _Services = _interopRequireDefault(require("./Services"));
 var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _Test = _interopRequireWildcard(require("./Test"));
+var _RenderScripts = require("./RenderScripts");
+var _ComponentBuilders = _interopRequireDefault(require("./ComponentBuilders"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
@@ -23583,6 +23585,42 @@ var removeSubCat = function removeSubCat() {
     if (holder.contains(doesExist[0])) for(var i = 0; i < doesExist.length; i++)doesExist[i].remove();
 };
 exports.removeSubCat = removeSubCat;
+var renderRoot = function renderRoot(renderElement) {
+    (0, _reactDom.render)(renderElement, document.querySelector("#root"));
+};
+var RenderProducts = function RenderProducts() {
+    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    console.log(ARRAY_NAME);
+    var button = document.createElement("button").cloneNode(true);
+    var clone = button.cloneNode(true);
+    var renderingSpace = document.querySelector("#root");
+    for(var i = 0; i < ARRAY_NAME.length; i++){
+        clone.textContent = ARRAY_NAME[i];
+        renderingSpace.appendChild(clone.cloneNode(true));
+    }
+};
+_c = RenderProducts;
+var RenderProducts2 = function RenderProducts2(props) {
+    var el = props.el;
+    var img = props.img;
+    return Product = el.map(function(val, i) {
+        var convImg = img[i];
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
+                className: "product",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                        src: convImg
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        children: val
+                    })
+                ]
+            })
+        });
+    });
+};
+_c1 = RenderProducts2;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var _loop = function _loop(i) {
@@ -23590,7 +23628,11 @@ var addEvent = function addEvent() {
         elements[i].addEventListener("click", function() {
             switch(elements[i].textContent){
                 case "".concat(SUBCATS_NAME[1][0]):
-                    alert("it works hah");
+                    //RenderProducts(TEST_ARRAY)
+                    renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                        el: _Test.TEST_ARRAY,
+                        img: _Test.imgArr
+                    }), "product-holder animate__animated animate__zoomInDown"));
                     break;
                 case "".concat(SUBCATS_NAME[1][1]):
                     alert("testt");
@@ -23619,7 +23661,9 @@ var addEvent = function addEvent() {
             }
             switch(elements[i].textContent){
                 case "".concat(SUBCATS_NAME[2][0]):
-                    alert("hehe");
+                    renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                        el: _Test.TEST_ARRAY2
+                    }));
                     break;
                 case "".concat(SUBCATS_NAME[2][1]):
                     alert("er");
@@ -23642,63 +23686,12 @@ var ProductNav = function ProductNav() {
         var body = document.body;
         setActive(!isActive);
         if (isActive) {
-            body.style.overflow = 'hidden';
+            body.style.overflow = "hidden";
             body.style.overflowX = "hidden";
         } else {
-            body.style.overflow = 'auto';
-            body.style.overflowX = 'hidden';
+            body.style.overflow = "auto";
+            body.style.overflowX = "hidden";
         }
-    };
-    var buttonBuilder = function buttonBuilder(CAT_ARRAY) {
-        //Creates buttons, adds classes and text to them
-        var button = document.createElement("button").cloneNode(true);
-        var clone = button.cloneNode(true);
-        var holder = document.querySelector(".categories");
-        var isExisting = document.querySelector(".cat-btn"); //Adding details to button
-        clone.classList.add("cat-btn", "btn", "categories-button", "mb-2", "mx-auto", "text-white", "bg-dark"); //console.log(button)
-        console.log(clone);
-        if (holder.contains(isExisting)) {
-            console.log("it exists so I wont add more buttons");
-            return;
-        }
-        if (!holder.contains(isExisting)) {
-            for(var i = 0; i < _Test.TEST_CAT.length; i++){
-                clone.textContent = _Test.TEST_CAT[i];
-                holder.appendChild(clone.cloneNode(true));
-            } //for (let i = 0; i < CAT_ARRAY.length; i++) {
-            //  clone.textContent = CAT_ARRAY[i];
-            //  holder.appendChild(clone.cloneNode(true));
-            //}
-            return;
-        }
-    }; //Adds functionality to category buttons
-    var RenderFromCat = function RenderFromCat() {
-        var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-        var categories = document.querySelectorAll(".categories-button");
-        var _loop2 = function _loop2(i) {
-            categories[i].addEventListener("click", function() {
-                removeSubCat(); //removes all previous rendered subcategories
-                //adds function to specified category
-                switch(ARRAY[i]){
-                    //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
-                    //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
-                    //x now defines it's type - name, picture etc.
-                    case "".concat(ARRAY[0]):
-                        (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr); //renderTry(TEST_ARRAY);
-                        addEvent(document.querySelectorAll(".testing"));
-                        break;
-                    case "".concat(ARRAY[1]):
-                        //renderTry(TEST_ARRAY2);
-                        (0, _Test["default"])(SUBCATS_NAME[2], _Test.imgArr);
-                        addEvent(document.querySelectorAll(".testing"));
-                        break;
-                }
-            });
-        };
-        for(var i2 = 0; i2 < ARRAY.length; i2++)_loop2(i2);
-    };
-    var renderRoot = function renderRoot(renderElement) {
-        (0, _reactDom.render)(renderElement, document.querySelector("#root"));
     };
     return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
@@ -23710,8 +23703,8 @@ var ProductNav = function ProductNav() {
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-                            buttonBuilder(_Test.TEST_CAT);
-                            RenderFromCat(_Test.TEST_ARRAY, removeSubCat);
+                            (0, _ComponentBuilders["default"])(_Test.TEST_CAT);
+                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_ARRAY, removeSubCat);
                         },
                         children: "Categories"
                     }),
@@ -23756,7 +23749,7 @@ var ProductNav = function ProductNav() {
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                             id: "rootSubcategories",
-                            className: "bg-dark col-md categories-products mx-auto d-flex flex-row flex-wrap gap-2 p-2 "
+                            className: "bg-dark col-md rootSubcategories mx-auto d-flex flex-row flex-wrap gap-2 p-2 "
                         })
                     ]
                 })
@@ -23764,18 +23757,20 @@ var ProductNav = function ProductNav() {
         ]
     });
 };
-_c = ProductNav;
+_c2 = ProductNav;
 var _default = ProductNav;
 exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "ProductNav");
+var _c, _c1, _c2;
+$RefreshReg$(_c, "RenderProducts");
+$RefreshReg$(_c1, "RenderProducts2");
+$RefreshReg$(_c2, "ProductNav");
 
   $parcel$ReactRefreshHelpers$40ae.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./RenderScripts":"bNOSb","./ComponentBuilders":"aByAi"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23956,7 +23951,8 @@ var Newsletter = function Newsletter() {
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                 type: "submit",
-                                className: "flexb-30 border-none newsletter-submit bg-black text-white border-r5"
+                                className: "flexb-30 border-none newsletter-submit bg-black text-white border-r5",
+                                value: "Submit"
                             })
                         ]
                     })
@@ -24047,10 +24043,8 @@ var renderTry = function renderTry() {
         var clone = button.cloneNode(true);
         var IMAGE_PATH = ARRAY_IMG;
         var img = document.createElement('img');
-        clone.classList.add("minmax-test");
-        var renderPlacement = document.querySelector("#rootSubcategories"); //while (renderPlacement.firstChild) {
-        //  renderPlacement.firstChild.remove();
-        //}
+        clone.classList.add("subcategory");
+        var renderPlacement = document.querySelector("#rootSubcategories");
         for(var i = 0; i < ARRAY_NAME.length; i++){
             clone.textContent = ARRAY_NAME[i];
             clone.classList.add("testing");
@@ -24070,7 +24064,162 @@ exports["default"] = _default;
 var _c;
 $RefreshReg$(_c, "AfterLoad");
 
-},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"dmUe4":[function(require,module,exports) {
+},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"bNOSb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$8894.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+var _typeof = require("@babel/runtime/helpers/typeof");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.renderInSubRoot = exports["default"] = exports.RenderOnLoad = exports.RenderFromCat = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _Test = _interopRequireWildcard(require("./Test"));
+var _ProductsNav = require("./ProductsNav");
+var _reactDom = require("react-dom");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\RenderScripts.js", _this = void 0;
+function _getRequireWildcardCache(nodeInterop1) {
+    if (typeof WeakMap !== "function") return null;
+    var cacheBabelInterop = new WeakMap();
+    var cacheNodeInterop = new WeakMap();
+    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
+        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
+    })(nodeInterop1);
+}
+function _interopRequireWildcard(obj, nodeInterop) {
+    if (!nodeInterop && obj && obj.__esModule) return obj;
+    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
+        "default": obj
+    };
+    var cache = _getRequireWildcardCache(nodeInterop);
+    if (cache && cache.has(obj)) return cache.get(obj);
+    var newObj = {};
+    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
+    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
+        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
+        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
+        else newObj[key] = obj[key];
+    }
+    newObj["default"] = obj;
+    if (cache) cache.set(obj, newObj);
+    return newObj;
+}
+var renderInSubRoot = function renderInSubRoot(el, options) {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+        id: "subRoot",
+        className: options,
+        children: el
+    });
+};
+exports.renderInSubRoot = renderInSubRoot;
+var RenderSubCat = function RenderSubCat() {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "subcats",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
+                children: "TESTING"
+            })
+        })
+    });
+};
+_c = RenderSubCat;
+var productElement = function productElement() {
+    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var renderPlace = document.querySelector('#root');
+    var button = document.createElement("button").cloneNode(true);
+    var clone = button.cloneNode(true);
+    var renderPlacement = document.querySelector("#root");
+    for(var i = 0; i < ARRAY_NAME.length; i++){
+        clone.textContent = ARRAY_NAME[i];
+        clone.classList.add("testing");
+        renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
+    }
+};
+var RenderOnLoad = function RenderOnLoad() {
+    (0, _ProductsNav.removeSubCat)();
+    (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr);
+    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
+    console.log("RenderOnLoad in RenderScripts");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
+}; //Adds functionality to category buttons
+_c1 = RenderOnLoad;
+exports.RenderOnLoad = RenderOnLoad;
+var RenderFromCat = function RenderFromCat() {
+    var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var categories = document.querySelectorAll(".categories-button");
+    var _loop = function _loop(i) {
+        categories[i].addEventListener("click", function() {
+            (0, _ProductsNav.removeSubCat)(); //removes all previous rendered subcategories
+            //adds function to specified category
+            switch(ARRAY[i]){
+                //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
+                //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
+                //x now defines it's type - name, picture etc.
+                case "".concat(ARRAY[0]):
+                    (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr); //renderTry(TEST_ARRAY);
+                    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
+                    break;
+                case "".concat(ARRAY[1]):
+                    //renderTry(TEST_ARRAY2);
+                    (0, _Test["default"])(SUBCATS_NAME[2], _Test.imgArr);
+                    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
+                    break;
+            }
+        });
+    };
+    for(var i1 = 0; i1 < ARRAY.length; i1++)_loop(i1);
+};
+_c2 = RenderFromCat;
+exports.RenderFromCat = RenderFromCat;
+var _default = RenderSubCat;
+exports["default"] = _default;
+var _c, _c1, _c2;
+$RefreshReg$(_c, "RenderSubCat");
+$RefreshReg$(_c1, "RenderOnLoad");
+$RefreshReg$(_c2, "RenderFromCat");
+
+  $parcel$ReactRefreshHelpers$8894.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9"}],"aByAi":[function(require,module,exports) {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _Test = require("./Test");
+var buttonBuilder = function buttonBuilder(ARRAY_NAME) {
+    //Creates buttons, adds classes and text to them
+    var button = document.createElement("button").cloneNode(true);
+    var clone = button.cloneNode(true);
+    var holder = document.querySelector(".categories");
+    var isExisting = document.querySelector(".cat-btn"); //Adding details to button
+    clone.classList.add("cat-btn", "btn", "categories-button", "mb-2", "mx-auto", "text-white", "bg-dark"); //console.log(button)
+    console.log(clone);
+    if (holder.contains(isExisting)) {
+        console.log("it exists so I wont add more buttons");
+        return;
+    }
+    if (!holder.contains(isExisting)) {
+        for(var i = 0; i < ARRAY_NAME.length; i++){
+            clone.textContent = ARRAY_NAME[i];
+            holder.appendChild(clone.cloneNode(true));
+        }
+        return;
+    }
+};
+var _default = buttonBuilder;
+exports["default"] = _default;
+
+},{"./Test":"f2YDa"}],"dmUe4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _useBoolean = require("./useBoolean");
@@ -25498,92 +25647,6 @@ $RefreshReg$(_c, "MainFooter");
 },{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/shop_logo.svg":"ajTl4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajTl4":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "shop_logo.6e99bcd4.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"bNOSb":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8894.prelude(module);
-
-try {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = exports.RenderProducts = exports.RenderOnLoad = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _Test = _interopRequireWildcard(require("./Test"));
-var _ProductsNav = require("./ProductsNav");
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\RenderScripts.js", _this = void 0;
-function _getRequireWildcardCache(nodeInterop1) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
-        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop1);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
-        "default": obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {};
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-        else newObj[key] = obj[key];
-    }
-    newObj["default"] = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
-var RenderSubCat = function RenderSubCat() {
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "subcats",
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                children: "TESTING"
-            })
-        })
-    });
-};
-_c = RenderSubCat;
-var RenderProducts = function RenderProducts() {
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "products-section bg-black w-100 d-flex flex-wrap flex-row"
-        })
-    });
-};
-_c1 = RenderProducts;
-exports.RenderProducts = RenderProducts;
-var RenderOnLoad = function RenderOnLoad() {
-    (0, _ProductsNav.removeSubCat)();
-    (0, _Test["default"])(SUBCATS_NAME[1], _Test.imgArr);
-    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
-    console.log('RenderOnLoad in RenderScripts');
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
-};
-_c2 = RenderOnLoad;
-exports.RenderOnLoad = RenderOnLoad;
-var _default = RenderSubCat;
-exports["default"] = _default;
-var _c, _c1, _c2;
-$RefreshReg$(_c, "RenderSubCat");
-$RefreshReg$(_c1, "RenderProducts");
-$RefreshReg$(_c2, "RenderOnLoad");
-
-  $parcel$ReactRefreshHelpers$8894.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}]},["kn9T2","bhjii","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
+},{"./helpers/bundle-url":"lgJ39"}]},["kn9T2","bhjii","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
 
 //# sourceMappingURL=index.53beede5.js.map

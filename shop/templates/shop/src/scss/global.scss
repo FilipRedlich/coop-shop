@@ -1,6 +1,9 @@
-body{
+html{
+  scroll-behavior: smooth;
+}
+body {
   overflow-x: hidden;
-    scrollbar-color: $red $dark ;
+  scrollbar-color: $red $dark;
   scrollbar-width: thin;
 }
 ::-webkit-scrollbar {
