@@ -39,7 +39,7 @@ const productElement = (ARRAY_NAME = []) => {
 
 const RenderOnLoad = () => {
   removeSubCat();
-  renderTry(SUBCATS_NAME[1], imgArr);
+  renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   addEvent(document.querySelectorAll(".testing"));
   console.log("RenderOnLoad in RenderScripts");
   return <></>;
@@ -58,13 +58,13 @@ const RenderFromCat = (ARRAY = []) => {
         //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
         //x now defines it's type - name, picture etc.
         case `${ARRAY[0]}`:
-          renderTry(SUBCATS_NAME[1], imgArr);
+          renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
           //renderTry(TEST_ARRAY);
           addEvent(document.querySelectorAll(".testing"));
           break;
         case `${ARRAY[1]}`:
           //renderTry(TEST_ARRAY2);
-          renderTry(SUBCATS_NAME[2], imgArr);
+          renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
           addEvent(document.querySelectorAll(".testing"));
           break;
       }
