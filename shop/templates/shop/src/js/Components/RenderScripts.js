@@ -3,6 +3,7 @@ import renderTry, { imgArr, TEST_ARRAY } from "./Test";
 import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
+import RenderSubcat from "./Test";
 
 const renderInSubRoot = (el, options) => {
   return (
@@ -11,31 +12,6 @@ const renderInSubRoot = (el, options) => {
     </div>
   );
 };
-
-const RenderSubCat = () => {
-  return (
-    <>
-      <section className="subcats">
-        <h1>TESTING</h1>
-      </section>
-    </>
-  );
-};
-const productElement = (ARRAY_NAME = []) => {
-    const renderPlace = document.querySelector('#root');
-    var button = document.createElement("button").cloneNode(true);
-    var clone = button.cloneNode(true);
-
-    var renderPlacement = document.querySelector("#root");
-
-    for (let i = 0; i < ARRAY_NAME.length; i++) {
-      clone.textContent = ARRAY_NAME[i];
-      clone.classList.add("testing");
-      renderPlacement.appendChild(clone.cloneNode(true));
-      //console.log(clone.textContent)
-    }
-}
-
 
 const RenderOnLoad = () => {
   removeSubCat();
@@ -58,7 +34,9 @@ const RenderFromCat = (ARRAY = []) => {
         //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
         //x now defines it's type - name, picture etc.
         case `${ARRAY[0]}`:
-          renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+          //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+          render(<RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />, document.querySelector('#rootSubcategories'))
+          
           //renderTry(TEST_ARRAY);
           addEvent(document.querySelectorAll(".testing"));
           break;
@@ -73,4 +51,4 @@ const RenderFromCat = (ARRAY = []) => {
 };
 
 export { RenderOnLoad, RenderFromCat, renderInSubRoot };
-export default RenderSubCat;
+

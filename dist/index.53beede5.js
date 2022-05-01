@@ -23603,7 +23603,7 @@ _c = RenderProducts;
 var RenderProducts2 = function RenderProducts2(props) {
     var el = props.el;
     var img = props.img;
-    return Product = el.map(function(val, i) {
+    return el.map(function(val, i) {
         var convImg = img[i];
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
@@ -23720,7 +23720,7 @@ var ProductNav = function ProductNav() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
                             (0, _ComponentBuilders["default"])(arrayOfCategories);
-                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories, removeSubCat);
+                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_ARRAY, removeSubCat);
                         },
                         children: "Categories"
                     }),
@@ -23992,14 +23992,22 @@ $RefreshReg$(_c, "Newsletter");
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
 
 },{"./helpers/bundle-url":"lgJ39"}],"f2YDa":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$f245 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$f245.prelude(module);
+
+try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.imgArr = exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+exports.renderTry = exports.imgArr = exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
 var _reactDom = require("react-dom");
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Test.js", _this = void 0;
 var imgArr = [
     _undraw_dev_productivity_re_fylf["default"],
     _undraw_dev_productivity_re_fylf["default"]
@@ -24074,13 +24082,41 @@ var renderTry = function renderTry() {
     };
     addContent();
 };
-renderTry();
-var _default = renderTry;
+exports.renderTry = renderTry;
+var RenderSubcat = function RenderSubcat(props) {
+    var el = props.el;
+    var img = props.img;
+    return el.map(function(val, i) {
+        var convImg = img[i];
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
+                type: "button",
+                className: "subcategory",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                        src: convImg
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        children: val
+                    })
+                ]
+            })
+        });
+    });
+};
+_c1 = RenderSubcat;
+var _default = RenderSubcat;
 exports["default"] = _default;
-var _c;
+var _c, _c1;
 $RefreshReg$(_c, "AfterLoad");
+$RefreshReg$(_c1, "RenderSubcat");
 
-},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"bNOSb":[function(require,module,exports) {
+  $parcel$ReactRefreshHelpers$f245.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNOSb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24093,7 +24129,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.renderInSubRoot = exports["default"] = exports.RenderOnLoad = exports.RenderFromCat = void 0;
+exports.renderInSubRoot = exports.RenderOnLoad = exports.RenderFromCat = void 0;
 var _react = _interopRequireDefault(require("react"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _ProductsNav = require("./ProductsNav");
@@ -24134,29 +24170,6 @@ var renderInSubRoot = function renderInSubRoot(el, options) {
     });
 };
 exports.renderInSubRoot = renderInSubRoot;
-var RenderSubCat = function RenderSubCat() {
-    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "subcats",
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                children: "TESTING"
-            })
-        })
-    });
-};
-_c = RenderSubCat;
-var productElement = function productElement() {
-    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var renderPlace = document.querySelector('#root');
-    var button = document.createElement("button").cloneNode(true);
-    var clone = button.cloneNode(true);
-    var renderPlacement = document.querySelector("#root");
-    for(var i = 0; i < ARRAY_NAME.length; i++){
-        clone.textContent = ARRAY_NAME[i];
-        clone.classList.add("testing");
-        renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
-    }
-};
 var RenderOnLoad = function RenderOnLoad() {
     (0, _ProductsNav.removeSubCat)();
     (0, _Test["default"])(SUBCATS_NAME[1], SUBCATS_IMG[0]);
@@ -24164,7 +24177,7 @@ var RenderOnLoad = function RenderOnLoad() {
     console.log("RenderOnLoad in RenderScripts");
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
 }; //Adds functionality to category buttons
-_c1 = RenderOnLoad;
+_c = RenderOnLoad;
 exports.RenderOnLoad = RenderOnLoad;
 var RenderFromCat = function RenderFromCat() {
     var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -24178,7 +24191,11 @@ var RenderFromCat = function RenderFromCat() {
                 //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
                 //x now defines it's type - name, picture etc.
                 case "".concat(ARRAY[0]):
-                    (0, _Test["default"])(SUBCATS_NAME[1], SUBCATS_IMG[0]); //renderTry(TEST_ARRAY);
+                    //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Test["default"], {
+                        el: SUBCATS_NAME[1],
+                        img: SUBCATS_IMG[0]
+                    }), document.querySelector('#rootSubcategories')); //renderTry(TEST_ARRAY);
                     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
                     break;
                 case "".concat(ARRAY[1]):
@@ -24191,14 +24208,11 @@ var RenderFromCat = function RenderFromCat() {
     };
     for(var i1 = 0; i1 < ARRAY.length; i1++)_loop(i1);
 };
-_c2 = RenderFromCat;
+_c1 = RenderFromCat;
 exports.RenderFromCat = RenderFromCat;
-var _default = RenderSubCat;
-exports["default"] = _default;
-var _c, _c1, _c2;
-$RefreshReg$(_c, "RenderSubCat");
-$RefreshReg$(_c1, "RenderOnLoad");
-$RefreshReg$(_c2, "RenderFromCat");
+var _c, _c1;
+$RefreshReg$(_c, "RenderOnLoad");
+$RefreshReg$(_c1, "RenderFromCat");
 
   $parcel$ReactRefreshHelpers$8894.postlude(module);
 } finally {
