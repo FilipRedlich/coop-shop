@@ -32,15 +32,15 @@
     (" {% endfor %}");
     console.log(arrayOfCategories);
      const username = '{{request.session.email}}';
-     var SUBCAT_1_IMG = '{% getSubcatsFromCat 2 3 %}'.split(';')
-     var SUBCAT_2_IMG = '{% getSubcatsFromCat 3 3 %}'.split(';')
+     var SUBCAT_1_IMG = '{% getSubcatsFromCat 2 2 %}'.split(';')
+     var SUBCAT_2_IMG = '{% getSubcatsFromCat 3 2 %}'.split(';')
     
      var SUBCATS_NAME = ["{% getSubcatsFromCat 3 1 %}".split(";"),"{% getSubcatsFromCat 4 1 %}".split(";"),
                         "{% getSubcatsFromCat 5 1 %}".split(";"),"{% getSubcatsFromCat 6 1 %}".split(";"),
                         "{% getSubcatsFromCat 7 1 %}".split(";"),"{% getSubcatsFromCat 8 1 %}".split(";"),
                         "{% getSubcatsFromCat 9 1 %}".split(";"),"{% getSubcatsFromCat 10 1 %}".split(";"),
                         "{% getSubcatsFromCat 11 1 %}".split(";"),"{% getSubcatsFromCat 12 1 %}".split(";")];
-     var SUBCATS_IMG = ['{% getSubcatsFromCat 2 3 %}'.split(';'), '{% getSubcatsFromCat 3 3 %}'.split(';')];
+     var SUBCATS_IMG = ['{% getSubcatsFromCat 2 2 %}'.split(';'), '{% getSubcatsFromCat 3 2 %}'.split(';')];
      var PRODUCTS_NAME = []
      var ppp = ['{% getProductsFromSubcat 1 %}'.split('***'),'{% getProductsFromSubcat 2 %}'.split('***'),
      '{% getProductsFromSubcat 3 %}'.split('***'),'{% getProductsFromSubcat 4 %}'.split('***'),

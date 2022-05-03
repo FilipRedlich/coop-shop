@@ -11,9 +11,8 @@ const renderInSubRoot = (el, options) => {
     </div>
   );
 };
-
+const SUBCATS_IMG1 = imgArr;
 const RenderOnLoad = () => {
-  removeSubCat();
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
     <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />,
@@ -31,7 +30,7 @@ const RenderSubcat = (props) => {
     const convImg = img[i];
     return (
       <>
-        <button type="button" className="subcategory">
+        <button type="button" className="subcategory testing">
           <img src={convImg} />
           <p>{val}</p>
         </button>
@@ -45,7 +44,6 @@ const RenderFromCat = (ARRAY = []) => {
 
   for (let i = 0; i < ARRAY.length; i++) {
     categories[i].addEventListener("click", () => {
-      removeSubCat(); //removes all previous rendered subcategories
       //adds function to specified category
       switch (ARRAY[i]) {
         //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
@@ -53,18 +51,18 @@ const RenderFromCat = (ARRAY = []) => {
         //x now defines it's type - name, picture etc.
         case `${ARRAY[0]}`:
           //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
-          render(
-            <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />,
-            document.querySelector("#rootSubcategories")
-          );
+      render(
+        <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG1[0]} />,
+        document.querySelector("#rootSubcategories")
+      );
 
           //renderTry(TEST_ARRAY);
-          addEvent(document.querySelectorAll(".testing"));
+         // addEvent(document.querySelectorAll(".testing"));
           break;
         case `${ARRAY[1]}`:
           //renderTry(TEST_ARRAY2);
           render(
-            <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[0]} />,
+            <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
             document.querySelector("#rootSubcategories")
           );
           // renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);

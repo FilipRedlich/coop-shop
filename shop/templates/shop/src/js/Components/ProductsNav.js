@@ -12,18 +12,21 @@ import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr } from "./Test";
 import { RenderFromCat, renderInSubRoot } from "./RenderScripts";
 import buttonBuilder from "./ComponentBuilders";
 
-const removeSubCat = () => {
-  const holder = document.querySelector("#rootSubcategories");
-  var doesExist = document.querySelectorAll(".testing");
-
-  if (holder.contains(doesExist[0])) {
-    for (let i = 0; i < doesExist.length; i++) {
-      doesExist[i].remove();
-    }
-  }
-};
-const renderRoot = (renderElement) => {
-  render(renderElement, document.querySelector("#root"));
+//const removeSubCat = () => {
+//  const holder = document.querySelector("#rootSubcategories");
+//  var doesExist = document.querySelectorAll(".testing");
+//
+//  if (holder.contains(doesExist[0])) {
+//    for (let i = 0; i < doesExist.length; i++) {
+//      doesExist[i].remove();
+//    }
+//  }
+//};
+const renderRoot = (
+  renderElement,
+  renderPlace = document.querySelector("#root")
+) => {
+  render(renderElement, renderPlace);
 };
 const RenderProducts = (ARRAY_NAME = []) => {
   console.log(ARRAY_NAME);
@@ -36,14 +39,27 @@ const RenderProducts = (ARRAY_NAME = []) => {
     renderingSpace.appendChild(clone.cloneNode(true));
   }
 };
+const ButtonBuilder2 = (props) => {
+  const catBtn = props.el;
+
+  return catBtn.map((el) => {
+    return (
+      <>
+        <button className="cat-btn btn categories-button mb-2 mx-auto text-white bg-dark">
+          {el}
+        </button>
+      </>
+    );
+  });
+};
 
 const RenderProducts2 = (props) => {
   const el = props.el;
   const img = props.img;
-   
+
   return el.map((val, i) => {
     const convImg = img[i];
-    
+    console.log("workewd");
     return (
       <>
         <form action="/addProductToBasket/" method="post">
@@ -70,7 +86,7 @@ const addEvent = (elements = []) => {
               <RenderProducts2 el={TEST_ARRAY} img={imgArr} />,
               "product-holder animate__animated animate__zoomInDown"
             )
-          );
+          );//renders products
           break;
         case `${SUBCATS_NAME[1][1]}`:
           alert("testt");
@@ -138,9 +154,15 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-            buttonBuilder(arrayOfCategories);
-            RenderFromCat(arrayOfCategories, removeSubCat);
+            addEvent(document.querySelectorAll(".cat-btn"), TEST_CAT); //adds event to subcategory
+            render(
+              <ButtonBuilder2 el={TEST_CAT} />,
+              document.querySelector("#categories")
+            );//creates category buttons
+
+            //buttonBuilder2(TEST_CAT)
+            //buttonBuilder(TEST_CAT);
+            RenderFromCat(TEST_ARRAY); //elements that are rendered after clicking subcategory
           }}
         >
           Categories
@@ -202,5 +224,5 @@ const ProductNav = () => {
     </>
   );
 };
-export { removeSubCat, addEvent, RenderProducts2 };
+export { addEvent, RenderProducts2 };
 export default ProductNav;

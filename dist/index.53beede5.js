@@ -23540,7 +23540,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.removeSubCat = exports["default"] = exports.addEvent = exports.RenderProducts2 = void 0;
+exports["default"] = exports.addEvent = exports.RenderProducts2 = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
@@ -23579,14 +23579,19 @@ function _interopRequireWildcard(obj, nodeInterop) {
     if (cache) cache.set(obj, newObj);
     return newObj;
 }
-var removeSubCat = function removeSubCat() {
-    var holder = document.querySelector("#rootSubcategories");
-    var doesExist = document.querySelectorAll(".testing");
-    if (holder.contains(doesExist[0])) for(var i = 0; i < doesExist.length; i++)doesExist[i].remove();
-};
-exports.removeSubCat = removeSubCat;
+//const removeSubCat = () => {
+//  const holder = document.querySelector("#rootSubcategories");
+//  var doesExist = document.querySelectorAll(".testing");
+//
+//  if (holder.contains(doesExist[0])) {
+//    for (let i = 0; i < doesExist.length; i++) {
+//      doesExist[i].remove();
+//    }
+//  }
+//};
 var renderRoot = function renderRoot(renderElement) {
-    (0, _reactDom.render)(renderElement, document.querySelector("#root"));
+    var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.querySelector("#root");
+    (0, _reactDom.render)(renderElement, renderPlace);
 };
 var RenderProducts = function RenderProducts() {
     var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -23600,11 +23605,24 @@ var RenderProducts = function RenderProducts() {
     }
 };
 _c = RenderProducts;
+var ButtonBuilder2 = function ButtonBuilder2(props) {
+    var catBtn = props.el;
+    return catBtn.map(function(el) {
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                className: "cat-btn btn categories-button mb-2 mx-auto text-white bg-dark",
+                children: el
+            })
+        });
+    });
+};
+_c1 = ButtonBuilder2;
 var RenderProducts2 = function RenderProducts2(props) {
     var el = props.el;
     var img = props.img;
     return el.map(function(val, i) {
         var convImg = img[i];
+        console.log("workewd");
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                 action: "/addProductToBasket/",
@@ -23636,7 +23654,7 @@ var RenderProducts2 = function RenderProducts2(props) {
         });
     });
 };
-_c1 = RenderProducts2;
+_c2 = RenderProducts2;
 exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
@@ -23649,7 +23667,7 @@ var addEvent = function addEvent() {
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
                         el: _Test.TEST_ARRAY,
                         img: _Test.imgArr
-                    }), "product-holder animate__animated animate__zoomInDown"));
+                    }), "product-holder animate__animated animate__zoomInDown")); //renders products
                     break;
                 case "".concat(SUBCATS_NAME[1][1]):
                     alert("testt");
@@ -23719,9 +23737,13 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-                            (0, _ComponentBuilders["default"])(arrayOfCategories);
-                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories, removeSubCat);
+                            addEvent(document.querySelectorAll(".cat-btn"), _Test.TEST_CAT); //adds event to subcategory
+                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonBuilder2, {
+                                el: _Test.TEST_CAT
+                            }), document.querySelector("#categories")); //creates category buttons
+                            //buttonBuilder2(TEST_CAT)
+                            //buttonBuilder(TEST_CAT);
+                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_ARRAY); //elements that are rendered after clicking subcategory
                         },
                         children: "Categories"
                     }),
@@ -23774,13 +23796,14 @@ var ProductNav = function ProductNav() {
         ]
     });
 };
-_c2 = ProductNav;
+_c3 = ProductNav;
 var _default = ProductNav;
 exports["default"] = _default;
-var _c, _c1, _c2;
+var _c, _c1, _c2, _c3;
 $RefreshReg$(_c, "RenderProducts");
-$RefreshReg$(_c1, "RenderProducts2");
-$RefreshReg$(_c2, "ProductNav");
+$RefreshReg$(_c1, "ButtonBuilder2");
+$RefreshReg$(_c2, "RenderProducts2");
+$RefreshReg$(_c3, "ProductNav");
 
   $parcel$ReactRefreshHelpers$40ae.postlude(module);
 } finally {
@@ -24133,8 +24156,9 @@ var renderInSubRoot = function renderInSubRoot(el, options) {
     });
 };
 exports.renderInSubRoot = renderInSubRoot;
+var SUBCATS_IMG1 = _Test.imgArr;
 var RenderOnLoad = function RenderOnLoad() {
-    (0, _ProductsNav.removeSubCat)(); //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+    //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
         el: SUBCATS_NAME[1],
         img: SUBCATS_IMG[0]
@@ -24153,7 +24177,7 @@ var RenderSubcat = function RenderSubcat(props) {
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
                 type: "button",
-                className: "subcategory",
+                className: "subcategory testing",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
                         src: convImg
@@ -24172,7 +24196,6 @@ var RenderFromCat = function RenderFromCat() {
     var categories = document.querySelectorAll(".categories-button");
     var _loop = function _loop(i) {
         categories[i].addEventListener("click", function() {
-            (0, _ProductsNav.removeSubCat)(); //removes all previous rendered subcategories
             //adds function to specified category
             switch(ARRAY[i]){
                 //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
@@ -24182,15 +24205,14 @@ var RenderFromCat = function RenderFromCat() {
                     //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[1],
-                        img: SUBCATS_IMG[0]
+                        img: SUBCATS_IMG1[0]
                     }), document.querySelector("#rootSubcategories")); //renderTry(TEST_ARRAY);
-                    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
                     break;
                 case "".concat(ARRAY[1]):
                     //renderTry(TEST_ARRAY2);
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[2],
-                        img: SUBCATS_IMG[0]
+                        img: SUBCATS_IMG1[0]
                     }), document.querySelector("#rootSubcategories")); // renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
                     break;
             }
