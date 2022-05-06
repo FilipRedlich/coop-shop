@@ -178,3 +178,12 @@ def addProductToBasket(request):
     Basket.objects.create(userID_id=request.session['userpk'],productID_id=productID)
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
+
+#function for deleting products to active user basket
+def deleteProductToBasket(request):
+    #getting user id to identify user
+    productID = request.POST['id']
+    #query to add product to given user's basket
+    Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID).delete()
+    #redirect to index after end of function
+    return HttpResponseRedirect(reverse('shop:index'))
