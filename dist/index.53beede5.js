@@ -22051,7 +22051,7 @@ $RefreshReg$(_c, "MainNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","./Cart":"3dEWN","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./MainContent":"1FSJk"}],"fZGj2":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","./Cart":"3dEWN","./MainContent":"1FSJk","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fZGj2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b4d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23152,119 +23152,81 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = void 0;
+exports["default"] = exports.HowManyItems = void 0;
+var _reactDom = require("react-dom");
 var _Images = _interopRequireDefault(require("./Images"));
+var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Cart.js", _this = void 0;
+var TotalPrice = function TotalPrice(props) {
+    var CurrentPrice = props.price;
+    var convertedPrice = 0; //Converted price to integer
+    CurrentPrice.map(function(x) {
+        convertedPrice += parseInt(x[5]);
+    });
+    return convertedPrice + '$';
+};
+_c = TotalPrice;
+var HowManyItems = function HowManyItems(props) {
+    var items = props.el;
+    return items.map(function(x) {
+        return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+            className: "cart-item d-flex gap-3 flex-row flex-wrap justify-content-between px-2 w-100 bg-dark rounded m-auto",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "d-flex flexb-50 gap-3 flex-row flex-wrap",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                            src: x[2],
+                            className: "cart-img"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
+                            className: "my-auto item-name",
+                            children: x[1]
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                            "class": "d-flex flex-column justify-content-center",
+                            children: [
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                                    className: "",
+                                    children: "".concat(x[5], "$")
+                                }),
+                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                    children: "In stock: ".concat(x[4])
+                                })
+                            ]
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                            className: " btn text-white bg-danger remove-item my-auto",
+                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                                "class": "bi bi-trash"
+                            })
+                        })
+                    ]
+                })
+            ]
+        });
+    });
+};
+_c1 = HowManyItems;
+exports.HowManyItems = HowManyItems;
 var Cart = function Cart() {
     return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
             id: "cart",
             className: "cart text-white d-flex flex-row flex-wrap gap-2 p-2 animate__animated animate__bounceIn",
             children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    "class": "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                    className: "d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                            src: _Images["default"][0].src,
-                                            className: "cart-img"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                                            className: "my-auto",
-                                            children: "Item Name"
-                                        })
-                                    ]
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                    className: "d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
-                                            className: "my-auto item-price",
-                                            children: "1222$"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                            className: " btn text-white bg-danger remove-item my-auto",
-                                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
-                                                "class": "bi bi-trash"
-                                            })
-                                        })
-                                    ]
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                    className: "d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                            src: _Images["default"][0].src,
-                                            className: "cart-img"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                                            className: "my-auto",
-                                            children: "Item Name"
-                                        })
-                                    ]
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                    className: "d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
-                                            className: "my-auto item-price",
-                                            children: "1222$"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                            className: " btn text-white bg-danger remove-item my-auto",
-                                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
-                                                "class": "bi bi-trash"
-                                            })
-                                        })
-                                    ]
-                                })
-                            ]
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                    className: "d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                            src: _Images["default"][0].src,
-                                            className: "cart-img"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                                            className: "my-auto",
-                                            children: "Item Name"
-                                        })
-                                    ]
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                                    className: "d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
-                                    children: [
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
-                                            className: "my-auto item-price",
-                                            children: "1222$"
-                                        }),
-                                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                            className: " btn text-white bg-danger remove-item my-auto",
-                                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
-                                                "class": "bi bi-trash"
-                                            })
-                                        })
-                                    ]
-                                })
-                            ]
-                        })
-                    ]
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    id: "card-items",
+                    className: "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(HowManyItems, {
+                        el: _Test.cartContentsTest
+                    })
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                     className: "checkout m-auto bg-transparent-custom rounded",
@@ -23279,7 +23241,9 @@ var Cart = function Cart() {
                                         children: "Subtotal:"
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
-                                        children: "12222$"
+                                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(TotalPrice, {
+                                            price: _Test.cartContentsTest
+                                        })
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
                                         className: "text-muted",
@@ -23299,18 +23263,20 @@ var Cart = function Cart() {
         })
     });
 };
-_c = Cart;
+_c2 = Cart;
 var _default = Cart;
 exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "Cart");
+var _c, _c1, _c2;
+$RefreshReg$(_c, "TotalPrice");
+$RefreshReg$(_c1, "HowManyItems");
+$RefreshReg$(_c2, "Cart");
 
   $parcel$ReactRefreshHelpers$6d0e.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Images":"hzj6c","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hzj6c":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react-dom":"j6uA9","./Images":"hzj6c","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"hzj6c":[function(require,module,exports) {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
@@ -23364,7 +23330,119 @@ exports.getBundleURL = getBundleURLCached;
 exports.getBaseURL = getBaseURL;
 exports.getOrigin = getOrigin;
 
-},{}],"1FSJk":[function(require,module,exports) {
+},{}],"f2YDa":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.renderTry = exports.imgArr = exports.cartContentsTest = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+var _reactDom = require("react-dom");
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var imgArr = [
+    _undraw_dev_productivity_re_fylf["default"],
+    _undraw_dev_productivity_re_fylf["default"]
+];
+exports.imgArr = imgArr;
+var TEST_CAT = [
+    "cat1",
+    "cat2",
+    "cat3"
+];
+exports.TEST_CAT = TEST_CAT;
+var TEST_ARRAY = [
+    "Test Element num.1",
+    "Test element num.2",
+    "Test element num.3",
+    "Test element num.4",
+    'dsdsdsd',
+    'fdhgdhdsh',
+    'fdfdfdfdfd',
+    'ffdsfsfsf',
+    'fdfdfdfdf',
+    'hgahvb',
+    'fdhgdhdsh',
+    'fdfdfdfdfd',
+    'ffdsfsfsf',
+    'fdfdfdfdf',
+    'fdhgdhdsh',
+    'fdfdfdfdfd',
+    'ffdsfsfsf',
+    'fdfdfdfdf'
+];
+exports.TEST_ARRAY = TEST_ARRAY;
+var TEST_ARRAY2 = [
+    "test1",
+    "test2",
+    "test3",
+    "test4"
+];
+exports.TEST_ARRAY2 = TEST_ARRAY2;
+var cartContentsTest = [
+    [
+        "5",
+        "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+        imgArr[0],
+        "10",
+        "4",
+        "270.0",
+        "1.0",
+        "3.0",
+        "False"
+    ],
+    [
+        "7",
+        "Dysk SSD Crucial BX200 SATA III",
+        imgArr[0],
+        "10",
+        "3",
+        "270.0",
+        "1.0",
+        "3.0",
+        "False"
+    ]
+];
+exports.cartContentsTest = cartContentsTest;
+var AfterLoad = function AfterLoad(element) {
+    var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
+    setTimeout(function() {
+        console.log(element, renderPlace);
+        (0, _reactDom.render)(element, renderPlace);
+    }, time);
+    console.log('cwelskop');
+    return;
+};
+_c = AfterLoad;
+exports.AfterLoad = AfterLoad;
+var renderTry = function renderTry() {
+    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var ARRAY_IMG = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var addContent = function addContent() {
+        var button = document.createElement("button").cloneNode(true);
+        var clone = button.cloneNode(true);
+        var IMAGE_PATH = ARRAY_IMG;
+        var img = document.createElement('img');
+        clone.classList.add("subcategory");
+        var renderPlacement = document.querySelector("#rootSubcategories");
+        for(var i = 0; i < ARRAY_NAME.length; i++){
+            clone.textContent = ARRAY_NAME[i];
+            clone.classList.add("testing");
+            img.setAttribute('src', ARRAY_IMG[0]);
+            console.log(ARRAY_IMG[0], 'pojebie mnie');
+            clone.appendChild(img.cloneNode('true'));
+            renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
+        }
+        console.log("pds");
+        console.log("fefee");
+    };
+    addContent();
+};
+exports.renderTry = renderTry;
+var _c;
+$RefreshReg$(_c, "AfterLoad");
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react-dom":"j6uA9","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23460,7 +23538,7 @@ $RefreshReg$(_c, "MainContent");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Carousel":"cHE8n","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"cHE8n":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Carousel":"cHE8n","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cHE8n":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$22fc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23810,7 +23888,7 @@ $RefreshReg$(_c3, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./RenderScripts":"bNOSb","./ComponentBuilders":"aByAi"}],"9GTDe":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","./RenderScripts":"bNOSb","./ComponentBuilders":"aByAi","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24015,94 +24093,7 @@ $RefreshReg$(_c, "Newsletter");
 },{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_envelope_re_f5j4.svg":"3Krtf","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3Krtf":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"f2YDa":[function(require,module,exports) {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports.renderTry = exports.imgArr = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
-var _reactDom = require("react-dom");
-var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
-var imgArr = [
-    _undraw_dev_productivity_re_fylf["default"],
-    _undraw_dev_productivity_re_fylf["default"]
-];
-exports.imgArr = imgArr;
-var TEST_CAT = [
-    "cat1",
-    "cat2",
-    "cat3"
-];
-exports.TEST_CAT = TEST_CAT;
-var TEST_ARRAY = [
-    "Test Element num.1",
-    "Test element num.2",
-    "Test element num.3",
-    "Test element num.4",
-    'dsdsdsd',
-    'fdhgdhdsh',
-    'fdfdfdfdfd',
-    'ffdsfsfsf',
-    'fdfdfdfdf',
-    'hgahvb',
-    'fdhgdhdsh',
-    'fdfdfdfdfd',
-    'ffdsfsfsf',
-    'fdfdfdfdf',
-    'fdhgdhdsh',
-    'fdfdfdfdfd',
-    'ffdsfsfsf',
-    'fdfdfdfdf'
-];
-exports.TEST_ARRAY = TEST_ARRAY;
-var TEST_ARRAY2 = [
-    "test1",
-    "test2",
-    "test3",
-    "test4"
-];
-exports.TEST_ARRAY2 = TEST_ARRAY2;
-var AfterLoad = function AfterLoad(element) {
-    var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-    var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
-    setTimeout(function() {
-        console.log(element, renderPlace);
-        (0, _reactDom.render)(element, renderPlace);
-    }, time);
-    console.log('cwelskop');
-    return;
-};
-_c = AfterLoad;
-exports.AfterLoad = AfterLoad;
-var renderTry = function renderTry() {
-    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var ARRAY_IMG = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    var addContent = function addContent() {
-        var button = document.createElement("button").cloneNode(true);
-        var clone = button.cloneNode(true);
-        var IMAGE_PATH = ARRAY_IMG;
-        var img = document.createElement('img');
-        clone.classList.add("subcategory");
-        var renderPlacement = document.querySelector("#rootSubcategories");
-        for(var i = 0; i < ARRAY_NAME.length; i++){
-            clone.textContent = ARRAY_NAME[i];
-            clone.classList.add("testing");
-            img.setAttribute('src', ARRAY_IMG[0]);
-            console.log(ARRAY_IMG[0], 'pojebie mnie');
-            clone.appendChild(img.cloneNode('true'));
-            renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
-        }
-        console.log("pds");
-        console.log("fefee");
-    };
-    addContent();
-};
-exports.renderTry = renderTry;
-var _c;
-$RefreshReg$(_c, "AfterLoad");
-
-},{"react-dom":"j6uA9","@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"bNOSb":[function(require,module,exports) {
+},{"./helpers/bundle-url":"lgJ39"}],"bNOSb":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24232,7 +24223,7 @@ $RefreshReg$(_c2, "RenderFromCat");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react-dom":"j6uA9"}],"aByAi":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aByAi":[function(require,module,exports) {
 "use strict";
 Object.defineProperty(exports, "__esModule", {
     value: true
@@ -25657,18 +25648,6 @@ var MainFooter = function MainFooter() {
                                 })
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {})
-                        ]
-                    }),
-                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "social-bubble",
-                        children: [
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                                className: "text-uppercase",
-                                children: "Socials"
-                            }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
-                                className: "bi bi-facebook"
-                            })
                         ]
                     })
                 ]

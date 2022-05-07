@@ -53,13 +53,7 @@
         y.setAttribute("action", "/register/");
       });
 
-      //get image from db and create img element to display
-      var picture = '{% outputSubcat 5 "picture" %}'
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
 
-      console.log(picture);
-      console.log(picture[0]);
       var img = document.createElement("img");
       img.src = picture[0];
       img.height = 200;

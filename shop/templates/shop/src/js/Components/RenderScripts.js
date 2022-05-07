@@ -4,6 +4,10 @@ import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
 import { RenderProducts2 } from "./ProductsNav";
+
+
+
+
 const renderInSubRoot = (el, options) => {
   return (
     <div id="subRoot" className={options}>
@@ -12,6 +16,10 @@ const renderInSubRoot = (el, options) => {
   );
 };
 const SUBCATS_IMG1 = imgArr;
+
+
+
+
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
@@ -38,6 +46,8 @@ const RenderSubcat = (props) => {
     );
   });
 };
+
+
 //Adds functionality to category buttons
 const RenderFromCat = (ARRAY = []) => {
   const categories = document.querySelectorAll(".categories-button");

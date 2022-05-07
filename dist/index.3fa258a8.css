@@ -20628,13 +20628,9 @@ textarea.form-control-lg {
   max-height: 10rem;
 }
 
-.cart .cart-items .cart-item .item-price:before {
-  content: "Price:";
-  color: gray;
-  font-size: 1.2rem;
-  font-weight: 300;
-  position: absolute;
-  inset: 1.5rem 4.5rem 0 0;
+.cart .cart-items .cart-item .item-name {
+  text-overflow: ellipsis;
+  overflow: hidden;
 }
 
 .cart .cart-items .cart-item .remove-item {

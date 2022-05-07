@@ -1,80 +1,104 @@
 {% load static %} {% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
-
-<head>
-  <meta charset="utf-8" />
-  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="E-commerce website" />
-  <title>E-commerce</title>
-  <link
+  <head>
+    <meta charset="utf-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="description" content="E-commerce website" />
+    <title>E-commerce</title>
+    <link
       rel="icon shortcut"
       href="./static/shop/shop_logo.3f953129.svg"
       type="image/x-icon"
     />
-  <link rel="stylesheet" href="./static/shop/index.9ad747b1.css" />
-  <script src="./static/shop/index.135eeadb.js" type="module" defer></script>
-</head>
+    <link rel="stylesheet" href="./static/shop/index.9ad747b1.css" />
+    <script src="./static/shop/index.135eeadb.js" type="module" defer></script>
+  </head>
 
-<body class="bg-dark">
-  <script>
-    const CSRF_TOKEN = "{{ csrf_token }}";
-    var pushedElement;
-    var arrayOfCategories = [];
-    ("{% for cat in categories %}");
-    pushedElement = "{{cat.1}}";
-    //console.log('{{ cat.1 }}')
-    console.log(pushedElement);
+  <body class="bg-dark">
+    <script>
+      const CSRF_TOKEN = "{{ csrf_token }}";
+      var pushedElement;
+      var arrayOfCategories = [];
+      ("{% for cat in categories %}");
+      pushedElement = "{{cat.1}}";
+      //console.log('{{ cat.1 }}')
+      console.log(pushedElement);
 
-    arrayOfCategories.push(pushedElement);
+      arrayOfCategories.push(pushedElement);
 
-    (" {% endfor %}");
-    console.log(arrayOfCategories);
-     const username = '{{request.session.email}}';
-     var SUBCAT_1_IMG = '{% getSubcatsFromCat 2 2 %}'.split(';')
-     var SUBCAT_2_IMG = '{% getSubcatsFromCat 3 2 %}'.split(';')
-    
-     var SUBCATS_NAME = ["{% getSubcatsFromCat 3 1 %}".split(";"),"{% getSubcatsFromCat 4 1 %}".split(";"),
-                        "{% getSubcatsFromCat 5 1 %}".split(";"),"{% getSubcatsFromCat 6 1 %}".split(";"),
-                        "{% getSubcatsFromCat 7 1 %}".split(";"),"{% getSubcatsFromCat 8 1 %}".split(";"),
-                        "{% getSubcatsFromCat 9 1 %}".split(";"),"{% getSubcatsFromCat 10 1 %}".split(";"),
-                        "{% getSubcatsFromCat 11 1 %}".split(";"),"{% getSubcatsFromCat 12 1 %}".split(";")];
-     var SUBCATS_IMG = ['{% getSubcatsFromCat 2 2 %}'.split(';'), '{% getSubcatsFromCat 3 2 %}'.split(';')];
-     var PRODUCTS_NAME = []
-     var ppp = ['{% getProductsFromSubcat 1 %}'.split('***'),'{% getProductsFromSubcat 2 %}'.split('***'),
-     '{% getProductsFromSubcat 3 %}'.split('***'),'{% getProductsFromSubcat 4 %}'.split('***'),
-     '{% getProductsFromSubcat 5 %}'.split('***'),'{% getProductsFromSubcat 6 %}'.split('***'),
-     '{% getProductsFromSubcat 7 %}'.split('***'),'{% getProductsFromSubcat 8 %}'.split('***'),
-     '{% getProductsFromSubcat 9 %}'.split('***'),'{% getProductsFromSubcat 10 %}'.split('***'),
-     '{% getProductsFromSubcat 11 %}'.split('***'),'{% getProductsFromSubcat 12 %}'.split('***'),
-     '{% getProductsFromSubcat 13 %}'.split('***'),'{% getProductsFromSubcat 14 %}'.split('***'),
-     '{% getProductsFromSubcat 15 %}'.split('***'),'{% getProductsFromSubcat 16 %}'.split('***'),
-     '{% getProductsFromSubcat 17 %}'.split('***'),'{% getProductsFromSubcat 18 %}'.split('***'),
-     '{% getProductsFromSubcat 19 %}'.split('***'),'{% getProductsFromSubcat 20 %}'.split('***')]
-      var p1=[]
-      for(i in ppp) {
-        for(y in ppp[i])  {
-          p1.push(ppp[i][y].split(';;;'));
-          
+      (" {% endfor %}");
+      console.log(arrayOfCategories);
+      const username = "{{request.session.email}}";
+      var SUBCAT_1_IMG = "{% getSubcatsFromCat 2 2 %}".split(";");
+      var SUBCAT_2_IMG = "{% getSubcatsFromCat 3 2 %}".split(";");
+
+      var SUBCATS_NAME = [
+        "{% getSubcatsFromCat 3 1 %}".split(";"),
+        "{% getSubcatsFromCat 4 1 %}".split(";"),
+        "{% getSubcatsFromCat 5 1 %}".split(";"),
+        "{% getSubcatsFromCat 6 1 %}".split(";"),
+        "{% getSubcatsFromCat 7 1 %}".split(";"),
+        "{% getSubcatsFromCat 8 1 %}".split(";"),
+        "{% getSubcatsFromCat 9 1 %}".split(";"),
+        "{% getSubcatsFromCat 10 1 %}".split(";"),
+        "{% getSubcatsFromCat 11 1 %}".split(";"),
+        "{% getSubcatsFromCat 12 1 %}".split(";"),
+      ];
+      var SUBCATS_IMG = [
+        "{% getSubcatsFromCat 2 2 %}".split(";"),
+        "{% getSubcatsFromCat 3 2 %}".split(";"),
+      ];
+      var PRODUCTS_NAME = [];
+      var ppp = [
+        "{% getProductsFromSubcat 1 %}".split("***"),
+        "{% getProductsFromSubcat 2 %}".split("***"),
+        "{% getProductsFromSubcat 3 %}".split("***"),
+        "{% getProductsFromSubcat 4 %}".split("***"),
+        "{% getProductsFromSubcat 5 %}".split("***"),
+        "{% getProductsFromSubcat 6 %}".split("***"),
+        "{% getProductsFromSubcat 7 %}".split("***"),
+        "{% getProductsFromSubcat 8 %}".split("***"),
+        "{% getProductsFromSubcat 9 %}".split("***"),
+        "{% getProductsFromSubcat 10 %}".split("***"),
+        "{% getProductsFromSubcat 11 %}".split("***"),
+        "{% getProductsFromSubcat 12 %}".split("***"),
+        "{% getProductsFromSubcat 13 %}".split("***"),
+        "{% getProductsFromSubcat 14 %}".split("***"),
+        "{% getProductsFromSubcat 15 %}".split("***"),
+        "{% getProductsFromSubcat 16 %}".split("***"),
+        "{% getProductsFromSubcat 17 %}".split("***"),
+        "{% getProductsFromSubcat 18 %}".split("***"),
+        "{% getProductsFromSubcat 19 %}".split("***"),
+        "{% getProductsFromSubcat 20 %}".split("***"),
+      ];
+      var p1 = [];
+      for (i in ppp) {
+        for (y in ppp[i]) {
+          p1.push(ppp[i][y].split(";;;"));
         }
-        PRODUCTS_NAME.push(p1)
-        var p1=[]
+        PRODUCTS_NAME.push(p1);
+        var p1 = [];
       }
-      
-     console.log(PRODUCTS_NAME)
-     console.log(SUBCATS_NAME[1], 'subcats_name[1]')
-     
-     
-     
-     //SUBCATS_IMG.push(SUBCAT_1_IMG, SUBCAT_2_IMG)
-     //console.log(SUBCATS_IMG, 'duuuuupa')
-     //console.log(SUBCAT_1_IMG)
-  </script>
 
-  <div id="navRoot">Nav not rendered</div>
-  <div id="root">Main not rendered</div>
-  <div id="footerRoot">footer not rendered</div>
-</body>
+      console.log(PRODUCTS_NAME);
+      console.log(SUBCATS_NAME[1], "subcats_name[1]");
 
+      //SUBCATS_IMG.push(SUBCAT_1_IMG, SUBCAT_2_IMG)
+      //console.log(SUBCATS_IMG, 'duuuuupa')
+      //console.log(SUBCAT_1_IMG)
+    </script>
+    <script>
+      var basketItems = "{{ basketProducts }}".split("***");
+      var cartContents = [];
+      for (i in basketItems) {
+        cartContents.push(basketItems[i].split(";;;"));
+      }
+      console.log(cartContents);
+    </script>
+    <div id="navRoot">Nav not rendered</div>
+    <div id="root">Main not rendered</div>
+    <div id="footerRoot">footer not rendered</div>
+  </body>
 </html>

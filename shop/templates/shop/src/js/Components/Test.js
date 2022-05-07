@@ -24,7 +24,31 @@ const TEST_ARRAY = [
   'fdfdfdfdf', 
 ];
 const TEST_ARRAY2 = ["test1", "test2", "test3", "test4"];
-
+const cartContentsTest = [
+  [
+    "5",
+    "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+    imgArr[0],
+    "10",
+    "4",
+    "270.0",
+    "1.0",
+    "3.0",
+    "False",
+  ],
+  [
+    "7",
+    "Dysk SSD Crucial BX200 SATA III",
+    imgArr[0],
+    "10",
+    "3",
+    "270.0",
+    "1.0",
+    "3.0",
+    "False",
+  ],
+  
+];
 const AfterLoad = (element, renderPlace = null, time = 1000) => {
 
   setTimeout(() => {
@@ -63,6 +87,6 @@ const renderTry = (ARRAY_NAME = [], ARRAY_IMG = []) => {
 };
 
 
-export { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr };
+export { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr, cartContentsTest };
 export { AfterLoad, renderTry};
 

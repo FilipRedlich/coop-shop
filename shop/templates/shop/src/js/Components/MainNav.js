@@ -1,5 +1,5 @@
 
-import react from "react";
+import React from "react";
 import { render } from "react-dom";
 import { useState } from "react";
 
@@ -9,6 +9,7 @@ import Login from './Login';
 import MainApp from "../App";
 import Cart from './Cart';
 import MainContent from "./MainContent";
+
 
 const MainNav = () => {
 

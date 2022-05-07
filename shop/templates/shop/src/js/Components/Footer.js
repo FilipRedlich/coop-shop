@@ -57,10 +57,10 @@ const MainFooter = () => {
             </h6>
             <h6></h6>
           </div>
-          <div className="social-bubble">
+          {/* <div className="social-bubble">
             <h3 className='text-uppercase'>Socials</h3>
             <i className="bi bi-facebook"></i>
-          </div>
+          </div> */}
         </div>
       </footer>
     );
