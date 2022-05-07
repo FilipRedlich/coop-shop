@@ -68,7 +68,7 @@ const RenderProducts2 = (props) => {
 //PRODUCTS_NAME[1][1][2]
 const addEvent = (elements = []) => {
   for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i]);
+    console.log(elements[i].textContent);
     //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
     elements[i].addEventListener("click", () => {
       switch (elements[i].textContent) {
@@ -108,7 +108,12 @@ const addEvent = (elements = []) => {
       }
       switch (elements[i].textContent) {
         case `${SUBCATS_NAME[2][0]}`:
-          renderRoot(<RenderProducts2 el={TEST_ARRAY2} />);
+          renderRoot(
+            renderInSubRoot(
+              <RenderProducts2 el={TEST_PRODUCT} index={2} />,
+              "product-holder animate__animated animate__zoomInDown"
+            )
+          );
           break;
         case `${SUBCATS_NAME[2][1]}`:
           alert("er");
@@ -123,7 +128,9 @@ const addEvent = (elements = []) => {
     });
   }
 };
-
+//const AddEvent = () => {
+//  
+//}
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
 

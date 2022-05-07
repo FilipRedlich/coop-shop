@@ -23221,12 +23221,15 @@ var Cart = function Cart() {
             id: "cart",
             className: "cart text-white d-flex flex-row flex-wrap gap-2 p-2 animate__animated animate__bounceIn",
             children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     id: "card-items",
                     className: "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded",
-                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(HowManyItems, {
-                        el: _Test.cartContentsTest
-                    })
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)(HowManyItems, {
+                            el: _Test.cartContentsTest
+                        }),
+                        " "
+                    ]
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                     className: "checkout m-auto bg-transparent-custom rounded",
@@ -23965,13 +23968,13 @@ exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var _loop = function _loop(i) {
-        console.log(elements[i]); //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
+        console.log(elements[i].textContent); //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
         elements[i].addEventListener("click", function() {
             switch(elements[i].textContent){
                 case "".concat(SUBCATS_NAME[1][0]):
                     //RenderProducts(TEST_ARRAY)
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: PRODUCTS_NAME[1],
+                        el: _Test.TEST_PRODUCT,
                         index: 1
                     }), "product-holder animate__animated animate__zoomInDown")); //renders products el={TEST_PRODUCT} PRODUCTS_NAME[1]
                     break;
@@ -24002,9 +24005,10 @@ var addEvent = function addEvent() {
             }
             switch(elements[i].textContent){
                 case "".concat(SUBCATS_NAME[2][0]):
-                    renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: _Test.TEST_ARRAY2
-                    }));
+                    renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                        el: _Test.TEST_PRODUCT,
+                        index: 2
+                    }), "product-holder animate__animated animate__zoomInDown"));
                     break;
                 case "".concat(SUBCATS_NAME[2][1]):
                     alert("er");
@@ -24019,7 +24023,9 @@ var addEvent = function addEvent() {
         });
     };
     for(var i1 = 0; i1 < elements.length; i1++)_loop(i1);
-};
+}; //const AddEvent = () => {
+//  
+//}
 exports.addEvent = addEvent;
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
@@ -24045,9 +24051,9 @@ var ProductNav = function ProductNav() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
                             addEvent(document.querySelectorAll(".cat-btn")); //adds event to subcategory
                             (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonBuilder2, {
-                                el: arrayOfCategories
+                                el: _Test.TEST_CAT
                             }), document.querySelector("#categories")); //creates category buttons
-                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories); //elements that are rendered after clicking subcategory
+                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_CAT); //elements that are rendered after clicking subcategory
                         },
                         children: "Categories"
                     }),
