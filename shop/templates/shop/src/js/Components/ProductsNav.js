@@ -11,16 +11,7 @@ import renderTry from "./Test";
 import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, TEST_PRODUCT } from "./Test";
 import { RenderFromCat, renderInSubRoot } from "./RenderScripts";
 
-//const removeSubCat = () => {
-//  const holder = document.querySelector("#rootSubcategories");
-//  var doesExist = document.querySelectorAll(".testing");
-//
-//  if (holder.contains(doesExist[0])) {
-//    for (let i = 0; i < doesExist.length; i++) {
-//      doesExist[i].remove();
-//    }
-//  }
-//};
+
 const renderRoot = (
   renderElement,
   renderPlace = document.querySelector("#root")
@@ -59,6 +50,7 @@ const RenderProducts2 = (props) => {
   //it's then used to create another array containing information about products (from subcategories)
   return el[specIndex].map((val, i) => {
     const convImg = val[2]; //Array of images
+    console.log(convImg, 'KURWISKO')
     return (
       <>
         <form action="/addProductToBasket/" method="post">
@@ -87,7 +79,7 @@ const addEvent = (elements = []) => {
               <RenderProducts2 el={TEST_PRODUCT} index={1} />,
               "product-holder animate__animated animate__zoomInDown"
             )
-          );//renders products
+          );//renders products el={TEST_PRODUCT} PRODUCTS_NAME[1]
           break;
         case `${SUBCATS_NAME[1][1]}`:
           alert("testt");
@@ -155,7 +147,7 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            addEvent(document.querySelectorAll(".cat-btn"), TEST_CAT); //adds event to subcategory
+            addEvent(document.querySelectorAll(".cat-btn")); //adds event to subcategory
             render(
               <ButtonBuilder2 el={TEST_CAT} />,
               document.querySelector("#categories")

@@ -23339,8 +23339,9 @@ Object.defineProperty(exports, "__esModule", {
 exports.renderTry = exports.imgArr = exports.cartContentsTest = exports.TEST_PRODUCT = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
 var _reactDom = require("react-dom");
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
 var imgArr = [
-    _undraw_dev_productivity_re_fylf["default"],
+    _undraw_software_engineer_re_fyew["default"],
     _undraw_dev_productivity_re_fylf["default"]
 ];
 exports.imgArr = imgArr;
@@ -23678,7 +23679,10 @@ exports.renderTry = renderTry;
 var _c;
 $RefreshReg$(_c, "AfterLoad");
 
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react-dom":"j6uA9","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"1FSJk":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react-dom":"j6uA9","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF"}],"4KNRF":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_software_engineer_re_fyew.70662922.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"1FSJk":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23838,10 +23842,7 @@ $RefreshReg$(_c, "Carousel");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","./ProductsNav":"jxWkG","react":"21dqq","usehooks-ts":"dmUe4","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4KNRF":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_software_engineer_re_fyew.70662922.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"jxWkG":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","./ProductsNav":"jxWkG","react":"21dqq","usehooks-ts":"dmUe4","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jxWkG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23892,16 +23893,6 @@ function _interopRequireWildcard(obj, nodeInterop) {
     if (cache) cache.set(obj, newObj);
     return newObj;
 }
-//const removeSubCat = () => {
-//  const holder = document.querySelector("#rootSubcategories");
-//  var doesExist = document.querySelectorAll(".testing");
-//
-//  if (holder.contains(doesExist[0])) {
-//    for (let i = 0; i < doesExist.length; i++) {
-//      doesExist[i].remove();
-//    }
-//  }
-//};
 var renderRoot = function renderRoot(renderElement) {
     var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.querySelector("#root");
     (0, _reactDom.render)(renderElement, renderPlace);
@@ -23937,6 +23928,7 @@ var RenderProducts2 = function RenderProducts2(props) {
     //it's then used to create another array containing information about products (from subcategories)
     return el[specIndex].map(function(val, i) {
         var convImg = val[2]; //Array of images
+        console.log(convImg, 'KURWISKO');
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                 action: "/addProductToBasket/",
@@ -23979,9 +23971,9 @@ var addEvent = function addEvent() {
                 case "".concat(SUBCATS_NAME[1][0]):
                     //RenderProducts(TEST_ARRAY)
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: _Test.TEST_PRODUCT,
+                        el: PRODUCTS_NAME[1],
                         index: 1
-                    }), "product-holder animate__animated animate__zoomInDown")); //renders products
+                    }), "product-holder animate__animated animate__zoomInDown")); //renders products el={TEST_PRODUCT} PRODUCTS_NAME[1]
                     break;
                 case "".concat(SUBCATS_NAME[1][1]):
                     alert("testt");
@@ -24051,11 +24043,11 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            addEvent(document.querySelectorAll(".cat-btn"), _Test.TEST_CAT); //adds event to subcategory
+                            addEvent(document.querySelectorAll(".cat-btn")); //adds event to subcategory
                             (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonBuilder2, {
-                                el: _Test.TEST_CAT
+                                el: arrayOfCategories
                             }), document.querySelector("#categories")); //creates category buttons
-                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_CAT); //elements that are rendered after clicking subcategory
+                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories); //elements that are rendered after clicking subcategory
                         },
                         children: "Categories"
                     }),
@@ -24399,6 +24391,7 @@ var RenderSubcat = function RenderSubcat(props) {
     var img = props.img;
     return el.map(function(val, i) {
         var convImg = img[i];
+        console.log(convImg);
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
                 type: "button",
@@ -24414,8 +24407,243 @@ var RenderSubcat = function RenderSubcat(props) {
             })
         });
     });
-}; //Adds functionality to category buttons
+};
 _c1 = RenderSubcat;
+var TEST_PRODUCT1 = [
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "3",
+            "Procesor Intel Core i5-10400F, 2.9GHz, 12 MB, BOX",
+            _Test.imgArr[0],
+            "2",
+            "5",
+            "649.0",
+            "1.0",
+            "4.5",
+            "False"
+        ],
+        [
+            "4",
+            "Procesor AMD Ryzen 7 5800X, 3.8GHz, 32 MB, BOX",
+            _Test.imgArr[0],
+            "2",
+            "8",
+            "1729.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "5",
+            "Płyta główna Gigabyte B450 AORUS PRO",
+            "",
+            "3",
+            "5",
+            "380.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "6",
+            "Płyta główna Gigabyte B550 GAMING X V2",
+            "",
+            "3",
+            "1",
+            "470.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "7",
+            "Pamięć Kingston Fury Beast, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "358.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "8",
+            "Pamięć Corsair Vengeance, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "350.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "9",
+            "Karta graficzna PNY GeForce RTX 3060Ti Gaming Revel Epic-X RGB 8GB GDDR6",
+            "",
+            "5",
+            "5",
+            "3500.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "10",
+            "Karta graficzna Gigabyte GeForce GTX 1660 OC 6GB GDDR5",
+            "",
+            "5",
+            "1",
+            "1800.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "11",
+            "Dysk SSD Kingston NV1 500 GB M.2 2280 PCI-E x4 Gen3 NVMe",
+            "",
+            "6",
+            "1",
+            "244.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "12",
+            "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+            "",
+            "6",
+            "1",
+            "277.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "13",
+            "Komputer HP Pavilion Gaming TG01, Core i5-11400F, 16 GB, RTX 3060, 512 GB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "4799.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "14",
+            "Komputer Game X G500, Core i5-11400F, 16 GB, RTX 3060 Ti, 1 TB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "6000.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "15",
+            "Monitor Samsung Odyssey G3A",
+            "",
+            "13",
+            "1",
+            "940.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "16",
+            "Monitor Asus VZ24EHE",
+            "",
+            "13",
+            "1",
+            "690.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ]
+]; //Adds functionality to category buttons
 var RenderFromCat = function RenderFromCat() {
     var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var categories = document.querySelectorAll(".categories-button");
@@ -24430,7 +24658,7 @@ var RenderFromCat = function RenderFromCat() {
                     //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[1],
-                        img: SUBCATS_IMG1[0]
+                        img: SUBCATS_IMG
                     }), document.querySelector("#rootSubcategories")); //renderTry(TEST_ARRAY);
                     break;
                 case "".concat(ARRAY[1]):

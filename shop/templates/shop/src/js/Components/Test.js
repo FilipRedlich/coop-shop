@@ -1,7 +1,7 @@
 import { render } from "react-dom";
 import image1 from "../../images/undraw_dev_productivity_re_fylf.svg";
-import image2 from "../../images/undraw_dev_productivity_re_fylf.svg";
-const imgArr = [image1, image2];
+import image2 from "../../images/undraw_software_engineer_re_fyew.svg";
+const imgArr = [image2, image1];
 const TEST_CAT = ["cat1", "cat2", "cat3"];
 const TEST_ARRAY = [
   "Test Element num.1",
