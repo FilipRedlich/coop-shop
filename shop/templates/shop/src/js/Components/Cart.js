@@ -43,14 +43,14 @@ const Cart = () => {
         >
           <div id="card-items" className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded">
            
-           <HowManyItems el={cartContentsTest} />
+           <HowManyItems el={cartContentsTest} /> {/* cardContentsTest or CardContents*/}
   
           </div>
           <div className="checkout m-auto bg-transparent-custom rounded">
             <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
               <div class="flexb-70">
                 <label className="text-muted">Subtotal:</label>
-                <h5>{<TotalPrice price={ cartContentsTest }/>}</h5>
+                <h5>{<TotalPrice price={cartContentsTest} />}</h5>
                 <p className="text-muted">{`+ Delivery`}</p>
               </div>
               <input
