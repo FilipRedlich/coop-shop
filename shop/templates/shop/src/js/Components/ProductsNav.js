@@ -56,9 +56,9 @@ const ButtonBuilder2 = (props) => {
 const RenderProducts2 = (props) => {
   const el = props.el;
   const img = props.img;
-
+  const specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
   return el.map((val, i) => {
-    const convImg = img[i];
+    const convImg = el[specIndex][i][2];
     console.log("workewd");
     return (
       <>
@@ -67,23 +67,25 @@ const RenderProducts2 = (props) => {
           <input type="hidden" name="id" value="5" />
           <button type="submit" className="product">
             <img src={convImg} />
-            <p>{val}</p>
+            <p>{val[specIndex][i][1]}</p>
           </button>
         </form>
       </>
     );
   });
 };
+//PRODUCTS_NAME[1][1][2]
 const addEvent = (elements = []) => {
   for (let i = 0; i < elements.length; i++) {
     console.log(elements[i]);
+    //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
     elements[i].addEventListener("click", () => {
       switch (elements[i].textContent) {
         case `${SUBCATS_NAME[1][0]}`:
           //RenderProducts(TEST_ARRAY)
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={TEST_ARRAY} img={imgArr} />,
+              <RenderProducts2 el={PRODUCTS_NAME} index={1} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );//renders products
@@ -154,15 +156,14 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            addEvent(document.querySelectorAll(".cat-btn"), TEST_CAT); //adds event to subcategory
+            addEvent(document.querySelectorAll(".cat-btn"), arrayOfCategories); //adds event to subcategory
             render(
-              <ButtonBuilder2 el={TEST_CAT} />,
+              <ButtonBuilder2 el={arrayOfCategories} />,
               document.querySelector("#categories")
             );//creates category buttons
 
-            //buttonBuilder2(TEST_CAT)
-            //buttonBuilder(TEST_CAT);
-            RenderFromCat(TEST_ARRAY); //elements that are rendered after clicking subcategory
+
+            RenderFromCat(arrayOfCategories); //elements that are rendered after clicking subcategory
           }}
         >
           Categories
