@@ -8,9 +8,8 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr } from "./Test";
+import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, TEST_PRODUCT } from "./Test";
 import { RenderFromCat, renderInSubRoot } from "./RenderScripts";
-import buttonBuilder from "./ComponentBuilders";
 
 //const removeSubCat = () => {
 //  const holder = document.querySelector("#rootSubcategories");
@@ -57,9 +56,9 @@ const RenderProducts2 = (props) => {
   const el = props.el;
   const img = props.img;
   const specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
-  return el.map((val, i) => {
-    const convImg = el[specIndex][i][2];
-    console.log("workewd");
+  //it's then used to create another array containing information about products (from subcategories)
+  return el[specIndex].map((val, i) => {
+    const convImg = val[2]; //Array of images
     return (
       <>
         <form action="/addProductToBasket/" method="post">
@@ -67,7 +66,7 @@ const RenderProducts2 = (props) => {
           <input type="hidden" name="id" value="5" />
           <button type="submit" className="product">
             <img src={convImg} />
-            <p>{val[specIndex][i][1]}</p>
+            <p>{val[1]}</p>
           </button>
         </form>
       </>
@@ -85,7 +84,7 @@ const addEvent = (elements = []) => {
           //RenderProducts(TEST_ARRAY)
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={PRODUCTS_NAME} index={1} />,
+              <RenderProducts2 el={TEST_PRODUCT} index={1} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );//renders products
@@ -156,14 +155,14 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            addEvent(document.querySelectorAll(".cat-btn"), arrayOfCategories); //adds event to subcategory
+            addEvent(document.querySelectorAll(".cat-btn"), TEST_CAT); //adds event to subcategory
             render(
-              <ButtonBuilder2 el={arrayOfCategories} />,
+              <ButtonBuilder2 el={TEST_CAT} />,
               document.querySelector("#categories")
             );//creates category buttons
 
 
-            RenderFromCat(arrayOfCategories); //elements that are rendered after clicking subcategory
+            RenderFromCat(TEST_CAT); //elements that are rendered after clicking subcategory
           }}
         >
           Categories
