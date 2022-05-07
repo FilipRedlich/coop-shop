@@ -1,4 +1,39 @@
+import { render } from "react-dom";
 import images from "./Images";
+import { cartContentsTest } from "./Test";
+const TotalPrice = (props) => {
+  const CurrentPrice = props.price;
+  var convertedPrice = 0; //Converted price to integer
+
+   CurrentPrice.map((x) => {
+    convertedPrice += parseInt(x[5]);
+   })
+  
+  return convertedPrice + '$';
+}
+const HowManyItems = (props) => {
+  const items = props.el;
+
+  return items.map((x) => {
+    return (
+      <div className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between px-2 w-100 bg-dark rounded m-auto">
+        <div className="d-flex flexb-50 gap-3 flex-row flex-wrap">
+          <img src={x[2]} className="cart-img" />
+          <h4 className="my-auto item-name">{x[1]}</h4>
+        </div>
+        <div className="d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
+          <div class="d-flex flex-column justify-content-center">
+            <h5 className="">{`${x[5]}$`}</h5>
+            <h6>{`In stock: ${x[4]}`}</h6>
+          </div>
+          <button className=" btn text-white bg-danger remove-item my-auto">
+            <i class="bi bi-trash"></i>
+          </button>
+        </div>
+      </div>
+    );
+  })
+}
 const Cart = () => {
     return (
       <>
@@ -6,49 +41,16 @@ const Cart = () => {
           id="cart"
           className="cart text-white d-flex flex-row flex-wrap gap-2 p-2 animate__animated animate__bounceIn"
         >
-          <div class="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded">
-            <div className="cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto">
-              <div className="d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center">
-                <img src={images[0].src} className="cart-img" />
-                <h2 className="my-auto">Item Name</h2>
-              </div>
-              <div className="d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
-                <h4 className="my-auto item-price">{`1222$`}</h4>
-                <button className=" btn text-white bg-danger remove-item my-auto">
-                  <i class="bi bi-trash"></i>
-                </button>
-              </div>
-            </div>
-            <div className="cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto">
-              <div className="d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center">
-                <img src={images[0].src} className="cart-img" />
-                <h2 className="my-auto">Item Name</h2>
-              </div>
-              <div className="d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
-                <h4 className="my-auto item-price">{`1222$`}</h4>
-                <button className=" btn text-white bg-danger remove-item my-auto">
-                  <i class="bi bi-trash"></i>
-                </button>
-              </div>
-            </div>
-            <div className="cart-item d-flex flex-row flex-wrap justify-content-center w-100 bg-dark rounded m-auto">
-              <div className="d-flex flexb-70 gap-3 flex-row flex-wrap justify-content-center">
-                <img src={images[0].src} className="cart-img" />
-                <h2 className="my-auto">Item Name</h2>
-              </div>
-              <div className="d-flex flexb-30 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
-                <h4 className="my-auto item-price">{`1222$`}</h4>
-                <button className=" btn text-white bg-danger remove-item my-auto">
-                  <i class="bi bi-trash"></i>
-                </button>
-              </div>
-            </div>
+          <div id="card-items" className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded">
+           
+           <HowManyItems el={cartContentsTest} />
+  
           </div>
           <div className="checkout m-auto bg-transparent-custom rounded">
             <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
               <div class="flexb-70">
                 <label className="text-muted">Subtotal:</label>
-                <h5>{`12222$`}</h5>
+                <h5>{<TotalPrice price={ cartContentsTest }/>}</h5>
                 <p className="text-muted">{`+ Delivery`}</p>
               </div>
               <input
@@ -62,5 +64,5 @@ const Cart = () => {
       </>
     );
 }
-
+export { HowManyItems };
 export default Cart;
