@@ -23225,7 +23225,7 @@ var Cart = function Cart() {
                     id: "card-items",
                     className: "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(HowManyItems, {
-                        el: cartContents
+                        el: _Test.cartContentsTest
                     })
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
@@ -23242,7 +23242,7 @@ var Cart = function Cart() {
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
                                         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(TotalPrice, {
-                                            price: cartContents
+                                            price: _Test.cartContentsTest
                                         })
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
@@ -23336,7 +23336,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.renderTry = exports.imgArr = exports.cartContentsTest = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+exports.renderTry = exports.imgArr = exports.cartContentsTest = exports.TEST_PRODUCT = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
 var _reactDom = require("react-dom");
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var imgArr = [
@@ -23403,6 +23403,242 @@ var cartContentsTest = [
     ]
 ];
 exports.cartContentsTest = cartContentsTest;
+var TEST_PRODUCT = [
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "3",
+            "Procesor Intel Core i5-10400F, 2.9GHz, 12 MB, BOX",
+            imgArr[0],
+            "2",
+            "5",
+            "649.0",
+            "1.0",
+            "4.5",
+            "False"
+        ],
+        [
+            "4",
+            "Procesor AMD Ryzen 7 5800X, 3.8GHz, 32 MB, BOX",
+            imgArr[0],
+            "2",
+            "8",
+            "1729.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "5",
+            "Płyta główna Gigabyte B450 AORUS PRO",
+            "",
+            "3",
+            "5",
+            "380.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "6",
+            "Płyta główna Gigabyte B550 GAMING X V2",
+            "",
+            "3",
+            "1",
+            "470.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "7",
+            "Pamięć Kingston Fury Beast, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "358.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "8",
+            "Pamięć Corsair Vengeance, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "350.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "9",
+            "Karta graficzna PNY GeForce RTX 3060Ti Gaming Revel Epic-X RGB 8GB GDDR6",
+            "",
+            "5",
+            "5",
+            "3500.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "10",
+            "Karta graficzna Gigabyte GeForce GTX 1660 OC 6GB GDDR5",
+            "",
+            "5",
+            "1",
+            "1800.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "11",
+            "Dysk SSD Kingston NV1 500 GB M.2 2280 PCI-E x4 Gen3 NVMe",
+            "",
+            "6",
+            "1",
+            "244.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "12",
+            "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+            "",
+            "6",
+            "1",
+            "277.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "13",
+            "Komputer HP Pavilion Gaming TG01, Core i5-11400F, 16 GB, RTX 3060, 512 GB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "4799.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "14",
+            "Komputer Game X G500, Core i5-11400F, 16 GB, RTX 3060 Ti, 1 TB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "6000.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "15",
+            "Monitor Samsung Odyssey G3A",
+            "",
+            "13",
+            "1",
+            "940.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "16",
+            "Monitor Asus VZ24EHE",
+            "",
+            "13",
+            "1",
+            "690.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ]
+];
+exports.TEST_PRODUCT = TEST_PRODUCT;
 var AfterLoad = function AfterLoad(element) {
     var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
@@ -23628,7 +23864,6 @@ var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
 var _Test = _interopRequireWildcard(require("./Test"));
 var _RenderScripts = require("./RenderScripts");
-var _ComponentBuilders = _interopRequireDefault(require("./ComponentBuilders"));
 var _jsxRuntime = require("react/jsx-runtime");
 var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
@@ -23699,9 +23934,9 @@ var RenderProducts2 = function RenderProducts2(props) {
     var el = props.el;
     var img = props.img;
     var specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
-    return el.map(function(val, i) {
-        var convImg = el[specIndex][i][2];
-        console.log("workewd");
+    //it's then used to create another array containing information about products (from subcategories)
+    return el[specIndex].map(function(val, i) {
+        var convImg = val[2]; //Array of images
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                 action: "/addProductToBasket/",
@@ -23724,7 +23959,7 @@ var RenderProducts2 = function RenderProducts2(props) {
                                 src: convImg
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
-                                children: val[specIndex][i][1]
+                                children: val[1]
                             })
                         ]
                     })
@@ -23744,7 +23979,7 @@ var addEvent = function addEvent() {
                 case "".concat(SUBCATS_NAME[1][0]):
                     //RenderProducts(TEST_ARRAY)
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: PRODUCTS_NAME,
+                        el: _Test.TEST_PRODUCT,
                         index: 1
                     }), "product-holder animate__animated animate__zoomInDown")); //renders products
                     break;
@@ -23816,11 +24051,11 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            addEvent(document.querySelectorAll(".cat-btn"), arrayOfCategories); //adds event to subcategory
+                            addEvent(document.querySelectorAll(".cat-btn"), _Test.TEST_CAT); //adds event to subcategory
                             (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonBuilder2, {
-                                el: arrayOfCategories
+                                el: _Test.TEST_CAT
                             }), document.querySelector("#categories")); //creates category buttons
-                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories); //elements that are rendered after clicking subcategory
+                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_CAT); //elements that are rendered after clicking subcategory
                         },
                         children: "Categories"
                     }),
@@ -23887,7 +24122,7 @@ $RefreshReg$(_c3, "ProductNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","./RenderScripts":"bNOSb","./ComponentBuilders":"aByAi","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","./RenderScripts":"bNOSb","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"9GTDe":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -24222,37 +24457,7 @@ $RefreshReg$(_c2, "RenderFromCat");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aByAi":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = void 0;
-var _Test = require("./Test");
-var buttonBuilder = function buttonBuilder(ARRAY_NAME) {
-    //Creates buttons, adds classes and text to them
-    var button = document.createElement("button").cloneNode(true);
-    var clone = button.cloneNode(true);
-    var holder = document.querySelector(".categories");
-    var isExisting = document.querySelector(".cat-btn"); //Adding details to button
-    clone.classList.add("cat-btn", "btn", "categories-button", "mb-2", "mx-auto", "text-white", "bg-dark"); //console.log(button)
-    console.log(clone);
-    if (holder.contains(isExisting)) {
-        console.log("it exists so I wont add more buttons");
-        return;
-    }
-    if (!holder.contains(isExisting)) {
-        for(var i = 0; i < ARRAY_NAME.length; i++){
-            clone.textContent = ARRAY_NAME[i];
-            holder.appendChild(clone.cloneNode(true));
-        }
-        return;
-    }
-};
-var _default = buttonBuilder;
-exports["default"] = _default;
-
-},{"./Test":"f2YDa"}],"dmUe4":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dmUe4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _useBoolean = require("./useBoolean");
