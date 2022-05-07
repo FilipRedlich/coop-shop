@@ -23225,7 +23225,7 @@ var Cart = function Cart() {
                     id: "card-items",
                     className: "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(HowManyItems, {
-                        el: _Test.cartContentsTest
+                        el: cartContents
                     })
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
@@ -23242,7 +23242,7 @@ var Cart = function Cart() {
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
                                         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(TotalPrice, {
-                                            price: _Test.cartContentsTest
+                                            price: cartContents
                                         })
                                     }),
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
@@ -23355,20 +23355,20 @@ var TEST_ARRAY = [
     "Test element num.2",
     "Test element num.3",
     "Test element num.4",
-    'dsdsdsd',
-    'fdhgdhdsh',
-    'fdfdfdfdfd',
-    'ffdsfsfsf',
-    'fdfdfdfdf',
-    'hgahvb',
-    'fdhgdhdsh',
-    'fdfdfdfdfd',
-    'ffdsfsfsf',
-    'fdfdfdfdf',
-    'fdhgdhdsh',
-    'fdfdfdfdfd',
-    'ffdsfsfsf',
-    'fdfdfdfdf'
+    "dsdsdsd",
+    "fdhgdhdsh",
+    "fdfdfdfdfd",
+    "ffdsfsfsf",
+    "fdfdfdfdf",
+    "hgahvb",
+    "fdhgdhdsh",
+    "fdfdfdfdfd",
+    "ffdsfsfsf",
+    "fdfdfdfdf",
+    "fdhgdhdsh",
+    "fdfdfdfdfd",
+    "ffdsfsfsf",
+    "fdfdfdfdf"
 ];
 exports.TEST_ARRAY = TEST_ARRAY;
 var TEST_ARRAY2 = [
@@ -23410,7 +23410,7 @@ var AfterLoad = function AfterLoad(element) {
         console.log(element, renderPlace);
         (0, _reactDom.render)(element, renderPlace);
     }, time);
-    console.log('cwelskop');
+    console.log("cwelskop");
     return;
 };
 _c = AfterLoad;
@@ -23422,15 +23422,15 @@ var renderTry = function renderTry() {
         var button = document.createElement("button").cloneNode(true);
         var clone = button.cloneNode(true);
         var IMAGE_PATH = ARRAY_IMG;
-        var img = document.createElement('img');
+        var img = document.createElement("img");
         clone.classList.add("subcategory");
         var renderPlacement = document.querySelector("#rootSubcategories");
         for(var i = 0; i < ARRAY_NAME.length; i++){
             clone.textContent = ARRAY_NAME[i];
             clone.classList.add("testing");
-            img.setAttribute('src', ARRAY_IMG[0]);
-            console.log(ARRAY_IMG[0], 'pojebie mnie');
-            clone.appendChild(img.cloneNode('true'));
+            img.setAttribute("src", ARRAY_IMG[0]);
+            console.log(ARRAY_IMG[0], "pojebie mnie");
+            clone.appendChild(img.cloneNode("true"));
             renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
         }
         console.log("pds");
@@ -23698,8 +23698,9 @@ _c1 = ButtonBuilder2;
 var RenderProducts2 = function RenderProducts2(props) {
     var el = props.el;
     var img = props.img;
+    var specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
     return el.map(function(val, i) {
-        var convImg = img[i];
+        var convImg = el[specIndex][i][2];
         console.log("workewd");
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
@@ -23723,7 +23724,7 @@ var RenderProducts2 = function RenderProducts2(props) {
                                 src: convImg
                             }),
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
-                                children: val
+                                children: val[specIndex][i][1]
                             })
                         ]
                     })
@@ -23731,20 +23732,20 @@ var RenderProducts2 = function RenderProducts2(props) {
             })
         });
     });
-};
+}; //PRODUCTS_NAME[1][1][2]
 _c2 = RenderProducts2;
 exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var _loop = function _loop(i) {
-        console.log(elements[i]);
+        console.log(elements[i]); //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
         elements[i].addEventListener("click", function() {
             switch(elements[i].textContent){
                 case "".concat(SUBCATS_NAME[1][0]):
                     //RenderProducts(TEST_ARRAY)
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: _Test.TEST_ARRAY,
-                        img: _Test.imgArr
+                        el: PRODUCTS_NAME,
+                        index: 1
                     }), "product-holder animate__animated animate__zoomInDown")); //renders products
                     break;
                 case "".concat(SUBCATS_NAME[1][1]):
@@ -23815,13 +23816,11 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            addEvent(document.querySelectorAll(".cat-btn"), _Test.TEST_CAT); //adds event to subcategory
+                            addEvent(document.querySelectorAll(".cat-btn"), arrayOfCategories); //adds event to subcategory
                             (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonBuilder2, {
-                                el: _Test.TEST_CAT
+                                el: arrayOfCategories
                             }), document.querySelector("#categories")); //creates category buttons
-                            //buttonBuilder2(TEST_CAT)
-                            //buttonBuilder(TEST_CAT);
-                            (0, _RenderScripts.RenderFromCat)(_Test.TEST_ARRAY); //elements that are rendered after clicking subcategory
+                            (0, _RenderScripts.RenderFromCat)(arrayOfCategories); //elements that are rendered after clicking subcategory
                         },
                         children: "Categories"
                     }),
