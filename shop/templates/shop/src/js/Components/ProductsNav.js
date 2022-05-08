@@ -67,64 +67,35 @@ const RenderProducts2 = (props) => {
 };
 //PRODUCTS_NAME[1][1][2]
 const addEvent = (elements = []) => {
+  console.log(elements)
   for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i].textContent);
+    //console.log(elements[i].textContent);
     //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
     elements[i].addEventListener("click", () => {
-      switch (elements[i].textContent) {
-        case `${SUBCATS_NAME[1][0]}`:
-          //RenderProducts(TEST_ARRAY)
-          renderRoot(
-            renderInSubRoot(
-              <RenderProducts2 el={TEST_PRODUCT} index={1} />,
-              "product-holder animate__animated animate__zoomInDown"
-            )
-          );//renders products el={TEST_PRODUCT} PRODUCTS_NAME[1]
-          break;
-        case `${SUBCATS_NAME[1][1]}`:
-          alert("testt");
-          break;
-        case `${SUBCATS_NAME[1][2]}`:
-          alert();
-          break;
-        case `${SUBCATS_NAME[1][3]}`:
-          alert("4th el");
-          break;
-        case `${SUBCATS_NAME[1][4]}`:
-          alert("4th el");
-          break;
-        case `${SUBCATS_NAME[1][5]}`:
-          alert("4th el");
-          break;
-        case `${SUBCATS_NAME[1][6]}`:
-          alert("4th el");
-          break;
-        case `${SUBCATS_NAME[1][7]}`:
-          alert("4th el");
-          break;
-        case `${SUBCATS_NAME[1][8]}`:
-          alert("4th el");
-          break;
-      }
-      switch (elements[i].textContent) {
-        case `${SUBCATS_NAME[2][0]}`:
-          renderRoot(
-            renderInSubRoot(
-              <RenderProducts2 el={TEST_PRODUCT} index={2} />,
-              "product-holder animate__animated animate__zoomInDown"
-            )
-          );
-          break;
-        case `${SUBCATS_NAME[2][1]}`:
-          alert("er");
-          break;
-        case `${SUBCATS_NAME[2][2]}`:
-          alert("er");
-          break;
-        case `${SUBCATS_NAME[2][3]}`:
-          alert("er");
-          break;
-      }
+      var subcatButtons = document.querySelectorAll('.subcategory');
+      console.log(subcatButtons, 'tese')
+      switch (subcatButtons[i].textContent) {
+          case `${SUBCATS_NAME[1][0]}`:
+            //RenderProducts(TEST_ARRAY)
+                renderRoot(
+                  renderInSubRoot(
+                    <RenderProducts2 el={TEST_PRODUCT} index={1} />,
+                    "product-holder animate__animated animate__zoomInDown"
+                  )
+                );
+            break;
+          case `${SUBCATS_NAME[2][0]}`:
+                renderRoot(
+                  renderInSubRoot(
+                    <RenderProducts2 el={TEST_PRODUCT} index={2} />,
+                    "product-holder animate__animated animate__zoomInDown"
+                  )
+                );
+            break;
+        }
+      
+      
+
     });
   }
 };
@@ -154,7 +125,6 @@ const ProductNav = () => {
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            addEvent(document.querySelectorAll(".cat-btn")); //adds event to subcategory
             render(
               <ButtonBuilder2 el={TEST_CAT} />,
               document.querySelector("#categories")
