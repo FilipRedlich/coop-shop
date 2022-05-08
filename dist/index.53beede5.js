@@ -23967,57 +23967,26 @@ _c2 = RenderProducts2;
 exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
     var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    console.log(elements);
     var _loop = function _loop(i) {
-        console.log(elements[i].textContent); //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
+        //console.log(elements[i].textContent);
+        //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
         elements[i].addEventListener("click", function() {
-            switch(elements[i].textContent){
+            var subcatButtons = document.querySelectorAll('.subcategory');
+            console.log(subcatButtons, 'tese');
+            switch(subcatButtons[i].textContent){
                 case "".concat(SUBCATS_NAME[1][0]):
                     //RenderProducts(TEST_ARRAY)
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
                         el: _Test.TEST_PRODUCT,
                         index: 1
-                    }), "product-holder animate__animated animate__zoomInDown")); //renders products el={TEST_PRODUCT} PRODUCTS_NAME[1]
+                    }), "product-holder animate__animated animate__zoomInDown"));
                     break;
-                case "".concat(SUBCATS_NAME[1][1]):
-                    alert("testt");
-                    break;
-                case "".concat(SUBCATS_NAME[1][2]):
-                    alert();
-                    break;
-                case "".concat(SUBCATS_NAME[1][3]):
-                    alert("4th el");
-                    break;
-                case "".concat(SUBCATS_NAME[1][4]):
-                    alert("4th el");
-                    break;
-                case "".concat(SUBCATS_NAME[1][5]):
-                    alert("4th el");
-                    break;
-                case "".concat(SUBCATS_NAME[1][6]):
-                    alert("4th el");
-                    break;
-                case "".concat(SUBCATS_NAME[1][7]):
-                    alert("4th el");
-                    break;
-                case "".concat(SUBCATS_NAME[1][8]):
-                    alert("4th el");
-                    break;
-            }
-            switch(elements[i].textContent){
                 case "".concat(SUBCATS_NAME[2][0]):
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
                         el: _Test.TEST_PRODUCT,
                         index: 2
                     }), "product-holder animate__animated animate__zoomInDown"));
-                    break;
-                case "".concat(SUBCATS_NAME[2][1]):
-                    alert("er");
-                    break;
-                case "".concat(SUBCATS_NAME[2][2]):
-                    alert("er");
-                    break;
-                case "".concat(SUBCATS_NAME[2][3]):
-                    alert("er");
                     break;
             }
         });
@@ -24049,7 +24018,6 @@ var ProductNav = function ProductNav() {
                         className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            addEvent(document.querySelectorAll(".cat-btn")); //adds event to subcategory
                             (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(ButtonBuilder2, {
                                 el: _Test.TEST_CAT
                             }), document.querySelector("#categories")); //creates category buttons
