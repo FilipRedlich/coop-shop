@@ -81,13 +81,7 @@
         "{% getProductsFromSubcat 20 %}".split("***"),
       ];
       var p1 = [];
-      for (i in ppp) {
-        for (y in ppp[i]) {
-          p1.push(ppp[i][y].split(";;;"));
-        }
-        PRODUCTS_NAME.push(p1);
-        var p1 = [];
-      }
+ 
 
       console.log(PRODUCTS_NAME, "NEW PRODUCTS NAME");
       console.log(PRODUCTS_NAME[4], "NEW PRODUCTS NAME"); 
@@ -96,14 +90,7 @@
       //console.log(SUBCATS_NAME[1], "subcats_name[1]");
 
     </script>
-    <script>
-      var basketItems = "{{ basketProducts }}".split("***");
-      var cartContents = [];
-      for (i in basketItems) {
-        cartContents.push(basketItems[i].split(";;;"));
-      }
-      console.log(cartContents);
-    </script>
+
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
     <div id="footerRoot">footer not rendered</div>

@@ -23,10 +23,15 @@ const SUBCATS_IMG1 = imgArr;
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
-    <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[0]} />,
+    <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[0]} />,
     document.querySelector("#rootSubcategories")
   );
-  addEvent(document.querySelectorAll(".testing"));
+  //Due to some issues with rendering time
+  //There needs to be timeout to create a delay between renders
+  setTimeout(() => {
+     addEvent(); //It needs to be initiated on load to add EventListener to buttons
+  },200)
+ 
   console.log("RenderOnLoad in RenderScripts");
   return <></>;
 };
@@ -39,7 +44,11 @@ const RenderSubcat = (props) => {
     console.log(convImg, 'convImg')
     return (
       <>
-        <button type="button" className="subcategory testing">
+        <button type="button" className="subcategory testing"
+          onClick={() => {
+          addEvent()
+        }}
+        >
           <img src={convImg} />
           <p>{val}</p>
         </button>
@@ -244,10 +253,15 @@ const RenderFromCat = (ARRAY = []) => {
         //x now defines it's type - name, picture etc.
         case `${ARRAY[0]}`:
        
-      render(
-        <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
-        document.querySelector("#rootSubcategories")
-      );
+     // render(
+     //   <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
+     //   document.querySelector("#rootSubcategories")
+     //     );
+           render(
+             <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[3]} />,
+             document.querySelector("#rootSubcategories")
+          );
+          addEvent()
            
          
           break;
@@ -257,10 +271,17 @@ const RenderFromCat = (ARRAY = []) => {
          //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
          //   document.querySelector("#rootSubcategories")
          // );
-        render(
-          <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
-          document.querySelector("#rootSubcategories")
-        );
+       // render(
+       //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
+       //   document.querySelector("#rootSubcategories")
+       // );
+           render(
+             <RenderSubcat el={TEST_SUBCAT_NAME[2]} img={SUBCATS_IMG[4]} />,
+             document.querySelector("#rootSubcategories")
+          );
+     
+           addEvent();
+    
           break;
       }
     });
