@@ -8,9 +8,14 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-import { TEST_SUBCAT_NAME, TEST_CAT, TEST_ARRAY, TEST_ARRAY2, TEST_PRODUCT } from "./Test";
+import {
+  TEST_SUBCAT_NAME,
+  TEST_CAT,
+  TEST_ARRAY,
+  TEST_ARRAY2,
+  TEST_PRODUCT,
+} from "./Test";
 import { RenderFromCat, renderInSubRoot } from "./RenderScripts";
-
 
 const renderRoot = (
   renderElement,
@@ -49,8 +54,8 @@ const RenderProducts2 = (props) => {
   const specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
   //it's then used to create another array containing information about products (from subcategories)
   return el[specIndex].map((val, i) => {
-    const convImg = val[2]; //Array of images
-    console.log(convImg, 'KURWISKO')
+    const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
+    console.log(convImg, "KURWISKO");
     return (
       <>
         <form action="/addProductToBasket/" method="post">
@@ -66,44 +71,47 @@ const RenderProducts2 = (props) => {
   });
 };
 //PRODUCTS_NAME[1][1][2]
-const addEvent = (elements = []) => {
-  console.log(elements)
-  for (let i = 0; i < elements.length; i++) {
-    //console.log(elements[i].textContent);
-    //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
-    elements[i].addEventListener("click", () => {
-      var subcatButtons = document.querySelectorAll('.subcategory');
-      console.log(subcatButtons, 'tese')
-      switch (subcatButtons[i].textContent) {
-          case `${SUBCATS_NAME[1][0]}`:
-            //RenderProducts(TEST_ARRAY)
-          console.log('worked shitty fucking deep ass script')
-                renderRoot(
-                  renderInSubRoot(
-                    <RenderProducts2 el={TEST_PRODUCT} index={1} />,
-                    "product-holder animate__animated animate__zoomInDown"
-                  )
-                );
-            break;
-          case `${SUBCATS_NAME[2][0]}`:
-                renderRoot(
-                  renderInSubRoot(
-                    <RenderProducts2 el={TEST_PRODUCT} index={2} />,
-                    "product-holder animate__animated animate__zoomInDown"
-                  )
-          );
-           console.log("worked shitty fucking deep ass script");
-          break;
-        }
-      
-      
+const addEvent = () => {
+  var subcatButtons = document.querySelectorAll(".subcategory");
+  const initAddEvent = () => {
+    if (subcatButtons[0].textContent === "Procesory") {
+      console.log("prosze kurwa zadzialaj do kurwy1");
+      subcatButtons.forEach((button, i) => {
+        i++;
 
-    });
-  }
+        button.addEventListener("click", () => {
+          console.log("KUUUUUUURWA");
+          renderRoot(
+            renderInSubRoot(
+              <RenderProducts2 el={TEST_PRODUCT} index={i} />,
+              "product-holder animate__animated animate__zoomInDown"
+            )
+          );
+        });
+      });
+    }
+
+    if (subcatButtons[0].textContent === "Komputery stacjonarne") {
+      subcatButtons.forEach((button, i) => {
+        i += 9; //value before first index of next subcategory (for ex. 2nd subcat stars on 10th index)
+        i++;
+        console.log("prosze kurwa zadzialaj do kurwy2");
+        button.addEventListener("click", () => {
+          console.log("KUUUUUUURWA");
+          renderRoot(
+            renderInSubRoot(
+              <RenderProducts2 el={TEST_PRODUCT} index={i} />,
+              "product-holder animate__animated animate__zoomInDown"
+            )
+          );
+        });
+      });
+    }
+  };
+
+  initAddEvent();
 };
-//const AddEvent = () => {
-//  
-//}
+
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
 
@@ -130,8 +138,7 @@ const ProductNav = () => {
             render(
               <ButtonBuilder2 el={TEST_CAT} />,
               document.querySelector("#categories")
-            );//creates category buttons
-
+            ); //creates category buttons
 
             RenderFromCat(TEST_CAT); //elements that are rendered after clicking subcategory
           }}

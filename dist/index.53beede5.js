@@ -23974,8 +23974,8 @@ var RenderProducts2 = function RenderProducts2(props) {
     var specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
     //it's then used to create another array containing information about products (from subcategories)
     return el[specIndex].map(function(val, i) {
-        var convImg = val[2]; //Array of images
-        console.log(convImg, 'KURWISKO');
+        var convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
+        console.log(convImg, "KURWISKO");
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                 action: "/addProductToBasket/",
@@ -24010,36 +24010,37 @@ var RenderProducts2 = function RenderProducts2(props) {
 _c2 = RenderProducts2;
 exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
-    var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    console.log(elements);
-    var _loop = function _loop(i) {
-        //console.log(elements[i].textContent);
-        //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
-        elements[i].addEventListener("click", function() {
-            var subcatButtons = document.querySelectorAll('.subcategory');
-            console.log(subcatButtons, 'tese');
-            switch(subcatButtons[i].textContent){
-                case "".concat(SUBCATS_NAME[1][0]):
-                    //RenderProducts(TEST_ARRAY)
-                    console.log('worked shitty fucking deep ass script');
-                    renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: _Test.TEST_PRODUCT,
-                        index: 1
-                    }), "product-holder animate__animated animate__zoomInDown"));
-                    break;
-                case "".concat(SUBCATS_NAME[2][0]):
-                    renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
-                        el: _Test.TEST_PRODUCT,
-                        index: 2
-                    }), "product-holder animate__animated animate__zoomInDown"));
-                    console.log("worked shitty fucking deep ass script");
-                    break;
-            }
+    //console.log(elements[i].textContent);
+    //each switch contains value of TEST_CAT/elements param, so for ex. first switch is cat1
+    var subcatButtons = document.querySelectorAll(".subcategory");
+    if (subcatButtons[0].textContent === "Procesory") {
+        console.log("prosze kurwa zadzialaj do kurwy1");
+        subcatButtons.forEach(function(button, i) {
+            i++;
+            button.addEventListener("click", function() {
+                console.log("KUUUUUUURWA");
+                renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                    el: _Test.TEST_PRODUCT,
+                    index: i
+                }), "product-holder animate__animated animate__zoomInDown"));
+            });
         });
-    };
-    for(var i1 = 0; i1 < elements.length; i1++)_loop(i1);
+    }
+    if (subcatButtons[0].textContent === "Komputery stacjonarne") subcatButtons.forEach(function(button, i) {
+        i += 9;
+        i++;
+        console.log(i);
+        console.log("prosze kurwa zadzialaj do kurwy2");
+        button.addEventListener("click", function() {
+            console.log("KUUUUUUURWA");
+            renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                el: _Test.TEST_PRODUCT,
+                index: i
+            }), "product-holder animate__animated animate__zoomInDown"));
+        });
+    });
 }; //const AddEvent = () => {
-//  
+//
 //}
 exports.addEvent = addEvent;
 var ProductNav = function ProductNav() {
@@ -24397,7 +24398,7 @@ var SUBCATS_IMG1 = _Test.imgArr;
 var RenderOnLoad = function RenderOnLoad() {
     //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-        el: SUBCATS_NAME[1],
+        el: _Test.TEST_SUBCAT_NAME[1],
         img: SUBCATS_IMG[0]
     }), document.querySelector("#rootSubcategories"));
     (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
@@ -24416,6 +24417,9 @@ var RenderSubcat = function RenderSubcat(props) {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
                 type: "button",
                 className: "subcategory testing",
+                onClick: function onClick() {
+                    (0, _ProductsNav.addEvent)();
+                },
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
                         src: convImg
@@ -24676,20 +24680,32 @@ var RenderFromCat = function RenderFromCat() {
                     //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
                     //x now defines it's type - name, picture etc.
                     case "".concat(ARRAY[0]):
+                        // render(
+                        //   <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
+                        //   document.querySelector("#rootSubcategories")
+                        //     );
                         (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-                            el: SUBCATS_NAME[1],
+                            el: _Test.TEST_SUBCAT_NAME[1],
                             img: SUBCATS_IMG[3]
                         }), document.querySelector("#rootSubcategories"));
+                        (0, _ProductsNav.addEvent)();
                         break;
                     case "".concat(ARRAY[1]):
                         // render(
                         //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
                         //   document.querySelector("#rootSubcategories")
                         // );
+                        // render(
+                        //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
+                        //   document.querySelector("#rootSubcategories")
+                        // );
                         (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-                            el: SUBCATS_NAME[2],
+                            el: _Test.TEST_SUBCAT_NAME[2],
                             img: SUBCATS_IMG[4]
                         }), document.querySelector("#rootSubcategories"));
+                        setTimeout(function() {
+                            (0, _ProductsNav.addEvent)();
+                        }, 500);
                         break;
                 }
             });
