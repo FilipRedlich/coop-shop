@@ -24021,6 +24021,7 @@ var addEvent = function addEvent() {
             switch(subcatButtons[i].textContent){
                 case "".concat(SUBCATS_NAME[1][0]):
                     //RenderProducts(TEST_ARRAY)
+                    console.log('worked shitty fucking deep ass script');
                     renderRoot((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
                         el: _Test.TEST_PRODUCT,
                         index: 1
@@ -24031,6 +24032,7 @@ var addEvent = function addEvent() {
                         el: _Test.TEST_PRODUCT,
                         index: 2
                     }), "product-holder animate__animated animate__zoomInDown"));
+                    console.log("worked shitty fucking deep ass script");
                     break;
             }
         });
@@ -24665,33 +24667,35 @@ var TEST_PRODUCT1 = [
 var RenderFromCat = function RenderFromCat() {
     var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
     var categories = document.querySelectorAll(".categories-button");
-    var _loop = function _loop(i) {
-        categories[i].addEventListener("click", function() {
-            //adds function to specified category
-            switch(ARRAY[i]){
-                //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
-                //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
-                //x now defines it's type - name, picture etc.
-                case "".concat(ARRAY[0]):
-                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-                        el: SUBCATS_NAME[1],
-                        img: SUBCATS_IMG[3]
-                    }), document.querySelector("#rootSubcategories"));
-                    break;
-                case "".concat(ARRAY[1]):
-                    // render(
-                    //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
-                    //   document.querySelector("#rootSubcategories")
-                    // );
-                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-                        el: SUBCATS_NAME[2],
-                        img: SUBCATS_IMG[4]
-                    }), document.querySelector("#rootSubcategories"));
-                    break;
-            }
-        });
-    };
-    for(var i1 = 0; i1 < ARRAY.length; i1++)_loop(i1);
+    setTimeout(function() {
+        var _loop = function _loop(i) {
+            categories[i].addEventListener("click", function() {
+                //adds function to specified category
+                switch(ARRAY[i]){
+                    //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
+                    //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
+                    //x now defines it's type - name, picture etc.
+                    case "".concat(ARRAY[0]):
+                        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+                            el: SUBCATS_NAME[1],
+                            img: SUBCATS_IMG[3]
+                        }), document.querySelector("#rootSubcategories"));
+                        break;
+                    case "".concat(ARRAY[1]):
+                        // render(
+                        //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
+                        //   document.querySelector("#rootSubcategories")
+                        // );
+                        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+                            el: SUBCATS_NAME[2],
+                            img: SUBCATS_IMG[4]
+                        }), document.querySelector("#rootSubcategories"));
+                        break;
+                }
+            });
+        };
+        for(var i1 = 0; i1 < ARRAY.length; i1++)_loop(i1);
+    }, 200);
 };
 _c2 = RenderFromCat;
 exports.RenderFromCat = RenderFromCat;
