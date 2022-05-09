@@ -234,8 +234,8 @@ const TEST_PRODUCT1 = [
 //Adds functionality to category buttons
 const RenderFromCat = (ARRAY = []) => {
   const categories = document.querySelectorAll(".categories-button");
-
-  for (let i = 0; i < ARRAY.length; i++) {
+  setTimeout(() => {
+    for (let i = 0; i < ARRAY.length; i++) {
     categories[i].addEventListener("click", () => {
       //adds function to specified category
       switch (ARRAY[i]) {
@@ -265,6 +265,8 @@ const RenderFromCat = (ARRAY = []) => {
       }
     });
   }
+  }, 200)
+  
 };
 
 export { RenderOnLoad, RenderFromCat, renderInSubRoot };

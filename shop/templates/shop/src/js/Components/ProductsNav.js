@@ -77,6 +77,7 @@ const addEvent = (elements = []) => {
       switch (subcatButtons[i].textContent) {
           case `${SUBCATS_NAME[1][0]}`:
             //RenderProducts(TEST_ARRAY)
+          console.log('worked shitty fucking deep ass script')
                 renderRoot(
                   renderInSubRoot(
                     <RenderProducts2 el={TEST_PRODUCT} index={1} />,
@@ -90,7 +91,8 @@ const addEvent = (elements = []) => {
                     <RenderProducts2 el={TEST_PRODUCT} index={2} />,
                     "product-holder animate__animated animate__zoomInDown"
                   )
-                );
+          );
+           console.log("worked shitty fucking deep ass script");
           break;
         }
       
