@@ -231,7 +231,28 @@ const TEST_PRODUCT = [
   [[""]],
   [[""]],
 ];
-
+const TEST_SUBCAT_NAME = [
+  [""],
+  [
+    "Procesory",
+    "Płyty główne",
+    "Pamięć RAM",
+    "Karty graficzne",
+    "Dyski SSD",
+    "Dyski HDD",
+    "Zasilacze",
+    "Chłodzenie CPU",
+    "Pasty termoprzewodzące",
+  ],
+  ["Komputery stacjonarne", "Serwery", "Monitory", "Software"],
+  [""],
+  [""],
+  [""],
+  [""],
+  [""],
+  [""],
+  [""],
+];
 const AfterLoad = (element, renderPlace = null, time = 1000) => {
   setTimeout(() => {
     console.log(element, renderPlace);
@@ -267,5 +288,13 @@ const renderTry = (ARRAY_NAME = [], ARRAY_IMG = []) => {
   addContent();
 };
 
-export { TEST_PRODUCT, TEST_CAT, TEST_ARRAY, TEST_ARRAY2, imgArr, cartContentsTest };
+export {
+  TEST_SUBCAT_NAME,
+  TEST_PRODUCT,
+  TEST_CAT,
+  TEST_ARRAY,
+  TEST_ARRAY2,
+  imgArr,
+  cartContentsTest,
+};
 export { AfterLoad, renderTry };

@@ -8,7 +8,7 @@ import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import renderTry from "./Test";
-import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2, TEST_PRODUCT } from "./Test";
+import { TEST_SUBCAT_NAME, TEST_CAT, TEST_ARRAY, TEST_ARRAY2, TEST_PRODUCT } from "./Test";
 import { RenderFromCat, renderInSubRoot } from "./RenderScripts";
 
 
@@ -91,7 +91,7 @@ const addEvent = (elements = []) => {
                     "product-holder animate__animated animate__zoomInDown"
                   )
                 );
-            break;
+          break;
         }
       
       
