@@ -23339,7 +23339,7 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.renderTry = exports.imgArr = exports.cartContentsTest = exports.TEST_PRODUCT = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+exports.renderTry = exports.imgArr = exports.cartContentsTest = exports.TEST_SUBCAT_NAME = exports.TEST_PRODUCT = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
 var _reactDom = require("react-dom");
 var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
 var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
@@ -23643,6 +23643,50 @@ var TEST_PRODUCT = [
     ]
 ];
 exports.TEST_PRODUCT = TEST_PRODUCT;
+var TEST_SUBCAT_NAME = [
+    [
+        ""
+    ],
+    [
+        "Procesory",
+        "Płyty główne",
+        "Pamięć RAM",
+        "Karty graficzne",
+        "Dyski SSD",
+        "Dyski HDD",
+        "Zasilacze",
+        "Chłodzenie CPU",
+        "Pasty termoprzewodzące"
+    ],
+    [
+        "Komputery stacjonarne",
+        "Serwery",
+        "Monitory",
+        "Software"
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ]
+];
+exports.TEST_SUBCAT_NAME = TEST_SUBCAT_NAME;
 var AfterLoad = function AfterLoad(element) {
     var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
     var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
@@ -24629,18 +24673,20 @@ var RenderFromCat = function RenderFromCat() {
                 //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
                 //x now defines it's type - name, picture etc.
                 case "".concat(ARRAY[0]):
-                    //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[1],
                         img: SUBCATS_IMG
-                    }), document.querySelector("#rootSubcategories")); //renderTry(TEST_ARRAY);
+                    }), document.querySelector("#rootSubcategories"));
                     break;
                 case "".concat(ARRAY[1]):
-                    //renderTry(TEST_ARRAY2);
+                    // render(
+                    //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
+                    //   document.querySelector("#rootSubcategories")
+                    // );
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[2],
-                        img: SUBCATS_IMG1[0]
-                    }), document.querySelector("#rootSubcategories")); // renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
+                        img: SUBCATS_IMG
+                    }), document.querySelector("#rootSubcategories"));
                     break;
             }
         });

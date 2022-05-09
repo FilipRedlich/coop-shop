@@ -1,5 +1,5 @@
 import React from "react";
-import renderTry, { cartContentsTest, imgArr, TEST_ARRAY, TEST_PRODUCT } from "./Test";
+import renderTry, { cartContentsTest, imgArr, TEST_ARRAY, TEST_PRODUCT, TEST_SUBCAT_NAME } from "./Test";
 import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
@@ -243,23 +243,24 @@ const RenderFromCat = (ARRAY = []) => {
         //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
         //x now defines it's type - name, picture etc.
         case `${ARRAY[0]}`:
-          //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+       
       render(
         <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG} />,
         document.querySelector("#rootSubcategories")
       );
-
-          //renderTry(TEST_ARRAY);
-         // addEvent(document.querySelectorAll(".testing"));
+           
+         
           break;
         case `${ARRAY[1]}`:
-          //renderTry(TEST_ARRAY2);
-          render(
-            <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
-            document.querySelector("#rootSubcategories")
-          );
-          // renderTry(SUBCATS_NAME[2], SUBCATS_IMG[1]);
-          //addEvent(document.querySelectorAll(".testing"));
+         
+         // render(
+         //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
+         //   document.querySelector("#rootSubcategories")
+         // );
+        render(
+          <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG} />,
+          document.querySelector("#rootSubcategories")
+        );
           break;
       }
     });
