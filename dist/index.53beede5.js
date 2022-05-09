@@ -24409,7 +24409,7 @@ var RenderSubcat = function RenderSubcat(props) {
     var img = props.img;
     return el.map(function(val, i) {
         var convImg = img[i];
-        console.log(convImg);
+        console.log(convImg, 'convImg');
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
                 type: "button",
@@ -24675,7 +24675,7 @@ var RenderFromCat = function RenderFromCat() {
                 case "".concat(ARRAY[0]):
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[1],
-                        img: SUBCATS_IMG
+                        img: SUBCATS_IMG[3]
                     }), document.querySelector("#rootSubcategories"));
                     break;
                 case "".concat(ARRAY[1]):
@@ -24685,7 +24685,7 @@ var RenderFromCat = function RenderFromCat() {
                     // );
                     (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
                         el: SUBCATS_NAME[2],
-                        img: SUBCATS_IMG
+                        img: SUBCATS_IMG[4]
                     }), document.querySelector("#rootSubcategories"));
                     break;
             }

@@ -36,7 +36,7 @@ const RenderSubcat = (props) => {
 
   return el.map((val, i) => {
     const convImg = img[i];
-    console.log(convImg)
+    console.log(convImg, 'convImg')
     return (
       <>
         <button type="button" className="subcategory testing">
@@ -245,7 +245,7 @@ const RenderFromCat = (ARRAY = []) => {
         case `${ARRAY[0]}`:
        
       render(
-        <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG} />,
+        <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
         document.querySelector("#rootSubcategories")
       );
            
@@ -258,7 +258,7 @@ const RenderFromCat = (ARRAY = []) => {
          //   document.querySelector("#rootSubcategories")
          // );
         render(
-          <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG} />,
+          <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
           document.querySelector("#rootSubcategories")
         );
           break;
