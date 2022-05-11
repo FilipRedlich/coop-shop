@@ -11,7 +11,7 @@ Project is created with:
 * Babel/core: 7.17.5
 * Babel/runtime: 7.17.2
 * Babel-preset-airbnb: 5.0.0
-* Pslint: 8.10.0
+* Eslint: 8.10.0
 * Parcel: 2.5.0
 * Prettier 2.5.1
 * Sass 1.50.1
