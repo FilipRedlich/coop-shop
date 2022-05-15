@@ -1,12 +1,10 @@
 
 import React from "react";
 import { render } from "react-dom";
-import { useState } from "react";
 
 
 //imported components
 import Login from './Login';
-import MainApp from "../App";
 import Cart from './Cart';
 import MainContent from "./MainContent";
 
@@ -19,14 +17,16 @@ const MainNav = () => {
     <nav className="w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2">
       <div className="row m-auto w-100 gap-3">
         <div className="col m-auto">
-          <h1 className="text-white text-center"
-            role='button'
+          <h1
+            className="text-white text-center"
+            role="button"
             onClick={() => {
-              console.log('MainNav')
-            render(<MainContent />, document.querySelector('#root'))
-          }}
-          >SKLEP</h1>
-          
+              console.log("MainNav");
+              render(<MainContent />, document.querySelector("#root"));
+            }}
+          >
+            SKLEP
+          </h1>
         </div>
 
         <div className="col min-rem m-auto">
@@ -45,17 +45,24 @@ const MainNav = () => {
 
         <div className="col m-auto">
           <div className="d-flex gap-3 justify-content-end">
-            <button className="btn text-white bg-dark"
-            onClick={()=>{
-              render(<Cart />, document.querySelector('#root'))
-            }}
-            >Shopping cart</button>
-            <button className="btn text-white bg-dark"
+            <p className="my-auto text-white">{currentUser}</p>
+            <button
+              className="btn text-white bg-dark"
               onClick={() => {
-              console.log("MainNav");
-              render(<Login />, document.querySelector("#root"));
-            }}
-            >Login</button>
+                render(<Cart />, document.querySelector("#root"));
+              }}
+            >
+              Shopping cart
+            </button>
+            <button
+              className="btn text-white bg-dark"
+              onClick={() => {
+                console.log("MainNav");
+                render(<Login />, document.querySelector("#root"));
+              }}
+            >
+              Login
+            </button>
           </div>
         </div>
       </div>

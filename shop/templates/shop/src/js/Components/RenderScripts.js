@@ -50,7 +50,7 @@ const RenderSubcat = (props) => {
         }}
         >
           <img src={convImg} />
-          <p>{val}</p>
+          <p>{val || 'Default text'}</p>
         </button>
       </>
     );

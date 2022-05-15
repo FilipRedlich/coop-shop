@@ -17,6 +17,7 @@
     <script>"use strict";
 
 var CSRF_TOKEN = "{{ csrf_token }}";
+var currentUser = '{{request.session.email}}';
 var pushedElement;
 var arrayOfCategories = [];
 "{% for cat in categories %}";
@@ -27,8 +28,6 @@ arrayOfCategories.push(pushedElement);
 " {% endfor %}";
 console.log(arrayOfCategories);
 var username = "{{request.session.email}}";
-var SUBCAT_1_IMG = "{% getSubcatsFromCat 2 2 %}".split(";");
-var SUBCAT_2_IMG = "{% getSubcatsFromCat 3 2 %}".split(";");
 var SUBCATS_NAME = ["{% getSubcatsFromCat 3 1 %}".split(";"), "{% getSubcatsFromCat 4 1 %}".split(";"), "{% getSubcatsFromCat 5 1 %}".split(";"), "{% getSubcatsFromCat 6 1 %}".split(";"), "{% getSubcatsFromCat 7 1 %}".split(";"), "{% getSubcatsFromCat 8 1 %}".split(";"), "{% getSubcatsFromCat 9 1 %}".split(";"), "{% getSubcatsFromCat 10 1 %}".split(";"), "{% getSubcatsFromCat 11 1 %}".split(";"), "{% getSubcatsFromCat 12 1 %}".split(";")];
 var SUBCATS_IMG = ["{% getSubcatsFromCat 1 2 %}".split(";"), "{% getSubcatsFromCat 2 2 %}".split(";"), "{% getSubcatsFromCat 3 2 %}".split(";"), "{% getSubcatsFromCat 4 2 %}".split(";"), "{% getSubcatsFromCat 5 2 %}".split(";"), "{% getSubcatsFromCat 6 2 %}".split(";"), "{% getSubcatsFromCat 7 2 %}".split(";"), "{% getSubcatsFromCat 8 2 %}".split(";")];
 var PRODUCTS_NAME = [];

@@ -16,7 +16,7 @@ const HowManyItems = (props) => {
 
   return items.map((x) => {
     return (
-      <div className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between px-2 w-100 bg-dark rounded m-auto">
+      <div className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 bg-dark rounded m-auto">
         <div className="d-flex flexb-50 gap-3 flex-row flex-wrap">
           <img src={x[2]} className="cart-img" />
           <h4 className="my-auto item-name">{x[1]}</h4>
@@ -27,7 +27,7 @@ const HowManyItems = (props) => {
             <h6>{`In stock: ${x[4]}`}</h6>
           </div>
           <button className=" btn text-white bg-danger remove-item my-auto">
-            <i class="bi bi-trash"></i>
+            <i className="bi bi-trash"></i>
           </button>
         </div>
       </div>
