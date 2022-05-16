@@ -9,7 +9,7 @@
 <body>
     <form id="changeHotshot" action="/changeHotshot/" method="post">
         {% csrf_token %}
-        Gib product id: <input type="text" name="id" /><br />
+        Gib product id: <input type="number" name="id" required/><br />
         <input type="submit" value="Set Hotshot" />
       </form>
 </body>
