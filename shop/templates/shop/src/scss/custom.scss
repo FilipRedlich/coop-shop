@@ -254,6 +254,7 @@
   margin: auto;
 
   .product {
+    position: relative;
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -267,8 +268,42 @@
     color: white;
     font-size: 1.2rem;
     padding: 1rem;
+    overflow: hidden;
     img {
       max-width: 10rem;
+    }
+    &::before {
+      @include pseudo-el;
+      @include add-trbl;
+      width: 15rem;
+      height: 100%;
+      background: $bg-transparent-c;
+      border-radius: inherit;
+      transform: translateY(-20rem);
+    }
+    &::after {
+      @include pseudo-el;
+      @include add-trbl;
+      width: 100%;
+      height: 3rem;
+      background: $red;
+      margin: auto auto 0 auto;
+      content: "Add to cart";
+      text-align: center;
+      font-size: 1.5rem;
+      border-radius: 0.3rem 0.3rem 0 0;
+      vertical-align: middle;
+      line-height: 2.5rem;
+      transform: translateY(20rem);
+      transition: 0.45s;
+    }
+    &:hover {
+      &::before {
+        animation: scale-up-center 0.4s cubic-bezier(0.39, 0.575, 0.565, 1) both;
+      }
+      &::after {
+        transform: translateY(0rem);
+      }
     }
   }
 }
@@ -320,7 +355,7 @@
         max-width: 10rem;
         max-height: 10rem;
       }
-      .item-name{
+      .item-name {
         overflow: hidden;
         text-overflow: ellipsis;
       }
@@ -498,9 +533,12 @@ img {
     background-position: 0 0%;
   }
 }
-
+.mainNav-btn {
+  letter-spacing: 0.8px;
+}
 .prodNav-btn {
   font-weight: 300;
   letter-spacing: 1.5px;
   text-transform: uppercase;
+  text-shadow: 0px 0px 5px rgb(255, 255, 255);
 }
