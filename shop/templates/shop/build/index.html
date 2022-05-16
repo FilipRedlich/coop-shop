@@ -12,13 +12,14 @@
       href="./static/shop/shop_logo.3f953129.svg"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./static/shop/index.6a0cb5b2.css" />
-    <script src="./static/shop/index.5e5961a6.js" type="module" defer></script>
+    <link rel="stylesheet" href="./static/shop/index.ad5cbbc8.css" />
+    <script src="./static/shop/index.aa621c1e.js" type="module" defer></script>
   </head>
 
   <body class="bg-dark">
     <script>
       const CSRF_TOKEN = "{{ csrf_token }}";
+      const currentUser = '{{request.session.email}}';
       var pushedElement;
       var arrayOfCategories = [];
       ("{% for cat in categories %}");

@@ -20,6 +20,7 @@
   <body class="bg-dark min-vh-100 position-relative">
     <script>
       const CSRF_TOKEN = "{{ csrf_token }}";
+      const currentUser = '{{request.session.email}}';
       var pushedElement;
       var arrayOfCategories = [];
       ("{% for cat in categories %}");
@@ -32,8 +33,6 @@
       (" {% endfor %}");
       console.log(arrayOfCategories);
       const username = "{{request.session.email}}";
-      var SUBCAT_1_IMG = "{% getSubcatsFromCat 2 2 %}".split(";");
-      var SUBCAT_2_IMG = "{% getSubcatsFromCat 3 2 %}".split(";");
 
       var SUBCATS_NAME = [
         "{% getSubcatsFromCat 3 1 %}".split(";"),
