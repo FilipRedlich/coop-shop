@@ -72,6 +72,11 @@ def testView3(request):
     getProductsFromBasket(request)
     return render(request, 'shop/build/indextest3.html',context)
 
+def setHotshot(request):
+    global context
+    getProductsFromBasket(request)
+    return render(request, 'shop/build/setHotshot.html',context)
+
 #func to get all products from user basket using user id
 def getProductsFromBasket(request):
     global context
@@ -185,5 +190,16 @@ def deleteProductToBasket(request):
     productID = request.POST['id']
     #query to add product to given user's basket
     Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID).delete()
+    #redirect to index after end of function
+    return HttpResponseRedirect(reverse('shop:index'))
+
+#set hotshot via product id
+def changeHotshot(request):
+    #getting product id to set as hotshot
+    productID = request.POST['id']
+    #clearing previous hotshots
+    Products.objects.filter(hotshot=True).update(hotshot=False)
+    #setting new hotshot
+    Products.objects.filter(pk=productID).update(hotshot=True)
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
