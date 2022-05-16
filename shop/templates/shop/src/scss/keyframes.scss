@@ -42,3 +42,11 @@
     background: $gradient-red;
   }
 }
+@keyframes scale-up-center {
+  0% {
+    transform: scale(0.1);
+  }
+  100% {
+    transform: scale(1);
+  }
+}

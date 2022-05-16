@@ -1,12 +1,15 @@
 import React from "react";
-import renderTry, { cartContentsTest, imgArr, TEST_ARRAY, TEST_PRODUCT, TEST_SUBCAT_NAME } from "./Test";
+import renderTry, {
+  cartContentsTest,
+  imgArr,
+  TEST_ARRAY,
+  TEST_PRODUCT,
+  TEST_SUBCAT_NAME,
+} from "./Test";
 import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
 import { RenderProducts2 } from "./ProductsNav";
-
-
-
 
 const renderInSubRoot = (el, options) => {
   return (
@@ -17,21 +20,18 @@ const renderInSubRoot = (el, options) => {
 };
 const SUBCATS_IMG1 = imgArr;
 
-
-
-
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
-    <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[0]} />,
+    <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[3]} />,
     document.querySelector("#rootSubcategories")
   );
   //Due to some issues with rendering time
   //There needs to be timeout to create a delay between renders
   setTimeout(() => {
-     addEvent(); //It needs to be initiated on load to add EventListener to buttons
-  },200)
- 
+    addEvent(); //It needs to be initiated on load to add EventListener to buttons
+  }, 200);
+
   console.log("RenderOnLoad in RenderScripts");
   return <></>;
 };
@@ -41,16 +41,18 @@ const RenderSubcat = (props) => {
 
   return el.map((val, i) => {
     const convImg = img[i];
-    console.log(convImg, 'convImg')
+    console.log(convImg, "convImg");
     return (
       <>
-        <button type="button" className="subcategory testing"
+        <button
+          type="button"
+          className="subcategory testing"
           onClick={() => {
-          addEvent()
-        }}
+            addEvent();
+          }}
         >
-          <img src={convImg} />
-          <p>{val || 'Default text'}</p>
+          <img src={convImg} alt={val + " Quick debug on dev"} />
+          <p>{val || "Default text"}</p>
         </button>
       </>
     );
@@ -245,49 +247,45 @@ const RenderFromCat = (ARRAY = []) => {
   const categories = document.querySelectorAll(".categories-button");
   setTimeout(() => {
     for (let i = 0; i < ARRAY.length; i++) {
-    categories[i].addEventListener("click", () => {
-      //adds function to specified category
-      switch (ARRAY[i]) {
-        //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
-        //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
-        //x now defines it's type - name, picture etc.
-        case `${ARRAY[0]}`:
-       
-     // render(
-     //   <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
-     //   document.querySelector("#rootSubcategories")
-     //     );
-           render(
-             <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[3]} />,
-             document.querySelector("#rootSubcategories")
-          );
-          addEvent()
-           
-         
-          break;
-        case `${ARRAY[1]}`:
-         
-         // render(
-         //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
-         //   document.querySelector("#rootSubcategories")
-         // );
-       // render(
-       //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
-       //   document.querySelector("#rootSubcategories")
-       // );
-           render(
-             <RenderSubcat el={TEST_SUBCAT_NAME[2]} img={SUBCATS_IMG[4]} />,
-             document.querySelector("#rootSubcategories")
-          );
-     
-           addEvent();
-    
-          break;
-      }
-    });
-  }
-  }, 200)
-  
+      categories[i].addEventListener("click", () => {
+        //adds function to specified category
+        switch (ARRAY[i]) {
+          //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
+          //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
+          //x now defines it's type - name, picture etc.
+          case `${ARRAY[0]}`:
+            // render(
+            //   <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
+            //   document.querySelector("#rootSubcategories")
+            //     );
+            render(
+              <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[3]} />,
+              document.querySelector("#rootSubcategories")
+            );
+            addEvent();
+
+            break;
+          case `${ARRAY[1]}`:
+            // render(
+            //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
+            //   document.querySelector("#rootSubcategories")
+            // );
+            // render(
+            //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
+            //   document.querySelector("#rootSubcategories")
+            // );
+            render(
+              <RenderSubcat el={TEST_SUBCAT_NAME[2]} img={SUBCATS_IMG[4]} />,
+              document.querySelector("#rootSubcategories")
+            );
+
+            addEvent();
+
+            break;
+        }
+      });
+    }
+  }, 200);
 };
 
 export { RenderOnLoad, RenderFromCat, renderInSubRoot };

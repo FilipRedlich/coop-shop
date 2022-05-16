@@ -5,12 +5,12 @@ const TotalPrice = (props) => {
   const CurrentPrice = props.price;
   var convertedPrice = 0; //Converted price to integer
 
-   CurrentPrice.map((x) => {
+  CurrentPrice.map((x) => {
     convertedPrice += parseInt(x[5]);
-   })
-  
-  return convertedPrice + '$';
-}
+  });
+
+  return convertedPrice + "$";
+};
 const HowManyItems = (props) => {
   const items = props.el;
 
@@ -32,37 +32,39 @@ const HowManyItems = (props) => {
         </div>
       </div>
     );
-  })
-}
+  });
+};
 const Cart = () => {
-    return (
-      <>
-        <section
-          id="cart"
-          className="cart text-white d-flex flex-row flex-wrap gap-2 p-2 animate__animated animate__bounceIn"
+  return (
+    <>
+      <section
+        id="cart"
+        className="cart text-white d-flex flex-row flex-wrap gap-2 p-2 animate__animated animate__bounceIn"
+      >
+        <div
+          id="card-items"
+          className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded"
         >
-          <div id="card-items" className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded">
-           
-           <HowManyItems el={cartContentsTest} /> {/* cardContentsTest or CardContents*/}
-  
-          </div>
-          <div className="checkout m-auto bg-transparent-custom rounded">
-            <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
-              <div class="flexb-70">
-                <label className="text-muted">Subtotal:</label>
-                <h5>{<TotalPrice price={cartContentsTest} />}</h5>
-                <p className="text-muted">{`+ Delivery`}</p>
-              </div>
-              <input
-                className="checkout-submit flexb-30 btn btn-lg bg-danger text-white "
-                type="submit"
-                value="Checkout"
-              />
-            </form>
-          </div>
-        </section>
-      </>
-    );
-}
+          <HowManyItems el={cartContentsTest} />{" "}
+          {/* cardContentsTest or CardContents*/}
+        </div>
+        <div className="checkout m-auto bg-transparent-custom rounded">
+          <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
+            <div class="flexb-70">
+              <label className="text-muted">Subtotal:</label>
+              <h5>{<TotalPrice price={cartContentsTest} />}</h5>
+              <p className="text-muted">{`+ Delivery`}</p>
+            </div>
+            <input
+              className="checkout-submit flexb-30 btn btn-lg bg-danger text-white "
+              type="submit"
+              value="Checkout"
+            />
+          </form>
+        </div>
+      </section>
+    </>
+  );
+};
 export { HowManyItems };
 export default Cart;

@@ -1,18 +1,12 @@
-
 import React from "react";
 import { render } from "react-dom";
 
-
 //imported components
-import Login from './Login';
-import Cart from './Cart';
+import Login from "./Login";
+import Cart from "./Cart";
 import MainContent from "./MainContent";
 
-
 const MainNav = () => {
-
- 
-  
   return (
     <nav className="w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2">
       <div className="row m-auto w-100 gap-3">
@@ -44,25 +38,27 @@ const MainNav = () => {
         </div>
 
         <div className="col m-auto">
-          <div className="d-flex gap-3 justify-content-end">
-            <p className="my-auto text-white">{currentUser}</p>
-            <button
-              className="btn text-white bg-dark"
-              onClick={() => {
-                render(<Cart />, document.querySelector("#root"));
-              }}
-            >
-              Shopping cart
-            </button>
-            <button
-              className="btn text-white bg-dark"
-              onClick={() => {
-                console.log("MainNav");
-                render(<Login />, document.querySelector("#root"));
-              }}
-            >
-              Login
-            </button>
+          <div className="d-flex flex-wrap gap-3 justify-content-end">
+            <p className="my-auto text-white mainNav-btn">{currentUser}</p>
+            <div className="d-flex gap-3 ">
+              <button
+                className="btn text-white mainNav-btn bg-dark"
+                onClick={() => {
+                  render(<Cart />, document.querySelector("#root"));
+                }}
+              >
+                Shopping cart
+              </button>
+              <button
+                className="btn text-white mainNav-btn bg-dark"
+                onClick={() => {
+                  console.log("MainNav");
+                  render(<Login />, document.querySelector("#root"));
+                }}
+              >
+                Login
+              </button>
+            </div>
           </div>
         </div>
       </div>
