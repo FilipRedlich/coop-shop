@@ -8,11 +8,46 @@ ON=0
 
 @register.simple_tag
 #check for discount and returns items from subcat with discount
-def hasDiscount(cat):
-    query = Products.objects.values_list("name","price","mult").filter(subcat=cat).exclude(mult=1.0)
+def hasDiscount(cat=99):
+    if(cat!=99):
+        query = Products.objects.values_list().filter(subcat=cat).exclude(mult=1.0)
+    else:
+        query = Products.objects.values_list().exclude(mult=1.0)
     out=""
+    i=0
+    ii=0
     for row in query:
-        out+=str(row)
+        if(i!=0):
+            out+="***"
+        for row2 in row:
+            if(ii!=0):
+                out+=";;;"
+            out+=str(row2)
+            ii=1
+        ii=0
+        i=1
+    return out
+
+@register.simple_tag
+#check for hotshot and returns items from subcat with hotshot
+def hasHotshot(cat=99):
+    if(cat!=99):
+        query = Products.objects.values_list().filter(subcat=cat).exclude(hotshot=True)
+    else:
+        query = Products.objects.values_list().exclude(hotshot=True)
+    out=""
+    i=0
+    ii=0
+    for row in query:
+        if(i!=0):
+            out+="***"
+        for row2 in row:
+            if(ii!=0):
+                out+=";;;"
+            out+=str(row2)
+            ii=1
+        ii=0
+        i=1
     return out
 
 @register.simple_tag
