@@ -70,7 +70,7 @@ const RenderProducts2 = (props) => {
               e.preventDefault();
             }}
           >
-            <img src={convImg} loading='lazy' />
+            <img src={convImg} alt={val[1]} loading='lazy' />
             <p>{val[1]}</p>
           </button>
         </form>
