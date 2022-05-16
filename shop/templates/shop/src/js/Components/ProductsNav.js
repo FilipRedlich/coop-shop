@@ -55,13 +55,21 @@ const RenderProducts2 = (props) => {
   //it's then used to create another array containing information about products (from subcategories)
   return el[specIndex].map((val, i) => {
     const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
-    console.log(convImg, "KURWISKO");
+    const itemID = val[0];
+    //console.log(convImg, "converted Img line 58 ProductsNav");
+    console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
     return (
       <>
         <form action="/addProductToBasket/" method="post">
-          <input type="hidden" value={CSRF_TOKEN} />
-          <input type="hidden" name="id" value="5" />
-          <button type="submit" className="product">
+          <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
+          <input type="hidden" name="id" value={itemID} />
+          <button
+            type="submit"
+            className="product"
+            onClick={(e) => {
+              e.preventDefault();
+            }}
+          >
             <img src={convImg} />
             <p>{val[1]}</p>
           </button>
@@ -75,12 +83,11 @@ const addEvent = () => {
   var subcatButtons = document.querySelectorAll(".subcategory");
   const initAddEvent = () => {
     if (subcatButtons[0].textContent === "Procesory") {
-      console.log("prosze kurwa zadzialaj do kurwy1");
       subcatButtons.forEach((button, i) => {
+        removeEventListener("click", button); //Makes sure that function won't be fired many times
         i++;
-
+        console.log("1st cat addEvent func");
         button.addEventListener("click", () => {
-          console.log("KUUUUUUURWA");
           renderRoot(
             renderInSubRoot(
               <RenderProducts2 el={TEST_PRODUCT} index={i} />,
@@ -93,14 +100,14 @@ const addEvent = () => {
 
     if (subcatButtons[0].textContent === "Komputery stacjonarne") {
       subcatButtons.forEach((button, i) => {
+        removeEventListener("click", button);
         i += 9; //value before first index of next subcategory (for ex. 2nd subcat stars on 10th index)
         i++;
-        console.log("prosze kurwa zadzialaj do kurwy2");
+        console.log("2nd cat addEvent func");
         button.addEventListener("click", () => {
-          console.log("KUUUUUUURWA");
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={TEST_PRODUCT} index={i} />,
+              <RenderProducts2 el={PRODUCTS_NAME} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -136,11 +143,11 @@ const ProductNav = () => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
             render(
-              <ButtonBuilder2 el={TEST_CAT} />,
+              <ButtonBuilder2 el={arrayOfCategories} />,
               document.querySelector("#categories")
             ); //creates category buttons
 
-            RenderFromCat(TEST_CAT); //elements that are rendered after clicking subcategory
+            RenderFromCat(arrayOfCategories); //elements that are rendered after clicking subcategory
           }}
         >
           Categories
@@ -195,7 +202,7 @@ const ProductNav = () => {
 
           <div
             id="rootSubcategories"
-            className="bg-dark col-md rootSubcategories mx-auto d-flex flex-row flex-wrap gap-2 p-2 "
+            className="bg-dark col-md rootSubcategories mx-auto justify-content-center d-flex flex-row flex-wrap gap-3 p-2 "
           ></div>
         </div>
       </section>

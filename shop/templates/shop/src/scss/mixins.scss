@@ -6,3 +6,10 @@
         bottom: 0;
         left: 0;
 }
+//Adds additional top,right,bottom,left properties (useful with pseudo el mixin)
+@mixin add-trbl{
+      top: 0;
+      right: 0;
+      bottom: 0;
+      left: 0;
+}
