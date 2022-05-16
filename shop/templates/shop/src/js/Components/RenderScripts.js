@@ -18,7 +18,6 @@ const renderInSubRoot = (el, options) => {
     </div>
   );
 };
-const SUBCATS_IMG1 = imgArr;
 
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
@@ -35,6 +34,7 @@ const RenderOnLoad = () => {
   console.log("RenderOnLoad in RenderScripts");
   return <></>;
 };
+//Creates subcategories (Primarily used in RenderFromCat (It's added with onClick event))
 const RenderSubcat = (props) => {
   const el = props.el;
   const img = props.img;
@@ -51,7 +51,7 @@ const RenderSubcat = (props) => {
             addEvent();
           }}
         >
-          <img src={convImg} alt={val + " Quick debug on dev"} />
+          <img src={convImg} alt={val + " Quick debug on dev"} loading='lazy' />
           <p>{val || "Default text"}</p>
         </button>
       </>

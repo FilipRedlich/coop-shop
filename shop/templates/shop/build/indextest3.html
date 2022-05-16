@@ -1,32 +1,40 @@
 {% load view_tags %}
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
-</head>
-<body>
+  </head>
+  <body>
     {{ basketProducts }}
-    <br>
+    <br />
     {% getProductsFromSubcat 5 1 %}
     <script>
-        var ttt = "{{ basketProducts }}".split('***');
-        var tt=[]
-        for(i in ttt)  {
-            tt.push(ttt[i].split(';;;'));
-        }
-        console.log(tt)
+      var discountItems = "{% hasDiscount %}".split("***"); //not converted items
+      var hasDiscount = []; //default array where discount items will be pushed
+      
+      for (item in discountItems) {
+        hasDiscount.push(discountItems[item].split(";;;"));
+      }
+      var ttt = "{{ basketProducts }}".split("***");
 
-        var ppp = '{% getProductsFromSubcat 5 %}'.split('***');
-        var p1=[]
-        for(i in ppp)  {
-            pp.push(ppp[i].split(';;;'));
-        }
-        console.log(pp)
+      var tt = [];
+      for (i in ttt) {
+        tt.push(ttt[i].split(";;;"));
+      }
+      console.log(tt);
+
+      var ppp = "{% getProductsFromSubcat 5 %}".split("***");
+      var p1 = [];
+      for (i in ppp) {
+        pp.push(ppp[i].split(";;;"));
+      }
+      console.log(pp);
     </script>
-    <br>
+    <br />
+
     {% hasDiscount %}
-</body>
+  </body>
 </html>
