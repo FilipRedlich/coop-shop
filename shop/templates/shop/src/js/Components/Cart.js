@@ -18,7 +18,7 @@ const HowManyItems = (props) => {
     return (
       <div className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 bg-dark rounded m-auto">
         <div className="d-flex flexb-50 gap-3 flex-row flex-wrap">
-          <img src={x[2]} className="cart-img" />
+          <img src={x[2]} className="cart-img" alt={ x[1] } loading='lazy' />
           <h4 className="my-auto item-name">{x[1]}</h4>
         </div>
         <div className="d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
