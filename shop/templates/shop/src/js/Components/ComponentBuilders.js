@@ -33,5 +33,17 @@ const buttonBuilder = (ARRAY_NAME) => {
     return;
   }
 };
+const ButtonBuilder2 = (props) => {
+  const catBtn = props.el;
 
-export default buttonBuilder;
+  return catBtn.map((el) => {
+    return (
+      <>
+        <button className="cat-btn btn categories-button mb-2 mx-auto text-white bg-dark">
+          {el}
+        </button>
+      </>
+    );
+  });
+};
+export {ButtonBuilder2, buttonBuilder}
