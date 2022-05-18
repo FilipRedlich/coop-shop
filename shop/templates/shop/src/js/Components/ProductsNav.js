@@ -63,7 +63,6 @@ const RenderProducts2 = (props) => {
             className="product"
             onClick={(e) => {
               showPopup();
-              e.preventDefault();
             }}
           >
             <img src={convImg} alt={val[1]} loading="lazy" />
