@@ -1,5 +1,7 @@
 import { render } from "react-dom";
 import images from "./Images";
+import MainContent from "./MainContent";
+import { renderRoot } from "./RenderScripts";
 import { cartContentsTest } from "./Test";
 const TotalPrice = (props) => {
   const CurrentPrice = props.price;
@@ -13,8 +15,23 @@ const TotalPrice = (props) => {
 };
 const HowManyItems = (props) => {
   const items = props.el;
-
-  return items.map((x) => {
+  if (items.length === 0) {
+    console.log('there are no items in cart');
+    return (
+      <div className="cart-item text-center p-2 w-100 bg-dark rounded m-auto">
+        <div className="lead p-3">
+          <h3>We didn't find any items in your cart!</h3>
+          <p>Return to <span className="text-danger back-btn" onClick={
+            () => {
+              renderRoot(<MainContent />)
+            }
+            }>homepage</span> to continue shopping</p>
+        </div>
+      </div>
+    );
+  } else {
+    console.log('there are items in cart');
+    return items.map((x) => {
     return (
       <div className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 bg-dark rounded m-auto">
         <div className="d-flex flexb-50 gap-3 flex-row flex-wrap">
@@ -33,6 +50,8 @@ const HowManyItems = (props) => {
       </div>
     );
   });
+  }
+
 };
 const Cart = () => {
   return (
@@ -45,14 +64,14 @@ const Cart = () => {
           id="card-items"
           className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-transparent-custom rounded"
         >
-          <HowManyItems el={cartContentsTest} />{" "}
+          <HowManyItems el={cartContents} />{" "}
           {/* cardContentsTest or CardContents*/}
         </div>
         <div className="checkout m-auto bg-transparent-custom rounded">
           <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
             <div class="flexb-70">
               <label className="text-muted">Subtotal:</label>
-              <h5>{<TotalPrice price={cartContentsTest} />}</h5>
+              <h5>{<TotalPrice price={cartContents} />}</h5>
               <p className="text-muted">{`+ Delivery`}</p>
             </div>
             <input

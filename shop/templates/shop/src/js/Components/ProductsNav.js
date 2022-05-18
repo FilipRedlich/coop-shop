@@ -7,7 +7,8 @@ import OnSale from "./OnSale";
 import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
-import renderTry from "./Test";
+import { RenderFromCat, renderInSubRoot, renderRoot } from "./RenderScripts";
+import { ButtonBuilder2 } from "./ComponentBuilders";
 import {
   TEST_SUBCAT_NAME,
   TEST_CAT,
@@ -15,39 +16,33 @@ import {
   TEST_ARRAY2,
   TEST_PRODUCT,
 } from "./Test";
-import { RenderFromCat, renderInSubRoot } from "./RenderScripts";
 
-const renderRoot = (
-  renderElement,
-  renderPlace = document.querySelector("#root")
-) => {
-  render(renderElement, renderPlace);
+
+const showPopup = () => {
+  const popup = document.querySelector(".popup-modal");
+
+  const newPos = () => {
+    popup.style.transform = "translateX(-50%) translateY(-2rem)";
+  };
+  const backToPrevPos = () => {
+    popup.style.transform = "translateX(-50%) translateY(5rem)";
+  };
+  newPos(); //Sets position to show popup after user clicks product
+  setTimeout(backToPrevPos, 1500); //Sets timeout to hide element after 1.5s
+  console.log("showPopup function"); //Debug
 };
-const RenderProducts = (ARRAY_NAME = []) => {
-  console.log(ARRAY_NAME);
-  var button = document.createElement("button").cloneNode(true);
-  var clone = button.cloneNode(true);
+const Popup = (props) => {
+  const el = props.el;
 
-  var renderingSpace = document.querySelector("#root");
-  for (let i = 0; i < ARRAY_NAME.length; i++) {
-    clone.textContent = ARRAY_NAME[i];
-    renderingSpace.appendChild(clone.cloneNode(true));
-  }
+  return (
+    <>
+      <div className="popup-modal">
+        <i className="popup-success"></i>
+        <h5 className="popup-message">Product has been added successfully!</h5>
+      </div>
+    </>
+  );
 };
-const ButtonBuilder2 = (props) => {
-  const catBtn = props.el;
-
-  return catBtn.map((el) => {
-    return (
-      <>
-        <button className="cat-btn btn categories-button mb-2 mx-auto text-white bg-dark">
-          {el}
-        </button>
-      </>
-    );
-  });
-};
-
 const RenderProducts2 = (props) => {
   const el = props.el;
   const img = props.img;
@@ -67,10 +62,11 @@ const RenderProducts2 = (props) => {
             type="submit"
             className="product"
             onClick={(e) => {
+              showPopup();
               e.preventDefault();
             }}
           >
-            <img src={convImg} alt={val[1]} loading='lazy' />
+            <img src={convImg} alt={val[1]} loading="lazy" />
             <p>{val[1]}</p>
           </button>
         </form>
@@ -139,6 +135,7 @@ const ProductNav = () => {
       <nav className="product-nav bg-black z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
           className="btn btn-lg bg-transparent prodNav-btn text-white"
+          aria-labelledby="categories"
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
@@ -206,6 +203,7 @@ const ProductNav = () => {
           ></div>
         </div>
       </section>
+      <Popup />
     </>
   );
 };

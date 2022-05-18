@@ -11,6 +11,13 @@ import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
 import { RenderProducts2 } from "./ProductsNav";
 
+const renderRoot = (
+  renderElement,
+  renderPlace = document.querySelector("#root")
+) => {
+  render(renderElement, renderPlace);
+};
+
 const renderInSubRoot = (el, options) => {
   return (
     <div id="subRoot" className={options}>
@@ -51,7 +58,7 @@ const RenderSubcat = (props) => {
             addEvent();
           }}
         >
-          <img src={convImg} alt={val + " Quick debug on dev"} loading='lazy' />
+          <img src={convImg} alt={val + " Quick debug on dev"} loading="lazy" />
           <p>{val || "Default text"}</p>
         </button>
       </>
@@ -288,4 +295,4 @@ const RenderFromCat = (ARRAY = []) => {
   }, 200);
 };
 
-export { RenderOnLoad, RenderFromCat, renderInSubRoot };
+export {renderRoot, renderInSubRoot, RenderOnLoad, RenderFromCat};
