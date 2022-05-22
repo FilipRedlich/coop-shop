@@ -32,9 +32,9 @@ def hasDiscount(cat=99):
 #check for hotshot and returns items from subcat with hotshot
 def hasHotshot(cat=99):
     if(cat!=99):
-        query = Products.objects.values_list().filter(subcat=cat).exclude(hotshot=True)
+        query = Products.objects.values_list().filter(subcat=cat).exclude(hotshot=False)
     else:
-        query = Products.objects.values_list().exclude(hotshot=True)
+        query = Products.objects.values_list().exclude(hotshot=False)
     out=""
     i=0
     ii=0
