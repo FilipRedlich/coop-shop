@@ -23,7 +23,7 @@ const Login = () => {
   });
   return (
     <>
-      <section className="w-100 bg-dark position-relative login-section d-flex flex-column animate__animated animate__bounceIn">
+      <section className="w-100 bg-dark position-relative login-section d-flex flex-column animate__animated animate__backInRight">
         <div className="d-flex login-switch  justify-content-center mx-auto ">
           <button
             className="btn action w-50 rounded-left-side bg-black text-white border-0 p-2"
@@ -45,14 +45,14 @@ const Login = () => {
             Register
           </button>
         </div>
-        
+
         <form
           id="login-form"
           className="d-flex flex-column justify-content-center gap-4 text-white login-modal  p-3"
           action="/login/"
           method="POST"
         >
-          <p className="text-center h6">{ `Currently logged in as ${currentUser}`}</p>
+          <p className="text-center h6">{`Currently logged in as ${currentUser}`}</p>
           <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
           <input
             className="bg-black d-block mx-auto account-credentials rounded border-0 text-white"

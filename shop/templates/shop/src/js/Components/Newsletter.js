@@ -3,8 +3,7 @@ import img1 from '../../images/undraw_envelope_re_f5j4.svg';
 const Newsletter = () => {
   return (
     <>
-      <section className="d-flex flex-row flex-wrap w-100 gap-3 newsletter animate__animated animate__bounceIn">
-  
+      <section className="d-flex flex-row flex-wrap w-100 gap-3 newsletter animate__animated animate__backInRight">
         <div className="d-flex flex-column justify-content-center newsletter-section gap-1 text-white flexb-30">
           <h3 className="newsletter-text">
             Want to get information about discounts and promotions first?
@@ -19,8 +18,8 @@ const Newsletter = () => {
             />
             <input
               type="submit"
-              className="flexb-30 border-none newsletter-submit bg-black text-white border-r5"
-              value='Submit'
+              className="flexb-30 border-none newsletter-submit text-white border-r5"
+              value="Submit"
             />
           </div>
         </div>

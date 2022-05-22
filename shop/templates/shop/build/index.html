@@ -19,7 +19,7 @@
   <body class="bg-dark">
     <script>
       const CSRF_TOKEN = "{{ csrf_token }}";
-      const currentUser = '{{request.session.email}}';
+      const currentUser = "{{request.session.email}}";
       var pushedElement;
       var arrayOfCategories = [];
       ("{% for cat in categories %}");
@@ -51,7 +51,7 @@
         "{% getSubcatsFromCat 1 2 %}".split(";"),
         "{% getSubcatsFromCat 2 2 %}".split(";"),
         "{% getSubcatsFromCat 3 2 %}".split(";"),
-         "{% getSubcatsFromCat 4 2 %}".split(";"),
+        "{% getSubcatsFromCat 4 2 %}".split(";"),
         "{% getSubcatsFromCat 5 2 %}".split(";"),
         "{% getSubcatsFromCat 6 2 %}".split(";"),
         "{% getSubcatsFromCat 7 2 %}".split(";"),
@@ -90,11 +90,10 @@
       }
 
       console.log(PRODUCTS_NAME, "NEW PRODUCTS NAME");
-      console.log(PRODUCTS_NAME[4], "NEW PRODUCTS NAME"); 
+      console.log(PRODUCTS_NAME[4], "NEW PRODUCTS NAME");
       //1st [] means subcategory index, 2nd [] means exact product at desired index
-      
-      //console.log(SUBCATS_NAME[1], "subcats_name[1]");
 
+      //console.log(SUBCATS_NAME[1], "subcats_name[1]");
     </script>
     <script>
       var basketItems = "{{ basketProducts }}".split("***");
@@ -103,6 +102,12 @@
         cartContents.push(basketItems[i].split(";;;"));
       }
       console.log(cartContents);
+      var discountItems = "{% hasDiscount %}".split("***"); //not converted items
+      var hasDiscount = []; //default array where discount items will be pushed
+      for (item in discountItems) {
+        hasDiscount.push(discountItems[item].split(";;;"));
+      }
+      console.log(discountItems);
     </script>
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>

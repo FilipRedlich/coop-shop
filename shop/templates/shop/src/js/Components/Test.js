@@ -32,7 +32,7 @@ const cartContentsTest = [
     "10",
     "4",
     "270.0",
-    "1.0",
+    "0.5",
     "3.0",
     "False",
   ],
@@ -253,6 +253,31 @@ const TEST_SUBCAT_NAME = [
   [""],
   [""],
 ];
+const discountItemsTest = [
+  [
+    "12",
+    "Monitor Samsung Odyssey G3A",
+    "",
+    "7",
+    "8",
+    "990.0",
+    "0.5",
+    "3.0",
+    "False",
+  ],
+  ["13", "Monitor Asus VZ24EHE", "", "7", "8", "770.0", "0.8", "3.0", "True"],
+  [
+    "28",
+    "Karta graficzna Asus TUF GeForce GTX 1660Ti Gaming Evo OC 6GB GDDR6",
+    "",
+    "15",
+    "4",
+    "2300.0",
+    "0.8",
+    "3.0",
+    "False",
+  ],
+];
 const AfterLoad = (element, renderPlace = null, time = 1000) => {
   setTimeout(() => {
     console.log(element, renderPlace);
@@ -296,5 +321,6 @@ export {
   TEST_ARRAY2,
   imgArr,
   cartContentsTest,
+  discountItemsTest
 };
 export { AfterLoad, renderTry };
