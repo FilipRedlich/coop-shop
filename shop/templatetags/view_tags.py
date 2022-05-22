@@ -8,8 +8,8 @@ ON=0
 
 @register.simple_tag
 #check for discount and returns items from subcat with discount
-def hasDiscount(cat=99):
-    if(cat!=99):
+def hasDiscount(cat=-1):
+    if(cat!=-1):
         query = Products.objects.values_list().filter(subcat=cat).exclude(mult=1.0)
     else:
         query = Products.objects.values_list().exclude(mult=1.0)
@@ -30,8 +30,8 @@ def hasDiscount(cat=99):
 
 @register.simple_tag
 #check for hotshot and returns items from subcat with hotshot
-def hasHotshot(cat=99):
-    if(cat!=99):
+def hasHotshot(cat=-1):
+    if(cat!=-1):
         query = Products.objects.values_list().filter(subcat=cat).exclude(hotshot=False)
     else:
         query = Products.objects.values_list().exclude(hotshot=False)
@@ -65,13 +65,13 @@ def outputBasket(userID):
 
 @register.simple_tag
 #output all subcats specified field from selected cat
-def getSubcatsFromCat(cat,field):
+def getSubcatsFromCat(cat,field=-1):
     query = subCategories.objects.values_list().filter(catID=cat)
     out=""
     i=0
     ii=0
     for row in query:
-        if field==99:
+        if field==-1:
             if(i!=0):
                 out+="***"
             for row2 in row:
@@ -89,13 +89,13 @@ def getSubcatsFromCat(cat,field):
 
 @register.simple_tag
 #output all products specified field from selected subcat
-def getProductsFromSubcat(cat,field=99):
+def getProductsFromSubcat(cat,field=-1):
     query = Products.objects.values_list().filter(subcat=cat)
     out=""
     i=0
     ii=0
     for row in query:
-        if field==99:
+        if field==-1:
             if(i!=0):
                 out+="***"
             for row2 in row:
