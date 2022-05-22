@@ -1,22 +1,35 @@
-import img1 from '../../images/undraw_dev_productivity_re_fylf.svg';
-const OnSale = () => {
+import img1 from "../../images/undraw_dev_productivity_re_fylf.svg";
+import { discountItemsTest } from "./Test";
+const GetItemsOnDiscount = (props) => {
+  const items = props.el;
+
+  return items.map((x) => {
+    //if the price is lower than regular price, assign to variable regular price (It's used to show old price, before applying discount)
+
     return (
       <>
-        <section className="sale p-2 py-5 animate__animated animate__bounceIn">
-          <div className="d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white">
-            <div className="sale-item d-flex bg-transparent-custom flex-column px-3 m-auto justify-content-between border rounded">
-              <div className="flexb-30">
-                <img src={img1} className="img-fluid sale-img" />
-              </div>
-              <div className="pb-3 flexb-70 my-auto">
-                <h2 className="text-danger pb-1">Price tag</h2>
-                <h6 className="lead text-center ">Item name</h6>
-              </div>
+          <div className="card d-flex flex-column">
+            <img src={img1} className="card-img" alt="promotion" />
+            <div className="card-prices">
+              <span className="text-smaller">{`${x[5]}$`}</span>
+              <span className="text-bigger">{`${x[5] * x[6]}$`}</span>
             </div>
+            <p className="product-name">{x[1]}</p>
+            <button className="btn card-button">Add to cart</button>
           </div>
-        </section>
       </>
     );
-}
+  });
+};
+
+const OnSale = () => {
+  return (
+    <>
+       <section className="sale p-2 py-5 animate__animated animate__backInRight">
+        <GetItemsOnDiscount el={discountItemsTest} />
+      </section>
+    </>
+  );
+};
 
 export default OnSale;

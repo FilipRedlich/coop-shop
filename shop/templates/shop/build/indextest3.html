@@ -13,8 +13,9 @@
     {% getProductsFromSubcat 5 1 %}
     <script>
       var discountItems = "{% hasDiscount %}".split("***"); //not converted items
-      var hasDiscount = []; //default array where discount items will be pushed
       
+      var hasDiscount = []; //default array where discount items will be pushed
+      console.log(discountItems)
       for (item in discountItems) {
         hasDiscount.push(discountItems[item].split(";;;"));
       }
@@ -34,9 +35,18 @@
       console.log(pp);
     </script>
     <br />
-
+    <h1>has shotshot 37 line</h1>
+    <h6>{% hasHotshot %}</h6>
+    <h1>End of hotshot</h1>
+    <!-- {% hasDiscount %} -->
+    <h1>Has discount</h1>
     {% hasDiscount %}
+    <h1>End of discount</h1>
     <br>
+    <script>
+      const hotshot = '{% hasHotshot %}';
+      console.log(hotshot, 'hotshot')
+      </script>
         <form id="changeHotshot" action="/changeHotshot/" method="post">
         {% csrf_token %}
         Gib product id: <input type="number" name="id" required/><br />

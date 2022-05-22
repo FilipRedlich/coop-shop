@@ -42,7 +42,7 @@ const MainFooter = () => {
             <h6>
               <a
                 className="footer-anchor remove-all-decoration"
-                href="mailto:arcadam111@gmail.com"
+                href="mailto:brtskr1503@gmail.com"
               >
                 BrtSkr
               </a>
