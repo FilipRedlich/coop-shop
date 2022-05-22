@@ -203,9 +203,11 @@ def changeHotshot(request):
     if 'email' in request.session and request.session['email'] == 'adm':
         #getting product id to set as hotshot
         productID = request.POST['id']
+        discount = request.POST['disc']
         #clearing previous hotshots
         Products.objects.filter(hotshot=True).update(hotshot=False)
         #setting new hotshot
         Products.objects.filter(pk=productID).update(hotshot=True)
+        Products.objects.filter(pk=productID).update(mult=discount)
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
