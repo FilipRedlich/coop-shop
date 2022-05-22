@@ -8,3 +8,4 @@ mysite/__pycache__
 django
 __pycache__
 dist
+*.pyc
