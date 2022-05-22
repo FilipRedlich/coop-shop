@@ -8,8 +8,7 @@
     <title>Document</title>
   </head>
   <body>
-    {{ basketProducts }}
-    <br />
+    <p><b>Basket Products: </b>{{ basketProducts }}</p>
     {% getProductsFromSubcat 5 1 %}
     <script>
       var discountItems = "{% hasDiscount %}".split("***"); //not converted items

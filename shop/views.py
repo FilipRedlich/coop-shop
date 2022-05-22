@@ -110,7 +110,7 @@ def getProductsFromBasket(request):
         context["basketProducts"] = output
     except:
         #return HttpResponseNotFound('<img src="https://http.cat/404"/>')
-        0
+        context["basketProducts"] = ""
     return 0
 
 #unique salt for hashing passwords
