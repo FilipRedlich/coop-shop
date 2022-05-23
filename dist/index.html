@@ -5,31 +5,68 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta name="description" content="E-commerce website">
-    <link rel="shortcut icon" href="/shop_logo.3374cbb9.svg" type="image/x-icon">
+    <link rel="shortcut icon" href="/shop_logo.6e99bcd4.svg" type="image/x-icon">
     <title>E-commerce</title>
     <!-- <link rel="stylesheet" href="{% static 'shop/main.7ddbcda9.css' %}">
     <script src="{% static 'shop/App.13311ed0.js' %}" type="module" defer=""></script>
   <script src="{% static 'shop/main.7ddbcda9.js' %}"></script> -->
-    <link rel="stylesheet" href="/main.d9ee62f6.css">
-    <script src="/App.942ed8aa.js" type="module" defer=""></script>
-  <script src="/main.d9ee62f6.js"></script></head>
+    <link rel="stylesheet" href="/index.3fa258a8.css">
+    <script src="/index.53beede5.js" defer=""></script>
+  </head>
   <body class="bg-dark min-vh-100 position-relative">
     <script>"use strict";
-
 var CSRF_TOKEN = "{{ csrf_token }}";
 var currentUser = "{{request.session.email}}"; //Not converted items
-
 var hasDiscount = "{% hasDiscount %}".split("***");
 var hasBasketProducts = "{{ basketProducts }}".split("***");
-var hasProducts = ["{% getProductsFromSubcat 1 %}".split("***"), "{% getProductsFromSubcat 2 %}".split("***"), "{% getProductsFromSubcat 3 %}".split("***"), "{% getProductsFromSubcat 4 %}".split("***"), "{% getProductsFromSubcat 5 %}".split("***"), "{% getProductsFromSubcat 6 %}".split("***"), "{% getProductsFromSubcat 7 %}".split("***"), "{% getProductsFromSubcat 8 %}".split("***"), "{% getProductsFromSubcat 9 %}".split("***"), "{% getProductsFromSubcat 10 %}".split("***"), "{% getProductsFromSubcat 11 %}".split("***"), "{% getProductsFromSubcat 12 %}".split("***"), "{% getProductsFromSubcat 13 %}".split("***"), "{% getProductsFromSubcat 14 %}".split("***"), "{% getProductsFromSubcat 15 %}".split("***"), "{% getProductsFromSubcat 16 %}".split("***"), "{% getProductsFromSubcat 17 %}".split("***"), "{% getProductsFromSubcat 18 %}".split("***"), "{% getProductsFromSubcat 19 %}".split("***"), "{% getProductsFromSubcat 20 %}".split("***")];
-var hasSubcatImages = ["{% getSubcatsFromCat 1 2 %}", "{% getSubcatsFromCat 2 2 %}", "{% getSubcatsFromCat 3 2 %}", "{% getSubcatsFromCat 4 2 %}", "{% getSubcatsFromCat 5 2 %}", "{% getSubcatsFromCat 6 2 %}", "{% getSubcatsFromCat 7 2 %}", "{% getSubcatsFromCat 8 2 %}"];
-var hasSubcatsName = ["{% getSubcatsFromCat 3 1 %}", "{% getSubcatsFromCat 4 1 %}", "{% getSubcatsFromCat 5 1 %}", "{% getSubcatsFromCat 6 1 %}", "{% getSubcatsFromCat 7 1 %}", "{% getSubcatsFromCat 8 1 %}", "{% getSubcatsFromCat 9 1 %}", "{% getSubcatsFromCat 10 1 %}", "{% getSubcatsFromCat 11 1 %}", "{% getSubcatsFromCat 12 1 %}"]; //default arrays where discount items will be pushed
-
+var hasProducts = [
+    "{% getProductsFromSubcat 1 %}".split("***"),
+    "{% getProductsFromSubcat 2 %}".split("***"),
+    "{% getProductsFromSubcat 3 %}".split("***"),
+    "{% getProductsFromSubcat 4 %}".split("***"),
+    "{% getProductsFromSubcat 5 %}".split("***"),
+    "{% getProductsFromSubcat 6 %}".split("***"),
+    "{% getProductsFromSubcat 7 %}".split("***"),
+    "{% getProductsFromSubcat 8 %}".split("***"),
+    "{% getProductsFromSubcat 9 %}".split("***"),
+    "{% getProductsFromSubcat 10 %}".split("***"),
+    "{% getProductsFromSubcat 11 %}".split("***"),
+    "{% getProductsFromSubcat 12 %}".split("***"),
+    "{% getProductsFromSubcat 13 %}".split("***"),
+    "{% getProductsFromSubcat 14 %}".split("***"),
+    "{% getProductsFromSubcat 15 %}".split("***"),
+    "{% getProductsFromSubcat 16 %}".split("***"),
+    "{% getProductsFromSubcat 17 %}".split("***"),
+    "{% getProductsFromSubcat 18 %}".split("***"),
+    "{% getProductsFromSubcat 19 %}".split("***"),
+    "{% getProductsFromSubcat 20 %}".split("***")
+];
+var hasSubcatImages = [
+    "{% getSubcatsFromCat 1 2 %}",
+    "{% getSubcatsFromCat 2 2 %}",
+    "{% getSubcatsFromCat 3 2 %}",
+    "{% getSubcatsFromCat 4 2 %}",
+    "{% getSubcatsFromCat 5 2 %}",
+    "{% getSubcatsFromCat 6 2 %}",
+    "{% getSubcatsFromCat 7 2 %}",
+    "{% getSubcatsFromCat 8 2 %}"
+];
+var hasSubcatsName = [
+    "{% getSubcatsFromCat 3 1 %}",
+    "{% getSubcatsFromCat 4 1 %}",
+    "{% getSubcatsFromCat 5 1 %}",
+    "{% getSubcatsFromCat 6 1 %}",
+    "{% getSubcatsFromCat 7 1 %}",
+    "{% getSubcatsFromCat 8 1 %}",
+    "{% getSubcatsFromCat 9 1 %}",
+    "{% getSubcatsFromCat 10 1 %}",
+    "{% getSubcatsFromCat 11 1 %}",
+    "{% getSubcatsFromCat 12 1 %}"
+]; //default arrays where discount items will be pushed
 var discountItems = [];
 var basketProducts = [];
 var products = [];
 var subcatImages = hasSubcatImages; //on build it should be empty!!!
-
 var subcatNames = [];
 var catNames = [];
 var hotshot = "{% hasHotshot %}".split(";;;");
@@ -38,47 +75,30 @@ var pushedElement = "{{cat.1}}";
 console.log(pushedElement);
 catNames.push(pushedElement);
 " {% endfor %}";
-
 var singleSplit = function singleSplit(fromArray, toArray) {
-  var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-
-  if (method === 0) {
-    fromArray.map(function (x) {
-      toArray.push(x.split(";;;"));
+    var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
+    if (method === 0) fromArray.map(function(x) {
+        toArray.push(x.split(";;;"));
     });
-  }
-
-  if (method === 1) {
-    fromArray.map(function (x) {
-      toArray.push(x.split(";"));
+    if (method === 1) fromArray.map(function(x) {
+        toArray.push(x.split(";"));
     });
-  }
-
-  if (method === 2) {
-    for (item in fromArray) {
-      toArray.push(fromArray[item].split(";;;"));
-    }
-  }
+    if (method === 2) for(item in fromArray)toArray.push(fromArray[item].split(";;;"));
 };
-
 var multiSplit = function multiSplit(fromArray, toArray) {
-  var supportArray = [];
-
-  for (i in fromArray) {
-    for (y in fromArray[i]) {
-      supportArray.push(fromArray[i][y].split(";;;"));
-    }
-
-    toArray.push(supportArray);
     var supportArray = [];
-  }
+    for(i in fromArray){
+        for(y in fromArray[i])supportArray.push(fromArray[i][y].split(";;;"));
+        toArray.push(supportArray);
+        var supportArray = [];
+    }
 };
-
 multiSplit(hasProducts, products);
 singleSplit(hasDiscount, discountItems, 2);
 singleSplit(hasBasketProducts, basketProducts); //singleSplit(hasSubcatImages, subcatImages, 1);
+console.log(discountItems);
 
-console.log(discountItems);</script>
+</script>
 
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>

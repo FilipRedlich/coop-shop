@@ -4,7 +4,11 @@ const Hotshot = (props) => {
   console.log(info, 'myprtop')
   return (
     <>
-      <form className="card d-flex flex-column">
+      <form
+        action="/addProductToBasket/"
+        method="POST"
+        className="card d-flex flex-column"
+      >
         <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
         <input type="hidden" name="id" value={info[0]} />
         <div className="card-baner">
