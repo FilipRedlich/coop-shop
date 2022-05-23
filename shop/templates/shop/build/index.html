@@ -12,53 +12,19 @@
       href="./static/shop/shop_logo.3f953129.svg"
       type="image/x-icon"
     />
-    <link rel="stylesheet" href="./static/shop/index.f92e28ef.css" />
-    <script src="./static/shop/index.fbb29658.js" type="module" defer></script>
+    <link rel="stylesheet" href="./static/shop/index.e3f629f7.css" />
+    <script src="./static/shop/index.d35ea1b5.js" type="module" defer></script>
   </head>
 
   <body class="bg-dark">
     <script>
       const CSRF_TOKEN = "{{ csrf_token }}";
       const currentUser = "{{request.session.email}}";
-      var pushedElement;
-      var arrayOfCategories = [];
-      ("{% for cat in categories %}");
-      pushedElement = "{{cat.1}}";
-      //console.log('{{ cat.1 }}')
-      console.log(pushedElement);
 
-      arrayOfCategories.push(pushedElement);
-
-      (" {% endfor %}");
-      console.log(arrayOfCategories);
-      const username = "{{request.session.email}}";
-      var SUBCAT_1_IMG = "{% getSubcatsFromCat 2 2 %}".split(";");
-      var SUBCAT_2_IMG = "{% getSubcatsFromCat 3 2 %}".split(";");
-
-      var SUBCATS_NAME = [
-        "{% getSubcatsFromCat 3 1 %}".split(";"),
-        "{% getSubcatsFromCat 4 1 %}".split(";"),
-        "{% getSubcatsFromCat 5 1 %}".split(";"),
-        "{% getSubcatsFromCat 6 1 %}".split(";"),
-        "{% getSubcatsFromCat 7 1 %}".split(";"),
-        "{% getSubcatsFromCat 8 1 %}".split(";"),
-        "{% getSubcatsFromCat 9 1 %}".split(";"),
-        "{% getSubcatsFromCat 10 1 %}".split(";"),
-        "{% getSubcatsFromCat 11 1 %}".split(";"),
-        "{% getSubcatsFromCat 12 1 %}".split(";"),
-      ];
-      var SUBCATS_IMG = [
-        "{% getSubcatsFromCat 1 2 %}".split(";"),
-        "{% getSubcatsFromCat 2 2 %}".split(";"),
-        "{% getSubcatsFromCat 3 2 %}".split(";"),
-        "{% getSubcatsFromCat 4 2 %}".split(";"),
-        "{% getSubcatsFromCat 5 2 %}".split(";"),
-        "{% getSubcatsFromCat 6 2 %}".split(";"),
-        "{% getSubcatsFromCat 7 2 %}".split(";"),
-        "{% getSubcatsFromCat 8 2 %}".split(";"),
-      ];
-      var PRODUCTS_NAME = [];
-      var ppp = [
+      //Not converted items
+      const hasDiscount = "{% hasDiscount %}".split("***");
+      const hasBasketProducts = "{{ basketProducts }}".split("***");
+      const hasProducts = [
         "{% getProductsFromSubcat 1 %}".split("***"),
         "{% getProductsFromSubcat 2 %}".split("***"),
         "{% getProductsFromSubcat 3 %}".split("***"),
@@ -80,33 +46,77 @@
         "{% getProductsFromSubcat 19 %}".split("***"),
         "{% getProductsFromSubcat 20 %}".split("***"),
       ];
-      var p1 = [];
-      for (i in ppp) {
-        for (y in ppp[i]) {
-          p1.push(ppp[i][y].split(";;;"));
+      const hasSubcatImages = [
+        "{% getSubcatsFromCat 1 2 %}",
+        "{% getSubcatsFromCat 2 2 %}",
+        "{% getSubcatsFromCat 3 2 %}",
+        "{% getSubcatsFromCat 4 2 %}",
+        "{% getSubcatsFromCat 5 2 %}",
+        "{% getSubcatsFromCat 6 2 %}",
+        "{% getSubcatsFromCat 7 2 %}",
+        "{% getSubcatsFromCat 8 2 %}",
+      ];
+      const hasSubcatsName = [
+        "{% getSubcatsFromCat 3 1 %}",
+        "{% getSubcatsFromCat 4 1 %}",
+        "{% getSubcatsFromCat 5 1 %}",
+        "{% getSubcatsFromCat 6 1 %}",
+        "{% getSubcatsFromCat 7 1 %}",
+        "{% getSubcatsFromCat 8 1 %}",
+        "{% getSubcatsFromCat 9 1 %}",
+        "{% getSubcatsFromCat 10 1 %}",
+        "{% getSubcatsFromCat 11 1 %}",
+        "{% getSubcatsFromCat 12 1 %}",
+      ];
+
+      //default arrays where discount items will be pushed
+      var discountItems = [];
+      var basketProducts = [];
+      var products = [];
+      var subcatImages = []; //on build it should be empty!!!
+      var subcatNames = [];
+      var catNames = [];
+      var hotshot = "{% hasHotshot %}".split(";;;"); 
+      var pushedElement = "{{cat.1}}";
+      ("{% for cat in categories %}");
+     
+      console.log(pushedElement);
+      catNames.push(pushedElement);
+      (" {% endfor %}");
+
+      const singleSplit = (fromArray, toArray, method = 0) => {
+        if (method === 0) {
+          fromArray.map((x) => {
+            toArray.push(x.split(";;;"));
+          });
         }
-        PRODUCTS_NAME.push(p1);
-        var p1 = [];
-      }
+        if (method === 1) {
+          fromArray.map((x) => {
+            toArray.push(x.split(";"));
+          });
+        }
+        if (method === 2) {
+          for (item in fromArray) {
+            toArray.push(fromArray[item].split(";;;"));
+          }
+        }
+      };
+      const multiSplit = (fromArray, toArray) => {
+        var supportArray = [];
+        for (i in fromArray) {
+          for (y in fromArray[i]) {
+            supportArray.push(fromArray[i][y].split(";;;"));
+          }
+          toArray.push(supportArray);
+          var supportArray = [];
+        }
+      };
 
-      console.log(PRODUCTS_NAME, "NEW PRODUCTS NAME");
-      console.log(PRODUCTS_NAME[4], "NEW PRODUCTS NAME");
-      //1st [] means subcategory index, 2nd [] means exact product at desired index
+      multiSplit(hasProducts, products);
+      singleSplit(hasDiscount, discountItems, 2);
+      singleSplit(hasBasketProducts, basketProducts);
+      singleSplit(hasSubcatImages, subcatImages, 1);
 
-      //console.log(SUBCATS_NAME[1], "subcats_name[1]");
-    </script>
-    <script>
-      var basketItems = "{{ basketProducts }}".split("***");
-      var cartContents = [];
-      for (i in basketItems) {
-        cartContents.push(basketItems[i].split(";;;"));
-      }
-      console.log(cartContents);
-      var discountItems = "{% hasDiscount %}".split("***"); //not converted items
-      var hasDiscount = []; //default array where discount items will be pushed
-      for (item in discountItems) {
-        hasDiscount.push(discountItems[item].split(";;;"));
-      }
       console.log(discountItems);
     </script>
     <div id="navRoot">Nav not rendered</div>

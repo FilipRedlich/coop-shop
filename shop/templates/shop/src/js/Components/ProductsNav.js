@@ -14,7 +14,10 @@ import {
   TEST_CAT,
   TEST_ARRAY,
   TEST_ARRAY2,
-  TEST_PRODUCT,
+  prod,
+  productsTestuctsTest,
+  productsTest,
+  catNamesTest,
 } from "./Test";
 
 
@@ -73,7 +76,7 @@ const RenderProducts2 = (props) => {
     );
   });
 };
-//PRODUCTS_NAME[1][1][2]
+
 const addEvent = () => {
   var subcatButtons = document.querySelectorAll(".subcategory");
   const initAddEvent = () => {
@@ -85,7 +88,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={TEST_PRODUCT} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -102,7 +105,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={PRODUCTS_NAME} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -139,11 +142,11 @@ const ProductNav = () => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
             render(
-              <ButtonBuilder2 el={arrayOfCategories} />,
+              <ButtonBuilder2 el={catNames} />,
               document.querySelector("#categories")
             ); //creates category buttons
 
-            RenderFromCat(arrayOfCategories); //elements that are rendered after clicking subcategory
+            RenderFromCat(catNames); //elements that are rendered after clicking subcategory
           }}
         >
           Categories

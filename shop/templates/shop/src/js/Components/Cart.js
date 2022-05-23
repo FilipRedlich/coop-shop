@@ -2,7 +2,7 @@ import { render } from "react-dom";
 import images from "./Images";
 import MainContent from "./MainContent";
 import { renderRoot } from "./RenderScripts";
-import { cartContentsTest } from "./Test";
+import { basketProductsTest, cartContentsTest } from "./Test";
 const TotalPrice = (props) => {
   const CurrentPrice = props.price;
   var convertedPrice = 0; //Converted price to integer
@@ -15,7 +15,7 @@ const TotalPrice = (props) => {
 };
 const HowManyItems = (props) => {
   const items = props.el;
-  if (items.length === 0 || items === undefined || items === null) {
+  if (items.length === 0 || items === undefined || items === null || items === NaN) {
     console.log("there are no items in cart");
     return (
       <div className="cart-item text-center p-2 w-100 bg-dark rounded m-auto">
@@ -24,14 +24,14 @@ const HowManyItems = (props) => {
           <p>
             Return to
             <span
-              className="text-danger back-btn"
+              className="text-danger back-btn px-2"
               onClick={() => {
                 renderRoot(<MainContent />);
               }}
             >
-              homepage
+               homepage
             </span>
-            to continue shopping
+             to continue shopping
           </p>
         </div>
       </div>
@@ -88,14 +88,14 @@ const Cart = () => {
           id="card-items"
           className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-black rounded"
         >
-          <HowManyItems el={cartContentsTest} />{" "}
+          <HowManyItems el={basketProducts} />{" "}
           {/* cardContentsTest or CardContents*/}
         </div>
         <div className="checkout m-auto bg-black rounded">
           <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
             <div className="flexb-70">
               <label className="text-muted">Subtotal:</label>
-              <h5>{<TotalPrice price={cartContentsTest} />}</h5>
+              <h5>{<TotalPrice price={basketProducts} />}</h5>
               <p className="text-muted">{`+ Delivery`}</p>
             </div>
             <input
