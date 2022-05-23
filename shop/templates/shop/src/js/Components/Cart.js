@@ -15,7 +15,14 @@ const TotalPrice = (props) => {
 };
 const HowManyItems = (props) => {
   const items = props.el;
-  if (items.length === 0 || items === undefined || items === null || items === NaN) {
+  if (
+    items.length === 0 ||
+    items === undefined ||
+    items === null ||
+    items === NaN ||
+    items === [""] ||
+    items === ""
+  ) {
     console.log("there are no items in cart");
     return (
       <div className="cart-item text-center p-2 w-100 bg-dark rounded m-auto">
@@ -29,9 +36,9 @@ const HowManyItems = (props) => {
                 renderRoot(<MainContent />);
               }}
             >
-               homepage
+              homepage
             </span>
-             to continue shopping
+            to continue shopping
           </p>
         </div>
       </div>
@@ -57,11 +64,8 @@ const HowManyItems = (props) => {
               <h5 className="text-purple">{`${x[5] * x[6]}$`}</h5>
               <h6 className="text-muted">{`In stock: ${x[4]}`}</h6>
             </div>
-            <form
-              className="my-auto"
-              action="/deleteProductToBasket/"
-              id={x[0]}
-            >
+            <form className="my-auto" action="/deleteProductToBasket/">
+              <input type="hidden" name="id" value={x[0]} />
               <input
                 type="hidden"
                 name="csrfmiddlewaretoken"

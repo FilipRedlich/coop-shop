@@ -10,7 +10,7 @@ const GetItemsOnDiscount = (props) => {
       <>
         <form
           action="/addProductToBasket/"
-          method="post"
+          method="POST"
           className="card d-flex flex-column"
         >
           <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />

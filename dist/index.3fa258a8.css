@@ -20534,6 +20534,7 @@ textarea.form-control-lg {
 .login-section .action:hover {
   z-index: 2;
   transition: all .2s;
+  transform: scale(1.1);
   box-shadow: 0 0 5px 2px #fff;
 }
 
@@ -20564,7 +20565,7 @@ textarea.form-control-lg {
   height: 15rem;
   width: 15rem;
   color: #fff;
-  background: #0000007c;
+  background: #121212;
   border: none;
   border-radius: 10px;
   flex-direction: column;
@@ -20600,7 +20601,7 @@ textarea.form-control-lg {
   content: "Add to cart";
   text-align: center;
   vertical-align: middle;
-  background: #dc3545;
+  background: #3700b3;
   border-radius: .3rem .3rem 0 0;
   margin: auto auto 0;
   font-size: 1.5rem;
@@ -20698,7 +20699,16 @@ textarea.form-control-lg {
   font-weight: 300;
 }
 
+.test-bg {
+  background-color: #121212;
+}
+
+.text-purple {
+  color: #a98eda;
+}
+
 .cart .cart-items .cart-item {
+  background: #121212;
   position: relative;
 }
 
@@ -20708,17 +20718,41 @@ textarea.form-control-lg {
 }
 
 .cart .cart-items .cart-item .item-name {
+  color: #a98eda;
   text-overflow: ellipsis;
   overflow: hidden;
 }
 
+.cart .cart-items .cart-item .item-prevPrice {
+  color: gray;
+  margin: 0;
+  padding: 0;
+  text-decoration: line-through;
+}
+
 .cart .cart-items .cart-item .remove-item {
-  font-size: 1rem;
+  color: #fff;
+  background: #b02a37;
+  font-size: 1.2rem;
+}
+
+.checkout {
+  min-height: 20rem;
+  min-width: 15rem;
+  justify-content: center;
+  display: flex;
 }
 
 .checkout .checkout-form {
-  min-height: 20rem;
-  min-width: 15rem;
+  min-width: 13rem;
+  min-height: 18rem;
+  background: #121212;
+  border-radius: .25rem;
+  margin: auto;
+}
+
+.checkout .checkout-form .checkout-submit {
+  background: #a98eda;
 }
 
 .min-h-30 {
@@ -20759,7 +20793,7 @@ textarea.form-control-lg {
 
 .newsletter {
   max-width: 80%;
-  background: #0000007c;
+  background: #000;
   border-radius: 15px;
   margin: 1rem auto;
   position: relative;
@@ -20843,13 +20877,17 @@ textarea.form-control-lg {
 }
 
 .newsletter .newsletter-section .newsletter-input-wrapper .newsletter-input {
+  color: #fff;
   min-width: 12rem;
   z-index: 5;
+  background: #121212;
+  border: none;
 }
 
 .newsletter .newsletter-section .newsletter-input-wrapper .newsletter-submit {
   min-width: 4rem;
   z-index: 5;
+  background: #3700b3;
 }
 
 img {
@@ -20910,19 +20948,23 @@ html {
 }
 
 body {
-  scrollbar-color: #dc3545 #212529;
+  scrollbar-color: #3700b3 #121212;
   scrollbar-width: thin;
   overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
-  width: .45rem;
-  background: #212529;
+  width: .5rem;
+  background: #121212;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #dc3545;
-  border-radius: 15vh;
+  background: #3700b3;
+  border-radius: 1vh;
+}
+
+.animate__animated.animate__backInRight {
+  --animate-duration: .55s;
 }
 
 @media screen and (max-height: 800px) {
@@ -20974,17 +21016,153 @@ body {
 }
 
 .gallery .gallery-img {
+  aspect-ratio: 1 / 1;
   max-height: 30rem;
   max-width: 40rem;
   margin: auto;
 }
 
-.sale .sale-item {
+.sale {
+  width: 80%;
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 2rem;
+  margin: auto;
+  display: flex;
+}
+
+.sale .card {
+  min-width: 20rem;
+  max-width: 20rem;
+  max-height: 25rem;
+  text-align: center;
+  color: #fff;
+  background: #121212;
+  border-radius: 10px;
+  padding: 0 0 .5rem;
+  transition: all .3s;
+  position: relative;
+  overflow: hidden;
+}
+
+.sale .card:hover {
+  transform: scale(.9);
+}
+
+.sale .card:before {
+  content: "";
+  height: 100%;
+  width: 100%;
+  z-index: -10;
+  border-radius: 10px;
+  position: absolute;
+  inset: 0;
+  box-shadow: 0 .5rem 1rem #00000026;
+}
+
+.sale .card .card-img {
+  min-width: 11rem;
+  max-height: 11rem;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: .5rem;
+  position: relative;
+}
+
+.sale .card .card-prices {
+  min-width: 20rem;
+  width: 100%;
+  flex-direction: row;
+  justify-content: center;
+  gap: 1rem;
+  margin: 2rem auto 0;
+  padding: 0 2rem;
+  display: flex;
+}
+
+.sale .card .card-prices .text-smaller {
+  color: gray;
+  text-align: right;
+  flex-basis: 40%;
+  font-size: 1.5rem;
+  font-weight: 300;
+  text-decoration: line-through;
+}
+
+.sale .card .card-prices .text-bigger {
+  color: #a98eda;
+  text-align: left;
+  flex-basis: 60%;
+  font-size: 2rem;
+  font-weight: 600;
+}
+
+.sale .card .product-name {
+  text-align: left;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  padding: 0 1rem;
+  font-size: 1.1rem;
+  font-weight: 600;
+  overflow: hidden;
+}
+
+.sale .card .card-button {
+  min-height: 2rem;
+  color: #fff;
+  min-width: 17.5rem;
+  max-width: 80%;
+  text-transform: uppercase;
+  background: #3700b3;
+  border: none;
+  border-radius: 10px;
+  margin: auto;
+  font-size: 1.75rem;
+  font-weight: 400;
+}
+
+.item-bar-holder {
+  width: 80%;
+  min-height: 10rem;
+  background: #0000007c;
+  border-radius: 10px;
+  margin: 5rem auto 0;
+  padding: 1rem;
+}
+
+.item-bar-holder .item-bar {
+  flex-flow: wrap;
+  justify-content: center;
+  gap: 1rem;
+  display: flex;
+}
+
+.item-bar-holder .item-bar .item {
+  max-width: 10rem;
+  min-height: 10rem;
+  text-align: center;
+  border: 1px solid wheat;
+  font-size: 1.2rem;
+  display: block;
+}
+
+.item-bar-holder .item-bar .item :nth-child(n) {
+  margin: auto;
+}
+
+.item-bar-holder .item-bar .item p {
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  text-align: center;
+  overflow: hidden;
+}
+
+.item-bar-holder .sale-item {
   max-width: 20rem;
   min-height: 20rem;
 }
 
-.sale .sale-img {
+.item-bar-holder .sale-img {
   max-height: 10rem;
 }
 
@@ -21000,7 +21178,9 @@ body {
   justify-content: center;
   gap: 3rem;
   margin: auto;
+  padding: 1rem;
   display: grid;
+  position: relative;
 }
 
 .main .main-content .card {
@@ -21008,8 +21188,9 @@ body {
   max-height: 100%;
   text-align: center;
   color: #fff;
-  background: #0000007c;
+  background: #121212;
   border-radius: 10px;
+  padding: 0 0 .5rem;
   position: relative;
 }
 
@@ -21025,13 +21206,16 @@ body {
 }
 
 .main .main-content .card .card-baner {
+  color: #fff;
   letter-spacing: 2px;
+  background: #3700b3;
   border-radius: 10px 10px 0 0;
   font-size: 2rem;
   font-weight: 400;
 }
 
 .main .main-content .card .card-img {
+  aspect-ratio: 1 / .8;
   min-width: 20rem;
   max-height: 20rem;
   max-width: 80%;
@@ -21050,6 +21234,7 @@ body {
 }
 
 .main .main-content .card .card-prices .text-smaller {
+  color: gray;
   text-align: right;
   flex-basis: 40%;
   font-size: 1.5rem;
@@ -21058,8 +21243,8 @@ body {
 }
 
 .main .main-content .card .card-prices .text-bigger {
+  color: #a98eda;
   text-align: left;
-  color: #e35d6a;
   flex-basis: 60%;
   font-size: 2rem;
   font-weight: 600;
@@ -21074,10 +21259,10 @@ body {
 
 .main .main-content .card .card-button {
   min-height: 4rem;
-  color: #000;
+  color: #fff;
   min-width: 20rem;
   max-width: 80%;
-  background: #dc3545;
+  background: #3700b3;
   border: none;
   border-radius: 10px;
   margin: auto;
