@@ -123,8 +123,14 @@
     <br />
 
     <form id="changeHotshot" action="/changeHotshot/" method="post">
-      {% csrf_token %} Gib product id:
-      <input type="number" name="id" required /><br />
+      {% csrf_token %}
+      Gib product id: <input type="number" name="id" required/><br />
+      Set discount: <input type="text" name="disc" required/><br />
+      <input type="submit" value="Set Hotshot" />
+    </form>
+    <form id="deleteProductToBasket" action="/deleteProductToBasket/" method="post">
+      {% csrf_token %}
+      <input type="hidenn" name="id" value="5"/><br />
       <input type="submit" value="Set Hotshot" />
     </form>
   </body>
