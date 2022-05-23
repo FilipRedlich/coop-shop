@@ -8,15 +8,23 @@ const GetItemsOnDiscount = (props) => {
 
     return (
       <>
-          <div className="card d-flex flex-column">
-            <img src={img1} className="card-img" alt="promotion" />
-            <div className="card-prices">
-              <span className="text-smaller">{`${x[5]}$`}</span>
-              <span className="text-bigger">{`${x[5] * x[6]}$`}</span>
-            </div>
-            <p className="product-name">{x[1]}</p>
-            <button className="btn card-button">Add to cart</button>
+        <form
+          action="/addProductToBasket/"
+          method="post"
+          className="card d-flex flex-column"
+        >
+          <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
+          <input type="hidden" name="id" value={x[0]} />
+          <img src={img1} className="card-img" alt="promotion" />
+          <div className="card-prices">
+            <span className="text-smaller">{`${x[5]}$`}</span>
+            <span className="text-bigger">{`${x[5] * x[6]}$`}</span>
           </div>
+          <p className="product-name">{x[1]}</p>
+          <button type="submit" className="btn card-button">
+            Add to cart
+          </button>
+        </form>
       </>
     );
   });
@@ -26,7 +34,7 @@ const OnSale = () => {
   return (
     <>
        <section className="sale p-2 py-5 animate__animated animate__backInRight">
-        <GetItemsOnDiscount el={discountItemsTest} />
+        <GetItemsOnDiscount el={discountItems} />
       </section>
     </>
   );

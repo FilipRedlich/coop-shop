@@ -16,6 +16,7 @@
 }
 .gallery {
   .gallery-img {
+    aspect-ratio: 1 / 1;
     max-height: 30rem;
     max-width: 40rem;
     margin: auto;
@@ -193,18 +194,9 @@
         border-radius: 10px 10px 0 0;
         letter-spacing: 2px;
         font-weight: 400;
-        &::before {
-          @include pseudo-el;
-          @include add-trbl;
-
-          width: 90%;
-          height: 2rem;
-          background: $surface;
-          border-radius: 2px;
-          margin: 4rem auto 0 auto;
-        }
       }
       .card-img {
+        aspect-ratio: 1 / .8;
         min-width: 20rem;
         max-height: 20rem;
         max-width: 80%;

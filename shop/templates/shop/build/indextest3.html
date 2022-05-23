@@ -11,27 +11,106 @@
     <p><b>Basket Products: </b>{{ basketProducts }}</p>
     {% getProductsFromSubcat 5 1 %}
     <script>
-      var discountItems = "{% hasDiscount %}".split("***"); //not converted items
+    //not converted items
+      const hasDiscount = "{% hasDiscount %}".split("***"); 
+      const hasBasketProducts = "{{ basketProducts }}".split("***");
+      const hasProducts = [
+        "{% getProductsFromSubcat 1 %}".split("***"),
+        "{% getProductsFromSubcat 2 %}".split("***"),
+        "{% getProductsFromSubcat 3 %}".split("***"),
+        "{% getProductsFromSubcat 4 %}".split("***"),
+        "{% getProductsFromSubcat 5 %}".split("***"),
+        "{% getProductsFromSubcat 6 %}".split("***"),
+        "{% getProductsFromSubcat 7 %}".split("***"),
+        "{% getProductsFromSubcat 8 %}".split("***"),
+        "{% getProductsFromSubcat 9 %}".split("***"),
+        "{% getProductsFromSubcat 10 %}".split("***"),
+        "{% getProductsFromSubcat 11 %}".split("***"),
+        "{% getProductsFromSubcat 12 %}".split("***"),
+        "{% getProductsFromSubcat 13 %}".split("***"),
+        "{% getProductsFromSubcat 14 %}".split("***"),
+        "{% getProductsFromSubcat 15 %}".split("***"),
+        "{% getProductsFromSubcat 16 %}".split("***"),
+        "{% getProductsFromSubcat 17 %}".split("***"),
+        "{% getProductsFromSubcat 18 %}".split("***"),
+        "{% getProductsFromSubcat 19 %}".split("***"),
+        "{% getProductsFromSubcat 20 %}".split("***"),
+      ];
+      const hasSubcatImages = [
+        "{% getSubcatsFromCat 1 2 %}",
+        "{% getSubcatsFromCat 2 2 %}",
+        "{% getSubcatsFromCat 3 2 %}",
+        "{% getSubcatsFromCat 4 2 %}",
+        "{% getSubcatsFromCat 5 2 %}",
+        "{% getSubcatsFromCat 6 2 %}",
+        "{% getSubcatsFromCat 7 2 %}",
+        "{% getSubcatsFromCat 8 2 %}",
+      ];
+      const hasSubcatsName = [
+        "{% getSubcatsFromCat 3 1 %}",
+        "{% getSubcatsFromCat 4 1 %}",
+        "{% getSubcatsFromCat 5 1 %}",
+        "{% getSubcatsFromCat 6 1 %}",
+        "{% getSubcatsFromCat 7 1 %}",
+        "{% getSubcatsFromCat 8 1 %}",
+        "{% getSubcatsFromCat 9 1 %}",
+        "{% getSubcatsFromCat 10 1 %}",
+        "{% getSubcatsFromCat 11 1 %}",
+        "{% getSubcatsFromCat 12 1 %}",
+      ];
+
+      //default arrays where discount items will be pushed
+      var discountItems = []; 
+      var basketProducts = [];
+      var products = [];
+      var subcatImages = [];
+      var subcatNames = [];
+      var catNames = [];
+      var hotshot = "{% hasHotshot %}".split(";;;");
+      ("{% for cat in categories %}");
+      pushedElement = "{{cat.1}}";
+      console.log(pushedElement);
+      catNames.push(pushedElement);
+      (" {% endfor %}");
+
+      const singleSplit = (fromArray, toArray, method = 0) => {
+        if (method === 0) {
+          fromArray.map((x) => {
+            toArray.push(x.split(";;;"));
+          });
+        }
+        if (method === 1) {
+          fromArray.map((x) => {
+            toArray.push(x.split(";"));
+          });
+        }
+        if(method === 2){
+        for (item in fromArray) {
+        toArray.push(fromArray[item].split(";;;"));
+      }
+        }
+      };
+      const multiSplit = (fromArray, toArray) => {
+        var supportArray = [];
+        for (i in fromArray) {
+          for (y in fromArray[i]) {
+            supportArray.push(fromArray[i][y].split(";;;"));
+          }
+          toArray.push(supportArray);
+          var supportArray = [];
+        }
+      };
       
-      var hasDiscount = []; //default array where discount items will be pushed
+      multiSplit(hasProducts, products);
+      singleSplit(hasDiscount, discountItems, 2);
+      singleSplit(hasBasketProducts, basketProducts);
+      singleSplit(hasSubcatImages, subcatImages, 1);
+    
+    
       console.log(discountItems)
-      for (item in discountItems) {
-        hasDiscount.push(discountItems[item].split(";;;"));
-      }
-      var ttt = "{{ basketProducts }}".split("***");
+      
+      
 
-      var tt = [];
-      for (i in ttt) {
-        tt.push(ttt[i].split(";;;"));
-      }
-      console.log(tt);
-
-      var ppp = "{% getProductsFromSubcat 5 %}".split("***");
-      var p1 = [];
-      for (i in ppp) {
-        pp.push(ppp[i].split(";;;"));
-      }
-      console.log(pp);
     </script>
     <br />
     <h1>has shotshot 37 line</h1>
@@ -41,15 +120,12 @@
     <h1>Has discount</h1>
     {% hasDiscount %}
     <h1>End of discount</h1>
-    <br>
-    <script>
-      const hotshot = '{% hasHotshot %}';
-      console.log(hotshot, 'hotshot')
-      </script>
-        <form id="changeHotshot" action="/changeHotshot/" method="post">
-        {% csrf_token %}
-        Gib product id: <input type="number" name="id" required/><br />
-        <input type="submit" value="Set Hotshot" />
-      </form>
+    <br />
+
+    <form id="changeHotshot" action="/changeHotshot/" method="post">
+      {% csrf_token %} Gib product id:
+      <input type="number" name="id" required /><br />
+      <input type="submit" value="Set Hotshot" />
+    </form>
   </body>
 </html>

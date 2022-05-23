@@ -1,15 +1,45 @@
 import React from "react";
-import renderTry, {
-  cartContentsTest,
+import  {
   imgArr,
-  TEST_ARRAY,
-  TEST_PRODUCT,
-  TEST_SUBCAT_NAME,
 } from "./Test";
-import { removeSubCat } from "./ProductsNav";
 import { addEvent } from "./ProductsNav";
 import { render } from "react-dom";
-import { RenderProducts2 } from "./ProductsNav";
+
+const subcatNamesTest = [
+  [""],
+  [
+    "Procesory",
+    "Płyty główne",
+    "Pamięć RAM",
+    "Karty graficzne",
+    "Dyski SSD",
+    "Dyski HDD",
+    "Zasilacze",
+    "Chłodzenie CPU",
+    "Pasty termoprzewodzące",
+  ],
+  ["Komputery stacjonarne", "Serwery", "Monitory", "Software"],
+  [""],
+  [""],
+  [""],
+  [""],
+  [""],
+  [""],
+  [""],
+];
+const subcatImagesTest = [imgArr];
+
+const hotshotTest = [
+  "13",
+  "Monitor Asus VZ24EHE",
+  "",
+  "7",
+  "8",
+  "770.0",
+  "0.7",
+  "3.0",
+  "True",
+];
 
 const renderRoot = (
   renderElement,
@@ -29,7 +59,7 @@ const renderInSubRoot = (el, options) => {
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
-    <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[3]} />,
+    <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />,
     document.querySelector("#rootSubcategories")
   );
   //Due to some issues with rendering time
@@ -266,7 +296,7 @@ const RenderFromCat = (ARRAY = []) => {
             //   document.querySelector("#rootSubcategories")
             //     );
             render(
-              <RenderSubcat el={TEST_SUBCAT_NAME[1]} img={SUBCATS_IMG[3]} />,
+              <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />,
               document.querySelector("#rootSubcategories")
             );
             addEvent();
@@ -282,7 +312,7 @@ const RenderFromCat = (ARRAY = []) => {
             //   document.querySelector("#rootSubcategories")
             // );
             render(
-              <RenderSubcat el={TEST_SUBCAT_NAME[2]} img={SUBCATS_IMG[4]} />,
+              <RenderSubcat el={subcatNames[2]} img={subcatImages[4]} />,
               document.querySelector("#rootSubcategories")
             );
 

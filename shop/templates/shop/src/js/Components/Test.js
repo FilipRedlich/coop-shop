@@ -24,7 +24,15 @@ const TEST_ARRAY = [
   "fdfdfdfdf",
 ];
 const TEST_ARRAY2 = ["test1", "test2", "test3", "test4"];
-const cartContentsTest = [
+const catNamesTest = [
+  "Podzespoły komputerowe",
+  "Komputery",
+  "Gaming",
+  "Smartfony",
+  "Telewizory",
+  "Audio",
+];
+const basketProductsTest = [
   [
     "5",
     "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
@@ -48,7 +56,7 @@ const cartContentsTest = [
     "False",
   ],
 ];
-const TEST_PRODUCT = [
+const productsTest = [
   [[""]],
   [
     [
@@ -231,7 +239,7 @@ const TEST_PRODUCT = [
   [[""]],
   [[""]],
 ];
-const TEST_SUBCAT_NAME = [
+const subcatNamesTest = [
   [""],
   [
     "Procesory",
@@ -253,6 +261,10 @@ const TEST_SUBCAT_NAME = [
   [""],
   [""],
 ];
+const subcatImagesTest = [
+  image1,
+  image2
+]
 const discountItemsTest = [
   [
     "12",
@@ -277,6 +289,17 @@ const discountItemsTest = [
     "3.0",
     "False",
   ],
+];
+const hotshotTest = [
+  "13",
+  "Monitor Asus VZ24EHE",
+  "",
+  "7",
+  "8",
+  "770.0",
+  "0.7",
+  "3.0",
+  "True",
 ];
 const AfterLoad = (element, renderPlace = null, time = 1000) => {
   setTimeout(() => {
@@ -314,13 +337,16 @@ const renderTry = (ARRAY_NAME = [], ARRAY_IMG = []) => {
 };
 
 export {
-  TEST_SUBCAT_NAME,
-  TEST_PRODUCT,
+  subcatNamesTest,
+  subcatImagesTest,
+  catNamesTest,
+  productsTest,
+  basketProductsTest,
+  hotshotTest,
   TEST_CAT,
   TEST_ARRAY,
   TEST_ARRAY2,
   imgArr,
-  cartContentsTest,
   discountItemsTest
 };
 export { AfterLoad, renderTry };
