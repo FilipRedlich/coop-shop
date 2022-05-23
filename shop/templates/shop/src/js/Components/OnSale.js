@@ -15,7 +15,7 @@ const GetItemsOnDiscount = (props) => {
         >
           <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
           <input type="hidden" name="id" value={x[0]} />
-          <img src={img1} className="card-img" alt="promotion" />
+          <img src={x[2]} className="card-img" alt="promotion" />
           <div className="card-prices">
             <span className="text-smaller">{`${x[5]}$`}</span>
             <span className="text-bigger">{`${x[5] * x[6]}$`}</span>

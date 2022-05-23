@@ -20,8 +20,7 @@ const HowManyItems = (props) => {
     items === undefined ||
     items === null ||
     items === NaN ||
-    items === [""] ||
-    items === ""
+    items[0][0] === ''
   ) {
     console.log("there are no items in cart");
     return (

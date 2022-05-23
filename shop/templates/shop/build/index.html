@@ -13,7 +13,7 @@
       type="image/x-icon"
     />
     <link rel="stylesheet" href="./static/shop/index.e3f629f7.css" />
-    <script src="./static/shop/index.a6a25932.js" type="module" defer></script>
+    <script src="./static/shop/index.8d0f25ec.js" type="module" defer></script>
   </head>
 
   <body class="bg-dark">
@@ -77,9 +77,9 @@
       var subcatNames = [];
       var catNames = [];
       var hotshot = "{% hasHotshot %}".split(";;;"); 
-      var pushedElement = "{{cat.1}}";
+      var pushedElement;
       ("{% for cat in categories %}");
-     
+      pushedElement = "{{cat.1}}";
       console.log(pushedElement);
       catNames.push(pushedElement);
       (" {% endfor %}");
@@ -116,7 +116,7 @@
       singleSplit(hasDiscount, discountItems, 2);
       singleSplit(hasBasketProducts, basketProducts);
       singleSplit(hasSubcatImages, subcatImages, 1);
-
+      singleSplit(hasSubcatsName, subcatNames, 1);
       console.log(discountItems);
     </script>
     <div id="navRoot">Nav not rendered</div>
