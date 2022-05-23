@@ -7,162 +7,152 @@ import OnSale from "./OnSale";
 import Services from "./Services";
 import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
-import renderTry from "./Test";
-import { TEST_CAT, TEST_ARRAY, TEST_ARRAY2 } from "./Test";
+import { RenderFromCat, renderInSubRoot, renderRoot } from "./RenderScripts";
+import { ButtonBuilder2 } from "./ComponentBuilders";
+import {
+  TEST_SUBCAT_NAME,
+  TEST_CAT,
+  TEST_ARRAY,
+  TEST_ARRAY2,
+  prod,
+  productsTestuctsTest,
+  productsTest,
+  catNamesTest,
+} from "./Test";
 
-const removeSubCat = () => {
-  const holder = document.querySelector("#rootSubcategories");
-  var doesExist = document.querySelectorAll(".testing");
 
-  if (holder.contains(doesExist[0])) {
-    for (let i = 0; i < doesExist.length; i++) {
-      doesExist[i].remove();
-    }
-  }
+const showPopup = () => {
+  const popup = document.querySelector(".popup-modal");
+
+  const newPos = () => {
+    popup.style.transform = "translateX(-50%) translateY(-2rem)";
+  };
+  const backToPrevPos = () => {
+    popup.style.transform = "translateX(-50%) translateY(5rem)";
+  };
+  newPos(); //Sets position to show popup after user clicks product
+  setTimeout(backToPrevPos, 1500); //Sets timeout to hide element after 1.5s
+  console.log("showPopup function"); //Debug
+};
+const Popup = (props) => {
+  const el = props.el;
+
+  return (
+    <>
+      <div className="popup-modal">
+        <i className="popup-success"></i>
+        <h5 className="popup-message">Product has been added successfully!</h5>
+      </div>
+    </>
+  );
+};
+const RenderProducts2 = (props) => {
+  const el = props.el;
+  const img = props.img;
+  const specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
+  //it's then used to create another array containing information about products (from subcategories)
+  return el[specIndex].map((val, i) => {
+    const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
+    const itemID = val[0];
+    //console.log(convImg, "converted Img line 58 ProductsNav");
+    console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
+    return (
+      <>
+        <form action="/addProductToBasket/" method="post">
+          <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
+          <input type="hidden" name="id" value={itemID} />
+          <button
+            type="submit"
+            className="product"
+            onClick={(e) => {
+              showPopup();
+            }}
+          >
+            <img src={convImg} alt={val[1]} loading="lazy" />
+            <p>{val[1]}</p>
+          </button>
+        </form>
+      </>
+    );
+  });
 };
 
-const addEvent = (elements = [], ARRAY = [], ADDITIONAL_ARRAY = []) => {
-  for (let i = 0; i < elements.length; i++) {
-    console.log(elements[i]);
-    elements[i].addEventListener("click", () => {
-      switch (elements[i].textContent) {
-        case `${ARRAY_3_SUBCATEGORY[0]}`:
-          alert("it works hah");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[1]}`:
-          alert("testt");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[2]}`:
-          alert();
-          break;
-        case `${ARRAY_3_SUBCATEGORY[3]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[4]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[5]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[6]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[7]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[8]}`:
-          alert("4th el");
-          break;
-        case `${ARRAY_3_SUBCATEGORY[9]}`:
-          alert("4th el");
-          break;
-      }
-      switch (elements[i].textContent) {
-        case `${ARRAY_4_SUBCATEGORY[0]}`:
-          alert("hehe");
-          break;
-        case `${ARRAY_4_SUBCATEGORY[1]}`:
-          alert("er");
-          break;
-        case `${ARRAY_4_SUBCATEGORY[2]}`:
-          alert("er");
-          break;
-        case `${ARRAY_4_SUBCATEGORY[3]}`:
-          alert("er");
-          break;
-      }
-    });
-  }
+const addEvent = () => {
+  var subcatButtons = document.querySelectorAll(".subcategory");
+  const initAddEvent = () => {
+    if (subcatButtons[0].textContent === "Procesory") {
+      subcatButtons.forEach((button, i) => {
+        removeEventListener("click", button); //Makes sure that function won't be fired many times
+        i++;
+        console.log("1st cat addEvent func");
+        button.addEventListener("click", () => {
+          renderRoot(
+            renderInSubRoot(
+              <RenderProducts2 el={productsTest} index={i} />,
+              "product-holder animate__animated animate__zoomInDown"
+            )
+          );
+        });
+      });
+    }
+
+    if (subcatButtons[0].textContent === "Komputery stacjonarne") {
+      subcatButtons.forEach((button, i) => {
+        removeEventListener("click", button);
+        i += 9; //value before first index of next subcategory (for ex. 2nd subcat stars on 10th index)
+        i++;
+        console.log("2nd cat addEvent func");
+        button.addEventListener("click", () => {
+          renderRoot(
+            renderInSubRoot(
+              <RenderProducts2 el={productsTest} index={i} />,
+              "product-holder animate__animated animate__zoomInDown"
+            )
+          );
+        });
+      });
+    }
+  };
+
+  initAddEvent();
 };
 
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
 
   const ToggleClass = () => {
+    const body = document.body;
     setActive(!isActive);
-  };
-
-  const buttonBuilder = (CAT_ARRAY) => {
-    //Creates buttons, adds classes and text to them
-    var button = document.createElement("button").cloneNode(true);
-    var clone = button.cloneNode(true);
-    var holder = document.querySelector(".categories");
-    let isExisting = document.querySelector(".cat-btn");
-
-    //Adding details to button
-    clone.classList.add(
-      "cat-btn",
-      "btn",
-      "categories-button",
-      "mb-2",
-      "mx-auto",
-      "text-white",
-      "bg-dark"
-    );
-
-    //console.log(button)
-    console.log(clone);
-
-    if (holder.contains(isExisting)) {
-      console.log("it exists so I wont add more buttons");
-      return;
+    if (isActive) {
+      body.style.overflow = "hidden";
+      body.style.overflowX = "hidden";
+    } else {
+      body.style.overflow = "auto";
+      body.style.overflowX = "hidden";
     }
-    if (!holder.contains(isExisting)) {
-      for (let i = 0; i < arrayOfCategories.length; i++) {
-        clone.textContent = arrayOfCategories[i];
-        holder.appendChild(clone.cloneNode(true));
-      }
-      //for (let i = 0; i < CAT_ARRAY.length; i++) {
-      //  clone.textContent = CAT_ARRAY[i];
-      //  holder.appendChild(clone.cloneNode(true));
-      //}
-      return;
-    }
-  };
-
-  //Adds functionality to category buttons
-  const RenderFromCat = (ARRAY = []) => {
-    const categories = document.querySelectorAll(".categories-button");
-
-    for (let i = 0; i < ARRAY.length; i++) {
-      categories[i].addEventListener("click", () => {
-        removeSubCat(); //removes all previous rendered subcategories
-        //adds function to specified category
-        switch (ARRAY[i]) {
-          case `${ARRAY[0]}`:
-            //renderTry(ARRAY_3_SUBCATEGORY);
-            renderTry(ARRAY_3_SUBCATEGORY);
-            addEvent(document.querySelectorAll(".testing"));
-            break;
-          case `${ARRAY[1]}`:
-            renderTry(ARRAY_4_SUBCATEGORY);
-            addEvent(document.querySelectorAll(".testing"));
-            break;
-        }
-      });
-    }
-  };
-  const renderRoot = (renderElement) => {
-    render(renderElement, document.querySelector("#root"));
   };
 
   return (
     <>
-      <nav className="product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
+      <nav className="product-nav bg-black z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
+          aria-labelledby="categories"
           onClick={() => {
             ToggleClass();
             //renderTry(TEST_ARRAY2);
-            //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-            buttonBuilder(TEST_CAT);
-            RenderFromCat(TEST_ARRAY, removeSubCat);
+            render(
+              <ButtonBuilder2 el={catNames} />,
+              document.querySelector("#categories")
+            ); //creates category buttons
+
+            RenderFromCat(catNames); //elements that are rendered after clicking subcategory
           }}
         >
           Categories
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<OnSale />);
           }}
@@ -170,7 +160,7 @@ const ProductNav = () => {
           On sale
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<Outlet />);
           }}
@@ -178,7 +168,7 @@ const ProductNav = () => {
           Outlet
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<Services />);
           }}
@@ -186,7 +176,7 @@ const ProductNav = () => {
           Services
         </button>
         <button
-          className="btn btn-lg bg-transparent  text-white"
+          className="btn btn-lg bg-transparent prodNav-btn text-white"
           onClick={() => {
             renderRoot(<Newsletter />);
           }}
@@ -199,10 +189,10 @@ const ProductNav = () => {
         className={`position-fixed categories-section translate-z-0 w-100  ${
           isActive
             ? "hide-element"
-            : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "
+            : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x bg-transparent-custom blur-bg "
         }`}
       >
-        <div className="row categories-wrapper gap-3 p-2 w-100 mt-5">
+        <div className="row categories-wrapper gap-3 p-2 w-100 mt-5 min-h-30">
           <div
             id="categories"
             className="text-left categories col-3 no-gutters gap-1"
@@ -211,12 +201,13 @@ const ProductNav = () => {
 
           <div
             id="rootSubcategories"
-            className="bg-dark col-md categories-products mx-auto d-flex"
+            className="bg-dark col-md rootSubcategories mx-auto justify-content-center d-flex flex-row flex-wrap gap-3 p-2 "
           ></div>
         </div>
       </section>
+      <Popup />
     </>
   );
 };
-export { removeSubCat, addEvent };
+export { addEvent, RenderProducts2 };
 export default ProductNav;

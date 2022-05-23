@@ -17,53 +17,111 @@
     <link rel="stylesheet" href="src/scss/main.scss" />
     <script src="src/js/App.js" type="module" defer></script>
   </head>
-  <body class="bg-dark">
+  <body class="bg-dark min-vh-100 position-relative">
+    <script>
+      const CSRF_TOKEN = "{{ csrf_token }}";
+      const currentUser = "{{request.session.email}}";
+      //Not converted items
+      const hasDiscount = "{% hasDiscount %}".split("***");
+      const hasBasketProducts = "{{ basketProducts }}".split("***");
+      const hasProducts = [
+        "{% getProductsFromSubcat 1 %}".split("***"),
+        "{% getProductsFromSubcat 2 %}".split("***"),
+        "{% getProductsFromSubcat 3 %}".split("***"),
+        "{% getProductsFromSubcat 4 %}".split("***"),
+        "{% getProductsFromSubcat 5 %}".split("***"),
+        "{% getProductsFromSubcat 6 %}".split("***"),
+        "{% getProductsFromSubcat 7 %}".split("***"),
+        "{% getProductsFromSubcat 8 %}".split("***"),
+        "{% getProductsFromSubcat 9 %}".split("***"),
+        "{% getProductsFromSubcat 10 %}".split("***"),
+        "{% getProductsFromSubcat 11 %}".split("***"),
+        "{% getProductsFromSubcat 12 %}".split("***"),
+        "{% getProductsFromSubcat 13 %}".split("***"),
+        "{% getProductsFromSubcat 14 %}".split("***"),
+        "{% getProductsFromSubcat 15 %}".split("***"),
+        "{% getProductsFromSubcat 16 %}".split("***"),
+        "{% getProductsFromSubcat 17 %}".split("***"),
+        "{% getProductsFromSubcat 18 %}".split("***"),
+        "{% getProductsFromSubcat 19 %}".split("***"),
+        "{% getProductsFromSubcat 20 %}".split("***"),
+      ];
+      const hasSubcatImages = [
+        "{% getSubcatsFromCat 1 2 %}",
+        "{% getSubcatsFromCat 2 2 %}",
+        "{% getSubcatsFromCat 3 2 %}",
+        "{% getSubcatsFromCat 4 2 %}",
+        "{% getSubcatsFromCat 5 2 %}",
+        "{% getSubcatsFromCat 6 2 %}",
+        "{% getSubcatsFromCat 7 2 %}",
+        "{% getSubcatsFromCat 8 2 %}",
+      ];
+      const hasSubcatsName = [
+        "{% getSubcatsFromCat 3 1 %}",
+        "{% getSubcatsFromCat 4 1 %}",
+        "{% getSubcatsFromCat 5 1 %}",
+        "{% getSubcatsFromCat 6 1 %}",
+        "{% getSubcatsFromCat 7 1 %}",
+        "{% getSubcatsFromCat 8 1 %}",
+        "{% getSubcatsFromCat 9 1 %}",
+        "{% getSubcatsFromCat 10 1 %}",
+        "{% getSubcatsFromCat 11 1 %}",
+        "{% getSubcatsFromCat 12 1 %}",
+      ];
+
+      //default arrays where discount items will be pushed
+      var discountItems = [];
+      var basketProducts = [];
+      var products = [];
+      var subcatImages = hasSubcatImages; //on build it should be empty!!!
+      var subcatNames = [];
+      var catNames = [];
+      var hotshot = "{% hasHotshot %}".split(";;;"); 
+      var pushedElement = "{{cat.1}}";
+      ("{% for cat in categories %}");
+     
+      console.log(pushedElement);
+      catNames.push(pushedElement);
+      (" {% endfor %}");
+
+      const singleSplit = (fromArray, toArray, method = 0) => {
+        if (method === 0) {
+          fromArray.map((x) => {
+            toArray.push(x.split(";;;"));
+          });
+        }
+        if (method === 1) {
+          fromArray.map((x) => {
+            toArray.push(x.split(";"));
+          });
+        }
+        if (method === 2) {
+          for (item in fromArray) {
+            toArray.push(fromArray[item].split(";;;"));
+          }
+        }
+      };
+      const multiSplit = (fromArray, toArray) => {
+        var supportArray = [];
+        for (i in fromArray) {
+          for (y in fromArray[i]) {
+            supportArray.push(fromArray[i][y].split(";;;"));
+          }
+          toArray.push(supportArray);
+          var supportArray = [];
+        }
+      };
+
+      multiSplit(hasProducts, products);
+      singleSplit(hasDiscount, discountItems, 2);
+      singleSplit(hasBasketProducts, basketProducts);
+      //singleSplit(hasSubcatImages, subcatImages, 1);
+
+      console.log(discountItems);
+    </script>
+
     <div id="navRoot">Nav not rendered</div>
     <div id="root">Main not rendered</div>
     <div id="footerRoot">footer not rendered</div>
-    <script>
-      const CSRF_TOKEN = "{{ csrf_token }}";
-      //var ARRAY_1_SUBCATEGORY = "{% outputCat 2 %}"
-      //  .replaceAll("&#x27;,)", "")
-      //  .split("(&#x27;"); //stores all subcategories from specified index to variable
-      //Third outputCat doesn't exist
-      var ARRAY_3_SUBCATEGORY = "{% outputCat 4 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_4_SUBCATEGORY = "{% outputCat 5 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_5_SUBCATEGORY = "{% outputCat 6 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_6_SUBCATEGORY = "{% outputCat 7 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_7_SUBCATEGORY = "{% outputCat 8 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_8_SUBCATEGORY = "{% outputCat 9 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_9_SUBCATEGORY = "{% outputCat 10 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_10_SUBCATEGORY = "{% outputCat 11 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      var ARRAY_11_SUBCATEGORY = "{% outputCat 12 %}"
-        .replaceAll("&#x27;,)", "")
-        .split("(&#x27;");
-      //ARRAY_1_SUBCATEGORY.shift(); //removes weird ass empty element on index 0
-      ARRAY_3_SUBCATEGORY.shift();
-      ARRAY_4_SUBCATEGORY.shift();
-      ARRAY_5_SUBCATEGORY.shift();
-      ARRAY_6_SUBCATEGORY.shift();
-      ARRAY_7_SUBCATEGORY.shift();
-      ARRAY_8_SUBCATEGORY.shift();
-      ARRAY_9_SUBCATEGORY.shift();
-      ARRAY_10_SUBCATEGORY.shift();
-      ARRAY_11_SUBCATEGORY.shift();
-    </script>
   </body>
 </html>

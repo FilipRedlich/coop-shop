@@ -4,10 +4,16 @@ from . import views
 
 app_name = 'shop'
 urlpatterns = [
-    path('', views.IndexView.as_view(), name='index'),
+    path('', views.indexView, name='index'),
+    path('<int:pk>/', views.ProductView.as_view(), name='product'),
     path('register/', views.register, name='register'),
     path('login/', views.login, name='login'),
     path('logout/', views.logout, name='logout'),
-    path('test/', views.TestView.as_view(), name='test'),
-    path('test2/', views.TestView2.as_view(), name='test2'),
+    path('addProductToBasket/', views.addProductToBasket, name='addProductToBasket'),
+    path('deleteProductToBasket/', views.deleteProductToBasket, name='deleteProductToBasket'),
+    path('changeHotshot/', views.changeHotshot, name='changeHotshot'),
+    path('sethot/', views.setHotshot, name='setHotshot'),
+    path('test/', views.testView, name='test'),
+    path('test2/', views.testView2, name='test2'),
+    path('test3/', views.testView3, name='test3'),
 ]

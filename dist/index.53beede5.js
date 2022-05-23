@@ -145,8 +145,7 @@
 })({"kn9T2":[function(require,module,exports) {
 var Refresh = require('react-refresh/runtime');
 Refresh.injectIntoGlobalHook(window);
-window.$RefreshReg$ = function() {
-};
+window.$RefreshReg$ = function() {};
 window.$RefreshSig$ = function() {
     return function(type) {
         return type;
@@ -172,26 +171,26 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    var REACT_FRAGMENT_TYPE = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -455,12 +454,9 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
                 inject: function(injected) {
                     return nextID++;
                 },
-                onScheduleFiberRoot: function(id, root, children) {
-                },
-                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {
-                },
-                onCommitFiberUnmount: function() {
-                }
+                onScheduleFiberRoot: function(id, root, children) {},
+                onCommitFiberRoot: function(id, root, maybePriorityLevel, didError) {},
+                onCommitFiberUnmount: function() {}
             };
         } // Here, we just want to get a reference to scheduleRefresh.
         var oldInject = hook.inject;
@@ -477,8 +473,7 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
             helpersByRendererID.set(id, injected);
         }); // We also want to track currently mounted roots.
         var oldOnCommitFiberRoot = hook.onCommitFiberRoot;
-        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {
-        };
+        var oldOnScheduleFiberRoot = hook.onScheduleFiberRoot || function() {};
         hook.onScheduleFiberRoot = function(id, root, children) {
             if (!isPerformingRefresh) {
                 // If it was intentionally scheduled, don't attempt to restore.
@@ -620,7 +615,7 @@ module.exports = require('./cjs/react-refresh-runtime.development.js');
     exports.setSignature = setSignature;
 })();
 
-},{}],"ePVv5":[function(require,module,exports) {
+},{}],"bhjii":[function(require,module,exports) {
 "use strict";
 var HMR_HOST = null;
 var HMR_PORT = null;
@@ -645,8 +640,7 @@ function _createForOfIteratorHelper(o, allowArrayLike) {
         if (Array.isArray(o) || (it = _unsupportedIterableToArray(o)) || allowArrayLike && o && typeof o.length === "number") {
             if (it) o = it;
             var i = 0;
-            var F = function F() {
-            };
+            var F = function F() {};
             return {
                 s: F,
                 n: function n() {
@@ -702,7 +696,7 @@ function _arrayLikeToArray(arr, len) {
     for(var i = 0, arr2 = new Array(len); i < len; i++)arr2[i] = arr[i];
     return arr2;
 }
-/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE */ /*::
+/* global HMR_HOST, HMR_PORT, HMR_ENV_HASH, HMR_SECURE, chrome, browser */ /*::
 import type {
   HMRAsset,
   HMRMessage,
@@ -729,11 +723,18 @@ interface ParcelModule {
     _disposeCallbacks: Array<(mixed) => void>,
   |};
 }
+interface ExtensionContext {
+  runtime: {|
+    reload(): void,
+  |};
+}
 declare var module: {bundle: ParcelRequire, ...};
 declare var HMR_HOST: string;
 declare var HMR_PORT: string;
 declare var HMR_ENV_HASH: string;
 declare var HMR_SECURE: boolean;
+declare var chrome: ExtensionContext;
+declare var browser: ExtensionContext;
 */ var OVERLAY_ID = '__parcel__error__overlay__';
 var OldModule = module.bundle.Module;
 function Module(moduleName) {
@@ -743,8 +744,7 @@ function Module(moduleName) {
         _acceptCallbacks: [],
         _disposeCallbacks: [],
         accept: function accept(fn) {
-            this._acceptCallbacks.push(fn || function() {
-            });
+            this._acceptCallbacks.push(fn || function() {});
         },
         dispose: function dispose(fn) {
             this._disposeCallbacks.push(fn);
@@ -753,7 +753,7 @@ function Module(moduleName) {
     module.bundle.hotData = undefined;
 }
 module.bundle.Module = Module;
-var checkedAssets, acceptedAssets, assetsToAccept;
+var checkedAssets, acceptedAssets, assetsToAccept /*: Array<[ParcelRequire, string]> */ ;
 function getHostname() {
     return HMR_HOST || (location.protocol.indexOf('http') === 0 ? location.hostname : 'localhost');
 }
@@ -767,10 +767,8 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
     var protocol = HMR_SECURE || location.protocol == 'https:' && !/localhost|127.0.0.1|0.0.0.0/.test(hostname) ? 'wss' : 'ws';
     var ws = new WebSocket(protocol + '://' + hostname + (port ? ':' + port : '') + '/'); // $FlowFixMe
     ws.onmessage = function(event) {
-        checkedAssets = {
-        };
-        acceptedAssets = {
-        };
+        checkedAssets = {} /*: {|[string]: boolean|} */ ;
+        acceptedAssets = {} /*: {|[string]: boolean|} */ ;
         assetsToAccept = [];
         var data = JSON.parse(event.data);
         if (data.type === 'update') {
@@ -791,7 +789,12 @@ if ((!parent || !parent.isParcelRequire) && typeof WebSocket !== 'undefined') {
                     var id = assetsToAccept[i][1];
                     if (!acceptedAssets[id]) hmrAcceptRun(assetsToAccept[i][0], id);
                 }
-            } else window.location.reload();
+            } else if ('reload' in location) location.reload();
+            else {
+                // Web extension context
+                var ext = typeof chrome === 'undefined' ? typeof browser === 'undefined' ? null : browser : chrome;
+                if (ext && ext.runtime && ext.runtime.reload) ext.runtime.reload();
+            }
         }
         if (data.type === 'error') {
             // Log parcel errors to console
@@ -885,7 +888,7 @@ function reloadCSS() {
             var href = links[i].getAttribute('href');
             var hostname = getHostname();
             var servedFromHMRServer = hostname === 'localhost' ? new RegExp('^(https?:\\/\\/(0.0.0.0|127.0.0.1)|localhost):' + getPort()).test(href) : href.indexOf(hostname + ':' + getPort());
-            var absolute = /^https?:\/\//i.test(href) && href.indexOf(window.location.origin) !== 0 && !servedFromHMRServer;
+            var absolute = /^https?:\/\//i.test(href) && href.indexOf(location.origin) !== 0 && !servedFromHMRServer;
             if (!absolute) updateLink(links[i]);
         }
         cssTimeout = null;
@@ -977,8 +980,7 @@ function hmrAcceptCheckOne(bundle, id, depsByBundle) {
 }
 function hmrAcceptRun(bundle, id) {
     var cached = bundle.cache[id];
-    bundle.hotData = {
-    };
+    bundle.hotData = {};
     if (cached && cached.hot) cached.hot.data = bundle.hotData;
     if (cached && cached.hot && cached.hot._disposeCallbacks.length) cached.hot._disposeCallbacks.forEach(function(cb) {
         cb(bundle.hotData);
@@ -1019,7 +1021,7 @@ var _Footer = _interopRequireDefault(require("./Components/Footer"));
 var _RenderScripts = require("./Components/RenderScripts");
 var _Test = require("./Components/Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\App.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\App.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -1035,8 +1037,7 @@ function _interopRequireWildcard(obj, nodeInterop) {
     };
     var cache = _getRequireWildcardCache(nodeInterop);
     if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
+    var newObj = {};
     var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
     for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
         var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
@@ -1048,38 +1049,29 @@ function _interopRequireWildcard(obj, nodeInterop) {
     return newObj;
 }
 var NavApp = function NavApp() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainNav["default"], {
-            }),
-            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_ProductsNav["default"], {
-            })
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainNav["default"], {}),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(_ProductsNav["default"], {})
         ]
-    }));
+    });
 };
 _c = NavApp;
 var MainApp = function MainApp() {
-    (0, _Test.AfterLoad)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {
-    }), document.querySelector("#root"), 300);
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RenderScripts.RenderOnLoad, {
-        })
-    }));
+    (0, _Test.AfterLoad)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {}), document.querySelector("#root"), 300);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_RenderScripts.RenderOnLoad, {})
+    });
 };
 _c1 = MainApp;
 var FooterApp = function FooterApp() {
-    (0, _Test.AfterLoad)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Footer["default"], {
-    }), document.querySelector("#footerRoot"), 600);
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    }));
+    (0, _Test.AfterLoad)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Footer["default"], {}), document.querySelector("#footerRoot"), 600);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
 };
 _c2 = FooterApp;
-(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(NavApp, {
-}), document.querySelector("#navRoot"));
-(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(MainApp, {
-}), document.querySelector("#root"));
-(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(FooterApp, {
-}), document.querySelector("#footerRoot"));
+(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(NavApp, {}), document.querySelector("#navRoot"));
+(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(MainApp, {}), document.querySelector("#root"));
+(0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(FooterApp, {}), document.querySelector("#footerRoot"));
 var _default = MainApp;
 exports["default"] = _default;
 var _c, _c1, _c2;
@@ -1092,7 +1084,7 @@ $RefreshReg$(_c2, "FooterApp");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","./Components/Test":"f2YDa","./Components/RenderScripts":"bNOSb","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7XM86":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Components/MainNav":"fWQ0Y","./Components/ProductsNav":"jxWkG","./Components/MainContent":"1FSJk","./Components/Footer":"lP4ni","./Components/RenderScripts":"bNOSb","./Components/Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"7XM86":[function(require,module,exports) {
 function _interopRequireDefault(obj) {
     return obj && obj.__esModule ? obj : {
         "default": obj
@@ -1132,26 +1124,26 @@ module.exports = require('./cjs/react.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    exports.Fragment = 60107;
-    exports.StrictMode = 60108;
-    exports.Profiler = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    exports.Suspense = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    exports.Fragment = 0xeacb;
+    exports.StrictMode = 0xeacc;
+    exports.Profiler = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    exports.Suspense = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -1208,8 +1200,7 @@ module.exports = require('./cjs/react.development.js');
    * @type {ReactComponent}
    */ current: null
     };
-    var ReactDebugCurrentFrame1 = {
-    };
+    var ReactDebugCurrentFrame1 = {};
     var currentExtraStackFrame = null;
     function setExtraStackFrame(stack) {
         currentExtraStackFrame = stack;
@@ -1269,8 +1260,7 @@ module.exports = require('./cjs/react.development.js');
         // eslint-disable-next-line react-internal/no-production-logging
         Function.prototype.apply.call(console[level], console, argsWithFormat);
     }
-    var didWarnStateUpdateForUnmountedComponent = {
-    };
+    var didWarnStateUpdateForUnmountedComponent = {};
     function warnNoop(publicInstance, callerName) {
         var _constructor = publicInstance.constructor;
         var componentName = _constructor && (_constructor.displayName || _constructor.name) || 'ReactClass';
@@ -1338,8 +1328,7 @@ module.exports = require('./cjs/react.development.js');
             warnNoop(publicInstance, 'setState');
         }
     };
-    var emptyObject = {
-    };
+    var emptyObject = {};
     Object.freeze(emptyObject);
     /**
  * Base class helpers for the updating state of a component.
@@ -1350,8 +1339,7 @@ module.exports = require('./cjs/react.development.js');
         // renderer.
         this.updater = updater || ReactNoopUpdateQueue;
     }
-    Component1.prototype.isReactComponent = {
-    };
+    Component1.prototype.isReactComponent = {};
     /**
  * Sets a subset of the state. Always use this to mutate
  * state. You should treat `this.state` as immutable.
@@ -1415,8 +1403,7 @@ module.exports = require('./cjs/react.development.js');
         });
     };
     for(var fnName in deprecatedAPIs)if (deprecatedAPIs.hasOwnProperty(fnName)) defineDeprecationWarning(fnName, deprecatedAPIs[fnName]);
-    function ComponentDummy() {
-    }
+    function ComponentDummy() {}
     ComponentDummy.prototype = Component1.prototype;
     /**
  * Convenience component with default shallow equality check for sCU.
@@ -1498,8 +1485,7 @@ module.exports = require('./cjs/react.development.js');
         __source: true
     };
     var specialPropKeyWarningShown, specialPropRefWarningShown, didWarnAboutStringRefs;
-    didWarnAboutStringRefs = {
-    };
+    didWarnAboutStringRefs = {};
     function hasValidRef(config) {
         if (hasOwnProperty.call(config, 'ref')) {
             var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
@@ -1544,7 +1530,7 @@ module.exports = require('./cjs/react.development.js');
         if (typeof config.ref === 'string' && ReactCurrentOwner.current && config.__self && ReactCurrentOwner.current.stateNode !== config.__self) {
             var componentName = getComponentName(ReactCurrentOwner.current.type);
             if (!didWarnAboutStringRefs[componentName]) {
-                error1("Component \"%s\" contains the string ref \"%s\". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", componentName, config.ref);
+                error1('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', componentName, config.ref);
                 didWarnAboutStringRefs[componentName] = true;
             }
         }
@@ -1584,8 +1570,7 @@ module.exports = require('./cjs/react.development.js');
         // an external backing store so that we can freeze the whole object.
         // This can be replaced with a WeakMap once they are implemented in
         // commonly used development environments.
-        element._store = {
-        }; // To make comparing ReactElements easier for testing purposes, we make
+        element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
         // the validation flag non-enumerable (where possible, which should
         // include every environment we run tests in), so the test framework
         // ignores it.
@@ -1619,8 +1604,7 @@ module.exports = require('./cjs/react.development.js');
  * See https://reactjs.org/docs/react-api.html#createelement
  */ function createElement(type, config, children) {
         var propName; // Reserved names are extracted
-        var props = {
-        };
+        var props = {};
         var key = null;
         var ref = null;
         var self = null;
@@ -1665,8 +1649,7 @@ module.exports = require('./cjs/react.development.js');
  */ function cloneElement(element, config, children) {
         if (!!(element === null || element === undefined)) throw Error("React.cloneElement(...): The argument must be a React element, but you passed " + element + ".");
         var propName; // Original props are copied
-        var props = _assign({
-        }, element.props); // Reserved names are extracted
+        var props = _assign({}, element.props); // Reserved names are extracted
         var key = element.key;
         var ref = element.ref; // Self is preserved since the owner is preserved.
         var self = element._self; // Source is preserved since cloneElement is unlikely to be targeted by a
@@ -2194,8 +2177,7 @@ module.exports = require('./cjs/react.development.js');
     var prevGroup;
     var prevGroupCollapsed;
     var prevGroupEnd;
-    function disabledLog() {
-    }
+    function disabledLog() {}
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
         if (disabledDepth === 0) {
@@ -2233,32 +2215,25 @@ module.exports = require('./cjs/react.development.js');
                 writable: true
             }; // $FlowFixMe Flow thinks console is immutable.
             Object.defineProperties(console, {
-                log: _assign({
-                }, props, {
+                log: _assign({}, props, {
                     value: prevLog
                 }),
-                info: _assign({
-                }, props, {
+                info: _assign({}, props, {
                     value: prevInfo
                 }),
-                warn: _assign({
-                }, props, {
+                warn: _assign({}, props, {
                     value: prevWarn
                 }),
-                error: _assign({
-                }, props, {
+                error: _assign({}, props, {
                     value: prevError
                 }),
-                group: _assign({
-                }, props, {
+                group: _assign({}, props, {
                     value: prevGroup
                 }),
-                groupCollapsed: _assign({
-                }, props, {
+                groupCollapsed: _assign({}, props, {
                     value: prevGroupCollapsed
                 }),
-                groupEnd: _assign({
-                }, props, {
+                groupEnd: _assign({}, props, {
                     value: prevGroupEnd
                 })
             });
@@ -2416,13 +2391,11 @@ module.exports = require('./cjs/react.development.js');
                 try {
                     // Lazy may contain any component type so we recursively resolve it.
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
-                }
+                } catch (x) {}
         }
         return '';
     }
-    var loggedTypeFailures = {
-    };
+    var loggedTypeFailures = {};
     var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
     function setCurrentlyValidatingElement(element) {
         if (element) {
@@ -2497,8 +2470,7 @@ module.exports = require('./cjs/react.development.js');
  * Warn if there's no key explicitly set on dynamic arrays of children or
  * object keys are not valid. This allows us to keep track of children between
  * updates.
- */ var ownerHasKeyUseWarning = {
-    };
+ */ var ownerHasKeyUseWarning = {};
     function getCurrentComponentErrorInfo(parentType) {
         var info = getDeclarationErrorAddendum();
         if (!info) {
@@ -2529,7 +2501,7 @@ module.exports = require('./cjs/react.development.js');
         if (element && element._owner && element._owner !== ReactCurrentOwner.current) // Give the component that originally created this child.
         childOwner = " It was passed a child from " + getComponentName(element._owner.type) + ".";
         setCurrentlyValidatingElement$1(element);
-        error1("Each child in a list should have a unique \"key\" prop.%s%s See https://reactjs.org/link/warning-keys for more information.", currentComponentErrorInfo, childOwner);
+        error1('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
         setCurrentlyValidatingElement$1(null);
     }
     /**
@@ -2664,8 +2636,7 @@ module.exports = require('./cjs/react.development.js');
         return newElement;
     }
     try {
-        var frozenObject = Object.freeze({
-        });
+        var frozenObject = Object.freeze({});
         /* eslint-disable no-new */ new Map([
             [
                 frozenObject,
@@ -2675,8 +2646,7 @@ module.exports = require('./cjs/react.development.js');
         new Set([
             frozenObject
         ]);
-    /* eslint-enable no-new */ } catch (e) {
-    }
+    /* eslint-enable no-new */ } catch (e) {}
     var createElement$1 = createElementWithValidation;
     var cloneElement$1 = cloneElementWithValidation;
     var createFactory = createFactoryWithValidation;
@@ -2731,25 +2701,22 @@ function shouldUseNative() {
         if (!Object.assign) return false;
         // Detect buggy property enumeration order in older V8 versions.
         // https://bugs.chromium.org/p/v8/issues/detail?id=4118
-        var test1 = "abc"; // eslint-disable-line no-new-wrappers
+        var test1 = new String('abc'); // eslint-disable-line no-new-wrappers
         test1[5] = 'de';
         if (Object.getOwnPropertyNames(test1)[0] === '5') return false;
         // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test2 = {
-        };
+        var test2 = {};
         for(var i = 0; i < 10; i++)test2['_' + String.fromCharCode(i)] = i;
         var order2 = Object.getOwnPropertyNames(test2).map(function(n) {
             return test2[n];
         });
         if (order2.join('') !== '0123456789') return false;
         // https://bugs.chromium.org/p/v8/issues/detail?id=3056
-        var test3 = {
-        };
+        var test3 = {};
         'abcdefghijklmnopqrst'.split('').forEach(function(letter) {
             test3[letter] = letter;
         });
-        if (Object.keys(Object.assign({
-        }, test3)).join('') !== 'abcdefghijklmnopqrst') return false;
+        if (Object.keys(Object.assign({}, test3)).join('') !== 'abcdefghijklmnopqrst') return false;
         return true;
     } catch (err) {
         // We don't expect any of the above to throw, but better to be safe.
@@ -2865,15 +2832,13 @@ module.exports = require('./cjs/react-dom.development.js');
     var allNativeEvents = new Set();
     /**
  * Mapping from registration name to event name
- */ var registrationNameDependencies1 = {
-    };
+ */ var registrationNameDependencies1 = {};
     /**
  * Mapping from lowercase registration names to the properly cased version,
  * used to warn in the case of missing event handlers. Available
  * only in true.
  * @type {Object}
- */ var possibleRegistrationNames1 = {
-    }; // Trust the developer to only use possibleRegistrationNames in true
+ */ var possibleRegistrationNames1 = {}; // Trust the developer to only use possibleRegistrationNames in true
     function registerTwoPhaseEvent(registrationName, dependencies) {
         registerDirectEvent(registrationName, dependencies);
         registerDirectEvent(registrationName + 'Capture', dependencies);
@@ -2912,10 +2877,8 @@ module.exports = require('./cjs/react-dom.development.js');
     var ROOT_ATTRIBUTE_NAME = 'data-reactroot';
     var VALID_ATTRIBUTE_NAME_REGEX = new RegExp('^[' + ATTRIBUTE_NAME_START_CHAR + '][' + ATTRIBUTE_NAME_CHAR + ']*$');
     var hasOwnProperty = Object.prototype.hasOwnProperty;
-    var illegalAttributeNameCache = {
-    };
-    var validatedAttributeNameCache = {
-    };
+    var illegalAttributeNameCache = {};
+    var validatedAttributeNameCache = {};
     function isAttributeNameSafe(attributeName) {
         if (hasOwnProperty.call(validatedAttributeNameCache, attributeName)) return true;
         if (hasOwnProperty.call(illegalAttributeNameCache, attributeName)) return false;
@@ -2982,8 +2945,7 @@ module.exports = require('./cjs/react-dom.development.js');
     } // When adding attributes to this list, be sure to also add them to
     // the `possibleStandardNames` module to ensure casing and incorrect
     // name warnings.
-    var properties = {
-    }; // These props are reserved by React. They shouldn't be written to the DOM.
+    var properties = {}; // These props are reserved by React. They shouldn't be written to the DOM.
     var reservedProps = [
         'children',
         'dangerouslySetInnerHTML',
@@ -3347,26 +3309,26 @@ module.exports = require('./cjs/react-dom.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    var REACT_FRAGMENT_TYPE = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    var REACT_FRAGMENT_TYPE = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -3410,8 +3372,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var prevGroup;
     var prevGroupCollapsed;
     var prevGroupEnd;
-    function disabledLog() {
-    }
+    function disabledLog() {}
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
         if (disabledDepth === 0) {
@@ -3449,32 +3410,25 @@ module.exports = require('./cjs/react-dom.development.js');
                 writable: true
             }; // $FlowFixMe Flow thinks console is immutable.
             Object.defineProperties(console, {
-                log: _assign({
-                }, props, {
+                log: _assign({}, props, {
                     value: prevLog
                 }),
-                info: _assign({
-                }, props, {
+                info: _assign({}, props, {
                     value: prevInfo
                 }),
-                warn: _assign({
-                }, props, {
+                warn: _assign({}, props, {
                     value: prevWarn
                 }),
-                error: _assign({
-                }, props, {
+                error: _assign({}, props, {
                     value: prevError
                 }),
-                group: _assign({
-                }, props, {
+                group: _assign({}, props, {
                     value: prevGroup
                 }),
-                groupCollapsed: _assign({
-                }, props, {
+                groupCollapsed: _assign({}, props, {
                     value: prevGroupCollapsed
                 }),
-                groupEnd: _assign({
-                }, props, {
+                groupEnd: _assign({}, props, {
                     value: prevGroupEnd
                 })
             });
@@ -3635,8 +3589,7 @@ module.exports = require('./cjs/react-dom.development.js');
                 try {
                     // Lazy may contain any component type so we recursively resolve it.
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
-                }
+                } catch (x) {}
         }
         return '';
     }
@@ -3904,8 +3857,7 @@ module.exports = require('./cjs/react-dom.development.js');
  */ function getHostProps(element, props) {
         var node = element;
         var checked = props.checked;
-        var hostProps = _assign({
-        }, props, {
+        var hostProps = _assign({}, props, {
             defaultChecked: undefined,
             defaultValue: undefined,
             value: undefined,
@@ -4138,8 +4090,7 @@ module.exports = require('./cjs/react-dom.development.js');
         var options = node.options;
         if (multiple) {
             var selectedValues = propValue;
-            var selectedValue = {
-            };
+            var selectedValue = {};
             for(var i = 0; i < selectedValues.length; i++)// Prefix to avoid chaos with special keys.
             selectedValue['$' + selectedValues[i]] = true;
             for(var _i = 0; _i < options.length; _i++){
@@ -4178,8 +4129,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * If `defaultValue` is provided, any options with the supplied values will be
  * selected.
  */ function getHostProps$2(element, props) {
-        return _assign({
-        }, props, {
+        return _assign({}, props, {
             value: undefined
         });
     }
@@ -4243,8 +4193,7 @@ module.exports = require('./cjs/react-dom.development.js');
         // completely solve this IE9 bug), but Sebastian+Sophie seemed to like this
         // solution. The value can be a boolean or object so that's why it's forced
         // to be a string.
-        var hostProps = _assign({
-        }, props, {
+        var hostProps = _assign({}, props, {
             value: undefined,
             defaultValue: undefined,
             children: toString(node._wrapperState.initialValue)
@@ -4780,17 +4729,14 @@ module.exports = require('./cjs/react-dom.development.js');
  */ function hyphenateStyleName(name) {
         return name.replace(uppercasePattern, '-$1').toLowerCase().replace(msPattern, '-ms-');
     }
-    var warnValidStyle = function() {
-    };
+    var warnValidStyle = function() {};
     // 'msTransform' is correct, but the other prefixes should be capitalized
     var badVendoredStyleNamePattern = /^(?:webkit|moz|o)[A-Z]/;
     var msPattern$1 = /^-ms-/;
     var hyphenPattern = /-(.)/g; // style values shouldn't contain a semicolon
     var badStyleValueWithSemicolonPattern = /;\s*$/;
-    var warnedStyleNames = {
-    };
-    var warnedStyleValues = {
-    };
+    var warnedStyleNames = {};
+    var warnedStyleValues = {};
     var warnedForNaNValue = false;
     var warnedForInfinityValue = false;
     var camelize = function(string) {
@@ -4813,7 +4759,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var warnStyleValueWithSemicolon = function(name, value) {
         if (warnedStyleValues.hasOwnProperty(value) && warnedStyleValues[value]) return;
         warnedStyleValues[value] = true;
-        error1("Style property values shouldn't contain a semicolon. Try \"%s: %s\" instead.", name, value.replace(badStyleValueWithSemicolonPattern, ''));
+        error1('Style property values shouldn\'t contain a semicolon. Try "%s: %s" instead.', name, value.replace(badStyleValueWithSemicolonPattern, ''));
     };
     var warnStyleValueIsNaN = function(name, value) {
         if (warnedForNaNValue) return;
@@ -4886,8 +4832,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * }. This can be read as "the overflowY property was set by the overflow
  * shorthand". That is, the values are the property that each was derived from.
  */ function expandShorthandMap(styles) {
-        var expanded = {
-        };
+        var expanded = {};
         for(var key in styles){
             var longhands = shorthandToLonghand[key] || [
                 key
@@ -4913,8 +4858,7 @@ module.exports = require('./cjs/react-dom.development.js');
         if (!nextStyles) return;
         var expandedUpdates = expandShorthandMap(styleUpdates);
         var expandedStyles = expandShorthandMap(nextStyles);
-        var warnedAbout = {
-        };
+        var warnedAbout = {};
         for(var key in expandedUpdates){
             var originalKey = expandedUpdates[key];
             var correctOriginalKey = expandedStyles[key];
@@ -5531,8 +5475,7 @@ module.exports = require('./cjs/react-dom.development.js');
         'aria-rowspan': 0,
         'aria-setsize': 0
     };
-    var warnedProperties = {
-    };
+    var warnedProperties = {};
     var rARIA = new RegExp('^(aria)-[' + ATTRIBUTE_NAME_CHAR + ']*$');
     var rARIACamel = new RegExp('^(aria)[A-Z][' + ATTRIBUTE_NAME_CHAR + ']*$');
     var hasOwnProperty$1 = Object.prototype.hasOwnProperty;
@@ -5594,10 +5537,8 @@ module.exports = require('./cjs/react-dom.development.js');
             else error1("`value` prop on `%s` should not be null. Consider using an empty string to clear the component or `undefined` for uncontrolled components.", type);
         }
     }
-    var validateProperty$1 = function() {
-    };
-    var warnedProperties$1 = {
-    };
+    var validateProperty$1 = function() {};
+    var warnedProperties$1 = {};
     var _hasOwnProperty = Object.prototype.hasOwnProperty;
     var EVENT_NAME_REGEX = /^on./;
     var INVALID_EVENT_NAME_REGEX = /^on[^A-Z]/;
@@ -5671,8 +5612,8 @@ module.exports = require('./cjs/react-dom.development.js');
             return true;
         }
         if (typeof value === 'boolean' && shouldRemoveAttributeWithWarning(name, value, propertyInfo, false)) {
-            if (value) error1("Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s=\"%s\" or %s={value.toString()}.", value, name, name, value, name);
-            else error1("Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s=\"%s\" or %s={value.toString()}.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.", value, name, name, value, name, name, name);
+            if (value) error1('Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}.', value, name, name, value, name);
+            else error1('Received `%s` for a non-boolean attribute `%s`.\n\nIf you want to write it to the DOM, pass a string instead: %s="%s" or %s={value.toString()}.\n\nIf you used to conditionally omit it with %s={condition && value}, pass %s={condition ? value : undefined} instead.', value, name, name, value, name, name, name);
             warnedProperties$1[name] = true;
             return true;
         } // Now that we've validated casing, do not validate
@@ -5780,8 +5721,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var discreteUpdatesImpl = function(fn, a, b, c, d) {
         return fn(a, b, c, d);
     };
-    var flushDiscreteUpdatesImpl = function() {
-    };
+    var flushDiscreteUpdatesImpl = function() {};
     var batchedEventUpdatesImpl = batchedUpdatesImpl;
     var isInsideEventHandler = false;
     var isBatchingEventUpdates = false;
@@ -5882,8 +5822,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var passiveBrowserEventsSupported = false; // Check if browser support events with passive listeners
     // https://developer.mozilla.org/en-US/docs/Web/API/EventTarget/addEventListener#Safely_detecting_option_support
     if (canUseDOM) try {
-        var options1 = {
-        }; // $FlowFixMe: Ignore Flow complaining about needing a value
+        var options1 = {}; // $FlowFixMe: Ignore Flow complaining about needing a value
         Object.defineProperty(options1, 'passive', {
             get: function() {
                 passiveBrowserEventsSupported = true;
@@ -5987,8 +5926,7 @@ module.exports = require('./cjs/react-dom.development.js');
                     // We'll remember this to later decide whether to log it or not.
                     if (error != null && typeof error === 'object') try {
                         error._suppressLogging = true;
-                    } catch (inner) {
-                    }
+                    } catch (inner) {}
                 }
             } // Create a fake event type.
             var evtType = "react-" + (name ? name : 'invokeguardedcallback'); // Attach our event handlers
@@ -6632,8 +6570,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * @param {string} eventName
  * @returns {object}
  */ function makePrefixMap(styleProp, eventName) {
-        var prefixes = {
-        };
+        var prefixes = {};
         prefixes[styleProp.toLowerCase()] = eventName.toLowerCase();
         prefixes['Webkit' + styleProp] = 'webkit' + eventName;
         prefixes['Moz' + styleProp] = 'moz' + eventName;
@@ -6649,12 +6586,10 @@ module.exports = require('./cjs/react-dom.development.js');
     };
     /**
  * Event names that have already been detected and prefixed (if applicable).
- */ var prefixedEventNames = {
-    };
+ */ var prefixedEventNames = {};
     /**
  * Element to check for prefixes on.
- */ var style1 = {
-    };
+ */ var style1 = {};
     /**
  * Bootstrap if a DOM exists.
  */ if (canUseDOM) {
@@ -6954,8 +6889,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var IdleLanes = /*                             */ 805306368;
     var OffscreenLane = /*                   */ 1073741824;
     var NoTimestamp = -1;
-    function setCurrentUpdateLanePriority(newLanePriority) {
-    } // "Registers" used to "return" multiple values
+    function setCurrentUpdateLanePriority(newLanePriority) {} // "Registers" used to "return" multiple values
     // Used by getHighestPriorityLanes and getNextLanes:
     var return_highestLanePriority = DefaultLanePriority;
     function getHighestPriorityLanes(lanes) {
@@ -7703,8 +7637,7 @@ module.exports = require('./cjs/react-dom.development.js');
      * We release all dispatched `SyntheticEvent`s after each event loop, adding
      * them back into the pool. This allows a way to hold onto a reference that
      * won't be added back into the pool.
-     */ persist: function() {
-            },
+     */ persist: function() {},
             /**
      * Checks if this event should be released back into the pool.
      *
@@ -7727,8 +7660,7 @@ module.exports = require('./cjs/react-dom.development.js');
         isTrusted: 0
     };
     var SyntheticEvent = createSyntheticEvent(EventInterface);
-    var UIEventInterface = _assign({
-    }, EventInterface, {
+    var UIEventInterface = _assign({}, EventInterface, {
         view: 0,
         detail: 0
     });
@@ -7751,8 +7683,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface MouseEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var MouseEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var MouseEventInterface = _assign({}, UIEventInterface, {
         screenX: 0,
         screenY: 0,
         clientX: 0,
@@ -7787,16 +7718,14 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface DragEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var DragEventInterface = _assign({
-    }, MouseEventInterface, {
+ */ var DragEventInterface = _assign({}, MouseEventInterface, {
         dataTransfer: 0
     });
     var SyntheticDragEvent = createSyntheticEvent(DragEventInterface);
     /**
  * @interface FocusEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var FocusEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var FocusEventInterface = _assign({}, UIEventInterface, {
         relatedTarget: 0
     });
     var SyntheticFocusEvent = createSyntheticEvent(FocusEventInterface);
@@ -7804,8 +7733,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * @interface Event
  * @see http://www.w3.org/TR/css3-animations/#AnimationEvent-interface
  * @see https://developer.mozilla.org/en-US/docs/Web/API/AnimationEvent
- */ var AnimationEventInterface = _assign({
-    }, EventInterface, {
+ */ var AnimationEventInterface = _assign({}, EventInterface, {
         animationName: 0,
         elapsedTime: 0,
         pseudoElement: 0
@@ -7814,8 +7742,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface Event
  * @see http://www.w3.org/TR/clipboard-apis/
- */ var ClipboardEventInterface = _assign({
-    }, EventInterface, {
+ */ var ClipboardEventInterface = _assign({}, EventInterface, {
         clipboardData: function(event) {
             return 'clipboardData' in event ? event.clipboardData : window.clipboardData;
         }
@@ -7824,8 +7751,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface Event
  * @see http://www.w3.org/TR/DOM-Level-3-Events/#events-compositionevents
- */ var CompositionEventInterface = _assign({
-    }, EventInterface, {
+ */ var CompositionEventInterface = _assign({}, EventInterface, {
         data: 0
     });
     var SyntheticCompositionEvent = createSyntheticEvent(CompositionEventInterface);
@@ -7940,8 +7866,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface KeyboardEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var KeyboardEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var KeyboardEventInterface = _assign({}, UIEventInterface, {
         key: getEventKey,
         code: 0,
         location: 0,
@@ -7983,8 +7908,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface PointerEvent
  * @see http://www.w3.org/TR/pointerevents/
- */ var PointerEventInterface = _assign({
-    }, MouseEventInterface, {
+ */ var PointerEventInterface = _assign({}, MouseEventInterface, {
         pointerId: 0,
         width: 0,
         height: 0,
@@ -8000,8 +7924,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface TouchEvent
  * @see http://www.w3.org/TR/touch-events/
- */ var TouchEventInterface = _assign({
-    }, UIEventInterface, {
+ */ var TouchEventInterface = _assign({}, UIEventInterface, {
         touches: 0,
         targetTouches: 0,
         changedTouches: 0,
@@ -8016,8 +7939,7 @@ module.exports = require('./cjs/react-dom.development.js');
  * @interface Event
  * @see http://www.w3.org/TR/2009/WD-css3-transitions-20090320/#transition-events-
  * @see https://developer.mozilla.org/en-US/docs/Web/API/TransitionEvent
- */ var TransitionEventInterface = _assign({
-    }, EventInterface, {
+ */ var TransitionEventInterface = _assign({}, EventInterface, {
         propertyName: 0,
         elapsedTime: 0,
         pseudoElement: 0
@@ -8026,8 +7948,7 @@ module.exports = require('./cjs/react-dom.development.js');
     /**
  * @interface WheelEvent
  * @see http://www.w3.org/TR/DOM-Level-3-Events/
- */ var WheelEventInterface = _assign({
-    }, MouseEventInterface, {
+ */ var WheelEventInterface = _assign({}, MouseEventInterface, {
         deltaX: function(event) {
             return 'deltaX' in event ? event.deltaX : 'wheelDeltaX' in event ? -event.wheelDeltaX : 0;
         },
@@ -9645,8 +9566,7 @@ module.exports = require('./cjs/react-dom.development.js');
     function getOwnerDocumentFromRootContainer(rootContainerElement) {
         return rootContainerElement.nodeType === DOCUMENT_NODE ? rootContainerElement : rootContainerElement.ownerDocument;
     }
-    function noop() {
-    }
+    function noop() {}
     function trapClickOnNonInteractiveElement(node) {
         // Mobile Safari does not fire properly bubble click events on
         // non-interactive elements, which means delegated click listeners do not
@@ -9898,8 +9818,7 @@ module.exports = require('./cjs/react-dom.development.js');
             if (propKey === STYLE) {
                 var lastStyle = lastProps[propKey];
                 for(styleName in lastStyle)if (lastStyle.hasOwnProperty(styleName)) {
-                    if (!styleUpdates) styleUpdates = {
-                    };
+                    if (!styleUpdates) styleUpdates = {};
                     styleUpdates[styleName] = '';
                 }
             } else if (propKey === DANGEROUSLY_SET_INNER_HTML || propKey === CHILDREN) ;
@@ -9925,14 +9844,12 @@ module.exports = require('./cjs/react-dom.development.js');
                 if (lastProp) {
                     // Unset styles on `lastProp` but not on `nextProp`.
                     for(styleName in lastProp)if (lastProp.hasOwnProperty(styleName) && (!nextProp || !nextProp.hasOwnProperty(styleName))) {
-                        if (!styleUpdates) styleUpdates = {
-                        };
+                        if (!styleUpdates) styleUpdates = {};
                         styleUpdates[styleName] = '';
                     }
                      // Update styles that changed since `lastProp`.
                     for(styleName in nextProp)if (nextProp.hasOwnProperty(styleName) && lastProp[styleName] !== nextProp[styleName]) {
-                        if (!styleUpdates) styleUpdates = {
-                        };
+                        if (!styleUpdates) styleUpdates = {};
                         styleUpdates[styleName] = nextProp[styleName];
                     }
                 } else {
@@ -10255,10 +10172,8 @@ module.exports = require('./cjs/react-dom.development.js');
                 return;
         }
     }
-    var validateDOMNesting = function() {
-    };
-    var updatedAncestorInfo = function() {
-    };
+    var validateDOMNesting = function() {};
+    var updatedAncestorInfo = function() {};
     // This validation code was written based on the HTML5 parsing spec:
     // https://html.spec.whatwg.org/multipage/syntax.html#has-an-element-in-scope
     //
@@ -10395,8 +10310,7 @@ module.exports = require('./cjs/react-dom.development.js');
         dlItemTagAutoclosing: null
     };
     updatedAncestorInfo = function(oldInfo, tag) {
-        var ancestorInfo = _assign({
-        }, oldInfo || emptyAncestorInfo);
+        var ancestorInfo = _assign({}, oldInfo || emptyAncestorInfo);
         var info = {
             tag: tag
         };
@@ -10558,8 +10472,7 @@ module.exports = require('./cjs/react-dom.development.js');
         }
         return null;
     };
-    var didWarn$1 = {
-    };
+    var didWarn$1 = {};
     validateDOMNesting = function(childTag, childText, ancestorInfo) {
         ancestorInfo = ancestorInfo || emptyAncestorInfo;
         var parentInfo = ancestorInfo.current;
@@ -11054,8 +10967,7 @@ module.exports = require('./cjs/react-dom.development.js');
         if (elementListenerSet === undefined) elementListenerSet = node[internalEventHandlersKey] = new Set();
         return elementListenerSet;
     }
-    var loggedTypeFailures = {
-    };
+    var loggedTypeFailures = {};
     var ReactDebugCurrentFrame$1 = ReactSharedInternals.ReactDebugCurrentFrame;
     function setCurrentlyValidatingElement(element) {
         if (element) {
@@ -11125,10 +11037,8 @@ module.exports = require('./cjs/react-dom.development.js');
         cursor.current = value;
     }
     var warnedAboutMissingGetChildContext;
-    warnedAboutMissingGetChildContext = {
-    };
-    var emptyContextObject = {
-    };
+    warnedAboutMissingGetChildContext = {};
+    var emptyContextObject = {};
     Object.freeze(emptyContextObject);
     var contextStackCursor = createCursor(emptyContextObject); // A cursor to a boolean indicating whether the context has changed.
     var didPerformWorkStackCursor = createCursor(false); // Keep track of the previous context object that was on the stack.
@@ -11157,8 +11067,7 @@ module.exports = require('./cjs/react-dom.development.js');
         // This may trigger infinite loops if componentWillReceiveProps calls setState.
         var instance = workInProgress.stateNode;
         if (instance && instance.__reactInternalMemoizedUnmaskedChildContext === unmaskedContext) return instance.__reactInternalMemoizedMaskedChildContext;
-        var context = {
-        };
+        var context = {};
         for(var key in contextTypes)context[key] = unmaskedContext[key];
         var name = getComponentName(type) || 'Unknown';
         checkPropTypes(contextTypes, context, 'context', name);
@@ -11204,8 +11113,7 @@ module.exports = require('./cjs/react-dom.development.js');
         }
         var name = getComponentName(type) || 'Unknown';
         checkPropTypes(childContextTypes, childContext, 'child context', name);
-        return _assign({
-        }, parentContext, childContext);
+        return _assign({}, parentContext, childContext);
     }
     function pushContextProvider(workInProgress) {
         var instance = workInProgress.stateNode; // We push the context as early as possible to ensure stack integrity.
@@ -11319,8 +11227,7 @@ module.exports = require('./cjs/react-dom.development.js');
     // react-dom is used with production (non-profiling) bundle of
     // scheduler/tracing
     if (!(tracing.__interactionsRef != null && tracing.__interactionsRef.current != null)) throw Error("It is not supported to run the profiling version of a renderer (for example, `react-dom/profiling`) without also replacing the `scheduler/tracing` module with `scheduler/tracing-profiling`. Your bundler might have a setting for aliasing both modules. Learn more at https://reactjs.org/link/profiling");
-    var fakeCallbackNode = {
-    }; // Except for NoPriority, these correspond to Scheduler priorities. We use
+    var fakeCallbackNode = {}; // Except for NoPriority, these correspond to Scheduler priorities. We use
     // ascending numbers so we can compare them like numbers. They start at 90 to
     // avoid clashing with Scheduler's priorities.
     var ImmediatePriority$1 = 99;
@@ -11330,8 +11237,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var IdlePriority$1 = 95; // NoPriority is the absence of priority. Also React-only.
     var NoPriority$1 = 90;
     var shouldYield = Scheduler_shouldYield;
-    var requestPaint = Scheduler_requestPaint !== undefined ? Scheduler_requestPaint : function() {
-    };
+    var requestPaint = Scheduler_requestPaint !== undefined ? Scheduler_requestPaint : function() {};
     var syncQueue = null;
     var immediateQueueCallbackNode = null;
     var isFlushingSyncQueue = false;
@@ -11451,16 +11357,11 @@ module.exports = require('./cjs/react-dom.development.js');
         return ReactCurrentBatchConfig.transition;
     }
     var ReactStrictModeWarnings = {
-        recordUnsafeLifecycleWarnings: function(fiber, instance) {
-        },
-        flushPendingUnsafeLifecycleWarnings: function() {
-        },
-        recordLegacyContextWarning: function(fiber, instance) {
-        },
-        flushLegacyContextWarning: function() {
-        },
-        discardPendingWarnings: function() {
-        }
+        recordUnsafeLifecycleWarnings: function(fiber, instance) {},
+        flushPendingUnsafeLifecycleWarnings: function() {},
+        recordLegacyContextWarning: function(fiber, instance) {},
+        flushLegacyContextWarning: function() {},
+        discardPendingWarnings: function() {}
     };
     var findStrictRoot = function(fiber) {
         var maybeStrictRoot = null;
@@ -11619,8 +11520,7 @@ module.exports = require('./cjs/react-dom.development.js');
     function resolveDefaultProps(Component, baseProps) {
         if (Component && Component.defaultProps) {
             // Resolve default props. Taken from ReactElement
-            var props = _assign({
-            }, baseProps);
+            var props = _assign({}, baseProps);
             var defaultProps = Component.defaultProps;
             for(var propName in defaultProps)if (props[propName] === undefined) props[propName] = defaultProps[propName];
             return props;
@@ -11634,8 +11534,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var valueCursor = createCursor(null);
     var rendererSigil;
     // Use this to detect multiple renderers using the same context
-    rendererSigil = {
-    };
+    rendererSigil = {};
     var currentlyRenderingFiber = null;
     var lastContextDependency = null;
     var lastContextWithAllBitsObserved = null;
@@ -11965,8 +11864,7 @@ module.exports = require('./cjs/react-dom.development.js');
                 if (partialState === null || partialState === undefined) // Null and undefined are treated as no-ops.
                 return prevState;
                  // Merge the partial state and the previous state.
-                return _assign({
-                }, prevState, partialState);
+                return _assign({}, prevState, partialState);
             case ForceUpdate:
                 hasForceUpdate = true;
                 return prevState;
@@ -12119,8 +12017,7 @@ module.exports = require('./cjs/react-dom.development.js');
             }
         }
     }
-    var fakeInternalInstance = {
-    };
+    var fakeInternalInstance = {};
     var isArray1 = Array.isArray; // React.Component uses a shared frozen object by default.
     // We'll use it to determine whether we need to initialize legacy refs.
     var emptyRefsObject = new React.Component().refs;
@@ -12184,8 +12081,7 @@ module.exports = require('./cjs/react-dom.development.js');
         }
         var partialState = getDerivedStateFromProps(nextProps, prevState);
         warnOnUndefinedDerivedState(ctor, partialState);
-        var memoizedState = partialState === null || partialState === undefined ? prevState : _assign({
-        }, prevState, partialState);
+        var memoizedState = partialState === null || partialState === undefined ? prevState : _assign({}, prevState, partialState);
         workInProgress.memoizedState = memoizedState; // Once the update queue is empty, persist the derived state onto the
         // base state.
         if (workInProgress.lanes === NoLanes) {
@@ -12566,20 +12462,16 @@ module.exports = require('./cjs/react-dom.development.js');
     var didWarnAboutStringRefs;
     var ownerHasKeyUseWarning;
     var ownerHasFunctionTypeWarning;
-    var warnForMissingKey = function(child, returnFiber) {
-    };
+    var warnForMissingKey = function(child, returnFiber) {};
     didWarnAboutMaps = false;
     didWarnAboutGenerators = false;
-    didWarnAboutStringRefs = {
-    };
+    didWarnAboutStringRefs = {};
     /**
    * Warn if there's no key explicitly set on dynamic arrays of children or
    * object keys are not valid. This allows us to keep track of children between
    * updates.
-   */ ownerHasKeyUseWarning = {
-    };
-    ownerHasFunctionTypeWarning = {
-    };
+   */ ownerHasKeyUseWarning = {};
+    ownerHasFunctionTypeWarning = {};
     warnForMissingKey = function(child, returnFiber) {
         if (child === null || typeof child !== 'object') return;
         if (!child._store || child._store.validated || child.key != null) return;
@@ -12588,7 +12480,7 @@ module.exports = require('./cjs/react-dom.development.js');
         var componentName = getComponentName(returnFiber.type) || 'Component';
         if (ownerHasKeyUseWarning[componentName]) return;
         ownerHasKeyUseWarning[componentName] = true;
-        error1("Each child in a list should have a unique \"key\" prop. See https://reactjs.org/link/warning-keys for more information.");
+        error1('Each child in a list should have a unique "key" prop. See https://reactjs.org/link/warning-keys for more information.');
     };
     var isArray$1 = Array.isArray;
     function coerceRef(returnFiber, current, element) {
@@ -12601,7 +12493,7 @@ module.exports = require('./cjs/react-dom.development.js');
             !(element._owner && element._self && element._owner.stateNode !== element._self)) {
                 var componentName = getComponentName(returnFiber.type) || 'Component';
                 if (!didWarnAboutStringRefs[componentName]) {
-                    error1("A string ref, \"%s\", has been found within a strict mode tree. String refs are a source of potential bugs and should be avoided. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", mixedRef);
+                    error1('A string ref, "%s", has been found within a strict mode tree. String refs are a source of potential bugs and should be avoided. We recommend using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', mixedRef);
                     didWarnAboutStringRefs[componentName] = true;
                 }
             }
@@ -12619,8 +12511,7 @@ module.exports = require('./cjs/react-dom.development.js');
                 var ref = function(value) {
                     var refs = inst.refs;
                     if (refs === emptyRefsObject) // This is a lazy pooled frozen object, so we need to initialize.
-                    refs = inst.refs = {
-                    };
+                    refs = inst.refs = {};
                     if (value === null) delete refs[stringRef];
                     else refs[stringRef] = value;
                 };
@@ -12882,7 +12773,7 @@ module.exports = require('./cjs/react-dom.development.js');
                         knownKeys.add(key);
                         break;
                     }
-                    error1("Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted — the behavior is unsupported and could change in a future version.", key);
+                    error1("Encountered two children with the same key, `%s`. Keys should be unique so that components maintain their identity across updates. Non-unique keys may cause children to be duplicated and/or omitted \u2014 the behavior is unsupported and could change in a future version.", key);
                     break;
             }
             return knownKeys;
@@ -13238,8 +13129,7 @@ module.exports = require('./cjs/react-dom.development.js');
             child = child.sibling;
         }
     }
-    var NO_CONTEXT = {
-    };
+    var NO_CONTEXT = {};
     var contextStackCursor$1 = createCursor(NO_CONTEXT);
     var contextFiberStackCursor = createCursor(NO_CONTEXT);
     var rootInstanceStackCursor = createCursor(NO_CONTEXT);
@@ -13590,8 +13480,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var workInProgressSources = [];
     var rendererSigil$1;
     // Used to detect multiple renderers using the same mutable source.
-    rendererSigil$1 = {
-    };
+    rendererSigil$1 = {};
     function markSourceAsDirty(mutableSource) {
         workInProgressSources.push(mutableSource);
     }
@@ -13616,8 +13505,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var ReactCurrentDispatcher$1 = ReactSharedInternals.ReactCurrentDispatcher, ReactCurrentBatchConfig$1 = ReactSharedInternals.ReactCurrentBatchConfig;
     var didWarnAboutMismatchedHooksForComponent;
     var didWarnAboutUseOpaqueIdentifier;
-    didWarnAboutUseOpaqueIdentifier = {
-    };
+    didWarnAboutUseOpaqueIdentifier = {};
     didWarnAboutMismatchedHooksForComponent = new Set();
     // These are set right before calling the component.
     var renderLanes1 = NoLanes; // The work-in-progress fiber. I've named it differently to distinguish it from
@@ -14551,8 +14439,7 @@ module.exports = require('./cjs/react-dom.development.js');
                         // if the component re-renders for a different reason and by that
                         // time the reducer has changed.
                         return;
-                    } catch (error) {
-                    } finally{
+                    } catch (error) {} finally{
                         ReactCurrentDispatcher$1.current = prevDispatcher;
                     }
                 }
@@ -15348,21 +15235,14 @@ module.exports = require('./cjs/react-dom.development.js');
     var didWarnAboutReassigningProps;
     var didWarnAboutRevealOrder;
     var didWarnAboutTailOptions;
-    didWarnAboutBadClass = {
-    };
-    didWarnAboutModulePatternComponent = {
-    };
-    didWarnAboutContextTypeOnFunctionComponent = {
-    };
-    didWarnAboutGetDerivedStateOnFunctionComponent = {
-    };
-    didWarnAboutFunctionRefs = {
-    };
+    didWarnAboutBadClass = {};
+    didWarnAboutModulePatternComponent = {};
+    didWarnAboutContextTypeOnFunctionComponent = {};
+    didWarnAboutGetDerivedStateOnFunctionComponent = {};
+    didWarnAboutFunctionRefs = {};
     didWarnAboutReassigningProps = false;
-    didWarnAboutRevealOrder = {
-    };
-    didWarnAboutTailOptions = {
-    };
+    didWarnAboutRevealOrder = {};
+    didWarnAboutTailOptions = {};
     function reconcileChildren(current, workInProgress, nextChildren, renderLanes) {
         if (current === null) // If this is a fresh new component that hasn't been rendered yet, we
         // won't update its child set by applying minimal side-effects. Instead,
@@ -16310,27 +16190,27 @@ module.exports = require('./cjs/react-dom.development.js');
                 case 'together':
                 case 'forwards':
                 case 'backwards':
-                    error1("\"%s\" is not a valid value for revealOrder on <SuspenseList />. Use lowercase \"%s\" instead.", revealOrder, revealOrder.toLowerCase());
+                    error1('"%s" is not a valid value for revealOrder on <SuspenseList />. Use lowercase "%s" instead.', revealOrder, revealOrder.toLowerCase());
                     break;
                 case 'forward':
                 case 'backward':
-                    error1("\"%s\" is not a valid value for revealOrder on <SuspenseList />. React uses the -s suffix in the spelling. Use \"%ss\" instead.", revealOrder, revealOrder.toLowerCase());
+                    error1('"%s" is not a valid value for revealOrder on <SuspenseList />. React uses the -s suffix in the spelling. Use "%ss" instead.', revealOrder, revealOrder.toLowerCase());
                     break;
                 default:
-                    error1("\"%s\" is not a supported revealOrder on <SuspenseList />. Did you mean \"together\", \"forwards\" or \"backwards\"?", revealOrder);
+                    error1('"%s" is not a supported revealOrder on <SuspenseList />. Did you mean "together", "forwards" or "backwards"?', revealOrder);
                     break;
             }
-            else error1("%s is not a supported value for revealOrder on <SuspenseList />. Did you mean \"together\", \"forwards\" or \"backwards\"?", revealOrder);
+            else error1('%s is not a supported value for revealOrder on <SuspenseList />. Did you mean "together", "forwards" or "backwards"?', revealOrder);
         }
     }
     function validateTailOptions(tailMode, revealOrder) {
         if (tailMode !== undefined && !didWarnAboutTailOptions[tailMode]) {
             if (tailMode !== 'collapsed' && tailMode !== 'hidden') {
                 didWarnAboutTailOptions[tailMode] = true;
-                error1("\"%s\" is not a supported value for tail on <SuspenseList />. Did you mean \"collapsed\" or \"hidden\"?", tailMode);
+                error1('"%s" is not a supported value for tail on <SuspenseList />. Did you mean "collapsed" or "hidden"?', tailMode);
             } else if (revealOrder !== 'forwards' && revealOrder !== 'backwards') {
                 didWarnAboutTailOptions[tailMode] = true;
-                error1("<SuspenseList tail=\"%s\" /> is only valid if revealOrder is \"forwards\" or \"backwards\". Did you mean to specify revealOrder=\"forwards\"?", tailMode);
+                error1('<SuspenseList tail="%s" /> is only valid if revealOrder is "forwards" or "backwards". Did you mean to specify revealOrder="forwards"?', tailMode);
             }
         }
     }
@@ -16361,7 +16241,7 @@ module.exports = require('./cjs/react-dom.development.js');
                             _i++;
                         }
                     }
-                } else error1("A single row was passed to a <SuspenseList revealOrder=\"%s\" />. This is not useful since it needs multiple rows. Did you mean to pass multiple children or an array?", revealOrder);
+                } else error1('A single row was passed to a <SuspenseList revealOrder="%s" />. This is not useful since it needs multiple rows. Did you mean to pass multiple children or an array?', revealOrder);
             }
         }
     }
@@ -16824,8 +16704,7 @@ module.exports = require('./cjs/react-dom.development.js');
             node = node.sibling;
         }
     };
-    updateHostContainer = function(workInProgress) {
-    };
+    updateHostContainer = function(workInProgress) {};
     updateHostComponent$1 = function(current, workInProgress, type, newProps, rootContainerInstance) {
         // If we have an alternate, that means this is an update and we need to
         // schedule a side-effect to do the updates.
@@ -20264,8 +20143,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var hasBadMapPolyfill;
     hasBadMapPolyfill = false;
     try {
-        var nonExtensibleObject = Object.preventExtensions({
-        });
+        var nonExtensibleObject = Object.preventExtensions({});
         /* eslint-disable no-new */ new Map([
             [
                 nonExtensibleObject,
@@ -20766,8 +20644,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var didWarnAboutNestedUpdates;
     var didWarnAboutFindNodeInStrictMode;
     didWarnAboutNestedUpdates = false;
-    didWarnAboutFindNodeInStrictMode = {
-    };
+    didWarnAboutFindNodeInStrictMode = {};
     function getContextForSubtree(parentComponent) {
         if (!parentComponent) return emptyContextObject;
         var fiber = get1(parentComponent);
@@ -20915,8 +20792,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var setSuspenseHandler = null;
     var copyWithDeleteImpl = function(obj, path, index) {
         var key = path[index];
-        var updated = Array.isArray(obj) ? obj.slice() : _assign({
-        }, obj);
+        var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj);
         if (index + 1 === path.length) {
             if (Array.isArray(updated)) updated.splice(key, 1);
             else delete updated[key];
@@ -20930,8 +20806,7 @@ module.exports = require('./cjs/react-dom.development.js');
     };
     var copyWithRenameImpl = function(obj, oldPath, newPath, index) {
         var oldKey = oldPath[index];
-        var updated = Array.isArray(obj) ? obj.slice() : _assign({
-        }, obj);
+        var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj);
         if (index + 1 === oldPath.length) {
             var newKey = newPath[index]; // $FlowFixMe number or string is fine here
             updated[newKey] = updated[oldKey];
@@ -20956,8 +20831,7 @@ module.exports = require('./cjs/react-dom.development.js');
     var copyWithSetImpl = function(obj, path, index, value) {
         if (index >= path.length) return value;
         var key = path[index];
-        var updated = Array.isArray(obj) ? obj.slice() : _assign({
-        }, obj); // $FlowFixMe number or string is fine here
+        var updated = Array.isArray(obj) ? obj.slice() : _assign({}, obj); // $FlowFixMe number or string is fine here
         updated[key] = copyWithSetImpl(obj[key], path, index + 1, value);
         return updated;
     };
@@ -20984,8 +20858,7 @@ module.exports = require('./cjs/react-dom.development.js');
             // (There's no appropriate action type for DevTools overrides.)
             // As a result though, React will see the scheduled update as a noop and bailout.
             // Shallow cloning props works as a workaround for now to bypass the bailout check.
-            fiber.memoizedProps = _assign({
-            }, fiber.memoizedProps);
+            fiber.memoizedProps = _assign({}, fiber.memoizedProps);
             scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
         }
     };
@@ -20999,8 +20872,7 @@ module.exports = require('./cjs/react-dom.development.js');
             // (There's no appropriate action type for DevTools overrides.)
             // As a result though, React will see the scheduled update as a noop and bailout.
             // Shallow cloning props works as a workaround for now to bypass the bailout check.
-            fiber.memoizedProps = _assign({
-            }, fiber.memoizedProps);
+            fiber.memoizedProps = _assign({}, fiber.memoizedProps);
             scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
         }
     };
@@ -21014,8 +20886,7 @@ module.exports = require('./cjs/react-dom.development.js');
             // (There's no appropriate action type for DevTools overrides.)
             // As a result though, React will see the scheduled update as a noop and bailout.
             // Shallow cloning props works as a workaround for now to bypass the bailout check.
-            fiber.memoizedProps = _assign({
-            }, fiber.memoizedProps);
+            fiber.memoizedProps = _assign({}, fiber.memoizedProps);
             scheduleUpdateOnFiber(fiber, SyncLane, NoTimestamp);
         }
     }; // Support DevTools props for function components, forwardRef, memo, host components, etc.
@@ -21284,7 +21155,7 @@ module.exports = require('./cjs/react-dom.development.js');
         var key = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : null;
         if (!didWarnAboutUnstableCreatePortal) {
             didWarnAboutUnstableCreatePortal = true;
-            warn("The ReactDOM.unstable_createPortal() alias has been deprecated, and will be removed in React 18+. Update your code to use ReactDOM.createPortal() instead. It has the exact same API, but without the \"unstable_\" prefix.");
+            warn('The ReactDOM.unstable_createPortal() alias has been deprecated, and will be removed in React 18+. Update your code to use ReactDOM.createPortal() instead. It has the exact same API, but without the "unstable_" prefix.');
         }
         return createPortal$1(children, container, key);
     }
@@ -21395,8 +21266,7 @@ module.exports = require('./cjs/scheduler.development.js');
         exports.unstable_shouldYield = function() {
             return false;
         };
-        requestPaint = exports.unstable_forceFrameRate = function() {
-        };
+        requestPaint = exports.unstable_forceFrameRate = function() {};
     } else {
         // Capture local references to native APIs, in case a polyfill overrides them.
         var _setTimeout = window.setTimeout;
@@ -21425,8 +21295,7 @@ module.exports = require('./cjs/scheduler.development.js');
         exports.unstable_shouldYield = function() {
             return exports.unstable_now() >= deadline;
         }; // Since we yield every frame regardless, `requestPaint` has no effect.
-        requestPaint = function() {
-        };
+        requestPaint = function() {};
         exports.unstable_forceFrameRate = function(fps) {
             if (fps < 0 || fps > 125) {
                 // Using console['error'] to evade Babel and ESLint
@@ -21552,8 +21421,7 @@ module.exports = require('./cjs/scheduler.development.js');
     var NormalPriority = 3;
     var LowPriority = 4;
     var IdlePriority = 5;
-    function markTaskErrored(task, ms) {
-    }
+    function markTaskErrored(task, ms) {}
     /* eslint-disable no-var */ // Math.pow(2, 30) - 1
     // 0b111111111111111111111111111111
     var maxSigned31BitInt = 1073741823; // Times out immediately
@@ -21766,8 +21634,7 @@ module.exports = require('./cjs/scheduler.development.js');
         }
         return newTask;
     }
-    function unstable_pauseExecution() {
-    }
+    function unstable_pauseExecution() {}
     function unstable_continueExecution() {
         if (!isHostCallbackScheduled && !isPerformingWork) {
             isHostCallbackScheduled = true;
@@ -22070,46 +21937,19 @@ $parcel$ReactRefreshHelpers$870d.prelude(module);
 try {
 "use strict";
 var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
-var _react = _interopRequireWildcard(require("react"));
+var _react = _interopRequireDefault(require("react"));
 var _reactDom = require("react-dom");
 var _Login = _interopRequireDefault(require("./Login"));
-var _App = _interopRequireDefault(require("../App"));
+var _Cart = _interopRequireDefault(require("./Cart"));
+var _MainContent = _interopRequireDefault(require("./MainContent"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
-function _getRequireWildcardCache(nodeInterop1) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
-        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop1);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
-        "default": obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-        else newObj[key] = obj[key];
-    }
-    newObj["default"] = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainNav.js", _this = void 0;
 var MainNav = function MainNav() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("nav", {
         className: "w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2",
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
             className: "row m-auto w-100 gap-3",
@@ -22120,9 +21960,8 @@ var MainNav = function MainNav() {
                         className: "text-white text-center",
                         role: "button",
                         onClick: function onClick() {
-                            console.log('MainNav');
-                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_App["default"], {
-                            }), document.querySelector('#root'));
+                            console.log("MainNav");
+                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {}), document.querySelector("#root"));
                         },
                         children: "SKLEP"
                     })
@@ -22149,27 +21988,38 @@ var MainNav = function MainNav() {
                 /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                     className: "col m-auto",
                     children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                        className: "d-flex gap-3 justify-content-end",
+                        className: "d-flex flex-wrap gap-3 justify-content-end",
                         children: [
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: "btn text-white bg-dark",
-                                children: "Shopping cart"
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                className: "my-auto text-white mainNav-btn",
+                                children: currentUser
                             }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                                className: "btn text-white bg-dark",
-                                onClick: function onClick() {
-                                    console.log("MainNav");
-                                    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Login["default"], {
-                                    }), document.querySelector("#root"));
-                                },
-                                children: "Login"
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "d-flex gap-3 ",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white mainNav-btn bg-dark",
+                                        onClick: function onClick() {
+                                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Cart["default"], {}), document.querySelector("#root"));
+                                        },
+                                        children: "Shopping cart"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        className: "btn text-white mainNav-btn bg-dark",
+                                        onClick: function onClick() {
+                                            console.log("MainNav");
+                                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Login["default"], {}), document.querySelector("#root"));
+                                        },
+                                        children: "Login"
+                                    })
+                                ]
                             })
                         ]
                     })
                 })
             ]
         })
-    }));
+    });
 };
 _c = MainNav;
 var _default = MainNav;
@@ -22182,7 +22032,7 @@ $RefreshReg$(_c, "MainNav");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","react-dom":"j6uA9","./Login":"fZGj2","../App":"9ZkeS","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fZGj2":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","react-dom":"j6uA9","./Login":"fZGj2","./Cart":"3dEWN","./MainContent":"1FSJk","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"fZGj2":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$b4d6 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -22198,7 +22048,7 @@ exports["default"] = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = require("react");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Login.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Login.js", _this = void 0;
 var Login = function Login() {
     var _useState = (0, _react.useState)(false), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isLogin = _useState2[0], setOpposite = _useState2[1];
     var form = document.querySelector("#login-form"); //changes element based on useState boolean above (isLogin and setOpposite)
@@ -22217,9 +22067,9 @@ var Login = function Login() {
         console.log(isLogin);
         setTimeout(checkState, 10);
     });
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
-            className: "w-100 bg-dark position-relative login-section d-flex flex-column",
+            className: "w-100 bg-dark position-relative login-section d-flex flex-column animate__animated animate__backInRight",
             children: [
                 /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                     className: "d-flex login-switch  justify-content-center mx-auto ",
@@ -22245,41 +22095,42 @@ var Login = function Login() {
                 }),
                 /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                     id: "login-form",
-                    className: "d-flex flex-column gap-4 text-white login-modal  p-5",
+                    className: "d-flex flex-column justify-content-center gap-4 text-white login-modal  p-3",
                     action: "/login/",
                     method: "POST",
                     children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                            className: "text-center h6",
+                            children: "Currently logged in as ".concat(currentUser)
+                        }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                             type: "hidden",
                             name: "csrfmiddlewaretoken",
                             value: CSRF_TOKEN
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                            className: "bg-black account-credentials rounded border-0 text-white",
+                            className: "bg-black d-block mx-auto account-credentials rounded border-0 text-white",
                             name: "email",
                             placeholder: "Email",
                             maxLength: "30"
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                            className: "bg-black account-credentials rounded border-0 text-white",
+                            className: "bg-black d-block mx-auto account-credentials rounded border-0 text-white",
                             type: "password",
                             name: "password",
                             placeholder: "Password"
                         }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            id: "buttonSwitch",
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                id: "switch",
-                                type: "submit",
-                                className: "btn btn-lg text-white w-100 mt-3 bg-black",
-                                value: "Login"
-                            })
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                            id: "switch",
+                            type: "submit",
+                            className: "btn btn-lg d-block switch mx-auto text-white mt-3 bg-black",
+                            value: "Login"
                         })
                     ]
                 })
             ]
         })
-    }));
+    });
 };
 _c = Login;
 var _default = Login;
@@ -22382,26 +22233,26 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     // Please consider also adding to 'react-devtools-shared/src/backend/ReactSymbols'
     // The Symbol used to tag the ReactElement-like types. If there is no native Symbol
     // nor polyfill, then a plain number is used for performance.
-    var REACT_ELEMENT_TYPE = 60103;
-    var REACT_PORTAL_TYPE = 60106;
-    exports.Fragment = 60107;
-    var REACT_STRICT_MODE_TYPE = 60108;
-    var REACT_PROFILER_TYPE = 60114;
-    var REACT_PROVIDER_TYPE = 60109;
-    var REACT_CONTEXT_TYPE = 60110;
-    var REACT_FORWARD_REF_TYPE = 60112;
-    var REACT_SUSPENSE_TYPE = 60113;
-    var REACT_SUSPENSE_LIST_TYPE = 60120;
-    var REACT_MEMO_TYPE = 60115;
-    var REACT_LAZY_TYPE = 60116;
-    var REACT_BLOCK_TYPE = 60121;
-    var REACT_SERVER_BLOCK_TYPE = 60122;
-    var REACT_FUNDAMENTAL_TYPE = 60117;
-    var REACT_SCOPE_TYPE = 60119;
-    var REACT_OPAQUE_ID_TYPE = 60128;
-    var REACT_DEBUG_TRACING_MODE_TYPE = 60129;
-    var REACT_OFFSCREEN_TYPE = 60130;
-    var REACT_LEGACY_HIDDEN_TYPE = 60131;
+    var REACT_ELEMENT_TYPE = 0xeac7;
+    var REACT_PORTAL_TYPE = 0xeaca;
+    exports.Fragment = 0xeacb;
+    var REACT_STRICT_MODE_TYPE = 0xeacc;
+    var REACT_PROFILER_TYPE = 0xead2;
+    var REACT_PROVIDER_TYPE = 0xeacd;
+    var REACT_CONTEXT_TYPE = 0xeace;
+    var REACT_FORWARD_REF_TYPE = 0xead0;
+    var REACT_SUSPENSE_TYPE = 0xead1;
+    var REACT_SUSPENSE_LIST_TYPE = 0xead8;
+    var REACT_MEMO_TYPE = 0xead3;
+    var REACT_LAZY_TYPE = 0xead4;
+    var REACT_BLOCK_TYPE = 0xead9;
+    var REACT_SERVER_BLOCK_TYPE = 0xeada;
+    var REACT_FUNDAMENTAL_TYPE = 0xead5;
+    var REACT_SCOPE_TYPE = 0xead7;
+    var REACT_OPAQUE_ID_TYPE = 0xeae0;
+    var REACT_DEBUG_TRACING_MODE_TYPE = 0xeae1;
+    var REACT_OFFSCREEN_TYPE = 0xeae2;
+    var REACT_LEGACY_HIDDEN_TYPE = 0xeae3;
     if (typeof Symbol === 'function' && Symbol.for) {
         var symbolFor = Symbol.for;
         REACT_ELEMENT_TYPE = symbolFor('react.element');
@@ -22530,8 +22381,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     var prevGroup;
     var prevGroupCollapsed;
     var prevGroupEnd;
-    function disabledLog() {
-    }
+    function disabledLog() {}
     disabledLog.__reactDisabledLog = true;
     function disableLogs() {
         if (disabledDepth === 0) {
@@ -22569,32 +22419,25 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
                 writable: true
             }; // $FlowFixMe Flow thinks console is immutable.
             Object.defineProperties(console, {
-                log: _assign({
-                }, props, {
+                log: _assign({}, props, {
                     value: prevLog
                 }),
-                info: _assign({
-                }, props, {
+                info: _assign({}, props, {
                     value: prevInfo
                 }),
-                warn: _assign({
-                }, props, {
+                warn: _assign({}, props, {
                     value: prevWarn
                 }),
-                error: _assign({
-                }, props, {
+                error: _assign({}, props, {
                     value: prevError
                 }),
-                group: _assign({
-                }, props, {
+                group: _assign({}, props, {
                     value: prevGroup
                 }),
-                groupCollapsed: _assign({
-                }, props, {
+                groupCollapsed: _assign({}, props, {
                     value: prevGroupCollapsed
                 }),
-                groupEnd: _assign({
-                }, props, {
+                groupEnd: _assign({}, props, {
                     value: prevGroupEnd
                 })
             });
@@ -22752,13 +22595,11 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
                 try {
                     // Lazy may contain any component type so we recursively resolve it.
                     return describeUnknownElementTypeFrameInDEV(init(payload), source, ownerFn);
-                } catch (x) {
-                }
+                } catch (x) {}
         }
         return '';
     }
-    var loggedTypeFailures = {
-    };
+    var loggedTypeFailures = {};
     var ReactDebugCurrentFrame1 = ReactSharedInternals.ReactDebugCurrentFrame;
     function setCurrentlyValidatingElement(element) {
         if (element) {
@@ -22812,8 +22653,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
     var specialPropKeyWarningShown;
     var specialPropRefWarningShown;
     var didWarnAboutStringRefs;
-    didWarnAboutStringRefs = {
-    };
+    didWarnAboutStringRefs = {};
     function hasValidRef(config) {
         if (hasOwnProperty.call(config, 'ref')) {
             var getter = Object.getOwnPropertyDescriptor(config, 'ref').get;
@@ -22832,7 +22672,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
         if (typeof config.ref === 'string' && ReactCurrentOwner.current && self && ReactCurrentOwner.current.stateNode !== self) {
             var componentName = getComponentName(ReactCurrentOwner.current.type);
             if (!didWarnAboutStringRefs[componentName]) {
-                error("Component \"%s\" contains the string ref \"%s\". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref", getComponentName(ReactCurrentOwner.current.type), config.ref);
+                error('Component "%s" contains the string ref "%s". Support for string refs will be removed in a future major release. This case cannot be automatically converted to an arrow function. We ask you to manually fix this case by using useRef() or createRef() instead. Learn more about using refs safely here: https://reactjs.org/link/strict-mode-string-ref', getComponentName(ReactCurrentOwner.current.type), config.ref);
                 didWarnAboutStringRefs[componentName] = true;
             }
         }
@@ -22898,8 +22738,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
         // an external backing store so that we can freeze the whole object.
         // This can be replaced with a WeakMap once they are implemented in
         // commonly used development environments.
-        element._store = {
-        }; // To make comparing ReactElements easier for testing purposes, we make
+        element._store = {}; // To make comparing ReactElements easier for testing purposes, we make
         // the validation flag non-enumerable (where possible, which should
         // include every environment we run tests in), so the test framework
         // ignores it.
@@ -22935,8 +22774,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
  * @param {string} key
  */ function jsxDEV(type, config, maybeKey, source, self) {
         var propName; // Reserved names are extracted
-        var props = {
-        };
+        var props = {};
         var key = null;
         var ref = null; // Currently, key can be spread in as a prop. This causes a potential
         // issue if key is also explicitly declared (ie. <div {...props} key="Hi" />
@@ -23002,8 +22840,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
  * Warn if there's no key explicitly set on dynamic arrays of children or
  * object keys are not valid. This allows us to keep track of children between
  * updates.
- */ var ownerHasKeyUseWarning = {
-    };
+ */ var ownerHasKeyUseWarning = {};
     function getCurrentComponentErrorInfo(parentType) {
         var info = getDeclarationErrorAddendum();
         if (!info) {
@@ -23034,7 +22871,7 @@ module.exports = require('./cjs/react-jsx-runtime.development.js');
         if (element && element._owner && element._owner !== ReactCurrentOwner$1.current) // Give the component that originally created this child.
         childOwner = " It was passed a child from " + getComponentName(element._owner.type) + ".";
         setCurrentlyValidatingElement$1(element);
-        error("Each child in a list should have a unique \"key\" prop.%s%s See https://reactjs.org/link/warning-keys for more information.", currentComponentErrorInfo, childOwner);
+        error('Each child in a list should have a unique "key" prop.%s%s See https://reactjs.org/link/warning-keys for more information.', currentComponentErrorInfo, childOwner);
         setCurrentlyValidatingElement$1(null);
     }
     /**
@@ -23288,7 +23125,846 @@ function registerExportsForReactRefresh(module) {
     }
 }
 
-},{"react-refresh/runtime":"786KC"}],"jxWkG":[function(require,module,exports) {
+},{"react-refresh/runtime":"786KC"}],"3dEWN":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$6d0e = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$6d0e.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = exports.HowManyItems = void 0;
+var _reactDom = require("react-dom");
+var _Images = _interopRequireDefault(require("./Images"));
+var _MainContent = _interopRequireDefault(require("./MainContent"));
+var _RenderScripts = require("./RenderScripts");
+var _Test = require("./Test");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Cart.js", _this = void 0;
+var TotalPrice = function TotalPrice(props) {
+    var CurrentPrice = props.price;
+    var convertedPrice = 0; //Converted price to integer
+    CurrentPrice.map(function(x) {
+        convertedPrice += parseInt(x[5] * x[6]);
+    });
+    return convertedPrice + "$";
+};
+_c = TotalPrice;
+var HowManyItems = function HowManyItems(props) {
+    var items = props.el;
+    if (items.length === 0 || items === undefined || items === null || false || items === [
+        ""
+    ] || items === "") {
+        console.log("there are no items in cart");
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+            className: "cart-item text-center p-2 w-100 bg-dark rounded m-auto",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "lead p-3",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                        children: "We didn't find any items in your cart!"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("p", {
+                        children: [
+                            "Return to",
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                className: "text-danger back-btn px-2",
+                                onClick: function onClick() {
+                                    (0, _RenderScripts.renderRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_MainContent["default"], {}));
+                                },
+                                children: "homepage"
+                            }),
+                            "to continue shopping"
+                        ]
+                    })
+                ]
+            })
+        });
+    } else {
+        console.log("there are items in cart");
+        return items.map(function(x) {
+            //if the price is lower than regular price, assign to variable regular price (It's used to show old price, before applying discount)
+            if (x[5] * x[6] < x[5]) var prevPrice = "".concat(x[5], "$");
+            else console.log("price is the same");
+            return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 rounded m-auto",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "d-flex flexb-50 gap-3 flex-row flex-wrap",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: x[2],
+                                className: "cart-img",
+                                alt: x[1],
+                                loading: "lazy"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h4", {
+                                className: "my-auto item-name",
+                                children: x[1]
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "d-flex flex-column justify-content-center",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                        className: "item-prevPrice",
+                                        children: prevPrice
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                                        className: "text-purple",
+                                        children: "".concat(x[5] * x[6], "$")
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
+                                        className: "text-muted",
+                                        children: "In stock: ".concat(x[4])
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                                className: "my-auto",
+                                action: "/deleteProductToBasket/",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                        type: "hidden",
+                                        name: "id",
+                                        value: x[0]
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                        type: "hidden",
+                                        name: "csrfmiddlewaretoken",
+                                        value: CSRF_TOKEN
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                                        type: "submit",
+                                        className: "btn remove-item my-auto",
+                                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                                            className: "bi bi-trash"
+                                        })
+                                    })
+                                ]
+                            })
+                        ]
+                    })
+                ]
+            });
+        });
+    }
+};
+_c1 = HowManyItems;
+exports.HowManyItems = HowManyItems;
+var Cart = function Cart() {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+            id: "cart",
+            className: "cart text-purple d-flex flex-row flex-wrap gap-2 p-2 animate__animated animate__backInRight",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    id: "card-items",
+                    className: "cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-black rounded",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)(HowManyItems, {
+                            el: basketProducts
+                        }),
+                        " "
+                    ]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "checkout m-auto bg-black rounded",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                        className: "checkout-form d-flex flex-column justify-content-around p-3 ",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                                className: "flexb-70",
+                                children: [
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("label", {
+                                        className: "text-muted",
+                                        children: "Subtotal:"
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                                        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(TotalPrice, {
+                                            price: basketProducts
+                                        })
+                                    }),
+                                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                        className: "text-muted",
+                                        children: "+ Delivery"
+                                    })
+                                ]
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                className: "checkout-submit flexb-30 btn btn-lg text-dark ",
+                                type: "submit",
+                                value: "Checkout"
+                            })
+                        ]
+                    })
+                })
+            ]
+        })
+    });
+};
+_c2 = Cart;
+var _default = Cart;
+exports["default"] = _default;
+var _c, _c1, _c2;
+$RefreshReg$(_c, "TotalPrice");
+$RefreshReg$(_c1, "HowManyItems");
+$RefreshReg$(_c2, "Cart");
+
+  $parcel$ReactRefreshHelpers$6d0e.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react-dom":"j6uA9","./Images":"hzj6c","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./MainContent":"1FSJk","./RenderScripts":"bNOSb"}],"hzj6c":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var images = [
+    {
+        id: 1,
+        src: _undraw_dev_productivity_re_fylf["default"]
+    }
+];
+var _default = images;
+exports["default"] = _default;
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR"}],"bBbLR":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
+"use strict";
+var bundleURL = {};
+function getBundleURLCached(id) {
+    var value = bundleURL[id];
+    if (!value) {
+        value = getBundleURL();
+        bundleURL[id] = value;
+    }
+    return value;
+}
+function getBundleURL() {
+    try {
+        throw new Error();
+    } catch (err) {
+        var matches = ('' + err.stack).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^)\n]+/g);
+        if (matches) // The first two stack frames will be this function and getBundleURLCached.
+        // Use the 3rd one, which will be a runtime in the original bundle.
+        return getBaseURL(matches[2]);
+    }
+    return '/';
+}
+function getBaseURL(url) {
+    return ('' + url).replace(/^((?:https?|file|ftp|(chrome|moz)-extension):\/\/.+)\/[^/]+$/, '$1') + '/';
+} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
+function getOrigin(url) {
+    var matches = ('' + url).match(/(https?|file|ftp|(chrome|moz)-extension):\/\/[^/]+/);
+    if (!matches) throw new Error('Origin not found');
+    return matches[0];
+}
+exports.getBundleURL = getBundleURLCached;
+exports.getBaseURL = getBaseURL;
+exports.getOrigin = getOrigin;
+
+},{}],"f2YDa":[function(require,module,exports) {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.subcatNamesTest = exports.subcatImagesTest = exports.renderTry = exports.productsTest = exports.imgArr = exports.hotshotTest = exports.discountItemsTest = exports.catNamesTest = exports.basketProductsTest = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
+var _reactDom = require("react-dom");
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
+var imgArr = [
+    _undraw_software_engineer_re_fyew["default"],
+    _undraw_dev_productivity_re_fylf["default"]
+];
+exports.imgArr = imgArr;
+var TEST_CAT = [
+    "cat1",
+    "cat2",
+    "cat3"
+];
+exports.TEST_CAT = TEST_CAT;
+var TEST_ARRAY = [
+    "Test Element num.1",
+    "Test element num.2",
+    "Test element num.3",
+    "Test element num.4",
+    "dsdsdsd",
+    "fdhgdhdsh",
+    "fdfdfdfdfd",
+    "ffdsfsfsf",
+    "fdfdfdfdf",
+    "hgahvb",
+    "fdhgdhdsh",
+    "fdfdfdfdfd",
+    "ffdsfsfsf",
+    "fdfdfdfdf",
+    "fdhgdhdsh",
+    "fdfdfdfdfd",
+    "ffdsfsfsf",
+    "fdfdfdfdf"
+];
+exports.TEST_ARRAY = TEST_ARRAY;
+var TEST_ARRAY2 = [
+    "test1",
+    "test2",
+    "test3",
+    "test4"
+];
+exports.TEST_ARRAY2 = TEST_ARRAY2;
+var catNamesTest = [
+    "Podzespoły komputerowe",
+    "Komputery",
+    "Gaming",
+    "Smartfony",
+    "Telewizory",
+    "Audio"
+];
+exports.catNamesTest = catNamesTest;
+var basketProductsTest = [
+    [
+        "5",
+        "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+        imgArr[0],
+        "10",
+        "4",
+        "270.0",
+        "0.5",
+        "3.0",
+        "False"
+    ],
+    [
+        "7",
+        "Dysk SSD Crucial BX200 SATA III",
+        imgArr[0],
+        "10",
+        "3",
+        "270.0",
+        "1.0",
+        "3.0",
+        "False"
+    ]
+];
+exports.basketProductsTest = basketProductsTest;
+var productsTest = [
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "3",
+            "Procesor Intel Core i5-10400F, 2.9GHz, 12 MB, BOX",
+            imgArr[0],
+            "2",
+            "5",
+            "649.0",
+            "1.0",
+            "4.5",
+            "False"
+        ],
+        [
+            "4",
+            "Procesor AMD Ryzen 7 5800X, 3.8GHz, 32 MB, BOX",
+            imgArr[0],
+            "2",
+            "8",
+            "1729.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "5",
+            "Płyta główna Gigabyte B450 AORUS PRO",
+            "",
+            "3",
+            "5",
+            "380.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "6",
+            "Płyta główna Gigabyte B550 GAMING X V2",
+            "",
+            "3",
+            "1",
+            "470.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "7",
+            "Pamięć Kingston Fury Beast, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "358.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "8",
+            "Pamięć Corsair Vengeance, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "350.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "9",
+            "Karta graficzna PNY GeForce RTX 3060Ti Gaming Revel Epic-X RGB 8GB GDDR6",
+            "",
+            "5",
+            "5",
+            "3500.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "10",
+            "Karta graficzna Gigabyte GeForce GTX 1660 OC 6GB GDDR5",
+            "",
+            "5",
+            "1",
+            "1800.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "11",
+            "Dysk SSD Kingston NV1 500 GB M.2 2280 PCI-E x4 Gen3 NVMe",
+            "",
+            "6",
+            "1",
+            "244.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "12",
+            "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+            "",
+            "6",
+            "1",
+            "277.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "13",
+            "Komputer HP Pavilion Gaming TG01, Core i5-11400F, 16 GB, RTX 3060, 512 GB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "4799.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "14",
+            "Komputer Game X G500, Core i5-11400F, 16 GB, RTX 3060 Ti, 1 TB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "6000.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "15",
+            "Monitor Samsung Odyssey G3A",
+            "",
+            "13",
+            "1",
+            "940.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "16",
+            "Monitor Asus VZ24EHE",
+            "",
+            "13",
+            "1",
+            "690.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ]
+];
+exports.productsTest = productsTest;
+var subcatNamesTest = [
+    [
+        ""
+    ],
+    [
+        "Procesory",
+        "Płyty główne",
+        "Pamięć RAM",
+        "Karty graficzne",
+        "Dyski SSD",
+        "Dyski HDD",
+        "Zasilacze",
+        "Chłodzenie CPU",
+        "Pasty termoprzewodzące"
+    ],
+    [
+        "Komputery stacjonarne",
+        "Serwery",
+        "Monitory",
+        "Software"
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ]
+];
+exports.subcatNamesTest = subcatNamesTest;
+var subcatImagesTest = [
+    _undraw_dev_productivity_re_fylf["default"],
+    _undraw_software_engineer_re_fyew["default"]
+];
+exports.subcatImagesTest = subcatImagesTest;
+var discountItemsTest = [
+    [
+        "12",
+        "Monitor Samsung Odyssey G3A",
+        "",
+        "7",
+        "8",
+        "990.0",
+        "0.5",
+        "3.0",
+        "False"
+    ],
+    [
+        "13",
+        "Monitor Asus VZ24EHE",
+        "",
+        "7",
+        "8",
+        "770.0",
+        "0.8",
+        "3.0",
+        "True"
+    ],
+    [
+        "28",
+        "Karta graficzna Asus TUF GeForce GTX 1660Ti Gaming Evo OC 6GB GDDR6",
+        "",
+        "15",
+        "4",
+        "2300.0",
+        "0.8",
+        "3.0",
+        "False"
+    ]
+];
+exports.discountItemsTest = discountItemsTest;
+var hotshotTest = [
+    "13",
+    "Monitor Asus VZ24EHE",
+    "",
+    "7",
+    "8",
+    "770.0",
+    "0.7",
+    "3.0",
+    "True"
+];
+exports.hotshotTest = hotshotTest;
+var AfterLoad = function AfterLoad(element) {
+    var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
+    var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
+    setTimeout(function() {
+        console.log(element, renderPlace);
+        (0, _reactDom.render)(element, renderPlace);
+    }, time);
+    console.log("cwelskop");
+    return;
+};
+_c = AfterLoad;
+exports.AfterLoad = AfterLoad;
+var renderTry = function renderTry() {
+    var ARRAY_NAME = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var ARRAY_IMG = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
+    var addContent = function addContent() {
+        var button = document.createElement("button").cloneNode(true);
+        var clone = button.cloneNode(true);
+        var IMAGE_PATH = ARRAY_IMG;
+        var img = document.createElement("img");
+        clone.classList.add("subcategory");
+        var renderPlacement = document.querySelector("#rootSubcategories");
+        for(var i = 0; i < ARRAY_NAME.length; i++){
+            clone.textContent = ARRAY_NAME[i];
+            clone.classList.add("testing");
+            img.setAttribute("src", ARRAY_IMG[0]);
+            console.log(ARRAY_IMG[0], "pojebie mnie");
+            clone.appendChild(img.cloneNode("true"));
+            renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
+        }
+        console.log("pds");
+        console.log("fefee");
+    };
+    addContent();
+};
+exports.renderTry = renderTry;
+var _c;
+$RefreshReg$(_c, "AfterLoad");
+
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react-dom":"j6uA9","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF"}],"4KNRF":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_software_engineer_re_fyew.70662922.svg" + "?" + Date.now();
+
+},{"./helpers/bundle-url":"lgJ39"}],"1FSJk":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$c2bb.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _Carousel = _interopRequireDefault(require("./Carousel"));
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _Test = require("./Test");
+var _Hotshot = require("./Hotshot");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
+var MainContent = function MainContent() {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("article", {
+        className: "container-fluid main py-5 bg-dark text-white  animate__animated animate__backInRight",
+        children: [
+            /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
+                className: "main-content",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Carousel["default"], {}),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Hotshot.Hotshot, {
+                        info: hotshot
+                    })
+                ]
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+                className: "item-bar-holder",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "item-bar",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "item",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: _undraw_dev_productivity_re_fylf["default"],
+                                alt: "item"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                children: "Product nameeeee"
+                            })
+                        ]
+                    })
+                })
+            })
+        ]
+    });
+};
+_c = MainContent;
+var _default = MainContent;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "MainContent");
+
+  $parcel$ReactRefreshHelpers$c2bb.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Carousel":"cHE8n","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Test":"f2YDa","./Hotshot":"1K9Nb"}],"cHE8n":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$22fc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$22fc.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.images = exports["default"] = void 0;
+var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
+var _ProductsNav = require("./ProductsNav");
+var _react = require("react");
+var _usehooksTs = require("usehooks-ts");
+var _Test = require("./Test");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Carousel.js", _this = void 0;
+var images = [
+    {
+        id: 1,
+        src: _undraw_dev_productivity_re_fylf["default"],
+        testVal: _Test.TEST_ARRAY[0]
+    },
+    {
+        id: 2,
+        src: _undraw_software_engineer_re_fyew["default"]
+    },
+    {} //DO NOT REMOVE (this element is needed for resetting carousel index)
+];
+exports.images = images;
+var Carousel = function Carousel() {
+    var _useState = (0, _react.useState)(0), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), count = _useState2[0], setCount = _useState2[1];
+    (0, _react.useEffect)(function() {
+        if (count == images.length - 1) setCount(0);
+    });
+    (0, _usehooksTs.useInterval)(function() {
+        setCount(count + 1);
+    }, 3000);
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+        className: "w-100 card gallery d-flex justify-content-center",
+        onClick: _ProductsNav.watchForMove,
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+            src: images[count].src,
+            alt: "gallery",
+            className: "gallery-img d-block "
+        })
+    });
+};
+_c = Carousel;
+var _default = Carousel;
+exports["default"] = _default;
+var _c;
+$RefreshReg$(_c, "Carousel");
+
+  $parcel$ReactRefreshHelpers$22fc.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","./ProductsNav":"jxWkG","react":"21dqq","usehooks-ts":"dmUe4","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"jxWkG":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$40ae = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23301,7 +23977,7 @@ var _typeof = require("@babel/runtime/helpers/typeof");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports.removeSubCat = exports["default"] = exports.addEvent = void 0;
+exports["default"] = exports.addEvent = exports.RenderProducts2 = void 0;
 var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
 var _react = _interopRequireWildcard(require("react"));
 var _reactDom = require("react-dom");
@@ -23309,9 +23985,11 @@ var _OnSale = _interopRequireDefault(require("./OnSale"));
 var _Services = _interopRequireDefault(require("./Services"));
 var _Outlet = _interopRequireDefault(require("./Outlet"));
 var _Newsletter = _interopRequireDefault(require("./Newsletter"));
-var _Test = _interopRequireWildcard(require("./Test"));
+var _RenderScripts = require("./RenderScripts");
+var _ComponentBuilders = require("./ComponentBuilders");
+var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ProductsNav.js", _this = void 0;
 function _getRequireWildcardCache(nodeInterop1) {
     if (typeof WeakMap !== "function") return null;
     var cacheBabelInterop = new WeakMap();
@@ -23327,8 +24005,7 @@ function _interopRequireWildcard(obj, nodeInterop) {
     };
     var cache = _getRequireWildcardCache(nodeInterop);
     if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
+    var newObj = {};
     var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
     for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
         var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
@@ -23339,176 +24016,178 @@ function _interopRequireWildcard(obj, nodeInterop) {
     if (cache) cache.set(obj, newObj);
     return newObj;
 }
-var removeSubCat = function removeSubCat() {
-    var holder = document.querySelector("#rootSubcategories");
-    var doesExist = document.querySelectorAll(".testing");
-    if (holder.contains(doesExist[0])) for(var i = 0; i < doesExist.length; i++)doesExist[i].remove();
+var showPopup = function showPopup() {
+    var popup = document.querySelector(".popup-modal");
+    var newPos = function newPos() {
+        popup.style.transform = "translateX(-50%) translateY(-2rem)";
+    };
+    var backToPrevPos = function backToPrevPos() {
+        popup.style.transform = "translateX(-50%) translateY(5rem)";
+    };
+    newPos(); //Sets position to show popup after user clicks product
+    setTimeout(backToPrevPos, 1500); //Sets timeout to hide element after 1.5s
+    console.log("showPopup function"); //Debug
 };
-exports.removeSubCat = removeSubCat;
+var Popup = function Popup(props) {
+    var el = props.el;
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+            className: "popup-modal",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("i", {
+                    className: "popup-success"
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                    className: "popup-message",
+                    children: "Product has been added successfully!"
+                })
+            ]
+        })
+    });
+};
+_c = Popup;
+var RenderProducts2 = function RenderProducts2(props) {
+    var el = props.el;
+    var img = props.img;
+    var specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
+    //it's then used to create another array containing information about products (from subcategories)
+    return el[specIndex].map(function(val, i) {
+        var convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
+        var itemID = val[0]; //console.log(convImg, "converted Img line 58 ProductsNav");
+        console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                action: "/addProductToBasket/",
+                method: "post",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "hidden",
+                        name: "csrfmiddlewaretoken",
+                        value: CSRF_TOKEN
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "hidden",
+                        name: "id",
+                        value: itemID
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
+                        type: "submit",
+                        className: "product",
+                        onClick: function onClick(e) {
+                            showPopup();
+                        },
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                                src: convImg,
+                                alt: val[1],
+                                loading: "lazy"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                                children: val[1]
+                            })
+                        ]
+                    })
+                ]
+            })
+        });
+    });
+};
+_c1 = RenderProducts2;
+exports.RenderProducts2 = RenderProducts2;
 var addEvent = function addEvent() {
-    var elements = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var ARRAY = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : [];
-    var ADDITIONAL_ARRAY = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : [];
-    var _loop = function _loop(i) {
-        console.log(elements[i]);
-        elements[i].addEventListener("click", function() {
-            switch(elements[i].textContent){
-                case "".concat(ARRAY_3_SUBCATEGORY[0]):
-                    alert("it works hah");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[1]):
-                    alert("testt");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[2]):
-                    alert();
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[3]):
-                    alert("4th el");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[4]):
-                    alert("4th el");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[5]):
-                    alert("4th el");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[6]):
-                    alert("4th el");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[7]):
-                    alert("4th el");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[8]):
-                    alert("4th el");
-                    break;
-                case "".concat(ARRAY_3_SUBCATEGORY[9]):
-                    alert("4th el");
-                    break;
-            }
-            switch(elements[i].textContent){
-                case "".concat(ARRAY_4_SUBCATEGORY[0]):
-                    alert("hehe");
-                    break;
-                case "".concat(ARRAY_4_SUBCATEGORY[1]):
-                    alert("er");
-                    break;
-                case "".concat(ARRAY_4_SUBCATEGORY[2]):
-                    alert("er");
-                    break;
-                case "".concat(ARRAY_4_SUBCATEGORY[3]):
-                    alert("er");
-                    break;
-            }
+    var subcatButtons = document.querySelectorAll(".subcategory");
+    var initAddEvent = function initAddEvent() {
+        if (subcatButtons[0].textContent === "Procesory") subcatButtons.forEach(function(button, i) {
+            removeEventListener("click", button); //Makes sure that function won't be fired many times
+            i++;
+            console.log("1st cat addEvent func");
+            button.addEventListener("click", function() {
+                (0, _RenderScripts.renderRoot)((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                    el: _Test.productsTest,
+                    index: i
+                }), "product-holder animate__animated animate__zoomInDown"));
+            });
+        });
+        if (subcatButtons[0].textContent === "Komputery stacjonarne") subcatButtons.forEach(function(button, i) {
+            removeEventListener("click", button);
+            i += 9; //value before first index of next subcategory (for ex. 2nd subcat stars on 10th index)
+            i++;
+            console.log("2nd cat addEvent func");
+            button.addEventListener("click", function() {
+                (0, _RenderScripts.renderRoot)((0, _RenderScripts.renderInSubRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderProducts2, {
+                    el: _Test.productsTest,
+                    index: i
+                }), "product-holder animate__animated animate__zoomInDown"));
+            });
         });
     };
-    for(var i = 0; i < elements.length; i++)_loop(i);
+    initAddEvent();
 };
 exports.addEvent = addEvent;
 var ProductNav = function ProductNav() {
     var _useState = (0, _react.useState)("false"), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), isActive = _useState2[0], setActive = _useState2[1];
     var ToggleClass = function ToggleClass() {
+        var body = document.body;
         setActive(!isActive);
-    };
-    var buttonBuilder = function buttonBuilder(CAT_ARRAY) {
-        //Creates buttons, adds classes and text to them
-        var button = document.createElement("button").cloneNode(true);
-        var clone = button.cloneNode(true);
-        var holder = document.querySelector(".categories");
-        var isExisting = document.querySelector(".cat-btn"); //Adding details to button
-        clone.classList.add("cat-btn", "btn", "categories-button", "mb-2", "mx-auto", "text-white", "bg-dark"); //console.log(button)
-        console.log(clone);
-        if (holder.contains(isExisting)) {
-            console.log("it exists so I wont add more buttons");
-            return;
+        if (isActive) {
+            body.style.overflow = "hidden";
+            body.style.overflowX = "hidden";
+        } else {
+            body.style.overflow = "auto";
+            body.style.overflowX = "hidden";
         }
-        if (!holder.contains(isExisting)) {
-            for(var i = 0; i < arrayOfCategories.length; i++){
-                clone.textContent = arrayOfCategories[i];
-                holder.appendChild(clone.cloneNode(true));
-            } //for (let i = 0; i < CAT_ARRAY.length; i++) {
-            //  clone.textContent = CAT_ARRAY[i];
-            //  holder.appendChild(clone.cloneNode(true));
-            //}
-            return;
-        }
-    }; //Adds functionality to category buttons
-    var RenderFromCat = function RenderFromCat() {
-        var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-        var categories = document.querySelectorAll(".categories-button");
-        var _loop2 = function _loop2(i) {
-            categories[i].addEventListener("click", function() {
-                removeSubCat(); //removes all previous rendered subcategories
-                //adds function to specified category
-                switch(ARRAY[i]){
-                    case "".concat(ARRAY[0]):
-                        //renderTry(ARRAY_3_SUBCATEGORY);
-                        (0, _Test["default"])(ARRAY_3_SUBCATEGORY);
-                        addEvent(document.querySelectorAll(".testing"));
-                        break;
-                    case "".concat(ARRAY[1]):
-                        (0, _Test["default"])(ARRAY_4_SUBCATEGORY);
-                        addEvent(document.querySelectorAll(".testing"));
-                        break;
-                }
-            });
-        };
-        for(var i = 0; i < ARRAY.length; i++)_loop2(i);
     };
-    var renderRoot = function renderRoot(renderElement) {
-        (0, _reactDom.render)(renderElement, document.querySelector("#root"));
-    };
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)(_jsxRuntime.Fragment, {
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("nav", {
-                className: "product-nav bg-transparent-custom z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
+                className: "product-nav bg-black z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
+                        "aria-labelledby": "categories",
                         onClick: function onClick() {
                             ToggleClass(); //renderTry(TEST_ARRAY2);
-                            //addEvent(document.querySelectorAll(".testing"), TEST_CAT);
-                            buttonBuilder(_Test.TEST_CAT);
-                            RenderFromCat(_Test.TEST_ARRAY, removeSubCat);
+                            (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_ComponentBuilders.ButtonBuilder2, {
+                                el: catNames
+                            }), document.querySelector("#categories")); //creates category buttons
+                            (0, _RenderScripts.RenderFromCat)(catNames); //elements that are rendered after clicking subcategory
                         },
                         children: "Categories"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
-                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {
-                            }));
+                            (0, _RenderScripts.renderRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_OnSale["default"], {}));
                         },
                         children: "On sale"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
-                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Outlet["default"], {
-                            }));
+                            (0, _RenderScripts.renderRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Outlet["default"], {}));
                         },
                         children: "Outlet"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
-                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Services["default"], {
-                            }));
+                            (0, _RenderScripts.renderRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Services["default"], {}));
                         },
                         children: "Services"
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
-                        className: "btn btn-lg bg-transparent  text-white",
+                        className: "btn btn-lg bg-transparent prodNav-btn text-white",
                         onClick: function onClick() {
-                            renderRoot(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Newsletter["default"], {
-                            }));
+                            (0, _RenderScripts.renderRoot)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_Newsletter["default"], {}));
                         },
                         children: "Newsletter"
                     })
                 ]
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-                className: "position-fixed categories-section translate-z-0 w-100  ".concat(isActive ? "hide-element" : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x start-50 bg-transparent-custom blur-bg "),
+                className: "position-fixed categories-section translate-z-0 w-100  ".concat(isActive ? "hide-element" : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x bg-transparent-custom blur-bg "),
                 children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "row categories-wrapper gap-3 p-2 w-100 mt-5",
+                    className: "row categories-wrapper gap-3 p-2 w-100 mt-5 min-h-30",
                     children: [
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                             id: "categories",
@@ -23516,26 +24195,121 @@ var ProductNav = function ProductNav() {
                         }),
                         /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
                             id: "rootSubcategories",
-                            className: "bg-dark col-md categories-products mx-auto d-flex"
+                            className: "bg-dark col-md rootSubcategories mx-auto justify-content-center d-flex flex-row flex-wrap gap-3 p-2 "
                         })
                     ]
                 })
-            })
+            }),
+            /*#__PURE__*/ (0, _jsxRuntime.jsx)(Popup, {})
         ]
-    }));
+    });
 };
-_c = ProductNav;
+_c2 = ProductNav;
 var _default = ProductNav;
 exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "ProductNav");
+var _c, _c1, _c2;
+$RefreshReg$(_c, "Popup");
+$RefreshReg$(_c1, "RenderProducts2");
+$RefreshReg$(_c2, "ProductNav");
 
   $parcel$ReactRefreshHelpers$40ae.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./OnSale":"9GTDe"}],"hj64T":[function(require,module,exports) {
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/typeof":"jgQjt","@babel/runtime/helpers/slicedToArray":"6AJmz","react":"21dqq","react-dom":"j6uA9","./OnSale":"9GTDe","./Services":"hj64T","./Outlet":"33x1B","./Newsletter":"22oGT","./Test":"f2YDa","./RenderScripts":"bNOSb","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./ComponentBuilders":"aByAi"}],"9GTDe":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$89cd.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports["default"] = void 0;
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _Test = require("./Test");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\OnSale.js", _this = void 0;
+var GetItemsOnDiscount = function GetItemsOnDiscount(props) {
+    var items = props.el;
+    return items.map(function(x) {
+        //if the price is lower than regular price, assign to variable regular price (It's used to show old price, before applying discount)
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+                action: "/addProductToBasket/",
+                method: "POST",
+                className: "card d-flex flex-column",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "hidden",
+                        name: "csrfmiddlewaretoken",
+                        value: CSRF_TOKEN
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                        type: "hidden",
+                        name: "id",
+                        value: x[0]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                        src: _undraw_dev_productivity_re_fylf["default"],
+                        className: "card-img",
+                        alt: "promotion"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "card-prices",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                className: "text-smaller",
+                                children: "".concat(x[5], "$")
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                                className: "text-bigger",
+                                children: "".concat(x[5] * x[6], "$")
+                            })
+                        ]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        className: "product-name",
+                        children: x[1]
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                        type: "submit",
+                        className: "btn card-button",
+                        children: "Add to cart"
+                    })
+                ]
+            })
+        });
+    });
+};
+_c = GetItemsOnDiscount;
+var OnSale = function OnSale() {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "sale p-2 py-5 animate__animated animate__backInRight",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(GetItemsOnDiscount, {
+                el: discountItems
+            })
+        })
+    });
+};
+_c1 = OnSale;
+var _default = OnSale;
+exports["default"] = _default;
+var _c, _c1;
+$RefreshReg$(_c, "GetItemsOnDiscount");
+$RefreshReg$(_c1, "OnSale");
+
+  $parcel$ReactRefreshHelpers$89cd.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","./Test":"f2YDa"}],"hj64T":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$ac01 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -23548,11 +24322,11 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Services.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Services.js", _this = void 0;
 var Services = function Services() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "services d-flex flex-column w-100 p-5",
+            className: "services d-flex flex-column w-100 p-5 animate__animated animate__backInRight",
             children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                 className: "d-flex flex-row bg-transparent-custom p-4 justify-content-center border w-75 text-white m-auto gap-3",
                 children: [
@@ -23567,7 +24341,7 @@ var Services = function Services() {
                 ]
             })
         })
-    }));
+    });
 };
 _c = Services;
 var _default = Services;
@@ -23593,13 +24367,13 @@ Object.defineProperty(exports, "__esModule", {
 });
 exports["default"] = void 0;
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Outlet.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Outlet.js", _this = void 0;
 var Outlet = function Outlet() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
         children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
             className: ""
         })
-    }));
+    });
 };
 _c = Outlet;
 var _default = Outlet;
@@ -23627,47 +24401,42 @@ Object.defineProperty(exports, "__esModule", {
 exports["default"] = void 0;
 var _undraw_envelope_re_f5j = _interopRequireDefault(require("../../images/undraw_envelope_re_f5j4.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Newsletter.js", _this = void 0;
 var Newsletter = function Newsletter() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("section", {
-            className: "d-flex flex-row flex-wrap w-100 gap-3 newsletter",
-            children: [
-                /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                    src: _undraw_envelope_re_f5j["default"],
-                    className: "newsletter-img flexb-20 m-auto"
-                }),
-                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "d-flex flex-column justify-content-center gap-1 m-auto text-white flexb-30",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
-                            className: "newsletter-text",
-                            children: "Want to get information about discounts and promotions first?"
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
-                            className: "newsletter-text",
-                            children: "Sign in for our Newsletter!"
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "d-flex flex-row mt-2",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                    className: "form-control shadow-lg flexb-70 border-l5 newsletter-input",
-                                    type: "email",
-                                    placeholder: "Email address",
-                                    "aria-label": "Search"
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
-                                    type: "submit",
-                                    className: "flexb-30 border-none newsletter-submit bg-black text-white border-r5"
-                                })
-                            ]
-                        })
-                    ]
-                })
-            ]
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
+            className: "d-flex flex-row flex-wrap w-100 gap-3 newsletter animate__animated animate__backInRight",
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                className: "d-flex flex-column justify-content-center newsletter-section gap-1 text-white flexb-30",
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h3", {
+                        className: "newsletter-text",
+                        children: "Want to get information about discounts and promotions first?"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("h5", {
+                        className: "newsletter-text",
+                        children: "Sign in for our Newsletter!"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                        className: "d-flex newsletter-input-wrapper flex-row mt-2",
+                        children: [
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                className: "form-control shadow-lg flexb-70 border-l5 newsletter-input",
+                                type: "email",
+                                placeholder: "Email address",
+                                "aria-label": "Search"
+                            }),
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                                type: "submit",
+                                className: "flexb-30 border-none newsletter-submit text-white border-r5",
+                                value: "Submit"
+                            })
+                        ]
+                    })
+                ]
+            })
         })
-    }));
+    });
 };
 _c = Newsletter;
 var _default = Newsletter;
@@ -23683,109 +24452,11 @@ $RefreshReg$(_c, "Newsletter");
 },{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_envelope_re_f5j4.svg":"3Krtf","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"3Krtf":[function(require,module,exports) {
 module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_envelope_re_f5j4.d34fac08.svg" + "?" + Date.now();
 
-},{"./helpers/bundle-url":"lgJ39"}],"lgJ39":[function(require,module,exports) {
-"use strict";
-var bundleURL = {
-};
-function getBundleURLCached(id) {
-    var value = bundleURL[id];
-    if (!value) {
-        value = getBundleURL();
-        bundleURL[id] = value;
-    }
-    return value;
-}
-function getBundleURL() {
-    try {
-        throw new Error();
-    } catch (err) {
-        var matches = ('' + err.stack).match(/(https?|file|ftp):\/\/[^)\n]+/g);
-        if (matches) // The first two stack frames will be this function and getBundleURLCached.
-        // Use the 3rd one, which will be a runtime in the original bundle.
-        return getBaseURL(matches[2]);
-    }
-    return '/';
-}
-function getBaseURL(url) {
-    return ('' + url).replace(/^((?:https?|file|ftp):\/\/.+)\/[^/]+$/, '$1') + '/';
-} // TODO: Replace uses with `new URL(url).origin` when ie11 is no longer supported.
-function getOrigin(url) {
-    var matches = ('' + url).match(/(https?|file|ftp):\/\/[^/]+/);
-    if (!matches) throw new Error('Origin not found');
-    return matches[0];
-}
-exports.getBundleURL = getBundleURLCached;
-exports.getBaseURL = getBaseURL;
-exports.getOrigin = getOrigin;
-
-},{}],"f2YDa":[function(require,module,exports) {
-"use strict";
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = exports.TEST_CAT = exports.TEST_ARRAY2 = exports.TEST_ARRAY = exports.AfterLoad = void 0;
-var _reactDom = require("react-dom");
-var TEST_CAT = [
-    "cat1",
-    "cat2",
-    "cat3"
-];
-exports.TEST_CAT = TEST_CAT;
-var TEST_ARRAY = [
-    "Test Element num.1",
-    "Test element num.2",
-    "Test element num.3",
-    "Test element num.4"
-];
-exports.TEST_ARRAY = TEST_ARRAY;
-var TEST_ARRAY2 = [
-    "test1",
-    "test2",
-    "test3",
-    "test4"
-];
-exports.TEST_ARRAY2 = TEST_ARRAY2;
-var AfterLoad = function AfterLoad(element) {
-    var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : null;
-    var time = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 1000;
-    setTimeout(function() {
-        console.log(element, renderPlace);
-        (0, _reactDom.render)(element, renderPlace);
-    }, time);
-    return;
-};
-_c = AfterLoad;
-exports.AfterLoad = AfterLoad;
-var renderTry = function renderTry() {
-    var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
-    var addContent = function addContent() {
-        var button = document.createElement("button").cloneNode(true);
-        var clone = button.cloneNode(true);
-        clone.classList.add("minmax-test");
-        var renderPlacement = document.querySelector("#rootSubcategories"); //while (renderPlacement.firstChild) {
-        //  renderPlacement.firstChild.remove();
-        //}
-        for(var i = 0; i < ARRAY.length; i++){
-            clone.textContent = ARRAY[i];
-            clone.classList.add("testing");
-            renderPlacement.appendChild(clone.cloneNode(true)); //console.log(clone.textContent)
-        }
-        console.log("pds");
-        console.log("fefee");
-    };
-    addContent();
-};
-renderTry();
-var _default = renderTry;
-exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "AfterLoad");
-
-},{"react-dom":"j6uA9"}],"9GTDe":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$89cd = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+},{"./helpers/bundle-url":"lgJ39"}],"bNOSb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$89cd.prelude(module);
+$parcel$ReactRefreshHelpers$8894.prelude(module);
 
 try {
 "use strict";
@@ -23793,161 +24464,474 @@ var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefau
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-exports["default"] = void 0;
-var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\OnSale.js", _this = void 0;
-var OnSale = function OnSale() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "sale p-2 py-5",
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "d-flex flex-row flex-wrap m-auto justify-content-center w-100  gap-3 text-white",
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                    className: "sale-item d-flex bg-transparent-custom flex-column px-3 m-auto justify-content-between border rounded",
-                    children: [
-                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                            className: "flexb-30",
-                            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                src: _undraw_dev_productivity_re_fylf["default"],
-                                className: "img-fluid sale-img"
-                            })
-                        }),
-                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                            className: "pb-3 flexb-70 my-auto",
-                            children: [
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
-                                    className: "text-danger pb-1",
-                                    children: "Price tag"
-                                }),
-                                /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                                    className: "lead text-center ",
-                                    children: "Item name"
-                                })
-                            ]
-                        })
-                    ]
-                })
-            })
-        })
-    }));
-};
-_c = OnSale;
-var _default = OnSale;
-exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "OnSale");
-
-  $parcel$ReactRefreshHelpers$89cd.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bBbLR":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_dev_productivity_re_fylf.45d261de.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"1FSJk":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$c2bb = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$c2bb.prelude(module);
-
-try {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = void 0;
-var _Carousel = _interopRequireDefault(require("./Carousel"));
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\MainContent.js", _this = void 0;
-var MainContent = function MainContent() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("article", {
-        className: "container-fluid py-5 bg-dark min-vh-100 text-white",
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)(_Carousel["default"], {
-        })
-    }));
-};
-_c = MainContent;
-var _default = MainContent;
-exports["default"] = _default;
-var _c;
-$RefreshReg$(_c, "MainContent");
-
-  $parcel$ReactRefreshHelpers$c2bb.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","./Carousel":"cHE8n","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"cHE8n":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$22fc = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$22fc.prelude(module);
-
-try {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = void 0;
-var _slicedToArray2 = _interopRequireDefault(require("@babel/runtime/helpers/slicedToArray"));
-var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
-var _undraw_software_engineer_re_fyew = _interopRequireDefault(require("../../images/undraw_software_engineer_re_fyew.svg"));
+exports.renderRoot = exports.renderInSubRoot = exports.RenderOnLoad = exports.RenderFromCat = void 0;
+var _react = _interopRequireDefault(require("react"));
+var _Test = require("./Test");
 var _ProductsNav = require("./ProductsNav");
-var _react = require("react");
-var _usehooksTs = require("usehooks-ts");
+var _reactDom = require("react-dom");
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\RenderScripts.js", _this = void 0;
+var subcatNamesTest = [
+    [
+        ""
+    ],
+    [
+        "Procesory",
+        "Płyty główne",
+        "Pamięć RAM",
+        "Karty graficzne",
+        "Dyski SSD",
+        "Dyski HDD",
+        "Zasilacze",
+        "Chłodzenie CPU",
+        "Pasty termoprzewodzące"
+    ],
+    [
+        "Komputery stacjonarne",
+        "Serwery",
+        "Monitory",
+        "Software"
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ],
+    [
+        ""
+    ]
+];
+var subcatImagesTest = [
+    _Test.imgArr
+];
+var hotshotTest = [
+    "13",
+    "Monitor Asus VZ24EHE",
+    "",
+    "7",
+    "8",
+    "770.0",
+    "0.7",
+    "3.0",
+    "True"
+];
+var renderRoot = function renderRoot(renderElement) {
+    var renderPlace = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : document.querySelector("#root");
+    (0, _reactDom.render)(renderElement, renderPlace);
+};
+exports.renderRoot = renderRoot;
+var renderInSubRoot = function renderInSubRoot(el, options) {
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+        id: "subRoot",
+        className: options,
+        children: el
+    });
+};
+exports.renderInSubRoot = renderInSubRoot;
+var RenderOnLoad = function RenderOnLoad() {
+    //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
+    (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+        el: subcatNames[1],
+        img: subcatImages[3]
+    }), document.querySelector("#rootSubcategories")); //Due to some issues with rendering time
+    //There needs to be timeout to create a delay between renders
+    setTimeout(function() {
+        (0, _ProductsNav.addEvent)(); //It needs to be initiated on load to add EventListener to buttons
+    }, 200);
+    console.log("RenderOnLoad in RenderScripts");
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {});
+}; //Creates subcategories (Primarily used in RenderFromCat (It's added with onClick event))
+_c = RenderOnLoad;
+exports.RenderOnLoad = RenderOnLoad;
+var RenderSubcat = function RenderSubcat(props) {
+    var el = props.el;
+    var img = props.img;
+    return el.map(function(val, i) {
+        var convImg = img[i];
+        console.log(convImg, "convImg");
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("button", {
+                type: "button",
+                className: "subcategory testing",
+                onClick: function onClick() {
+                    (0, _ProductsNav.addEvent)();
+                },
+                children: [
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                        src: convImg,
+                        alt: val + " Quick debug on dev",
+                        loading: "lazy"
+                    }),
+                    /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        children: val || "Default text"
+                    })
+                ]
+            })
+        });
+    });
+};
+_c1 = RenderSubcat;
+var TEST_PRODUCT1 = [
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "3",
+            "Procesor Intel Core i5-10400F, 2.9GHz, 12 MB, BOX",
+            _Test.imgArr[0],
+            "2",
+            "5",
+            "649.0",
+            "1.0",
+            "4.5",
+            "False"
+        ],
+        [
+            "4",
+            "Procesor AMD Ryzen 7 5800X, 3.8GHz, 32 MB, BOX",
+            _Test.imgArr[0],
+            "2",
+            "8",
+            "1729.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "5",
+            "Płyta główna Gigabyte B450 AORUS PRO",
+            "",
+            "3",
+            "5",
+            "380.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "6",
+            "Płyta główna Gigabyte B550 GAMING X V2",
+            "",
+            "3",
+            "1",
+            "470.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "7",
+            "Pamięć Kingston Fury Beast, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "358.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "8",
+            "Pamięć Corsair Vengeance, DDR4, 16 GB, 3200MHz, CL16",
+            "",
+            "4",
+            "1",
+            "350.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "9",
+            "Karta graficzna PNY GeForce RTX 3060Ti Gaming Revel Epic-X RGB 8GB GDDR6",
+            "",
+            "5",
+            "5",
+            "3500.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "10",
+            "Karta graficzna Gigabyte GeForce GTX 1660 OC 6GB GDDR5",
+            "",
+            "5",
+            "1",
+            "1800.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            "11",
+            "Dysk SSD Kingston NV1 500 GB M.2 2280 PCI-E x4 Gen3 NVMe",
+            "",
+            "6",
+            "1",
+            "244.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "12",
+            "Dysk SSD Crucial MX500 500 GB 2.5&quot; SATA III",
+            "",
+            "6",
+            "1",
+            "277.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "13",
+            "Komputer HP Pavilion Gaming TG01, Core i5-11400F, 16 GB, RTX 3060, 512 GB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "4799.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "14",
+            "Komputer Game X G500, Core i5-11400F, 16 GB, RTX 3060 Ti, 1 TB M.2 PCIe",
+            "",
+            "11",
+            "2",
+            "6000.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            "15",
+            "Monitor Samsung Odyssey G3A",
+            "",
+            "13",
+            "1",
+            "940.0",
+            "1.0",
+            "3.0",
+            "False"
+        ],
+        [
+            "16",
+            "Monitor Asus VZ24EHE",
+            "",
+            "13",
+            "1",
+            "690.0",
+            "1.0",
+            "3.0",
+            "False"
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ],
+    [
+        [
+            ""
+        ]
+    ]
+]; //Adds functionality to category buttons
+var RenderFromCat = function RenderFromCat() {
+    var ARRAY = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : [];
+    var categories = document.querySelectorAll(".categories-button");
+    setTimeout(function() {
+        var _loop = function _loop(i) {
+            categories[i].addEventListener("click", function() {
+                //adds function to specified category
+                switch(ARRAY[i]){
+                    //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
+                    //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
+                    //x now defines it's type - name, picture etc.
+                    case "".concat(ARRAY[0]):
+                        // render(
+                        //   <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
+                        //   document.querySelector("#rootSubcategories")
+                        //     );
+                        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+                            el: subcatNames[1],
+                            img: subcatImages[3]
+                        }), document.querySelector("#rootSubcategories"));
+                        (0, _ProductsNav.addEvent)();
+                        break;
+                    case "".concat(ARRAY[1]):
+                        // render(
+                        //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG1[0]} />,
+                        //   document.querySelector("#rootSubcategories")
+                        // );
+                        // render(
+                        //   <RenderSubcat el={SUBCATS_NAME[2]} img={SUBCATS_IMG[4]} />,
+                        //   document.querySelector("#rootSubcategories")
+                        // );
+                        (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
+                            el: subcatNames[2],
+                            img: subcatImages[4]
+                        }), document.querySelector("#rootSubcategories"));
+                        (0, _ProductsNav.addEvent)();
+                        break;
+                }
+            });
+        };
+        for(var i1 = 0; i1 < ARRAY.length; i1++)_loop(i1);
+    }, 200);
+};
+_c2 = RenderFromCat;
+exports.RenderFromCat = RenderFromCat;
+var _c, _c1, _c2;
+$RefreshReg$(_c, "RenderOnLoad");
+$RefreshReg$(_c1, "RenderSubcat");
+$RefreshReg$(_c2, "RenderFromCat");
+
+  $parcel$ReactRefreshHelpers$8894.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","react":"21dqq","./Test":"f2YDa","./ProductsNav":"jxWkG","react-dom":"j6uA9","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"aByAi":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0d9a = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0d9a.prelude(module);
+
+try {
+"use strict";
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.buttonBuilder = exports.ButtonBuilder2 = void 0;
 var _Test = require("./Test");
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Carousel.js", _this = void 0;
-var images = [
-    {
-        id: 1,
-        src: _undraw_dev_productivity_re_fylf["default"],
-        testVal: _Test.TEST_ARRAY[0]
-    },
-    {
-        id: 2,
-        src: _undraw_software_engineer_re_fyew["default"]
-    },
-    {
-    } //DO NOT REMOVE (this element is needed for resetting carousel index)
-];
-var Carousel = function Carousel() {
-    var _useState = (0, _react.useState)(0), _useState2 = (0, _slicedToArray2["default"])(_useState, 2), count = _useState2[0], setCount = _useState2[1];
-    (0, _react.useEffect)(function() {
-        if (count == images.length - 1) setCount(0);
-    });
-    (0, _usehooksTs.useInterval)(function() {
-        setCount(count + 1);
-    }, 3000);
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-        className: "bg-black w-100 p-5 min-vh-100 m-auto gallery d-flex justify-content-center",
-        onClick: _ProductsNav.watchForMove,
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-            src: images[count].src,
-            alt: "gallery",
-            className: "gallery-img d-block"
-        })
-    }));
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\ComponentBuilders.js", _this = void 0;
+var buttonBuilder = function buttonBuilder(ARRAY_NAME) {
+    //Creates buttons, adds classes and text to them
+    var button = document.createElement("button").cloneNode(true);
+    var clone = button.cloneNode(true);
+    var holder = document.querySelector(".categories");
+    var isExisting = document.querySelector(".cat-btn"); //Adding details to button
+    clone.classList.add("cat-btn", "btn", "categories-button", "mb-2", "mx-auto", "text-white", "bg-dark"); //console.log(button)
+    console.log(clone);
+    if (holder.contains(isExisting)) {
+        console.log("it exists so I wont add more buttons");
+        return;
+    }
+    if (!holder.contains(isExisting)) {
+        for(var i = 0; i < ARRAY_NAME.length; i++){
+            clone.textContent = ARRAY_NAME[i];
+            holder.appendChild(clone.cloneNode(true));
+        }
+        return;
+    }
 };
-_c = Carousel;
-var _default = Carousel;
-exports["default"] = _default;
+exports.buttonBuilder = buttonBuilder;
+var ButtonBuilder2 = function ButtonBuilder2(props) {
+    var catBtn = props.el;
+    return catBtn.map(function(el) {
+        return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                className: "cat-btn btn categories-button mb-2 mx-auto text-white bg-dark",
+                children: el
+            })
+        });
+    });
+};
+_c = ButtonBuilder2;
+exports.ButtonBuilder2 = ButtonBuilder2;
 var _c;
-$RefreshReg$(_c, "Carousel");
+$RefreshReg$(_c, "ButtonBuilder2");
 
-  $parcel$ReactRefreshHelpers$22fc.postlude(module);
+  $parcel$ReactRefreshHelpers$0d9a.postlude(module);
 } finally {
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","@babel/runtime/helpers/slicedToArray":"6AJmz","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","../../images/undraw_software_engineer_re_fyew.svg":"4KNRF","./ProductsNav":"jxWkG","react":"21dqq","usehooks-ts":"dmUe4","./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"4KNRF":[function(require,module,exports) {
-module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "undraw_software_engineer_re_fyew.70662922.svg" + "?" + Date.now();
-
-},{"./helpers/bundle-url":"lgJ39"}],"dmUe4":[function(require,module,exports) {
+},{"./Test":"f2YDa","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"dmUe4":[function(require,module,exports) {
 var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _useBoolean = require("./useBoolean");
@@ -24581,8 +25565,7 @@ var parcelHelpers = require("@parcel/transformer-js/src/esmodule-helpers.js");
 parcelHelpers.defineInteropFlag(exports);
 var _react = require("react");
 function useFetch(url, options) {
-    const cache = _react.useRef({
-    });
+    const cache = _react.useRef({});
     const cancelRequest = _react.useRef(false);
     const initialState = {
         error: undefined,
@@ -25252,7 +26235,93 @@ function useWindowSize() {
 }
 exports.default = useWindowSize;
 
-},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"lP4ni":[function(require,module,exports) {
+},{"react":"21dqq","../useEventListener":"fjUy4","../useIsomorphicLayoutEffect":"hBCmk","@parcel/transformer-js/src/esmodule-helpers.js":"gkKU3"}],"1K9Nb":[function(require,module,exports) {
+var $parcel$ReactRefreshHelpers$0868 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
+var prevRefreshReg = window.$RefreshReg$;
+var prevRefreshSig = window.$RefreshSig$;
+$parcel$ReactRefreshHelpers$0868.prelude(module);
+
+try {
+"use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
+Object.defineProperty(exports, "__esModule", {
+    value: true
+});
+exports.Hotshot = void 0;
+var _undraw_dev_productivity_re_fylf = _interopRequireDefault(require("../../images/undraw_dev_productivity_re_fylf.svg"));
+var _jsxRuntime = require("react/jsx-runtime");
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Hotshot.js", _this = void 0;
+var Hotshot = function Hotshot(props) {
+    var info = props.info;
+    console.log(info, 'myprtop');
+    return /*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
+        children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
+            action: "/addProductToBasket/",
+            method: "POST",
+            className: "card d-flex flex-column",
+            children: [
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                    type: "hidden",
+                    name: "csrfmiddlewaretoken",
+                    value: CSRF_TOKEN
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
+                    type: "hidden",
+                    name: "id",
+                    value: info[0]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
+                    className: "card-baner",
+                    children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                        className: "mt-2",
+                        children: "HOTSHOT"
+                    })
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                    src: info[2],
+                    className: "card-img",
+                    alt: info[1]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "card-prices",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("span", {
+                            className: "text-smaller",
+                            children: "".concat(info[5], "$")
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsxs)("span", {
+                            className: "text-bigger",
+                            children: [
+                                " ",
+                                "".concat(info[5] * info[6], "$")
+                            ]
+                        })
+                    ]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("p", {
+                    className: "product-name",
+                    children: info[1]
+                }),
+                /*#__PURE__*/ (0, _jsxRuntime.jsx)("button", {
+                    type: "submit",
+                    className: "btn card-button",
+                    children: "ADD TO CART"
+                })
+            ]
+        })
+    });
+};
+_c = Hotshot;
+exports.Hotshot = Hotshot;
+var _c;
+$RefreshReg$(_c, "Hotshot");
+
+  $parcel$ReactRefreshHelpers$0868.postlude(module);
+} finally {
+  window.$RefreshReg$ = prevRefreshReg;
+  window.$RefreshSig$ = prevRefreshSig;
+}
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/undraw_dev_productivity_re_fylf.svg":"bBbLR","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"lP4ni":[function(require,module,exports) {
 var $parcel$ReactRefreshHelpers$9799 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
 var prevRefreshReg = window.$RefreshReg$;
 var prevRefreshSig = window.$RefreshSig$;
@@ -25260,25 +26329,37 @@ $parcel$ReactRefreshHelpers$9799.prelude(module);
 
 try {
 "use strict";
+var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
 exports["default"] = void 0;
+var _shop_logo = _interopRequireDefault(require("../../images/shop_logo.svg"));
 var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
+var _jsxFileName = "C:\\Users\\Arczi\\Documents\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\Footer.js", _this = void 0;
 var MainFooter = function MainFooter() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
-        className: "d-flex flex-row flex-wrap justify-content-center gap-3 py-5 bg-transparent-custom w-100 text-white",
+    return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("footer", {
+        className: "d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-black footer w-100 text-white",
         children: [
             /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
-                className: "flexb-60 position-relative",
-                children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                    className: "display-3 footer-logo text-center mt-5 w-50 mx-auto",
-                    children: "Pestka"
+                className: " flexb-60 position-relative p-3",
+                children: /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
+                    className: "d-flex flex-row justify-content-center w-50 m-auto rounded gap-3 footer-emblem",
+                    children: [
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
+                            src: _shop_logo["default"],
+                            className: "footer-logo",
+                            alt: "pycoop logo"
+                        }),
+                        /*#__PURE__*/ (0, _jsxRuntime.jsx)("h2", {
+                            className: "my-auto footer-logo-text",
+                            children: "PESTKA"
+                        })
+                    ]
                 })
             }),
             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
-                className: "d-flex flex-row gap-5 flexb-30",
+                className: "d-flex flex-row my-auto gap-5 flexb-30",
                 children: [
                     /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                         className: "",
@@ -25320,7 +26401,7 @@ var MainFooter = function MainFooter() {
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
                                 children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("a", {
                                     className: "footer-anchor remove-all-decoration",
-                                    href: "mailto:arcadam111@gmail.com",
+                                    href: "mailto:brtskr1503@gmail.com",
                                     children: "BrtSkr"
                                 })
                             }),
@@ -25331,14 +26412,13 @@ var MainFooter = function MainFooter() {
                                     children: "FilipRedlich"
                                 })
                             }),
-                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {
-                            })
+                            /*#__PURE__*/ (0, _jsxRuntime.jsx)("h6", {})
                         ]
                     })
                 ]
             })
         ]
-    }));
+    });
 };
 _c = MainFooter;
 var _default = MainFooter;
@@ -25351,94 +26431,9 @@ $RefreshReg$(_c, "MainFooter");
   window.$RefreshReg$ = prevRefreshReg;
   window.$RefreshSig$ = prevRefreshSig;
 }
-},{"react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"bNOSb":[function(require,module,exports) {
-var $parcel$ReactRefreshHelpers$8894 = require("@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js");
-var prevRefreshReg = window.$RefreshReg$;
-var prevRefreshSig = window.$RefreshSig$;
-$parcel$ReactRefreshHelpers$8894.prelude(module);
+},{"@babel/runtime/helpers/interopRequireDefault":"7XM86","../../images/shop_logo.svg":"ajTl4","react/jsx-runtime":"6AEwr","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru"}],"ajTl4":[function(require,module,exports) {
+module.exports = require('./helpers/bundle-url').getBundleURL('jr4SB') + "shop_logo.6e99bcd4.svg" + "?" + Date.now();
 
-try {
-"use strict";
-var _interopRequireDefault = require("@babel/runtime/helpers/interopRequireDefault");
-var _typeof = require("@babel/runtime/helpers/typeof");
-Object.defineProperty(exports, "__esModule", {
-    value: true
-});
-exports["default"] = exports.RenderProducts = exports.RenderOnLoad = void 0;
-var _react = _interopRequireDefault(require("react"));
-var _Test = _interopRequireWildcard(require("./Test"));
-var _ProductsNav = require("./ProductsNav");
-var _jsxRuntime = require("react/jsx-runtime");
-var _jsxFileName = "C:\\Users\\arcad\\OneDrive\\Dokumenty\\GitHub\\coop-shop\\shop\\templates\\shop\\src\\js\\Components\\RenderScripts.js", _this = void 0;
-function _getRequireWildcardCache(nodeInterop1) {
-    if (typeof WeakMap !== "function") return null;
-    var cacheBabelInterop = new WeakMap();
-    var cacheNodeInterop = new WeakMap();
-    return (_getRequireWildcardCache = function _getRequireWildcardCache(nodeInterop) {
-        return nodeInterop ? cacheNodeInterop : cacheBabelInterop;
-    })(nodeInterop1);
-}
-function _interopRequireWildcard(obj, nodeInterop) {
-    if (!nodeInterop && obj && obj.__esModule) return obj;
-    if (obj === null || _typeof(obj) !== "object" && typeof obj !== "function") return {
-        "default": obj
-    };
-    var cache = _getRequireWildcardCache(nodeInterop);
-    if (cache && cache.has(obj)) return cache.get(obj);
-    var newObj = {
-    };
-    var hasPropertyDescriptor = Object.defineProperty && Object.getOwnPropertyDescriptor;
-    for(var key in obj)if (key !== "default" && Object.prototype.hasOwnProperty.call(obj, key)) {
-        var desc = hasPropertyDescriptor ? Object.getOwnPropertyDescriptor(obj, key) : null;
-        if (desc && (desc.get || desc.set)) Object.defineProperty(newObj, key, desc);
-        else newObj[key] = obj[key];
-    }
-    newObj["default"] = obj;
-    if (cache) cache.set(obj, newObj);
-    return newObj;
-}
-var RenderSubCat = function RenderSubCat() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "subcats",
-            children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("h1", {
-                children: "TESTING"
-            })
-        })
-    }));
-};
-_c = RenderSubCat;
-var RenderProducts = function RenderProducts() {
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-        children: /*#__PURE__*/ (0, _jsxRuntime.jsx)("section", {
-            className: "products-section bg-black w-100 d-flex flex-wrap flex-row"
-        })
-    }));
-};
-_c1 = RenderProducts;
-exports.RenderProducts = RenderProducts;
-var RenderOnLoad = function RenderOnLoad() {
-    (0, _ProductsNav.removeSubCat)();
-    (0, _Test["default"])(ARRAY_3_SUBCATEGORY);
-    (0, _ProductsNav.addEvent)(document.querySelectorAll(".testing"));
-    console.log('hehe');
-    return(/*#__PURE__*/ (0, _jsxRuntime.jsx)(_jsxRuntime.Fragment, {
-    }));
-};
-_c2 = RenderOnLoad;
-exports.RenderOnLoad = RenderOnLoad;
-var _default = RenderSubCat;
-exports["default"] = _default;
-var _c, _c1, _c2;
-$RefreshReg$(_c, "RenderSubCat");
-$RefreshReg$(_c1, "RenderProducts");
-$RefreshReg$(_c2, "RenderOnLoad");
-
-  $parcel$ReactRefreshHelpers$8894.postlude(module);
-} finally {
-  window.$RefreshReg$ = prevRefreshReg;
-  window.$RefreshSig$ = prevRefreshSig;
-}
-},{"@babel/runtime/helpers/typeof":"jgQjt","react":"21dqq","./Test":"f2YDa","@parcel/transformer-react-refresh-wrap/lib/helpers/helpers.js":"km3Ru","react/jsx-runtime":"6AEwr","./ProductsNav":"jxWkG","@babel/runtime/helpers/interopRequireDefault":"7XM86"}]},["kn9T2","ePVv5","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
+},{"./helpers/bundle-url":"lgJ39"}]},["kn9T2","bhjii","9ZkeS"], "9ZkeS", "parcelRequireaa4d")
 
 //# sourceMappingURL=index.53beede5.js.map

@@ -1,9 +1,17 @@
+html{
+  scroll-behavior: smooth;
+}
+body {
+  overflow-x: hidden;
+  scrollbar-color: $primary-purple2 $surface;
+  scrollbar-width: thin;
+}
 ::-webkit-scrollbar {
-  background: $dark;
-  width: 0.45rem;
+  background: $surface;
+  width: 0.5rem;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: $red;
-  border-radius: 15vh;
+  background: $primary-purple2;
+  border-radius: 1vh;
 }
