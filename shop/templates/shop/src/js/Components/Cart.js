@@ -10,8 +10,13 @@ const TotalPrice = (props) => {
   CurrentPrice.map((x) => {
     convertedPrice += parseInt(x[5] * x[6]);
   });
-
-  return convertedPrice + "$";
+   
+  if (convertedPrice === isNaN) {
+    return 0 + "$"
+  } else {
+    return convertedPrice + "$";
+  }
+  
 };
 const HowManyItems = (props) => {
   const items = props.el;
@@ -47,7 +52,7 @@ const HowManyItems = (props) => {
     return items.map((x) => {
       //if the price is lower than regular price, assign to variable regular price (It's used to show old price, before applying discount)
       if (x[5] * x[6] < x[5]) {
-        var prevPrice = `${x[5]}$`;
+        var prevPrice = `${x[5]}$`; //Price before discount
       } else {
         console.log("price is the same");
       }
@@ -63,7 +68,7 @@ const HowManyItems = (props) => {
               <h5 className="text-purple">{`${x[5] * x[6]}$`}</h5>
               <h6 className="text-muted">{`In stock: ${x[4]}`}</h6>
             </div>
-            <form className="my-auto" action="/deleteProductToBasket/">
+            <form className="my-auto" action="/deleteProductToBasket/" method="POST">
               <input type="hidden" name="id" value={x[0]} />
               <input
                 type="hidden"

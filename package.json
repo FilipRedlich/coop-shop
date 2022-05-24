@@ -6,6 +6,7 @@
     "dev": "parcel shop/templates/shop/index.html --open",
     "prodUnofficial": "parcel build shop/templates/shop/index.html --dist-dir=shop/templates/shop/distUnofficial --public-url .",
     "prod": "parcel build shop/templates/shop/index.html --out-dir=shop/templates/shop/dist --public-url .",
+    "pys": "python manage.py runserver",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "repository": {

@@ -23151,14 +23151,13 @@ var TotalPrice = function TotalPrice(props) {
     CurrentPrice.map(function(x) {
         convertedPrice += parseInt(x[5] * x[6]);
     });
-    return convertedPrice + "$";
+    if (convertedPrice === isNaN) return "0$";
+    else return convertedPrice + "$";
 };
 _c = TotalPrice;
 var HowManyItems = function HowManyItems(props) {
     var items = props.el;
-    if (items.length === 0 || items === undefined || items === null || false || items === [
-        ""
-    ] || items === "") {
+    if (items.length === 0 || items === undefined || items === null || false || items[0][0] === '') {
         console.log("there are no items in cart");
         return /*#__PURE__*/ (0, _jsxRuntime.jsx)("div", {
             className: "cart-item text-center p-2 w-100 bg-dark rounded m-auto",
@@ -23188,7 +23187,7 @@ var HowManyItems = function HowManyItems(props) {
         console.log("there are items in cart");
         return items.map(function(x) {
             //if the price is lower than regular price, assign to variable regular price (It's used to show old price, before applying discount)
-            if (x[5] * x[6] < x[5]) var prevPrice = "".concat(x[5], "$");
+            if (x[5] * x[6] < x[5]) var prevPrice = "".concat(x[5], "$"); //Price before discount
             else console.log("price is the same");
             return /*#__PURE__*/ (0, _jsxRuntime.jsxs)("div", {
                 className: "cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 rounded m-auto",
@@ -23231,6 +23230,7 @@ var HowManyItems = function HowManyItems(props) {
                             /*#__PURE__*/ (0, _jsxRuntime.jsxs)("form", {
                                 className: "my-auto",
                                 action: "/deleteProductToBasket/",
+                                method: "POST",
                                 children: [
                                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("input", {
                                         type: "hidden",
@@ -24078,7 +24078,7 @@ var RenderProducts2 = function RenderProducts2(props) {
                         },
                         children: [
                             /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                                src: convImg,
+                                src: val[2],
                                 alt: val[1],
                                 loading: "lazy"
                             }),
@@ -24255,7 +24255,7 @@ var GetItemsOnDiscount = function GetItemsOnDiscount(props) {
                         value: x[0]
                     }),
                     /*#__PURE__*/ (0, _jsxRuntime.jsx)("img", {
-                        src: _undraw_dev_productivity_re_fylf["default"],
+                        src: x[2],
                         className: "card-img",
                         alt: "promotion"
                     }),
@@ -24836,7 +24836,7 @@ var RenderFromCat = function RenderFromCat() {
                         //   document.querySelector("#rootSubcategories")
                         //     );
                         (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-                            el: subcatNames[1],
+                            el: subcatNamesTest[1],
                             img: subcatImages[3]
                         }), document.querySelector("#rootSubcategories"));
                         (0, _ProductsNav.addEvent)();
@@ -24851,7 +24851,7 @@ var RenderFromCat = function RenderFromCat() {
                         //   document.querySelector("#rootSubcategories")
                         // );
                         (0, _reactDom.render)(/*#__PURE__*/ (0, _jsxRuntime.jsx)(RenderSubcat, {
-                            el: subcatNames[2],
+                            el: subcatNamesTest[2],
                             img: subcatImages[4]
                         }), document.querySelector("#rootSubcategories"));
                         (0, _ProductsNav.addEvent)();

@@ -68,7 +68,7 @@ const RenderProducts2 = (props) => {
               showPopup();
             }}
           >
-            <img src={convImg} alt={val[1]} loading="lazy" />
+            <img src={val[2]} alt={val[1]} loading="lazy" />
             <p>{val[1]}</p>
           </button>
         </form>
@@ -88,7 +88,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={productsTest} index={i} />,
+              <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -105,7 +105,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={productsTest} index={i} />,
+              <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
