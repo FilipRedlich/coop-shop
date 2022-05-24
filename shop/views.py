@@ -56,6 +56,14 @@ class ProductView(generic.DetailView):
     model = Products
     template_name = 'shop/build/product.html'
 
+def payView(request):
+    if 'email' in request.session:
+        global context
+        context['sumMoney'] = request.POST['sum']
+        return render(request, 'shop/build/pay.html',context)
+    else:
+        return HttpResponseRedirect(reverse('shop:index'))
+
 #test views
 def testView(request):
     global context
