@@ -228,3 +228,13 @@ def changeHotshot(request):
         Products.objects.filter(pk=productID).update(mult=discount)
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
+
+#change quantity of product in basket
+def changeQuantityInBasket(request):
+    #get values from form names
+    productID = request.POST['id']
+    quantity = request.POST['quantity']
+    #update quantity for this product and user
+    Basket.objects.filter(productID_id = productID).filter(userID_id = request.session['userpk']).update(quantity=quantity)
+    #redirect to index at the end of function
+    return HttpResponseRedirect(reverse('shop:index'))
