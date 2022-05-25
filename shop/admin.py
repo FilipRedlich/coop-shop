@@ -12,7 +12,7 @@ class UsersAdmin(admin.ModelAdmin):
 
 class BasketAdmin(admin.ModelAdmin):
     #fields = ['userID','productID']
-    list_display=('userID','productID')
+    list_display=('userID','productID','quantity')
 
 class CategoriesAdmin(admin.ModelAdmin):
     #fields = ['name']

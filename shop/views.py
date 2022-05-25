@@ -101,6 +101,7 @@ def getProductsFromBasket(request):
         ii=0
         for row in query:
             #get all info about product looping through product id list
+            #logging.info(row[3])
             query2=Products.objects.values_list().filter(pk=row[2])
             for row2 in query2:
                 if ii!=0:
@@ -112,6 +113,7 @@ def getProductsFromBasket(request):
                         output+=';;;'
                     output+=str(field)
                     i=1
+                output+=';;;'+str(row[3])
                 i=0
                 ii=1
         #add var to global dict to make use of in html template
