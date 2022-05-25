@@ -44,6 +44,7 @@ class Products(models.Model):
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
+    quantity=models.IntegerField(default=1)
     def __str__(self):
         return str(self.pk)+". "+str(self.userID)
 
