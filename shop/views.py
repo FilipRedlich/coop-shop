@@ -196,7 +196,7 @@ def addProductToBasket(request):
     #check to prevent adding duplicate products
     if str(Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID)) == "<QuerySet []>":
         #getting quantity from form or set to 1
-        if request.POST['quantity']:
+        if 'quantity' in request.POST:
             quantity = request.POST['quantity']
         else:
             quantity = 1
