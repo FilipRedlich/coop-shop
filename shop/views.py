@@ -191,8 +191,9 @@ def logout(request):
 def addProductToBasket(request):
     #getting user id to identify user
     productID = request.POST['id']
+    #check to prevent adding duplicate products
     if str(Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID)) == "<QuerySet []>":
-        #getting quantity to set or =1 if not set
+        #getting quantity from form or set to 1
         if request.POST['quantity']:
             quantity = request.POST['quantity']
         else:
