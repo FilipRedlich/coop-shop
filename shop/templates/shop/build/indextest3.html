@@ -124,8 +124,14 @@
     
     <form id="deleteProductToBasket" action="/deleteProductToBasket/" method="post">
       {% csrf_token %}
-      <input type="hidenn" name="id" value="5"/><br />
-      <input type="submit" value="Set Hotshot" />
+      <input type="text" name="id" value="5"/><br />
+      <input type="submit" value="Delete from basket" />
+    </form>
+    <form id="addProductToBasket" action="/addProductToBasket/" method="post">
+      {% csrf_token %}
+      <input type="text" name="id" value="5"/><br />
+      <input type="text" name="quantity"/><br />
+      <input type="submit" value="Add to basket" />
     </form>
   </body>
 </html>
