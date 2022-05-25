@@ -191,13 +191,14 @@ def logout(request):
 def addProductToBasket(request):
     #getting user id to identify user
     productID = request.POST['id']
-    #getting quantity to set or =1 if not set
-    if request.POST['quantity']:
-        quantity = request.POST['id']
-    else:
-        quantity = 1
-    #query to add product to given user's basket
-    Basket.objects.create(userID_id=request.session['userpk'],productID_id=productID,quantity=quantity)
+    if str(Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID)) == "<QuerySet []>":
+        #getting quantity to set or =1 if not set
+        if request.POST['quantity']:
+            quantity = request.POST['quantity']
+        else:
+            quantity = 1
+        #query to add product to given user's basket
+        Basket.objects.create(userID_id=request.session['userpk'],productID_id=productID,quantity=quantity)
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
 
