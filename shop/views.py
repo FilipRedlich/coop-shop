@@ -238,3 +238,6 @@ def changeQuantityInBasket(request):
     Basket.objects.filter(productID_id = productID).filter(userID_id = request.session['userpk']).update(quantity=quantity)
     #redirect to index at the end of function
     return HttpResponseRedirect(reverse('shop:index'))
+
+def subscribeToNewsletter(request):
+    0
