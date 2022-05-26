@@ -240,4 +240,6 @@ def changeQuantityInBasket(request):
     return HttpResponseRedirect(reverse('shop:index'))
 
 def subscribeToNewsletter(request):
-    0
+    if 'email' in request.session:
+        Users.objects.filter(login = request.session['email']).update(newsletter=True)
+    return HttpResponseRedirect(reverse('shop:index'))
