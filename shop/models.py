@@ -4,7 +4,7 @@ from django.db import models
 
 # Create your models here.
 
-#table Users {pk,login,password}
+#table Users {pk,login,password,newsletter}
 class Users(models.Model):
     login=models.CharField(max_length=30)
     password=models.CharField(max_length=255)
@@ -19,7 +19,7 @@ class Categories(models.Model):
     def __str__(self):
         return str(self.pk)+". "+self.name
 
-#table subCategories {pk,name,catID,picture}
+#table subCategories {pk,name,picture,catID}
 class subCategories(models.Model):
     name=models.CharField(max_length=50,default="empty")
     picture=models.CharField(max_length=255,blank=1)
@@ -27,7 +27,7 @@ class subCategories(models.Model):
     def __str__(self):
         return str(self.pk)+". "+self.name+" ("+str(self.catID)+")"
 
-#table Products {pk,name,picture,subcat,quantity,price,mult,rating}
+#table Products {pk,name,picture,subcat,quantity,price,mult,rating,hotshot}
 class Products(models.Model):
     name=models.CharField(max_length=255)
     picture=models.CharField(max_length=255,blank=1)
@@ -40,7 +40,7 @@ class Products(models.Model):
     def __str__(self):
         return str(self.pk)+". "+self.name
 
-#table Basket {pk,userID,productID}
+#table Basket {pk,userID,productID,quantity}
 class Basket(models.Model):
     userID=models.ForeignKey(Users, on_delete=models.CASCADE)
     productID=models.ForeignKey(Products, on_delete=models.CASCADE)
