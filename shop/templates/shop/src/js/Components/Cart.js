@@ -1,3 +1,4 @@
+import React, { useEffect } from "react";
 import { render } from "react-dom";
 import images from "./Images";
 import MainContent from "./MainContent";
@@ -10,13 +11,12 @@ const TotalPrice = (props) => {
   CurrentPrice.map((x) => {
     convertedPrice += parseInt(x[5] * x[6]);
   });
-   
-  if (convertedPrice === isNaN) {
-    return 0 + "$"
+
+  if (isNaN(convertedPrice)) {
+    return 0 + "$";
   } else {
     return convertedPrice + "$";
   }
-  
 };
 const HowManyItems = (props) => {
   const items = props.el;
@@ -25,7 +25,7 @@ const HowManyItems = (props) => {
     items === undefined ||
     items === null ||
     items === NaN ||
-    items[0][0] === ''
+    items[0][0] === ""
   ) {
     console.log("there are no items in cart");
     return (
@@ -49,7 +49,7 @@ const HowManyItems = (props) => {
     );
   } else {
     console.log("there are items in cart");
-    return items.map((x) => {
+    return items.map((x, i) => {
       //if the price is lower than regular price, assign to variable regular price (It's used to show old price, before applying discount)
       if (x[5] * x[6] < x[5]) {
         var prevPrice = `${x[5]}$`; //Price before discount
@@ -63,12 +63,21 @@ const HowManyItems = (props) => {
             <h4 className="my-auto item-name">{x[1]}</h4>
           </div>
           <div className="d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
+            <form>
+              <select>
+                <CreateOptions howMany={x} />
+              </select>
+            </form>
             <div className="d-flex flex-column justify-content-center">
               <p className="item-prevPrice">{prevPrice}</p>
               <h5 className="text-purple">{`${x[5] * x[6]}$`}</h5>
               <h6 className="text-muted">{`In stock: ${x[4]}`}</h6>
             </div>
-            <form className="my-auto" action="/deleteProductToBasket/" method="POST">
+            <form
+              className="my-auto"
+              action="/deleteProductToBasket/"
+              method="POST"
+            >
               <input type="hidden" name="id" value={x[0]} />
               <input
                 type="hidden"
@@ -85,6 +94,17 @@ const HowManyItems = (props) => {
     });
   }
 };
+const CreateOptions = (props) => {
+  const howMany = props.howMany;
+  //console.log(howMany);
+  let n = parseInt(howMany[9]);
+  console.log(n);
+  return [...Array(n)].map((elementInArray, index) => (
+    <option className="" key={index}>
+      {index + 1}
+    </option>
+  ));
+};
 const Cart = () => {
   return (
     <>
@@ -96,14 +116,14 @@ const Cart = () => {
           id="card-items"
           className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-black rounded"
         >
-          <HowManyItems el={basketProducts} />{" "}
+          <HowManyItems el={basketProductsTest} />{" "}
           {/* cardContentsTest or CardContents*/}
         </div>
         <div className="checkout m-auto bg-black rounded">
           <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
             <div className="flexb-70">
               <label className="text-muted">Subtotal:</label>
-              <h5>{<TotalPrice price={basketProducts} />}</h5>
+              <h5>{<TotalPrice price={basketProductsTest} />}</h5>
               <p className="text-muted">{`+ Delivery`}</p>
             </div>
             <input

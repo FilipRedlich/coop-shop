@@ -9,7 +9,11 @@ const Newsletter = () => {
             Want to get information about discounts and promotions first?
           </h3>
           <h5 className="newsletter-text">Sign in for our Newsletter!</h5>
-          <div className="d-flex newsletter-input-wrapper flex-row mt-2">
+          <form
+            action="/subscribeToNewsletter/"
+            method="POST"
+            className="d-flex newsletter-input-wrapper flex-row mt-2"
+          >
             <input
               className="form-control shadow-lg flexb-70 border-l5 newsletter-input"
               type="email"
@@ -21,7 +25,7 @@ const Newsletter = () => {
               className="flexb-30 border-none newsletter-submit text-white border-r5"
               value="Submit"
             />
-          </div>
+          </form>
         </div>
       </section>
     </>
