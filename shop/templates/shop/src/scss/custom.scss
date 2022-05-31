@@ -1,6 +1,7 @@
 @import "./variables.scss";
 @import "./keyframes.scss";
 @import "./mixins.scss";
+@import './utility.scss';
 .transform-z-3 {
   transform: translateZ(3px) !important;
 }
@@ -101,18 +102,6 @@
 .minmax-test {
   min-width: 10rem;
   min-height: 10rem;
-}
-
-.animate {
-  animation: categories-slide 0.3s ease-in-out;
-  animation-fill-mode: forwards;
-  //transition: .5s;
-}
-
-.categories-section {
-  min-height: 100rem !important;
-  margin: -30rem 0 0 0;
-  left: 50%;
 }
 
 .border-none {
@@ -308,40 +297,7 @@
   }
 }
 
-.rootSubcategories {
-  max-height: 25rem;
-  overflow-y: scroll !important;
-  .subcategory {
-    display: flex;
-    flex-direction: column-reverse;
-    justify-content: center;
-    align-items: center;
-    background: $bg-transparent-c;
-    color: white;
-    font-size: 1.2rem;
-    text-align: center;
-    z-index: 5;
-    border: none;
-    border-radius: 10px;
-    min-width: 16rem;
-    max-width: 16rem;
-    min-height: 20rem;
-    max-height: 25rem;
-    padding: 1rem;
-   transition: .3s all;
-    &:hover{
-     transform: scale(0.9);
-     
-   }
-    img {
-      max-width: 95%;
-      max-height: 15rem;
-      min-height: 10rem;
-      margin: auto;
-      z-index: 4;
-    }
-  }
-}
+
 .popup-modal{
   display: flex;
   justify-content: center;
@@ -385,176 +341,18 @@
 .text-purple{
   color: $primary-purple;
 }
-.cart {
-  .cart-items {
-    .cart-item {
-      position: relative;
-      background: $surface;
-      .cart-img {
-        max-width: 10rem;
-        max-height: 10rem;
-      }
-      .item-name {
-        color: $primary-purple;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .item-prevPrice{
-        padding: 0;
-        margin: 0;
-        text-decoration: line-through;
-        color: gray;
-      }
-      .remove-item {
-        background: $red-600;
-        color: white;
-        font-size: 1.2rem;
-      }
-    }
-  }
-}
 
-.checkout {  
-  display: flex;
-  justify-content: center;
-  min-height: 20rem;
-    min-width: 15rem;
-  .checkout-form {
-    background: $surface;
-    margin: auto;
-    border-radius: 0.25rem;
-  min-width: 13rem;
-  min-height: 18rem;
-    .checkout-submit {
-      background: $primary-purple;
-    }
-  }
-}
+
+
 
 .min-h-30 {
   min-height: 30rem;
 }
 
-.categories-button {
-  min-height: 3rem;
-  font-size: 1rem;
-  min-width: 8rem;
-  max-width: 8rem;
-}
 
-.categories {
-  overflow-y: scroll;
-  max-height: 25rem;
-  max-width: 10rem;
 
-  &::-webkit-scrollbar-track {
-    background: $dark;
-  }
 
-  &::-webkit-scrollbar-thumb {
-    background: rgb(66, 66, 66);
-    transition: 0.5s;
 
-    &:hover {
-      background: $white;
-      transition: 0.5s;
-    }
-  }
-}
-
-.categories-wrapper {
-  max-height: 10rem !important;
-  margin: 60vh 0 0 0 !important;
-}
-
-.newsletter {
-  position: relative;
-  border-radius: 15px;
-  max-width: 80%;
-  margin: 1rem auto;
-  background: $bg-black;
-  overflow: hidden;
-  &::before {
-    @include pseudo-el;
-    background: url(../images/undraw_subscriber_re_om92.svg) no-repeat;
-    background-position: left;
-    background-position-x: -15rem;
-    background-position-y: 2rem;
-    background-size: 65rem;
-    opacity: 0.6;
-    z-index: 2;
-  }
-  &::after {
-    @include pseudo-el;
-    height: 100%;
-    max-width: 20%;
-    width: 20rem;
-    background: $red;
-    margin: 0 0 0 auto;
-  }
-  .newsletter-section {
-    position: relative;
-    //margin: 0 auto 0 0;
-    margin: auto;
-    min-height: 35rem;
-    &::before {
-      @include pseudo-el;
-      width: 20rem;
-      height: 20rem;
-      border-radius: 50%;
-      margin-top: 20rem;
-      margin-left: 41vw;
-      z-index: 1;
-      background: $bg-transparent-c;
-    }
-    &::after {
-      @include pseudo-el;
-      width: 15rem;
-      height: 15rem;
-      border-radius: 50%;
-      margin-top: -3rem;
-      margin-left: 36vw;
-      z-index: 1;
-      background: $bg-transparent-c;
-    }
-    .newsletter-text {
-      min-width: 8rem;
-      text-shadow: 0px 0px 5px rgb(0, 0, 0);
-      z-index: 5;
-    }
-    .newsletter-input-wrapper {
-      position: relative;
-      border: none;
-      box-shadow: 0px 0px 10px 5px $bg-transparent-c;
-      &::before {
-        @include pseudo-el;
-        width: 100%;
-        height: 100%;
-        box-shadow: 0 0 10px 2px $bg-transparent-c;
-        border: none;
-        border-radius: 5px;
-        z-index: -1;
-      }
-      .newsletter-input {
-        background: $surface;
-        color: white;
-        border: none;
-        min-width: 12rem;
-        z-index: 5;
-      }
-
-      .newsletter-submit {
-        background: $primary-purple2;
-        min-width: 4rem;
-        z-index: 5;
-      }
-    }
-  }
-}
-
-img {
-  width: 100%;
-}
 
 .footer-emblem {
   background: $bg-transparent-c;
