@@ -1,12 +1,15 @@
-@import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
-@import "../../../../../node_modules/animate.css/animate.css";
-@import "../../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
+@import './utility.scss';
+@import './cart/all.scss';
+@import './newsletter/all.scss';
+@import './categories/all.scss';
+@import "./mediaQueries.scss";
 @import "./custom.scss";
 @import "./global.scss";
 @import "./variables.scss";
 @import "./keyframes.scss";
 @import "./override.scss";
-@import "./mediaQueries.scss";
+
+
 .hide-element {
   //transform: translateY(-75rem) translateX(-50%);
   //transform: translateX(-10rem);

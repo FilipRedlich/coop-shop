@@ -1,0 +1,22 @@
+.quantity-form{
+    width: 5rem;
+    height: 5rem;
+    background: $dark;
+    .quantity-select{
+        display: flex;
+        justify-content: center;
+        background: $bg-black;
+        width: 4rem;
+        height: 4rem;
+        border-radius: 15px;
+        text-align: center;
+        color: white;
+        margin: .5rem auto;
+        &:focus{
+            border: 1px solid $primary-purple;
+        }
+        .quantity-option{
+         background: $bg-black;
+        }
+    }
+}

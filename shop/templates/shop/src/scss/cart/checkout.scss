@@ -1,0 +1,17 @@
+
+.checkout {
+  display: flex;
+  justify-content: center;
+  min-height: 20rem;
+  min-width: 15rem;
+  .checkout-form {
+    background: $surface;
+    margin: auto;
+    border-radius: 0.25rem;
+    min-width: 13rem;
+    min-height: 18rem;
+    .checkout-submit {
+      background: $primary-purple;
+    }
+  }
+}

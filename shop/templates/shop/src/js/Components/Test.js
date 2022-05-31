@@ -195,7 +195,6 @@ export {
   subcatNamesTest,
   subcatImagesTest,
   catNamesTest,
-  productsTest,
   basketProductsTest,
   hotshotTest,
   TEST_CAT,

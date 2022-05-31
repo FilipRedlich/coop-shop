@@ -21,7 +21,7 @@
   },
   "homepage": "https://github.com/FilipRedlich/coop-shop#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.5.0",
+    "@parcel/transformer-sass": "^2.6.0",
     "assert": "^2.0.0",
     "autoprefixer": "^9.0.0",
     "browserslist": "^4.20.2",
@@ -32,8 +32,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "parcel": "^2.5.0",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.6.0",
     "postcss": "^8.4.13",
     "postcss-focus": "^5.0.1",
     "prettier": "^2.5.1",

@@ -63,8 +63,8 @@ const HowManyItems = (props) => {
             <h4 className="my-auto item-name">{x[1]}</h4>
           </div>
           <div className="d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
-            <form>
-              <select>
+            <form className="quantity-form">
+              <select className="quantity-select">
                 <CreateOptions howMany={x} />
               </select>
             </form>
@@ -100,7 +100,7 @@ const CreateOptions = (props) => {
   let n = parseInt(howMany[9]);
   console.log(n);
   return [...Array(n)].map((elementInArray, index) => (
-    <option className="" key={index}>
+    <option className="quantity-option" key={index}>
       {index + 1}
     </option>
   ));

@@ -1,0 +1,29 @@
+@import '../utility.scss';
+.cart {
+  .cart-items {
+    .cart-item {
+      position: relative;
+      background: $surface;
+      .cart-img {
+        max-width: 10rem;
+        max-height: 10rem;
+      }
+      .item-name {
+        color: $primary-purple;
+        overflow: hidden;
+        text-overflow: ellipsis;
+      }
+      .item-prevPrice{
+        padding: 0;
+        margin: 0;
+        text-decoration: line-through;
+        color: gray;
+      }
+      .remove-item {
+        background: $red-600;
+        color: white;
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
