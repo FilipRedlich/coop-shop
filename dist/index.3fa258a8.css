@@ -31665,7 +31665,7 @@ textarea.form-control-lg {
 .quantity-form {
   width: 5rem;
   height: 5rem;
-  background: #212529;
+  background: none;
 }
 
 .quantity-form .quantity-select {
@@ -77989,6 +77989,10 @@ body {
 ::-webkit-scrollbar-thumb {
   background: #3700b3;
   border-radius: 1vh;
+}
+
+img {
+  width: 100%;
 }
 
 .animate__animated.animate__backInRight {
