@@ -2,7 +2,7 @@ import React from "react";
 import { render } from "react-dom";
 
 //imported components
-import Login from "./Login";
+import Login from "./Login/Login";
 import Cart from "./Cart/Cart";
 import MainContent from "./MainContent";
 
