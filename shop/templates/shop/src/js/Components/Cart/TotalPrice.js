@@ -12,3 +12,5 @@ const TotalPrice = (props) => {
     return convertedPrice + "$";
   }
 };
+
+export { TotalPrice };
