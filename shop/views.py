@@ -52,17 +52,20 @@ def indexView(request):
     #render site using html template and global dict
     return render(request, 'shop/build/index.html',context)
 
+#detail view for products table
 class ProductView(generic.DetailView):
     model = Products
     template_name = 'shop/build/product.html'
 
+#func that takes items from basket and proceed to check out page
 def payView(request):
+    #redirect user to check out page
     if 'email' in request.session:
         global context
         context['sumMoney'] = request.POST['sum']
         return render(request, 'shop/build/pay.html',context)
-    else:
-        return HttpResponseRedirect(reverse('shop:index'))
+    #takes not log in user back to index
+    return HttpResponseRedirect(reverse('shop:index'))
 
 #test views
 def testView(request):
@@ -239,7 +242,10 @@ def changeQuantityInBasket(request):
     #redirect to index at the end of function
     return HttpResponseRedirect(reverse('shop:index'))
 
+#add currently logged user to the newsletter
 def subscribeToNewsletter(request):
+    #check to see if user is logged in
     if 'email' in request.session:
         Users.objects.filter(login = request.session['email']).update(newsletter=True)
+    #redirect to index at the end of function
     return HttpResponseRedirect(reverse('shop:index'))
