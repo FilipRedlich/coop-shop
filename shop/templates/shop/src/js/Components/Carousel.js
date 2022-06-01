@@ -1,6 +1,5 @@
 import image1 from "../../images/undraw_dev_productivity_re_fylf.svg";
 import image2 from "../../images/undraw_software_engineer_re_fyew.svg";
-import { watchForMove } from "./ProductsNav";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
 import { TEST_ARRAY } from "./Test";
@@ -25,7 +24,6 @@ const Carousel = () => {
   return (
     <div
       className="w-100 card gallery d-flex justify-content-center"
-      onClick={watchForMove}
     >
       <img
         src={images[count].src}

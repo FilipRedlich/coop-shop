@@ -31,4 +31,4 @@ const CheckOut = () => {
     </form>
   );
 };
-export {CheckOut};
+export default CheckOut;

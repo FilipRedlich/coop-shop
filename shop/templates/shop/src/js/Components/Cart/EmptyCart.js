@@ -19,4 +19,4 @@ const EmptyCart = () => {
       </div>
     );
 }
-export {EmptyCart};
+export default EmptyCart;
