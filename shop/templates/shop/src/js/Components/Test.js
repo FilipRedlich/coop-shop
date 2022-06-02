@@ -40,7 +40,7 @@ const basketProductsTest = [
     "10",
     "4",
     "270.0",
-    "1.0",
+    "0.9",
     "3.0",
     "False",
     "5",
