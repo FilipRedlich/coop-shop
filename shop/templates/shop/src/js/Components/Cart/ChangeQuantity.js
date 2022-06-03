@@ -9,7 +9,7 @@ const ChangeQuantityForm = (props) => {
       >
         <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
         <input type="hidden" name="id" value={items[0]} />
-        <select className="quantity-select">
+        <select className="quantity-select" name="quantity">
           <CreateOptions howMany={items} />
         </select>
         <input type="submit" value="Change" />
