@@ -1,0 +1,41 @@
+.item-bar-holder {
+  background: $bg-transparent-c;
+  width: 80%;
+  min-height: 10rem;
+  margin: 5rem auto 0 auto;
+  border-radius: 10px;
+  padding: 1rem;
+  .item-bar {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    .item {
+      display: block;
+      border: 1px solid wheat;
+      max-width: 10rem;
+      min-height: 10rem;
+      text-align: center;
+      font-size: 1.2rem;
+
+      :nth-child(n) {
+        margin: auto;
+      }
+      p {
+        overflow: hidden;
+        text-overflow: ellipsis;
+        white-space: nowrap;
+        text-align: center;
+      }
+    }
+  }
+
+  .sale-item {
+    max-width: 20rem;
+    min-height: 20rem;
+  }
+  .sale-img {
+    max-height: 10rem;
+  }
+}
