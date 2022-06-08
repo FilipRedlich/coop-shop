@@ -1,5 +1,108 @@
 @import "../../../../../node_modules/bootstrap/scss/bootstrap.scss";
 @import "../../../../../node_modules/animate.css/animate.css";
 @import "../../../../../node_modules/bootstrap-icons/font/bootstrap-icons.css";
-@import './mixins.scss';
-@import './variables.scss';
+@import "./mixins.scss";
+@import "./variables.scss";
+
+.min-h-rem {
+  min-height: 20rem;
+}
+
+.transition-5 {
+  transition: 0.5s;
+}
+
+.flexb-30 {
+  flex-basis: 30%;
+}
+
+.flexb-60 {
+  flex-basis: 60%;
+}
+
+.flexb-70 {
+  flex-basis: 70%;
+}
+.translate-z-0 {
+  transform: translateZ(0);
+}
+
+.minmax-test {
+  min-width: 10rem;
+  min-height: 10rem;
+}
+
+.border-none {
+  border: none;
+}
+
+.border-l5 {
+  border-radius: 0.5vh 0 0 0.5vh;
+}
+
+.border-r5 {
+  border-radius: 0 0.5vh 0.5vh 0;
+}
+
+.remove-all-decoration {
+  text-decoration: none;
+}
+.bg-black {
+  background: $black;
+}
+
+.bg-transparent-custom {
+  background: $bg-transparent-c;
+}
+
+.blur-bg {
+  backdrop-filter: blur(5px);
+}
+.transform-z-3 {
+  transform: translateZ(3px) !important;
+}
+
+.transform-z-4 {
+  transform: translateZ(4px);
+  z-index: 4;
+}
+
+.transform-z-0 {
+  transform: translateZ(0);
+}
+
+.z-index-3 {
+  z-index: 3 !important;
+}
+
+.z-index-1 {
+  z-index: 1;
+}
+
+.transform-z-1 {
+  transform: translateZ(1px);
+}
+
+.remove-all-padding {
+  padding: 0 !important;
+}
+
+.min-rem {
+  min-width: 20rem;
+}
+.test-bg{
+  background-color: #121212;
+}
+.text-purple{
+  color: $primary-purple;
+}
+.rounded-left-side {
+  border-radius: 10vh 0 0 10vh;
+}
+
+.rounded-right-side {
+  border-radius: 0 10vh 10vh 0;
+}
+.min-h-30 {
+  min-height: 30rem;
+}

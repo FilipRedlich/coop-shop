@@ -1,0 +1,11 @@
+  .action {
+    transition: 0.2s ease;
+    font-size: 1.2rem;
+
+    &:hover {
+      box-shadow: 0 0 5px 2px $primary-purple2;
+      transition: 0.2s ease;
+      z-index: 2;
+      transform: scale(1.1);
+    }
+  }

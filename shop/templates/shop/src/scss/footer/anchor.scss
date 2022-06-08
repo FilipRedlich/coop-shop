@@ -1,0 +1,19 @@
+.footer-anchor {
+  background: linear-gradient(
+    to right,
+    $blue-700,
+    $blue-700 50%,
+    rgb(104, 104, 104) 50%
+  );
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-size: 200% 100%;
+  background-position: 100%;
+  transition: background-position 275ms ease;
+  text-decoration: none; // text decorations are clipped in WebKit browsers\\
+  color: royalblue;
+  &:hover {
+    background-position: 0 0%;
+  }
+}

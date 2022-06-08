@@ -1,0 +1,17 @@
+.footer-emblem {
+  background: $bg-transparent-c;
+  min-height: 10rem;
+  min-width: 250px;
+  .footer-logo {
+    max-width: 7.5rem;
+    max-height: 7.5rem;
+    opacity: 0.9;
+  }
+  .footer-logo-text {
+    font-size: 3rem;
+    background: $gradient-red;
+    background-clip: text;
+    -webkit-background-clip: text;
+    color: transparent;
+  }
+}

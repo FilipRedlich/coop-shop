@@ -1,3 +1,4 @@
+@import '../variables.scss';
 .quantity-form {
   width: 5rem;
   height: 5rem;
@@ -5,21 +6,35 @@
   display: flex;
   justify-content: center;
   flex-direction: column;
+  font-family: $font-main;
   .quantity-select {
     display: flex;
     justify-content: center;
     background: $bg-black;
     width: 4rem;
     height: 4rem;
-    border-radius: 15px;
+    border-radius: 7px;
     text-align: center;
     color: white;
     margin: 0.5rem auto;
+    
     &:focus {
       border: 1px solid $primary-purple;
     }
     .quantity-option {
       background: $bg-black;
     }
-  }
+   
+  } 
+  .quantity-change{
+      max-width: 90%;
+      background: $primary-purple2;
+      font-size: 0.9rem;
+      color: rgb(255,255,255);
+      text-transform: uppercase;
+      border: none;
+      border-radius: 7px;
+      outline: none;
+      margin: 0 auto;
+    }
 }

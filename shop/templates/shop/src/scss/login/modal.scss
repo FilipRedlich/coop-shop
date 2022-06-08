@@ -1,0 +1,25 @@
+@import './inputs.scss';
+@import "./background.scss";
+.login-section {
+  min-height: 40rem;
+  position: relative;
+  @include login-inputs;
+  @include login-background;
+
+  .login-modal {
+    background: $bg-transparent-c;
+    min-width: 40%;
+    max-width: 50rem;
+    min-height: 30rem;
+    margin: 5rem auto 0 auto;
+    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.459),
+      5px 5px 15px 5px rgba(0, 0, 0, 0.459);
+    border-radius: 1vh;
+
+    .accounter-credentials {
+    }
+
+   
+  }
+
+}

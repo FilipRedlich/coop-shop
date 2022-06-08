@@ -2,235 +2,27 @@
 @import "./keyframes.scss";
 @import "./mixins.scss";
 @import './utility.scss';
-.transform-z-3 {
-  transform: translateZ(3px) !important;
-}
-
-.transform-z-4 {
-  transform: translateZ(4px);
-  z-index: 4;
-}
-
-.transform-z-0 {
-  transform: translateZ(0);
-}
-
-.z-index-3 {
-  z-index: 3 !important;
-}
-
-.z-index-1 {
-  z-index: 1;
-}
-
-.transform-z-1 {
-  transform: translateZ(1px);
-}
-
-.remove-all-padding {
-  padding: 0 !important;
-}
-
-.min-rem {
-  min-width: 20rem;
-}
 
 .nav-products {
   border-radius: 0 0 1vh 1vh;
 }
 
-.bg-black {
-  background: $black;
-}
-
-.bg-transparent-custom {
-  background: $bg-transparent-c;
-}
-
-.blur-bg {
-  backdrop-filter: blur(5px);
-}
-
-.product-nav {
-  backdrop-filter: blur(5px);
-  overflow: auto;
-
-  button {
-    transition: 0.2s;
-    position: relative;
-
-    &::before {
-      content: "";
-      position: absolute;
-      top: 0;
-      right: 0;
-      bottom: 0;
-      left: 0;
-      margin: 2.5rem auto 0 auto;
-      width: 100px;
-      height: 3px;
-    }
-
-    &:hover {
-      box-shadow: 0rem 0.4rem 10px -5px $red;
-      //box-shadow: 0 0 5px 2px white;
-      //transition: .2s;
-    }
-  }
-
-  &::-webkit-scrollbar-track {
-    background: hsla(0, 0%, 0%, 0.486);
-  }
-
-  &::-webkit-scrollbar-thumb {
-    background: rgb(66, 66, 66);
-    transition: 0.5s;
-
-    &:hover {
-      background: $white;
-      transition: 0.5s;
-    }
-  }
-}
 .back-btn{
   cursor: pointer;
 }
-.translate-z-0 {
-  transform: translateZ(0);
-}
 
-.minmax-test {
-  min-width: 10rem;
-  min-height: 10rem;
-}
-
-.border-none {
-  border: none;
-}
-
-.border-l5 {
-  border-radius: 0.5vh 0 0 0.5vh;
-}
-
-.border-r5 {
-  border-radius: 0 0.5vh 0.5vh 0;
-}
-
-.remove-all-decoration {
-  text-decoration: none;
-}
 
 .min-vh-200 {
   min-height: 150rem !important;
   margin: -30rem 0 0 0;
 }
 
-.min-h-rem {
-  min-height: 20rem;
-}
 
-.transition-5 {
-  transition: 0.5s;
-}
-
-.flexb-30 {
-  flex-basis: 30%;
-}
-
-.flexb-60 {
-  flex-basis: 60%;
-}
-
-.flexb-70 {
-  flex-basis: 70%;
-}
-
-.login-section {
-  min-height: 40rem;
-  position: relative;
-
-  &::before {
-    background: url("../images/undraw_two_factor_authentication_namy.svg")
-      no-repeat;
-    background-position: 50%;
-    background-size: 105%;
-    position: absolute;
-    content: "";
-    top: 0;
-    right: 0;
-    bottom: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    opacity: 0.1;
-    z-index: -1;
-  }
-
-  .login-switch {
-    position: relative;
-    transform: translateY(4rem);
-    min-width: 280px;
-    width: 50%;
-    max-width: 30%;
-  }
-
-  .login-modal {
-    background: $bg-transparent-c;
-    min-width: 40%;
-    max-width: 50rem;
-    min-height: 30rem;
-    margin: 5rem auto 0 auto;
-    box-shadow: 5px 5px 15px 5px rgba(0, 0, 0, 0.459),
-      5px 5px 15px 5px rgba(0, 0, 0, 0.459);
-    border-radius: 1vh;
-
-    .accounter-credentials {
-    }
-
-    input {
-      padding: 1rem;
-      font-size: 1.3rem;
-      min-width: 60%;
-      max-width: 30rem;
-      margin: 0 auto 0 auto;
-
-      &:hover {
-        box-shadow: 0 0 5px 2px white;
-      }
-
-      &:-webkit-autofill {
-        box-shadow: 0 0 0 50px rgb(0, 0, 0) inset;
-        -webkit-box-shadow: 0 0 0 50px rgb(0, 0, 0) inset;
-        /* Change the color to your own background color */
-        -webkit-text-fill-color: rgb(255, 255, 255);
-      }
-    }
-  }
-
-  .action {
-    transition: 0.2s ease;
-    font-size: 1.2rem;
-
-    &:hover {
-      box-shadow: 0 0 5px 2px white;
-      transition: 0.2s ease;
-      z-index: 2;
-      transform: scale(1.1);
-    }
-  }
-}
 
 #root {
   min-height: 65vh;
 }
 
-.rounded-left-side {
-  border-radius: 10vh 0 0 10vh;
-}
-
-.rounded-right-side {
-  border-radius: 0 10vh 10vh 0;
-}
 .product-holder {
   display: flex;
   flex-direction: row;
@@ -335,68 +127,4 @@
     letter-spacing: .6px;
   }
 }
-.test-bg{
-  background-color: #121212;
-}
-.text-purple{
-  color: $primary-purple;
-}
 
-
-
-
-.min-h-30 {
-  min-height: 30rem;
-}
-
-
-
-
-
-
-.footer-emblem {
-  background: $bg-transparent-c;
-  min-height: 10rem;
-  min-width: 250px;
-  .footer-logo {
-    max-width: 7.5rem;
-    max-height: 7.5rem;
-    opacity: 0.9;
-  }
-  .footer-logo-text {
-    font-size: 3rem;
-    background: $gradient-red;
-    background-clip: text;
-    -webkit-background-clip: text;
-    color: transparent;
-  }
-}
-
-.footer-anchor {
-  background: linear-gradient(
-    to right,
-    $blue-700,
-    $blue-700 50%,
-    rgb(104, 104, 104) 50%
-  );
-  background-clip: text;
-  -webkit-background-clip: text;
-  -webkit-text-fill-color: transparent;
-  background-size: 200% 100%;
-  background-position: 100%;
-  transition: background-position 275ms ease;
-  text-decoration: none; // text decorations are clipped in WebKit browsers\\
-  color: royalblue;
-  &:hover {
-    background-position: 0 0%;
-  }
-}
-.mainNav-btn {
-  letter-spacing: 0.8px;
-}
-.prodNav-btn {
-  font-weight: 300;
-  letter-spacing: 1.5px;
-  text-transform: uppercase;
-  text-shadow: 0px 0px 5px rgb(255, 255, 255);
-}

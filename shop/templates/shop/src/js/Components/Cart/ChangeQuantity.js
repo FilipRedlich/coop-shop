@@ -12,7 +12,7 @@ const ChangeQuantityForm = (props) => {
         <select className="quantity-select" name="quantity">
           <CreateOptions howMany={items} />
         </select>
-        <input type="submit" value="Change" />
+        <input type="submit" value="Change" className="quantity-change" />
       </form>
     );
 }
