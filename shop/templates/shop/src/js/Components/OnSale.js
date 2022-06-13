@@ -34,7 +34,7 @@ const OnSale = () => {
   return (
     <>
        <section className="sale p-2 py-5 animate__animated animate__backInRight">
-        <GetItemsOnDiscount el={discountItems} />
+        <GetItemsOnDiscount el={discountItemsTest} />
       </section>
     </>
   );

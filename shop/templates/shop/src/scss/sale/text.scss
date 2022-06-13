@@ -1,0 +1,16 @@
+.text-smaller {
+  color: gray;
+  font-size: 1.5rem;
+  text-decoration: line-through;
+  text-align: right;
+  flex-basis: 40%;
+  font-weight: 300;
+}
+.text-bigger {
+  color: $primary-purple;
+  font-size: 2rem;
+  text-align: left;
+  flex-basis: 60%;
+  font-weight: 600;
+}
+
