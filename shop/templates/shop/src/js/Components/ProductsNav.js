@@ -4,8 +4,6 @@ import { render } from "react-dom";
 
 //components
 import OnSale from "./OnSale";
-import Services from "./Services";
-import Outlet from "./Outlet";
 import Newsletter from "./Newsletter";
 import { RenderFromCat, renderInSubRoot, renderRoot } from "./RenderScripts";
 import { ButtonBuilder2 } from "./ComponentBuilders";
@@ -157,22 +155,6 @@ const ProductNav = () => {
           }}
         >
           On sale
-        </button>
-        <button
-          className="btn btn-lg bg-transparent prodNav-btn text-white"
-          onClick={() => {
-            renderRoot(<Outlet />);
-          }}
-        >
-          Outlet
-        </button>
-        <button
-          className="btn btn-lg bg-transparent prodNav-btn text-white"
-          onClick={() => {
-            renderRoot(<Services />);
-          }}
-        >
-          Services
         </button>
         <button
           className="btn btn-lg bg-transparent prodNav-btn text-white"

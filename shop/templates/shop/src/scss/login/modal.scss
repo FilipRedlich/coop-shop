@@ -1,6 +1,7 @@
 @import './inputs.scss';
 @import "./background.scss";
 .login-section {
+  font-family: $font-main;
   min-height: 40rem;
   position: relative;
   @include login-inputs;
@@ -16,10 +17,8 @@
       5px 5px 15px 5px rgba(0, 0, 0, 0.459);
     border-radius: 1vh;
 
-    .accounter-credentials {
-    }
-
-   
+    // .accounter-credentials {
+    // }
   }
 
 }
