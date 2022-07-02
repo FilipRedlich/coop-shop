@@ -1,6 +1,7 @@
 @import '../utility.scss';
 .categories {
   overflow-y: scroll;
+  overflow-x: hidden;
   max-height: 25rem;
   max-width: 10rem !important;
 
