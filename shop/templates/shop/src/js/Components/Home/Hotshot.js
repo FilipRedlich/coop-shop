@@ -1,4 +1,3 @@
-import image1 from "../../images/undraw_dev_productivity_re_fylf.svg";
 const Hotshot = (props) => {
   const info = props.info;
   console.log(info, 'myprtop')

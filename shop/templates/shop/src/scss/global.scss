@@ -8,14 +8,19 @@ body {
 }
 ::-webkit-scrollbar {
   background: $surface;
-  width: 0.5rem;
+  width: .85rem;
+  height: .5rem;
 }
 
 ::-webkit-scrollbar-thumb {
   background: $primary-purple2;
-  border-radius: 1vh;
+  border-radius: .5vh;
 }
-
+::-webkit-scrollbar-thumb:hover{
+  //background: $gradient-purple;
+  background: $primary-dark-purple;
+  transition: .3s all;
+}
 img{
   width: 100%;
 }

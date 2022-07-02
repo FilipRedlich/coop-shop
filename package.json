@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    "dev": "parcel shop/templates/shop/index.html --open",
+    "dev": "parcel shop/templates/shop/index.html --open --https",
     "prodUnofficial": "parcel build shop/templates/shop/index.html --dist-dir=shop/templates/shop/distUnofficial --public-url .",
     "prod": "parcel build shop/templates/shop/index.html --out-dir=shop/templates/shop/dist --public-url .",
     "pys": "python manage.py runserver",
@@ -21,7 +21,8 @@
   },
   "homepage": "https://github.com/FilipRedlich/coop-shop#readme",
   "devDependencies": {
-    "@parcel/transformer-sass": "^2.6.0",
+    "@parcel/babel-preset-env": "^2.6.2",
+    "@parcel/transformer-sass": "^2.5.0",
     "assert": "^2.0.0",
     "autoprefixer": "^9.0.0",
     "browserslist": "^4.20.2",
@@ -32,8 +33,7 @@
     "eslint-config-prettier": "^8.5.0",
     "eslint-plugin-node": "^11.1.0",
     "eslint-plugin-prettier": "^4.0.0",
-    "parcel": "^2.6.0",
-    "parcel-bundler": "^1.12.5",
+    "parcel": "^2.5.0",
     "postcss": "^8.4.13",
     "postcss-focus": "^5.0.1",
     "prettier": "^2.5.1",

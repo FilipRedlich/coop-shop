@@ -4,7 +4,7 @@ import { render } from "react-dom";
 //imported components
 import MainNav from "./Components/MainNav";
 import ProductsNav from "./Components/ProductsNav";
-import MainContent from "./Components/MainContent";
+import MainContent from "./Components/Home/MainContent";
 import MainFooter from "./Components/Footer";
 import { RenderOnLoad } from "./Components/RenderScripts";
 import { AfterLoad } from "./Components/Test";

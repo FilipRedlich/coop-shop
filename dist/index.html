@@ -7,19 +7,16 @@
     <meta name="description" content="E-commerce website">
     <link rel="shortcut icon" href="/shop_logo.6e99bcd4.svg" type="image/x-icon">
     <title>E-commerce</title>
-    <!-- <link rel="stylesheet" href="{% static 'shop/main.7ddbcda9.css' %}">
-    <script src="{% static 'shop/App.13311ed0.js' %}" type="module" defer=""></script>
-  <script src="{% static 'shop/main.7ddbcda9.js' %}"></script> -->
     <link rel="stylesheet" href="/index.3fa258a8.css">
     <script src="/index.53beede5.js" defer=""></script>
   </head>
   <body class="bg-dark min-vh-100 position-relative">
-    <script>"use strict";
-var CSRF_TOKEN = "{{ csrf_token }}";
-var currentUser = "{{request.session.email}}"; //Not converted items
-var hasDiscount = "{% hasDiscount %}".split("***");
-var hasBasketProducts = "{{ basketProducts }}".split("***");
-var hasProducts = [
+    <script>const CSRF_TOKEN = "{{ csrf_token }}";
+const currentUser = "{{request.session.email}}";
+//Not converted items
+const hasDiscount = "{% hasDiscount %}".split("***");
+const hasBasketProducts = "{{ basketProducts }}".split("***");
+const hasProducts = [
     "{% getProductsFromSubcat 1 %}".split("***"),
     "{% getProductsFromSubcat 2 %}".split("***"),
     "{% getProductsFromSubcat 3 %}".split("***"),
@@ -39,9 +36,9 @@ var hasProducts = [
     "{% getProductsFromSubcat 17 %}".split("***"),
     "{% getProductsFromSubcat 18 %}".split("***"),
     "{% getProductsFromSubcat 19 %}".split("***"),
-    "{% getProductsFromSubcat 20 %}".split("***")
+    "{% getProductsFromSubcat 20 %}".split("***"), 
 ];
-var hasSubcatImages = [
+const hasSubcatImages = [
     "{% getSubcatsFromCat 1 2 %}",
     "{% getSubcatsFromCat 2 2 %}",
     "{% getSubcatsFromCat 3 2 %}",
@@ -49,9 +46,9 @@ var hasSubcatImages = [
     "{% getSubcatsFromCat 5 2 %}",
     "{% getSubcatsFromCat 6 2 %}",
     "{% getSubcatsFromCat 7 2 %}",
-    "{% getSubcatsFromCat 8 2 %}"
+    "{% getSubcatsFromCat 8 2 %}", 
 ];
-var hasSubcatsName = [
+const hasSubcatsName = [
     "{% getSubcatsFromCat 3 1 %}",
     "{% getSubcatsFromCat 4 1 %}",
     "{% getSubcatsFromCat 5 1 %}",
@@ -61,8 +58,9 @@ var hasSubcatsName = [
     "{% getSubcatsFromCat 9 1 %}",
     "{% getSubcatsFromCat 10 1 %}",
     "{% getSubcatsFromCat 11 1 %}",
-    "{% getSubcatsFromCat 12 1 %}"
-]; //default arrays where discount items will be pushed
+    "{% getSubcatsFromCat 12 1 %}", 
+];
+//default arrays where discount items will be pushed
 var discountItems = [];
 var basketProducts = [];
 var products = [];
@@ -75,17 +73,16 @@ var pushedElement = "{{cat.1}}";
 console.log(pushedElement);
 catNames.push(pushedElement);
 " {% endfor %}";
-var singleSplit = function singleSplit(fromArray, toArray) {
-    var method = arguments.length > 2 && arguments[2] !== undefined ? arguments[2] : 0;
-    if (method === 0) fromArray.map(function(x) {
+const singleSplit = (fromArray, toArray, method = 0)=>{
+    if (method === 0) fromArray.map((x)=>{
         toArray.push(x.split(";;;"));
     });
-    if (method === 1) fromArray.map(function(x) {
+    if (method === 1) fromArray.map((x)=>{
         toArray.push(x.split(";"));
     });
     if (method === 2) for(item in fromArray)toArray.push(fromArray[item].split(";;;"));
 };
-var multiSplit = function multiSplit(fromArray, toArray) {
+const multiSplit = (fromArray, toArray)=>{
     var supportArray = [];
     for(i in fromArray){
         for(y in fromArray[i])supportArray.push(fromArray[i][y].split(";;;"));
@@ -95,7 +92,8 @@ var multiSplit = function multiSplit(fromArray, toArray) {
 };
 multiSplit(hasProducts, products);
 singleSplit(hasDiscount, discountItems, 2);
-singleSplit(hasBasketProducts, basketProducts); //singleSplit(hasSubcatImages, subcatImages, 1);
+singleSplit(hasBasketProducts, basketProducts);
+//singleSplit(hasSubcatImages, subcatImages, 1);
 console.log(discountItems);
 
 </script>

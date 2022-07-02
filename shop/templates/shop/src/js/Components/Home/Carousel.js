@@ -1,8 +1,8 @@
-import image1 from "../../images/undraw_dev_productivity_re_fylf.svg";
-import image2 from "../../images/undraw_software_engineer_re_fyew.svg";
+import image1 from "../../../images/undraw_dev_productivity_re_fylf.svg";
+import image2 from "../../../images/undraw_software_engineer_re_fyew.svg";
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
-import { TEST_ARRAY } from "./Test";
+import { TEST_ARRAY } from "../Test";
 const images = [
     { id: 1, src: image1, testVal: TEST_ARRAY[0] },
     { id: 2, src: image2 },

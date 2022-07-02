@@ -2,6 +2,13 @@
 .rootSubcategories {
   max-height: 25rem;
   overflow-y: scroll !important;
+  &:hover > .subcategory {
+    opacity: 0.3;
+  }
+  &:hover > .subcategory:hover {
+    opacity: 1;
+    transform: translateY(0.5rem) scale(1.1);
+  }
   .subcategory {
     display: flex;
     flex-direction: column-reverse;
