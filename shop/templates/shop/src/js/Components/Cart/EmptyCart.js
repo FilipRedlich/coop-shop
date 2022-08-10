@@ -1,3 +1,4 @@
+import { renderRoot } from "../utility/RenderScripts";
 const EmptyCart = () => {
     return (
       <div className="cart-item text-center p-2 w-100 bg-dark rounded m-auto">

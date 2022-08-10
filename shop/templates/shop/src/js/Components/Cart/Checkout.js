@@ -20,7 +20,7 @@ const CheckOut = () => {
     <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
       <div className="flexb-70">
         <label className="text-muted">Subtotal:</label>
-        <h5>{<TotalPrice price={basketProductsTest} />}</h5>
+        <h5>{<TotalPrice price={basketProducts} />}</h5>
         <p className="text-muted">{`+ Delivery`}</p>
       </div>
       <input
