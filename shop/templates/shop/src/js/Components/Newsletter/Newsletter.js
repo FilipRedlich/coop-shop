@@ -1,4 +1,4 @@
-import img1 from '../../images/undraw_envelope_re_f5j4.svg';
+import img1 from '../../../images/undraw_envelope_re_f5j4.svg';
 
 const Newsletter = () => {
   return (

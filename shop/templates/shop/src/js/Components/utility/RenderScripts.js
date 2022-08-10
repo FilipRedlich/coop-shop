@@ -1,10 +1,8 @@
 import React from "react";
-import  {
-  imgArr,
-} from "./Test";
-import { addEvent } from "./ProductsNav";
+import { imgArr } from "./Test";
+import { addEvent } from "../Nav/ProductsNav";
 import { render } from "react-dom";
-
+//Start of variables for testing (Due to weird parcel bugs)
 const subcatNamesTest = [
   [""],
   [
@@ -40,6 +38,7 @@ const hotshotTest = [
   "3.0",
   "True",
 ];
+//end of variables
 
 const renderRoot = (
   renderElement,
@@ -319,10 +318,24 @@ const RenderFromCat = (ARRAY = []) => {
             addEvent();
 
             break;
+          case `${ARRAY[2]}`:
+            render(
+              <RenderSubcat el={subcatNamesTest[3]} img={subcatImages[5]} />,
+              document.querySelector("#rootSubcategories")
+            );
+            addEvent();
+            break;
+          case `${ARRAY[3]}`:
+            render(
+              <RenderSubcat el={subcatNamesTest[4]} img={subcatImages[6]} />,
+              document.querySelector("#rootSubcategories")
+            );
+            addEvent();
+            break;
         }
       });
     }
   }, 200);
 };
 
-export {renderRoot, renderInSubRoot, RenderOnLoad, RenderFromCat};
+export { renderRoot, renderInSubRoot, RenderOnLoad, RenderFromCat };

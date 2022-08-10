@@ -3,10 +3,10 @@ import { useState } from "react";
 import { render } from "react-dom";
 
 //components
-import OnSale from "./OnSale";
-import Newsletter from "./Newsletter";
-import { RenderFromCat, renderInSubRoot, renderRoot } from "./RenderScripts";
-import { ButtonBuilder2 } from "./ComponentBuilders";
+import OnSale from "../OnSale/OnSale";
+import Newsletter from "../Newsletter/Newsletter";
+import { RenderFromCat, renderInSubRoot, renderRoot } from "../utility/RenderScripts";
+import { ButtonBuilder2 } from "../utility/ComponentBuilders";
 import {
   TEST_SUBCAT_NAME,
   TEST_CAT,
@@ -15,7 +15,7 @@ import {
   prod,
   productsTestuctsTest,
   catNamesTest,
-} from "./Test";
+} from "../utility/Test";
 
 
 const showPopup = () => {
@@ -85,7 +85,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={productsTest} index={i} />,
+              <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -102,7 +102,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={productsTest} index={i} />,
+              <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );

@@ -1,4 +1,4 @@
-import logo from '../../images/shop_logo.svg';
+import logo from '../../../images/shop_logo.svg';
 const MainFooter = () => {
     return (
       <footer className="d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-black footer w-100 text-white">

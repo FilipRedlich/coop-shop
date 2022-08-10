@@ -2,9 +2,9 @@ import React from "react";
 import { render } from "react-dom";
 
 //imported components
-import Login from "./Login/Login";
-import Cart from "./Cart/Cart";
-import MainContent from "./Home/MainContent";
+import Login from "../Login/Login";
+import Cart from "../Cart/Cart";
+import MainContent from "../Home/MainContent";
 
 const MainNav = () => {
   return (
@@ -23,7 +23,7 @@ const MainNav = () => {
           </h1>
         </div>
 
-        <div className="col min-rem m-auto">
+        {/* <div className="col min-rem m-auto">
           <form className="form d-flex">
             <input
               className="form-control shadow-lg"
@@ -35,7 +35,7 @@ const MainNav = () => {
               Search
             </button>
           </form>
-        </div>
+        </div> */}
 
         <div className="col m-auto">
           <div className="d-flex flex-wrap gap-3 justify-content-end">

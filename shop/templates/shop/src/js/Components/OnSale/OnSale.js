@@ -1,5 +1,5 @@
-import img1 from "../../images/undraw_dev_productivity_re_fylf.svg";
-import { discountItemsTest } from "./Test";
+import img1 from "../../../images/undraw_dev_productivity_re_fylf.svg";
+import { discountItemsTest } from "../utility/Test";
 const GetItemsOnDiscount = (props) => {
   const items = props.el;
 
@@ -34,7 +34,7 @@ const OnSale = () => {
   return (
     <>
        <section className="sale p-2 py-5 animate__animated animate__backInRight">
-        <GetItemsOnDiscount el={discountItemsTest} />
+        <GetItemsOnDiscount el={discountItems} />
       </section>
     </>
   );

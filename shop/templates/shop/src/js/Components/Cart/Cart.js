@@ -1,5 +1,5 @@
 import React from "react";
-import { basketProductsTest, cartContentsTest } from "../Test";
+import { basketProductsTest, cartContentsTest } from "../utility/Test";
 import HowManyItems from "./HowManyItems";
 import CheckOut from "./Checkout";
 //imported components
@@ -15,7 +15,7 @@ const Cart = () => {
           id="card-items"
           className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-black rounded"
         >
-          <HowManyItems el={basketProductsTest} />{" "}
+          <HowManyItems el={basketProducts} />{" "}
           {/* cardContentsTest or CardContents*/}
         </div>
         <div className="checkout m-auto bg-black rounded">

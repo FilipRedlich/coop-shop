@@ -1,4 +1,4 @@
-import { basketProductsTest } from "../Test";
+import { basketProductsTest } from "../utility/Test";
 
 const TotalPrice = (props) => {
   const CurrentPrice = props.price;
