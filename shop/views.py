@@ -196,15 +196,18 @@ def logout(request):
 def addProductToBasket(request):
     #getting user id to identify user
     productID = request.POST['id']
-    #check to prevent adding duplicate products
-    if str(Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID)) == "<QuerySet []>":
-        #getting quantity from form or set to 1
-        if 'quantity' in request.POST:
-            quantity = request.POST['quantity']
-        else:
-            quantity = 1
-        #query to add product to given user's basket
-        Basket.objects.create(userID_id=request.session['userpk'],productID_id=productID,quantity=quantity)
+    try:
+        #check to prevent adding duplicate products
+        if str(Basket.objects.filter(userID_id=request.session['userpk']).filter(productID_id=productID)) == "<QuerySet []>":
+            #getting quantity from form or set to 1
+            if 'quantity' in request.POST:
+                quantity = request.POST['quantity']
+            else:
+                quantity = 1
+            #query to add product to given user's basket
+            Basket.objects.create(userID_id=request.session['userpk'],productID_id=productID,quantity=quantity)
+    except:
+        pass
     #redirect to index after end of function
     return HttpResponseRedirect(reverse('shop:index'))
 
