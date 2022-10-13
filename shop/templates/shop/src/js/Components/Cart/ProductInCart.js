@@ -14,7 +14,8 @@ const ProductInCart = (props) => {
     }
 
     return (
-      <div className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 rounded m-auto">
+      <form className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 rounded m-auto">
+        <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
         <div className="d-flex flexb-50 gap-3 flex-row flex-wrap">
           <img src={x[2]} className="cart-img" alt={x[1]} loading="lazy" />
           <h4 className="my-auto item-name">{x[1]}</h4>
@@ -24,7 +25,7 @@ const ProductInCart = (props) => {
           <PricesOfProducts items={x} previousPrice={prevPrice} />
           <DeleteProductForm items={x} />
         </div>
-      </div>
+      </form>
     );
   });
 };

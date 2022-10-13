@@ -43,7 +43,7 @@ const basketProductsTest = [
     "0.9",
     "3.0",
     "False",
-    "5",
+    "2",
   ],
   [
     "8",
@@ -103,6 +103,7 @@ const basketProductsTest = [
     "0.8",
     "3.0",
     "False",
+    "3"
   ],
   [
     "28",
@@ -114,6 +115,7 @@ const basketProductsTest = [
     "0.8",
     "3.0",
     "False",
+    "2"
   ],
   [
     "28",

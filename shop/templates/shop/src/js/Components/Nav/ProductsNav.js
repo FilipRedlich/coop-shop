@@ -1,4 +1,4 @@
-import React from "react";
+import React, { createContext, useContext, useEffect } from "react";
 import { useState } from "react";
 import { render } from "react-dom";
 
@@ -18,6 +18,7 @@ import {
 } from "../utility/Test";
 
 
+
 const showPopup = () => {
   const popup = document.querySelector(".popup-modal");
 
@@ -31,9 +32,11 @@ const showPopup = () => {
   setTimeout(backToPrevPos, 1500); //Sets timeout to hide element after 1.5s
   console.log("showPopup function"); //Debug
 };
+
 const Popup = (props) => {
   const el = props.el;
-
+  const message = props.text;
+ 
   return (
     <>
       <div className="popup-modal">
@@ -186,9 +189,9 @@ const ProductNav = () => {
           ></div>
         </div>
       </section>
-      <Popup />
+      <Popup/>
     </>
   );
 };
-export { addEvent, RenderProducts2 };
+export { addEvent, RenderProducts2};
 export default ProductNav;
