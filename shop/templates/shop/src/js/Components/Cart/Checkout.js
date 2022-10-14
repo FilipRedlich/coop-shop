@@ -5,7 +5,7 @@ const TotalPrice = (props) => {
   var convertedPrice = 0; //Converted price to integer
 
   CurrentPrice.map((x) => {
-    convertedPrice += parseInt(x[5] * x[6]);
+    convertedPrice += parseInt((x[5] * x[6]) * x[9]);
   });
 
   if (isNaN(convertedPrice)) {

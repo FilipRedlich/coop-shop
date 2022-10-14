@@ -112,6 +112,7 @@ const addEvent = () => {
         });
       });
     }
+
   };
 
   initAddEvent();

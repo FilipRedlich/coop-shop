@@ -43,7 +43,7 @@ const basketProductsTest = [
     "0.9",
     "3.0",
     "False",
-    "2",
+    "1",
   ],
   [
     "8",
@@ -127,6 +127,7 @@ const basketProductsTest = [
     "0.8",
     "3.0",
     "False",
+    "3"
   ],
 ];
 const subcatNamesTest = [
