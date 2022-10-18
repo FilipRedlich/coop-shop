@@ -12,7 +12,7 @@ const Login = () => {
   
   return (
     <>
-      <section className="w-100 bg-dark position-relative login-section d-flex flex-column animate__animated animate__backInRight">
+      <section className="login-section animate__animated animate__backInRight">
         <ButtonSwitch />
         <LoginForm />
       </section>

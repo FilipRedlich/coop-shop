@@ -258,6 +258,244 @@ const hotshotTest = [
   "3.0",
   "True",
 ];
+const productsTest = [
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          "3",
+          "Intel Core i5-10400F, 2.9GHz, 12 MB, BOX",
+          "/static/shop/img/PRODUCTS/CPU_i5_10400F.jpg",
+          "2",
+          "5",
+          "649.0",
+          "1.0",
+          "4.5",
+          "False"
+      ],
+      [
+          "4",
+          "AMD Ryzen 7 5800X, 3.8GHz, 32 MB, BOX",
+          "",
+          "2",
+          "8",
+          "1729.0",
+          "0.67",
+          "3.0",
+          "True"
+      ]
+  ],
+  [
+      [
+          "5",
+          "Gigabyte B450 AORUS PRO",
+          "/static/shop/img/PRODUCTS/MOBO_AOURUS_PRO_B450.webp",
+          "3",
+          "5",
+          "380.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "6",
+          "Gigabyte B550 GAMING X V2",
+          "/static/shop/img/PRODUCTS/MOBO_GIGABYTE_GAMING_X_V2.jpg",
+          "3",
+          "21",
+          "470.0",
+          "0.87",
+          "3.0",
+          "False"
+      ]
+  ],
+  [
+      [
+          "7",
+          "Kingston Fury Beast, DDR4, 16 GB, 3200MHz, CL16",
+          "/static/shop/img/PRODUCTS/RAM_KINGSTON_FURY_BEAST.webp",
+          "4",
+          "1",
+          "358.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "8",
+          "Corsair Vengeance, DDR4, 16 GB, 3200MHz, CL16",
+          "/static/shop/img/PRODUCTS/RAM_CORSAIR_VENGEANCE.webp",
+          "4",
+          "1",
+          "350.0",
+          "1.0",
+          "3.0",
+          "False"
+      ]
+  ],
+  [
+      [
+          "9",
+          "PNY GeForce RTX 3060Ti Gaming Revel Epic-X RGB 8GB GDDR6",
+          "/static/shop/img/PRODUCTS/GPU_PNY_RTX_3060TI.webp",
+          "5",
+          "5",
+          "3500.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "10",
+          "Gigabyte GeForce GTX 1660 OC 6GB GDDR5",
+          "/static/shop/img/PRODUCTS/GPU_GIGABYTE_GTX_1660.png",
+          "5",
+          "1",
+          "1800.0",
+          "1.0",
+          "3.0",
+          "False"
+      ]
+  ],
+  [
+      [
+          "11",
+          "Kingston NV1 500 GB M.2 2280 PCI-E x4 Gen3 NVMe",
+          "/static/shop/img/PRODUCTS/SSD_KINGSTON_NV1_NVME.jpg",
+          "6",
+          "1",
+          "244.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "12",
+          "Crucial MX500 500 GB 2.5&quot; SATA III",
+          "/static/shop/img/PRODUCTS/SSD_CRUCIAL_MX500_SATA.webp",
+          "6",
+          "1",
+          "277.0",
+          "1.0",
+          "3.0",
+          "False"
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          "13",
+          "HP Pavilion Gaming TG01",
+          "/static/shop/img/PRODUCTS/PC_HP_PAVILION_GAMING_TG01.webp",
+          "11",
+          "2",
+          "4799.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "14",
+          "Game X G500",
+          "/static/shop/img/PRODUCTS/PC_ASUS_GAMEX.webp",
+          "11",
+          "2",
+          "6000.0",
+          "1.0",
+          "3.0",
+          "False"
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          "15",
+          "Samsung Odyssey G3A",
+          "/static/shop/img/PRODUCTS/MONITOR_ODDYSEY_G3.jpg",
+          "13",
+          "1",
+          "940.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "16",
+          "Asus VZ24EHE",
+          "/static/shop/img/PRODUCTS/MONITOR_ASUS_VZ24EHE.jpg",
+          "13",
+          "1",
+          "690.0",
+          "1.0",
+          "3.0",
+          "False"
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ],
+  [
+      [
+          ""
+      ]
+  ]
+]
+const testImg = [
+  
+]
 const AfterLoad = (element, renderPlace = null, time = 1000) => {
   setTimeout(() => {
     console.log(element, renderPlace);
@@ -305,4 +543,4 @@ export {
   imgArr,
   discountItemsTest
 };
-export { AfterLoad, renderTry };
+export { AfterLoad, renderTry, productsTest };

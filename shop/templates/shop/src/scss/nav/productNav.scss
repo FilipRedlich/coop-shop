@@ -1,13 +1,42 @@
+@import '../variables.scss';
 .product-nav {
   //backdrop-filter: blur(5px);
-  overflow: auto;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  margin: auto;
+  gap: 1rem;
   font-family: $font-main;
-  .prodNav-btn {
-    font-size: 1rem;
-    font-weight: 300;
-    letter-spacing: 1.2px;
-    text-transform: uppercase;
+  background: $bg-black;
+  z-index: 4;
+  transform: translateZ(4);
+  position: sticky;
+  top: 0;
+  width: 100%;
+  min-height: 4rem;
+
+  .product--nav-button {
+    background: transparent;
+    border: none;
+    font-size: 1.3rem;
+    padding: 0.5rem 1rem;
+    border: .2rem solid transparent;
+    border-radius: 0.3rem;
+    font-family: $font-main;
+    text-transform: capitalize;
+    cursor: pointer;
+    transition: .3s all;
     //text-shadow: 0px 0px 3px rgb(255, 255, 255);
+    &:hover{
+      transform: scale(1.03);
+      padding: 1rem 1.5rem;
+      border: .2rem solid $primary-purple;
+    }
+    &:focus {
+      transform: scale(1.03);
+      padding: 1rem 1.5rem;
+      border: .2rem solid $primary-purple;
+    }
   }
   button {
     transition: 0.2s;

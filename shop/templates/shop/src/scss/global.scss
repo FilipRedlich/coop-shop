@@ -1,3 +1,6 @@
+*{
+  box-sizing: border-box;
+}
 html{
   scroll-behavior: smooth;
 }
@@ -5,6 +8,7 @@ body {
   overflow-x: hidden;
   scrollbar-color: $primary-purple2 $surface;
   scrollbar-width: thin;
+  margin: 0;
 }
 ::-webkit-scrollbar {
   background: $surface;

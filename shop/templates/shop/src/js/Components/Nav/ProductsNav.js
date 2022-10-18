@@ -13,7 +13,7 @@ import {
   TEST_ARRAY,
   TEST_ARRAY2,
   prod,
-  productsTestuctsTest,
+  productsTest,
   catNamesTest,
 } from "../utility/Test";
 
@@ -88,7 +88,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -99,7 +99,7 @@ const addEvent = () => {
     if (subcatButtons[0].textContent === "Komputery stacjonarne") {
       subcatButtons.forEach((button, i) => {
         removeEventListener("click", button);
-        i += 9; //value before first index of next subcategory (for ex. 2nd subcat stars on 10th index)
+        i += 9; //value before first index of next subcategory (for ex. 2nd subcat starts on 10th index)
         i++;
         console.log("2nd cat addEvent func");
         button.addEventListener("click", () => {
@@ -135,13 +135,12 @@ const ProductNav = () => {
 
   return (
     <>
-      <nav className="product-nav bg-black z-index-3 transform-z-3 position-sticky top-0 w-100 d-flex flex-wrap justify-content-center m-auto p-3 gap-3 nav-products">
+      <nav className="product-nav">
         <button
-          className="btn btn-lg bg-transparent prodNav-btn text-white"
+          className="product--nav-button"
           aria-labelledby="categories"
           onClick={() => {
             ToggleClass();
-            //renderTry(TEST_ARRAY2);
             render(
               <ButtonBuilder2 el={catNames} />,
               document.querySelector("#categories")
@@ -153,7 +152,7 @@ const ProductNav = () => {
           Categories
         </button>
         <button
-          className="btn btn-lg bg-transparent prodNav-btn text-white"
+          className="product--nav-button"
           onClick={() => {
             renderRoot(<OnSale />);
           }}
@@ -161,7 +160,7 @@ const ProductNav = () => {
           On sale
         </button>
         <button
-          className="btn btn-lg bg-transparent prodNav-btn text-white"
+          className="product--nav-button"
           onClick={() => {
             renderRoot(<Newsletter />);
           }}
@@ -171,24 +170,44 @@ const ProductNav = () => {
       </nav>
 
       <section
-        className={`position-fixed categories-section translate-z-0 w-100  ${
-          isActive
-            ? "hide-element"
-            : " categories-section animate rounded categories-top text-white z-index-1 translate-middle-x bg-transparent-custom blur-bg "
-        }`}
+         className={` 
+         categories-main  
+         ${
+           isActive
+             ? "animateCloseCategories "
+             : "animateShowCategories bg-transparent-custom blur-bg"
+         }`}
+       
       >
-        <div className="row categories-wrapper gap-3 p-2 w-100 mt-5 min-h-30">
+        
           <div
             id="categories"
-            className="text-left categories col-3 no-gutters gap-1"
+            className="categories--main-container"
             //Inside this element buttons are rendered
-          ></div>
+            
+          >
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+            <button className="categories---main--container-category">Podzespoły komputerowe</button>
+            <button className="categories---main--container-category">Test</button>
+          </div>
 
           <div
             id="rootSubcategories"
-            className="bg-dark col-md rootSubcategories mx-auto justify-content-center d-flex flex-row flex-wrap gap-3 p-2 "
           ></div>
-        </div>
+     
       </section>
       <Popup/>
     </>

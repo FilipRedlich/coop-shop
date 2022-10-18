@@ -15,7 +15,7 @@ const Cart = () => {
           id="card-items"
           className="cart-items d-flex flex-column flex-wrap  flexb-70 m-auto gap-3 p-3 bg-black rounded"
         >
-          <HowManyItems el={basketProducts} />
+          <HowManyItems el={basketProductsTest} />
           {/* cardContentsTest or CardContents*/}
         </div>
         <div className="checkout m-auto bg-black rounded">

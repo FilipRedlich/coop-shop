@@ -4,15 +4,14 @@ import { render } from "react-dom";
 //imported components
 import Login from "../Login/Login";
 import Cart from "../Cart/Cart";
-import MainContent from "../Home/MainContent";
+import {MainContent} from "../Home/MainContent";
 
 const MainNav = () => {
   return (
-    <nav className="w-100 bg-black position-relative  z-index-3 transform-z-3 d-flex flex-wrap justify-content-between gap-3 p-2">
-      <div className="row m-auto w-100 gap-3">
-        <div className="col m-auto">
-          <h1
-            className="text-white text-center"
+    <nav className="main-nav">
+  
+          <h3
+            className="main--nav-name"
             role="button"
             onClick={() => {
               console.log("MainNav");
@@ -20,29 +19,15 @@ const MainNav = () => {
             }}
           >
             SKLEP
-          </h1>
-        </div>
+          </h3>
+    
 
-        {/* <div className="col min-rem m-auto">
-          <form className="form d-flex">
-            <input
-              className="form-control shadow-lg"
-              type="search"
-              placeholder="Search"
-              aria-label="Search"
-            />
-            <button className="btn bg-dark text-white" type="submit">
-              Search
-            </button>
-          </form>
-        </div> */}
 
-        <div className="col m-auto">
-          <div className="d-flex flex-wrap gap-3 justify-content-end">
-            <p className="my-auto text-white mainNav-btn">{currentUser}</p>
-            <div className="d-flex gap-3 ">
+        <div className="main--nav-user">
+            <p className="main---nav--user-name">{currentUser}</p>
+           
               <button
-                className="btn text-white mainNav-btn bg-dark"
+                className="main---nav--user-button"
                 onClick={() => {
                   render(<Cart />, document.querySelector("#root"));
                 }}
@@ -50,7 +35,7 @@ const MainNav = () => {
                 Shopping cart
               </button>
               <button
-                className="btn text-white mainNav-btn bg-dark"
+                className="main---nav--user-button"
                 onClick={() => {
                   console.log("MainNav");
                   render(<Login />, document.querySelector("#root"));
@@ -58,10 +43,8 @@ const MainNav = () => {
               >
                 Login
               </button>
-            </div>
-          </div>
         </div>
-      </div>
+
     </nav>
   );
 };

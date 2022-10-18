@@ -1,32 +1,27 @@
 import { useState, useEffect } from "react";
-const ButtonSwitch = () => {
-  const [isLogin, setOpposite] = useState(false);
+const ButtonSwitch = (form) => {
+  const [isLogin, setLogin] = useState(false);
 
-  var form = document.querySelector("#login-form");
-  //changes element based on useState boolean above (isLogin and setOpposite)
-  const checkState = () => {
-    const buttonSwitch = document.querySelector("#switch");
-    //if true it changes form attribute to register (and text of input)
+
+  useEffect(() => {
+    console.log(isLogin);
     if (isLogin) {
-      form.setAttribute("action", "/register/");
-      buttonSwitch.value = "Register";
+      document.querySelector('#login-form').setAttribute("action", "/register/");
+      document.querySelector('#switch').value = "Register";
     }
     //if false it changes form attribute to login
     if (!isLogin) {
-      form.setAttribute("action", "/login/");
-      buttonSwitch.value = "Login";
+      document.querySelector('#login-form').setAttribute("action", "/login/");
+      document.querySelector('#switch').value = "Login";
     }
-  };
-  useEffect(() => {
-    console.log(isLogin);
-    setTimeout(checkState, 10);
-  });
+  }, [isLogin]);
+  
   return (
-    <div className="d-flex login-switch  justify-content-center mx-auto ">
+    <div className="login-switch">
       <button
-        className="btn action w-50 rounded-left-side bg-black text-white border-0 p-2"
+        className="action rounded-left-side"
         onClick={(e) => {
-          setOpposite(false); //useState hook
+          setLogin(false);
           e.preventDefault();
         }}
       >
@@ -34,9 +29,9 @@ const ButtonSwitch = () => {
       </button>
       <button
         type="submit"
-        className="btn action w-50 rounded-right-side bg-black text-white border-0 p-2"
+        className="action rounded-right-side "
         onClick={(e) => {
-          setOpposite(true); //useState hook
+          setLogin(true);
           e.preventDefault();
         }}
       >

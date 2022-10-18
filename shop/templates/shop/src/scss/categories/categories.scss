@@ -1,21 +1,120 @@
 @import '../utility.scss';
-.categories {
-  overflow-y: scroll;
-  overflow-x: hidden;
-  max-height: 25rem;
-  max-width: 10rem !important;
 
-  &::-webkit-scrollbar-track {
-    background: $dark;
+.hide--categories-main{
+  transform:  translateY(-70rem);
+  transition: .5s all;
+}
+.categories-main {
+   background: $bg-transparent-c;
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  width: 100%;
+  height: 50rem;
+  margin: auto;
+  z-index: 2;
+  font-family: $font-main;
+  transition: .3s all;
+  //backdrop-filter: blur(5px);
+
+  .categories--main-container {
+    display: flex;
+    flex-direction: column;
+    
+    gap: .5rem;
+    min-width: 13rem;
+    //max-width: 15rem;
+    max-height: 35rem;
+    padding: 1rem;
+    overflow: auto;
+    &::-webkit-scrollbar-track {
+      background: $dark;
+    }
+
+    &::-webkit-scrollbar-thumb {
+      background: rgb(66, 66, 66);
+      transition: 0.5s;
+
+      &:hover {
+        background: $white;
+        transition: 0.5s;
+      }
+    }
+
+    .categories---main--container-category {
+      @include default-button;
+      background: $dark;
+      border: none;
+      border-radius: .15rem;
+      min-width: 10rem;
+      font-size: 1rem;
+      font-family: $font-main;
+      border: .2rem solid transparent;
+      transition: .3s all;
+      &:hover{
+        background: $gray-600;
+        transform: scale(1.02);
+      }
+      &:focus{
+        border: .2rem solid $primary-purple;
+        transform: scale(1.05);
+  
+      }
+    }
   }
 
-  &::-webkit-scrollbar-thumb {
-    background: rgb(66, 66, 66);
-    transition: 0.5s;
+  #rootSubcategories {
+    background: $dark;
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 1rem;
+    padding: 1rem;
+    max-height: 35rem;
+    overflow: auto;
+    &:hover>.subcategory {
+      opacity: 0.3;
+    }
 
-    &:hover {
-      background: $white;
-      transition: 0.5s;
+    &:hover>.subcategory:hover {
+      opacity: 1;
+      transform: translateY(0.5rem) scale(1.1);
+    }
+
+    .subcategory {
+      display: flex;
+      flex-direction: column-reverse;
+      background: $bg-transparent-c;
+      color: white;
+      font-size: 1.2rem;
+      text-align: center;
+      z-index: 5;
+      border: .2rem solid transparent;
+      border-radius: 10px;
+      min-width: 16rem;
+      max-width: 16rem;
+      min-height: 20rem;
+      max-height: 25rem;
+      transition: .3s all;
+      cursor: pointer;
+      text-align: center;
+      font-family: $font-main;
+      p{
+        margin: auto;
+      }
+      img {
+        max-width: 95%;
+        max-height: 15rem;
+        min-height: 10rem;
+        margin: auto;
+        z-index: 4;
+      }
+      &:focus{
+        border: .2rem solid $primary-purple;
+        transform: scale(1.05);
+      }
     }
   }
 }

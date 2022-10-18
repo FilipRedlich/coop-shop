@@ -39,7 +39,7 @@ const ButtonBuilder2 = (props) => {
   return catBtn.map((el) => {
     return (
       <>
-        <button className="cat-btn btn categories-button mb-2 mx-auto text-white bg-dark">
+        <button className="categories---main--container-category">
           {el}
         </button>
       </>

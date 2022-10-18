@@ -1,61 +1,61 @@
 import logo from '../../../images/shop_logo.svg';
 const MainFooter = () => {
     return (
-      <footer className="d-flex flex-row flex-wrap justify-content-center position-relative gap-3 py-5 bg-black footer w-100 text-white">
-        <div className=" flexb-60 position-relative p-3">
-          <div className="d-flex flex-row justify-content-center w-50 m-auto rounded gap-3 footer-emblem">
+      <footer className="footer">
+        <div className="footer--logo-container">
+          <div className="footer---logo--container-block rounded footer-emblem">
             <img src={logo} className="footer-logo" alt='pycoop logo' />
             <h2 className="my-auto footer-logo-text">PESTKA</h2>
           </div>
         </div>
 
-        <div className="d-flex flex-row my-auto gap-5 flexb-30">
+        <div className="footer--logo-container-links">
           <div className="">
-            <h3 className="text-uppercase">links</h3>
-            <h6>
+            <h3 className="">links</h3>
+            <p>
               <a
                 className="footer-anchor remove-all-decoration"
                 href="https://github.com/FilipRedlich/coop-shop"
               >
                 Source code
               </a>
-            </h6>
-            <h6>
+            </p>
+            <p>
               <a
                 className="footer-anchor remove-all-decoration"
                 href="https://github.com/BrtSkr"
               >
                 BrtSkr
               </a>
-            </h6>
-            <h6>
+            </p>
+            <p>
               <a
                 className="footer-anchor remove-all-decoration"
                 href="https://github.com/FilipRedlich"
               >
                 FilipRedlich
               </a>
-            </h6>
+            </p>
           </div>
           <div className="">
             <h3 className="text-uppercase">contact</h3>
-            <h6>
+            <p>
               <a
                 className="footer-anchor remove-all-decoration"
                 href="mailto:brtskr1503@gmail.com"
               >
                 BrtSkr
               </a>
-            </h6>
-            <h6>
+            </p>
+            <p>
               <a
                 className="footer-anchor remove-all-decoration"
                 href="mailto:filipredlich.pr@gmail.com"
               >
                 FilipRedlich
               </a>
-            </h6>
-            <h6></h6>
+            </p>
+            <p></p>
           </div>
           {/* <div className="social-bubble">
             <h3 className='text-uppercase'>Socials</h3>

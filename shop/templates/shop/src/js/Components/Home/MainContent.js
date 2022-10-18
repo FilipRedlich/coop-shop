@@ -7,11 +7,11 @@ const MainContent = () => {
     <article className="container-fluid main py-5 bg-dark text-white  animate__animated animate__backInRight">
       <section className="main-content">
         <Carousel />
-        <Hotshot info={hotshot} />
+        <Hotshot info={hotshotTest} />
       </section>
       <ItemBar />
     </article>
   );
 };
 
-export default MainContent;
+export {MainContent};

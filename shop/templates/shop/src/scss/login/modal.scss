@@ -1,13 +1,19 @@
-@import './inputs.scss';
 @import "./background.scss";
+
 .login-section {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  background: $dark;
+  position: relative;
   font-family: $font-main;
   min-height: 40rem;
-  position: relative;
-  @include login-inputs;
+  width: 100%;
   @include login-background;
 
   .login-modal {
+    padding: 1rem;
+    gap: 1rem;
     background: $bg-transparent-c;
     min-width: 40%;
     max-width: 50rem;
@@ -17,8 +23,52 @@
       5px 5px 15px 5px rgba(0, 0, 0, 0.459);
     border-radius: 1vh;
 
-    // .accounter-credentials {
-    // }
+    .login--modal-form {
+      .login---modal--form-currentUser {
+        text-align: center;
+        font-family: $font-main;
+        margin: 2rem 0;
+      }
+
+      .login---modal--input-container {
+        display: flex;
+        flex-direction: column;
+        gap: 1.5rem;
+        min-width: 60%;
+        max-width: 25rem;
+        margin: auto;
+        transition: .3s all;
+
+        input {
+          font-family: $font-main;
+          font-size: 1.3rem;
+          border: .2rem solid transparent;
+          border-radius: .2rem;
+          background: $black;
+          min-height: 4rem;
+          width: 100%;
+          padding: 1rem;
+          transition: .3s all;
+
+          &:focus {
+            transform: scale(1.03);
+            padding: 1rem 1.5rem;
+            border: .2rem solid $primary-purple;
+          }
+
+          &:hover {
+            box-shadow: 0 0 5px 2px $primary-purple2;
+
+          }
+
+          &:nth-child(4) {
+            margin: 1rem 0 0 0;
+            cursor: pointer;
+          }
+        }
+      }
+
+    }
   }
 
 }

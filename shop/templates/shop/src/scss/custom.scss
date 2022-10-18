@@ -52,6 +52,7 @@
     overflow: hidden;
     img {
       max-width: 10rem;
+      max-height: 60%;
     }
     &::before {
       @include pseudo-el;

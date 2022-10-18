@@ -13,6 +13,15 @@
   bottom: 0;
   left: 0;
 }
+@mixin default-button{
+  background: transparent;
+  border: none;
+  font-size: 1.25rem;
+  padding: 0.5rem 1rem;
+  border-radius: 0.3rem;
+  text-transform: capitalize;
+  cursor: pointer;
+}
 @mixin anim-shadow-inset-center($shColor) {
   @keyframes shadow-inset-center {
     0% {

@@ -1,0 +1,20 @@
+.logout-button {
+    background: $black;
+    display: block;
+    min-width: 65%;
+    max-width: 27.5rem;
+    height: 4rem;
+    border: none;
+    border-radius: .2rem;
+    font-size: 1.3rem;
+    font-family: $font-main;
+    margin: 1rem auto 0 auto;
+    cursor: pointer;
+    transition: .3s all;
+
+    &:hover {
+        box-shadow: 0 0 5px 2px $primary-purple2;
+        transform: scale(1.03);
+    }
+
+}

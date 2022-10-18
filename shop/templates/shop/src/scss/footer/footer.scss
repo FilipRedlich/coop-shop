@@ -1,3 +1,46 @@
-.footer{
+.footer {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    gap: 3rem;
+    background: $black;
+    position: relative;
+    padding: 3rem 0 ;
     margin: 10rem 0 0 0;
+    width: 100%;
+    font-family: $font-main;
+
+    .footer--logo-container {
+        flex-basis: 60%;
+        position: relative;
+        padding: 3rem;
+
+        .footer---logo--container-block {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            gap: 3rem;
+            width: 50%;
+            margin: auto;
+        }
+    }
+    .footer--logo-container-links{
+        flex-basis: 30%;
+        display: flex;
+        flex-direction: row;
+        margin: auto 0;
+        gap: 5rem;
+        >div{
+        >h3{
+            font-size: 1.75rem;
+            text-transform: uppercase;
+            margin: 0 0 .5rem 0;
+        } 
+        >p{
+            margin: 0 0 .5rem 0;
+            font-size: 1rem;
+            font-weight: bold;
+        }
+        }
+    }
 }

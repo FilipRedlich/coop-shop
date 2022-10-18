@@ -1,16 +1,26 @@
 .login-switch {
+  display: flex;
+  justify-content: center;
   position: relative;
   transform: translateY(4rem);
-  min-width: 280px;
-  width: 50%;
-  max-width: 30%;
+  margin: auto;
   .action {
+    background: $black;
+    min-width: 10rem;
+    height: 4rem;
+    border: none;
     transition: 0.2s ease;
     font-size: 1.2rem;
+    font-family: $font-main;
+    cursor: pointer;
     &:hover {
       box-shadow: 0 0 5px 2px $primary-purple2;
       transition: 0.2s ease;
       z-index: 2;
+      transform: scale(1.05);
+    }
+    &:focus {
+      border: .2rem solid $primary-purple;
       transform: scale(1.1);
     }
   }
