@@ -11,11 +11,11 @@ const GetItemsOnDiscount = (props) => {
         <form
           action="/addProductToBasket/"
           method="POST"
-          className="card d-flex flex-column"
+          className="card"
         >
           <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
           <input type="hidden" name="id" value={x[0]} />
-          <img src={x[2]} className="card-img" alt="promotion" />
+          <img src={x[2]} className="card-img" alt={x[1]} />
           <div className="card-prices">
             <span className="text-smaller">{`${x[5]}$`}</span>
             <span className="text-bigger">{`${x[5] * x[6]}$`}</span>
@@ -33,7 +33,7 @@ const GetItemsOnDiscount = (props) => {
 const OnSale = () => {
   return (
     <>
-       <section className="sale p-2 py-5 animate__animated animate__backInRight">
+       <section className="sale animate__animated animate__backInRight">
         <GetItemsOnDiscount el={discountItems} />
       </section>
     </>

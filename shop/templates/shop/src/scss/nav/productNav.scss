@@ -14,7 +14,6 @@
   top: 0;
   width: 100%;
   min-height: 4rem;
-
   .product--nav-button {
     background: transparent;
     border: none;
@@ -26,6 +25,7 @@
     text-transform: capitalize;
     cursor: pointer;
     transition: .3s all;
+    color: $white;
     //text-shadow: 0px 0px 3px rgb(255, 255, 255);
     &:hover{
       transform: scale(1.03);

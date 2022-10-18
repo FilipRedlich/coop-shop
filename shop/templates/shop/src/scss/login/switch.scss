@@ -13,6 +13,7 @@
     font-size: 1.2rem;
     font-family: $font-main;
     cursor: pointer;
+    color: $white;
     &:hover {
       box-shadow: 0 0 5px 2px $primary-purple2;
       transition: 0.2s ease;

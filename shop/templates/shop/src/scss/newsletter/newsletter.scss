@@ -1,5 +1,9 @@
 @import '../utility.scss';
 .newsletter {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
   position: relative;
   border-radius: 15px;
   max-width: 80%;

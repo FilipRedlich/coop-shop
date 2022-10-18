@@ -1,0 +1,25 @@
+.delete-form{
+    margin: auto;
+    .remove-item {
+        background: $red-600;
+        border-radius: 66% 34% 37% 63% / 32% 25% 75% 68%;
+        color: white;
+        padding: 1rem;
+        transition: .3s all;
+        border: .1rem solid transparent;
+        height: 3rem;
+        width: 3rem;
+        //padding: .5rem;
+        margin: auto 0;
+        cursor: pointer;
+        padding: .375rem .75rem;
+        &:hover {
+          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70%;
+          border: .1rem solid $light-purple;
+        }
+        i{
+            font-size: 1.2rem;    
+        }
+        //animation: blob-reverse 4s infinite alternate;
+    }
+}

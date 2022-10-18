@@ -21,10 +21,8 @@
   .categories--main-container {
     display: flex;
     flex-direction: column;
-    
     gap: .5rem;
     min-width: 13rem;
-    //max-width: 15rem;
     max-height: 35rem;
     padding: 1rem;
     overflow: auto;
@@ -52,6 +50,7 @@
       font-family: $font-main;
       border: .2rem solid transparent;
       transition: .3s all;
+      color: $white;
       &:hover{
         background: $gray-600;
         transform: scale(1.02);

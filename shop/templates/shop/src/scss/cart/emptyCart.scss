@@ -1,0 +1,27 @@
+.empty-cart{
+    background: $surface;
+    width: 100%;
+    text-align: center;
+    margin: auto;
+    .empty--cart-container{
+        padding: 1rem;
+        .empty---cart--container-error{
+        font-size: 1.75rem;
+        }
+        .empty---cart--container-return{
+         font-size: 1.25rem;
+         .empty----cart---container--return-backBtn{
+          padding: 0 .35rem;
+          vertical-align: baseline;
+          color: $red;
+          transition: .3s all;
+          &:hover{
+            color: rgb(207, 113, 113);
+          }
+         }
+        }
+        .empty---cart--container-reminder{
+            color: $red-600;
+        }
+    }
+}

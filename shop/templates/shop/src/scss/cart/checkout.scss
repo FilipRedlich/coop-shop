@@ -1,20 +1,91 @@
-
 .checkout {
+  top: 40%;
+  position: sticky;
+  background: $bg-black;
   display: flex;
   justify-content: center;
+  align-self: flex-start;
   min-height: 20rem;
   min-width: 15rem;
   font-family: $font-main;
+  margin: auto;
+  border-radius: .2rem;
+
   .checkout-form {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    padding: 1rem;
     background: $surface;
     margin: auto;
-    border-radius: 0.25rem;
+    border-radius: .25rem;
     min-width: 13rem;
     min-height: 18rem;
+
+    >div {
+      display: flex;
+      flex-direction: column;
+      flex-basis: 70%;
+
+      >:nth-child(n) {
+        margin: .5rem 0 0 0;
+      }
+
+      >label {
+        //font-family: $font-main;
+        color: $gray-light;
+      }
+
+      >h5 {
+        font-size: 1.1rem;
+      }
+
+      >p {
+        color: $gray-light;
+      }
+    }
+
     .checkout-submit {
-      background: $primary-purple;
+      position: relative;
+      flex-basis: 30%;
+      //background: $light-purple; change to this when checkout is created/working
+      background: $gray-light;
       letter-spacing: .7px;
-      font-weight: 700;
+      font-family: $font-main;
+      color: $white;
+      border: none;
+      min-height: 3rem;
+      border-radius: .5rem;
+      font-size: 1.1rem;
+      cursor: not-allowed;
+      transition: .3s all;
+      transform-style: preserve-3d;
+
+      &::before {
+        content: 'Currently unavaible';
+        position: absolute;
+        width: 15rem;
+        height: 100%;
+        left: 50%;
+        right: 50%;
+        transform: translateY(0rem) translateX(-50%) translateZ(-3rem);
+        transition: .3s all;
+      }
+
+      &:hover {
+        &::before {
+          content: 'Currently unavaible';
+          position: absolute;
+          width: 15rem;
+          height: 100%;
+          left: 50%;
+          right: 50%;
+          transform: translateY(-3.5rem) translateX(-50%);
+          color: $red-600;
+        }
+      }
+
+
     }
   }
 }

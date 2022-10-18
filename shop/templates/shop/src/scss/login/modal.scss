@@ -28,6 +28,7 @@
         text-align: center;
         font-family: $font-main;
         margin: 2rem 0;
+        color: $white;
       }
 
       .login---modal--input-container {
@@ -49,7 +50,7 @@
           width: 100%;
           padding: 1rem;
           transition: .3s all;
-
+          color: $white;
           &:focus {
             transform: scale(1.03);
             padding: 1rem 1.5rem;

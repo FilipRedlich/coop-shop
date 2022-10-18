@@ -6,12 +6,12 @@ const Hotshot = (props) => {
       <form
         action="/addProductToBasket/"
         method="POST"
-        className="card d-flex flex-column"
+        className="card"
       >
         <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
         <input type="hidden" name="id" value={info[0]} />
         <div className="card-baner">
-          <p className="mt-2">HOTSHOT</p>
+          <p className="">HOTSHOT</p>
         </div>
         <img src={info[2]} className="card-img" alt={info[1]} />
         <div className="card-prices">
@@ -19,7 +19,7 @@ const Hotshot = (props) => {
           <span className="text-bigger"> {`${info[5] * info[6]}$`}</span>
         </div>
         <p className="product-name">{info[1]}</p>
-        <button type="submit" className="btn card-button">
+        <button type="submit" className="card-button">
           ADD TO CART
         </button>
       </form>

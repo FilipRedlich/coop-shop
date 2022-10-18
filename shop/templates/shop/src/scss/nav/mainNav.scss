@@ -18,10 +18,10 @@
   .main--nav-name {
     flex-basis: 20%;
     padding: 0;
- 
     font-size: 2.25rem;
     text-align: center;
     cursor: pointer;
+    color: $white;
   }
 
   .main--nav-user {
@@ -32,10 +32,10 @@
     justify-content: right;
     gap: 1rem;
     padding: 1rem;
-
     .main---nav--user-name {
       display: block;
       margin: auto 0;
+      color: $white
     }
 
     .main---nav--user-button {
@@ -47,7 +47,8 @@
       letter-spacing: 0.8px;
       margin: auto 0;
       transition: .3s;
-
+      color: $white;
+      font-family: $font-main;
       &:hover {
         background: $gray-600;
         transform: scale(1.02);

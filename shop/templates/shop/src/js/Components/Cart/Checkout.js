@@ -17,17 +17,18 @@ const TotalPrice = (props) => {
 
 const CheckOut = () => {
   return (
-    <form className="checkout-form d-flex flex-column justify-content-around p-3 ">
-      <div className="flexb-70">
-        <label className="text-muted">Subtotal:</label>
+    <form className="checkout-form">
+      <div>
+        <label>Subtotal:</label>
         <h5>{<TotalPrice price={basketProducts} />}</h5>
-        <p className="text-muted">{`+ Delivery`}</p>
+        <p>{`+ Delivery`}</p>
       </div>
-      <input
-        className="checkout-submit flexb-30 btn btn-lg text-dark "
+      <button
+        className="checkout-submit"
         type="submit"
         value="Checkout"
-      />
+        disabled
+      >Checkout</button>
     </form>
   );
 };

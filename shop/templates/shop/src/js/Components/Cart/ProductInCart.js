@@ -14,13 +14,13 @@ const ProductInCart = (props) => {
     }
 
     return (
-      <form className="cart-item d-flex gap-3 flex-row flex-wrap justify-content-between p-2 w-100 rounded m-auto">
+      <form className="cart-item">
         <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
-        <div className="d-flex flexb-50 gap-3 flex-row flex-wrap">
+        <div className="cart---item--img-container ">
           <img src={x[2]} className="cart-img" alt={x[1]} loading="lazy" />
-          <h4 className="my-auto item-name">{x[1]}</h4>
+          <h4 className="item-name">{x[1]}</h4>
         </div>
-        <div className="d-flex flexb-50 flex-row gap-3  text-center ml-auto justify-content-center position-relative">
+        <div className="cart---item--content-container">
           <ChangeQuantityForm items={x} />
           <PricesOfProducts items={x} previousPrice={prevPrice} />
           <DeleteProductForm items={x} />

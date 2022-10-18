@@ -1,5 +1,6 @@
 .main {
   font-family: $font-main;
+
   .main-content {
     position: relative;
     min-height: 40rem;
@@ -14,7 +15,10 @@
     grid-template-areas: ". .";
     width: 80%;
     margin: auto;
+
     .card {
+      display: flex;
+      flex-direction: column;
       position: relative;
       background: $surface;
       min-width: 20rem;
@@ -23,6 +27,7 @@
       text-align: center;
       color: white;
       padding: 0 0 0.5rem 0;
+
       &::before {
         @include pseudo-el;
         @include add-trbl;
@@ -32,14 +37,21 @@
         border-radius: 10px;
         z-index: -10;
       }
+
       .card-baner {
+        height: 4rem;
         background: $primary-purple2;
         color: rgb(255, 255, 255);
         font-size: 2rem;
         border-radius: 10px 10px 0 0;
-        letter-spacing: 2px;
-        font-weight: 400;
+        letter-spacing: 1.5px;
+        padding: .1rem;
+
+        >p {
+          margin: .75rem 0 0 0;
+        }
       }
+
       .card-img {
         aspect-ratio: 1 / .8;
         min-width: 20rem;
@@ -47,6 +59,7 @@
         max-width: 80%;
         margin: 3rem auto 0 auto;
       }
+
       .card-prices {
         display: flex;
         flex-direction: row;
@@ -56,39 +69,49 @@
         min-width: 20rem;
         width: 100%;
         padding: 0 2rem;
+        font-family: $font-main;
+
         .text-smaller {
           color: gray;
           font-size: 1.5rem;
           text-decoration: line-through;
           text-align: right;
           flex-basis: 40%;
-          font-weight: 300;
         }
+
         .text-bigger {
-          color: $primary-purple;
+          color: $light-purple;
           font-size: 2rem;
           text-align: left;
           flex-basis: 60%;
-          font-weight: 600;
         }
       }
+
       .product-name {
         font-size: 1.5rem;
         font-weight: 600;
         text-align: left;
         padding: 0 1rem;
       }
+
       .card-button {
         background: $primary-purple2;
         min-height: 4rem;
-        font-size: 2rem;
-        color: rgb(255, 255, 255);
-        border: none;
+        font-size: 1.5rem;
+        font-family: $font-main;
+        border: .15rem solid transparent;
         border-radius: 10px;
         font-weight: 400;
-        min-width: 20rem;
-        max-width: 80%;
+        min-width: 80%;
+        max-width: 20rem;
         margin: auto;
+        cursor: pointer;
+        transition: .3s all;
+
+        &:hover {
+          transform: scale(1.03);
+          border: .15rem solid $white;
+        }
       }
     }
   }

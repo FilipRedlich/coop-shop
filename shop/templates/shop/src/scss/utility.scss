@@ -22,6 +22,7 @@
 .flexb-70 {
   flex-basis: 70%;
 }
+
 .translate-z-0 {
   transform: translateZ(0);
 }
@@ -46,6 +47,7 @@
 .remove-all-decoration {
   text-decoration: none;
 }
+
 .bg-black {
   background: $bg-black;
 }
@@ -57,6 +59,7 @@
 .blur-bg {
   backdrop-filter: blur(5px);
 }
+
 .transform-z-3 {
   transform: translateZ(3px) !important;
 }
@@ -89,12 +92,15 @@
 .min-rem {
   min-width: 20rem;
 }
-.test-bg{
+
+.test-bg {
   background-color: #121212;
 }
-.text-purple{
+
+.text-purple {
   color: $primary-purple;
 }
+
 .rounded-left-side {
   border-radius: 10vh 0 0 10vh;
 }
@@ -102,6 +108,7 @@
 .rounded-right-side {
   border-radius: 0 10vh 10vh 0;
 }
+
 .min-h-30 {
   min-height: 30rem;
 }

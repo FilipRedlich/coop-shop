@@ -1,35 +1,98 @@
 @import '../utility.scss';
+
 .cart {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 1rem;
+  padding: .5rem;
   font-family: $font-main;
+  color: $light-purple;
+
   .cart-items {
+    flex-basis: 70%;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    margin: auto;
+    gap: 1.5rem;
+    background: $bg-black;
+    padding: 1rem;
+    border-radius: .2rem;
+
     .cart-item {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      gap: 1rem;
       position: relative;
       background: $surface;
-      .cart-img {
-        max-width: 10rem;
-        max-height: 10rem;
-      }
-      .item-name {
-        color: $primary-purple;
-        overflow: hidden;
-        text-overflow: ellipsis;
-      }
-      .item-prevPrice{
-        padding: 0;
-        margin: 0;
-        text-decoration: line-through;
-        color: gray;
-      }
-      .remove-item {
-        background: $red-600;
-        border-radius: 66% 34% 37% 63% / 32% 25% 75% 68% ;
-        color: white;
-        font-size: 1.2rem;
-        transition: .3s all;
-        &:hover{
-          border-radius: 30% 70% 70% 30% / 30% 30% 70% 70% ;
+      padding: 2rem 1rem;
+      width: 100%;
+      border-radius: .2rem;
+      margin: auto;
+
+      .cart---item--img-container {
+        display: flex;
+        flex-direction: row;
+        flex-wrap: wrap;
+        flex-basis: 70%;
+        gap: 1rem;
+
+        .cart-img {
+          margin: auto 0;
+          max-width: 10rem;
+          max-height: 10rem;
         }
-        //animation: blob-reverse 4s infinite alternate;
+
+        .item-name {
+          overflow: hidden;
+          text-overflow: ellipsis;
+          margin: auto 0;
+          font-size: 1.35rem;
+          max-width: 40rem;
+        }
+      }
+
+      .cart---item--content-container {
+        position: relative;
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        gap: 2rem;
+        text-align: center;
+        margin: 0 0 0 auto;
+
+        .item-details {
+          display: flex;
+          flex-direction: column;
+          justify-content: center;
+          gap: .35rem;
+          margin: auto;
+
+          :nth-child(n) {
+            width: 7.5rem;
+            margin: auto;
+          }
+
+          .item-prevPrice {
+            padding: 0;
+            margin: 0;
+            text-decoration: line-through;
+            color: gray;
+          }
+
+          >h5 {
+            font-size: 1.25rem;
+            color: $light-purple;
+          }
+
+          >h6 {
+            font-size: 1rem;
+            color: $gray-600;
+          }
+        }
       }
     }
   }

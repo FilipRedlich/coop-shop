@@ -9,6 +9,7 @@ body {
   scrollbar-color: $primary-purple2 $surface;
   scrollbar-width: thin;
   margin: 0;
+  background: $dark;
 }
 ::-webkit-scrollbar {
   background: $surface;
