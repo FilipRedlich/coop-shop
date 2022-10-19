@@ -1,5 +1,5 @@
 import React from "react";
-import { imgArr } from "./Test";
+import { catNamesTest, imgArr } from "./Test";
 import { addEvent } from "../Nav/ProductsNav";
 import { render } from "react-dom";
 //Start of variables for testing (Due to weird parcel bugs)
@@ -61,13 +61,6 @@ const RenderOnLoad = () => {
     <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />,
     document.querySelector("#rootSubcategories")
   );
-  //Due to some issues with rendering time
-  //There needs to be timeout to create a delay between renders
-  setTimeout(() => {
-    addEvent(); //It needs to be initiated on load to add EventListener to buttons
-  }, 200);
-
-  console.log("RenderOnLoad in RenderScripts");
   return <></>;
 };
 //Creates subcategories (Primarily used in RenderFromCat (It's added with onClick event))
@@ -280,7 +273,7 @@ const TEST_PRODUCT1 = [
 
 //Adds functionality to category buttons
 const RenderFromCat = (ARRAY = []) => {
-  const categories = document.querySelectorAll(".categories-button");
+  const categories = document.querySelectorAll(".categories---main--container-category");
   setTimeout(() => {
     for (let i = 0; i < ARRAY.length; i++) {
       categories[i].addEventListener("click", () => {
@@ -299,7 +292,7 @@ const RenderFromCat = (ARRAY = []) => {
               document.querySelector("#rootSubcategories")
             );
             addEvent();
-
+            console.log('its done')
             break;
           case `${ARRAY[1]}`:
             // render(

@@ -1,12 +1,16 @@
 
 
 
-@media screen and (max-width: 560px){
+@media screen and (max-width: 960px){
   .categories-main{
     flex-direction: column;
     .categories--main-container{
       flex-direction: row;
-      justify-content: center;
+      justify-content: left;
+    }
+    #rootSubcategories{
+      min-width: 100%;
+      margin: 0 auto;
     }
   }
   .main-nav{
@@ -34,7 +38,15 @@
     }
   }
 }
- @media screen and (max-height: 680px) and (max-width: 560px){
+@media screen and (max-width: 1440px){
+  .gallery{
+    min-height: 20rem;
+    .gallery-img{
+      max-height: 10rem;
+    }
+  }
+}
+ @media screen and (max-height: 680px) and (max-width: 960px){
    .categories-main{
      margin: -5rem auto 0 auto;
    }

@@ -89,7 +89,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -106,7 +106,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -145,7 +145,6 @@ const ProductNav = () => {
           !myTarget.className !== 'product-nav' &&
           myTarget.className !== 'categories---main--container-category'
         ) {
-          console.log('');
           ToggleClass();
           return
         } else {
@@ -163,9 +162,12 @@ const ProductNav = () => {
                 <ButtonBuilder2 el={catNames} />,
                 document.querySelector("#categories")
               ); //creates category buttons
-              setTimeout(() => {
-                RenderFromCat(catNames)
-              }, 200); //elements that are rendered after clicking subcategory
+           
+                RenderFromCat(catNames);
+            
+            
+          
+               //elements that are rendered after clicking subcategory
             }}
           >
             Categories

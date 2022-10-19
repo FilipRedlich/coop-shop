@@ -30,7 +30,7 @@ const CreateItems = (props) => {
     return (
       <>
         <div className="item">
-          <img src={image1} alt={x[1]} />
+          <img src={x[2]} alt={x[1]} />
           <p>{x[1]}</p>
         </div>
       </>
