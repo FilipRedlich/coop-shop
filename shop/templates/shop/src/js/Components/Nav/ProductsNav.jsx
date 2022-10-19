@@ -163,7 +163,9 @@ const ProductNav = () => {
                 <ButtonBuilder2 el={catNames} />,
                 document.querySelector("#categories")
               ); //creates category buttons
-              RenderFromCat(catNames); //elements that are rendered after clicking subcategory
+              setTimeout(() => {
+                RenderFromCat(catNames)
+              }, 200); //elements that are rendered after clicking subcategory
             }}
           >
             Categories
