@@ -1,11 +1,13 @@
 import image1 from "../../../images/undraw_dev_productivity_re_fylf.svg";
 import image2 from "../../../images/undraw_software_engineer_re_fyew.svg";
+import haloweenDeal from '../../../../../../static/shop/img/GALLERY/HALOWEEN_DEAL.png';
+import more from '../../../../../../static/shop/img/GALLERY/MORE.png';
 import { useEffect, useState } from "react";
 import { useInterval } from "usehooks-ts";
 import { TEST_ARRAY } from "../utility/Test";
 const images = [
-    { id: 1, src: image1, testVal: TEST_ARRAY[0] },
-    { id: 2, src: image2 },
+    { id: 1, src: haloweenDeal},
+    { id: 2, src: more },
     {} //DO NOT REMOVE (this element is needed for resetting carousel index)
 ];
 
@@ -23,12 +25,12 @@ const Carousel = () => {
 
   return (
     <div
-      className="w-100 card gallery d-flex justify-content-center"
+      className="card gallery"
     >
       <img
         src={images[count].src}
         alt="gallery"
-        className="gallery-img d-block "
+        className="gallery-img "
       />
     </div>
   );

@@ -9,15 +9,16 @@
   gap: 1rem;
   background: $black;
   position: relative;
-  z-index: 3;
-  transform: translateZ(3rem);
+
+  z-index: 4;
+  transform: translateZ(3.5rem);
   font-family: $font-main;
   width: 100%;
   min-height: 6rem;
 
   .main--nav-name {
     flex-basis: 20%;
-    padding: 0;
+    padding: 0 0 0 .5rem;
     font-size: 2.25rem;
     text-align: center;
     cursor: pointer;

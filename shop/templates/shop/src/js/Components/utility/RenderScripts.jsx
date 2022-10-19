@@ -58,7 +58,7 @@ const renderInSubRoot = (el, options) => {
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
-    <RenderSubcat el={subcatNamesTest[1]} img={subcatImages[3]} />,
+    <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />,
     document.querySelector("#rootSubcategories")
   );
   //Due to some issues with rendering time
@@ -295,7 +295,7 @@ const RenderFromCat = (ARRAY = []) => {
             //   document.querySelector("#rootSubcategories")
             //     );
             render(
-              <RenderSubcat el={subcatNamesTest[1]} img={subcatImages[3]} />,
+              <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />,
               document.querySelector("#rootSubcategories")
             );
             addEvent();
@@ -311,7 +311,7 @@ const RenderFromCat = (ARRAY = []) => {
             //   document.querySelector("#rootSubcategories")
             // );
             render(
-              <RenderSubcat el={subcatNamesTest[2]} img={subcatImages[4]} />,
+              <RenderSubcat el={subcatNames[2]} img={subcatImages[4]} />,
               document.querySelector("#rootSubcategories")
             );
 
@@ -320,14 +320,14 @@ const RenderFromCat = (ARRAY = []) => {
             break;
           case `${ARRAY[2]}`:
             render(
-              <RenderSubcat el={subcatNamesTest[3]} img={subcatImages[5]} />,
+              <RenderSubcat el={subcatNames[3]} img={subcatImages[5]} />,
               document.querySelector("#rootSubcategories")
             );
             addEvent();
             break;
           case `${ARRAY[3]}`:
             render(
-              <RenderSubcat el={subcatNamesTest[4]} img={subcatImages[6]} />,
+              <RenderSubcat el={subcatNames[4]} img={subcatImages[6]} />,
               document.querySelector("#rootSubcategories")
             );
             addEvent();

@@ -12,24 +12,19 @@ const CreateItems = (props) => {
   //   } else {
   //     return [...e];
   //   }
-    
+
   // });
-   console.log(itemsToFilter);
-   
-   for(i in itemsToFilter){
-    for(y in itemsToFilter[i]){
+  //console.log(itemsToFilter);
+
+  for (i in itemsToFilter) {
+    for (y in itemsToFilter[i]) {
       //console.log((itemsToFilter[i][y].length === 1), 'test')
-        if(itemsToFilter[i][y].length > 1){
-          filteredItems.push(itemsToFilter[i][y]);
-        }
-        
-    
-    
+      if (itemsToFilter[i][y].length > 1) {
+        filteredItems.push(itemsToFilter[i][y]);
+      }
     }
-   }
- console.log(filteredItems)
-  
-  
+  }
+  //console.log(filteredItems)
 
   return filteredItems.map((x, i) => {
     return (
@@ -40,16 +35,15 @@ const CreateItems = (props) => {
         </div>
       </>
     );
-
-
   });
 };
+
 const ItemBar = (props) => {
   return (
     <>
       <section className="item-bar-holder">
         <div className="item-bar">
-          <CreateItems itemsInBar={productsTest} />
+          <CreateItems itemsInBar={products} />
         </div>
       </section>
     </>

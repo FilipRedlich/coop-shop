@@ -1,10 +1,11 @@
-import React, { createContext, useContext, useEffect } from "react";
+import React, { createRef } from "react";
 import { useState } from "react";
 import { render } from "react-dom";
 
 //components
 import OnSale from "../OnSale/OnSale";
 import Newsletter from "../Newsletter/Newsletter";
+import MainNav from "./MainNav";
 import { RenderFromCat, renderInSubRoot, renderRoot } from "../utility/RenderScripts";
 import { ButtonBuilder2 } from "../utility/ComponentBuilders";
 import {
@@ -36,7 +37,7 @@ const showPopup = () => {
 const Popup = (props) => {
   const el = props.el;
   const message = props.text;
- 
+
   return (
     <>
       <div className="popup-modal">
@@ -120,6 +121,7 @@ const addEvent = () => {
 
 const ProductNav = () => {
   const [isActive, setActive] = useState("false");
+  const categoriesMain = createRef(null);
 
   const ToggleClass = () => {
     const body = document.body;
@@ -135,68 +137,78 @@ const ProductNav = () => {
 
   return (
     <>
-      <nav className="product-nav">
-        <button
-          className="product--nav-button"
-          aria-labelledby="categories"
-          onClick={() => {
-            ToggleClass();
-            render(
-              <ButtonBuilder2 el={catNames} />,
-              document.querySelector("#categories")
-            ); //creates category buttons
+      <div onClick={(e) => {
+        let myTarget = e.target; console.log(myTarget.className == 'categories---main--container-category');
 
-            RenderFromCat(catNames); //elements that are rendered after clicking subcategory
-          }}
+        if (
+          categoriesMain.current.classList[1] == 'animateShowCategories' &&
+          !myTarget.className !== 'product-nav' &&
+          myTarget.className !== 'categories---main--container-category'
+        ) {
+          console.log('');
+          ToggleClass();
+          return
+        } else {
+          return
+        }
+      }}>
+        <MainNav />
+        <nav className="product-nav">
+          <button
+            className="product--nav-button"
+            aria-labelledby="categories button"
+            onClick={() => {
+              ToggleClass();
+              render(
+                <ButtonBuilder2 el={catNames} />,
+                document.querySelector("#categories")
+              ); //creates category buttons
+              RenderFromCat(catNames); //elements that are rendered after clicking subcategory
+            }}
+          >
+            Categories
+          </button>
+          <button
+            className="product--nav-button"
+            onClick={() => {
+              renderRoot(<OnSale />);
+            }}
+          >
+            On sale
+          </button>
+          <button
+            className="product--nav-button"
+            onClick={() => {
+              renderRoot(<Newsletter />);
+            }}
+          >
+            Newsletter
+          </button>
+        </nav>
+        <section
+          id="categoriesMain"
+          ref={categoriesMain}
+          className={`
+           categories-main
+           ${isActive
+              ? "animateCloseCategories "
+              : "animateShowCategories bg-transparent-custom blur-bg"
+            }`}
         >
-          Categories
-        </button>
-        <button
-          className="product--nav-button"
-          onClick={() => {
-            renderRoot(<OnSale />);
-          }}
-        >
-          On sale
-        </button>
-        <button
-          className="product--nav-button"
-          onClick={() => {
-            renderRoot(<Newsletter />);
-          }}
-        >
-          Newsletter
-        </button>
-      </nav>
-
-      <section
-         className={` 
-         categories-main  
-         ${
-           isActive
-             ? "animateCloseCategories "
-             : "animateShowCategories bg-transparent-custom blur-bg"
-         }`}
-       
-      >
-        
           <div
             id="categories"
             className="categories--main-container"
-            //Inside this element buttons are rendered
-            
+          //Inside this element buttons are rendered
           >
- 
           </div>
-
           <div
             id="rootSubcategories"
           ></div>
-     
-      </section>
-      <Popup/>
+        </section>
+      </div>
+      <Popup />
     </>
   );
 };
-export { addEvent, RenderProducts2};
+export { addEvent, RenderProducts2 };
 export default ProductNav;

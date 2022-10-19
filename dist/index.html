@@ -1,17 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="E-commerce website">
-    <link rel="shortcut icon" href="/shop_logo.6e99bcd4.svg" type="image/x-icon">
-    <title>E-commerce</title>
-    <link rel="stylesheet" href="/index.3fa258a8.css">
-    <script src="/index.53beede5.js" defer=""></script>
-  </head>
-  <body class="bg-dark min-vh-100 position-relative">
-    <script>const CSRF_TOKEN = "{{ csrf_token }}";
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="E-commerce website">
+  <link rel="shortcut icon" href="/shop_logo.6e99bcd4.svg" type="image/x-icon">
+  <title>E-commerce</title>
+  <link rel="stylesheet" href="/index.3fa258a8.css">
+  <script src="/index.53beede5.js" defer=""></script>
+</head>
+
+<body class="bg-dark min-vh-100 position-relative">
+  <script>const CSRF_TOKEN = "{{ csrf_token }}";
 const currentUser = "{{request.session.email}}";
 //Not converted items
 const hasDiscount = "{% hasDiscount %}".split("***");
@@ -97,9 +99,9 @@ singleSplit(hasBasketProducts, basketProducts);
 console.log(discountItems);
 
 </script>
+  <div id="navRoot">Nav not rendered</div>
+  <div id="root">Main not rendered</div>
+  <div id="footerRoot">footer not rendered</div>
+</body>
 
-    <div id="navRoot">Nav not rendered</div>
-    <div id="root">Main not rendered</div>
-    <div id="footerRoot">footer not rendered</div>
-  </body>
 </html>

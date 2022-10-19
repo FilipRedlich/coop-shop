@@ -8,6 +8,7 @@ import {MainContent} from "../Home/MainContent";
 
 const MainNav = () => {
   return (
+    <>
     <nav className="main-nav">
   
           <h3
@@ -18,7 +19,7 @@ const MainNav = () => {
               render(<MainContent />, document.querySelector("#root"));
             }}
           >
-            SKLEP
+            PESTKA
           </h3>
     
 
@@ -43,9 +44,11 @@ const MainNav = () => {
               >
                 Login
               </button>
+      
         </div>
 
     </nav>
+    </>
   );
 };
 

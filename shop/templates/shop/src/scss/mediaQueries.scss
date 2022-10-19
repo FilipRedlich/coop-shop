@@ -1,13 +1,26 @@
 
 
 
-@media screen and (max-width: 520px){
+@media screen and (max-width: 560px){
   .categories-main{
     flex-direction: column;
     .categories--main-container{
       flex-direction: row;
       justify-content: center;
     }
+  }
+  .main-nav{
+    flex-direction: column;
+    .main--nav-user{
+      justify-content: center;
+    }
+
+  }
+  .footer-emblem{
+    flex-wrap: wrap;
+  }
+  .footer-logo-text{
+    margin: 0rem 0 6rem 0;
   }
 }
 
@@ -21,3 +34,11 @@
     }
   }
 }
+ @media screen and (max-height: 680px) and (max-width: 560px){
+   .categories-main{
+     margin: -5rem auto 0 auto;
+   }
+  .main--nav-name{
+    margin: 0 auto;
+  }
+ }

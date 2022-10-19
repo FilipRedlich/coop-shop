@@ -10,6 +10,7 @@ body {
   scrollbar-width: thin;
   margin: 0;
   background: $dark;
+  max-width: 100%;
 }
 ::-webkit-scrollbar {
   background: $surface;

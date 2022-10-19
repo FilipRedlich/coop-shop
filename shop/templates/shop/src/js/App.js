@@ -2,7 +2,6 @@ import React, { useEffect } from "react";
 import { render } from "react-dom";
 
 //imported components
-import MainNav from "./Components/Nav/MainNav";
 import ProductsNav from "./Components/Nav/ProductsNav";
 import {MainContent} from "./Components/Home/MainContent";
 import MainFooter from "./Components/footer/Footer";
@@ -11,7 +10,6 @@ import { AfterLoad } from "./Components/utility/Test";
 const NavApp = () => {
   return (
     <>
-      <MainNav />
       <ProductsNav />
     </>
   );
