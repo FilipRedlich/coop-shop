@@ -61,6 +61,9 @@ const RenderOnLoad = () => {
     <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />,
     document.querySelector("#rootSubcategories")
   );
+  setTimeout(() => {
+    addEvent(); //It needs to be initiated on load to add EventListener to subcategory buttons
+  }, 200);
   return <></>;
 };
 //Creates subcategories (Primarily used in RenderFromCat (It's added with onClick event))

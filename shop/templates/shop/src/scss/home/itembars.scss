@@ -39,6 +39,9 @@
       border-radius: 10px;
       overflow: hidden;
       //padding: 0.5rem;
+      img{
+        height: 8rem;
+      }
       p {
         display: flex;
         align-items: center;
@@ -64,7 +67,7 @@
           overflow-y: auto;
           text-overflow: initial;
           white-space: initial;
-          transform: translateY(-5.5rem);
+          transform: translateY(-5rem);
           transition: 0.3s all;
           opacity: 0.9;
         }
