@@ -14,6 +14,7 @@ const Newsletter = () => {
             method="POST"
             className="d-flex newsletter-input-wrapper flex-row mt-2"
           >
+            <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
             <input
               className="flexb-70 border-l5 newsletter-input"
               type="email"
@@ -23,6 +24,7 @@ const Newsletter = () => {
               type="submit"
               className="flexb-30 newsletter-submit border-r5"
               value="Submit"
+
             />
           </form>
         </div>
