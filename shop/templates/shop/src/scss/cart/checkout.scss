@@ -62,7 +62,7 @@
       transform-style: preserve-3d;
 
       &::before {
-        content: 'Currently unavaible';
+        content: 'Currently unavaiable';
         position: absolute;
         width: 15rem;
         height: 100%;
@@ -70,11 +70,12 @@
         right: 50%;
         transform: translateY(0rem) translateX(-50%) translateZ(-3rem);
         transition: .3s all;
+        font-size: 0.9rem;
       }
 
       &:hover {
         &::before {
-          content: 'Currently unavaible';
+          content: 'Currently unavaiable';
           position: absolute;
           width: 15rem;
           height: 100%;
@@ -82,6 +83,7 @@
           right: 50%;
           transform: translateY(-3.5rem) translateX(-50%);
           color: $red-600;
+          font-size: 1rem;
         }
       }
 
