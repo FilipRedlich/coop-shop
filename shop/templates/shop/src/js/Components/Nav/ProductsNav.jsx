@@ -89,7 +89,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={productsTest} index={i} />,
+              <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -106,7 +106,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={productsTest} index={i} />,
+              <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );

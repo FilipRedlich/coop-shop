@@ -279,7 +279,7 @@ const productsTest = [
       [
           "4",
           "AMD Ryzen 7 5800X, 3.8GHz, 32 MB, BOX",
-          "",
+          "/static/shop/img/PRODUCTS/CPU_RYZEN_7_5800X.webp",
           "2",
           "8",
           "1729.0",
@@ -386,22 +386,98 @@ const productsTest = [
   ],
   [
       [
-          ""
+          "21",
+          "Toshiba P300 1 TB",
+          "/static/shop/img/PRODUCTS/HDD_TOSHIBA_P300_1TB.jpg",
+          "7",
+          "12",
+          "207.0",
+          "1.0",
+          "4.0",
+          "False"
+      ],
+      [
+          "22",
+          "Seagate BarraCuda 2 TB",
+          "/static/shop/img/PRODUCTS/HDD_SEAGATE_BARRACUDA_2TB.jpg",
+          "7",
+          "6",
+          "263.0",
+          "1.0",
+          "4.0",
+          "False"
       ]
   ],
   [
       [
-          ""
+          "19",
+          "Corsair CV 550W",
+          "/static/shop/img/PRODUCTS/PSU_CORSAIR_CV_550W.jpg",
+          "8",
+          "5",
+          "269.0",
+          "1.0",
+          "4.0",
+          "False"
+      ],
+      [
+          "20",
+          "Corsair RM850x",
+          "/static/shop/img/PRODUCTS/PSU_CORSAIR_RM850X.jpg",
+          "8",
+          "5",
+          "974.0",
+          "1.0",
+          "5.0",
+          "False"
       ]
   ],
   [
       [
-          ""
+          "17",
+          "SilentiumPC Fera 3",
+          "/static/shop/img/PRODUCTS/COOLER_SPC_FERA_3.jpg",
+          "9",
+          "7",
+          "137.0",
+          "1.0",
+          "5.0",
+          "False"
+      ],
+      [
+          "18",
+          "Noctua NH-D15",
+          "/static/shop/img/PRODUCTS/COOLER_NOCTUA_NH-D15.jpg",
+          "9",
+          "8",
+          "479.0",
+          "1.0",
+          "5.0",
+          "False"
       ]
   ],
   [
       [
-          ""
+          "23",
+          "Thermal Grizzly kryonaut 1g",
+          "/static/shop/img/PRODUCTS/TP_THERMALGRIZZLY_KRYONAUT_1G.jpg",
+          "10",
+          "16",
+          "33.0",
+          "1.0",
+          "5.0",
+          "False"
+      ],
+      [
+          "24",
+          "Arctic MX-2 4g",
+          "/static/shop/img/PRODUCTS/TP_ARCTIC_MX-2_4G.jpg",
+          "10",
+          "10",
+          "16.0",
+          "1.0",
+          "4.0",
+          "False"
       ]
   ],
   [
@@ -430,7 +506,26 @@ const productsTest = [
   ],
   [
       [
-          ""
+          "28",
+          "Serwer Dell PowerEdge T30",
+          "/static/shop/img/PRODUCTS/SERVER_DELL_POWEREDGE_T30.jpg",
+          "12",
+          "3",
+          "3151.0",
+          "1.0",
+          "4.0",
+          "False"
+      ],
+      [
+          "29",
+          "HPE ProLiant ML30 Gen10",
+          "/static/shop/img/PRODUCTS/SERVER_HPE_PROLIANT_ML30_GEN_10.jpg",
+          "12",
+          "3",
+          "7999.0",
+          "1.0",
+          "4.5",
+          "False"
       ]
   ],
   [
@@ -459,7 +554,37 @@ const productsTest = [
   ],
   [
       [
-          ""
+          "25",
+          "Windows Server 2022 OEM",
+          "/static/shop/img/PRODUCTS/SOFTWARE_WINDOWS_SERVER_2022_OEM.jpg",
+          "14",
+          "8",
+          "919.0",
+          "1.0",
+          "3.0",
+          "False"
+      ],
+      [
+          "26",
+          "Windows 11 PRO OEM",
+          "/static/shop/img/PRODUCTS/SOFTWARE_WINDOWS_11_PRO_OEM.jpg",
+          "14",
+          "12",
+          "789.0",
+          "1.0",
+          "4.0",
+          "False"
+      ],
+      [
+          "27",
+          "Microsoft 365 Business Standard",
+          "/static/shop/img/PRODUCTS/SOFTWARE_MICROSOFT_OFFICE_365_BUSSINES_STANDARD.jpg",
+          "14",
+          "8",
+          "520.0",
+          "1.0",
+          "3.0",
+          "False"
       ]
   ],
   [
