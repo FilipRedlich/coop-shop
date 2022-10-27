@@ -1,4 +1,6 @@
-## Links
+## Demo Website
+* https://pycoop.herokuapp.com##
+Links
 * [General info] (#general-info)
 * [Technologies] (#technologies)
 ## General info
@@ -15,7 +17,6 @@ Project is created with:
 * Parcel: 2.5.0
 * Prettier 2.5.1
 * Sass 1.50.1
-* Bootstrap 4
 ### Back-End
 * Python 3.10.4
 * Django 4.0.3
@@ -38,14 +39,13 @@ To run this project on frontend:
 * ```$npm i -D parcel```
 * ```$npm run dev```
 
-To create a build:
+To create a build (Depends on Parcel version):
 * ```$npm run prod```
-or
+or 
 * ```$npm run prodUnofficial```
 
 To run localserver:
 * ```$python3 manage.py runserver```
 
 
-## Demo Website
-* https://pycoop.herokuapp.com
+
