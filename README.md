@@ -1,6 +1,6 @@
 ## Demo Website
-* https://pycoop.herokuapp.com##
-Links
+* https://pycoop.herokuapp.com
+##Links
 * [General info] (#general-info)
 * [Technologies] (#technologies)
 ## General info
@@ -36,7 +36,9 @@ Project is created with:
 * whitenoise 6.0.0
 ## Setup
 To run this project on frontend:
-* ```$npm i -D parcel```
+* Change all the variables from for example: products to productsTest (you will find them in components)
+* Otherwise you might encounter errors, elements not rendering
+* ```npm install``` or ```$npm i -D parcel```
 * ```$npm run dev```
 
 To create a build (Depends on Parcel version):
