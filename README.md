@@ -1,5 +1,5 @@
 ## Demo Website
-* https://pycoop.herokuapp.com
+* https://pycoop.herokuapp.com (It might load for few seconds due to hosting's hibernation)
 ## Links
 * [General info] (#general-info)
 * [Technologies] (#technologies)
