@@ -1,6 +1,6 @@
 ## Demo Website
 * https://pycoop.herokuapp.com
-##Links
+## Links
 * [General info] (#general-info)
 * [Technologies] (#technologies)
 ## General info
