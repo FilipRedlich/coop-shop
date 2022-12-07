@@ -15,7 +15,7 @@ const Cart = () => {
           id="card-items"
           className="cart-items"
         >
-          <HowManyItems el={basketProducts} />
+          <HowManyItems el={basketProductsTest} />
           {/* cardContentsTest or CardContents*/}
         </div>
         <div className="checkout">

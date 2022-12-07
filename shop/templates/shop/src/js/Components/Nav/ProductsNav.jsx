@@ -89,7 +89,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -106,7 +106,7 @@ const addEvent = () => {
         button.addEventListener("click", () => {
           renderRoot(
             renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
+              <RenderProducts2 el={productsTest} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
@@ -159,11 +159,11 @@ const ProductNav = () => {
             onClick={() => {
               ToggleClass();
               render(
-                <ButtonBuilder2 el={catNames} />,
+                <ButtonBuilder2 el={catNamesTest} />,
                 document.querySelector("#categories")
               ); //creates category buttons
            
-                RenderFromCat(catNames);
+                RenderFromCat(catNamesTest);
             
             
           
