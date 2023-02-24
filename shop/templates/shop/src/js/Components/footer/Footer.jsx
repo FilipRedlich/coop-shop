@@ -1,6 +1,7 @@
 import logo from '../../../images/shop_logo.svg';
 const MainFooter = () => {
     return (
+      <>
       <footer className="footer">
         <div className="footer--logo-container">
           <div className="footer---logo--container-block rounded footer-emblem">
@@ -63,6 +64,7 @@ const MainFooter = () => {
           </div> */}
         </div>
       </footer>
+      </>
     );
 }
 

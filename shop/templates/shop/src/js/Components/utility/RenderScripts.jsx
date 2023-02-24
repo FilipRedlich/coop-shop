@@ -55,10 +55,11 @@ const renderInSubRoot = (el, options) => {
   );
 };
 
+//Renders initial subcategories and adds event to them
 const RenderOnLoad = () => {
   //renderTry(SUBCATS_NAME[1], SUBCATS_IMG[0]);
   render(
-    <RenderSubcat el={subcatNamesTest[1]} img={subcatImagesTest[3]} />,
+    <RenderSubcat el={subcatNamesTest[1]} img={subcatNamesTest} />,
     document.querySelector("#rootSubcategories")
   );
   setTimeout(() => {
@@ -274,24 +275,24 @@ const TEST_PRODUCT1 = [
   [[""]],
 ];
 
-//Adds functionality to category buttons
+//Adds functionality to category buttons (when you click category it checks the name of passed element and based on it renders corresponding subcategories)
 const RenderFromCat = (ARRAY = []) => {
   const categories = document.querySelectorAll(".categories---main--container-category");
-  setTimeout(() => {
+
     for (let i = 0; i < ARRAY.length; i++) {
       categories[i].addEventListener("click", () => {
         //adds function to specified category
         switch (ARRAY[i]) {
-          //remove comments for renderTry function when switching from/to prod (ARRAY_x_SUBCATEGORY should be on prod!)
           //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
           //x now defines it's type - name, picture etc.
           case `${ARRAY[0]}`:
+            console.log(ARRAY[0], 'RenderFromCat line ~289')
             // render(
             //   <RenderSubcat el={SUBCATS_NAME[1]} img={SUBCATS_IMG[3]} />,
             //   document.querySelector("#rootSubcategories")
             //     );
             render(
-              <RenderSubcat el={subcatNamesTest[1]} img={[]} />,
+              <RenderSubcat el={subcatNamesTest[1]} img={subcatImagesTest} />,
               document.querySelector("#rootSubcategories")
             );
             addEvent();
@@ -307,7 +308,7 @@ const RenderFromCat = (ARRAY = []) => {
             //   document.querySelector("#rootSubcategories")
             // );
             render(
-              <RenderSubcat el={subcatNamesTest[2]} img={[]} />,
+              <RenderSubcat el={subcatNamesTest[2]} img={subcatImagesTest} />,
               document.querySelector("#rootSubcategories")
             );
 
@@ -316,7 +317,7 @@ const RenderFromCat = (ARRAY = []) => {
             break;
           case `${ARRAY[2]}`:
             render(
-              <RenderSubcat el={subcatNamesTest[3]} img={subcatImagesTest[5]} />,
+              <RenderSubcat el={subcatNamesTest[3]} img={subcatImagesTest} />,
               document.querySelector("#rootSubcategories")
             );
             addEvent();
@@ -331,7 +332,7 @@ const RenderFromCat = (ARRAY = []) => {
         }
       });
     }
-  }, 200);
-};
+  };
+
 
 export { renderRoot, renderInSubRoot, RenderOnLoad, RenderFromCat };

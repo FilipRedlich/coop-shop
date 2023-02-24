@@ -7,28 +7,19 @@ import {MainContent} from "./Components/Home/MainContent";
 import MainFooter from "./Components/footer/Footer";
 import { RenderOnLoad } from "./Components/utility/RenderScripts";
 import { AfterLoad } from "./Components/utility/Test";
-const NavApp = () => {
-  return (
-    <>
-      <ProductsNav />
-    </>
-  );
-};
+
 
 const MainApp = () => {
-  AfterLoad(<MainContent />, document.querySelector("#root"), 300);
+  AfterLoad(<MainContent />, document.querySelector("#root"), 600);
   return (
     <>
-      <RenderOnLoad />
+      <RenderOnLoad /> {/* For the first time Renders subcategories, it renders them inside the container that shows on clicking categories button */}
     </>
   );
 };
 
-const FooterApp = () => {
-  AfterLoad(<MainFooter />, document.querySelector("#footerRoot"), 600);
-  return <></>;
-};
-render(<NavApp />, document.querySelector("#navRoot"));
+render(<ProductsNav />, document.querySelector("#navRoot"));
 render(<MainApp />, document.querySelector("#root"));
-render(<FooterApp />, document.querySelector("#footerRoot"));
+render(<MainFooter />, document.querySelector("#footerRoot"));
+
 export default MainApp;

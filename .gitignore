@@ -9,3 +9,4 @@ django
 __pycache__
 dist
 *.pyc
+perf.txt
