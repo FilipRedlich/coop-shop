@@ -228,15 +228,20 @@ const hotshotTest = [
 //Renders initial subcategories and adds event to them
 
 //Creates subcategories (Primarily used in RenderFromCat (It's added with onClick event))
-const RenderSubcat = ({ el = [], img = [] }) => {
+const RenderSubcat = ({ el = [], img = [], startIndex }) => {
   if (el.length === 0 || img.length === 0) {
     return null;
   }
 
   return el.map((val, i) => {
     i++;
+    if(startIndex > 0 && startIndex !== undefined){
+      i += startIndex;
+    }
+    
     const convImg = img[i];
     console.log(convImg, "convImg");
+    
     return (
       <Link key={val} to={`/products/${i}`}>
         <button
@@ -244,10 +249,12 @@ const RenderSubcat = ({ el = [], img = [] }) => {
           className="subcategory testing"
           onClick={addEvent}
         >
+          id: {i}
           <img src={convImg} alt={`${val} Quick debug on dev`} loading="lazy" />
           <p>{val || "Default text"}</p>
         </button>
       </Link>
+    
     );
   });
 };

@@ -37,27 +37,27 @@ import { TEST_CAT } from "./Test";
 
 const ButtonBuilder2 = (props) => {
   const catBtn = props.el;
-  const navigate = useNavigate()
+  const navigate = useNavigate();
   return catBtn.map((el) => {
-    console.log(el)
+    console.log(el);
     return (
       <>
-    
-        <button className="categories---main--container-category" onClick={(e)=>{
-         
-
-         // Navigate to a new route based on the trigger text
-         if (el === "Komputery") {
-           navigate("/B");
-         } else if (el === "Podzespoły komputerowe") {
-           navigate("/A");
-         } 
-        }}>
+        <button
+          className="categories---main--container-category"
+          onClick={(e) => {
+            // Navigate to a new route based on the trigger text
+            if (el === "Podzespoły komputerowe") {
+              navigate("/A");
+            }
+            if (el === "Komputery") {
+              navigate("/B");
+            }
+          }}
+        >
           {el}
         </button>
-     
       </>
     );
   });
 };
-export {ButtonBuilder2}
+export { ButtonBuilder2 };

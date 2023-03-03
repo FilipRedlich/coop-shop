@@ -1,7 +1,6 @@
 import React, { createRef, useEffect } from "react";
 import { useState } from "react";
-import { render } from "react-dom";
-import { Route, Link, useParams, Routes} from "react-router-dom";
+import { Route, Link, useParams, Routes } from "react-router-dom";
 //components
 import MainNav from "./MainNav";
 import { ButtonBuilder2 } from "../utility/ComponentBuilders";
@@ -14,7 +13,7 @@ import {
   productsTest,
   catNamesTest,
   subcatNamesTest,
-  subcatImagesTest
+  subcatImagesTest,
 } from "../utility/Test";
 import { RenderSubcat } from "../utility/RenderScripts";
 import { ItemBar } from "../Home/Itembar";
@@ -49,36 +48,38 @@ const Popup = (props) => {
 const RenderProducts2 = ({ el }) => {
   const { productsID } = useParams();
   const specIndex = parseInt(productsID);
-  
+
   return (
     <>
-      {el[specIndex].map((val, i) => {
-        const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
-        const itemID = val[0];
-        console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
-        return (
-          <>
-            <form action="/addProductToBasket/" method="post">
-              <input
-                type="hidden"
-                name="csrfmiddlewaretoken"
-                value={CSRF_TOKEN}
-              />
-              <input type="hidden" name="id" value={itemID} />
-              <button
-                type="submit"
-                className="product"
-                onClick={(e) => {
-                  showPopup();
-                }}
-              >
-                <img src={val[2]} alt={val[1]} loading="lazy" />
-                <p>{val[1]}</p>
-              </button>
-            </form>
-          </>
-        );
-      })}
+      <div className="product-holder">
+        {el[specIndex].map((val, i) => {
+          const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
+          const itemID = val[0];
+          console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
+          return (
+            <>
+              <form action="/addProductToBasket/" method="post">
+                <input
+                  type="hidden"
+                  name="csrfmiddlewaretoken"
+                  value={CSRF_TOKEN}
+                />
+                <input type="hidden" name="id" value={itemID} />
+                <button
+                  type="submit"
+                  className="product"
+                  onClick={(e) => {
+                    showPopup();
+                  }}
+                >
+                  <img src={val[2]} alt={val[1]} loading="lazy" />
+                  <p>{val[1]}</p>
+                </button>
+              </form>
+            </>
+          );
+        })}
+      </div>
     </>
   );
 };
@@ -93,16 +94,11 @@ const addEvent = () => {
         i++;
         console.log("1st cat addEvent func");
         button.addEventListener("click", () => {
-        
           <RenderProducts2
             el={productsTest}
             index={i}
             style={"product-holder animate__animated animate__zoomInDown"}
-          /> 
-        
-          
-            
-          
+          />;
         });
       });
     }
@@ -112,15 +108,13 @@ const addEvent = () => {
         removeEventListener("click", button);
         i += 9; //value before first index of next subcategory (for ex. 2nd subcat starts on 10th index)
         i++;
-        console.log("2nd cat addEvent func");
+        console.log("2nd cat addEvent func", i);
         button.addEventListener("click", () => {
-          <Link to={'/productsPage'}>
           <RenderProducts2
             el={productsTest}
             index={i}
             style={"product-holder animate__animated animate__zoomInDown"}
-          />
-          </Link>
+          />;
         });
       });
     }
@@ -173,13 +167,13 @@ const ProductNav = (props) => {
         <MainNav />
         <nav className="product-nav">
           <Link className="product---nav--button-link">
-          <button
-            className="product---nav--link-button"
-            aria-labelledby="categories button"
-            onClick={ToggleClass}
-          >
-            Categories
-          </button>
+            <button
+              className="product---nav--link-button"
+              aria-labelledby="categories button"
+              onClick={ToggleClass}
+            >
+              Categories
+            </button>
           </Link>
           <Link className="product---nav--button-link" to={"/onSale"}>
             <button className="product---nav--link-button">On Sale</button>
@@ -208,11 +202,27 @@ const ProductNav = (props) => {
             <ButtonBuilder2 el={catNamesTest} />
           </div>
           <div id="rootSubcategories">
-         <Routes>
-         <Route path="/A" element={<RenderSubcat el={subcatNamesTest[1]} img={subcatImagesTest} />}/>
-            <Route path="/B" element={<RenderSubcat el={subcatNamesTest[2]} img={subcatImagesTest}/>}/>
-         </Routes>
-            
+            <Routes>
+              <Route
+                path="/A"
+                element={
+                  <RenderSubcat
+                    el={subcatNamesTest[1]}
+                    img={subcatImagesTest}
+                  />
+                }
+              />
+              <Route
+                path="/B"
+                element={
+                  <RenderSubcat
+                    el={subcatNamesTest[2]}
+                    img={subcatImagesTest}
+                    startIndex={9}
+                  />
+                }
+              />
+            </Routes>
           </div>
         </section>
       </div>

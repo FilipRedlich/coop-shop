@@ -42,6 +42,7 @@ const App = () => {
         <Route path="products/:productsID" element={<RenderProducts2 el={productsTest} />} />
         <Route path="login" element={<Login />}/>
         <Route path="cart" element={<Cart />}/>
+        <Route path="*" element={<MainContent  />}/>
       </Routes>
 
       <MemoizedMainFooter />

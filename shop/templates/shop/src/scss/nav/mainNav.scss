@@ -15,10 +15,10 @@
   font-family: $font-main;
   width: 100%;
   min-height: 6rem;
-.main--nav-link{
-  text-decoration: none;
-  
-}
+  .main--nav-link{
+    text-decoration: none; 
+  }
+
   .main--nav-name {
     flex-basis: 20%;
     padding: 0 0 0 .5rem;
@@ -34,6 +34,7 @@
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: right;
+    align-self: center;
     gap: 1rem;
     padding: 1rem;
     .main---nav--user-name {
@@ -41,7 +42,6 @@
       margin: auto 0;
       color: $white
     }
-
     .main---nav--user-button {
       @include default-button;
       font-size: 1rem;
