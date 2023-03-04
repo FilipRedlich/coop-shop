@@ -213,6 +213,15 @@ const ProductNav = (props) => {
                 }
               />
               <Route
+                path="*"
+                element={
+                  <RenderSubcat
+                    el={subcatNamesTest[1]}
+                    img={subcatImagesTest}
+                  />
+                }
+              />
+              <Route
                 path="/B"
                 element={
                   <RenderSubcat

@@ -37,12 +37,12 @@ const App = () => {
       <Routes>
         <Route path="/" element={<MainContent />} />
         <Route path="/home|/" element={<MainContent />} />
+        <Route path="*" element={<MainContent  />}/>
         <Route path="newsletter" element={<Newsletter />} />
         <Route path="onSale" element={<OnSale />} />
         <Route path="products/:productsID" element={<RenderProducts2 el={productsTest} />} />
         <Route path="login" element={<Login />}/>
         <Route path="cart" element={<Cart />}/>
-        <Route path="*" element={<MainContent  />}/>
       </Routes>
 
       <MemoizedMainFooter />
