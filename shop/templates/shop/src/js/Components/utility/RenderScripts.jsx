@@ -234,12 +234,12 @@ const RenderSubcat = ({ el = [], img = [], startIndex }) => {
   }
 
   return el.map((val, i) => {
+    const convImg = img[i];
     i++;
     if(startIndex > 0 && startIndex !== undefined){
       i += startIndex;
     }
     
-    const convImg = img[i];
     console.log(convImg, "convImg");
     
     return (
