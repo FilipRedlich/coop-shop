@@ -11,3 +11,5 @@ dist
 *.pyc
 perf.txt
 variablesChecklist.txt
+shop\templates\shop\src\js\Components\utility\Unused.jsx
+shop\templates\shop\src\js\Components\utility\TestComponent.jsx
