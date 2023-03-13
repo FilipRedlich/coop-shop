@@ -1,12 +1,8 @@
-import React, { createRef } from "react";
+import React, { createRef, useEffect } from "react";
 import { useState } from "react";
-import { render } from "react-dom";
-
+import { Route, Link, useParams, Routes } from "react-router-dom";
 //components
-import OnSale from "../OnSale/OnSale";
-import Newsletter from "../Newsletter/Newsletter";
 import MainNav from "./MainNav";
-import { RenderFromCat, renderInSubRoot, renderRoot } from "../utility/RenderScripts";
 import { ButtonBuilder2 } from "../utility/ComponentBuilders";
 import {
   TEST_SUBCAT_NAME,
@@ -16,9 +12,11 @@ import {
   prod,
   productsTest,
   catNamesTest,
+  subcatNamesTest,
+  subcatImagesTest,
 } from "../utility/Test";
-
-
+import { RenderSubcat } from "../utility/RenderScripts";
+import { ItemBar } from "../Home/Itembar";
 
 const showPopup = () => {
   const popup = document.querySelector(".popup-modal");
@@ -47,39 +45,48 @@ const Popup = (props) => {
     </>
   );
 };
-const RenderProducts2 = (props) => {
-  const el = props.el;
-  const img = props.img;
-  const specIndex = props.index; //specified index that represents subcategory (CPU or Cooler for ex.)
-  //it's then used to create another array containing information about products (from subcategories)
-  return el[specIndex].map((val, i) => {
-    const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
-    const itemID = val[0];
-    //console.log(convImg, "converted Img line 58 ProductsNav");
-    console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
-    return (
-      <>
-        <form action="/addProductToBasket/" method="post">
-          <input type="hidden" name="csrfmiddlewaretoken" value={CSRF_TOKEN} />
-          <input type="hidden" name="id" value={itemID} />
-          <button
-            type="submit"
-            className="product"
-            onClick={(e) => {
-              showPopup();
-            }}
-          >
-            <img src={val[2]} alt={val[1]} loading="lazy" />
-            <p>{val[1]}</p>
-          </button>
-        </form>
-      </>
-    );
-  });
+const RenderProducts2 = ({ el }) => {
+  const { productsID } = useParams();
+  const specIndex = parseInt(productsID);
+
+  return (
+    <>
+      <div className="product-holder">
+        {el[specIndex].map((val, i) => {
+          const convImg = val[2]; //Array of images, 2 is ID where image is (for ex. 0 is ID, 1 name, 2 img)
+          const itemID = val[0];
+          console.log(val[0], "ITEM ID RenderProducts2 in ProductsNav");
+          return (
+            <>
+              <form action="/addProductToBasket/" method="post">
+                <input
+                  type="hidden"
+                  name="csrfmiddlewaretoken"
+                  value={CSRF_TOKEN}
+                />
+                <input type="hidden" name="id" value={itemID} />
+                <button
+                  type="submit"
+                  className="product"
+                  onClick={(e) => {
+                    showPopup();
+                  }}
+                >
+                  <img src={val[2]} alt={val[1]} loading="lazy" />
+                  <p>{val[1]}</p>
+                </button>
+              </form>
+            </>
+          );
+        })}
+      </div>
+    </>
+  );
 };
 
 const addEvent = () => {
   var subcatButtons = document.querySelectorAll(".subcategory");
+  console.log(subcatButtons, "subcatButtons");
   const initAddEvent = () => {
     if (subcatButtons[0].textContent === "Procesory") {
       subcatButtons.forEach((button, i) => {
@@ -87,20 +94,11 @@ const addEvent = () => {
         i++;
         console.log("1st cat addEvent func");
         button.addEventListener("click", () => {
-<<<<<<< Updated upstream
-          renderRoot(
-            renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
-              "product-holder animate__animated animate__zoomInDown"
-            )
-          );
-=======
           <RenderProducts2
-            el={products}
+            el={productsTest}
             index={i}
             style={"product-holder animate__animated animate__zoomInDown"}
           />;
->>>>>>> Stashed changes
         });
       });
     }
@@ -110,35 +108,29 @@ const addEvent = () => {
         removeEventListener("click", button);
         i += 9; //value before first index of next subcategory (for ex. 2nd subcat starts on 10th index)
         i++;
-        console.log("2nd cat addEvent func");
+        console.log("2nd cat addEvent func", i);
         button.addEventListener("click", () => {
-<<<<<<< Updated upstream
-          renderRoot(
-            renderInSubRoot(
-              <RenderProducts2 el={products} index={i} />,
-              "product-holder animate__animated animate__zoomInDown"
-            )
-          );
-=======
           <RenderProducts2
-            el={products}
+            el={productsTest}
             index={i}
             style={"product-holder animate__animated animate__zoomInDown"}
           />;
->>>>>>> Stashed changes
         });
       });
     }
-
   };
 
   initAddEvent();
 };
 
-const ProductNav = () => {
+const ProductNav = (props) => {
   const [isActive, setActive] = useState("false");
   const categoriesMain = createRef(null);
+  const [subcatNames, setSubcatNames] = useState([]);
 
+  useEffect(() => {
+    setSubcatNames((prevState) => (prevState = props.subcatNames));
+  }, [subcatNames, props.subcatNames]);
   const ToggleClass = () => {
     const body = document.body;
     setActive(!isActive);
@@ -153,107 +145,94 @@ const ProductNav = () => {
 
   return (
     <>
-      <div onClick={(e) => {
-        let myTarget = e.target; console.log(myTarget.className == 'categories---main--container-category');
+      <div
+        onClick={(e) => {
+          let myTarget = e.target;
+          console.log(
+            myTarget.className == "categories---main--container-category"
+          );
 
-        if (
-          categoriesMain.current.classList[1] == 'animateShowCategories' &&
-          !myTarget.className !== 'product-nav' &&
-          myTarget.className !== 'categories---main--container-category'
-        ) {
-          ToggleClass();
-          return
-        } else {
-          return
-        }
-      }}>
+          if (
+            categoriesMain.current.classList[1] == "animateShowCategories" &&
+            !myTarget.className !== "product-nav" &&
+            myTarget.className !== "categories---main--container-category"
+          ) {
+            ToggleClass();
+            return;
+          } else {
+            return;
+          }
+        }}
+      >
         <MainNav />
         <nav className="product-nav">
-          <button
-            className="product--nav-button"
-            aria-labelledby="categories button"
-            onClick={() => {
-              ToggleClass();
-              render(
-                <ButtonBuilder2 el={catNames} />,
-                document.querySelector("#categories")
-              ); //creates category buttons
-           
-                RenderFromCat(catNames);
-            
-            
-          
-               //elements that are rendered after clicking subcategory
-            }}
-          >
-            Categories
-          </button>
-          <button
-            className="product--nav-button"
-            onClick={() => {
-              renderRoot(<OnSale />);
-            }}
-          >
-            On sale
-          </button>
-          <button
-            className="product--nav-button"
-            onClick={() => {
-              renderRoot(<Newsletter />);
-            }}
-          >
-            Newsletter
-          </button>
+          <Link className="product---nav--button-link">
+            <button
+              className="product---nav--link-button"
+              aria-labelledby="categories button"
+              onClick={ToggleClass}
+            >
+              Categories
+            </button>
+          </Link>
+          <Link className="product---nav--button-link" to={"/onSale"}>
+            <button className="product---nav--link-button">On Sale</button>
+          </Link>
+
+          <Link className="product---nav--button-link" to={"/newsletter"}>
+            <button className="product---nav--link-button">Newsletter</button>
+          </Link>
         </nav>
         <section
           id="categoriesMain"
           ref={categoriesMain}
           className={`
            categories-main
-           ${isActive
-              ? "animateCloseCategories "
-              : "animateShowCategories bg-transparent-custom blur-bg"
-            }`}
+           ${
+             isActive
+               ? "animateCloseCategories "
+               : "animateShowCategories bg-transparent-custom blur-bg"
+           }`}
         >
           <div
             id="categories"
             className="categories--main-container"
-          //Inside this element buttons are rendered
+            //Inside this element buttons are rendered
           >
-<<<<<<< Updated upstream
-=======
-            <ButtonBuilder2 el={catNames} />
+            <ButtonBuilder2 el={catNamesTest} />
           </div>
           <div id="rootSubcategories">
             <Routes>
               <Route
                 path="/A"
                 element={
-                  <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />
+                  <RenderSubcat
+                    el={subcatNamesTest[1]}
+                    img={subcatImagesTest}
+                  />
                 }
               />
               <Route
                 path="*"
                 element={
-                  <RenderSubcat el={subcatNames[1]} img={subcatImages[4]} />
+                  <RenderSubcat
+                    el={subcatNamesTest[1]}
+                    img={subcatImagesTest}
+                  />
                 }
               />
               <Route
                 path="/B"
                 element={
                   <RenderSubcat
-                    el={subcatNames[2]}
-                    img={subcatImages[5]}
+                    el={subcatNamesTest[2]}
+                    img={subcatImagesTest}
                     startIndex={9}
                   />
                 }
               />
             </Routes>
->>>>>>> Stashed changes
           </div>
-          <div
-            id="rootSubcategories"
-          ></div>
         </section>
       </div>
       <Popup />

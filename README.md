@@ -1,3 +1,5 @@
+## Demo Website
+* https://pycoop.herokuapp.com (It might load for few seconds due to hosting's hibernation)
 ## Links
 * [General info] (#general-info)
 * [Technologies] (#technologies)
@@ -15,7 +17,6 @@ Project is created with:
 * Parcel: 2.5.0
 * Prettier 2.5.1
 * Sass 1.50.1
-* Bootstrap 4
 ### Back-End
 * Python 3.10.4
 * Django 4.0.3
@@ -35,17 +36,18 @@ Project is created with:
 * whitenoise 6.0.0
 ## Setup
 To run this project on frontend:
-* ```$npm i -D parcel```
+* Change all the variables from for example: products to productsTest (you will find them in components)
+* Otherwise you might encounter errors, elements not rendering
+* ```npm install``` or ```$npm i -D parcel```
 * ```$npm run dev```
 
-To create a build:
+To create a build (Depends on Parcel version):
 * ```$npm run prod```
-or
+or 
 * ```$npm run prodUnofficial```
 
 To run localserver:
 * ```$python3 manage.py runserver```
 
 
-## Demo Website
-* https://pycoop.herokuapp.com
+

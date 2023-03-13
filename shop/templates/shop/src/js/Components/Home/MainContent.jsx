@@ -7,7 +7,7 @@ const MainContent = () => {
     <article className="main animate__animated animate__backInRight">
       <section className="main-content">
         <Carousel />
-        <Hotshot info={hotshot} />
+        <Hotshot info={hotshotTest} />
       </section>
       <ItemBar />
     </article>

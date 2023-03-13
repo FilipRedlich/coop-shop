@@ -20,7 +20,7 @@ const CheckOut = () => {
     <form className="checkout-form">
       <div>
         <label>Subtotal:</label>
-        <h5>{<TotalPrice price={basketProducts} />}</h5>
+        <h5>{<TotalPrice price={basketProductsTest} />}</h5>
         <p>{`+ Delivery`}</p>
       </div>
       <button
