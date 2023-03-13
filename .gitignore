@@ -10,3 +10,4 @@ __pycache__
 dist
 *.pyc
 perf.txt
+variablesChecklist.txt
