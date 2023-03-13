@@ -13,11 +13,6 @@ const images = [
 const Carousel = () => {
   const [count, setCount] = useState(0);
 
-  // useEffect(() => {
-  //   if (count == images.length - 1) {
-  //     setCount(0);
-  //   }
-  // });
   useInterval(() => {
     if(count == images.length - 1){
       setCount(prevState => prevState = 0)

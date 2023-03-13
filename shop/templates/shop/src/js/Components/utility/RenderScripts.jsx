@@ -259,53 +259,6 @@ const RenderSubcat = ({ el = [], img = [], startIndex }) => {
   });
 };
 
-//Adds functionality to category buttons (when you click category it checks the name of passed element and based on it renders corresponding subcategories)
-const RenderFromCat = (ARRAY = []) => {
-  const categories = document.querySelectorAll(".categories---main--container-category");
-
-    for (let i = 0; i < ARRAY.length; i++) {
-      categories[i].addEventListener("click", () => {
-        //adds function to specified category
-        switch (ARRAY[i]) {
-          //After recent changes (25.04.2022) ARRAY_x_SUBCATEGORY is now changed to multidimensional array 'SUBCATS_x'
-          //x now defines it's type - name, picture etc.
-          case `${ARRAY[0]}`:
-            render(
-              <RenderSubcat el={subcatNamesTest[1]} img={subcatImagesTest} />,
-              document.querySelector("#rootSubcategories")
-              );
-              addEvent();
-              console.log(ARRAY[0], 'RenderFromCat line ~289')
-            break;
-          case `${ARRAY[1]}`:
-            render(
-              <RenderSubcat el={subcatNamesTest[2]} img={subcatImagesTest} />,
-              document.querySelector("#rootSubcategories")
-            );
-
-            addEvent();
-            console.log(ARRAY[1], 'RenderFromCat')
-            break;
-          case `${ARRAY[2]}`:
-            render(
-              <RenderSubcat el={subcatNamesTest[3]} img={subcatImagesTest} />,
-              document.querySelector("#rootSubcategories")
-            );
-            addEvent();
-            console.log(ARRAY[2], 'RenderFromCat')
-            break;
-          case `${ARRAY[3]}`:
-            render(
-              <RenderSubcat el={subcatNamesTest[4]} img={subcatImagesTest[6]} />,
-              document.querySelector("#rootSubcategories")
-            );
-            addEvent();
-            console.log(ARRAY[3], 'RenderFromCat')
-            break;
-        }
-      });
-    }
-  };
 
 
 export {  RenderSubcat };

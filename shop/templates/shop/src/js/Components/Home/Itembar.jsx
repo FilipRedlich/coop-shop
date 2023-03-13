@@ -43,7 +43,7 @@ const ItemBar = (props) => {
     <>
       <section className="item-bar-holder">
         <div className="item-bar">
-          <CreateItems itemsInBar={productsTest} />
+          <CreateItems itemsInBar={products} />
         </div>
       </section>
     </>

@@ -95,7 +95,7 @@ const addEvent = () => {
         console.log("1st cat addEvent func");
         button.addEventListener("click", () => {
           <RenderProducts2
-            el={productsTest}
+            el={products}
             index={i}
             style={"product-holder animate__animated animate__zoomInDown"}
           />;
@@ -111,7 +111,7 @@ const addEvent = () => {
         console.log("2nd cat addEvent func", i);
         button.addEventListener("click", () => {
           <RenderProducts2
-            el={productsTest}
+            el={products}
             index={i}
             style={"product-holder animate__animated animate__zoomInDown"}
           />;
@@ -199,25 +199,25 @@ const ProductNav = (props) => {
             className="categories--main-container"
             //Inside this element buttons are rendered
           >
-            <ButtonBuilder2 el={catNamesTest} />
+            <ButtonBuilder2 el={catNames} />
           </div>
           <div id="rootSubcategories">
             <Routes>
               <Route
-                path="/A"
+                path="*"
                 element={
                   <RenderSubcat
-                    el={subcatNamesTest[1]}
-                    img={subcatImagesTest}
+                    el={subcatNames[1]}
+                    img={subcatImages[3]}
                   />
                 }
               />
               <Route
-                path="*"
+                path="/A"
                 element={
                   <RenderSubcat
-                    el={subcatNamesTest[1]}
-                    img={subcatImagesTest}
+                    el={subcatNames[1]}
+                    img={subcatImages[3]}
                   />
                 }
               />
@@ -225,8 +225,8 @@ const ProductNav = (props) => {
                 path="/B"
                 element={
                   <RenderSubcat
-                    el={subcatNamesTest[2]}
-                    img={subcatImagesTest}
+                    el={subcatNames[2]}
+                    img={subcatImages[4]}
                     startIndex={9}
                   />
                 }
