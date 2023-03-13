@@ -11,12 +11,17 @@ const Cart = () => {
         id="cart"
         className="cart animate__animated animate__backInRight"
       >
+<<<<<<< Updated upstream
         <div
           id="card-items"
           className="cart-items"
         >
           <HowManyItems el={basketProducts} />
           {/* cardContentsTest or CardContents*/}
+=======
+        <div id="card-items" className="cart-items">
+          <HowManyItems el={basketProducts} />
+>>>>>>> Stashed changes
         </div>
         <div className="checkout">
           <CheckOut />

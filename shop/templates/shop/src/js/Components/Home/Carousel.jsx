@@ -8,19 +8,22 @@ import { TEST_ARRAY } from "../utility/Test";
 const images = [
     { id: 1, src: haloweenDeal},
     { id: 2, src: more },
-    {} //DO NOT REMOVE (this element is needed for resetting carousel index)
 ];
 
 const Carousel = () => {
   const [count, setCount] = useState(0);
 
-  useEffect(() => {
-    if (count == images.length - 1) {
-      setCount(0);
-    }
-  });
+  // useEffect(() => {
+  //   if (count == images.length - 1) {
+  //     setCount(0);
+  //   }
+  // });
   useInterval(() => {
-    setCount(count + 1);
+    if(count == images.length - 1){
+      setCount(prevState => prevState = 0)
+    }else{
+      setCount(count + 1);
+    }
   }, 3000);
 
   return (

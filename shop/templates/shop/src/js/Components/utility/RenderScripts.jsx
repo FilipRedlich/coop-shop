@@ -274,6 +274,7 @@ const TEST_PRODUCT1 = [
   [[""]],
 ];
 
+<<<<<<< Updated upstream
 //Adds functionality to category buttons
 const RenderFromCat = (ARRAY = []) => {
   const categories = document.querySelectorAll(".categories---main--container-category");
@@ -333,5 +334,53 @@ const RenderFromCat = (ARRAY = []) => {
     }
   }, 200);
 };
+=======
+const hotshotTest = [
+  "13",
+  "Monitor Asus VZ24EHE",
+  "",
+  "7",
+  "8",
+  "770.0",
+  "0.7",
+  "3.0",
+  "True",
+];
+//end of variables
+
+
+//Creates subcategories (Primarily used in RenderFromCat (It's added with onClick event))
+const RenderSubcat = ({ el = [], img = [], startIndex }) => {
+  if (el.length === 0 || img.length === 0) {
+    return null;
+  }
+
+  return el.map((val, i) => {
+    i++;
+    if(startIndex > 0 && startIndex !== undefined){
+      i += startIndex;
+    }
+    
+    const convImg = img[i];
+    console.log(convImg, "convImg");
+    
+    return (
+      <Link key={val} to={`/products/${i}`}>
+        <button
+          type="button"
+          className="subcategory testing"
+          onClick={addEvent}
+        >
+          id: {i}
+          <img src={convImg} alt={`${val} Quick debug on dev`} loading="lazy" />
+          <p>{val || "Default text"}</p>
+        </button>
+      </Link>
+    
+    );
+  });
+};
+
+>>>>>>> Stashed changes
 
 export { renderRoot, renderInSubRoot, RenderOnLoad, RenderFromCat };

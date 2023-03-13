@@ -87,12 +87,20 @@ const addEvent = () => {
         i++;
         console.log("1st cat addEvent func");
         button.addEventListener("click", () => {
+<<<<<<< Updated upstream
           renderRoot(
             renderInSubRoot(
               <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
+=======
+          <RenderProducts2
+            el={products}
+            index={i}
+            style={"product-holder animate__animated animate__zoomInDown"}
+          />;
+>>>>>>> Stashed changes
         });
       });
     }
@@ -104,12 +112,20 @@ const addEvent = () => {
         i++;
         console.log("2nd cat addEvent func");
         button.addEventListener("click", () => {
+<<<<<<< Updated upstream
           renderRoot(
             renderInSubRoot(
               <RenderProducts2 el={products} index={i} />,
               "product-holder animate__animated animate__zoomInDown"
             )
           );
+=======
+          <RenderProducts2
+            el={products}
+            index={i}
+            style={"product-holder animate__animated animate__zoomInDown"}
+          />;
+>>>>>>> Stashed changes
         });
       });
     }
@@ -204,6 +220,36 @@ const ProductNav = () => {
             className="categories--main-container"
           //Inside this element buttons are rendered
           >
+<<<<<<< Updated upstream
+=======
+            <ButtonBuilder2 el={catNames} />
+          </div>
+          <div id="rootSubcategories">
+            <Routes>
+              <Route
+                path="/A"
+                element={
+                  <RenderSubcat el={subcatNames[1]} img={subcatImages[3]} />
+                }
+              />
+              <Route
+                path="*"
+                element={
+                  <RenderSubcat el={subcatNames[1]} img={subcatImages[4]} />
+                }
+              />
+              <Route
+                path="/B"
+                element={
+                  <RenderSubcat
+                    el={subcatNames[2]}
+                    img={subcatImages[5]}
+                    startIndex={9}
+                  />
+                }
+              />
+            </Routes>
+>>>>>>> Stashed changes
           </div>
           <div
             id="rootSubcategories"
