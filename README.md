@@ -52,6 +52,7 @@ To run localserver:
 ## Details
 * Path to project files is: ```shop\templates\shop\src```
 * In build at ```shop\templates\shop\build``` we store our main file ```index.html``` that is being uploaded to heroku, and files like css, js etc. we store in static here ```shop\static\shop```
+* Files that you can see here: ```shop\static\shop\img``` are also uploaded to server and we can later add them to categories, subcategories, products through our Database
 * Keep in mind that our index.html file in build must have: ```{% load static %} {% load view_tags %}``` on top of the document, and other Django functions that can be found in HTML script tag
 * With each build you have to add all Django functions and the rest of the code from script tag to ```index.html``` or only change name inside already existing HTML in build folder to names of files that you moved to ```shop/static/shop```
 * To create a build with Parcel bundler on version from ```package.json``` use ```npm run prodUnofficial```
