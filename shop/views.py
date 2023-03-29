@@ -252,3 +252,7 @@ def subscribeToNewsletter(request):
         Users.objects.filter(login = request.session['email']).update(newsletter=True)
     #redirect to index at the end of function
     return HttpResponseRedirect(reverse('shop:index'))
+
+# in case of 404 return to index
+def handler404():
+    return HttpResponseRedirect(reverse('shop:index'))

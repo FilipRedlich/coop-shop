@@ -20,3 +20,6 @@ urlpatterns = [
     path('', include('shop.urls')),
     path('admin/', admin.site.urls),
 ]
+
+# custom 404 site
+handler404 = 'shop.views.handler404'
