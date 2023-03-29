@@ -254,5 +254,5 @@ def subscribeToNewsletter(request):
     return HttpResponseRedirect(reverse('shop:index'))
 
 # in case of 404 return to index
-def handler404():
+def handler404(request, exception, template_name="404.html"):
     return HttpResponseRedirect(reverse('shop:index'))
