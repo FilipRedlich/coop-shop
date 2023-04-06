@@ -43,7 +43,7 @@ const MainFooter = () => {
             <p>
               <a
                 className="footer-anchor remove-all-decoration"
-                href="mailto:brtskr1503@gmail.com"
+                href="mailto:skrzydelskibartosz@gmail.com"
               >
                 BrtSkr
               </a>
