@@ -10,15 +10,17 @@ import Newsletter from "./Components/Newsletter/Newsletter";
 import OnSale from "./Components/OnSale/OnSale";
 import Login from "./Components/Login/Login";
 import Cart from "./Components/Cart/Cart";
-import * as serviceWorker from './service-worker.js';
+
 const MemoizedProductsNav = React.memo(ProductsNav);
 const MemoizedMainFooter = React.memo(MainFooter);
 
 // PWA support
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
+    const swUrl = new URL("./service-worker.js", import.meta.url);
+
     navigator.serviceWorker
-      .register(serviceWorker)
+      .register(swUrl)
       .then((registration) => {
         console.log("Service worker registered");
       })
@@ -27,6 +29,7 @@ if ("serviceWorker" in navigator) {
       });
   });
 }
+
 
 const App = () => {
   return (
