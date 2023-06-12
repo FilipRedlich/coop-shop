@@ -11,7 +11,7 @@ const ButtonSwitch = (form) => {
     }
     //if false it changes form attribute to login
     if (!isLogin) {
-      document.querySelector('#login-form').setAttribute("action", "/login/");
+      document.querySelector('#login-form').setAttribute("action", "/loginFunc/");
       document.querySelector('#switch').value = "Login";
     }
   }, [isLogin]);

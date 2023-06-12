@@ -7,7 +7,7 @@ const LoginForm = () => {
       <form
         id="login-form"
         className="login--modal-form"
-        action="/login/"
+        action="/loginFunc/"
         method="POST"
 
       >
