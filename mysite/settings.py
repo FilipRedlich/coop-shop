@@ -30,6 +30,7 @@ DEBUG = False
 ALLOWED_HOSTS = [
     "https://pycoop.herokuapp.com",
     "127.0.0.1",
+    "https://coop-shop-sigma.vercel.app",
 ]
 
 
