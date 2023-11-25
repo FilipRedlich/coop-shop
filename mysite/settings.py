@@ -28,9 +28,8 @@ SECRET_KEY = 'django-insecure-5u(s!tsu#fhbo5#w+-%iyqrwncblhd2_$0u8ksojf-&0@nd2^5
 DEBUG = False
 
 ALLOWED_HOSTS = [
-    "https://pycoop.herokuapp.com",
     "127.0.0.1",
-    "https://coop-shop-sigma.vercel.app",
+    '.vercel.app'
 ]
 
 
