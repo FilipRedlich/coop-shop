@@ -1,6 +1,10 @@
 {
   "builds": [{
-      "src": "mysite/wsgi.py",
-      "use": "@vercel/python"
+    "src": "mysite/wsgi.py",
+    "use": "@vercel/python"
+  }],
+  "redirects": [{
+    "source": "/",
+    "destination": "shop/" 
   }]
 }
