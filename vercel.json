@@ -3,8 +3,8 @@
     "src": "mysite/wsgi.py",
     "use": "@vercel/python"
   }],
-  "redirects": [{
-    "source": "/",
-    "destination": "shop/" 
+  "routes": [{
+    "src": "/(.*)",
+    "dest": "mysite/wsgi.py"
   }]
 }
