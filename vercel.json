@@ -7,7 +7,7 @@
   "routes": [
       {
           "src": "/(.*)",
-          "dest": "mysite/wsgi.py"
+          "dest": "shop/templaes/shop/build/index.html"
       }
   ]
 }
