@@ -1,65 +1,22 @@
 {
   "name": "coop-shop",
-  "version": "1.0.0",
-  "description": "",
+  "version": "2.0.0",
+  "description": "PESTKA - Nowoczesny sklep internetowy z elektroniką i podzespołami komputerowymi",
   "scripts": {
-    "dev": "parcel shop/templates/shop/index.html --open",
-    "prodUnofficial": "parcel build shop/templates/shop/index.html --dist-dir=shop/templates/shop/distUnofficial --public-url .",
-    "prod": "parcel build shop/templates/shop/index.html --out-dir=shop/templates/shop/dist --public-url .",
-    "pys": "python manage.py runserver",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "cd frontend && npm run dev",
+    "build": "cd frontend && npm run build",
+    "server": ".venv/bin/python manage.py runserver",
+    "seed": ".venv/bin/python manage.py seed_data",
+    "test": ".venv/bin/python manage.py test",
+    "migrate": ".venv/bin/python manage.py migrate"
   },
-  "repository": {
-    "type": "git",
-    "url": "git+https://github.com/FilipRedlich/coop-shop.git"
-  },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
-  "bugs": {
-    "url": "https://github.com/FilipRedlich/coop-shop/issues"
-  },
-  "homepage": "https://github.com/FilipRedlich/coop-shop#readme",
-  "devDependencies": {
-    "@parcel/babel-preset-env": "^2.8.0",
-    "@parcel/packager-raw-url": "^2.8.0",
-    "@parcel/transformer-sass": "^2.8.0",
-    "@parcel/transformer-webmanifest": "^2.8.0",
-    "assert": "^2.0.0",
-    "autoprefixer": "^9.0.0",
-    "browserslist": "^4.20.2",
-    "console-browserify": "^1.2.0",
-    "cssnano": "^4.1.11",
-    "eslint": "^8.10.0",
-    "eslint-config-node": "^4.1.0",
-    "eslint-config-prettier": "^8.5.0",
-    "eslint-plugin-node": "^11.1.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "postcss": "^8.4.13",
-    "postcss-focus": "^5.0.1",
-    "prettier": "^2.5.1",
-    "process": "^0.11.10",
-    "sass": "^1.50.1",
-    "util": "^0.12.4"
-  },
-  "dependencies": {
-    "@babel/core": "^7.17.5",
-    "@babel/runtime": "^7.17.2",
-    "animate.css": "^4.1.1",
-    "axios": "^0.26.1",
-    "babel-preset-airbnb": "^5.0.0",
-    "bootstrap": "^5.1.3",
-    "bootstrap-icons": "^1.8.1",
-    "parcel": "^2.8.0",
-    "pwa-asset-generator": "^6.3.1",
-    "react": "^17.0.2",
-    "react-dom": "^17.0.2",
-    "react-redux": "^7.2.6",
-    "react-router": "^6.8.2",
-    "react-router-dom": "^6.8.2",
-    "redux": "^4.1.2",
-    "redux-devtools-extension": "^2.13.9",
-    "redux-thunk": "^2.4.1",
-    "usehooks-ts": "^2.4.2"
-  }
+  "keywords": [
+    "django",
+    "react",
+    "vite",
+    "ecommerce",
+    "drf"
+  ],
+  "author": "Antigravity Pair Programmer",
+  "license": "MIT"
 }

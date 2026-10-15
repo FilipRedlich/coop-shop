@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>PESTKA - Sklep Komputerowy (Tryb deweloperski)</title>
+    <style>
+        body {
+            background-color: #0c0d12;
+            color: #f3f4f6;
+            font-family: system-ui, -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, sans-serif;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 100vh;
+            margin: 0;
+            padding: 1.5rem;
+            box-sizing: border-box;
+        }
+        .card {
+            background: #1c1e2b;
+            border: 1px solid #292d40;
+            border-radius: 16px;
+            padding: 2.5rem;
+            max-width: 580px;
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+        }
+        h1 {
+            color: #3b82f6;
+            font-size: 1.75rem;
+            margin-bottom: 0.75rem;
+        }
+        p {
+            color: #9ca3af;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+        }
+        code {
+            background: #14161f;
+            border: 1px solid #292d40;
+            padding: 0.25rem 0.6rem;
+            border-radius: 6px;
+            color: #10b981;
+            font-family: monospace;
+            font-size: 0.95rem;
+        }
+        .actions {
+            display: flex;
+            gap: 1rem;
+            justify-content: center;
+        }
+        a {
+            background: #3b82f6;
+            color: #fff;
+            padding: 0.75rem 1.5rem;
+            border-radius: 8px;
+            text-decoration: none;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+    <div class="card">
+        <h1>Witaj w sklepie PESTKA!</h1>
+        <p>Aplikacja backendowa Django i baza danych działają poprawnie. Aby uruchomić interfejs sklepu:</p>
+        <p>W trybie deweloperskim uruchom: <code>npm run dev</code> (port 5173)<br>
+        Aby zbudować wersję produkcyjną: <code>npm run build</code></p>
+        <div class="actions">
+            <a href="/admin/">Panel Administracyjny Django</a>
+            <a href="/api/products/" style="background: #1f202b; border: 1px solid #3b82f6;">REST API</a>
+        </div>
+    </div>
+</body>
+</html>

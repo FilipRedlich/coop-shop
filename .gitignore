@@ -1,15 +1,32 @@
-node_modules
-.cache
-.git
-staticfiles
-.parcel-cache
-shop/__pycache__
-mysite/__pycache__
+# Environments & Dependencies
+node_modules/
+frontend/node_modules/
+.venv/
+venv/
+ENV/
+
+# Python cache & artifacts
+__pycache__/
+*.py[cod]
+*$py.class
+*.so
+
+# Database & SQLite
+db.sqlite3
+db.sqlite3-journal
 django
-__pycache__
-dist
-*.pyc
-perf.txt
-variablesChecklist.txt
-shop\templates\shop\src\js\Components\utility\Unused.jsx
-shop\templates\shop\src\js\Components\utility\TestComponent.jsx
+legacy_data.json
+package-lock.json.bak
+
+# Static & Build distribution
+staticfiles/
+frontend/dist/
+dist/
+.parcel-cache/
+.cache/
+
+# IDE & OS files
+.DS_Store
+Thumbs.db
+.idea/
+.vscode/
